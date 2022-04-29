@@ -1,6 +1,7 @@
 {
   "name": "hanna-style-server",
-  "version": "0.8.55",
+  "cssVersion": "0.8.56",
+  "version": "0.0.0",
   "author": "Reykjavík (http://www.reykjavik.is)",
   "contributors": [
     "Hugsmiðjan ehf (http://www.hugsmidjan.is)",
