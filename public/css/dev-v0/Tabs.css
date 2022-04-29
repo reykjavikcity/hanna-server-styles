@@ -1,0 +1,291 @@
+@media screen {
+  .Tabs {
+    --Tabs--borderWidth: 2px;
+    --Tabs__tab--borderWidth: 4px;
+    display: flex;
+    flex-flow: row wrap;
+    border-bottom: var(--Tabs--borderWidth) solid var(--color-suld-50);
+    font: var(--font-base);
+    font-weight: var(--font-weight--bold);
+    margin: var(--space-5) 0;
+  }
+  .before-sprinkling .Tabs, .Tabs[data-is-seen=false], .Tabs[data-is-seen=true] {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  .Tabs[data-is-seen=""], .Tabs[data-is-seen=true] {
+    opacity: 1;
+    transform: none;
+  }
+  .Tabs[data-is-seen=true] {
+    transition: all 500ms ease-in-out;
+    transition-property: opacity, transform;
+  }
+  .before-sprinkling [data-is-seen] .Tabs, [data-is-seen] .Tabs[data-is-seen=false] {
+    opacity: 1;
+    transform: none;
+  }
+  [data-is-seen] .Tabs[data-is-seen=""], [data-is-seen] .Tabs[data-is-seen=true] {
+    opacity: initial;
+    transform: initial;
+  }
+  [data-is-seen] .Tabs[data-is-seen=true] {
+    transition: none;
+  }
+
+  .Tabs::after {
+    content: "";
+    width: 100%;
+    height: var(--Tabs--borderWidth);
+    background-color: var(--color-suld-50);
+  }
+
+  .Tabs__tab {
+    --link-color: _inherit;
+    --link-weight: _inherit;
+    --link-underline: none;
+    --link-color--hover: var(--link-color);
+    --link-underline--hover: none;
+    --link-underline-offset: 0;
+    white-space: nowrap;
+    border-bottom: var(--Tabs__tab--borderWidth) solid var(--color-suld-50);
+    margin-bottom: calc(-1 * var(--Tabs__tab--borderWidth));
+    color: var(--color-suld-200);
+    position: relative;
+    z-index: 1;
+    padding: calc(0.9541984733vw + 6.9465648855px) calc(2.3854961832vw + 7.3664122137px);
+  }
+}
+@media screen and (min-width: 1368px) {
+  .Tabs__tab {
+    padding: 20px 40px;
+  }
+}
+@media screen {
+  .Tabs__tab:hover,
+.Tabs__tab:active,
+.Tabs__tab[data-active=true],
+.Tabs__tab[aria-pressed=true] {
+    border-bottom-color: var(--theme-color-primary--safeish);
+  }
+}
+@media screen {
+  .Tabs__tab__badge {
+    font: var(--font-label);
+    font-weight: var(--font-weight--normal);
+    color: var(--color-suld-150);
+    margin-left: var(--space-0_5);
+    margin-right: var(--space-1--neg);
+  }
+}
+@media screen {
+  .before-sprinkling .TabPanel:not([data-sprinkled]) {
+    display: none;
+  }
+}
+@media screen {
+  .TabPanel[data-focus-visible-added] {
+    outline-color: var(--color-suld-100);
+    outline-style: dotted;
+    outline-offset: var(--space-1);
+  }
+  .TabPanel:focus-visible {
+    outline-color: var(--color-suld-100);
+    outline-style: dotted;
+    outline-offset: var(--space-1);
+  }
+}
+@media screen {
+  .Tabs > .Tabs {
+    --Tabs__tab--borderWidth: 2px;
+    margin: 0;
+    width: 100%;
+    border-bottom: 0;
+  }
+}
+@media screen {
+  .Tabs > .Tabs::after {
+    content: none;
+  }
+}
+@media screen {
+  .Tabs:not(.Tabs--vertical) > .Tabs {
+    border-top: var(--Tabs--borderWidth) solid var(--color-suld-50);
+    order: 1;
+  }
+}
+@media screen {
+  .Tabs > * > .Tabs__tab {
+    font-weight: var(--font-weight--normal);
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+  }
+}
+@media screen {
+  .Tabs--vertical[class] {
+    --Tabs--borderWidth: 2px;
+    --Tabs__tab--borderWidth: 2px;
+    float: left;
+    width: 100%;
+    margin-top: 0;
+    max-width: 272px;
+    border-bottom: 0;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 760px) {
+  .Tabs--vertical[class] {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+}
+@media screen {
+  .Tabs--vertical::after {
+    content: none;
+  }
+}
+@media screen {
+  .Tabs--vertical .Tabs__tab {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: var(--space-2) var(--space-1);
+    padding-left: var(--space-1_5);
+  }
+  .Tabs--vertical .Tabs__tab[data-focus-visible-added] {
+    outline-offset: -3px;
+  }
+  .Tabs--vertical .Tabs__tab:focus-visible {
+    outline-offset: -3px;
+  }
+}
+@media screen {
+  .Tabs--vertical .Tabs__tab::before {
+    content: var(--Tabs__tab__before);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: calc(-1 * var(--Tabs--borderWidth)) 0;
+    width: 4px;
+    background-color: var(--theme-color-primary--safeish);
+  }
+}
+@media screen {
+  .Tabs--vertical .Tabs__tab:hover,
+.Tabs--vertical .Tabs__tab:active,
+.Tabs--vertical .Tabs__tab[data-active=true],
+.Tabs--vertical .Tabs__tab[aria-pressed=true] {
+    --Tabs__tab__before: "";
+    border-bottom-color: var(--color-suld-50);
+  }
+}
+@media screen {
+  .Tabs--vertical .Tabs__tab[data-active=true],
+.Tabs--vertical .Tabs__tab[aria-pressed=true] {
+    font-weight: var(--font-weight--bold);
+  }
+}
+@media screen {
+  .Tabs--vertical > .Tabs {
+    border-bottom: var(--Tabs--borderWidth) solid var(--color-suld-50);
+    padding-left: var(--space-1_5);
+    flex-direction: column;
+  }
+}
+@media screen {
+  .Tabs--vertical > * > .Tabs__tab {
+    padding-top: var(--space-1);
+    padding-bottom: var(--space-1);
+  }
+}
+@media screen {
+  .Tabs--vertical > * > .Tabs__tab:last-child {
+    border-bottom: 0;
+  }
+}
+@media screen {
+  .Tabs--vertical .Tabs__tab[data-active=true] ~ .Tabs__tab,
+.Tabs--vertical .Tabs__tab[aria-pressed=true] ~ .Tabs__tab {
+    order: 1;
+  }
+}
+@media screen {
+  html:not([data-disable-css-warnings-with-abandon=true]) .Tabs > *:not(.Tabs__tab):not(.Tabs) {
+    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon=true]) .Tabs > *:not(.Tabs__tab):not(.Tabs)::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 230, 230, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: "Only .Tabs__tab or `.Tabs` are allowed here" !important;
+  }
+}
+@media screen {
+  html:not([data-disable-css-warnings-with-abandon=true]) .Tabs > .Tabs:not(:last-child) {
+    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon=true]) .Tabs > .Tabs:not(:last-child)::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 230, 230, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: "Nested .Tabs must be :last-child" !important;
+  }
+}
+@media screen {
+  html:not([data-disable-css-warnings-with-abandon=true]) .Tabs--vertical > .Tabs--vertical {
+    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon=true]) .Tabs--vertical > .Tabs--vertical::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 230, 230, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: ".Tabs--vertical not supported as sub-Tabs" !important;
+  }
+}
+@media screen {
+  html:not([data-disable-css-warnings-with-abandon=true]) .Tabs > .Tabs > .Tabs {
+    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon=true]) .Tabs > .Tabs > .Tabs::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 230, 230, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: "For the love of god, DO NOT nest your already nested .Tabs" !important;
+  }
+}

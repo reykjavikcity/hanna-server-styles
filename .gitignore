@@ -1,0 +1,11 @@
+## Deps and build results
+node_modules
+/public/css/dev/
+
+## Misc notes and stuff...
+/assets-originals
+
+## Junk
+.DS_Store
+/yarn-error.log
+/.rpt2_cache

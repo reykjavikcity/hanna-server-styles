@@ -1,0 +1,1 @@
+.ButtonBar{align-items:center;display:flex;flex-flow:row wrap;margin-right:calc(var(--Button--gapH)*-1)}.ButtonBar--align--right{justify-content:flex-end}.ButtonBar>*{margin-right:var(--Button--gapH)}.ButtonBar[class]>*{margin-bottom:var(--Button--gapV)}.ButtonBar>.ButtonBar{margin:0}.ButtonBar>.ButtonBar__split{flex-grow:1;margin:0 auto;width:0}

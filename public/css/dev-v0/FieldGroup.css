@@ -1,0 +1,10 @@
+@media screen {
+  .FieldGroup {
+    margin-bottom: calc(4.3103448276% + 17.9310344828px);
+  }
+
+  .FieldGroup__legend {
+    font: var(--font-sh-l);
+    margin-bottom: 1.25rem;
+  }
+}

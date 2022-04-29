@@ -1,0 +1,123 @@
+/*!@deps
+	TextInput
+	SearchInput
+	Datepicker
+	Selectbox
+	ButtonPrimary
+	ButtonSecondary
+	ButtonTertiary
+	Footnote
+*/
+@media screen {
+  .PageFilter {
+    background-color: #f8f8f9;
+    padding: calc(5.3879310345% + 14.9137931034px) 0 0 0;
+    margin-bottom: calc(6.8965517241% + 44.6896551724px);
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .before-sprinkling .PageFilter, .PageFilter[data-is-seen=false], .PageFilter[data-is-seen=true] {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  .PageFilter[data-is-seen=""], .PageFilter[data-is-seen=true] {
+    opacity: 1;
+    transform: none;
+  }
+  .PageFilter[data-is-seen=true] {
+    transition: all 500ms ease-in-out;
+    transition-property: opacity, transform;
+  }
+  .PageFilter::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--grid-margin--neg);
+    right: var(--grid-margin--neg);
+    z-index: -1;
+    background: inherit;
+  }
+
+  .PageFilter::before {
+    border-left: calc(1.5267175573vw + 3.1145038168px) solid var(--theme-color-primary);
+    margin-bottom: calc(-3.4482758621% + -22.3448275862px);
+    pointer-events: none;
+  }
+}
+@media screen and (min-width: 1368px) {
+  .PageFilter::before {
+    border-width: 1.5rem;
+  }
+}
+@media screen and (min-width: 760px) {
+  .PageFilter--underlap {
+    margin-bottom: 0;
+  }
+}
+@media screen {
+  .PageFilter__title {
+    font: var(--font-hd-s);
+    margin-bottom: 0.3125em;
+    width: 100%;
+  }
+}
+@media screen {
+  .PageFilter__summary {
+    width: 100%;
+  }
+}
+@media screen {
+  .PageFilter__filters {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    margin-top: 1.25rem;
+    margin-bottom: calc(2.5862068966% + -7.2413793103px);
+    width: 100%;
+    max-width: 936px;
+  }
+}
+@media screen {
+  .PageFilter__filters > .FormField {
+    margin-right: var(--grid-gutter);
+    margin-bottom: 1.5rem;
+    min-width: 24.7863247863%;
+  }
+}
+@media screen and (max-width: 479px) {
+  .PageFilter__filters > .FormField {
+    width: 100%;
+  }
+}
+@media screen {
+  .PageFilter__buttons {
+    margin-top: 1.25rem;
+    margin-bottom: calc(2.5862068966% + -7.2413793103px);
+  }
+}
+@media screen {
+  .PageFilter__buttons > .ButtonTertiary:last-child,
+.PageFilter__buttons > .ButtonPrimary:last-child {
+    margin-right: 0;
+    width: auto;
+  }
+}
+@media screen {
+  .PageFilter > .Footnote {
+    margin-top: calc(3.2327586207% + 20.9482758621px);
+    margin-bottom: 0;
+  }
+  .PageFilter > .Footnote::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid currentColor;
+    margin-top: calc(-3.0172413793% + -3.5517241379px);
+  }
+}
