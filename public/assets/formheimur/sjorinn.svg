@@ -1,1 +1,21 @@
-<svg viewBox="0 0 375 281" fill="none" xmlns="http://www.w3.org/2000/svg" class="formheimur-sjorinn"><style>.formheimur-sjorinn{--litur1: var(--theme-color-primary, #dcddde);--litur2: var(--theme-color-secondary, #ebeced)}[data-color-theme=trustworthy] .formheimur-sjorinn{--litur2: var(--theme-color-tertiary)}[data-color-theme=friendly] .formheimur-sjorinn{--litur1: var(--theme-color-secondary);--litur2: var(--theme-color-tertiary)}[data-color-theme=lively] .formheimur-sjorinn{--litur1: var(--theme-color-secondary);--litur2: var(--theme-color-primary)}[data-color-theme=colorful] .formheimur-sjorinn{--litur1: var(--theme-color-tertiary);--litur2: var(--theme-color-primary)}</style><path d="M375 142.29H0v138.6h375v-138.6z" fill="#fff"/><path d="M375 0H0v146.48h375V0z" fill="var(--litur2)"/><path d="M375 212.09l-37.23-25.06-37.79 25.18-37.23-25.06-37.79 25.06-37.23-25.06-37.88 25.06-37.14-25.06-37.7 24.94-37.22-25.06L0 212.21v38.48l37.79-25.64 37.03 25.76 37.89-25.64 37.14 25.64 37.88-25.64 37.23 25.64 37.79-25.64 37.23 25.52 37.79-25.64L375 250.6v-38.51zm0-72.44l-37.23-25.07-37.79 25.19-37.23-25.07-37.79 25.07-37.23-25.07-37.88 25.07-37.14-25.07-37.7 24.94-37.22-25.06L0 139.77v38.48l37.79-25.64 37.03 25.76 37.89-25.64 37.14 25.64 37.88-25.64 37.23 25.64 37.79-25.64 37.23 25.52 37.79-25.64L375 178.15v.01-38.51z" fill="var(--litur1)"/></svg>
+<svg viewBox="0 0 375 281" fill="none" xmlns="http://www.w3.org/2000/svg" class="formheimur-sjorinn"><style>.formheimur-sjorinn {
+		--litur1: var(--theme-color-primary, #dcddde);
+		--litur2: var(--theme-color-secondary, #ebeced);
+	}
+
+	/* Frávik */
+	[data-color-theme=&apos;trustworthy&apos;] .formheimur-sjorinn {
+		--litur2: var(--theme-color-tertiary);
+	}
+	[data-color-theme=&apos;friendly&apos;] .formheimur-sjorinn {
+		--litur1: var(--theme-color-secondary);
+		--litur2: var(--theme-color-tertiary);
+	}
+	[data-color-theme=&apos;lively&apos;] .formheimur-sjorinn {
+		--litur1: var(--theme-color-secondary);
+		--litur2: var(--theme-color-primary);
+	}
+	[data-color-theme=&apos;colorful&apos;] .formheimur-sjorinn {
+		--litur1: var(--theme-color-tertiary);
+		--litur2: var(--theme-color-primary);
+	}</style><path d="M375 142.29H0V280.89H375V142.29Z" fill="white"/><path d="M375 0H0V146.48H375V0Z" fill="var(--litur2)"/><path d="M375 212.09L337.77 187.03L299.98 212.21L262.75 187.15L224.96 212.21L187.73 187.15L149.85 212.21L112.71 187.15L75.01 212.09L37.79 187.03L0 212.21V250.69L37.79 225.05L74.82 250.81L112.71 225.17L149.85 250.81L187.73 225.17L224.96 250.81L262.75 225.17L299.98 250.69L337.77 225.05L375 250.6V212.09Z" fill="var(--litur1)"/><path d="M375 139.65L337.77 114.58L299.98 139.77L262.75 114.7L224.96 139.77L187.73 114.7L149.85 139.77L112.71 114.7L75.01 139.64L37.79 114.58L0 139.77V178.25L37.79 152.61L74.82 178.37L112.71 152.73L149.85 178.37L187.73 152.73L224.96 178.37L262.75 152.73L299.98 178.25L337.77 152.61L375 178.15V178.16V139.65Z" fill="var(--litur1)"/></svg>
