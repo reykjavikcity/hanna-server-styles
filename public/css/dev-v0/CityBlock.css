@@ -142,8 +142,8 @@ html:not([data-disable-css-warnings-with-abandon=true]) .CityBlock__summary bloc
     max-width: 100%;
     vertical-align: middle;
     font: var(--font-base);
-    padding-left: calc( 		var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--dashWidth) 	);
-    padding-right: calc( 		var(--ButtonTertiary--hover--dashWidth) - var(--ButtonTertiary--dashWidth) 	);
+    padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--dashWidth) );
+    padding-right: calc( var(--ButtonTertiary--hover--dashWidth) - var(--ButtonTertiary--dashWidth) );
     margin-right: var(--ButtonTertiary--gapH);
     margin-bottom: var(--space-1);
     font-weight: 700;
@@ -166,7 +166,7 @@ html:not([data-disable-css-warnings-with-abandon=true]) .CityBlock__summary bloc
     transition: inherit;
   }
   .CityBlock__button:hover, .CityBlock__button:active, .CityBlock__button[data-focus-visible-added] {
-    padding-left: calc( 				var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--hover--dashWidth) 			);
+    padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--hover--dashWidth) );
     padding-right: 0rem;
     color: var(--ButtonTertiary--color);
     outline: 0;
@@ -175,7 +175,7 @@ html:not([data-disable-css-warnings-with-abandon=true]) .CityBlock__summary bloc
     width: var(--ButtonTertiary--hover--dashWidth);
   }
   .CityBlock__button:focus-visible {
-    padding-left: calc( 				var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--hover--dashWidth) 			);
+    padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--hover--dashWidth) );
     padding-right: 0rem;
     color: var(--ButtonTertiary--color);
     outline: 0;

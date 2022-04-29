@@ -48,7 +48,7 @@
 
   .Bling--align--left-ish > svg,
 .Bling--align--right-ish > svg {
-    left: calc( 			var(--bling-offset-ish, var(--bling-offset)) / 1208 * var(--Bling--baseWidth) 		);
+    left: calc( var(--bling-offset-ish, var(--bling-offset)) / 1208 * var(--Bling--baseWidth) );
     --notDefined--bling-offset-ish: var(--bling-offset-ish, );
     outline: var(--notDefined--bling-offset-ish) 10px dashed rgba(255, 0, 0, 0.25);
   }
@@ -56,10 +56,10 @@
   .Bling--align--left-center > svg,
 .Bling--align--right-center > svg {
     --postcss-calc-bug-workaround: var(
-    	--bling-offset-center,
-    	var(--bling-offset-ish, var(--bling-offset))
+      --bling-offset-center,
+      var(--bling-offset-ish, var(--bling-offset))
     );
-    left: calc( 			var(--postcss-calc-bug-workaround) / 1208 * var(--Bling--baseWidth) 		);
+    left: calc(var(--postcss-calc-bug-workaround) / 1208 * var(--Bling--baseWidth));
     --notDefined--bling-offset-center: var(--bling-offset-center, );
     outline: var(--notDefined--bling-offset-center) 10px dashed rgba(255, 0, 0, 0.25);
   }
