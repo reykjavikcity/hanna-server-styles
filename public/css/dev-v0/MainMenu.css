@@ -750,7 +750,7 @@ html[data-mega-panel-active] .MainMenu__item:not(.MainMenu__separator ~ *) {
     margin-left: var(--grid-margin--neg);
     margin-right: var(--grid-margin--right--neg);
     padding-left: calc(var(--grid-margin) + var(--MainMenu--offsetLeft));
-    padding-right: calc( 				var(--grid-margin--right) + var(--MainMenu--offsetLeft) 			);
+    padding-right: calc(var(--grid-margin--right) + var(--MainMenu--offsetLeft));
   }
 
   .AuxiliaryPanel__title {

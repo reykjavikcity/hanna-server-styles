@@ -99,8 +99,8 @@
     max-width: 100%;
     vertical-align: middle;
     font: var(--font-base);
-    padding-left: calc( 		var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--dashWidth) 	);
-    padding-right: calc( 		var(--ButtonTertiary--hover--dashWidth) - var(--ButtonTertiary--dashWidth) 	);
+    padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--dashWidth) );
+    padding-right: calc( var(--ButtonTertiary--hover--dashWidth) - var(--ButtonTertiary--dashWidth) );
     margin-right: var(--ButtonTertiary--gapH);
     margin-bottom: var(--space-1);
     font-weight: 700;
@@ -122,7 +122,7 @@
     transition: inherit;
   }
   .IslandPageBlock__button:hover, .IslandPageBlock__button:active, .IslandPageBlock__button[data-focus-visible-added] {
-    padding-left: calc( 				var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--hover--dashWidth) 			);
+    padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--hover--dashWidth) );
     padding-right: 0rem;
     color: var(--ButtonTertiary--color);
     outline: 0;
@@ -131,7 +131,7 @@
     width: var(--ButtonTertiary--hover--dashWidth);
   }
   .IslandPageBlock__button:focus-visible {
-    padding-left: calc( 				var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--hover--dashWidth) 			);
+    padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--hover--dashWidth) );
     padding-right: 0rem;
     color: var(--ButtonTertiary--color);
     outline: 0;

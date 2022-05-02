@@ -9,10 +9,10 @@ Design System.
 
 <!-- prettier-ignore-start -->
 - [Run the server](#run-the-server)
-	- [Get CSS bundles](#get-css-bundles)
+  - [Get CSS bundles](#get-css-bundles)
 - [The public/ folder](#the-public-folder)
-	- [public/assets/](#publicassets)
-	- [public/css/](#publiccss)
+  - [public/assets/](#publicassets)
+  - [public/css/](#publiccss)
 - [CSS Versioning](#css-versioning)
 
 <!-- prettier-ignore-end -->

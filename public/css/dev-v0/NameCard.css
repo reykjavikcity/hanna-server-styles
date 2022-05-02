@@ -60,8 +60,8 @@
     max-width: 100%;
     vertical-align: middle;
     font: var(--font-base);
-    padding-left: calc( 		var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--dashWidth) 	);
-    padding-right: calc( 		var(--ButtonTertiary--hover--dashWidth) - var(--ButtonTertiary--dashWidth) 	);
+    padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--dashWidth) );
+    padding-right: calc( var(--ButtonTertiary--hover--dashWidth) - var(--ButtonTertiary--dashWidth) );
     margin-right: var(--ButtonTertiary--gapH);
     margin-bottom: var(--space-1);
     font-weight: 700;
@@ -101,8 +101,8 @@ button.NameCard__contactinfo__item {
     max-width: 100%;
     vertical-align: middle;
     font: var(--font-base);
-    padding-left: calc( 		var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--dashWidth) 	);
-    padding-right: calc( 		var(--ButtonTertiary--hover--dashWidth) - var(--ButtonTertiary--dashWidth) 	);
+    padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--dashWidth) );
+    padding-right: calc( var(--ButtonTertiary--hover--dashWidth) - var(--ButtonTertiary--dashWidth) );
     margin-right: var(--ButtonTertiary--gapH);
     margin-bottom: var(--space-1);
     font-weight: 700;
@@ -132,7 +132,7 @@ a.NameCard__contactinfo__item[data-focus-visible-added],
 button.NameCard__contactinfo__item:hover,
 button.NameCard__contactinfo__item:active,
 button.NameCard__contactinfo__item[data-focus-visible-added] {
-    padding-left: calc( 				var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--hover--dashWidth) 			);
+    padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--hover--dashWidth) );
     padding-right: 0rem;
     color: var(--ButtonTertiary--color);
     outline: 0;
@@ -149,7 +149,7 @@ button.NameCard__contactinfo__item[data-focus-visible-added]::before {
   .NameCard__tel__number:focus-visible,
 a.NameCard__contactinfo__item:focus-visible,
 button.NameCard__contactinfo__item:focus-visible {
-    padding-left: calc( 				var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--hover--dashWidth) 			);
+    padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--hover--dashWidth) );
     padding-right: 0rem;
     color: var(--ButtonTertiary--color);
     outline: 0;
