@@ -8,7 +8,7 @@
   .Form--align--right {
     margin-left: auto;
     max-width: none;
-    width: 688px;
+    width: var(--grid-7);
   }
 }
 @media screen {
