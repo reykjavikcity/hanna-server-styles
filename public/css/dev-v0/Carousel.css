@@ -9,6 +9,10 @@ html.before-sprinkling[class] > .Carousel__items {
   overflow: visible;
 }
 
+.Carousel {
+  position: relative;
+}
+
 .Carousel__items {
   display: flex;
   flex-flow: row;
