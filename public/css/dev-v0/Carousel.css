@@ -9,6 +9,10 @@ html.before-sprinkling .Carousel:not([data-sprinkled]) {
   position: relative;
 }
 
+.Carousel {
+  position: relative;
+}
+
 .Carousel__items {
   display: flex;
   flex-flow: row;
