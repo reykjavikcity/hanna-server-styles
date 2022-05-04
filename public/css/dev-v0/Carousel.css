@@ -5,8 +5,8 @@ html.before-sprinkling .Carousel:not([data-sprinkled]) {
   padding-bottom: var(--CarouselStepper--height);
 }
 
-html.before-sprinkling[class] > .Carousel__items {
-  overflow: visible;
+.Carousel {
+  position: relative;
 }
 
 .Carousel__items {

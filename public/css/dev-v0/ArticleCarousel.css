@@ -21,10 +21,6 @@
     padding-bottom: var(--CarouselStepper--height);
   }
 
-  html.before-sprinkling[class] > .ArticleCarousel__items {
-    overflow: visible;
-  }
-
   .ArticleCarousel {
     margin-bottom: calc(9.6982758621% + 12.8448275862px);
   }
