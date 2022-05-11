@@ -42,14 +42,6 @@
   }
 
   .MainMenu__link {
-    border: 0;
-    border-radius: 0;
-    padding: 0;
-    background: transparent;
-    font: inherit;
-    text-align: inherit;
-    color: inherit;
-    cursor: pointer;
     text-decoration: none;
     color: var(--link-color);
     font-weight: var(--link-weight);

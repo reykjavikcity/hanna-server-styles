@@ -4,6 +4,12 @@
 
 - ... <!-- Add new lines here. -->
 
+## 0.8.60
+
+_2022-05-11_
+
+- feat: Update styling of `.Tabs--vertical`
+
 ## 0.8.58 — 0.8.59
 
 _2022-05-04_
