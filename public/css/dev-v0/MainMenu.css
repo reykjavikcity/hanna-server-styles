@@ -163,7 +163,7 @@ html.menu-is-closed .MainMenu {
 }
 @media screen and (max-width: 979px) {
   .MainMenu__link {
-    margin-bottom: calc(-1 * var(--link-underline-thickness));
+    margin-bottom: calc(-1 * var(--link-underline--thickness));
   }
 }
 @media screen and (max-width: 979px) {
@@ -355,7 +355,7 @@ html[data-mega-panel-active] .MainMenu__item:not(.MainMenu__separator ~ *) {
 @media screen and (min-width: 980px) {
   .MainMenu__link {
     padding: 0.625rem var(--MainMenu__item-padding);
-    padding-bottom: calc(0.625rem - var(--link-underline-thickness));
+    padding-bottom: calc(0.625rem - var(--link-underline--thickness));
   }
 }
 @media screen and (min-width: 980px) {
