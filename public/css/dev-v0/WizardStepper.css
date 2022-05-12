@@ -20,10 +20,10 @@
     position: relative;
     margin-bottom: 2.125rem;
     font-size: 0.75rem;
+    counter-increment: step;
   }
   .WizardStepper__step::before {
     content: counter(step);
-    counter-increment: step;
     width: 1.5rem;
     line-height: 1.5rem;
     position: absolute;
