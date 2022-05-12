@@ -4,10 +4,12 @@
 
 - ... <!-- Add new lines here. -->
 
-## 0.8.62
+## 0.8.62 — 0.8.63
 
 _2022-05-12_
 
+- feat: Add CSS variables `--icon--*` for iconfont characters
+- feat: Add styling for `.Checkbox__label__reqstar`
 - fix: Chrome counter-increment bug in `WizardStepper`
 
 ## 0.8.60 — 0.8.61
