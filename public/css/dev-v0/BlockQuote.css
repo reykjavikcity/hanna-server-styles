@@ -1,0 +1,278 @@
+@charset "UTF-8";
+:root {
+  --ButtonTertiary--height: calc(var(--font-button-leading) + 4px);
+  --ButtonTertiary--color: _inherit;
+  --ButtonTertiary--dashColor: var(--theme-color-primary--safeish);
+  --ButtonTertiary--dashWidth: var(--space-2);
+  --ButtonTertiary--hover--dashWidth: var(--space-4);
+  --ButtonTertiary--dashSpace: var(--space-2);
+  --ButtonTertiary--dashHeight: 2px;
+  --ButtonTertiary--gapH: calc(0.7633587786vw + 13.5572519084px);
+}
+@media screen and (min-width: 1368px) {
+  :root {
+    --ButtonTertiary--gapH: 24px;
+  }
+}
+
+.BlockQuote {
+  --Quote--line: 2px solid var(--theme-color-primary);
+  --Quote--indent: 0;
+  max-width: calc(792px - var(--Quote--indent));
+  padding-top: var(--space-5);
+  margin-left: var(--Quote--indent);
+  position: relative;
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+.BlockQuote::before {
+  content: "”";
+  color: var(--theme-color-primary);
+  font-size: 4.5rem;
+  line-height: 1;
+  position: absolute;
+  top: 0;
+  left: 2px;
+  text-align: center;
+  width: 0.6em;
+  margin-left: -0.3em;
+}
+@media screen and (min-width: 480px) {
+  .BlockQuote {
+    --Quote--indent: var(--space-2);
+  }
+}
+
+.BlockQuote__quote {
+  font: var(--font-bd-l);
+  font: var(--font-bd-s);
+  border-left: var(--Quote--line);
+  padding-left: var(--space-2);
+}
+.BlockQuote__quote h2 {
+  font: var(--font-hd-s);
+  margin-bottom: var(--h2--marginBottom, var(--baseVerticalMargin));
+  clear: both;
+}
+.BlockQuote__quote * + h2 {
+  margin-top: var(--h2--marginTop, 1.5em);
+}
+.BlockQuote__quote h3 {
+  font: var(--font-sh-l);
+  margin-bottom: var(--baseVerticalMargin);
+  clear: both;
+}
+.BlockQuote__quote * + h3 {
+  margin-top: var(--h3--marginTop, 1.25em);
+}
+.BlockQuote__quote h4 {
+  font: var(--font-sh-s);
+  margin-bottom: var(--baseVerticalMargin);
+}
+.BlockQuote__quote p {
+  margin-bottom: var(--baseVerticalMargin);
+}
+.BlockQuote__quote ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: var(--baseVerticalMargin);
+}
+.BlockQuote__quote ul > li {
+  margin-bottom: var(--space-2);
+  position: relative;
+  padding-left: var(--space-4);
+}
+.BlockQuote__quote ul > li::before {
+  content: " ";
+  float: left;
+  margin-left: var(--space-4--neg);
+  left: 0;
+  width: var(--space-2);
+  border-top: 0.125rem solid var(--theme-color-primary--safeish);
+  margin-top: -0.0625rem;
+  transform: translateY(50%);
+}
+.BlockQuote__quote ol {
+  margin-bottom: var(--baseVerticalMargin);
+}
+.BlockQuote__quote li ol,
+.BlockQuote__quote li ul {
+  margin-bottom: 0;
+}
+.BlockQuote__quote blockquote:not(.BlockQuote__quote):not(.PullQuote__quote) {
+  --Quote--line: 2px solid var(--theme-color-primary);
+  --Quote--indent: 0;
+  max-width: calc(792px - var(--Quote--indent));
+  padding-top: var(--space-5);
+  margin-left: var(--Quote--indent);
+  position: relative;
+  font: var(--font-bd-s);
+  position: relative;
+  margin-bottom: var(--space-4);
+  padding-left: calc(var(--space-2) + 2px);
+}
+.BlockQuote__quote blockquote:not(.BlockQuote__quote):not(.PullQuote__quote)::before {
+  content: "”";
+  color: var(--theme-color-primary);
+  font-size: 4.5rem;
+  line-height: 1;
+  position: absolute;
+  top: 0;
+  left: 2px;
+  text-align: center;
+  width: 0.6em;
+  margin-left: -0.3em;
+}
+@media screen and (min-width: 480px) {
+  .BlockQuote__quote blockquote:not(.BlockQuote__quote):not(.PullQuote__quote) {
+    padding-left: calc(var(--space-3) + 2px);
+    --Quote--indent: var(--space-2);
+  }
+}
+.BlockQuote__quote blockquote:not(.BlockQuote__quote):not(.PullQuote__quote)::after {
+  content: "";
+  position: absolute;
+  border-left: var(--Quote--line);
+  top: var(--space-5);
+  bottom: 0;
+  left: 0;
+  width: 2px;
+}
+.BlockQuote__quote blockquote:not(.BlockQuote__quote):not(.PullQuote__quote) > *:last-child {
+  margin-bottom: 0;
+}
+.BlockQuote__quote > :last-child {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 480px) {
+  .BlockQuote__quote {
+    padding-left: var(--space-3);
+  }
+}
+
+.BlockQuote__quote > *:last-child {
+  margin-bottom: 0;
+}
+
+.BlockQuote__by {
+  position: relative;
+  top: var(--space-1--neg);
+  margin-top: var(--space-2);
+  text-align: right;
+  line-height: 1;
+}
+@media screen and (min-width: 480px) {
+  .BlockQuote__by {
+    margin-bottom: calc(-1 * var(--ButtonTertiary--height));
+  }
+}
+
+.BlockQuote__by > a,
+.BlockQuote__by > span {
+  --link-color: _inherit;
+  --link-weight: _inherit;
+  --link-underline: none;
+  --link-color--hover: var(--link-color);
+  --link-underline--hover: none;
+  --link-underline-offset: 0;
+  color: var(--ButtonTertiary--color);
+  position: relative;
+  display: inline-block;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 100%;
+  vertical-align: middle;
+  font: var(--font-button);
+  padding: 2px 0;
+  padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--dashWidth) );
+  padding-right: calc( var(--ButtonTertiary--hover--dashWidth) - var(--ButtonTertiary--dashWidth) );
+  margin-right: var(--ButtonTertiary--gapH);
+  margin-bottom: var(--space-1);
+  font-weight: 700;
+  transition: all 100ms ease-in;
+  margin: 0;
+  margin-right: calc( -1 * (var(--ButtonTertiary--hover--dashWidth) - var(--ButtonTertiary--dashWidth)) );
+}
+.BlockQuote__by > a::before,
+.BlockQuote__by > span::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: var(--ButtonTertiary--dashWidth);
+  height: var(--ButtonTertiary--dashHeight);
+  display: inline-block;
+  vertical-align: middle;
+  background-color: currentColor;
+  color: var(--ButtonTertiary--dashColor);
+  transform: translateY(-50%);
+  transition: inherit;
+}
+
+.BlockQuote__by > span {
+  font-weight: var(--font-weight--normal);
+  --ButtonTertiary--dashColor: var(--color-suld-150);
+}
+
+.BlockQuote__by > a:hover, .BlockQuote__by > a:active, .BlockQuote__by > a[data-focus-visible-added] {
+  padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--hover--dashWidth) );
+  padding-right: 0rem;
+  color: var(--ButtonTertiary--color);
+  outline: 0;
+}
+.BlockQuote__by > a:hover::before, .BlockQuote__by > a:active::before, .BlockQuote__by > a[data-focus-visible-added]::before {
+  width: var(--ButtonTertiary--hover--dashWidth);
+}
+.BlockQuote__by > a:focus-visible {
+  padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--hover--dashWidth) );
+  padding-right: 0rem;
+  color: var(--ButtonTertiary--color);
+  outline: 0;
+}
+.BlockQuote__by > a:focus-visible::before {
+  width: var(--ButtonTertiary--hover--dashWidth);
+}
+.BlockQuote__by > a:active::before {
+  width: var(--ButtonTertiary--dashWidth);
+}
+.BlockQuote__by > a[data-focus-visible-added]::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: -0.8125rem -1rem;
+  border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
+  border-radius: 0.5rem;
+}
+.BlockQuote__by > a:focus-visible::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: -0.8125rem -1rem;
+  border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
+  border-radius: 0.5rem;
+}
+
+html:not([data-disable-css-warnings-with-abandon=true]) .BlockQuote__by > *:not(span):span(a) {
+  box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
+}
+html:not([data-disable-css-warnings-with-abandon=true]) .BlockQuote__by > *:not(span):span(a)::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 230, 230, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: 'Only <span> or <a href=""> is allowed inside `.BlockQuote__by`' !important;
+}

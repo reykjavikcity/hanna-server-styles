@@ -7,7 +7,7 @@
 /*! Reykjavík Design System basic CSS styles */
 @media screen {
   :root {
-    --cssVersion: "0.8.63";
+    --cssVersion: "0.8.64";
     --browser-scrollbar-width: 16px;
     --bp-w-phone: 320;
     --bp-w-phablet: 480;

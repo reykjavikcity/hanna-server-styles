@@ -103,19 +103,19 @@
     margin-bottom: var(--baseVerticalMargin);
   }
   .TextBlock ul > li {
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-2);
     position: relative;
-    padding-left: 2rem;
+    padding-left: var(--space-4);
   }
   .TextBlock ul > li::before {
-    content: "";
-    position: absolute;
-    top: calc(0.5 * var(--font-bd-l-leading));
+    content: " ";
+    float: left;
+    margin-left: var(--space-4--neg);
     left: 0;
-    width: 1rem;
+    width: var(--space-2);
+    border-top: 0.125rem solid var(--theme-color-primary--safeish);
     margin-top: -0.0625rem;
-    height: 0.125rem;
-    background-color: var(--theme-color-primary--safeish);
+    transform: translateY(50%);
   }
 }
 @media screen {
@@ -130,17 +130,51 @@
   }
 }
 @media screen {
-  .TextBlock blockquote {
-    padding: 2rem;
-    margin-bottom: var(--baseVerticalMargin);
+  .TextBlock blockquote:not(.BlockQuote__quote):not(.PullQuote__quote) {
+    --Quote--line: 2px solid var(--theme-color-primary);
+    --Quote--indent: 0;
+    max-width: calc(792px - var(--Quote--indent));
+    padding-top: var(--space-5);
+    margin-left: var(--Quote--indent);
     position: relative;
+    font: var(--font-bd-s);
+    position: relative;
+    margin-bottom: var(--space-4);
+    padding-left: calc(var(--space-2) + 2px);
   }
-  .TextBlock blockquote::before {
+  .TextBlock blockquote:not(.BlockQuote__quote):not(.PullQuote__quote)::before {
     content: "”";
-    font-size: 4rem;
+    color: var(--theme-color-primary);
+    font-size: 4.5rem;
+    line-height: 1;
     position: absolute;
-    top: 2rem;
-    left: 0rem;
+    top: 0;
+    left: 2px;
+    text-align: center;
+    width: 0.6em;
+    margin-left: -0.3em;
+  }
+}
+@media screen and (min-width: 480px) {
+  .TextBlock blockquote:not(.BlockQuote__quote):not(.PullQuote__quote) {
+    padding-left: calc(var(--space-3) + 2px);
+    --Quote--indent: var(--space-2);
+  }
+}
+@media screen {
+  .TextBlock blockquote:not(.BlockQuote__quote):not(.PullQuote__quote)::after {
+    content: "";
+    position: absolute;
+    border-left: var(--Quote--line);
+    top: var(--space-5);
+    bottom: 0;
+    left: 0;
+    width: 2px;
+  }
+}
+@media screen {
+  .TextBlock blockquote:not(.BlockQuote__quote):not(.PullQuote__quote) > *:last-child {
+    margin-bottom: 0;
   }
 }
 @media screen {

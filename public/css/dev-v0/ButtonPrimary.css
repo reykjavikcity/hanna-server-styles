@@ -1,5 +1,6 @@
 @charset "UTF-8";
 :root {
+  --ButtonTertiary--height: calc(var(--font-button-leading) + 4px);
   --ButtonTertiary--color: _inherit;
   --ButtonTertiary--dashColor: var(--theme-color-primary--safeish);
   --ButtonTertiary--dashWidth: var(--space-2);
