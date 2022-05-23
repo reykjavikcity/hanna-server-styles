@@ -24,7 +24,7 @@
   }
 
   .FormField--disabled > .FormField__label {
-    color: #c7cbd0;
+    opacity: 0.5;
   }
 
   label.FormField__label {
@@ -143,7 +143,7 @@
 .FormField__input[disabled] {
     --input-border-color: var(--color-suld-100);
     background-color: var(--color-suld-50);
-    color: var(--color-suld-100);
+    opacity: 0.5;
     cursor: not-allowed;
   }
 

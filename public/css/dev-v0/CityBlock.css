@@ -1,4 +1,5 @@
 :root {
+  --ButtonTertiary--height: calc(var(--font-button-leading) + 4px);
   --ButtonTertiary--color: _inherit;
   --ButtonTertiary--dashColor: var(--theme-color-primary--safeish);
   --ButtonTertiary--dashWidth: var(--space-2);
@@ -141,7 +142,8 @@ html:not([data-disable-css-warnings-with-abandon=true]) .CityBlock__summary bloc
     width: max-content;
     max-width: 100%;
     vertical-align: middle;
-    font: var(--font-base);
+    font: var(--font-button);
+    padding: 2px 0;
     padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--dashWidth) );
     padding-right: calc( var(--ButtonTertiary--hover--dashWidth) - var(--ButtonTertiary--dashWidth) );
     margin-right: var(--ButtonTertiary--gapH);

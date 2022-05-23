@@ -39,7 +39,6 @@
     position: relative;
     width: 95%;
     margin: 0 auto;
-    overflow: hidden;
     padding: var(--Modal--paddingV) var(--Modal--paddingH);
     background-color: #fff;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
@@ -91,15 +90,45 @@
     bottom: 0;
     left: 0;
     right: 0;
-    margin: var(--Modal--paddingV) calc(0.5 * var(--Modal--paddingH));
+    overflow: hidden;
+    overflow: clip;
     pointer-events: none;
   }
 }
 @media screen {
-  html:not([data-disable-css-warnings-with-abandon=true]) .Modal__blings > :not(.Bling) {
+  .Modal__blings__inner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: var(--Modal--paddingV) calc(0.5 * var(--Modal--paddingH));
+  }
+}
+@media screen {
+  html:not([data-disable-css-warnings-with-abandon=true]) .Modal__blings > :not(.Bling):not(.Modal__blings__inner) {
     box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
   }
-  html:not([data-disable-css-warnings-with-abandon=true]) .Modal__blings > :not(.Bling)::before {
+  html:not([data-disable-css-warnings-with-abandon=true]) .Modal__blings > :not(.Bling):not(.Modal__blings__inner)::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 230, 230, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: "Only place .Bling content inside .Modal__blings" !important;
+  }
+}
+@media screen {
+  html:not([data-disable-css-warnings-with-abandon=true]) .Modal__blings__inner > :not(.Bling) {
+    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon=true]) .Modal__blings__inner > :not(.Bling)::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;

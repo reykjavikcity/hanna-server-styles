@@ -78,6 +78,7 @@ html:not([data-disable-css-warnings-with-abandon=true]) .HeroBlock__summary bloc
     position: relative;
     padding-right: 51.6556291391%;
     min-height: 26.25rem;
+    z-index: 0;
   }
 
   .HeroBlock__image {

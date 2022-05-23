@@ -97,7 +97,7 @@
   }
 
   .Checkbox__input[class]:disabled + .Checkbox__label {
-    color: var(--color-suld-150);
+    opacity: 0.5;
   }
 
   .Checkbox__input[class]:disabled + .Checkbox__label::before {
@@ -258,7 +258,7 @@
   }
 
   .Radio__input[class]:disabled + .Radio__label {
-    color: var(--color-suld-150);
+    opacity: 0.5;
   }
 
   .Radio__input[class]:disabled + .Radio__label::before {
