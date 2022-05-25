@@ -22,6 +22,7 @@
     font-size: 0.75rem;
     counter-increment: step;
   }
+
   .WizardStepper__step::before {
     content: counter(step);
     width: 1.5rem;
@@ -36,6 +37,7 @@
     font-weight: 700;
     text-align: center;
   }
+
   .WizardStepper__step::after {
     content: "";
     position: absolute;
@@ -45,8 +47,18 @@
     width: 0.125rem;
     background: var(--WizardStepper-lineColor);
   }
+
   .WizardStepper__step:last-child::after {
     content: none;
+  }
+
+  .WizardStepper__step--neutral {
+    counter-increment: none;
+  }
+
+  .WizardStepper__step--neutral::before {
+    content: "•";
+    font-size: 1.25rem;
   }
 
   .WizardStepper--preview > .WizardStepper__step,

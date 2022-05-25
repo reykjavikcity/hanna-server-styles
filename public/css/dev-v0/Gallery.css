@@ -113,6 +113,37 @@
     transition-property: opacity, transform;
   }
 
+  .Gallery__itemlist {
+    display: flex;
+    flex-flow: row;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    --paddingLeft: calc(50vw - 50%);
+    padding-left: var(--paddingLeft);
+    margin: 0 calc(-1 * var(--paddingLeft));
+    scroll-padding-left: var(--Carousel--leftOffset, 20px);
+    -ms-overflow-style: none;
+    /* Edge, Internet Explorer */
+    scrollbar-width: none;
+    /* Firefox */
+    width: 100vw;
+  }
+  .Gallery__itemlist::after {
+    content: "";
+    width: 90vw;
+  }
+  .Gallery__itemlist::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+  }
+  .Gallery__itemlist[data-scroll-snapping] {
+    -ms-scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory;
+  }
+  .Gallery__itemlist > * {
+    scroll-snap-align: start;
+  }
+
   .Gallery__items {
     display: flex;
     margin-left: -1.25rem;
@@ -123,6 +154,10 @@
 
   .Gallery:not([data-sprinkled]) .Gallery__items {
     overflow: auto;
+  }
+
+  .Gallery__items > .GalleryItem {
+    padding: 0 1.25rem;
   }
 
   html:not([data-disable-css-warnings-with-abandon=true]) .Gallerty__track {
@@ -146,7 +181,7 @@
   .GalleryItem {
     display: flex;
     flex-flow: column-reverse;
-    padding: 0 1.25rem;
+    padding-right: var(--grid-gutter);
     --GalleryItem__image--max-width: 280px;
     --GalleryItem__image--max-height: 240px;
   }
