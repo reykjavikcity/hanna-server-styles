@@ -15,7 +15,7 @@
 }
 
 /*!@deps
-	Carousel
+Carousel
 */
 @media screen {
   html.before-sprinkling .ArticleCarousel:not([data-sprinkled]) {
@@ -49,9 +49,58 @@
   }
 }
 @media screen {
+  .ArticleCarousel__itemlist {
+    display: flex;
+    flex-flow: row;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    --paddingLeft: calc(50vw - 50%);
+    padding-left: var(--paddingLeft);
+    margin: 0 calc(-1 * var(--paddingLeft));
+    scroll-padding-left: var(--Carousel--leftOffset, 20px);
+    -ms-overflow-style: none;
+    /* Edge, Internet Explorer */
+    scrollbar-width: none;
+    /* Firefox */
+    width: 100vw;
+  }
+  .ArticleCarousel__itemlist::after {
+    content: "";
+    width: 90vw;
+  }
+  .ArticleCarousel__itemlist::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+  }
+  .ArticleCarousel__itemlist[data-scroll-snapping] {
+    -ms-scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory;
+  }
+  .ArticleCarousel__itemlist > * {
+    scroll-snap-align: start;
+  }
+}
+@media screen {
   .ArticleCarousel__items {
     display: flex;
     flex-flow: row;
+  }
+  html:not([data-disable-css-warnings-with-abandon=true]) .ArticleCarousel__items {
+    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon=true]) .ArticleCarousel__items::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 230, 230, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: "Unsupported: use `.ArticleCarousel__itemlist` instead" !important;
   }
 }
 @media screen {
@@ -75,7 +124,7 @@
     color: red !important;
     background-color: rgba(255, 230, 230, 0.5) !important;
     padding: 0 0.5em !important;
-    content: "Unsupported: use `.ArticleCarousel__items` instead" !important;
+    content: "Unsupported: use `.ArticleCarousel__itemlist` instead" !important;
   }
 }
 @media screen {
