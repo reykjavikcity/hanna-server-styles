@@ -1,6 +1,6 @@
 {
   "name": "hanna-style-server",
-  "cssVersion": "0.8.65",
+  "cssVersion": "0.8.66",
   "version": "0.0.0",
   "author": "Reykjavík (http://www.reykjavik.is)",
   "contributors": [
@@ -22,6 +22,6 @@
     "start:dev": "yarn run cssserve --config cssserve-dev.json"
   },
   "dependencies": {
-    "cssserve": "^1.4.1"
+    "cssserve": "^1.5.0"
   }
 }

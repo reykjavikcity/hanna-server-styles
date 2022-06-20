@@ -3,7 +3,19 @@
 ## Upcoming...
 
 - ... <!-- Add new lines here. -->
+
+## 0.8.66
+
+_2022-06-20_
+
+- feat: Add component `ArticleCards`
+- feat: Add component `Picture`
+- feat: Add component `BgBox`
+- feat: Disable link color + underline inside `.Heading` and `.SubHeading`
 - feat: Change mouse cursor on `Carousel`-related component itemlist elements
+- feat: Add styling for `.ArticleMeta--small` variant
+- feat: Use CSS variable `--focalPoint` as `object-position` for all `<img/>`s
+- fix: Add `-basics` styling for `<optgroup/>` elements
 
 ## 0.8.65
 
@@ -29,7 +41,7 @@ _2022-05-23_
 - feat: Tweak styling of disabled `FormField`s, `Checkbox`es and `Radio`
   buttons
 
-## 0.8.62 — 0.8.63
+## 0.8.62 – 0.8.63
 
 _2022-05-12_
 
@@ -37,19 +49,19 @@ _2022-05-12_
 - feat: Add styling for `.Checkbox__label__reqstar`
 - fix: Chrome counter-increment bug in `WizardStepper`
 
-## 0.8.60 — 0.8.61
+## 0.8.60 – 0.8.61
 
 _2022-05-11_
 
 - feat: Update styling of `.Tabs--vertical`
 
-## 0.8.58 — 0.8.59
+## 0.8.58 – 0.8.59
 
 _2022-05-04_
 
 - fix: `TextBlock--align-right`'s max-width should not be `%` based
 
-## 0.8.56 — 0.8.57
+## 0.8.56 – 0.8.57
 
 _2022-04-29_
 
@@ -73,7 +85,7 @@ _2022-04-26_
 - feat: Float `.FormField__label__reqstar` to the left
 - fix: Remove browser-default opacity off `.FormField`'s `::placholder`
 
-## 0.8.52 — 0.8.53
+## 0.8.52 – 0.8.53
 
 _2022-04-20_
 
@@ -82,7 +94,7 @@ _2022-04-20_
 - feat: Support more flexible/complex `.WizardStepper__step` patterns
 - fix: `.ContactBubble` menu underlapping `.Layout__header` in desktop
 
-## 0.8.50 — 0.8.51
+## 0.8.50 – 0.8.51
 
 _2022-04-07_
 
@@ -240,7 +252,7 @@ _2022-01-19_
 
 - feat: changed styles of tables
 
-## 0.8.29 — 0.8.30
+## 0.8.29 – 0.8.30
 
 _2022-01-18_
 
