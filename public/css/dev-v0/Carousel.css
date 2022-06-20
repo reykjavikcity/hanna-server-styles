@@ -6,6 +6,7 @@ html.before-sprinkling .Carousel:not([data-sprinkled]) {
 }
 
 .Carousel__itemlist {
+  cursor: ew-resize;
   display: flex;
   flex-flow: row;
   overflow-x: scroll;

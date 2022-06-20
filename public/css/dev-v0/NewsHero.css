@@ -32,16 +32,12 @@
 @media screen {
   .NewsHero--align--right .NewsHero__content {
     margin-left: auto;
+    width: 100%;
   }
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 760px) {
   .NewsHero--align--right .NewsHero__content {
     width: 56.9536423841%;
-  }
-}
-@media screen and (max-width: 759px) {
-  .NewsHero--align--right .NewsHero__content {
-    width: 100%;
   }
 }
 @media screen {
@@ -64,9 +60,8 @@
 }
 @media screen {
   .NewsHero__meta {
-    font-size: 0.75rem;
+    font: var(--font-label);
     color: #707275;
-    line-height: 1.3333333333em;
     order: -1;
   }
 }

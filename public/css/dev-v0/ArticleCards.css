@@ -1,0 +1,82 @@
+.ArticleCards {
+  --ArticleCards--fallback: url("/assets/illustrations/esjan.png");
+  grid-area: list;
+  display: grid;
+  grid-auto-flow: row;
+  gap: var(--grid-gutter);
+  grid-template-columns: repeat(auto-fill, var(--grid-3));
+  margin-bottom: 60px;
+  row-gap: 60px;
+}
+@media screen and (max-width: 479px) {
+  .ArticleCards {
+    grid-template-columns: 100%;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 759px) {
+  .ArticleCards {
+    grid-template-columns: repeat(auto-fill, var(--grid-6));
+  }
+}
+@media screen and (min-width: 760px) and (max-width: 979px) {
+  .ArticleCards {
+    grid-template-columns: repeat(auto-fill, var(--grid-4));
+  }
+}
+.ArticleCards {
+  margin-bottom: min(calc(3.0534351145vw + 38.2290076336px), 80px);
+}
+.ArticleCards {
+  row-gap: min(calc(3.0534351145vw + 38.2290076336px), 80px);
+}
+
+/* asdfasdfasdf */
+.ArticleCards__card {
+  --link-color: _inherit;
+  --link-underline: 1px solid #2a2b2c;
+  --link-underline--hover: 1px solid #0367e1;
+  display: block;
+  height: 100%;
+  padding-bottom: var(--space-2);
+}
+.ArticleCards__card {
+  padding-bottom: min(calc(0.7633587786vw + 13.5572519084px), var(--space-3));
+}
+
+.ArticleCards__image {
+  display: block;
+  position: relative;
+  padding-top: 61.7647058824%;
+  margin-bottom: var(--space-2);
+}
+.ArticleCards__image {
+  margin-bottom: min(calc(1.1450381679vw + 8.3358778626px), var(--space-3));
+}
+
+.ArticleCards__image--missing {
+  border: 0.75rem solid transparent;
+  padding-top: calc(61.7647058824% - 1.5rem);
+  background: var(--ArticleCards--fallback) 50% 50%/contain no-repeat;
+}
+
+.ArticleCards__image > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.ArticleCards__card__title {
+  margin-bottom: var(--space-1);
+  font: var(--font-sh-s);
+  display: block;
+}
+
+.ArticleCards__card__meta {
+  font: var(--font-bd-s);
+  color: var(--color-suld-150);
+  font-weight: var(--font-weight--normal);
+}

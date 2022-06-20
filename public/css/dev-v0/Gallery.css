@@ -114,6 +114,7 @@
   }
 
   .Gallery__itemlist {
+    cursor: ew-resize;
     display: flex;
     flex-flow: row;
     overflow-x: scroll;

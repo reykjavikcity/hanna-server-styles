@@ -1,0 +1,26 @@
+/*!@deps
+
+*/
+.BgBox {
+  position: relative;
+  background-color: #f8f8f9;
+  margin-bottom: var(--component-vspace--medium);
+  padding: 70px 0;
+}
+.BgBox::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--grid-margin--neg);
+  right: var(--grid-margin--neg);
+  z-index: -1;
+  background: inherit;
+}
+.BgBox {
+  padding: min(calc(5.7251908397vw + 11.679389313px), 90px) 0;
+}
+
+.BgBox[class] > *:last-child {
+  margin-bottom: 0;
+}

@@ -127,7 +127,7 @@
     display: grid;
     grid-auto-flow: row;
     gap: var(--grid-gutter);
-    grid-template-columns: repeat(4, var(--grid-3));
+    grid-template-columns: repeat(auto-fill, var(--grid-3));
   }
 }
 @media screen and (max-width: 479px) {
@@ -137,12 +137,12 @@
 }
 @media screen and (min-width: 480px) and (max-width: 759px) {
   .ExtraLinks__list {
-    grid-template-columns: repeat(2, var(--grid-6));
+    grid-template-columns: repeat(auto-fill, var(--grid-6));
   }
 }
 @media screen and (min-width: 760px) and (max-width: 979px) {
   .ExtraLinks__list {
-    grid-template-columns: repeat(3, var(--grid-4));
+    grid-template-columns: repeat(auto-fill, var(--grid-4));
   }
 }
 @media screen {
