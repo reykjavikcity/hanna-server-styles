@@ -1,4 +1,6 @@
 {
+	"port": 4000,
+
 	"staticFolder": "public/",
 
 	"ttl_static": 600,
