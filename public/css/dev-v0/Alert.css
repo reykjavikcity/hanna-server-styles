@@ -108,7 +108,7 @@
   }
 }
 @media screen {
-  .Alert--closable {
+  .Alert {
     transition: all 400ms 0ms;
     transition-timing-function: ease-in, cubic-bezier(0.165, 0.84, 0.44, 1), ease-in, ease-in, ease-in-out;
     transition-property: visibility, max-height, opacity, margin, padding;
@@ -118,12 +118,12 @@
   }
 }
 @media screen and (min-width: 760px) {
-  .Alert--closable {
+  .Alert {
     padding-right: 3rem;
   }
 }
 @media screen {
-  .Alert--closable[hidden][hidden] {
+  .Alert[hidden][hidden] {
     display: block;
     transition-delay: 0ms 0ms 400ms 0ms;
     opacity: 0;
@@ -136,7 +136,7 @@
   }
 }
 @media screen {
-  .Alert--closable[hidden][hidden]::before {
+  .Alert[hidden][hidden]::before {
     transition: opacity 200ms ease-in;
     opacity: 0;
   }

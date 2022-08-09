@@ -6,7 +6,6 @@ html.before-sprinkling .Carousel:not([data-sprinkled]) {
 }
 
 .Carousel__itemlist {
-  cursor: ew-resize;
   display: flex;
   flex-flow: row;
   overflow-x: scroll;
@@ -21,6 +20,36 @@ html.before-sprinkling .Carousel:not([data-sprinkled]) {
   /* Firefox */
   width: 100vw;
 }
+.Carousel__itemlist-wrapper {
+  position: relative;
+  --paddingLeft: calc(50vw - 50%);
+}
+.Carousel__itemlist-goRight, .Carousel__itemlist-goLeft {
+  position: absolute;
+  width: max(calc(0.33 * var(--paddingLeft)), var(--grid-margin), 40px);
+  top: -0.67rem;
+  bottom: -0.67rem;
+  cursor: pointer;
+  background-image: linear-gradient(-90deg, white 0%, rgba(255, 255, 255, 0) 100%);
+  display: none;
+  opacity: 0;
+}
+:hover > .Carousel__itemlist-goRight, :hover > .Carousel__itemlist-goLeft {
+  display: block;
+  opacity: 0.0001;
+}
+.Carousel__itemlist-goRight:hover, .Carousel__itemlist-goLeft:hover {
+  opacity: 1;
+}
+.Carousel__itemlist-goRight {
+  cursor: e-resize;
+  right: calc(-1 * var(--paddingLeft) + var(--browser-scrollbar-width));
+}
+.Carousel__itemlist-goLeft {
+  cursor: w-resize;
+  transform: rotate(180deg);
+  left: calc(-1 * var(--paddingLeft));
+}
 .Carousel__itemlist::after {
   content: "";
   width: 90vw;
@@ -30,8 +59,7 @@ html.before-sprinkling .Carousel:not([data-sprinkled]) {
   /* Chrome, Safari, Opera */
 }
 .Carousel__itemlist[data-scroll-snapping] {
-  -ms-scroll-snap-type: x mandatory;
-      scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory;
 }
 .Carousel__itemlist > * {
   scroll-snap-align: start;

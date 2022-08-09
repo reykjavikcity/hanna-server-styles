@@ -103,11 +103,6 @@
     opacity: 1;
   }
 
-  .FormField__input:-ms-input-placeholder {
-    color: var(--color-suld-150);
-    opacity: 1;
-  }
-
   .FormField--empty > .FormField__input,
 .FormField__input::placeholder {
     color: var(--color-suld-150);
