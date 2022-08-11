@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --ButtonTertiary--height: calc(var(--font-button-leading) + 4px);
   --ButtonTertiary--color: _inherit;
@@ -25,7 +26,7 @@ Carousel
   .ArticleCarousel {
     margin-bottom: calc(9.6982758621% + 12.8448275862px);
   }
-  .before-sprinkling .ArticleCarousel, .ArticleCarousel[data-is-seen=false], .ArticleCarousel[data-is-seen=true] {
+  .before-sprinkling .ArticleCarousel, .ArticleCarousel[data-is-seen=false] {
     opacity: 0;
     transform: translateY(200px);
   }
@@ -70,20 +71,45 @@ Carousel
   }
   .ArticleCarousel__itemlist-goRight, .ArticleCarousel__itemlist-goLeft {
     position: absolute;
-    width: max(calc(0.33 * var(--paddingLeft)), var(--grid-margin), 40px);
+    width: 3rem;
     top: -0.67rem;
     bottom: -0.67rem;
     cursor: pointer;
-    background-image: linear-gradient(-90deg, white 0%, rgba(255, 255, 255, 0) 100%);
+    background-image: linear-gradient(-90deg, white 0%, rgba(255, 255, 255, 0.5) 67%, rgba(255, 255, 255, 0) 100%);
     display: none;
     opacity: 0;
+    transition: opacity var(--link-transition);
+  }
+  .ArticleCarousel__itemlist-goRight, .ArticleCarousel__itemlist-goLeft {
+    width: max(calc(0.4 * var(--paddingLeft)), calc(1.2 * var(--grid-margin)), 2rem);
   }
   :hover > .ArticleCarousel__itemlist-goRight, :hover > .ArticleCarousel__itemlist-goLeft {
-    display: block;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     opacity: 0.0001;
   }
   .ArticleCarousel__itemlist-goRight:hover, .ArticleCarousel__itemlist-goLeft:hover {
     opacity: 1;
+  }
+  .ArticleCarousel__itemlist-goRight::before, .ArticleCarousel__itemlist-goLeft::before {
+    display: inline-block;
+    text-indent: 0;
+    text-align: center;
+    vertical-align: top;
+    font-family: "icons", Arial, Helvetica, sans-serif;
+    speak: none;
+    font-weight: normal;
+    font-style: normal;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0;
+    content: "";
+    font-size: 2.5rem;
+    margin-right: 0.5rem;
+    color: var(--color-suld-150);
+    text-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff;
   }
   .ArticleCarousel__itemlist-goRight {
     cursor: e-resize;

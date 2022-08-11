@@ -9,7 +9,7 @@
     font-weight: var(--font-weight--bold);
     margin: var(--space-5) 0;
   }
-  .before-sprinkling .Tabs, .Tabs[data-is-seen=false], .Tabs[data-is-seen=true] {
+  .before-sprinkling .Tabs, .Tabs[data-is-seen=false] {
     opacity: 0;
     transform: translateY(200px);
   }

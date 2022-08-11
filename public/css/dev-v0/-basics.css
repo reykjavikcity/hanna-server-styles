@@ -7,7 +7,7 @@
 /*! Reykjavík Design System basic CSS styles */
 @media screen {
   :root {
-    --cssVersion: "0.8.67";
+    --cssVersion: "0.8.68";
     --browser-scrollbar-width: 16px;
     --bp-w-phone: 320;
     --bp-w-phablet: 480;
@@ -1291,13 +1291,11 @@ tbody > * > td {
     margin: 0;
   }
 
-  .before-sprinkling [data-seen-effect=""], [data-seen-effect=""][data-is-seen=false], [data-seen-effect=""][data-is-seen=true],
+  .before-sprinkling [data-seen-effect=""], [data-seen-effect=""][data-is-seen=false],
 .before-sprinkling [data-seen-effect=true],
 [data-seen-effect=true][data-is-seen=false],
-[data-seen-effect=true][data-is-seen=true],
 .before-sprinkling [data-seen-effect=fadeup],
-[data-seen-effect=fadeup][data-is-seen=false],
-[data-seen-effect=fadeup][data-is-seen=true] {
+[data-seen-effect=fadeup][data-is-seen=false] {
     opacity: 0;
     transform: translateY(200px);
   }
@@ -1316,7 +1314,7 @@ tbody > * > td {
     transition-property: opacity, transform;
   }
 
-  .before-sprinkling [data-seen-effect=fadein], [data-seen-effect=fadein][data-is-seen=false], [data-seen-effect=fadein][data-is-seen=true] {
+  .before-sprinkling [data-seen-effect=fadein], [data-seen-effect=fadein][data-is-seen=false] {
     opacity: 0;
   }
   [data-seen-effect=fadein][data-is-seen=""], [data-seen-effect=fadein][data-is-seen=true] {
@@ -1327,7 +1325,7 @@ tbody > * > td {
     transition-property: opacity, transform;
   }
 
-  .before-sprinkling [data-seen-effect=fadeleft], [data-seen-effect=fadeleft][data-is-seen=false], [data-seen-effect=fadeleft][data-is-seen=true] {
+  .before-sprinkling [data-seen-effect=fadeleft], [data-seen-effect=fadeleft][data-is-seen=false] {
     opacity: 0;
     transform: translateX(-200px);
   }

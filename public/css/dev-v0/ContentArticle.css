@@ -41,7 +41,7 @@
 	RelatedLinks
 */
 @media screen {
-  .before-sprinkling .ContentArticle, .ContentArticle[data-is-seen=false], .ContentArticle[data-is-seen=true] {
+  .before-sprinkling .ContentArticle, .ContentArticle[data-is-seen=false] {
     opacity: 0;
     transform: translateY(200px);
   }
