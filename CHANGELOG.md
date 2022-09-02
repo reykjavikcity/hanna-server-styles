@@ -4,6 +4,14 @@
 
 - ... <!-- Add new lines here. -->
 
+## 0.8.69
+
+_2022-09-02_
+
+- fix: Remove default hard `display:none` on `[aria-hidden="true"]` elements
+- fix: Hover styling on `a.Alert__close` links
+- fix: Spacing in `HeroBlock` on smaller viewports
+
 ## 0.8.68
 
 _2022-08-11_
