@@ -53,10 +53,10 @@
 }
 @media screen and (max-width: 759px) {
   .FooterInfo__group[role=contactinfo] {
-    margin-left: -2rem;
-    margin-right: -2rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    margin-left: var(--grid-margin--neg);
+    margin-right: var(--grid-margin--right--neg);
+    padding-left: var(--grid-margin);
+    padding-right: var(--grid-margin--right);
   }
 }
 @media screen and (min-width: 760px) {

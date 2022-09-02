@@ -2,7 +2,6 @@
 @media screen {
   .AccordionList {
     max-width: 792px;
-    padding-left: var(--leftIndent);
     margin-top: calc(2.5862068966% + 24.7586206897px);
     --leftIndent: calc(3.6363636364vw + 20.3636363636px);
     --iconWidth: calc(2.7272727273vw + 15.2727272727px);
@@ -45,6 +44,7 @@
   .AccordionList__title {
     font: var(--font-sh-s);
     font-weight: 700;
+    padding-left: var(--leftIndent);
   }
 }
 @media screen {
@@ -127,6 +127,7 @@
     transition: all 200ms ease-in;
     transition-property: opacity, visibility, max-height, padding-top;
     overflow: hidden;
+    margin-left: var(--leftIndent);
     padding-top: 2rem;
     max-height: 4000px;
     opacity: 1;

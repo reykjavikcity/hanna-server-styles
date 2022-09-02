@@ -17,7 +17,7 @@
 }
 @media screen and (min-width: 760px) {
   .ScrollCTA {
-    display: block !important;
+    display: block;
   }
 }
 @media screen {

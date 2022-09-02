@@ -7,7 +7,7 @@
 /*! Reykjavík Design System basic CSS styles */
 @media screen {
   :root {
-    --cssVersion: "0.8.68";
+    --cssVersion: "0.8.69";
     --browser-scrollbar-width: 16px;
     --bp-w-phone: 320;
     --bp-w-phablet: 480;
@@ -883,8 +883,7 @@ table {
     box-sizing: border-box;
   }
 
-  [hidden][hidden],
-[aria-hidden][aria-hidden=true] {
+  [hidden][hidden] {
     display: none;
   }
 

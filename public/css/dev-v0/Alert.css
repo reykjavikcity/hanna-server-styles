@@ -146,6 +146,9 @@
     --link-color: _inherit;
     --link-weight: _inherit;
     --link-underline: none;
+    --link-color--hover: var(--link-color);
+    --link-underline--hover: none;
+    --link-underline-offset: 0;
     overflow: hidden;
     white-space: nowrap;
     position: absolute;
