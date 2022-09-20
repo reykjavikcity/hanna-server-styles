@@ -183,10 +183,10 @@ core-util-is@~1.0.0:
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.3.tgz#a6042d3634c2b27e9328f837b965fac83808db85"
   integrity sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==
 
-cssserve@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/cssserve/-/cssserve-2.0.0.tgz#b80fa3053dbec2e04a8d0c262af185c90b7e7522"
-  integrity sha512-4022WEB83DIBY9NwcwdW7J5JeRatd7FxVcdgItQ95PKLCFKji9cIjMWZhXcoA5Iqw/yqNnWzmZ/qxQJE8DhxDg==
+cssserve@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/cssserve/-/cssserve-2.1.0.tgz#60ea52a8bd9fa9c456bd065d4ca52a7602fb0d25"
+  integrity sha512-c0Z22YL4TLTjHZr2i4TRZnEEMns5n2TWSQqnqMsN1b703gaOrp2mtF2VHgnJ2+kvMef8W2wFCsOFFcJp18PY2g==
   dependencies:
     "@fastify/compress" "^6.1.1"
     "@fastify/cors" "^8.1.0"
