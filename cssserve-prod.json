@@ -1,16 +1,16 @@
 {
-	"port": 4000,
+  "port": 4000,
 
-	"staticFolder": "public/",
+  "staticFolder": "public/",
 
-	"ttl_static": 600,
-	"ttl_bundle": 600,
+  "ttl_static": 600,
+  "ttl_bundle": 600,
 
-	"cacheRefreshToken": null,
+  "cacheRefreshToken": null,
 
-	"proxied": true,
+  "proxied": true,
 
-	"sslKeyPath": null,
-	"sslCert": null,
-	"sslPrivkey": null
+  "sslKeyPath": null,
+  "sslCert": null,
+  "sslPrivkey": null
 }
