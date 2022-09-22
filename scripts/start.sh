@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/sh
 
 # Extracting this into a standalone *.sh file (and NOT using yarn to invode
 # the cssserve binary) is required to make it possible to start the
