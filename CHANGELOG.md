@@ -4,6 +4,19 @@
 
 - ... <!-- Add new lines here. -->
 
+## 0.8.70
+
+_2022-10-07_
+
+- feat: Set `ButtonPrimary`/-`Secondary`/-`Tertiary` base color to Faxaflói
+- feat: Add rich text styling inside `.ArticleList__content`
+- feat: Add styling for `.ActionCards__summary`
+- fix: Top margin on `.InfoHero__titleblurb`
+- fix: Delay on `.MainMenu`'s auxiliary menu image in mobile
+- fix: Height of `MainMenu`'s auxiliary menu on small-yet-tall screens
+- fix: Display `.MainMenu`'s auxiliary menu image on wider screens
+- fix: Color on destructive `.ButtonPrimary`s in all color themes
+
 ## 0.8.69
 
 _2022-09-02_
