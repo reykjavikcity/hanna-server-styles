@@ -111,12 +111,12 @@
 @media screen and (min-width: 1368px) {
   .InfoBlock__extrainfo,
 .InfoBlock__attention {
-    margin-top: 5rem;
-    padding-top: 4rem;
+    margin-top: 80px;
+    padding-top: 64px;
   }
   .InfoBlock__extrainfo::before,
 .InfoBlock__attention::before {
-    top: 4rem;
+    top: 64px;
   }
 }
 @media screen {

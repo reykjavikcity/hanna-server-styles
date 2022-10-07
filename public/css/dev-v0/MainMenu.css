@@ -92,6 +92,8 @@
 
   .MainMenu {
     position: relative;
+    display: flex;
+    flex-flow: column;
     background-color: var(--MainMenu-background);
     --MainMenu--offsetLeft: 2rem;
     --MainMenu__list--padTop: 1rem;
@@ -575,6 +577,24 @@ html[data-mega-panel-active] .MainMenu__item:not(.MainMenu__separator ~ *) {
     content: "Please add `id` attribute" !important;
   }
 
+  html:not([data-disable-css-warnings-with-abandon=true]) .MainMenu__separator:not(.MainMenu__items > *) {
+    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon=true]) .MainMenu__separator:not(.MainMenu__items > *)::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 230, 230, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: "Separators must be child of ul.MainMenu__items" !important;
+  }
+
   html:not([data-disable-css-warnings-with-abandon=true]) .MainMenu__list:first-child {
     box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
   }
@@ -773,7 +793,7 @@ html[data-mega-panel-active] .MainMenu__item:not(.MainMenu__separator ~ *) {
   }
 
   html.menu-is-open .AuxiliaryPanel::after {
-    transition: visibility 0s 1200ms linear, opacity 300ms;
+    transition: visibility 0s linear, opacity 600ms 200ms;
   }
 
   html.menu-is-closed .AuxiliaryPanel::after {
@@ -792,7 +812,7 @@ html[data-mega-panel-active] .MainMenu__item:not(.MainMenu__separator ~ *) {
   .AuxiliaryPanel::after {
     content: "";
     background: 50% 0/auto 305px no-repeat;
-    background-image: var(--MainMenu-auxiliary-image);
+    background-image: var(--menu-auxiliary-image);
     margin: 2.5rem 0;
     display: block;
     height: 305px;

@@ -1,20 +1,26 @@
 @media screen {
   .FooterInfo {
     flex-basis: 100%;
-    padding-top: 2rem;
+    padding-top: var(--space-4);
   }
 }
 @media screen and (min-width: 760px) {
   .FooterInfo {
-    padding-top: 8rem;
+    padding-top: calc(2 * var(--space-8));
     padding-left: var(--grid-1-1);
+  }
+  .FooterInfo::after {
+    content: " ";
+    clear: both;
+    display: block;
+    height: 0;
   }
 }
 @media screen {
   .FooterInfo::before {
     content: "";
     display: block;
-    margin: 0 auto 6rem auto;
+    margin: 0 auto calc(2 * var(--space-6)) auto;
     background: url("/assets/reykjavik-logo-notext.svg") 50% 50% no-repeat;
     background-size: auto 100%;
     width: 2.1875rem;
@@ -30,7 +36,7 @@
 }
 @media screen {
   .FooterInfo__group {
-    margin-bottom: 4rem;
+    margin-bottom: var(--space-8);
   }
 }
 @media screen and (min-width: 760px) {
@@ -48,7 +54,7 @@
 @media screen {
   .FooterInfo__group[role=contactinfo] {
     background-color: #f8f8f9;
-    padding: 4rem var(--grid-gutter);
+    padding: var(--space-8) var(--grid-gutter);
   }
 }
 @media screen and (max-width: 759px) {
@@ -61,7 +67,7 @@
 }
 @media screen and (min-width: 760px) {
   .FooterInfo__group[role=contactinfo] {
-    margin-top: -4rem;
+    margin-top: var(--space-8--neg);
     margin-left: 0;
     width: var(--grid-5);
   }
@@ -75,25 +81,25 @@
 @media screen {
   .FooterInfo__grouptitle {
     font: var(--font-sh-s);
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--space-3);
   }
 }
 @media screen {
   .FooterInfo__groupcontent h4 {
     font: var(--font-sh-s);
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-1);
   }
 }
 @media screen {
   .FooterInfo__groupcontent h4:not(:first-child) {
-    margin-top: 1.5rem;
+    margin-top: var(--space-3);
   }
 }
 @media screen {
   .FooterInfo__groupcontent p,
 .FooterInfo__groupcontent ul,
 .FooterInfo__groupcontent li {
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-2);
     --current-link-color: var(--link-color);
   }
 }

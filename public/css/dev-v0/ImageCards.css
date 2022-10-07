@@ -137,19 +137,19 @@
 @media screen {
   .ImageCards__title {
     grid-area: title;
-    font: var(--font-hd-s);
     margin-bottom: var(--baseVerticalMargin);
+    font: var(--font-hd-s);
   }
 }
 @media screen {
-  .ImageCards__title,
-.ImageCards__summary {
+  .ImageCards__summary {
+    grid-area: title;
     margin-bottom: var(--baseVerticalMargin);
   }
 }
 @media screen {
   .ImageCards__summary > .ImageCards__title {
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-2);
   }
 }
 @media screen {

@@ -2,7 +2,7 @@
 :root {
   --ButtonTertiary--height: calc(var(--font-button-leading) + 4px);
   --ButtonTertiary--color: _inherit;
-  --ButtonTertiary--dashColor: var(--theme-color-primary--safeish);
+  --ButtonTertiary--dashColor: var(--color-faxafloi-100);
   --ButtonTertiary--dashWidth: var(--space-2);
   --ButtonTertiary--hover--dashWidth: var(--space-4);
   --ButtonTertiary--dashSpace: var(--space-2);
@@ -27,21 +27,24 @@
     --link-color--hover: var(--link-color);
     --link-underline--hover: none;
     --link-underline-offset: 0;
-    --Button--color: var(--theme-color-primary--text);
-    --Button--backgroundColor: var(--theme-color-primary);
-    --Button--backgroundColor--active: var(--theme-color-primary--dark);
+    --Button--color: var(--color-faxafloi-100);
+    --Button--color--active: var(--color-faxafloi-150);
+    --Button--textColor: var(--color-suld-0);
+    --Button--textColor--active: var(--color-suld-0);
+    --Button--backgroundColor: var(--Button--color);
+    --Button--backgroundColor--active: var(--Button--color--active);
     --Button--border: 0px;
-    --Button--borderColor: var(--Button--backgroundColor);
-    --Button--height: 3.5rem;
+    --Button--height: var(--space-8);
     --Button--iconOutdent: var(--space-0_5--neg);
     --Button--iconSpace: var(--space-1);
     white-space: nowrap;
     vertical-align: middle;
-    color: var(--Button--color);
+    color: var(--Button--textColor);
     background-color: var(--Button--backgroundColor);
     display: inline-block;
     font: var(--font-button);
     font-weight: 700;
+    border: var(--Button--border) solid var(--Button--color);
     line-height: calc(var(--Button--height) - 2 * var(--Button--border));
     margin-right: var(--Button--gapH);
     margin-bottom: var(--Button--gapV);
@@ -56,11 +59,12 @@
     width: max-content;
     max-width: 100%;
     min-width: calc(4.5801526718vw + 65.3435114504px);
-    --Button--color: var(--theme-color-primary--safe);
+    --Button--color--active: var(--color-faxafloi-100);
+    --Button--textColor: var(--Button--color);
+    --Button--textColor--active: var(--Button--color--active);
     --Button--backgroundColor: var(--color-suld-0);
     --Button--backgroundColor--active: var(--color-suld-50);
     --Button--border: 1px;
-    --Button--borderColor: var(--theme-color-primary);
   }
 }
 @media screen and (min-width: 1368px) {
@@ -75,7 +79,8 @@
     outline: 0;
     text-decoration: none;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    color: var(--Button--color);
+    color: var(--Button--textColor);
+    border: var(--Button--border) solid var(--Button--color);
   }
 }
 @media screen {
@@ -83,25 +88,27 @@
     outline: 0;
     text-decoration: none;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    color: var(--Button--color);
+    color: var(--Button--textColor);
+    border: var(--Button--border) solid var(--Button--color);
   }
 }
 @media screen {
   .ButtonSecondary:active, .ButtonSecondary[aria-pressed=true] {
     text-decoration: none;
-    background-color: var(--Button--backgroundColor--active);
-    color: var(--Button--color);
+    --Button--color: var(--Button--color--active);
+    --Button--backgroundColor: var(--Button--backgroundColor--active);
+    --Button--color: var(--Button--color--active);
   }
 }
 @media screen {
   .ButtonSecondary[data-focus-visible-added] {
-    outline: 0.125rem solid var(--Button--borderColor);
+    outline: 0.125rem solid var(--Button--color);
     outline-offset: 0.125rem;
   }
 }
 @media screen {
   .ButtonSecondary:focus-visible {
-    outline: 0.125rem solid var(--Button--borderColor);
+    outline: 0.125rem solid var(--Button--color);
     outline-offset: 0.125rem;
   }
 }
@@ -255,13 +262,8 @@
   }
 }
 @media screen {
-  .ButtonSecondary, .ButtonSecondary:hover, .ButtonSecondary:active {
-    border: var(--Button--border) solid var(--Button--borderColor);
-  }
-}
-@media screen {
-  .ButtonSecondary--destructive[class] {
+  .ButtonSecondary--destructive {
     --Button--color: var(--color-heidmork-100);
-    --Button--borderColor: var(--Button--color);
+    --Button--color--active: var(--color-heidmork-100);
   }
 }

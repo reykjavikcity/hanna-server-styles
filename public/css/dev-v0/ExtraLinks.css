@@ -111,8 +111,8 @@
 @media screen {
   .ExtraLinks__title {
     grid-area: title;
-    font: var(--font-hd-s);
     margin-bottom: var(--baseVerticalMargin);
+    font: var(--font-hd-s);
     margin-bottom: calc(3.1488549618vw + 13.9236641221px);
   }
 }

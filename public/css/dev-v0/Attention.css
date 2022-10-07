@@ -2,7 +2,7 @@
   .Attention {
     margin: var(--baseVerticalMargin-2) 0;
     font: var(--font-bd-l);
-    border-left: 0.5rem solid var(--theme-color-primary);
+    border-left: var(--space-1) solid var(--theme-color-primary);
     padding-left: var(--space-4);
     padding-right: var(--grid-column);
   }
@@ -48,12 +48,41 @@
   }
 }
 @media screen {
-  .Attention > p {
+  .Attention p {
     margin-bottom: var(--baseVerticalMargin);
   }
 }
 @media screen {
-  .Attention > p:last-child {
+  .Attention p:last-child {
     margin-bottom: 0;
+  }
+}
+@media screen {
+  html:not([data-disable-css-warnings-with-abandon=true]) .Attention h1,
+html:not([data-disable-css-warnings-with-abandon=true]) .Attention h2,
+html:not([data-disable-css-warnings-with-abandon=true]) .Attention h3,
+html:not([data-disable-css-warnings-with-abandon=true]) .Attention h4,
+html:not([data-disable-css-warnings-with-abandon=true]) .Attention ul,
+html:not([data-disable-css-warnings-with-abandon=true]) .Attention ol {
+    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon=true]) .Attention h1::before,
+html:not([data-disable-css-warnings-with-abandon=true]) .Attention h2::before,
+html:not([data-disable-css-warnings-with-abandon=true]) .Attention h3::before,
+html:not([data-disable-css-warnings-with-abandon=true]) .Attention h4::before,
+html:not([data-disable-css-warnings-with-abandon=true]) .Attention ul::before,
+html:not([data-disable-css-warnings-with-abandon=true]) .Attention ol::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 230, 230, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: "Fancy rich text content is not supported" !important;
   }
 }

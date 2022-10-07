@@ -31,8 +31,19 @@
 @media screen {
   .ActionCards__title {
     grid-area: title;
-    font: var(--font-hd-s);
     margin-bottom: var(--baseVerticalMargin);
+    font: var(--font-hd-s);
+  }
+}
+@media screen {
+  .ActionCards__summary {
+    grid-area: title;
+    margin-bottom: var(--baseVerticalMargin);
+  }
+}
+@media screen {
+  .ActionCards__summary > .ImageCards__title {
+    margin-bottom: var(--space-2);
   }
 }
 @media screen {

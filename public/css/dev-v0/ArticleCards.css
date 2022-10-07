@@ -30,7 +30,6 @@
   row-gap: min(calc(3.0534351145vw + 38.2290076336px), 80px);
 }
 
-/* asdfasdfasdf */
 .ArticleCards__card {
   --link-color: _inherit;
   --link-underline: 1px solid #2a2b2c;
