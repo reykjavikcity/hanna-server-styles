@@ -9,3 +9,19 @@ node_modules
 .DS_Store
 /yarn-error.log
 /.rpt2_cache
+
+# --------------------------------------------------------------------
+# yarn
+
+/.yarn/*
+!/.yarn/patches
+!/.yarn/plugins
+!/.yarn/releases
+!/.yarn/sdks
+
+## Swap the comments on the following lines if you don't wish to use zero-installs. See: https://yarnpkg.com/features/zero-installs
+# # … for `nodeLinker: pnp`:
+# !/.yarn/cache
+# … for `nodeLinker: node-modules`:
+/.pnp.*
+
