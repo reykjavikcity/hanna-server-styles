@@ -474,10 +474,10 @@ html:not([data-disable-css-warnings-with-abandon=true]) .TextBlock .SubHeading::
   }
 }
 @media screen {
-  html:not([data-disable-css-warnings-with-abandon=true]) h1.Heading {
+  html:not([data-disable-css-warnings-with-abandon=true]) h1.Heading:not([data-dev-forcedH1]) {
     box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
   }
-  html:not([data-disable-css-warnings-with-abandon=true]) h1.Heading::before {
+  html:not([data-disable-css-warnings-with-abandon=true]) h1.Heading:not([data-dev-forcedH1])::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;

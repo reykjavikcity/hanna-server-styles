@@ -4,7 +4,7 @@
 */
 @media screen {
   input.SearchInput__input {
-    margin-right: 3.125rem;
+    margin-right: 3.5rem;
   }
 
   .SearchInput > .FormField__input::after {
@@ -39,7 +39,7 @@
     line-height: 1.375rem;
   }
 
-  .SearchInput.FormField--focused > .FormField__input::after {
+  .SearchInput.FormField--focused:not(.FormField--readonly):not(.FormField--disabled) > .FormField__input::after {
     color: #0367e1;
   }
 
@@ -54,14 +54,19 @@
     width: 4.125rem;
     display: flex;
     align-items: center;
-    background-color: #ffffff;
+    background-color: inherit;
     color: #707275;
     font-size: 1.25rem;
   }
 
-  .SearchInput__button:hover,
-.SearchInput__button:focus {
-    color: #0367e1;
+  :disabled + .SearchInput__button,
+[readonly] + .SearchInput__button {
+    display: none;
+    pointer-events: none;
+  }
+
+  .SearchInput__button:disabled {
+    opacity: 0.5;
   }
 
   .SearchInput__button::before {
@@ -84,12 +89,6 @@
     transition: all 200ms ease-in;
   }
 
-  .SearchInput__button:hover::before,
-.SearchInput__button:focus::before {
-    background-color: #f8f8f9;
-    transform: scale(1.15);
-  }
-
   .SearchInput__button::after {
     content: "";
     order: -1;
@@ -97,6 +96,21 @@
     z-index: 1;
     height: 64%;
     border-left: 2px solid currentColor;
+  }
+
+  .SearchInput__button:not(:disabled):hover, .SearchInput__button:not(:disabled)[data-focus-visible-added] {
+    color: #0367e1;
+  }
+  .SearchInput__button:not(:disabled):hover::before, .SearchInput__button:not(:disabled)[data-focus-visible-added]::before {
+    background-color: #f8f8f9;
+    transform: scale(1.15);
+  }
+  .SearchInput__button:not(:disabled):focus-visible {
+    color: #0367e1;
+  }
+  .SearchInput__button:not(:disabled):focus-visible::before {
+    background-color: #f8f8f9;
+    transform: scale(1.15);
   }
 }
 @media screen {

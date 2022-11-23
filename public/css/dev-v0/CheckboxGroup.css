@@ -97,6 +97,7 @@
   }
 
   .Checkbox__input[class]:disabled + .Checkbox__label {
+    color: var(--color-suld-200);
     opacity: 0.5;
   }
 
@@ -170,6 +171,7 @@
   .CheckboxGroup--inline > * > .FormField__options__item {
     margin-left: 0.9375rem;
     margin-right: 0.9375rem;
+    flex-shrink: 1;
   }
 }
 @media screen {
@@ -258,6 +260,7 @@
   }
 
   .Radio__input[class]:disabled + .Radio__label {
+    color: var(--color-suld-200);
     opacity: 0.5;
   }
 
@@ -283,5 +286,6 @@
   .RadioGroup--inline > * > .FormField__options__item {
     margin-left: 0.9375rem;
     margin-right: 0.9375rem;
+    flex-shrink: 1;
   }
 }

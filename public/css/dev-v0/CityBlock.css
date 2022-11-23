@@ -144,8 +144,9 @@ html:not([data-disable-css-warnings-with-abandon=true]) .CityBlock__summary bloc
     vertical-align: middle;
     font: var(--font-button);
     padding: 2px 0;
-    padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--dashWidth) );
-    padding-right: calc( var(--ButtonTertiary--hover--dashWidth) - var(--ButtonTertiary--dashWidth) );
+    --dashWidth: var(--ButtonTertiary--dashWidth);
+    padding-left: calc(var(--ButtonTertiary--dashSpace) + var(--dashWidth));
+    padding-right: calc(var(--ButtonTertiary--hover--dashWidth) - var(--dashWidth));
     margin-right: var(--ButtonTertiary--gapH);
     margin-bottom: var(--space-1);
     font-weight: 700;
@@ -158,7 +159,7 @@ html:not([data-disable-css-warnings-with-abandon=true]) .CityBlock__summary bloc
     position: absolute;
     left: 0;
     top: 50%;
-    width: var(--ButtonTertiary--dashWidth);
+    width: var(--dashWidth);
     height: var(--ButtonTertiary--dashHeight);
     display: inline-block;
     vertical-align: middle;
@@ -168,22 +169,14 @@ html:not([data-disable-css-warnings-with-abandon=true]) .CityBlock__summary bloc
     transition: inherit;
   }
   .CityBlock__button:hover, .CityBlock__button:active, .CityBlock__button[data-focus-visible-added] {
-    padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--hover--dashWidth) );
-    padding-right: 0rem;
+    --dashWidth: var(--ButtonTertiary--hover--dashWidth);
     color: var(--ButtonTertiary--color);
     outline: 0;
-  }
-  .CityBlock__button:hover::before, .CityBlock__button:active::before, .CityBlock__button[data-focus-visible-added]::before {
-    width: var(--ButtonTertiary--hover--dashWidth);
   }
   .CityBlock__button:focus-visible {
-    padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--hover--dashWidth) );
-    padding-right: 0rem;
+    --dashWidth: var(--ButtonTertiary--hover--dashWidth);
     color: var(--ButtonTertiary--color);
     outline: 0;
-  }
-  .CityBlock__button:focus-visible::before {
-    width: var(--ButtonTertiary--hover--dashWidth);
   }
   .CityBlock__button:active::before {
     width: var(--ButtonTertiary--dashWidth);

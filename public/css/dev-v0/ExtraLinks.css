@@ -221,14 +221,14 @@
 }
 @media screen {
   .ExtraLinks__related__item {
-    padding-left: 1.625rem;
+    margin-left: 1.625rem;
+    position: relative;
   }
 }
 @media screen {
   .ExtraLinks__related__link {
     font: var(--font-bd-l);
     color: #2a2b2c;
-    position: relative;
   }
 }
 @media screen {
@@ -247,6 +247,7 @@
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: 0;
     position: absolute;
+    top: 0;
     right: 100%;
     width: 1.625rem;
     text-align: left;

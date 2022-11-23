@@ -8,7 +8,7 @@
   .RowBlock {
     margin-bottom: var(--component-vspace--large);
     display: flex;
-    flex-flow: column-reverse;
+    flex-flow: column;
     justify-content: space-between;
     align-items: center;
   }
@@ -96,6 +96,8 @@
 }
 @media screen {
   .RowBlockColumn {
+    padding-top: calc(5.3879310345% + 14.9137931034px);
+    padding-bottom: calc(5.3879310345% + 14.9137931034px);
     width: 100%;
   }
 
@@ -103,7 +105,8 @@
     background-color: #f8f8f9;
     box-sizing: content-box;
     margin: 0 var(--grid-margin--neg);
-    padding: calc(5.3879310345% + 14.9137931034px) var(--grid-margin);
+    padding-left: var(--grid-margin);
+    padding-right: var(--grid-margin);
   }
 
   .RowBlockColumn--background--primary {

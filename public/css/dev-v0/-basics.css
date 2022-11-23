@@ -2,7 +2,7 @@
 /*! Reykjavík Design System basic CSS styles */
 @media screen {
   :root {
-    --cssVersion: "0.8.70";
+    --cssVersion: "0.8.71";
     --browser-scrollbar-width: 16px;
     --bp-w-phone: 320;
     --bp-w-phablet: 480;
@@ -925,6 +925,10 @@ table {
     quotes: "„" "“" "‚" "‘";
   }
 
+  *:lang(pl) {
+    quotes: "„" "”" "‘" "’";
+  }
+
   body {
     overflow-x: hidden;
     overflow-y: scroll;
@@ -1006,6 +1010,13 @@ video {
 
   iframe:not([frameborder=yes]) {
     border: 0;
+  }
+
+  html:not([data-disable-css-warnings-with-abandon=true]) img:not([alt]),
+html:not([data-disable-css-warnings-with-abandon=true]) audio:not([title]):not([aria-label]),
+html:not([data-disable-css-warnings-with-abandon=true]) video:not([title]):not([aria-label]),
+html:not([data-disable-css-warnings-with-abandon=true]) iframe:not([title]):not([aria-label]) {
+    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
   }
 
   table {

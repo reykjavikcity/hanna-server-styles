@@ -15,17 +15,18 @@
   .RelatedLinks__list {
     display: flex;
     flex-flow: row wrap;
-    margin-right: var(--grid-gutter--neg);
+    margin-right: calc(var(--grid-gutter--neg) - 1px);
   }
 
   .RelatedLinks__item {
     margin-top: 0.5rem;
     margin-bottom: 1rem;
     margin-right: var(--grid-gutter);
-    min-width: 220px;
+    width: var(--grid-12);
+    min-width: 250px;
   }
 }
-@media screen and (max-width: 979px) {
+@media screen and (min-width: 480px) and (max-width: 979px) {
   .RelatedLinks__item {
     width: var(--grid-6);
   }

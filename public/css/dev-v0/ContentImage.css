@@ -18,6 +18,7 @@
   .ContentImage__text {
     flex-basis: auto;
     flex-shrink: 2;
+    min-width: 60%;
   }
 
   .ContentImage__credit {

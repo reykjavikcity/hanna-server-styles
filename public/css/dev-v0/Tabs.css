@@ -66,7 +66,7 @@
 .Tabs__tab:active,
 .Tabs__tab[data-active=true],
 .Tabs__tab[aria-pressed=true] {
-    border-bottom-color: var(--theme-color-primary--safeish);
+    border-bottom: var(--Tabs__tab--borderWidth) solid var(--theme-color-primary--safeish);
   }
 }
 @media screen {

@@ -54,16 +54,18 @@
     margin: -0.0625rem;
     width: var(--ssi-height);
     height: var(--ssi-height);
-    background-color: var(--theme-color-primary);
+    background-color: var(--color-faxafloi-100);
     border-radius: 0 var(--input-border-radius) var(--input-border-radius) 0;
-    color: var(--theme-color-primary--text);
+    color: var(--color-suld-0);
   }
 }
 @media screen {
-  .SiteSearchInput__button:hover,
-.SiteSearchInput__button:focus,
-.SiteSearchInput__button:active {
-    background-color: var(--theme-color-primary--dark);
+  .SiteSearchInput__button:hover, .SiteSearchInput__button:active, .SiteSearchInput__button[data-focus-visible-added] {
+    background-color: var(--color-faxafloi-150);
+    color: #ffffff;
+  }
+  .SiteSearchInput__button:focus-visible {
+    background-color: var(--color-faxafloi-150);
     color: #ffffff;
   }
 }

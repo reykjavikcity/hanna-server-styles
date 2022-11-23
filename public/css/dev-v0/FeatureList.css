@@ -59,16 +59,10 @@
          columns: 2;
   }
 }
-@media screen and (min-width: 760px) and (max-width: 1367px) {
+@media screen and (min-width: 760px) {
   .FeatureList__list {
     width: calc(var(--grid-9-9) + 3 * var(--grid-0-1));
-    -moz-columns: 3;
-         columns: 3;
-  }
-}
-@media screen and (min-width: 1368px) {
-  .FeatureList__list {
-    width: var(--grid-9-9);
+    max-width: 936px;
     -moz-columns: 3;
          columns: 3;
   }
@@ -81,6 +75,8 @@
     padding-bottom: var(--grid-0-1);
     padding-right: var(--grid-0-1);
     padding-left: 2.5rem;
+    box-sizing: content-box;
+    min-height: calc(var(--font-base-leading) + 1px);
   }
 }
 @media screen {

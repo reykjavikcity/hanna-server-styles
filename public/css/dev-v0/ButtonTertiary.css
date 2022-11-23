@@ -36,8 +36,9 @@
     vertical-align: middle;
     font: var(--font-button);
     padding: 2px 0;
-    padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--dashWidth) );
-    padding-right: calc( var(--ButtonTertiary--hover--dashWidth) - var(--ButtonTertiary--dashWidth) );
+    --dashWidth: var(--ButtonTertiary--dashWidth);
+    padding-left: calc(var(--ButtonTertiary--dashSpace) + var(--dashWidth));
+    padding-right: calc(var(--ButtonTertiary--hover--dashWidth) - var(--dashWidth));
     margin-right: var(--ButtonTertiary--gapH);
     margin-bottom: var(--space-1);
     font-weight: 700;
@@ -48,7 +49,7 @@
     position: absolute;
     left: 0;
     top: 50%;
-    width: var(--ButtonTertiary--dashWidth);
+    width: var(--dashWidth);
     height: var(--ButtonTertiary--dashHeight);
     display: inline-block;
     vertical-align: middle;
@@ -58,22 +59,14 @@
     transition: inherit;
   }
   .ButtonTertiary:hover, .ButtonTertiary:active, .ButtonTertiary[data-focus-visible-added] {
-    padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--hover--dashWidth) );
-    padding-right: 0rem;
+    --dashWidth: var(--ButtonTertiary--hover--dashWidth);
     color: var(--ButtonTertiary--color);
     outline: 0;
-  }
-  .ButtonTertiary:hover::before, .ButtonTertiary:active::before, .ButtonTertiary[data-focus-visible-added]::before {
-    width: var(--ButtonTertiary--hover--dashWidth);
   }
   .ButtonTertiary:focus-visible {
-    padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--hover--dashWidth) );
-    padding-right: 0rem;
+    --dashWidth: var(--ButtonTertiary--hover--dashWidth);
     color: var(--ButtonTertiary--color);
     outline: 0;
-  }
-  .ButtonTertiary:focus-visible::before {
-    width: var(--ButtonTertiary--hover--dashWidth);
   }
   .ButtonTertiary:active::before {
     width: var(--ButtonTertiary--dashWidth);
@@ -134,7 +127,7 @@
     --ButtonTertiary--dashColor: currentColor;
   }
   .ButtonTertiary[disabled], .ButtonTertiary[aria-disabled=true] {
-    --ButtonTertiary--hover--dashWidth: var(--ButtonTertiary--dashWidth);
+    --dashWidth: var(--ButtonTertiary--dashWidth);
     --ButtonTertiary--dashColor: currentColor;
     --ButtonTertiary--color: _inherit;
     opacity: 0.5;

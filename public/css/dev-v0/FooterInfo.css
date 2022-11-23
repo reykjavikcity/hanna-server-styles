@@ -52,13 +52,15 @@
   }
 }
 @media screen {
-  .FooterInfo__group[role=contactinfo] {
+  .FooterInfo__group[role=contactinfo],
+.FooterInfo__group--main {
     background-color: #f8f8f9;
     padding: var(--space-8) var(--grid-gutter);
   }
 }
 @media screen and (max-width: 759px) {
-  .FooterInfo__group[role=contactinfo] {
+  .FooterInfo__group[role=contactinfo],
+.FooterInfo__group--main {
     margin-left: var(--grid-margin--neg);
     margin-right: var(--grid-margin--right--neg);
     padding-left: var(--grid-margin);
@@ -66,16 +68,37 @@
   }
 }
 @media screen and (min-width: 760px) {
-  .FooterInfo__group[role=contactinfo] {
+  .FooterInfo__group[role=contactinfo],
+.FooterInfo__group--main {
     margin-top: var(--space-8--neg);
     margin-left: 0;
     width: var(--grid-5);
   }
 }
 @media screen and (min-width: 1368px) {
-  .FooterInfo__group[role=contactinfo] {
+  .FooterInfo__group[role=contactinfo],
+.FooterInfo__group--main {
     width: var(--grid-4);
     margin-left: var(--grid-1-1);
+  }
+}
+@media screen {
+  html:not([data-disable-css-warnings-with-abandon=true]) .FooterInfo__group--main ~ .FooterInfo__group--main {
+    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon=true]) .FooterInfo__group--main ~ .FooterInfo__group--main::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 230, 230, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: "Multiple `--main` groups are not supported" !important;
   }
 }
 @media screen {

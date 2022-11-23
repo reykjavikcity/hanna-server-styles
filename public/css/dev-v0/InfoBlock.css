@@ -32,7 +32,10 @@
     height: 1em;
     line-height: 1em;
     margin: -0.2em -0.5em;
+    max-width: calc(0.5em + var(--grid-margin--right));
+    margin-right: max(var(--grid-margin--right--neg), -0.5em);
     font-size: calc(3.8167938931vw + 36.786259542px);
+    overflow: hidden;
   }
 }
 @media screen and (min-width: 1368px) {
@@ -74,6 +77,8 @@
   .InfoBlock__item {
     padding-left: 1.75rem;
     margin-bottom: 1rem;
+    -moz-column-break-inside: avoid;
+         break-inside: avoid;
   }
 }
 @media screen {
@@ -127,5 +132,26 @@
 @media screen {
   .InfoBlock__extrainfo::before {
     content: none;
+  }
+}
+@media screen {
+  html:not([data-disable-css-warnings-with-abandon=true]) .InfoBlock__extrainfo + .InfoBlock__attention,
+html:not([data-disable-css-warnings-with-abandon=true]) .InfoBlock__attention + .InfoBlock__extrainfo {
+    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon=true]) .InfoBlock__extrainfo + .InfoBlock__attention::before,
+html:not([data-disable-css-warnings-with-abandon=true]) .InfoBlock__attention + .InfoBlock__extrainfo::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 230, 230, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: "Choose *EITHER* `__extrainfo` *OR* `__attention`." !important;
   }
 }

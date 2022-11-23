@@ -11,6 +11,8 @@
     max-width: 75.5rem;
     margin: 0 auto;
     position: relative;
+    display: flex;
+    flex-flow: column;
   }
 
   .Layout__alerts {
@@ -32,7 +34,7 @@
 }
 @media screen {
   .Layout__content {
-    min-height: 100vh;
+    flex-grow: 1;
     display: flex;
     flex-flow: column nowrap;
     padding-top: var(--Layout__header-height);

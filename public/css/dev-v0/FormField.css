@@ -240,6 +240,11 @@ html:not([data-disable-css-warnings-with-abandon=true]) .FormField__error:not([i
     line-height: 1em;
   }
 
+  .Selectbox:not(.FormField--filled):not(.FormField--empty) > .FormField__input {
+    color: var(--color-suld-150);
+    opacity: 1;
+  }
+
   /*.Selectbox > .FormField__input--focused::after {
   	transform: rotate(180deg);
   }*/
@@ -258,31 +263,31 @@ html:not([data-disable-css-warnings-with-abandon=true]) .FormField__error:not([i
     padding-top: 1.3125rem;
     padding-bottom: 0.5625rem;
   }
-  .TextInput--multiline > .FormField__input [rows="4"] {
+  .TextInput--multiline > .FormField__input[rows="4"] {
     height: 8rem;
   }
-  .TextInput--multiline > .FormField__input [rows="5"] {
+  .TextInput--multiline > .FormField__input[rows="5"] {
     height: 9.5rem;
   }
-  .TextInput--multiline > .FormField__input [rows="6"] {
+  .TextInput--multiline > .FormField__input[rows="6"] {
     height: 11rem;
   }
-  .TextInput--multiline > .FormField__input [rows="7"] {
+  .TextInput--multiline > .FormField__input[rows="7"] {
     height: 12.5rem;
   }
-  .TextInput--multiline > .FormField__input [rows="8"] {
+  .TextInput--multiline > .FormField__input[rows="8"] {
     height: 14rem;
   }
-  .TextInput--multiline > .FormField__input [rows="9"] {
+  .TextInput--multiline > .FormField__input[rows="9"] {
     height: 15.5rem;
   }
-  .TextInput--multiline > .FormField__input [rows="10"] {
+  .TextInput--multiline > .FormField__input[rows="10"] {
     height: 17rem;
   }
-  .TextInput--multiline > .FormField__input [rows="11"] {
+  .TextInput--multiline > .FormField__input[rows="11"] {
     height: 18.5rem;
   }
-  .TextInput--multiline > .FormField__input [rows="12"] {
+  .TextInput--multiline > .FormField__input[rows="12"] {
     height: 20rem;
   }
 
@@ -291,31 +296,31 @@ html:not([data-disable-css-warnings-with-abandon=true]) .FormField__error:not([i
     padding-top: 0.4375rem;
     padding-bottom: 0.4375rem;
   }
-  .FormField--small.TextInput--multiline > .FormField__input [rows="4"] {
+  .FormField--small.TextInput--multiline > .FormField__input[rows="4"] {
     height: 7rem;
   }
-  .FormField--small.TextInput--multiline > .FormField__input [rows="5"] {
+  .FormField--small.TextInput--multiline > .FormField__input[rows="5"] {
     height: 8.5rem;
   }
-  .FormField--small.TextInput--multiline > .FormField__input [rows="6"] {
+  .FormField--small.TextInput--multiline > .FormField__input[rows="6"] {
     height: 10rem;
   }
-  .FormField--small.TextInput--multiline > .FormField__input [rows="7"] {
+  .FormField--small.TextInput--multiline > .FormField__input[rows="7"] {
     height: 11.5rem;
   }
-  .FormField--small.TextInput--multiline > .FormField__input [rows="8"] {
+  .FormField--small.TextInput--multiline > .FormField__input[rows="8"] {
     height: 13rem;
   }
-  .FormField--small.TextInput--multiline > .FormField__input [rows="9"] {
+  .FormField--small.TextInput--multiline > .FormField__input[rows="9"] {
     height: 14.5rem;
   }
-  .FormField--small.TextInput--multiline > .FormField__input [rows="10"] {
+  .FormField--small.TextInput--multiline > .FormField__input[rows="10"] {
     height: 16rem;
   }
-  .FormField--small.TextInput--multiline > .FormField__input [rows="11"] {
+  .FormField--small.TextInput--multiline > .FormField__input[rows="11"] {
     height: 17.5rem;
   }
-  .FormField--small.TextInput--multiline > .FormField__input [rows="12"] {
+  .FormField--small.TextInput--multiline > .FormField__input[rows="12"] {
     height: 19rem;
   }
 }

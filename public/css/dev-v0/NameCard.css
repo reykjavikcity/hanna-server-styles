@@ -62,8 +62,9 @@
     vertical-align: middle;
     font: var(--font-button);
     padding: 2px 0;
-    padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--dashWidth) );
-    padding-right: calc( var(--ButtonTertiary--hover--dashWidth) - var(--ButtonTertiary--dashWidth) );
+    --dashWidth: var(--ButtonTertiary--dashWidth);
+    padding-left: calc(var(--ButtonTertiary--dashSpace) + var(--dashWidth));
+    padding-right: calc(var(--ButtonTertiary--hover--dashWidth) - var(--dashWidth));
     margin-right: var(--ButtonTertiary--gapH);
     margin-bottom: var(--space-1);
     font-weight: 700;
@@ -75,7 +76,7 @@
     position: absolute;
     left: 0;
     top: 50%;
-    width: var(--ButtonTertiary--dashWidth);
+    width: var(--dashWidth);
     height: var(--ButtonTertiary--dashHeight);
     display: inline-block;
     vertical-align: middle;
@@ -104,8 +105,9 @@ button.NameCard__contactinfo__item {
     vertical-align: middle;
     font: var(--font-button);
     padding: 2px 0;
-    padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--dashWidth) );
-    padding-right: calc( var(--ButtonTertiary--hover--dashWidth) - var(--ButtonTertiary--dashWidth) );
+    --dashWidth: var(--ButtonTertiary--dashWidth);
+    padding-left: calc(var(--ButtonTertiary--dashSpace) + var(--dashWidth));
+    padding-right: calc(var(--ButtonTertiary--hover--dashWidth) - var(--dashWidth));
     margin-right: var(--ButtonTertiary--gapH);
     margin-bottom: var(--space-1);
     font-weight: 700;
@@ -119,7 +121,7 @@ button.NameCard__contactinfo__item::before {
     position: absolute;
     left: 0;
     top: 50%;
-    width: var(--ButtonTertiary--dashWidth);
+    width: var(--dashWidth);
     height: var(--ButtonTertiary--dashHeight);
     display: inline-block;
     vertical-align: middle;
@@ -135,32 +137,16 @@ a.NameCard__contactinfo__item[data-focus-visible-added],
 button.NameCard__contactinfo__item:hover,
 button.NameCard__contactinfo__item:active,
 button.NameCard__contactinfo__item[data-focus-visible-added] {
-    padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--hover--dashWidth) );
-    padding-right: 0rem;
+    --dashWidth: var(--ButtonTertiary--hover--dashWidth);
     color: var(--ButtonTertiary--color);
     outline: 0;
-  }
-  .NameCard__tel__number:hover::before, .NameCard__tel__number:active::before, .NameCard__tel__number[data-focus-visible-added]::before,
-a.NameCard__contactinfo__item:hover::before,
-a.NameCard__contactinfo__item:active::before,
-a.NameCard__contactinfo__item[data-focus-visible-added]::before,
-button.NameCard__contactinfo__item:hover::before,
-button.NameCard__contactinfo__item:active::before,
-button.NameCard__contactinfo__item[data-focus-visible-added]::before {
-    width: var(--ButtonTertiary--hover--dashWidth);
   }
   .NameCard__tel__number:focus-visible,
 a.NameCard__contactinfo__item:focus-visible,
 button.NameCard__contactinfo__item:focus-visible {
-    padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--hover--dashWidth) );
-    padding-right: 0rem;
+    --dashWidth: var(--ButtonTertiary--hover--dashWidth);
     color: var(--ButtonTertiary--color);
     outline: 0;
-  }
-  .NameCard__tel__number:focus-visible::before,
-a.NameCard__contactinfo__item:focus-visible::before,
-button.NameCard__contactinfo__item:focus-visible::before {
-    width: var(--ButtonTertiary--hover--dashWidth);
   }
   .NameCard__tel__number:active::before,
 a.NameCard__contactinfo__item:active::before,

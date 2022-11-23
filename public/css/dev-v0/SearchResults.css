@@ -202,17 +202,24 @@
   }
 }
 @media screen {
-  .SearchResultsItem__link:hover > .SearchResultsItem__title,
-.SearchResultsItem__link:focus > .SearchResultsItem__title,
-.SearchResultsItem__link:active > .SearchResultsItem__title {
+  .SearchResultsItem__link:hover > .SearchResultsItem__title, .SearchResultsItem__link:active > .SearchResultsItem__title, .SearchResultsItem__link[data-focus-visible-added] > .SearchResultsItem__title {
     padding-right: 0;
     --dash-width: calc(2.9580152672vw + 7.534351145px);
   }
 }
 @media screen and (min-width: 1368px) {
-  .SearchResultsItem__link:hover > .SearchResultsItem__title,
-.SearchResultsItem__link:focus > .SearchResultsItem__title,
-.SearchResultsItem__link:active > .SearchResultsItem__title {
+  .SearchResultsItem__link:hover > .SearchResultsItem__title, .SearchResultsItem__link:active > .SearchResultsItem__title, .SearchResultsItem__link[data-focus-visible-added] > .SearchResultsItem__title {
+    --dash-width: 3rem;
+  }
+}
+@media screen {
+  .SearchResultsItem__link:focus-visible > .SearchResultsItem__title {
+    padding-right: 0;
+    --dash-width: calc(2.9580152672vw + 7.534351145px);
+  }
+}
+@media screen and (min-width: 1368px) {
+  .SearchResultsItem__link:focus-visible > .SearchResultsItem__title {
     --dash-width: 3rem;
   }
 }
@@ -265,8 +272,9 @@
     vertical-align: middle;
     font: var(--font-button);
     padding: 2px 0;
-    padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--dashWidth) );
-    padding-right: calc( var(--ButtonTertiary--hover--dashWidth) - var(--ButtonTertiary--dashWidth) );
+    --dashWidth: var(--ButtonTertiary--dashWidth);
+    padding-left: calc(var(--ButtonTertiary--dashSpace) + var(--dashWidth));
+    padding-right: calc(var(--ButtonTertiary--hover--dashWidth) - var(--dashWidth));
     margin-right: var(--ButtonTertiary--gapH);
     margin-bottom: var(--space-1);
     font-weight: 700;
@@ -281,7 +289,7 @@
     position: absolute;
     left: 0;
     top: 50%;
-    width: var(--ButtonTertiary--dashWidth);
+    width: var(--dashWidth);
     height: var(--ButtonTertiary--dashHeight);
     display: inline-block;
     vertical-align: middle;
@@ -291,22 +299,14 @@
     transition: inherit;
   }
   .SearchResults__loadmore:hover, .SearchResults__loadmore:active, .SearchResults__loadmore[data-focus-visible-added] {
-    padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--hover--dashWidth) );
-    padding-right: 0rem;
+    --dashWidth: var(--ButtonTertiary--hover--dashWidth);
     color: var(--ButtonTertiary--color);
     outline: 0;
-  }
-  .SearchResults__loadmore:hover::before, .SearchResults__loadmore:active::before, .SearchResults__loadmore[data-focus-visible-added]::before {
-    width: var(--ButtonTertiary--hover--dashWidth);
   }
   .SearchResults__loadmore:focus-visible {
-    padding-left: calc( var(--ButtonTertiary--dashSpace) + var(--ButtonTertiary--hover--dashWidth) );
-    padding-right: 0rem;
+    --dashWidth: var(--ButtonTertiary--hover--dashWidth);
     color: var(--ButtonTertiary--color);
     outline: 0;
-  }
-  .SearchResults__loadmore:focus-visible::before {
-    width: var(--ButtonTertiary--hover--dashWidth);
   }
   .SearchResults__loadmore:active::before {
     width: var(--ButtonTertiary--dashWidth);
@@ -396,6 +396,11 @@
   }
 }
 @media screen {
+  .SearchResultsHighlightItem__link:not(:has(.SearchResultsHighlightItem__image)) {
+    min-height: 0;
+  }
+}
+@media screen {
   .SearchResultsHighlightItem__link:hover,
 .SearchResultsHighlightItem__link:active {
     border-color: #0367e1;
@@ -436,12 +441,25 @@
 }
 @media screen and (max-width: 759px) {
   .SearchResultsHighlightItem__image {
-    margin-bottom: 2rem;
+    position: relative;
+    height: 0;
+    padding-top: 50%;
+    margin-bottom: var(--space-2);
+  }
+}
+@media screen {
+  .SearchResultsHighlightItem__image > img {
+    position: absolute;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
 }
 @media screen and (max-width: 759px) {
   .SearchResultsHighlightItem__image > img {
-    max-width: 18.75rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 }
 @media screen and (min-width: 760px) {
@@ -451,7 +469,5 @@
     right: 0;
     width: var(--grid-4-4);
     height: calc(100% - 2.5rem);
-    -o-object-fit: contain;
-       object-fit: contain;
   }
 }

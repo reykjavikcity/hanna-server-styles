@@ -39,7 +39,7 @@
 @media screen {
   .GalleryModalItem__text {
     background: var(--theme-color-primary);
-    color: #ffffff;
+    color: var(--theme-color-primary--text);
     margin-top: 1.25rem;
     padding: 1.5rem;
   }
@@ -336,7 +336,7 @@
 @media screen {
   .GalleryModalPager__button,
 .GalleryModal__closebutton {
-    color: var(--theme-color-primary);
+    color: var(--color-faxafloi-100);
   }
   .GalleryModalPager__button::before,
 .GalleryModal__closebutton::before {

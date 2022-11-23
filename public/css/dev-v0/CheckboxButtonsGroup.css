@@ -92,6 +92,7 @@
   }
 
   .CheckboxButton__input[class]:disabled + .CheckboxButton__label {
+    color: var(--color-suld-200);
     opacity: 0.5;
   }
 
@@ -185,7 +186,7 @@
     outline: 0;
   }
 
-  .CheckboxButton__input:disabled + .CheckboxButton__label {
+  .CheckboxButton__input[class]:disabled + .CheckboxButton__label {
     color: var(--color-suld-150);
     border-color: var(--color-suld-100);
     background-color: var(--color-suld-50);
@@ -374,6 +375,7 @@
   }
 
   .RadioButton__input[class]:disabled + .RadioButton__label {
+    color: var(--color-suld-200);
     opacity: 0.5;
   }
 
@@ -430,7 +432,7 @@
     outline: 0;
   }
 
-  .RadioButton__input:disabled + .RadioButton__label {
+  .RadioButton__input[class]:disabled + .RadioButton__label {
     color: var(--color-suld-150);
     border-color: var(--color-suld-100);
     background-color: var(--color-suld-50);
