@@ -1,9 +1,6 @@
 ## Deps and build results
-node_modules
-/public/css/dev/
-
-## Misc notes and stuff...
-/assets-originals
+/node_modules
+/public/css/dev
 
 ## Junk
 .DS_Store
