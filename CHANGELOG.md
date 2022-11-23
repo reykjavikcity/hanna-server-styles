@@ -4,6 +4,38 @@
 
 - ... <!-- Add new lines here. -->
 
+## 0.8.71
+
+_2022-11-23_
+
+- feat: Add styling for `.Cell--text--(right|center)` inside `.BasicTable`
+- feat: Add dev warnings for missing text labels (i.e. `alt` attributes on
+  iframes and multimedia elements)
+- feat: Add `.FooterInfo__group--main`, deprecate `[role]` styling
+- feat: Add "[Illustration](src/assets/illustrations/files.json)" PNG asset
+  ("vegvisir")
+- fix: `.TextInput--multiline` not repsonding to `rows=""` attribute
+- fix: Text color of `.Selectbox`'s placeholder (non-empty, non-filled)
+- fix: Reversed order of `RowBlockColumn`s on narrow screens + padding
+- fix: Improve mobile rendering of `.RelatedLinks`
+- fix: Update the "Esja" font files better Polish alphabet support
+- fix: Improve mobile rendering of `.SearchResultsHighlightItem` images
+- fix: Top-align search icons on hovered `.SiteSearchAutocomplete__item`s
+- fix: Adjust alignment and cap height of `.InfoHero__image`
+- fix: `BasicTable` with `--align--right` position on "tablet" sized viewports
+- fix: Disappearing border on link `.Tabs__tab` hover
+- fix: Set color of `.SiteSearchInput__button` to Faxaflói
+- fix: Color of disabled invalid checkboxes/radios
+- fix: Suppress dev warning about forced `h1.Heading` elements
+- fix: Tweak layout of `FileInput__filelist` items
+- fix: Set color of `Gallery` modal links/buttons to Faxaflói
+- fix: Correct minor responsive rendering glitches in `.FeatureList`
+- fix: Make `--inline` `Checkbox` and `Radio` labels line wrap
+- fix: Right padding on `.ButtonTertiary--disabled`
+- fix: Height-scaling of `Layout` and `WizardLayout` with `__alerts` visible
+- fix: Hover styling of `.WizardLayoutClose`
+- fix: Background-color of disabled and readonly `.SearchInput__button`
+
 ## 0.8.70
 
 _2022-10-07_
