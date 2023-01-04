@@ -1,24 +1,8 @@
-:root {
-  --ButtonTertiary--height: calc(var(--font-button-leading) + 4px);
-  --ButtonTertiary--color: _inherit;
-  --ButtonTertiary--dashColor: var(--color-faxafloi-100);
-  --ButtonTertiary--dashWidth: var(--space-2);
-  --ButtonTertiary--hover--dashWidth: var(--space-4);
-  --ButtonTertiary--dashSpace: var(--space-2);
-  --ButtonTertiary--dashHeight: 2px;
-  --ButtonTertiary--gapH: calc(0.7633587786vw + 13.5572519084px);
-}
-@media screen and (min-width: 1368px) {
-  :root {
-    --ButtonTertiary--gapH: 24px;
-  }
-}
-
 @media screen {
   .MiniMetrics {
     position: relative;
-    margin-top: calc(19.3965517241% + 5.6896551724px);
-    margin-bottom: calc(24.7844827586% + -9.3965517241px);
+    margin-top: calc(19.396551724137932% + 5.689655172413808px);
+    margin-bottom: calc(24.78448275862069% + -9.396551724137964px);
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -28,22 +12,23 @@
   .MiniMetrics__text {
     font: var(--font-hd-xl);
     display: block;
-    margin-bottom: 0.5555555556em;
+    margin-bottom: 0.5555555555555556em;
     max-width: 896px;
   }
-
   .MiniMetrics__more {
     --link-color: _inherit;
     --link-weight: _inherit;
     --link-underline: none;
+
+    /* NOTE: This intentionally doesn't reset the :hover style*/
+    /* unless..*/
     --link-color--hover: var(--link-color);
     --link-underline--hover: none;
     --link-underline-offset: 0;
+
     color: var(--ButtonTertiary--color);
     position: relative;
     display: inline-block;
-    width: -webkit-max-content;
-    width: -moz-max-content;
     width: max-content;
     max-width: 100%;
     vertical-align: middle;
@@ -51,15 +36,16 @@
     padding: 2px 0;
     --dashWidth: var(--ButtonTertiary--dashWidth);
     padding-left: calc(var(--ButtonTertiary--dashSpace) + var(--dashWidth));
-    padding-right: calc(var(--ButtonTertiary--hover--dashWidth) - var(--dashWidth));
+    padding-right: calc(
+      var(--ButtonTertiary--hover--dashWidth) - var(--dashWidth)
+    );
     margin-right: var(--ButtonTertiary--gapH);
     margin-bottom: var(--space-1);
     font-weight: 700;
     transition: all 100ms ease-in;
-    font: var(--font-sh-s);
-    --ButtonTertiary--dashWidth: 1rem;
-    --ButtonTertiary--dashHeight: 0.1666666667rem;
+    /* --ButtonTertiary--hover--dashWidth: 3rem;*/
   }
+
   .MiniMetrics__more::before {
     content: "";
     position: absolute;
@@ -74,7 +60,10 @@
     transform: translateY(-50%);
     transition: inherit;
   }
-  .MiniMetrics__more:hover, .MiniMetrics__more:active, .MiniMetrics__more[data-focus-visible-added] {
+
+  .MiniMetrics__more:active,
+  .MiniMetrics__more:hover,
+  .MiniMetrics__more[data-focus-visible-added] {
     --dashWidth: var(--ButtonTertiary--hover--dashWidth);
     color: var(--ButtonTertiary--color);
     outline: 0;
@@ -84,9 +73,11 @@
     color: var(--ButtonTertiary--color);
     outline: 0;
   }
+
   .MiniMetrics__more:active::before {
     width: var(--ButtonTertiary--dashWidth);
   }
+
   .MiniMetrics__more[data-focus-visible-added]::after {
     content: "";
     position: absolute;
@@ -109,60 +100,58 @@
     border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
     border-radius: 0.5rem;
   }
-
+  .MiniMetrics__more {
+    font: var(--font-sh-s);
+    --ButtonTertiary--dashWidth: 1rem;
+    --ButtonTertiary--dashHeight: 0.16666666666666666rem;
+  }
   .MiniMetrics__more::before {
     top: calc(0.5 * var(--font-sh-s-leading));
   }
-}
-@media screen and (min-width: 480px) {
-  @supports ((-webkit-mask-image: url("")) or (mask-image: url(""))) {
+
+  @media (min-width: 480px) {
+    @supports (mask-image: url("")) {
+      .MiniMetrics::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        bottom: 50%;
+        margin-bottom: 10.347682119205299%;
+        right: 0;
+        width: 10.513245033112582%;
+        padding-top: 10.513245033112582%;
+        /* background-color: var(--theme-color-secondary);*/
+        background-color: var(--color-rokkur-100);
+        mask-image: url("/assets/bling/circle-small.svg");
+        mask-position: 50% 50%;
+        mask-repeat: no-repeat;
+      }
+      .MiniMetrics::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        bottom: 50%;
+        left: 50%;
+        margin-bottom: -7.864238410596027%;
+        width: 68.29470198675497%;
+        padding-top: 19.205298013245034%;
+        /* background-color: var(--theme-color-tertiary);*/
+        background-color: var(--color-esja-100);
+        mask-image: url("/assets/bling/waves-medium.svg");
+        mask-size: 133.33% auto;
+        mask-position: 0% 50%;
+        mask-repeat: no-repeat;
+      }
+    }
+  }
+  @media (min-width: 480px) and (max-width: 759px) {
     .MiniMetrics::before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      bottom: 50%;
-      margin-bottom: 10.3476821192%;
-      right: 0;
-      width: 10.5132450331%;
-      padding-top: 10.5132450331%;
-      background-color: #ff8db5;
-      -webkit-mask-image: url("/assets/bling/circle-small.svg");
-              mask-image: url("/assets/bling/circle-small.svg");
-      -webkit-mask-position: 50% 50%;
-              mask-position: 50% 50%;
-      -webkit-mask-repeat: no-repeat;
-              mask-repeat: no-repeat;
+      content: none;
     }
-
     .MiniMetrics::after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      bottom: 50%;
-      left: 50%;
-      margin-bottom: -7.8642384106%;
-      width: 68.2947019868%;
-      padding-top: 19.2052980132%;
-      background-color: #a5bbfd;
-      -webkit-mask-image: url("/assets/bling/waves-medium.svg");
-              mask-image: url("/assets/bling/waves-medium.svg");
-      -webkit-mask-size: 133.33% auto;
-              mask-size: 133.33% auto;
-      -webkit-mask-position: 0% 50%;
-              mask-position: 0% 50%;
-      -webkit-mask-repeat: no-repeat;
-              mask-repeat: no-repeat;
+      left: 360px;
+      width: 440px;
+      padding-top: 125px;
     }
-  }
-}
-@media screen and (min-width: 480px) and (max-width: 759px) {
-  .MiniMetrics::before {
-    content: none;
-  }
-
-  .MiniMetrics::after {
-    left: 360px;
-    width: 440px;
-    padding-top: 125px;
   }
 }

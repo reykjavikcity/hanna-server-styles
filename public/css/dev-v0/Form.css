@@ -3,25 +3,26 @@
     width: 100%;
     max-width: 584px;
   }
-}
-@media screen and (min-width: 760px) {
-  .Form--align--right {
-    margin-left: auto;
-    max-width: none;
-    width: var(--grid-7);
+  @media (min-width: 760px) {
+    .Form--align--right {
+      margin-left: auto;
+      max-width: none;
+      width: var(--grid-7);
+    }
   }
-}
-@media screen {
+
   .Form--wide {
     margin-left: 0;
     max-width: 792px;
   }
-}
-@media screen {
-  html:not([data-disable-css-warnings-with-abandon=true]) .Form--align--right.Form--wide {
-    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Form--align--right.Form--wide:hover {
+    --WARNING--message: "`--align--right` can't be `--wide`";
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
-  html:not([data-disable-css-warnings-with-abandon=true]) .Form--align--right.Form--wide::before {
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Form--align--right.Form--wide:hover::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -31,8 +32,8 @@
     font-size: 12px !important;
     line-height: 1.5em !important;
     color: red !important;
-    background-color: rgba(255, 230, 230, 0.5) !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
     padding: 0 0.5em !important;
-    content: "`--align--right` can't be `--wide`" !important;
+    content: var(--WARNING--message) !important;
   }
 }

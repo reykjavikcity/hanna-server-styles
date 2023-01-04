@@ -11,18 +11,23 @@
     font: var(--font-bd-s);
     padding-left: var(--space-3);
   }
-}
-@media screen and (max-width: 759px) {
-  .Attention {
-    padding-left: var(--space-2);
-    padding-right: 0;
+
+  @media (max-width: 759px) {
+    .Attention {
+      padding-left: var(--space-2);
+      padding-right: 0;
+    }
   }
-}
-@media screen {
-  html:not([data-disable-css-warnings-with-abandon=true]) .Attention--strong {
-    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
+
+  /* @deprecated (Remove in v0.9)*/
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Attention--strong:hover {
+    --WARNING--message: "Deprecated: `.Attention--strong` is no longer supported";
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
-  html:not([data-disable-css-warnings-with-abandon=true]) .Attention--strong::before {
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Attention--strong:hover::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -32,46 +37,53 @@
     font-size: 12px !important;
     line-height: 1.5em !important;
     color: red !important;
-    background-color: rgba(255, 230, 230, 0.5) !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
     padding: 0 0.5em !important;
-    content: "Deprecated: `.Attention--strong` is no longer supported" !important;
+    content: var(--WARNING--message) !important;
   }
-}
-@media screen {
+
   .Attention:last-child {
     margin-bottom: 0;
   }
-}
-@media screen {
   .Attention:first-child {
     margin-top: 0;
   }
-}
-@media screen {
   .Attention p {
     margin-bottom: var(--baseVerticalMargin);
   }
-}
-@media screen {
   .Attention p:last-child {
     margin-bottom: 0;
   }
-}
-@media screen {
-  html:not([data-disable-css-warnings-with-abandon=true]) .Attention h1,
-html:not([data-disable-css-warnings-with-abandon=true]) .Attention h2,
-html:not([data-disable-css-warnings-with-abandon=true]) .Attention h3,
-html:not([data-disable-css-warnings-with-abandon=true]) .Attention h4,
-html:not([data-disable-css-warnings-with-abandon=true]) .Attention ul,
-html:not([data-disable-css-warnings-with-abandon=true]) .Attention ol {
-    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
+
+  html:not([data-disable-css-warnings-with-abandon="true"]) .Attention h1:hover,
+  html:not([data-disable-css-warnings-with-abandon="true"]) .Attention h2:hover,
+  html:not([data-disable-css-warnings-with-abandon="true"]) .Attention h3:hover,
+  html:not([data-disable-css-warnings-with-abandon="true"]) .Attention h4:hover,
+  html:not([data-disable-css-warnings-with-abandon="true"]) .Attention ul:hover,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Attention
+    ol:hover {
+    --WARNING--message: "Fancy rich text content is not supported";
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
-  html:not([data-disable-css-warnings-with-abandon=true]) .Attention h1::before,
-html:not([data-disable-css-warnings-with-abandon=true]) .Attention h2::before,
-html:not([data-disable-css-warnings-with-abandon=true]) .Attention h3::before,
-html:not([data-disable-css-warnings-with-abandon=true]) .Attention h4::before,
-html:not([data-disable-css-warnings-with-abandon=true]) .Attention ul::before,
-html:not([data-disable-css-warnings-with-abandon=true]) .Attention ol::before {
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Attention
+    h1:hover::before,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Attention
+    h2:hover::before,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Attention
+    h3:hover::before,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Attention
+    h4:hover::before,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Attention
+    ul:hover::before,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Attention
+    ol:hover::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -81,8 +93,8 @@ html:not([data-disable-css-warnings-with-abandon=true]) .Attention ol::before {
     font-size: 12px !important;
     line-height: 1.5em !important;
     color: red !important;
-    background-color: rgba(255, 230, 230, 0.5) !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
     padding: 0 0.5em !important;
-    content: "Fancy rich text content is not supported" !important;
+    content: var(--WARNING--message) !important;
   }
 }

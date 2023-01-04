@@ -1,21 +1,23 @@
 @media screen {
   .IframeBlock {
-    margin-bottom: 1.875rem;
+    margin-bottom: 1.875rem; /* like BasicTable (need reconsidering)*/
+
+    /* width/min-width hack recommended by https://github.com/davidjbradshaw/iframe-resizer-react*/
     width: 1px;
     min-width: 100%;
   }
-
   .IframeBlock--compact {
     margin-bottom: 0;
   }
-
   .IframeBlock--framed {
-    box-shadow: 0 0 0 2px #c7cbd0;
+    box-shadow: 0 0 0 2px var(--color-suld-100);
   }
-}
-@media screen and (min-width: 760px) {
-  .IframeBlock--align--right {
-    margin-left: auto;
-    min-width: var(--grid-7);
+  @media (min-width: 760px) {
+    .IframeBlock--align--right {
+      margin-left: auto;
+      min-width: var(
+        --grid-7
+      ); /* tolerate containment by right-aligned TextBlock, for instance*/
+    }
   }
 }

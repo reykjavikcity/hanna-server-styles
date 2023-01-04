@@ -1,6 +1,6 @@
 /*!@deps
-	RowBlockColumn
-*/
+    RowBlockColumn
+  */
 @media screen {
   .Illustration {
     display: block;
@@ -8,12 +8,15 @@
     margin-bottom: var(--grid-1);
   }
 }
-@media screen and (max-width: 759px) {
+
+@media (max-width: 759px) {
   .Illustration > img {
     max-width: 500px;
+    /* margin: auto; // looks better left-aligned*/
   }
 }
-@media screen and (min-width: 760px) {
+
+@media (min-width: 760px) {
   .Illustration {
     z-index: -1;
     margin: var(--grid-gutter--neg);
@@ -21,7 +24,6 @@
     padding-top: 67%;
     min-height: 100%;
   }
-
   .Illustration > img {
     pointer-events: initial;
     position: absolute;
@@ -31,14 +33,19 @@
     transform: translateY(-50%);
   }
 }
+
+/* ===========================================================================*/
+
 @media screen {
-  .RowBlockColumn--background .Illustration {
-    z-index: 1;
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .RowBlockColumn--background
+    .Illustration:hover {
+    --WARNING--message: "Do not use inside `.RowBlockColumn--background`";
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
-  html:not([data-disable-css-warnings-with-abandon=true]) .RowBlockColumn--background .Illustration {
-    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
-  }
-  html:not([data-disable-css-warnings-with-abandon=true]) .RowBlockColumn--background .Illustration::before {
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .RowBlockColumn--background
+    .Illustration:hover::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -48,8 +55,11 @@
     font-size: 12px !important;
     line-height: 1.5em !important;
     color: red !important;
-    background-color: rgba(255, 230, 230, 0.5) !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
     padding: 0 0.5em !important;
-    content: "Do not use inside `.RowBlockColumn--background`" !important;
+    content: var(--WARNING--message) !important;
+  }
+  .RowBlockColumn--background .Illustration {
+    z-index: 1;
   }
 }

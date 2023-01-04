@@ -2,11 +2,12 @@
   .Footnote {
     width: 100%;
     position: relative;
-    margin-top: calc(0.8620689655% + 21.5862068966px);
+    margin-top: calc(0.8620689655172413% + 21.586206896551722px);
     margin-bottom: 1.875rem;
-    padding-left: calc(2.8017241379% + 2.1551724138px);
-    color: #707275;
+    padding-left: calc(2.8017241379310347% + 2.155172413793103px);
+    color: var(--color-suld-150);
   }
+
   .Footnote::before {
     content: "";
     position: absolute;

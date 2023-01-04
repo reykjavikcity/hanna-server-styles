@@ -1,59 +1,49 @@
-:root {
-  --ButtonTertiary--height: calc(var(--font-button-leading) + 4px);
-  --ButtonTertiary--color: _inherit;
-  --ButtonTertiary--dashColor: var(--color-faxafloi-100);
-  --ButtonTertiary--dashWidth: var(--space-2);
-  --ButtonTertiary--hover--dashWidth: var(--space-4);
-  --ButtonTertiary--dashSpace: var(--space-2);
-  --ButtonTertiary--dashHeight: 2px;
-  --ButtonTertiary--gapH: calc(0.7633587786vw + 13.5572519084px);
-}
-@media screen and (min-width: 1368px) {
-  :root {
-    --ButtonTertiary--gapH: 24px;
-  }
-}
-
 @media screen {
+  .before-sprinkling .IslandBlock,
+  .IslandBlock[data-is-seen="false"] {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+
+  .IslandBlock[data-is-seen=""],
+  .IslandBlock[data-is-seen="true"] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .IslandBlock[data-is-seen="true"] {
+    transition: all 500ms ease-in-out;
+
+    transition-property: opacity, transform;
+  }
+
   .IslandBlock {
     display: flex;
     flex-flow: column-reverse;
     justify-content: space-between;
-    margin-top: calc(7.5431034483% + 8.8793103448px);
-    margin-bottom: calc(13.6853448276% + 1.6810344828px);
-  }
-  .before-sprinkling .IslandBlock, .IslandBlock[data-is-seen=false] {
-    opacity: 0;
-    transform: translateY(200px);
-  }
-  .IslandBlock[data-is-seen=""], .IslandBlock[data-is-seen=true] {
-    opacity: 1;
-    transform: none;
-  }
-  .IslandBlock[data-is-seen=true] {
-    transition: all 500ms ease-in-out;
-    transition-property: opacity, transform;
+    margin-top: calc(7.543103448275862% + 8.879310344827587px);
+    margin-bottom: calc(13.685344827586206% + 1.681034482758605px);
   }
 
   .IslandBlock__image,
-.IslandBlock__content {
+  .IslandBlock__content {
     display: block;
     margin: 0 var(--grid-margin--neg);
-    padding: calc(10.775862069% + -10.1724137931px) var(--grid-margin);
+    padding: calc(10.775862068965516% + -10.17241379310343px) var(--grid-margin);
   }
-
   .IslandBlock__content {
-    background-color: #f8f8f9;
+    background-color: var(--color-suld-25);
   }
-
   .IslandBlock__content:last-child {
     background-color: var(--theme-color-primary);
     color: var(--theme-color-primary--text);
+
     --link-color: _inherit;
     --link-color--hover: var(--link-color);
     --link-underline: 1px dotted currentColor;
     --link-underline--hover: 2px solid currentColor;
-    --ButtonTertiary--dashColor: currentColor;
+
+    --ButtonTertiary--dashColor: currentColor; /* var(--theme-color-primary--dark);*/
   }
 
   .IslandBlock__title {
@@ -66,18 +56,22 @@
     margin-bottom: 2rem;
   }
 
+  .IslandBlock__buttons {
+  }
   .IslandBlock__button {
     --link-color: _inherit;
     --link-weight: _inherit;
     --link-underline: none;
+
+    /* NOTE: This intentionally doesn't reset the :hover style*/
+    /* unless..*/
     --link-color--hover: var(--link-color);
     --link-underline--hover: none;
     --link-underline-offset: 0;
+
     color: var(--ButtonTertiary--color);
     position: relative;
     display: inline-block;
-    width: -webkit-max-content;
-    width: -moz-max-content;
     width: max-content;
     max-width: 100%;
     vertical-align: middle;
@@ -85,13 +79,15 @@
     padding: 2px 0;
     --dashWidth: var(--ButtonTertiary--dashWidth);
     padding-left: calc(var(--ButtonTertiary--dashSpace) + var(--dashWidth));
-    padding-right: calc(var(--ButtonTertiary--hover--dashWidth) - var(--dashWidth));
+    padding-right: calc(
+      var(--ButtonTertiary--hover--dashWidth) - var(--dashWidth)
+    );
     margin-right: var(--ButtonTertiary--gapH);
     margin-bottom: var(--space-1);
     font-weight: 700;
     transition: all 100ms ease-in;
-    display: block;
   }
+
   .IslandBlock__button::before {
     content: "";
     position: absolute;
@@ -106,7 +102,10 @@
     transform: translateY(-50%);
     transition: inherit;
   }
-  .IslandBlock__button:hover, .IslandBlock__button:active, .IslandBlock__button[data-focus-visible-added] {
+
+  .IslandBlock__button:active,
+  .IslandBlock__button:hover,
+  .IslandBlock__button[data-focus-visible-added] {
     --dashWidth: var(--ButtonTertiary--hover--dashWidth);
     color: var(--ButtonTertiary--color);
     outline: 0;
@@ -116,9 +115,11 @@
     color: var(--ButtonTertiary--color);
     outline: 0;
   }
+
   .IslandBlock__button:active::before {
     width: var(--ButtonTertiary--dashWidth);
   }
+
   .IslandBlock__button[data-focus-visible-added]::after {
     content: "";
     position: absolute;
@@ -141,13 +142,18 @@
     border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
     border-radius: 0.5rem;
   }
+  .IslandBlock__button {
+    display: block;
+  }
 
   .IslandBlock__image {
+    /* // Arg this bleeds around the edges of the SVG in chrome*/
+    /* background-color: var(--theme-color-tertiary);*/
     position: relative;
     display: block;
     overflow: hidden;
   }
-
+  /* NOTE: This Prevent background bleed around the edges of the SVG image in Chrome*/
   .IslandBlock__image::before {
     content: "";
     position: absolute;
@@ -158,16 +164,15 @@
     left: 1px;
   }
 
+  /* TODO: Figure out what styles are needed for inlined <SVG/>s*/
   .IslandBlock__image > img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
-
   .IslandBlock__image > svg {
     position: absolute;
     top: 50%;
@@ -177,86 +182,89 @@
     width: auto;
   }
 }
-@media screen and (max-width: 759px) {
+
+/* ---------------------------------------------------------------------------*/
+
+@media (max-width: 759px) {
   .IslandBlock {
-    background-color: #f8f8f9;
+    background-color: var(--color-suld-25);
+
     position: relative;
   }
+
   .IslandBlock::before {
     content: "";
     position: absolute;
     top: 0;
     bottom: 0;
+
     left: var(--grid-margin--neg);
+
     right: var(--grid-margin--neg);
+
     z-index: -1;
     background: inherit;
   }
 
   .IslandBlock--align--left > .IslandBlock__content:first-child,
-.IslandBlock--align--right > .IslandBlock__content:last-child,
-.IslandBlock--align--right > .IslandBlock__image {
-    margin-right: calc(13.6363636364vw + -43.6363636364px);
+  .IslandBlock--align--right > .IslandBlock__content:last-child,
+  .IslandBlock--align--right > .IslandBlock__image {
+    margin-right: calc(13.636363636363635vw + -43.636363636363626px);
   }
-
   .IslandBlock--align--right > .IslandBlock__content:first-child,
-.IslandBlock--align--left > .IslandBlock__content:last-child,
-.IslandBlock--align--left > .IslandBlock__image {
-    margin-left: calc(13.6363636364vw + -43.6363636364px);
+  .IslandBlock--align--left > .IslandBlock__content:last-child,
+  .IslandBlock--align--left > .IslandBlock__image {
+    margin-left: calc(13.636363636363635vw + -43.636363636363626px);
   }
-
   .IslandBlock__image {
-    min-height: calc(43.1818181818vw + 71.8181818182px);
+    min-height: calc(43.18181818181818vw + 71.81818181818181px);
   }
-
   .IslandBlock__image > svg {
     width: 100%;
     height: auto;
   }
 }
-@media screen and (min-width: 760px) {
+
+/* ---------------------------------------------------------------------------*/
+
+@media (min-width: 760px) {
   .IslandBlock {
     flex-flow: row;
   }
-
   .IslandBlock--align--right {
     flex-flow: row-reverse;
   }
 
   .IslandBlock__content,
-.IslandBlock__image {
+  .IslandBlock__image {
     box-sizing: content-box;
-    width: 43.0794701987%;
-    margin-bottom: calc(5.9267241379% + 33.4051724138px);
-    min-height: calc(19.7368421053vw + 130px);
+    /* NOTE: ".01" part is to prevent rounding errors causing an ugly 1px gap between the columns*/
+    width: 43.079470198675494%;
+    margin-bottom: calc(5.926724137931035% + 33.405172413793096px);
+    min-height: calc(19.736842105263158vw + 130px);
   }
-}
-@media screen and (min-width: 1368px) {
-  .IslandBlock__content,
-.IslandBlock__image {
-    min-height: 400px;
+
+  @media (min-width: 1368px) {
+    .IslandBlock__content,
+    .IslandBlock__image {
+      min-height: 400px;
+    }
   }
-}
-@media screen and (min-width: 760px) {
   .IslandBlock__content:last-child,
-.IslandBlock__image {
-    margin-top: calc(5.9267241379% + 33.4051724138px);
+  .IslandBlock__image {
+    margin-top: calc(5.926724137931035% + 33.405172413793096px);
     margin-bottom: 0;
   }
-}
-@media screen and (min-width: 760px) {
   .IslandBlock--align--left > .IslandBlock__content:first-child,
-.IslandBlock--align--right > .IslandBlock__content:last-child,
-.IslandBlock--align--right > .IslandBlock__image {
+  .IslandBlock--align--right > .IslandBlock__content:last-child,
+  .IslandBlock--align--right > .IslandBlock__image {
     margin-right: 0;
-    padding-right: 6.9536423841%;
+    padding-right: 6.95364238410596%;
   }
-}
-@media screen and (min-width: 760px) {
   .IslandBlock--align--right > .IslandBlock__content:first-child,
-.IslandBlock--align--left > .IslandBlock__content:last-child,
-.IslandBlock--align--left > .IslandBlock__image {
+  .IslandBlock--align--left > .IslandBlock__content:last-child,
+  .IslandBlock--align--left > .IslandBlock__image {
     margin-left: 0;
-    padding-left: 6.9536423841%;
+    padding-left: 6.95364238410596%;
   }
 }

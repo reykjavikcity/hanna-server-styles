@@ -1,208 +1,366 @@
-@charset "UTF-8";
 /*! Reykjavík Design System basic CSS styles */
-@media screen {
+
+@font-face {
+  font-family: icons;
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+  src: url("i/icons.woff2?c5730a0509864400d986b9d55fb69a96") format("woff2"),
+    url("i/icons.woff?c5730a0509864400d986b9d55fb69a96") format("woff");
+}
+
+@font-face {
+  font-family: Esja;
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+  src: url("/assets/fonts/Esja/Esja-regular.woff2") format("woff2"),
+    url("/assets/fonts/Esja/Esja-regular.woff") format("woff");
+}
+@font-face {
+  font-family: Esja;
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+  src: url("/assets/fonts/Esja/Esja-bold.woff2") format("woff2"),
+    url("/assets/fonts/Esja/Esja-bold.woff") format("woff");
+}
+/** /
+  @font-face {
+    font-family: Esja;
+    font-weight: 400;
+    font-style: italic;
+    font-display: block;
+    src: url('/assets/fonts/Esja/Esja-regularitalic.woff2') format('woff2'),
+      url('/assets/fonts/Esja/Esja-regularitalic.woff') format('woff');
+  }
+  @font-face {
+    font-family: Esja;
+    font-weight: 700;
+    font-style: italic;
+    font-display: block;
+    src: url('/assets/fonts/Esja/Esja-bolditalic.woff2') format('woff2'),
+      url('/assets/fonts/Esja/Esja-bolditalic.woff') format('woff');
+  }
+  /**/
+
+:root {
+  --cssVersion: "0.8.72";
+  --browser-scrollbar-width: 16px;
+  --bp-w-phone: 320px;
+  --bp-w-phablet: 480px;
+  --bp-w-tablet: 760px;
+  --bp-w-netbook: 980px;
+  --bp-w-wide: 1368px;
+  --bp-w-Hamburger: var(--bp-w-netbook);
+  --color-esja-25: rgb(244, 247, 255);
+  --color-esja-50: rgb(232, 238, 255);
+  --color-esja-75: rgb(210, 221, 254);
+  --color-esja-100: rgb(165, 187, 253);
+  --color-esja-150: rgb(82, 94, 127);
+  --color-faxafloi-25: rgb(224, 238, 251);
+  --color-faxafloi-50: rgb(192, 221, 247);
+  --color-faxafloi-75: rgb(129, 187, 240);
+  --color-faxafloi-100: rgb(3, 103, 225);
+  --color-faxafloi-150: rgb(1, 59, 112);
+  --color-nautholsvik-25: rgb(255, 250, 234);
+  --color-nautholsvik-50: rgb(255, 245, 213);
+  --color-nautholsvik-75: rgb(255, 234, 172);
+  --color-nautholsvik-100: rgb(255, 214, 89);
+  --color-nautholsvik-150: rgb(128, 107, 44);
+  --color-heidmork-25: rgb(250, 228, 229);
+  --color-heidmork-50: rgb(245, 200, 203);
+  --color-heidmork-75: rgb(236, 145, 151);
+  --color-heidmork-100: rgb(216, 34, 47);
+  --color-heidmork-150: rgb(108, 17, 24);
+  --color-ellidaardalur-25: rgb(226, 249, 234);
+  --color-ellidaardalur-50: rgb(196, 242, 213);
+  --color-ellidaardalur-75: rgb(137, 230, 171);
+  --color-ellidaardalur-100: rgb(100, 214, 142);
+  --color-ellidaardalur-150: rgb(10, 102, 43);
+  --color-blafjoll-25: rgb(255, 237, 233);
+  --color-blafjoll-50: rgb(255, 219, 211);
+  --color-blafjoll-75: rgb(250, 183, 169);
+  --color-blafjoll-100: rgb(247, 114, 87);
+  --color-blafjoll-150: rgb(128, 87, 55);
+  --color-sund-25: rgb(234, 251, 255);
+  --color-sund-50: rgb(212, 246, 255);
+  --color-sund-75: rgb(169, 237, 255);
+  --color-sund-100: rgb(83, 218, 255);
+  --color-sund-150: rgb(41, 109, 128);
+  --color-rokkur-25: rgb(255, 241, 246);
+  --color-rokkur-50: rgb(255, 227, 236);
+  --color-rokkur-75: rgb(255, 198, 218);
+  --color-rokkur-100: rgb(255, 141, 181);
+  --color-rokkur-150: rgb(128, 71, 90);
+  --color-suld-0: rgb(255, 255, 255);
+  --color-suld-25: rgb(248, 248, 249);
+  --color-suld-50: rgb(241, 242, 243);
+  --color-suld-75: rgb(227, 229, 231);
+  --color-suld-100: rgb(199, 203, 208);
+  --color-suld-150: rgb(112, 114, 117);
+  --color-suld-200: rgb(42, 43, 44);
+  --color-white: rgb(255, 255, 255);
+  --color-blackish: rgb(42, 43, 44);
+
+  /* @deprecated This was a typo (Will be removed in version v0.9)*/
+  --color-ellidarardalur-25: var(--color-ellidaardalur-25);
+  --color-ellidarardalur-50: var(--color-ellidaardalur-50);
+  --color-ellidarardalur-75: var(--color-ellidaardalur-75);
+  --color-ellidarardalur-100: var(--color-ellidaardalur-100);
+  --color-ellidarardalur-150: var(--color-ellidaardalur-150);
+  --link-color: var(--color-faxafloi-100);
+  --link-color--hover: var(--color-faxafloi-100);
+  --link-weight: var(--font-weight--bold);
+  --link-underline--thickness: 0.125rem;
+  --link-underline: var(--link-underline--thickness) solid transparent;
+  --link-underline--hover: var(--link-underline--thickness) solid currentColor;
+  --link-underline-offset: 0.15em;
+  --link-transition: 200ms ease-in;
+  --link-focus-outlineColor: currentColor;
+  --link-focus-outline: 3px solid currentColor;
+  --link-focus-outlineOffset: 2px;
+
+  --font-family: Esja, Helvetica, Arial, sans-serif;
+  --font-weight--normal: 400;
+  --font-weight--bold: 700;
+  --font-base-size: 16px;
+  --font-base-leading: 24px;
+  --font-base: var(--font-base-size) / var(--font-base-leading)
+    var(--font-family);
+  --font-hd-xl: var(--font-weight--bold) var(--font-hd-xl-size) /
+    var(--font-hd-xl-leading) var(--font-family);
+  --font-hd-l: var(--font-weight--bold) var(--font-hd-l-size) /
+    var(--font-hd-l-leading) var(--font-family);
+  --font-hd-m: var(--font-weight--bold) var(--font-hd-m-size) /
+    var(--font-hd-m-leading) var(--font-family);
+  --font-hd-s: var(--font-weight--bold) var(--font-hd-s-size) /
+    var(--font-hd-s-leading) var(--font-family);
+  --font-sh-l: var(--font-weight--bold) var(--font-sh-l-size) /
+    var(--font-sh-l-leading) var(--font-family);
+  --font-sh-l-thin: var(--font-sh-l-size) / var(--font-sh-l-leading)
+    var(--font-family);
+  --font-sh-s: var(--font-weight--bold) var(--font-sh-s-size) /
+    var(--font-sh-s-leading) var(--font-family);
+  --font-bd-l: var(--font-bd-l-size) / var(--font-bd-l-leading)
+    var(--font-family);
+  --font-bd-s: var(--font-bd-s-size) / var(--font-bd-s-leading)
+    var(--font-family);
+  --font-button: var(--font-button-size) / var(--font-button-leading)
+    var(--font-family);
+  --font-label: var(--font-label-size) / var(--font-label-leading)
+    var(--font-family);
+  --font-hd-xl-size: 40px;
+  --font-hd-xl-leading: 50px;
+  --font-hd-l-size: 32px;
+  --font-hd-l-leading: 40px;
+  --font-hd-m-size: 24px;
+  --font-hd-m-leading: 40px;
+  --font-hd-s-size: 20px;
+  --font-hd-s-leading: 30px;
+  --font-sh-l-size: 20px;
+  --font-sh-l-leading: 30px;
+  --font-sh-s-size: 20px;
+  --font-sh-s-leading: 30px;
+  --font-bd-l-size: 20px;
+  --font-bd-l-leading: 32px;
+  --font-bd-s-size: 16px;
+  --font-bd-s-leading: 24px;
+  --font-button-size: 16px;
+  --font-button-leading: 20px;
+  --font-label-size: 12px;
+  --font-label-leading: 16px;
+  --baseVerticalMargin: calc(0.7633587786259541vw + 13.557251908396948px);
+  --baseVerticalMargin-2: calc(1.5267175572519083vw + 27.114503816793896px);
+}
+
+:root:root,
+[data-color-theme][data-color-theme],
+[data-color-theme][data-color-theme="trustworthy"] {
+  --theme-color-primary: var(--color-faxafloi-100);
+  --theme-color-primary-75: var(--color-faxafloi-75);
+  --theme-color-primary-50: var(--color-faxafloi-50);
+  --theme-color-primary-25: var(--color-faxafloi-25);
+  --theme-color-secondary: var(--color-sund-100);
+  --theme-color-secondary-75: var(--color-sund-75);
+  --theme-color-secondary-50: var(--color-sund-50);
+  --theme-color-secondary-25: var(--color-sund-25);
+  --theme-color-tertiary: var(--color-ellidaardalur-100);
+  --theme-color-tertiary-75: var(--color-ellidaardalur-75);
+  --theme-color-tertiary-50: var(--color-ellidaardalur-50);
+  --theme-color-tertiary-25: var(--color-ellidaardalur-25);
+  --theme-color-primary--text: var(--color-white);
+  --theme-color-primary--dark: var(--color-faxafloi-150);
+  --theme-color-primary--safe: var(--theme-color-primary);
+  --theme-color-primary--safeish: var(--theme-color-primary);
+}
+
+[data-color-theme][data-color-theme="dependable"] {
+  --theme-color-primary: var(--color-faxafloi-100);
+  --theme-color-primary-75: var(--color-faxafloi-75);
+  --theme-color-primary-50: var(--color-faxafloi-50);
+  --theme-color-primary-25: var(--color-faxafloi-25);
+  --theme-color-secondary: var(--color-nautholsvik-100);
+  --theme-color-secondary-75: var(--color-nautholsvik-75);
+  --theme-color-secondary-50: var(--color-nautholsvik-50);
+  --theme-color-secondary-25: var(--color-nautholsvik-25);
+  --theme-color-tertiary: var(--color-sund-100);
+  --theme-color-tertiary-75: var(--color-sund-75);
+  --theme-color-tertiary-50: var(--color-sund-50);
+  --theme-color-tertiary-25: var(--color-sund-25);
+  --theme-color-primary--dark: var(--color-faxafloi-150);
+}
+
+[data-color-theme][data-color-theme="friendly"] {
+  --theme-color-primary: var(--color-ellidaardalur-100);
+  --theme-color-primary-75: var(--color-ellidaardalur-75);
+  --theme-color-primary-50: var(--color-ellidaardalur-50);
+  --theme-color-primary-25: var(--color-ellidaardalur-25);
+  --theme-color-secondary: var(--color-rokkur-100);
+  --theme-color-secondary-75: var(--color-rokkur-75);
+  --theme-color-secondary-50: var(--color-rokkur-50);
+  --theme-color-secondary-25: var(--color-rokkur-25);
+  --theme-color-tertiary: var(--color-nautholsvik-100);
+  --theme-color-tertiary-75: var(--color-nautholsvik-75);
+  --theme-color-tertiary-50: var(--color-nautholsvik-50);
+  --theme-color-tertiary-25: var(--color-nautholsvik-25);
+  --theme-color-primary--text: var(--color-blackish);
+  --theme-color-primary--dark: var(--color-ellidaardalur-150);
+  --theme-color-primary--safe: hsl(142.10000000000002, 81.4%, 29.6%);
+  --theme-color-primary--safeish: hsl(142.10000000000002, 72.7%, 46.2%);
+}
+
+[data-color-theme][data-color-theme="lively"] {
+  --theme-color-primary: var(--color-sund-100);
+  --theme-color-primary-75: var(--color-sund-75);
+  --theme-color-primary-50: var(--color-sund-50);
+  --theme-color-primary-25: var(--color-sund-25);
+  --theme-color-secondary: var(--color-blafjoll-100);
+  --theme-color-secondary-75: var(--color-blafjoll-75);
+  --theme-color-secondary-50: var(--color-blafjoll-50);
+  --theme-color-secondary-25: var(--color-blafjoll-25);
+  --theme-color-tertiary: var(--color-nautholsvik-100);
+  --theme-color-tertiary-75: var(--color-nautholsvik-75);
+  --theme-color-tertiary-50: var(--color-nautholsvik-50);
+  --theme-color-tertiary-25: var(--color-nautholsvik-25);
+  --theme-color-primary--text: var(--color-blackish);
+  --theme-color-primary--dark: var(--color-sund-150);
+  --theme-color-primary--safe: hsl(192.89999999999998, 100%, 31.8%);
+  --theme-color-primary--safeish: hsl(192.89999999999998, 100%, 48.4%);
+}
+
+[data-color-theme][data-color-theme="colorful"] {
+  --theme-color-primary: var(--color-nautholsvik-100);
+  --theme-color-primary-75: var(--color-nautholsvik-75);
+  --theme-color-primary-50: var(--color-nautholsvik-50);
+  --theme-color-primary-25: var(--color-nautholsvik-25);
+  --theme-color-secondary: var(--color-heidmork-100);
+  --theme-color-secondary-75: var(--color-heidmork-75);
+  --theme-color-secondary-50: var(--color-heidmork-50);
+  --theme-color-secondary-25: var(--color-heidmork-25);
+  --theme-color-tertiary: var(--color-esja-100);
+  --theme-color-tertiary-75: var(--color-esja-75);
+  --theme-color-tertiary-50: var(--color-esja-50);
+  --theme-color-tertiary-25: var(--color-esja-25);
+  --theme-color-primary--text: var(--color-blackish);
+  --theme-color-primary--dark: var(--color-nautholsvik-150);
+  --theme-color-primary--safe: hsl(45.19999999999999, 100%, 29.3%);
+  --theme-color-primary--safeish: hsl(45.19999999999999, 100%, 45.2%);
+}
+
+@media (min-width: 480px) and (max-width: 1367px) {
   :root {
-    --cssVersion: "0.8.71";
-    --browser-scrollbar-width: 16px;
-    --bp-w-phone: 320;
-    --bp-w-phablet: 480;
-    --bp-w-tablet: 760;
-    --bp-w-netbook: 980;
-    --bp-w-wide: 13688;
-    --bp-w-Hamburger: var(--bp-w-netbook);
-    --link-color: var(--color-faxafloi-100);
-    --link-color--hover: var(--color-faxafloi-100);
-    --link-weight: var(--font-weight--bold);
-    --link-underline-thickness: 0.125rem;
-    --link-underline: var(--link-underline-thickness) solid transparent;
-    --link-underline--hover: var(--link-underline-thickness) solid currentColor;
-    --link-underline-offset: 0.15em;
-    --link-transition: 200ms ease-in;
-    --link-focus-outlineColor: currentColor;
-    --link-focus-outline: 3px solid currentColor;
-    --link-focus-outlineOffset: 2px;
-    --zindex--sr-only: 99999;
-    --zindex--modal: 1000;
-    --zindex--header: 100;
-    --zindex--overlay: 10;
-    --zindex--Bling--overlay: 2;
-    --zindex--Bling: -10;
-    --grid-margin: calc(5.7251908397vw + 1.679389313px);
-    --grid-margin--neg: calc(-5.7251908397vw + -1.679389313px);
-    --grid-margin--right: calc(var(--grid-margin) - var(--browser-scrollbar-width));
-    --grid-margin--right--neg: calc(
-      var(--grid-margin--neg) + var(--browser-scrollbar-width)
-    );
-    --grid-edge: var(--grid-margin);
-    --grid-edge--neg: var(--grid-margin--neg);
-    --grid-edge--right: var(--grid-margin--right);
-    --grid-edge--right--neg: var(--grid-margin--right--neg);
-    --grid-0-1: calc(2.9321065669vw + -0.1112178353px);
-    --grid-1: calc(4.6913705071vw + -0.1779485365px);
-    --grid-1-1: calc(7.623477074vw + -0.2891663718px);
-    --grid-2: calc(12.314847581vw + -0.4671149082px);
-    --grid-2-2: calc(15.2469541479vw + -0.5783327435px);
-    --grid-3: calc(19.938324655vw + -0.75628128px);
-    --grid-3-3: calc(22.8704312219vw + -0.8674991153px);
-    --grid-4: calc(27.5618017289vw + -1.0454476518px);
-    --grid-4-4: calc(30.4939082958vw + -1.1566654871px);
-    --grid-5: calc(35.1852788029vw + -1.3346140236px);
-    --grid-5-5: calc(38.1173853698vw + -1.4458318589px);
-    --grid-6: calc(42.8087558769vw + -1.6237803953px);
-    --grid-6-6: calc(45.7408624438vw + -1.7349982306px);
-    --grid-7: calc(50.4322329508vw + -1.9129467671px);
-    --grid-7-7: calc(53.3643395177vw + -2.0241646024px);
-    --grid-8: calc(58.0557100248vw + -2.2021131389px);
-    --grid-8-8: calc(60.9878165917vw + -2.3133309742px);
-    --grid-9: calc(65.6791870987vw + -2.4912795106px);
-    --grid-9-9: calc(68.6112936656vw + -2.6024973459px);
-    --grid-10: calc(73.3026641727vw + -2.7804458824px);
-    --grid-10-10: calc(76.2347707396vw + -2.8916637177px);
-    --grid-11: calc(80.9261412467vw + -3.0696122542px);
-    --grid-11-11: calc(83.8582478136vw + -3.1808300895px);
-    --grid-12: calc(88.5496183206vw + -3.358778626px);
-    --grid-gutter: var(--grid-0-1);
-    --grid-column: var(--grid-1);
-    --grid-0-1--neg: calc(-2.9321065669vw + 0.1112178353px);
-    --grid-1--neg: calc(-4.6913705071vw + 0.1779485365px);
-    --grid-gutter--neg: var(--grid-0-1--neg);
-    --grid-column--neg: var(--grid-1--neg);
-    --space-1: 0.5rem;
-    --space-2: 1rem;
-    --space-3: 1.5rem;
-    --space-4: 2rem;
-    --space-5: 2.5rem;
-    --space-6: 3rem;
-    --space-7: 3.5rem;
-    --space-8: 4rem;
-    --space-9: 4.5rem;
-    --space-0_5: 0.25rem;
-    --space-1_5: 0.75rem;
-    --space-1--neg: -0.5rem;
-    --space-2--neg: -1rem;
-    --space-3--neg: -1.5rem;
-    --space-4--neg: -2rem;
-    --space-5--neg: -2.5rem;
-    --space-6--neg: -3rem;
-    --space-7--neg: -3.5rem;
-    --space-8--neg: -4rem;
-    --space-9--neg: -4.5rem;
-    --space-0_5--neg: -0.25rem;
-    --space-1_5--neg: -0.75rem;
-    --component-vspace--small: calc(4.3103448276% + 17.9310344828px);
-    --component-vspace--medium: calc(6.4655172414% + 21.8965517241px);
-    --component-vspace--large: calc(8.6206896552% + 25.8620689655px);
-    --component-vspace--xlarge: calc(14.0086206897% + 30.775862069px);
-    --baseVerticalMargin: calc(0.7633587786vw + 13.5572519084px);
-    --baseVerticalMargin-2: calc(1.5267175573vw + 27.1145038168px);
-    --font-family: Esja, Helvetica, Arial, sans-serif;
-    --font-weight--normal: 400;
-    --font-weight--bold: 700;
-    --font-base-size: 16px;
-    --font-base-leading: 24px;
-    --font-base: var(--font-base-size) / var(--font-base-leading) var(--font-family);
-    --font-hd-xl: var(--font-weight--bold) var(--font-hd-xl-size) /
-      var(--font-hd-xl-leading) var(--font-family);
-    --font-hd-l: var(--font-weight--bold) var(--font-hd-l-size) / var(--font-hd-l-leading)
-      var(--font-family);
-    --font-hd-m: var(--font-weight--bold) var(--font-hd-m-size) / var(--font-hd-m-leading)
-      var(--font-family);
-    --font-hd-s: var(--font-weight--bold) var(--font-hd-s-size) / var(--font-hd-s-leading)
-      var(--font-family);
-    --font-sh-l: var(--font-weight--bold) var(--font-sh-l-size) / var(--font-sh-l-leading)
-      var(--font-family);
-    --font-sh-l-thin: var(--font-sh-l-size) / var(--font-sh-l-leading) var(--font-family);
-    --font-sh-s: var(--font-weight--bold) var(--font-sh-s-size) / var(--font-sh-s-leading)
-      var(--font-family);
-    --font-bd-l: var(--font-bd-l-size) / var(--font-bd-l-leading) var(--font-family);
-    --font-bd-s: var(--font-bd-s-size) / var(--font-bd-s-leading) var(--font-family);
-    --font-button: var(--font-button-size) / var(--font-button-leading) var(--font-family);
-    --font-label: var(--font-label-size) / var(--font-label-leading) var(--font-family);
-    --font-hd-xl-size: 40px;
-    --font-hd-xl-leading: 50px;
-    --font-hd-l-size: 32px;
-    --font-hd-l-leading: 40px;
-    --font-hd-m-size: 24px;
-    --font-hd-m-leading: 40px;
-    --font-hd-s-size: 20px;
-    --font-hd-s-leading: 30px;
-    --font-sh-l-size: 20px;
-    --font-sh-l-leading: 30px;
-    --font-sh-s-size: 20px;
-    --font-sh-s-leading: 30px;
-    --font-bd-l-size: 20px;
-    --font-bd-l-leading: 32px;
-    --font-bd-s-size: 16px;
-    --font-bd-s-leading: 24px;
-    --font-button-size: 16px;
-    --font-button-leading: 20px;
-    --font-label-size: 12px;
-    --font-label-leading: 16px;
-    --Layout__header-height: 96px;
-    --Layout__header-backgroundColor: transparent;
-    --MainMenu-accentcolor: var(--color-faxafloi-100);
-    --MainMenu-background: var(--color-faxafloi-100);
-    --color-esja-25: #f4f7ff;
-    --color-esja-50: #e8eeff;
-    --color-esja-75: #d2ddfe;
-    --color-esja-100: #a5bbfd;
-    --color-esja-150: #525e7f;
-    --color-faxafloi-25: #e0eefb;
-    --color-faxafloi-50: #c0ddf7;
-    --color-faxafloi-75: #81bbf0;
-    --color-faxafloi-100: #0367e1;
-    --color-faxafloi-150: #013b70;
-    --color-nautholsvik-25: #fffaea;
-    --color-nautholsvik-50: #fff5d5;
-    --color-nautholsvik-75: #ffeaac;
-    --color-nautholsvik-100: #ffd659;
-    --color-nautholsvik-150: #806b2c;
-    --color-heidmork-25: #fae4e5;
-    --color-heidmork-50: #f5c8cb;
-    --color-heidmork-75: #ec9197;
-    --color-heidmork-100: #d8222f;
-    --color-heidmork-150: #6c1118;
-    --color-ellidaardalur-25: #e2f9ea;
-    --color-ellidaardalur-50: #c4f2d5;
-    --color-ellidaardalur-75: #89e6ab;
-    --color-ellidaardalur-100: #64d68e;
-    --color-ellidaardalur-150: #0a662b;
-    --color-ellidarardalur-25: var(--color-ellidaardalur-25);
-    --color-ellidarardalur-50: var(--color-ellidaardalur-50);
-    --color-ellidarardalur-75: var(--color-ellidaardalur-75);
-    --color-ellidarardalur-100: var(--color-ellidaardalur-100);
-    --color-ellidarardalur-150: var(--color-ellidaardalur-150);
-    --color-blafjoll-25: #ffede9;
-    --color-blafjoll-50: #ffdbd3;
-    --color-blafjoll-75: #fab7a9;
-    --color-blafjoll-100: #f77257;
-    --color-blafjoll-150: #805737;
-    --color-sund-25: #eafbff;
-    --color-sund-50: #d4f6ff;
-    --color-sund-75: #a9edff;
-    --color-sund-100: #53daff;
-    --color-sund-150: #296d80;
-    --color-rokkur-25: #fff1f6;
-    --color-rokkur-50: #ffe3ec;
-    --color-rokkur-75: #ffc6da;
-    --color-rokkur-100: #ff8db5;
-    --color-rokkur-150: #80475a;
-    --color-suld-0: #ffffff;
-    --color-suld-25: #f8f8f9;
-    --color-suld-50: #f1f2f3;
-    --color-suld-75: #e3e5e7;
-    --color-suld-100: #c7cbd0;
-    --color-suld-150: #707275;
-    --color-suld-200: #2a2b2c;
-    --color-white: #ffffff;
-    --color-blackish: #2a2b2c;
-    --border-default: 1px solid var(--color-suld-75);
-    --border-dark: 1px solid var(--color-suld-150);
-    --Button--gapH: calc(1.5267175573vw + 11.1145038168px);
-    --Button--gapV: var(--space-2);
+    --font-hd-xl-size: calc(3.6036036036036037vw + 22.7027027027027px);
+    --font-hd-xl-leading: calc(4.504504504504505vw + 28.37837837837838px);
+    --font-hd-l-size: calc(3.6036036036036037vw + 14.702702702702702px);
+    --font-hd-l-leading: calc(4.504504504504505vw + 18.37837837837838px);
+    --font-hd-m-size: calc(2.7027027027027026vw + 11.027027027027025px);
+    --font-hd-m-leading: calc(2.2522522522522523vw + 29.18918918918919px);
+    --font-hd-s-size: calc(2.2522522522522523vw + 9.18918918918919px);
+    --font-hd-s-leading: calc(2.2522522522522523vw + 19.18918918918919px);
+    --font-sh-l-size: calc(1.3513513513513513vw + 13.513513513513512px);
+    --font-sh-l-leading: calc(1.1261261261261262vw + 24.594594594594597px);
+    --font-sh-s-size: calc(0.45045045045045046vw + 17.83783783783784px);
+    --font-sh-s-leading: calc(0.22522522522522523vw + 28.91891891891892px);
   }
 }
-@media screen and (min-width: 1368px) {
+
+@media (min-width: 1368px) {
+  :root {
+    --font-hd-xl-size: 72px;
+    --font-hd-xl-leading: 90px;
+    --font-hd-l-size: 64px;
+    --font-hd-l-leading: 80px;
+    --font-hd-m-size: 48px;
+    --font-hd-m-leading: 60px;
+    --font-hd-s-size: 40px;
+    --font-hd-s-leading: 50px;
+    --font-sh-l-size: 32px;
+    --font-sh-l-leading: 40px;
+    --font-sh-s-size: 24px;
+    --font-sh-s-leading: 32px;
+    --baseVerticalMargin: 24px;
+    --baseVerticalMargin-2: 48px;
+  }
+}
+
+:root {
+  --zindex--sr-only: 99999;
+  --zindex--modal: 1000;
+  --zindex--header: 100;
+  --zindex--overlay: 10;
+  --zindex--Bling--overlay: 2;
+  --zindex--Bling: -10;
+
+  --grid-margin: calc(5.7251908396946565vw + 1.6793893129771078px);
+  --grid-margin--neg: calc(-5.7251908396946565vw + -1.6793893129771078px);
+  --grid-margin--right: calc(
+    var(--grid-margin) - var(--browser-scrollbar-width)
+  );
+  --grid-margin--right--neg: calc(
+    var(--grid-margin--neg) + var(--browser-scrollbar-width)
+  );
+  --grid-0-1: calc(2.9321065669076387vw + -0.11121783529650031px);
+  --grid-1: calc(4.6913705070522225vw + -0.17794853647438913px);
+  --grid-1-1: calc(7.623477073959862vw + -0.28916637177088944px);
+  --grid-2: calc(12.314847581012083vw + -0.4671149082452928px);
+  --grid-2-2: calc(15.246954147919723vw + -0.5783327435417789px);
+  --grid-3: calc(19.938324654971943vw + -0.7562812800161964px);
+  --grid-3-3: calc(22.870431221879585vw + -0.8674991153126825px);
+  --grid-4: calc(27.5618017289318vw + -1.0454476517870148px);
+  --grid-4-4: calc(30.493908295839447vw + -1.1566654870835578px);
+  --grid-5: calc(35.185278802891666vw + -1.334614023557947px);
+  --grid-5-5: calc(38.11738536979931vw + -1.4458318588544898px);
+  --grid-6: calc(42.80875587685152vw + -1.6237803953288221px);
+  --grid-6-6: calc(45.74086244375917vw + -1.734998230625365px);
+  --grid-7: calc(50.43223295081138vw + -1.9129467670996974px);
+  --grid-7-7: calc(53.36433951771903vw + -2.024164602396354px);
+  --grid-8: calc(58.055710024771244vw + -2.2021131388706863px);
+  --grid-8-8: calc(60.98781659167889vw + -2.3133309741671155px);
+  --grid-9: calc(65.67918709873109vw + -2.491279510641448px);
+  --grid-9-9: calc(68.61129366563875vw + -2.6024973459381044px);
+  --grid-10: calc(73.30266417269097vw + -2.7804458824124367px);
+  --grid-10-10: calc(76.23477073959862vw + -2.8916637177089797px);
+  --grid-11: calc(80.92614124665083vw + -3.069612254183312px);
+  --grid-11-11: calc(83.85824781355848vw + -3.1808300894799686px);
+  --grid-12: calc(88.54961832061069vw + -3.358778625954301px);
+  --grid-gutter: var(--grid-0-1);
+  --grid-column: var(--grid-1);
+  --grid-0-1--neg: calc(-2.9321065669076387vw + 0.11121783529650031px);
+  --grid-1--neg: calc(-4.6913705070522225vw + 0.17794853647438913px);
+  --grid-gutter--neg: var(--grid-0-1--neg);
+  --grid-column--neg: var(--grid-1--neg);
+  --grid-edge: var(--grid-margin);
+  --grid-edge--neg: var(--grid-margin--neg);
+  --grid-edge--right: var(--grid-margin--right);
+  --grid-edge--right--neg: var(--grid-margin--right--neg);
+}
+
+/* @deprecated (Remove in v0.9)*/
+
+/* END: deprecation*/
+
+@media (min-width: 1368px) {
   :root {
     --grid-margin: 80px;
     --grid-margin--neg: -80px;
@@ -232,320 +390,249 @@
     --grid-12: 1208px;
     --grid-0-1--neg: -40px;
     --grid-1--neg: -64px;
-    --grid-column--neg: var(--grid-1--neg);
   }
 }
-@media screen and (min-width: 1368px) {
+
+:root {
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 2.5rem;
+  --space-6: 3rem;
+  --space-7: 3.5rem;
+  --space-8: 4rem;
+  --space-9: 4.5rem;
+  --space-0_5: 0.25rem;
+  --space-1_5: 0.75rem;
+  --space-1--neg: -0.5rem;
+  --space-2--neg: -1rem;
+  --space-3--neg: -1.5rem;
+  --space-4--neg: -2rem;
+  --space-5--neg: -2.5rem;
+  --space-6--neg: -3rem;
+  --space-7--neg: -3.5rem;
+  --space-8--neg: -4rem;
+  --space-9--neg: -4.5rem;
+  --space-0_5--neg: -0.25rem;
+  --space-1_5--neg: -0.75rem;
+  --component-vspace--small: calc(4.310344827586207% + 17.93103448275862px);
+  --component-vspace--medium: calc(6.4655172413793105% + 21.89655172413792px);
+  --component-vspace--large: calc(8.620689655172415% + 25.86206896551724px);
+  --component-vspace--xlarge: calc(14.00862068965517% + 30.775862068965523px);
+
+  --Layout__header-height: 96px;
+  --Layout__header-backgroundColor: transparent;
+}
+
+@media (min-width: 980px) {
   :root {
-    --baseVerticalMargin: 24px;
-    --baseVerticalMargin-2: 48px;
+    --Layout__header-height: calc(10.309278350515463vw + -5.0309278350515285px);
   }
 }
-@media screen and (min-width: 480px) and (max-width: 1367px) {
-  :root {
-    --font-hd-xl-size: calc(3.6036036036vw + 22.7027027027px);
-    --font-hd-xl-leading: calc(4.5045045045vw + 28.3783783784px);
-    --font-hd-l-size: calc(3.6036036036vw + 14.7027027027px);
-    --font-hd-l-leading: calc(4.5045045045vw + 18.3783783784px);
-    --font-hd-m-size: calc(2.7027027027vw + 11.027027027px);
-    --font-hd-m-leading: calc(2.2522522523vw + 29.1891891892px);
-    --font-hd-s-size: calc(2.2522522523vw + 9.1891891892px);
-    --font-hd-s-leading: calc(2.2522522523vw + 19.1891891892px);
-    --font-sh-l-size: calc(1.3513513514vw + 13.5135135135px);
-    --font-sh-l-leading: calc(1.1261261261vw + 24.5945945946px);
-    --font-sh-s-size: calc(0.4504504505vw + 17.8378378378px);
-    --font-sh-s-leading: calc(0.2252252252vw + 28.9189189189px);
-  }
-}
-@media screen and (min-width: 1368px) {
-  :root {
-    --font-hd-xl-size: 72px;
-    --font-hd-xl-leading: 90px;
-    --font-hd-l-size: 64px;
-    --font-hd-l-leading: 80px;
-    --font-hd-m-size: 48px;
-    --font-hd-m-leading: 60px;
-    --font-hd-s-size: 40px;
-    --font-hd-s-leading: 50px;
-    --font-sh-l-size: 32px;
-    --font-sh-l-leading: 40px;
-    --font-sh-s-size: 24px;
-    --font-sh-s-leading: 32px;
-  }
-}
-@media screen and (min-width: 980px) {
-  :root {
-    --Layout__header-height: calc(10.3092783505vw + -5.0309278351px);
-  }
-}
-@media screen and (min-width: 1368px) {
+
+@media (min-width: 1368px) {
   :root {
     --Layout__header-height: 136px;
   }
 }
-@media screen and (min-width: 1368px) {
+
+:root {
+  --MainMenu-accentcolor: var(--color-faxafloi-100);
+  --MainMenu-background: var(--color-faxafloi-100);
+  --border-default: 1px solid var(--color-suld-75);
+  --border-dark: 1px solid var(--color-suld-150);
+
+  --Button--gapH: calc(1.5267175572519083vw + 11.114503816793896px);
+  --Button--gapV: var(--space-2);
+}
+
+@media (min-width: 1368px) {
   :root {
     --Button--gapH: 32px;
   }
 }
-@media screen {
-  :root:root,
-[data-color-theme][data-color-theme],
-[data-color-theme][data-color-theme=trustworthy] {
-    --theme-color-primary: var(--color-faxafloi-100);
-    --theme-color-primary-75: var(--color-faxafloi-75);
-    --theme-color-primary-50: var(--color-faxafloi-50);
-    --theme-color-primary-25: var(--color-faxafloi-25);
-    --theme-color-secondary: var(--color-sund-100);
-    --theme-color-secondary-75: var(--color-sund-75);
-    --theme-color-secondary-50: var(--color-sund-50);
-    --theme-color-secondary-25: var(--color-sund-25);
-    --theme-color-tertiary: var(--color-ellidaardalur-100);
-    --theme-color-tertiary-75: var(--color-ellidaardalur-75);
-    --theme-color-tertiary-50: var(--color-ellidaardalur-50);
-    --theme-color-tertiary-25: var(--color-ellidaardalur-25);
-    --theme-color-primary--text: var(--color-white);
-    --theme-color-primary--dark: var(--color-faxafloi-150);
-    --theme-color-primary--safe: var(--theme-color-primary);
-    --theme-color-primary--safeish: var(--theme-color-primary);
+
+:root {
+  --icon--alert: "";
+  --icon--arrow-left-long: "";
+  --icon--arrow-left: "";
+  --icon--arrow-right: "";
+  --icon--arrow-up-long: "";
+  --icon--calendar: "";
+  --icon--chat: "";
+  --icon--checkmark: "";
+  --icon--chevron-down: "";
+  --icon--chevron-left: "";
+  --icon--chevron-right: "";
+  --icon--chevron-soft-right: "";
+  --icon--chevron-up: "";
+  --icon--close-thin: "";
+  --icon--close: "";
+  --icon--dash: "";
+  --icon--data: "";
+  --icon--document: "";
+  --icon--edit: "";
+  --icon--error: "";
+  --icon--external: "";
+  --icon--facebook: "";
+  --icon--fatchevron-up: "";
+  --icon--file-pdf: "";
+  --icon--home: "";
+  --icon--info: "";
+  --icon--link: "";
+  --icon--location: "";
+  --icon--menu: "";
+  --icon--pen: "";
+  --icon--radioball: "";
+  --icon--search: "";
+  --icon--text: "";
+  --icon--time: "";
+  --icon--twitter: "";
+  --icon--user: "";
+  --icon--warning: "";
+
+  --ButtonTertiary--height: calc(var(--font-button-leading) + 4px);
+  --ButtonTertiary--color: _inherit;
+  --ButtonTertiary--dashColor: var(--color-faxafloi-100);
+  --ButtonTertiary--dashWidth: var(--space-2);
+  --ButtonTertiary--hover--dashWidth: var(--space-4);
+  --ButtonTertiary--dashSpace: var(--space-2);
+  --ButtonTertiary--dashHeight: 2px;
+  --ButtonTertiary--gapH: calc(0.7633587786259541vw + 13.557251908396948px);
+}
+
+@media (min-width: 1368px) {
+  :root {
+    --ButtonTertiary--gapH: 24px;
   }
 }
-@media screen {
-  [data-color-theme][data-color-theme=dependable] {
-    --theme-color-primary: var(--color-faxafloi-100);
-    --theme-color-primary-75: var(--color-faxafloi-75);
-    --theme-color-primary-50: var(--color-faxafloi-50);
-    --theme-color-primary-25: var(--color-faxafloi-25);
-    --theme-color-secondary: var(--color-nautholsvik-100);
-    --theme-color-secondary-75: var(--color-nautholsvik-75);
-    --theme-color-secondary-50: var(--color-nautholsvik-50);
-    --theme-color-secondary-25: var(--color-nautholsvik-25);
-    --theme-color-tertiary: var(--color-sund-100);
-    --theme-color-tertiary-75: var(--color-sund-75);
-    --theme-color-tertiary-50: var(--color-sund-50);
-    --theme-color-tertiary-25: var(--color-sund-25);
-    --theme-color-primary--dark: var(--color-faxafloi-150);
-  }
-}
-@media screen {
-  [data-color-theme][data-color-theme=friendly] {
-    --theme-color-primary: var(--color-ellidaardalur-100);
-    --theme-color-primary-75: var(--color-ellidaardalur-75);
-    --theme-color-primary-50: var(--color-ellidaardalur-50);
-    --theme-color-primary-25: var(--color-ellidaardalur-25);
-    --theme-color-secondary: var(--color-rokkur-100);
-    --theme-color-secondary-75: var(--color-rokkur-75);
-    --theme-color-secondary-50: var(--color-rokkur-50);
-    --theme-color-secondary-25: var(--color-rokkur-25);
-    --theme-color-tertiary: var(--color-nautholsvik-100);
-    --theme-color-tertiary-75: var(--color-nautholsvik-75);
-    --theme-color-tertiary-50: var(--color-nautholsvik-50);
-    --theme-color-tertiary-25: var(--color-nautholsvik-25);
-    --theme-color-primary--text: var(--color-blackish);
-    --theme-color-primary--dark: var(--color-ellidaardalur-150);
-    --theme-color-primary--safe: #0e893b;
-    --theme-color-primary--safeish: #20cb5f;
-  }
-}
-@media screen {
-  [data-color-theme][data-color-theme=lively] {
-    --theme-color-primary: var(--color-sund-100);
-    --theme-color-primary-75: var(--color-sund-75);
-    --theme-color-primary-50: var(--color-sund-50);
-    --theme-color-primary-25: var(--color-sund-25);
-    --theme-color-secondary: var(--color-blafjoll-100);
-    --theme-color-secondary-75: var(--color-blafjoll-75);
-    --theme-color-secondary-50: var(--color-blafjoll-50);
-    --theme-color-secondary-25: var(--color-blafjoll-25);
-    --theme-color-tertiary: var(--color-nautholsvik-100);
-    --theme-color-tertiary-75: var(--color-nautholsvik-75);
-    --theme-color-tertiary-50: var(--color-nautholsvik-50);
-    --theme-color-tertiary-25: var(--color-nautholsvik-25);
-    --theme-color-primary--text: var(--color-blackish);
-    --theme-color-primary--dark: var(--color-sund-150);
-    --theme-color-primary--safe: #007fa2;
-    --theme-color-primary--safeish: #00c2f7;
-  }
-}
-@media screen {
-  [data-color-theme][data-color-theme=colorful] {
-    --theme-color-primary: var(--color-nautholsvik-100);
-    --theme-color-primary-75: var(--color-nautholsvik-75);
-    --theme-color-primary-50: var(--color-nautholsvik-50);
-    --theme-color-primary-25: var(--color-nautholsvik-25);
-    --theme-color-secondary: var(--color-heidmork-100);
-    --theme-color-secondary-75: var(--color-heidmork-75);
-    --theme-color-secondary-50: var(--color-heidmork-50);
-    --theme-color-secondary-25: var(--color-heidmork-25);
-    --theme-color-tertiary: var(--color-esja-100);
-    --theme-color-tertiary-75: var(--color-esja-75);
-    --theme-color-tertiary-50: var(--color-esja-50);
-    --theme-color-tertiary-25: var(--color-esja-25);
-    --theme-color-primary--text: var(--color-blackish);
-    --theme-color-primary--dark: var(--color-nautholsvik-150);
-    --theme-color-primary--safe: #967100;
-    --theme-color-primary--safeish: #e6ae00;
-  }
-}
-@font-face {
-  font-family: "icons";
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-  src: url("i/icons.woff2?c5730a0509864400d986b9d55fb69a96") format("woff2"), url("i/icons.woff?c5730a0509864400d986b9d55fb69a96") format("woff");
-}
-@font-face {
-  font-family: "Esja";
-  font-weight: 400;
-  font-style: normal;
-  font-display: block;
-  src: url("/assets/fonts/Esja/Esja-regular.woff2") format("woff2"), url("/assets/fonts/Esja/Esja-regular.woff") format("woff");
-}
-@font-face {
-  font-family: "Esja";
-  font-weight: 700;
-  font-style: normal;
-  font-display: block;
-  src: url("/assets/fonts/Esja/Esja-bold.woff2") format("woff2"), url("/assets/fonts/Esja/Esja-bold.woff") format("woff");
-}
-/** /
-@font-face {
-	font-family: $font-family-name;
-	font-weight: $font-weight--normal;
-	font-style: italic;
-	font-display: block;
-	src: url('/assets/fonts/Esja/Esja-regularitalic.woff2') format('woff2'),
-		url('/assets/fonts/Esja/Esja-regularitalic.woff') format('woff');
-}
-@font-face {
-	font-family: $font-family-name;
-	font-weight: $font-weight--bold;
-	font-style: italic;
-	font-display: block;
-	src: url('/assets/fonts/Esja/Esja-bolditalic.woff2') format('woff2'),
-		url('/assets/fonts/Esja/Esja-bolditalic.woff') format('woff');
-}
-/**/
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
 /* Document
- ========================================================================== */
+   ========================================================================== */
+
 /**
-* 1. Correct the line height in all browsers.
-* 2. Prevent adjustments of font size after orientation changes in iOS.
-*/
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
 html {
-  line-height: 1.15;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
 
 /* Sections
- ========================================================================== */
+   ========================================================================== */
+
 /**
-* Remove the margin in all browsers.
-*/
+ * Remove the margin in all browsers.
+ */
+
 body {
   margin: 0;
 }
 
 /**
-* Render the `main` element consistently in IE.
-*/
+ * Render the `main` element consistently in IE.
+ */
+
 main {
   display: block;
 }
 
 /**
-* Correct the font size and margin on `h1` elements within `section` and
-* `article` contexts in Chrome, Firefox, and Safari.
-*/
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
 /* Grouping content
- ========================================================================== */
+   ========================================================================== */
+
 /**
-* 1. Add the correct box sizing in Firefox.
-* 2. Show the overflow in Edge and IE.
-*/
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
 hr {
-  box-sizing: content-box;
-  /* 1 */
-  height: 0;
-  /* 1 */
-  overflow: visible;
-  /* 2 */
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
 }
 
 /**
-* 1. Correct the inheritance and scaling of font size in all browsers.
-* 2. Correct the odd `em` font sizing in all browsers.
-*/
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
 pre {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /* Text-level semantics
- ========================================================================== */
+   ========================================================================== */
+
 /**
-* Remove the gray background on active links in IE 10.
-*/
+ * Remove the gray background on active links in IE 10.
+ */
+
 a {
   background-color: transparent;
 }
 
 /**
-* 1. Remove the bottom border in Chrome 57-
-* 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
-*/
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+/* */ /* Hugsmidjan change - remove [title] to make selector less specific  */ /**/
 abbr {
-  border-bottom: none;
-  /* 1 */
-  text-decoration: underline;
-  /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
-  /* 2 */
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
-* Add the correct font weight in Chrome, Edge, and Safari.
-*/
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
 b,
 strong {
   font-weight: bolder;
 }
 
 /**
-* 1. Correct the inheritance and scaling of font size in all browsers.
-* 2. Correct the odd `em` font sizing in all browsers.
-*/
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /**
-* Add the correct font size in all browsers.
-*/
+ * Add the correct font size in all browsers.
+ */
+
 small {
   font-size: 80%;
 }
 
 /**
-* Prevent `sub` and `sup` elements from affecting the line height in
-* all browsers.
-*/
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
 sub,
 sup {
   font-size: 75%;
@@ -563,39 +650,40 @@ sup {
 }
 
 /* Embedded content
- ========================================================================== */
+   ========================================================================== */
+
 /**
-* Remove the border on images inside links in IE 10.
-*/
+ * Remove the border on images inside links in IE 10.
+ */
+
 img {
   border-style: none;
 }
 
 /* Forms
- ========================================================================== */
+   ========================================================================== */
+
 /**
-* 1. Change the font styles in all browsers.
-* 2. Remove the margin in Firefox and Safari.
-*/
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
 button,
 input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  line-height: 1.15;
-  /* 1 */
-  margin: 0;
-  /* 2 */
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
 }
 
 /**
-* Show the overflow in IE.
-* 1. Show the overflow in Edge.
-*/
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
 button,
 input {
   /* 1 */
@@ -603,9 +691,10 @@ input {
 }
 
 /**
-* Remove the inheritance of text transform in Edge, Firefox, and IE.
-* 1. Remove the inheritance of text transform in Firefox.
-*/
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
 button,
 select {
   /* 1 */
@@ -613,172 +702,198 @@ select {
 }
 
 /**
-* Correct the inability to style clickable types in iOS and Safari.
-*/
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
 button,
-[type=button],
-[type=reset],
-[type=submit] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
 }
 
 /**
-* Remove the inner border and padding in Firefox.
-*/
+ * Remove the inner border and padding in Firefox.
+ */
+
 button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
 /**
-* Restore the focus styles unset by the previous rule.
-*/
+ * Restore the focus styles unset by the previous rule.
+ */
+
 button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
 /**
-* Correct the padding in Firefox.
-*/
+ * Correct the padding in Firefox.
+ */
+
 fieldset {
   padding: 0.35em 0.75em 0.625em;
 }
 
 /**
-* 1. Correct the text wrapping in Edge and IE.
-* 2. Correct the color inheritance from `fieldset` elements in IE.
-* 3. Remove the padding so developers are not caught out when they zero out
-*    `fieldset` elements in all browsers.
-*/
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
 legend {
-  box-sizing: border-box;
-  /* 1 */
-  color: inherit;
-  /* 2 */
-  display: table;
-  /* 1 */
-  max-width: 100%;
-  /* 1 */
-  padding: 0;
-  /* 3 */
-  white-space: normal;
-  /* 1 */
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
 }
 
 /**
-* Add the correct vertical alignment in Chrome, Firefox, and Opera.
-*/
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
 progress {
   vertical-align: baseline;
 }
 
 /**
-* Remove the default vertical scrollbar in IE 10+.
-*/
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
 textarea {
   overflow: auto;
 }
 
 /**
-* 1. Add the correct box sizing in IE 10.
-* 2. Remove the padding in IE 10.
-*/
-[type=checkbox],
-[type=radio] {
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
 }
 
 /**
-* Correct the cursor style of increment and decrement buttons in Chrome.
-*/
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
 /**
-* 1. Correct the odd appearance in Chrome and Safari.
-* 2. Correct the outline style in Safari.
-*/
-[type=search] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
 }
 
 /**
-* Remove the inner padding in Chrome and Safari on macOS.
-*/
-[type=search]::-webkit-search-decoration {
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
 /**
-* 1. Correct the inability to style clickable types in iOS and Safari.
-* 2. Change font properties to `inherit` in Safari.
-*/
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
 }
 
 /* Interactive
- ========================================================================== */
+   ========================================================================== */
+
 /*
-* Add the correct display in Edge, IE 10+, and Firefox.
-*/
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
 details {
   display: block;
 }
 
 /*
-* Add the correct display in all browsers.
-*/
+ * Add the correct display in all browsers.
+ */
+
 summary {
   display: list-item;
 }
 
 /* Misc
- ========================================================================== */
+   ========================================================================== */
+
 /**
-* Add the correct display in IE 10+.
-*/
+ * Add the correct display in IE 10+.
+ */
+
 template {
   display: none;
 }
 
 /**
-* Add the correct display in IE 10.
-*/
+ * Add the correct display in IE 10.
+ */
+
 [hidden] {
   display: none;
 }
 
 /*! Normalization tweaks by Hugsmiðjan */
+/* */ /**/
+/*  * ==========================================================================*/
+/*  * Hugsmiðjan's additions*/
+/*  * ==========================================================================*/
+/*  */ /**/
+
+/* */ /**/
+/*  * 1. Cursors only change to hint non-obvious interfaces*/
+/*  * 2. Enforce vertical scrollbar.*/
+/*  * 3. Words break to prevent overflow - ("word-break: break-word;" is deprecated)*/
+/*   *   - https://developer.mozilla.org/en-US/docs/Web/CSS/word-break#Values*/
+/*  */ /**/
 html {
   font-family: sans-serif;
-  cursor: default;
-  /* 1 */
-  overflow-y: scroll;
-  /* 2 */
+  cursor: default; /* 1 */
+  overflow-y: scroll; /* 2 */
+  /* Disabled. Should be Opt-in.*/
+  /* word-break: break-word; */ /* 3 */ /**/
+  /* overflow-wrap: break-word; */ /* 3 */ /**/
 }
 
+/* */ /**/
+/*  * Remove default outline from [tabindex="-1"] elements*/
+/*  * when they receive focus via JavaScript*/
+/*  */ /**/
 [tabindex="-1"] {
   outline: none;
 }
 
+/* */ /**/
+/*  * Single taps are dispatched immediately on clickable elements*/
+/*  */ /**/
 a,
 area,
 button,
@@ -791,43 +906,48 @@ textarea,
   touch-action: manipulation;
 }
 
-input[type=tel],
-input[type=number],
-input[type=email],
-input[type=url],
-input[type=date],
+/* */ /**/
+/*  * Remove (otherwise unoverridable) default box-shadow inset on iOS devices!*/
+/*  * (Save bandwidth by only enumerating the most common/useful HTML5 input types)*/
+/*  */ /**/
+input[type="tel"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
 textarea,
-input[type=password],
-input[type=text] {
+input[type="password"],
+input[type="text"] {
+  /* */ /* border-radius: 0 // <-- should we enable this? */ /**/
   -webkit-appearance: none;
 }
-
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
-
-input[type=search],
-input[type=search]::-webkit-search-decoration,
-input[type=search]::-webkit-search-cancel-button,
-input[type=search]::-webkit-search-results-button,
-input[type=search]::-webkit-search-results-decoration {
+input[type="search"],
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
   -webkit-appearance: none;
 }
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
+/* Add back placeholder fix removed because of Edge bug*/
+/* (https://github.com/necolas/normalize.css/commit/f081e459e4ea9f9fce9184cc69e4d3b7c1226e92)*/
+/* ...which seems to have been fixed since.*/
 ::-webkit-input-placeholder {
   color: inherit;
   opacity: 0.54;
 }
 
 /*
-   * Textareas only resize vertically by default
-   */
+     * Textareas only resize vertically by default
+     */
 textarea {
   resize: vertical;
 }
@@ -838,511 +958,552 @@ fieldset {
   padding: 0.35em 0.625em 0.75em;
 }
 
+/* */ /**/
+/*  * Normalize to old-school border-bottom - rather than the new standard*/
+/*  * which uses advanced `text-decoration: dotted underline*/
+/*  * not supported by most browsers as of early 2016*/
+/*  */ /**/
 abbr {
   text-decoration: none;
   border-bottom: 1px dotted;
 }
 
+/* */ /**/
+/*  * Override default normalization because*/
+/*  * position:relative on large numbers of display:inline elements*/
+/*  * slows IE11 to a grinding halt -- Már 2015*/
+/*  */ /**/
 sup,
 sub {
   position: static;
   line-height: inherit;
   top: auto;
   bottom: auto;
+  /* */ /* this works better */ /**/
   display: inline-block;
   vertical-align: middle;
 }
-
 sup {
   margin-top: -1.1em;
 }
-
 sub {
   margin-bottom: -0.85em;
 }
 
+/* */ /**/
+/*  * Normalize button cursor*/
+/*  */ /**/
 button {
   cursor: pointer;
 }
 
+/* */ /***/
+/*  * Remove most spacing between table cells.*/
+/*  */ /**/
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
-@media screen {
-  *,
+*,
 *::before,
 *::after {
-    flex-shrink: 0;
-    box-sizing: border-box;
-  }
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+[hidden][hidden] {
+  display: none;
+}
 
-  [hidden][hidden] {
-    display: none;
-  }
-
-  *:focus:focus,
+*:focus:focus,
 *:focus[data-focus-visible-added] {
-    outline: var(--link-focus-outline);
-    outline-color: var(--link-focus-outlineColor);
-    outline-offset: var(--link-focus-outlineOffset);
-  }
-
-  *:focus-visible:focus-visible {
-    outline: var(--link-focus-outline);
-    outline-color: var(--link-focus-outlineColor);
-    outline-offset: var(--link-focus-outlineOffset);
-  }
-
-  *:focus[tabindex="-1"],
+  outline: var(--link-focus-outline);
+  outline-color: var(--link-focus-outlineColor);
+  outline-offset: var(--link-focus-outlineOffset);
+}
+*:focus-visible:focus-visible {
+  outline: var(--link-focus-outline);
+  outline-color: var(--link-focus-outlineColor);
+  outline-offset: var(--link-focus-outlineOffset);
+}
+*:focus[tabindex="-1"],
 [data-js-focus-visible] *:focus:not([data-focus-visible-added]) {
-    outline: none;
-    outline-offset: 0;
-  }
+  outline: none;
+  outline-offset: 0;
+}
+*:focus:not(:focus-visible) {
+  outline: none;
+  outline-offset: 0;
+}
+html {
+  min-height: 100vh;
+  min-width: calc(320px - var(--browser-scrollbar-width));
+  box-sizing: border-box;
+  position: relative;
+  overflow-x: hidden; /* rely on <body/> for scrolling*/
+  /* NOTE: when the virtual keyboard appears in iphone/mobile safari and an input needs to be*/
+  /* shifted upwards, then mobile-safari force-scrolls the <html/> element*/
+  /* If overflow-y is hidden, then the <html/> element remains stuck in the scrolled state*/
+  /* and thereafter clipping the top off the page... #❤️🍎*/
+  overflow-y: auto;
 
-  *:focus:not(:focus-visible) {
-    outline: none;
-    outline-offset: 0;
-  }
+  /* "Fix" nasty/smudgy font rendering on mac*/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
-  html {
-    min-height: 100vh;
-    min-width: calc(320 - var(--browser-scrollbar-width));
-    box-sizing: border-box;
-    overflow: hidden;
-    position: relative;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: var(--color-suld-0);
-    color: var(--color-suld-200);
-    font: var(--font-base);
-    font-weight: 400;
-    quotes: "“" "”" "‘" "’";
-  }
+  background-color: var(--color-suld-0);
+  color: var(--color-suld-200);
 
-  *:lang(is) {
-    quotes: "„" "“" "‚" "‘";
-  }
+  font: var(--font-base);
+  font-weight: 400;
+  /* English style as "normal-looking" fallback for unknown languages*/
+  quotes: "“" "”" "‘" "’";
+  /* quotes: auto; // Doesn't work in most browsers yet... See: https://developer.mozilla.org/en-US/docs/Web/CSS/quotes#Browser_compatibility*/
+}
 
-  *:lang(pl) {
-    quotes: "„" "”" "‘" "’";
-  }
+*:lang(is) {
+  quotes: "„" "“" "‚" "‘";
+}
+*:lang(pl) {
+  quotes: "„" "”" "‘" "’";
+}
 
-  body {
-    overflow-x: hidden;
-    overflow-y: scroll;
-    height: 100vh;
-  }
+body {
+  /* Placing the overflow rule on the <body> prevents sideways scrolling*/
+  /* in Safari – which "helpfully" ignores `overflow-x:hidden;` on `<html>`.*/
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100vh;
+}
 
-  *:first-child {
-    margin-top: 0;
-  }
+*:first-child {
+  margin-top: 0;
+}
 
-  h1,
+h1,
 h2,
 h3,
 h4,
 h5 {
-    margin: 0;
-    font-weight: inherit;
-    font-size: inherit;
-  }
+  margin: 0;
+  font-weight: inherit;
+  font-size: inherit;
+}
 
-  p,
+p,
 ul,
 ol,
 dl,
 table,
 figure,
 blockquote {
-    margin: 0;
-  }
+  margin: 0;
+}
 
-  html:not([data-disable-css-warnings-with-abandon=true]) p ul,
-html:not([data-disable-css-warnings-with-abandon=true]) p ol,
-html:not([data-disable-css-warnings-with-abandon=true]) p div,
-html:not([data-disable-css-warnings-with-abandon=true]) p p,
-html:not([data-disable-css-warnings-with-abandon=true]) p dl,
-html:not([data-disable-css-warnings-with-abandon=true]) p blockquote {
-    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
-  }
-  html:not([data-disable-css-warnings-with-abandon=true]) p ul::before,
-html:not([data-disable-css-warnings-with-abandon=true]) p ol::before,
-html:not([data-disable-css-warnings-with-abandon=true]) p div::before,
-html:not([data-disable-css-warnings-with-abandon=true]) p p::before,
-html:not([data-disable-css-warnings-with-abandon=true]) p dl::before,
-html:not([data-disable-css-warnings-with-abandon=true]) p blockquote::before {
-    all: initial !important;
-    order: -999 !important;
-    font-family: sans-serif !important;
-    position: absolute !important;
-    white-space: nowrap !important;
-    z-index: 2 !important;
-    font-size: 12px !important;
-    line-height: 1.5em !important;
-    color: red !important;
-    background-color: rgba(255, 230, 230, 0.5) !important;
-    padding: 0 0.5em !important;
-    content: "No block-level tags inside <p/>" !important;
-  }
+html:not([data-disable-css-warnings-with-abandon="true"]) p ul:hover,
+html:not([data-disable-css-warnings-with-abandon="true"]) p ol:hover,
+html:not([data-disable-css-warnings-with-abandon="true"]) p div:hover,
+html:not([data-disable-css-warnings-with-abandon="true"]) p p:hover,
+html:not([data-disable-css-warnings-with-abandon="true"]) p dl:hover,
+html:not([data-disable-css-warnings-with-abandon="true"]) p blockquote:hover {
+  --WARNING--message: "No block-level tags inside <p/>";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
 
-  address {
-    font-style: normal;
-  }
+html:not([data-disable-css-warnings-with-abandon="true"]) p ul:hover::before,
+html:not([data-disable-css-warnings-with-abandon="true"]) p ol:hover::before,
+html:not([data-disable-css-warnings-with-abandon="true"]) p div:hover::before,
+html:not([data-disable-css-warnings-with-abandon="true"]) p p:hover::before,
+html:not([data-disable-css-warnings-with-abandon="true"]) p dl:hover::before,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  p
+  blockquote:hover::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}
 
-  img {
-    -o-object-position: var(--focalPoint);
-       object-position: var(--focalPoint);
-  }
+address {
+  font-style: normal;
+}
 
-  img,
+img {
+  object-position: var(--focalPoint);
+}
+img,
 video {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+  width: 100%;
+  height: auto;
+  display: block;
+}
+iframe {
+  width: 100%;
+  display: block;
+}
+iframe:not([frameborder="yes"]) {
+  border: 0;
+}
 
-  iframe {
-    width: 100%;
-    display: block;
-  }
-
-  iframe:not([frameborder=yes]) {
-    border: 0;
-  }
-
-  html:not([data-disable-css-warnings-with-abandon=true]) img:not([alt]),
-html:not([data-disable-css-warnings-with-abandon=true]) audio:not([title]):not([aria-label]),
-html:not([data-disable-css-warnings-with-abandon=true]) video:not([title]):not([aria-label]),
-html:not([data-disable-css-warnings-with-abandon=true]) iframe:not([title]):not([aria-label]) {
-    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
-  }
-
-  table {
-    border-collapse: separate;
-  }
-
-  th,
+html:not([data-disable-css-warnings-with-abandon="true"]) img:not([alt]):hover,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  audio:not([title]):not([aria-label]):hover,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  video:not([title]):not([aria-label]):hover,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  iframe:not([title]):not([aria-label]):hover {
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+table {
+  border-collapse: separate;
+}
+th,
 td {
-    padding: 0;
-  }
+  padding: 0;
+}
 
-  abbr {
-    cursor: help;
-  }
+abbr {
+  cursor: help;
+}
 
-  a[href^="tel:"]:not([class]) {
-    --link-color: _inherit;
-  }
+a[href^="tel:"]:not([class]) {
+  --link-color: _inherit;
+}
+a {
+  text-decoration: none;
+  color: var(--link-color);
+  font-weight: var(--link-weight);
+  padding-bottom: var(--link-underline-offset);
+  border-bottom: var(--link-underline);
+  transition: var(--link-transition);
+  transition-property: border-color, background-color, color, text-shadow,
+    box-shadow, outline;
+}
+a:hover,
+a:active {
+  color: var(--link-color--hover);
+  border-bottom: var(--link-underline--hover);
+}
+html:not([data-disable-css-warnings-with-abandon="true"]) a[href="#"]:hover,
+html:not([data-disable-css-warnings-with-abandon="true"]) a:not([href]):hover {
+  --WARNING--message: "Use <button/> instead";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  a[href="#"]:hover::before,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  a:not([href]):hover::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"]) button[href]:hover {
+  --WARNING--message: 'Use <a href=""/>';
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  button[href]:hover::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}
+button {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  font: inherit;
+  text-align: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+button:disabled {
+  cursor: auto;
+}
 
-  a {
-    text-decoration: none;
-    color: var(--link-color);
-    font-weight: var(--link-weight);
-    padding-bottom: var(--link-underline-offset);
-    border-bottom: var(--link-underline);
-    transition: var(--link-transition);
-    transition-property: border-color, background-color, color, text-shadow, box-shadow, outline;
-  }
-  a:hover, a:active {
-    color: var(--link-color--hover);
-    border-bottom: var(--link-underline--hover);
-  }
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-  html:not([data-disable-css-warnings-with-abandon=true]) a[href="#"],
-html:not([data-disable-css-warnings-with-abandon=true]) a:not([href]) {
-    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
-  }
-  html:not([data-disable-css-warnings-with-abandon=true]) a[href="#"]::before,
-html:not([data-disable-css-warnings-with-abandon=true]) a:not([href])::before {
-    all: initial !important;
-    order: -999 !important;
-    font-family: sans-serif !important;
-    position: absolute !important;
-    white-space: nowrap !important;
-    z-index: 2 !important;
-    font-size: 12px !important;
-    line-height: 1.5em !important;
-    color: red !important;
-    background-color: rgba(255, 230, 230, 0.5) !important;
-    padding: 0 0.5em !important;
-    content: "Use <button/> instead" !important;
-  }
-
-  html:not([data-disable-css-warnings-with-abandon=true]) button[href] {
-    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
-  }
-  html:not([data-disable-css-warnings-with-abandon=true]) button[href]::before {
-    all: initial !important;
-    order: -999 !important;
-    font-family: sans-serif !important;
-    position: absolute !important;
-    white-space: nowrap !important;
-    z-index: 2 !important;
-    font-size: 12px !important;
-    line-height: 1.5em !important;
-    color: red !important;
-    background-color: rgba(255, 230, 230, 0.5) !important;
-    padding: 0 0.5em !important;
-    content: 'Use <a href=""/>' !important;
-  }
-
-  button {
-    border: 0;
-    border-radius: 0;
-    padding: 0;
-    background: transparent;
-    font: inherit;
-    text-align: inherit;
-    color: inherit;
-    cursor: pointer;
-  }
-
-  button:disabled {
-    cursor: auto;
-  }
-
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  input,
+input,
 textarea,
 select {
-    font-size: inherit;
-    line-height: inherit;
-    padding: 0;
-  }
-
-  input:invalid {
-    box-shadow: none;
-  }
-
-  [disabled],
-[aria-disabled=true] {
-    cursor: default;
-  }
-
-  optgroup {
-    font-style: normal;
-  }
-
-  ol {
-    padding-left: 1.5em;
-  }
-
-  li ol {
-    margin-bottom: 0;
-  }
-
-  ol {
-    counter-reset: ol;
-    list-style: none;
-  }
-
-  ol > li::before {
-    counter-increment: ol;
-    content: counter(ol) ". ";
-    float: left;
-    min-width: 2.5em;
-    text-align: right;
-    margin: 0 0.5em -0.5em -2.8em;
-  }
-
-  ol[type=a],
-ol[data-oltype=a] > li::before {
-    content: counter(ol, lower-alpha) ". ";
-  }
-
-  ol[data-oltype=A] > li::before {
-    content: counter(ol, upper-alpha) ". ";
-  }
-
-  ol[type=i],
-ol[data-oltype=i] > li::before {
-    content: counter(ol, lower-roman) ". ";
-  }
-
-  ol[data-oltype=I] > li::before {
-    content: counter(ol, upper-roman) ". ";
-  }
-
-  html:not([data-disable-css-warnings-with-abandon=true]) :not(ul):not(ol) > li {
-    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
-  }
-  html:not([data-disable-css-warnings-with-abandon=true]) :not(ul):not(ol) > li::before {
-    all: initial !important;
-    order: -999 !important;
-    font-family: sans-serif !important;
-    position: absolute !important;
-    white-space: nowrap !important;
-    z-index: 2 !important;
-    font-size: 12px !important;
-    line-height: 1.5em !important;
-    color: red !important;
-    background-color: rgba(255, 230, 230, 0.5) !important;
-    padding: 0 0.5em !important;
-    content: "<li/> must be inside <ol/> or <ul/>" !important;
-  }
-
-  html:not([data-disable-css-warnings-with-abandon=true]) ol > :not(li),
-html:not([data-disable-css-warnings-with-abandon=true]) ul > :not(li),
-html:not([data-disable-css-warnings-with-abandon=true]) menu > :not(li) {
-    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
-  }
-  html:not([data-disable-css-warnings-with-abandon=true]) ol > :not(li)::before,
-html:not([data-disable-css-warnings-with-abandon=true]) ul > :not(li)::before,
-html:not([data-disable-css-warnings-with-abandon=true]) menu > :not(li)::before {
-    all: initial !important;
-    order: -999 !important;
-    font-family: sans-serif !important;
-    position: absolute !important;
-    white-space: nowrap !important;
-    z-index: 2 !important;
-    font-size: 12px !important;
-    line-height: 1.5em !important;
-    color: red !important;
-    background-color: rgba(255, 230, 230, 0.5) !important;
-    padding: 0 0.5em !important;
-    content: "Lists may only contain <li/>s" !important;
-  }
-
-  hr {
-    display: block;
-    margin: var(--baseVerticalMargin) 0;
-    padding: 0;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid var(--color-suld-100);
-  }
-
-  fieldset {
-    padding: 0;
-    border: 0;
-    margin: 0;
-  }
-
-  legend {
-    float: left;
-  }
-
-  html:not([data-disable-css-warnings-with-abandon=true]) :not(fieldset) > legend {
-    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
-  }
-  html:not([data-disable-css-warnings-with-abandon=true]) :not(fieldset) > legend::before {
-    all: initial !important;
-    order: -999 !important;
-    font-family: sans-serif !important;
-    position: absolute !important;
-    white-space: nowrap !important;
-    z-index: 2 !important;
-    font-size: 12px !important;
-    line-height: 1.5em !important;
-    color: red !important;
-    background-color: rgba(255, 230, 230, 0.5) !important;
-    padding: 0 0.5em !important;
-    content: "<legend/> must be first-child of <fieldset/>" !important;
-  }
-
-  legend + * {
-    clear: both;
-  }
-
-  table {
-    font: var(--font-bd-s);
-    border-collapse: collapse;
-    margin-bottom: var(--baseVerticalMargin);
-  }
-
-  caption {
-    text-align: left;
-  }
-
-  th,
-td {
-    text-align: left;
-    vertical-align: top;
-    padding: 0.5rem 1rem;
-    color: var(--color-suld-150);
-    font-weight: 400;
-  }
-  th:first-child,
-td:first-child {
-    padding-left: 0;
-  }
-  th:last-child,
-td:last-child {
-    padding-right: 0;
-  }
-
-  thead > * > th {
-    font-weight: 700;
-    vertical-align: bottom;
-  }
-
-  tbody > * > th,
-tbody > * > td {
-    border: var(--border-default);
-    border-width: 1px 0;
-  }
-
-  .BlockBreak {
-    display: block;
-    width: 100%;
-    height: 0;
-    margin: 0;
-  }
-
-  .before-sprinkling [data-seen-effect=""], [data-seen-effect=""][data-is-seen=false],
-.before-sprinkling [data-seen-effect=true],
-[data-seen-effect=true][data-is-seen=false],
-.before-sprinkling [data-seen-effect=fadeup],
-[data-seen-effect=fadeup][data-is-seen=false] {
-    opacity: 0;
-    transform: translateY(200px);
-  }
-  [data-seen-effect=""][data-is-seen=""], [data-seen-effect=""][data-is-seen=true],
-[data-seen-effect=true][data-is-seen=""],
-[data-seen-effect=true][data-is-seen=true],
-[data-seen-effect=fadeup][data-is-seen=""],
-[data-seen-effect=fadeup][data-is-seen=true] {
-    opacity: 1;
-    transform: none;
-  }
-  [data-seen-effect=""][data-is-seen=true],
-[data-seen-effect=true][data-is-seen=true],
-[data-seen-effect=fadeup][data-is-seen=true] {
-    transition: all 500ms ease-in-out;
-    transition-property: opacity, transform;
-  }
-
-  .before-sprinkling [data-seen-effect=fadein], [data-seen-effect=fadein][data-is-seen=false] {
-    opacity: 0;
-  }
-  [data-seen-effect=fadein][data-is-seen=""], [data-seen-effect=fadein][data-is-seen=true] {
-    opacity: 1;
-  }
-  [data-seen-effect=fadein][data-is-seen=true] {
-    transition: all 500ms ease-in-out;
-    transition-property: opacity, transform;
-  }
-
-  .before-sprinkling [data-seen-effect=fadeleft], [data-seen-effect=fadeleft][data-is-seen=false] {
-    opacity: 0;
-    transform: translateX(-200px);
-  }
-  [data-seen-effect=fadeleft][data-is-seen=""], [data-seen-effect=fadeleft][data-is-seen=true] {
-    opacity: 1;
-    transform: none;
-  }
-  [data-seen-effect=fadeleft][data-is-seen=true] {
-    transition: all 500ms ease-in-out;
-    transition-property: opacity, transform;
-  }
+  font-size: inherit;
+  line-height: inherit;
+  padding: 0;
 }
+input:invalid {
+  box-shadow: none; /* reset red default browser stylesheet box-shadow*/
+}
+:disabled,
+[aria-disabled="true"] {
+  cursor: default;
+}
+
+optgroup {
+  font-style: normal;
+}
+
+ol {
+  padding-left: 1.5em;
+}
+li ol {
+  margin-bottom: 0;
+}
+ol {
+  counter-reset: ol;
+  list-style: none;
+}
+ol > li::before {
+  counter-increment: ol;
+  content: counter(ol) ". ";
+  float: left;
+  min-width: 2.5em;
+  text-align: right;
+  margin: 0 0.5em -0.5em -2.8em;
+}
+ol[type='a'], /* <-- NOTE: non-scripted <ol> styling is limited*/
+	  ol[data-oltype='a'] > li::before {
+  content: counter(ol, lower-alpha) ". ";
+}
+ol[data-oltype="A"] > li::before {
+  content: counter(ol, upper-alpha) ". ";
+}
+ol[type='i'], /* <-- NOTE: non-scripted <ol> styling is limited*/
+	  ol[data-oltype='i'] > li::before {
+  content: counter(ol, lower-roman) ". ";
+}
+ol[data-oltype="I"] > li::before {
+  content: counter(ol, upper-roman) ". ";
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  :not(ul):not(ol)
+  > li:hover {
+  --WARNING--message: "<li/> must be inside <ol/> or <ul/>";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  :not(ul):not(ol)
+  > li:hover::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"]) ol > :not(li):hover,
+html:not([data-disable-css-warnings-with-abandon="true"]) ul > :not(li):hover,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  menu
+  > :not(li):hover {
+  --WARNING--message: "Lists may only contain <li/>s";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  ol
+  > :not(li):hover::before,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  ul
+  > :not(li):hover::before,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  menu
+  > :not(li):hover::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}
+hr {
+  display: block;
+  margin: var(--baseVerticalMargin) 0;
+  padding: 0;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid var(--color-suld-100);
+}
+
+fieldset {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+legend {
+  float: left; /* HACK: Trigger correct positioning within <fieldset>*/
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  :not(fieldset)
+  > legend:hover {
+  --WARNING--message: "<legend/> must be first-child of <fieldset/>";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  :not(fieldset)
+  > legend:hover::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}
+legend + * {
+  clear: both;
+}
+
+/* ===========================================================================*/
+
+table {
+  font: var(--font-bd-s);
+  border-collapse: collapse;
+  margin-bottom: var(--baseVerticalMargin);
+}
+caption {
+  text-align: left;
+}
+th,
+td {
+  text-align: left;
+  vertical-align: top;
+  padding: var(--space-1) var(--space-2);
+  color: var(--color-suld-150);
+  font-weight: var(--font-weight--normal);
+}
+th:first-child,
+td:first-child {
+  padding-left: 0;
+}
+th:last-child,
+td:last-child {
+  padding-right: 0;
+}
+thead > * > th {
+  font-weight: var(--font-weight--bold);
+  vertical-align: bottom;
+}
+tbody > * > th,
+tbody > * > td {
+  border: var(--border-default);
+  border-width: 1px 0;
+}
+
+/* ---------------------------------------------------------------------------*/
+
+.BlockBreak {
+  display: block;
+  width: 100%;
+  height: 0;
+  margin: 0;
+}
+
+.before-sprinkling [data-seen-effect=""],
+[data-seen-effect=""][data-is-seen="false"],
+.before-sprinkling [data-seen-effect="true"],
+[data-seen-effect="true"][data-is-seen="false"],
+.before-sprinkling [data-seen-effect="fadeup"],
+[data-seen-effect="fadeup"][data-is-seen="false"] {
+  opacity: 0;
+  transform: translateY(200px);
+}
+
+[data-seen-effect=""][data-is-seen=""],
+[data-seen-effect=""][data-is-seen="true"],
+[data-seen-effect="true"][data-is-seen=""],
+[data-seen-effect="true"][data-is-seen="true"],
+[data-seen-effect="fadeup"][data-is-seen=""],
+[data-seen-effect="fadeup"][data-is-seen="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+[data-seen-effect=""][data-is-seen="true"],
+[data-seen-effect="true"][data-is-seen="true"],
+[data-seen-effect="fadeup"][data-is-seen="true"] {
+  transition: all 500ms ease-in-out;
+
+  transition-property: opacity, transform;
+}
+.before-sprinkling [data-seen-effect="fadein"],
+[data-seen-effect="fadein"][data-is-seen="false"] {
+  opacity: 0;
+}
+[data-seen-effect="fadein"][data-is-seen=""],
+[data-seen-effect="fadein"][data-is-seen="true"] {
+  opacity: 1;
+}
+[data-seen-effect="fadein"][data-is-seen="true"] {
+  transition: all 500ms ease-in-out;
+
+  transition-property: opacity, transform;
+}
+.before-sprinkling [data-seen-effect="fadeleft"],
+[data-seen-effect="fadeleft"][data-is-seen="false"] {
+  opacity: 0;
+  transform: translateX(-200px);
+}
+[data-seen-effect="fadeleft"][data-is-seen=""],
+[data-seen-effect="fadeleft"][data-is-seen="true"] {
+  opacity: 1;
+  transform: none;
+}
+[data-seen-effect="fadeleft"][data-is-seen="true"] {
+  transition: all 500ms ease-in-out;
+
+  transition-property: opacity, transform;
+}
+
+/* ===========================================================================*/
+/* HACK: Drupal admin styles*/
+/* TODO: Get 1XInternet to cleanly insert these styles themselves*/
+/* for logged-in Drupal editors*/
+/* ===========================================================================*/
 @media screen {
   [class].visually-hidden {
     position: absolute;
@@ -1352,28 +1513,26 @@ tbody > * > td {
     clip: rect(0, 0, 0, 0);
     opacity: 0.00001;
     pointer-events: none;
+
     margin: -1px;
   }
-
   .local-tasks {
     position: fixed;
     left: 0;
     bottom: 0;
     z-index: 99999;
     background: var(--color-ellidaardalur-50);
-    box-shadow: 2px 1px 2px 0 rgba(0, 0, 0, 0.1), 0 0 3px 0 rgba(57, 103, 76, 0.4);
+    box-shadow: 2px 1px 2px 0 rgba(0, 0, 0, 0.1),
+      0 0 3px 0 rgba(57, 103, 76, 0.4);
     padding: 0.75rem;
   }
-
   .local-tasks ul {
     display: flex;
     border-bottom: 1px solid var(--color-suld-100);
   }
-
   .local-tasks li {
     margin-bottom: -1px;
   }
-
   .local-tasks li a {
     font-weight: 400;
     display: block;
@@ -1383,38 +1542,45 @@ tbody > * > td {
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
   }
-
   .local-tasks li a.is-active {
     color: var(--color-suld-200);
     background-color: var(--color-suld-0);
-    border-color: var(--color-suld-100) var(--color-suld-100) var(--color-suld-0);
+    border-color: var(--color-suld-100) var(--color-suld-100)
+      var(--color-suld-0);
   }
 }
-@media screen and (max-width: 479px) {
+/* ===========================================================================*/
+
+@media (max-width: 479px) {
   #mediaformat::after {
     content: "phone";
   }
 }
-@media screen and (min-width: 480px) and (max-width: 759px) {
+
+@media (min-width: 480px) and (max-width: 759px) {
   #mediaformat::after {
     content: "phablet";
   }
 }
-@media screen and (min-width: 760px) and (max-width: 979px) {
+
+@media (min-width: 760px) and (max-width: 979px) {
   #mediaformat::after {
     content: "tablet";
   }
 }
-@media screen and (min-width: 980px) and (max-width: 1367px) {
+
+@media (min-width: 980px) and (max-width: 1367px) {
   #mediaformat::after {
     content: "netbook";
   }
 }
-@media screen and (min-width: 1368px) {
+
+@media (min-width: 1368px) {
   #mediaformat::after {
     content: "wide";
   }
 }
+
 #mediaformat::after {
   position: fixed !important;
   bottom: 0 !important;

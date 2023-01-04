@@ -8,7 +8,6 @@
 .ButtonBar--align--right {
   justify-content: flex-end;
 }
-
 .ButtonBar > * {
   margin-right: var(--Button--gapH);
 }
@@ -27,28 +26,18 @@
   flex-grow: 1;
 }
 
-html:not([data-disable-css-warnings-with-abandon=true]) :not(.ButtonBar) > .ButtonBar__split {
-  box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
-}
-html:not([data-disable-css-warnings-with-abandon=true]) :not(.ButtonBar) > .ButtonBar__split::before {
-  all: initial !important;
-  order: -999 !important;
-  font-family: sans-serif !important;
-  position: absolute !important;
-  white-space: nowrap !important;
-  z-index: 2 !important;
-  font-size: 12px !important;
-  line-height: 1.5em !important;
-  color: red !important;
-  background-color: rgba(255, 230, 230, 0.5) !important;
-  padding: 0 0.5em !important;
-  content: "`.ButtonBar__split` must be direct child of `.ButtonBar`" !important;
+/* ---------------------------------------------------------------------------*/
+
+html:not([data-disable-css-warnings-with-abandon="true"])
+  :not(.ButtonBar)
+  > .ButtonBar__split:hover {
+  --WARNING--message: "`.ButtonBar__split` must be direct child of `.ButtonBar`";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
-html:not([data-disable-css-warnings-with-abandon=true]) .ButtonBar > br {
-  box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
-}
-html:not([data-disable-css-warnings-with-abandon=true]) .ButtonBar > br::before {
+html:not([data-disable-css-warnings-with-abandon="true"])
+  :not(.ButtonBar)
+  > .ButtonBar__split:hover::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;
@@ -58,15 +47,19 @@ html:not([data-disable-css-warnings-with-abandon=true]) .ButtonBar > br::before 
   font-size: 12px !important;
   line-height: 1.5em !important;
   color: red !important;
-  background-color: rgba(255, 230, 230, 0.5) !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
   padding: 0 0.5em !important;
-  content: "No `<br/>` children in `.ButtonBar`" !important;
+  content: var(--WARNING--message) !important;
 }
-
-html:not([data-disable-css-warnings-with-abandon=true]) .ButtonBar > hr {
-  box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .ButtonBar
+  > br:hover {
+  --WARNING--message: "No `<br/>` children in `.ButtonBar`";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
-html:not([data-disable-css-warnings-with-abandon=true]) .ButtonBar > hr::before {
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .ButtonBar
+  > br:hover::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;
@@ -76,15 +69,19 @@ html:not([data-disable-css-warnings-with-abandon=true]) .ButtonBar > hr::before 
   font-size: 12px !important;
   line-height: 1.5em !important;
   color: red !important;
-  background-color: rgba(255, 230, 230, 0.5) !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
   padding: 0 0.5em !important;
-  content: "No `<hr/>` children in `.ButtonBar`" !important;
+  content: var(--WARNING--message) !important;
 }
-
-html:not([data-disable-css-warnings-with-abandon=true]) .ButtonBar > :last-child:not(.ButtonPrimary):not(.ButtonSecondary):not(.ButtonTertiary):not(.ButtonPrimary ~ *):not(.ButtonSecondary ~ *):not(.ButtonTertiary ~ *) {
-  box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .ButtonBar
+  > hr:hover {
+  --WARNING--message: "No `<hr/>` children in `.ButtonBar`";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
-html:not([data-disable-css-warnings-with-abandon=true]) .ButtonBar > :last-child:not(.ButtonPrimary):not(.ButtonSecondary):not(.ButtonTertiary):not(.ButtonPrimary ~ *):not(.ButtonSecondary ~ *):not(.ButtonTertiary ~ *)::before {
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .ButtonBar
+  > hr:hover::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;
@@ -94,7 +91,37 @@ html:not([data-disable-css-warnings-with-abandon=true]) .ButtonBar > :last-child
   font-size: 12px !important;
   line-height: 1.5em !important;
   color: red !important;
-  background-color: rgba(255, 230, 230, 0.5) !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
   padding: 0 0.5em !important;
-  content: "`.ButtonBar` should contain Buttons" !important;
+  content: var(--WARNING--message) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .ButtonBar
+  > :last-child:not(.ButtonPrimary):not(.ButtonSecondary):not(
+    .ButtonTertiary
+  ):not(.ButtonPrimary ~ *):not(.ButtonSecondary ~ *):not(
+    .ButtonTertiary ~ *
+  ):hover {
+  --WARNING--message: "`.ButtonBar` should contain Buttons";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .ButtonBar
+  > :last-child:not(.ButtonPrimary):not(.ButtonSecondary):not(
+    .ButtonTertiary
+  ):not(.ButtonPrimary ~ *):not(.ButtonSecondary ~ *):not(
+    .ButtonTertiary ~ *
+  ):hover::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
 }

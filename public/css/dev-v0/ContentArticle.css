@@ -1,71 +1,78 @@
-@media screen {
-  .CenterColumn {
-    max-width: 792px;
-    margin: 0 auto;
-  }
-  .CenterColumn > .PageHeading, .CenterColumn > .Heading, .CenterColumn > .TextBlock {
-    width: auto;
-    max-width: none;
-    margin-left: 0;
-  }
-  html:not([data-disable-css-warnings-with-abandon=true]) .CenterColumn > [class*="--align--"], html:not([data-disable-css-warnings-with-abandon=true]) .CenterColumn > [class*="--wide"], html:not([data-disable-css-warnings-with-abandon=true]) .CenterColumn > .TextBlock--labelled, html:not([data-disable-css-warnings-with-abandon=true]) .CenterColumn > *:not(.TextBlock):not(.PageHeading):not(.SubHeading):not(.Heading):not(.ContentImage):not(.RelatedLinks):not(.ArticleMeta):not(.VSpacer):not(hr) {
-    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
-  }
-  html:not([data-disable-css-warnings-with-abandon=true]) .CenterColumn > [class*="--align--"]::before, html:not([data-disable-css-warnings-with-abandon=true]) .CenterColumn > [class*="--wide"]::before, html:not([data-disable-css-warnings-with-abandon=true]) .CenterColumn > .TextBlock--labelled::before, html:not([data-disable-css-warnings-with-abandon=true]) .CenterColumn > *:not(.TextBlock):not(.PageHeading):not(.SubHeading):not(.Heading):not(.ContentImage):not(.RelatedLinks):not(.ArticleMeta):not(.VSpacer):not(hr)::before {
-    all: initial !important;
-    order: -999 !important;
-    font-family: sans-serif !important;
-    position: absolute !important;
-    white-space: nowrap !important;
-    z-index: 2 !important;
-    font-size: 12px !important;
-    line-height: 1.5em !important;
-    color: red !important;
-    background-color: rgba(255, 230, 230, 0.5) !important;
-    padding: 0 0.5em !important;
-    content: "Only use plain `PageHeading`, `Heading`, `Subheading`, `TextBlock`, `ContentImage`, `RelatedLinks`, `ArticleMeta`, `VSpacer`, `<hr/>` inside this parent wrapper." !important;
-  }
-  html:not([data-disable-css-warnings-with-abandon=true]) .CenterColumn > [class*="--align--"][class]::before, html:not([data-disable-css-warnings-with-abandon=true]) .CenterColumn > [class*="--wide"][class]::before {
-    content: "Do not use --align-- or --wide modifiers." !important;
-  }
-  html:not([data-disable-css-warnings-with-abandon=true]) .CenterColumn > .TextBlock--labelled[class]::before {
-    content: "Do not use the --labelled modifier." !important;
-  }
-}
 /*!@deps
-	ArticleMeta
-	Heading
-	ContentImage
-	TextBlock
-	VSpacer
-	RelatedLinks
-*/
+    ArticleMeta
+    Heading
+    ContentImage
+    TextBlock
+    VSpacer
+    RelatedLinks
+  */
 @media screen {
-  .before-sprinkling .ContentArticle, .ContentArticle[data-is-seen=false] {
+  .before-sprinkling .ContentArticle,
+  .ContentArticle[data-is-seen="false"] {
     opacity: 0;
     transform: translateY(200px);
   }
-  .ContentArticle[data-is-seen=""], .ContentArticle[data-is-seen=true] {
+
+  .ContentArticle[data-is-seen=""],
+  .ContentArticle[data-is-seen="true"] {
     opacity: 1;
     transform: none;
   }
-  .ContentArticle[data-is-seen=true] {
+
+  .ContentArticle[data-is-seen="true"] {
     transition: all 500ms ease-in-out;
+
     transition-property: opacity, transform;
   }
+
   .ContentArticle {
     max-width: 792px;
     margin: 0 auto;
   }
-  .ContentArticle > .PageHeading, .ContentArticle > .Heading, .ContentArticle > .TextBlock {
+
+  .ContentArticle > .PageHeading,
+  .ContentArticle > .Heading,
+  .ContentArticle > .TextBlock {
     width: auto;
     max-width: none;
     margin-left: 0;
   }
-  html:not([data-disable-css-warnings-with-abandon=true]) .ContentArticle > [class*="--align--"], html:not([data-disable-css-warnings-with-abandon=true]) .ContentArticle > [class*="--wide"], html:not([data-disable-css-warnings-with-abandon=true]) .ContentArticle > .TextBlock--labelled, html:not([data-disable-css-warnings-with-abandon=true]) .ContentArticle > *:not(.TextBlock):not(.PageHeading):not(.SubHeading):not(.Heading):not(.ContentImage):not(.RelatedLinks):not(.ArticleMeta):not(.VSpacer):not(hr) {
-    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
+
+  /* ===========================================================================*/
+
+  /* TODO: The following css in not included in https://styles.reykjavik.is/css/v0.8/CenterColumn.css Why not?*/
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .ContentArticle
+    > [class*="--align--"]:hover,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .ContentArticle
+    > [class*="--wide"]:hover,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .ContentArticle
+    > .TextBlock--labelled:hover,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .ContentArticle
+    > *:not(.TextBlock):not(.PageHeading):not(.SubHeading):not(.Heading):not(
+      .ContentImage
+    ):not(.RelatedLinks):not(.ArticleMeta):not(.VSpacer):not(hr):hover {
+    --WARNING--message: "Only use plain `PageHeading`, `Heading`, `Subheading`, `TextBlock`, `ContentImage`, `RelatedLinks`, `ArticleMeta`, `VSpacer`, `<hr/>` inside this parent wrapper.";
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
-  html:not([data-disable-css-warnings-with-abandon=true]) .ContentArticle > [class*="--align--"]::before, html:not([data-disable-css-warnings-with-abandon=true]) .ContentArticle > [class*="--wide"]::before, html:not([data-disable-css-warnings-with-abandon=true]) .ContentArticle > .TextBlock--labelled::before, html:not([data-disable-css-warnings-with-abandon=true]) .ContentArticle > *:not(.TextBlock):not(.PageHeading):not(.SubHeading):not(.Heading):not(.ContentImage):not(.RelatedLinks):not(.ArticleMeta):not(.VSpacer):not(hr)::before {
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .ContentArticle
+    > [class*="--align--"]:hover::before,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .ContentArticle
+    > [class*="--wide"]:hover::before,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .ContentArticle
+    > .TextBlock--labelled:hover::before,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .ContentArticle
+    > *:not(.TextBlock):not(.PageHeading):not(.SubHeading):not(.Heading):not(
+      .ContentImage
+    ):not(.RelatedLinks):not(.ArticleMeta):not(.VSpacer):not(hr):hover::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -75,14 +82,21 @@
     font-size: 12px !important;
     line-height: 1.5em !important;
     color: red !important;
-    background-color: rgba(255, 230, 230, 0.5) !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
     padding: 0 0.5em !important;
-    content: "Only use plain `PageHeading`, `Heading`, `Subheading`, `TextBlock`, `ContentImage`, `RelatedLinks`, `ArticleMeta`, `VSpacer`, `<hr/>` inside this parent wrapper." !important;
+    content: var(--WARNING--message) !important;
   }
-  html:not([data-disable-css-warnings-with-abandon=true]) .ContentArticle > [class*="--align--"][class]::before, html:not([data-disable-css-warnings-with-abandon=true]) .ContentArticle > [class*="--wide"][class]::before {
-    content: "Do not use --align-- or --wide modifiers." !important;
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .ContentArticle
+    > [class*="--align--"][class],
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .ContentArticle
+    > [class*="--wide"][class] {
+    --WARNING--message: "Do not use --align-- or --wide modifiers.";
   }
-  html:not([data-disable-css-warnings-with-abandon=true]) .ContentArticle > .TextBlock--labelled[class]::before {
-    content: "Do not use the --labelled modifier." !important;
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .ContentArticle
+    > .TextBlock--labelled[class] {
+    --WARNING--message: "Do not use the --labelled modifier.";
   }
 }

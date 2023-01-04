@@ -7,28 +7,24 @@
     flex-flow: row wrap;
     margin: 0 var(--FooterBadges--indenting);
   }
-}
-@media screen and (min-width: 980px) {
-  .FooterBadges {
-    --FooterBadges--indenting: 0px;
+
+  @media (min-width: 980px) {
+    .FooterBadges {
+      --FooterBadges--indenting: 0px;
+    }
   }
-}
-@media screen {
   .FooterBadges::before {
     content: "";
     border-top: var(--border-default);
     width: calc(100% + 2 * var(--FooterBadges--indenting));
     margin: 0 auto;
   }
-}
-@media screen {
+
   .FooterBadges__badge {
     margin: var(--space-2);
   }
-}
-@media screen {
   .FooterBadges__badge img,
-.FooterBadges__badge svg {
+  .FooterBadges__badge svg {
     width: auto;
   }
 }

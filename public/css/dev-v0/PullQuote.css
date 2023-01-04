@@ -1,30 +1,13 @@
-@charset "UTF-8";
-:root {
-  --ButtonTertiary--height: calc(var(--font-button-leading) + 4px);
-  --ButtonTertiary--color: _inherit;
-  --ButtonTertiary--dashColor: var(--color-faxafloi-100);
-  --ButtonTertiary--dashWidth: var(--space-2);
-  --ButtonTertiary--hover--dashWidth: var(--space-4);
-  --ButtonTertiary--dashSpace: var(--space-2);
-  --ButtonTertiary--dashHeight: 2px;
-  --ButtonTertiary--gapH: calc(0.7633587786vw + 13.5572519084px);
-}
-@media screen and (min-width: 1368px) {
-  :root {
-    --ButtonTertiary--gapH: 24px;
-  }
-}
-
 .PullQuote {
   --Quote--line: 2px solid var(--theme-color-primary);
   --Quote--indent: 0;
+
   max-width: calc(792px - var(--Quote--indent));
   padding-top: var(--space-5);
   margin-left: var(--Quote--indent);
   position: relative;
-  padding-bottom: var(--space-5);
-  margin-bottom: var(--space-3);
 }
+
 .PullQuote::before {
   content: "”";
   color: var(--theme-color-primary);
@@ -37,7 +20,13 @@
   width: 0.6em;
   margin-left: -0.3em;
 }
-@media screen and (min-width: 480px) {
+
+.PullQuote {
+  padding-bottom: var(--space-5);
+  margin-bottom: var(--space-3);
+}
+
+@media (min-width: 480px) {
   .PullQuote {
     margin-bottom: var(--space-5);
     --Quote--indent: var(--grid-0-1);
@@ -47,40 +36,35 @@
 .PullQuote__quote {
   border-left: var(--Quote--line);
   padding-left: var(--space-2);
+
   color: var(--color-suld-150);
   font-size: 20px;
   line-height: 1.5;
 }
-@media screen and (min-width: 480px) {
+
+@media (min-width: 480px) {
   .PullQuote__quote {
-    font-size: calc(1.3513513514vw + 13.5135135135px);
+    font-size: calc(1.3513513513513513vw + 13.513513513513512px);
     padding-left: var(--grid-0-1);
   }
 }
-@media screen and (min-width: 1368px) {
+
+@media (min-width: 1368px) {
   .PullQuote__quote {
     font-size: 32px;
   }
 }
 
-.PullQuote__quote::before {
-  content: open-quote;
-  float: left;
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .PullQuote__quote
+  > *:not(p):hover {
+  --WARNING--message: "Only <p> is allowed inside `.PullQuote`";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
-.PullQuote__quote::after {
-  content: close-quote;
-}
-
-.PullQuote__quote > *:last-child {
-  margin-bottom: 0;
-  display: inline;
-}
-
-html:not([data-disable-css-warnings-with-abandon=true]) .PullQuote__quote > *:not(p) {
-  box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
-}
-html:not([data-disable-css-warnings-with-abandon=true]) .PullQuote__quote > *:not(p)::before {
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .PullQuote__quote
+  > *:not(p):hover::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;
@@ -90,18 +74,18 @@ html:not([data-disable-css-warnings-with-abandon=true]) .PullQuote__quote > *:no
   font-size: 12px !important;
   line-height: 1.5em !important;
   color: red !important;
-  background-color: rgba(255, 230, 230, 0.5) !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
   padding: 0 0.5em !important;
-  content: "Only <p> is allowed inside `.PullQuote`" !important;
+  content: var(--WARNING--message) !important;
 }
-
 .PullQuote__by {
   position: relative;
   top: var(--space-1);
   text-align: right;
   line-height: 1;
 }
-@media screen and (min-width: 480px) {
+
+@media (min-width: 480px) {
   .PullQuote__by {
     margin-top: var(--space-1);
     margin-bottom: calc(-1 * var(--ButtonTertiary--height));
@@ -113,14 +97,16 @@ html:not([data-disable-css-warnings-with-abandon=true]) .PullQuote__quote > *:no
   --link-color: _inherit;
   --link-weight: _inherit;
   --link-underline: none;
+
+  /* NOTE: This intentionally doesn't reset the :hover style*/
+  /* unless..*/
   --link-color--hover: var(--link-color);
   --link-underline--hover: none;
   --link-underline-offset: 0;
+
   color: var(--ButtonTertiary--color);
   position: relative;
   display: inline-block;
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   max-width: 100%;
   vertical-align: middle;
@@ -128,14 +114,15 @@ html:not([data-disable-css-warnings-with-abandon=true]) .PullQuote__quote > *:no
   padding: 2px 0;
   --dashWidth: var(--ButtonTertiary--dashWidth);
   padding-left: calc(var(--ButtonTertiary--dashSpace) + var(--dashWidth));
-  padding-right: calc(var(--ButtonTertiary--hover--dashWidth) - var(--dashWidth));
+  padding-right: calc(
+    var(--ButtonTertiary--hover--dashWidth) - var(--dashWidth)
+  );
   margin-right: var(--ButtonTertiary--gapH);
   margin-bottom: var(--space-1);
   font-weight: 700;
   transition: all 100ms ease-in;
-  margin: 0;
-  margin-right: calc( -1 * (var(--ButtonTertiary--hover--dashWidth) - var(--ButtonTertiary--dashWidth)) );
 }
+
 .PullQuote__by > a::before,
 .PullQuote__by > span::before {
   content: "";
@@ -152,12 +139,21 @@ html:not([data-disable-css-warnings-with-abandon=true]) .PullQuote__quote > *:no
   transition: inherit;
 }
 
+.PullQuote__by > a,
+.PullQuote__by > span {
+  margin: 0;
+  margin-right: calc(
+    -1 * (var(--ButtonTertiary--hover--dashWidth) -
+          var(--ButtonTertiary--dashWidth))
+  );
+}
 .PullQuote__by > span {
   font-weight: var(--font-weight--normal);
   --ButtonTertiary--dashColor: var(--color-suld-150);
 }
-
-.PullQuote__by > a:hover, .PullQuote__by > a:active, .PullQuote__by > a[data-focus-visible-added] {
+.PullQuote__by > a:active,
+.PullQuote__by > a:hover,
+.PullQuote__by > a[data-focus-visible-added] {
   --dashWidth: var(--ButtonTertiary--hover--dashWidth);
   color: var(--ButtonTertiary--color);
   outline: 0;
@@ -192,11 +188,16 @@ html:not([data-disable-css-warnings-with-abandon=true]) .PullQuote__quote > *:no
   border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
   border-radius: 0.5rem;
 }
-
-html:not([data-disable-css-warnings-with-abandon=true]) .PullQuote__by > *:not(span):span(a) {
-  box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .PullQuote__by
+  > *:not(span):span(a):hover {
+  --WARNING--message: 'Only <span> or <a href=""> is allowed inside `.PullQuote__by`';
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
-html:not([data-disable-css-warnings-with-abandon=true]) .PullQuote__by > *:not(span):span(a)::before {
+
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .PullQuote__by
+  > *:not(span):span(a):hover::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;
@@ -206,7 +207,7 @@ html:not([data-disable-css-warnings-with-abandon=true]) .PullQuote__by > *:not(s
   font-size: 12px !important;
   line-height: 1.5em !important;
   color: red !important;
-  background-color: rgba(255, 230, 230, 0.5) !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
   padding: 0 0.5em !important;
-  content: 'Only <span> or <a href=""> is allowed inside `.PullQuote__by`' !important;
+  content: var(--WARNING--message) !important;
 }

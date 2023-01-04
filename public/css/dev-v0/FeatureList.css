@@ -1,90 +1,92 @@
 /*!@deps
-	Bling
-	efnistakn
-*/
+    Bling
+    efnistakn
+  */
 @media screen {
-  .FeatureList {
-    --efnistakn: ;
-    background-color: #f8f8f9;
-    --left-offset: var(--grid-1);
-    padding-top: calc(4.3103448276% + 11.9310344828px);
-    padding-bottom: calc(5.1724137931% + 17.5172413793px);
-    margin-top: calc(7.5431034483% + 8.8793103448px);
-    margin-bottom: calc(7.5431034483% + 8.8793103448px);
-  }
-  .before-sprinkling .FeatureList, .FeatureList[data-is-seen=false] {
+  .before-sprinkling .FeatureList,
+  .FeatureList[data-is-seen="false"] {
     opacity: 0;
     transform: translateY(200px);
   }
-  .FeatureList[data-is-seen=""], .FeatureList[data-is-seen=true] {
+
+  .FeatureList[data-is-seen=""],
+  .FeatureList[data-is-seen="true"] {
     opacity: 1;
     transform: none;
   }
-  .FeatureList[data-is-seen=true] {
+
+  .FeatureList[data-is-seen="true"] {
     transition: all 500ms ease-in-out;
+
     transition-property: opacity, transform;
   }
-}
-@media screen and (max-width: 479px) {
+
   .FeatureList {
-    --left-offset: var(--grid-0-1);
-    margin-left: var(--grid-0-1--neg);
-    margin-right: var(--grid-0-1--neg);
+    --efnistakn: "";
+    background-color: var(--color-suld-25);
+    --left-offset: var(--grid-1);
+    padding-top: calc(4.310344827586207% + 11.93103448275862px);
+    padding-bottom: calc(5.172413793103448% + 17.51724137931035px);
+    margin-top: calc(7.543103448275862% + 8.879310344827587px);
+    margin-bottom: calc(7.543103448275862% + 8.879310344827587px);
+  } /* scope variable to container.*/
+
+  @media (max-width: 479px) {
+    .FeatureList {
+      --left-offset: var(--grid-0-1);
+      margin-left: var(--grid-0-1--neg);
+      margin-right: var(--grid-0-1--neg);
+    }
   }
-}
-@media screen and (min-width: 1368px) {
-  .FeatureList {
-    --left-offset: var(--grid-1-1);
+
+  @media (min-width: 1368px) {
+    .FeatureList {
+      --left-offset: var(--grid-1-1);
+    }
   }
-}
-@media screen {
+
   .FeatureList__title {
     font: var(--font-hd-s);
     max-width: 416px;
-    margin-bottom: calc(6.8965517241% + 0.6896551724px);
+    margin-bottom: calc(6.896551724137931% + 0.6896551724137936px);
     margin-left: var(--left-offset);
   }
-}
-@media screen {
+
   .FeatureList__list {
     margin-left: var(--left-offset);
-    -moz-column-gap: 0;
-         column-gap: 0;
+    column-gap: 0;
   }
-}
-@media screen and (min-width: 480px) and (max-width: 759px) {
-  .FeatureList__list {
-    width: var(--grid-10-10);
-    -moz-columns: 2;
-         columns: 2;
+
+  @media (min-width: 480px) and (max-width: 759px) {
+    .FeatureList__list {
+      width: var(--grid-10-10);
+      columns: 2;
+    }
   }
-}
-@media screen and (min-width: 760px) {
-  .FeatureList__list {
-    width: calc(var(--grid-9-9) + 3 * var(--grid-0-1));
-    max-width: 936px;
-    -moz-columns: 3;
-         columns: 3;
+  @media (min-width: 760px) {
+    .FeatureList__list {
+      width: calc(var(--grid-9-9) + 3 * var(--grid-0-1));
+      max-width: 936px;
+      columns: 3;
+    }
   }
-}
-@media screen {
   .FeatureList__feature {
     position: relative;
-    -moz-column-break-inside: avoid;
-         break-inside: avoid;
+    break-inside: avoid;
     padding-bottom: var(--grid-0-1);
     padding-right: var(--grid-0-1);
     padding-left: 2.5rem;
     box-sizing: content-box;
+    /* Fix for Firefox css column rendering glitch which*/
+    /* causes the .FeatureList__feature::before icon to blink*/
+    /* in/out as the viewport is resized.*/
     min-height: calc(var(--font-base-leading) + 1px);
   }
-}
-@media screen {
+
   .FeatureList__feature:not([data-efnistakn]) {
     --efnistakn: url("/assets/efnistakn/skipurit_01.svg");
   }
-}
-@media screen {
+
   .FeatureList__feature::before {
     content: "";
     position: absolute;

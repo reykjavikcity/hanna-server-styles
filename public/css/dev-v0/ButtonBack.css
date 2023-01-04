@@ -1,38 +1,24 @@
-@charset "UTF-8";
-:root {
-  --ButtonTertiary--height: calc(var(--font-button-leading) + 4px);
-  --ButtonTertiary--color: _inherit;
-  --ButtonTertiary--dashColor: var(--color-faxafloi-100);
-  --ButtonTertiary--dashWidth: var(--space-2);
-  --ButtonTertiary--hover--dashWidth: var(--space-4);
-  --ButtonTertiary--dashSpace: var(--space-2);
-  --ButtonTertiary--dashHeight: 2px;
-  --ButtonTertiary--gapH: calc(0.7633587786vw + 13.5572519084px);
-}
-@media screen and (min-width: 1368px) {
-  :root {
-    --ButtonTertiary--gapH: 24px;
-  }
-}
-
 @media screen {
   .ButtonBack {
-    --ButtonTertiary--color: #0367e1;
-    --ButtonTertiary--dashColor: #0367e1;
+    --ButtonTertiary--color: var(--color-faxafloi-100);
+    --ButtonTertiary--dashColor: var(--color-faxafloi-100);
     --ButtonTertiary--dashWidth: var(--space-1_5);
     --ButtonTertiary--hover--dashWidth: var(--space-3);
     --ButtonTertiary--dashSpace: var(--space-1_5);
+
     --link-color: _inherit;
     --link-weight: _inherit;
     --link-underline: none;
+
+    /* NOTE: This intentionally doesn't reset the :hover style*/
+    /* unless..*/
     --link-color--hover: var(--link-color);
     --link-underline--hover: none;
     --link-underline-offset: 0;
+
     color: var(--ButtonTertiary--color);
     position: relative;
     display: inline-block;
-    width: -webkit-max-content;
-    width: -moz-max-content;
     width: max-content;
     max-width: 100%;
     vertical-align: middle;
@@ -40,13 +26,15 @@
     padding: 2px 0;
     --dashWidth: var(--ButtonTertiary--dashWidth);
     padding-left: calc(var(--ButtonTertiary--dashSpace) + var(--dashWidth));
-    padding-right: calc(var(--ButtonTertiary--hover--dashWidth) - var(--dashWidth));
+    padding-right: calc(
+      var(--ButtonTertiary--hover--dashWidth) - var(--dashWidth)
+    );
     margin-right: var(--ButtonTertiary--gapH);
     margin-bottom: var(--space-1);
     font-weight: 700;
     transition: all 100ms ease-in;
-    font-size: var(--font-label-size);
   }
+
   .ButtonBack::before {
     content: "";
     position: absolute;
@@ -61,7 +49,10 @@
     transform: translateY(-50%);
     transition: inherit;
   }
-  .ButtonBack:hover, .ButtonBack:active, .ButtonBack[data-focus-visible-added] {
+
+  .ButtonBack:active,
+  .ButtonBack:hover,
+  .ButtonBack[data-focus-visible-added] {
     --dashWidth: var(--ButtonTertiary--hover--dashWidth);
     color: var(--ButtonTertiary--color);
     outline: 0;
@@ -71,9 +62,11 @@
     color: var(--ButtonTertiary--color);
     outline: 0;
   }
+
   .ButtonBack:active::before {
     width: var(--ButtonTertiary--dashWidth);
   }
+
   .ButtonBack[data-focus-visible-added]::after {
     content: "";
     position: absolute;
@@ -96,33 +89,41 @@
     border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
     border-radius: 0.5rem;
   }
-  .ButtonBack[disabled], .ButtonBack[aria-disabled=true] {
+  .ButtonBack:disabled,
+  .ButtonBack[aria-disabled="true"] {
     --dashWidth: var(--ButtonTertiary--dashWidth);
     --ButtonTertiary--dashColor: currentColor;
     --ButtonTertiary--color: _inherit;
+
     opacity: 0.5;
     pointer-events: none;
   }
+  .ButtonBack {
+    font-size: var(--font-label-size);
+  }
 
   .ButtonBack::before {
-    content: "";
     display: inline-block;
     text-indent: 0;
     text-align: center;
     vertical-align: top;
-    font-family: "icons", Arial, Helvetica, sans-serif;
-    speak: none;
+    /* iconFontStyling*/
+    font-family: icons, Esja, Helvetica, Arial, sans-serif;
+    speak: none; /* speak property is deprecated*/
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: 0;
+    content: var(--icon--arrow-left-long);
+
     background: 0;
     height: auto;
-    margin-right: 0.5rem;
-    margin-bottom: 0;
-    font-size: 0.5625rem;
+    font-size: 0.75em;
     overflow: hidden;
+
+    margin-right: var(--space-1);
+    margin-bottom: 0;
   }
 }

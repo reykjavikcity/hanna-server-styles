@@ -3,140 +3,147 @@
     flex-basis: 100%;
     padding-top: var(--space-4);
   }
-}
-@media screen and (min-width: 760px) {
-  .FooterInfo {
-    padding-top: calc(2 * var(--space-8));
-    padding-left: var(--grid-1-1);
-  }
-  .FooterInfo::after {
-    content: " ";
-    clear: both;
-    display: block;
-    height: 0;
-  }
-}
-@media screen {
-  .FooterInfo::before {
-    content: "";
-    display: block;
-    margin: 0 auto calc(2 * var(--space-6)) auto;
-    background: url("/assets/reykjavik-logo-notext.svg") 50% 50% no-repeat;
-    background-size: auto 100%;
-    width: 2.1875rem;
-    height: 3.3125rem;
+
+  @media (min-width: 760px) {
+    .FooterInfo {
+      padding-top: calc(2 * var(--space-8));
+      padding-left: var(--grid-1-1);
+    }
+
+    .FooterInfo::after {
+      content: " ";
+      clear: both;
+      display: block;
+      height: 0;
+    }
   }
 }
-@media screen and (min-width: 760px) {
+
+.FooterInfo::before {
+  content: "";
+  display: block;
+  margin: 0 auto calc(2 * var(--space-6)) auto;
+  background: url(/assets/reykjavik-logo-notext.svg) 50% 50% no-repeat;
+  background-size: auto 100%;
+  width: 2.1875rem;
+  height: 3.3125rem;
+}
+
+@media (min-width: 760px) {
   .FooterInfo::before {
     position: absolute;
     left: 0;
     width: var(--grid-1);
+    /* margin-top: var(--grid-1--neg);*/
   }
 }
-@media screen {
-  .FooterInfo__group {
-    margin-bottom: var(--space-8);
-  }
+
+.FooterInfo__group {
+  margin-bottom: var(--space-8);
 }
-@media screen and (min-width: 760px) {
+
+@media (min-width: 760px) {
   .FooterInfo__group {
     float: left;
     width: var(--grid-4);
     margin-left: var(--grid-gutter);
   }
 }
-@media screen and (min-width: 980px) {
+
+@media (min-width: 980px) {
   .FooterInfo__group {
     width: var(--grid-3);
   }
 }
-@media screen {
-  .FooterInfo__group[role=contactinfo],
-.FooterInfo__group--main {
-    background-color: #f8f8f9;
-    padding: var(--space-8) var(--grid-gutter);
-  }
+
+.FooterInfo__group[role='contactinfo'], /** @deprecated  invalid role value (Remove in v0.9) */
+  .FooterInfo__group--main {
+  background-color: var(--color-suld-25);
+  padding: var(--space-8) var(--grid-gutter);
 }
-@media screen and (max-width: 759px) {
-  .FooterInfo__group[role=contactinfo],
-.FooterInfo__group--main {
+
+@media (max-width: 759px) {
+  .FooterInfo__group[role='contactinfo'], /** @deprecated  invalid role value (Remove in v0.9) */
+  .FooterInfo__group--main {
     margin-left: var(--grid-margin--neg);
     margin-right: var(--grid-margin--right--neg);
     padding-left: var(--grid-margin);
     padding-right: var(--grid-margin--right);
   }
 }
-@media screen and (min-width: 760px) {
-  .FooterInfo__group[role=contactinfo],
-.FooterInfo__group--main {
+
+@media (min-width: 760px) {
+  .FooterInfo__group[role='contactinfo'], /** @deprecated  invalid role value (Remove in v0.9) */
+  .FooterInfo__group--main {
     margin-top: var(--space-8--neg);
     margin-left: 0;
     width: var(--grid-5);
   }
 }
-@media screen and (min-width: 1368px) {
-  .FooterInfo__group[role=contactinfo],
-.FooterInfo__group--main {
+
+@media (min-width: 980px) and (max-width: 1367px) {
+}
+
+@media (min-width: 1368px) {
+  .FooterInfo__group[role='contactinfo'], /** @deprecated  invalid role value (Remove in v0.9) */
+  .FooterInfo__group--main {
     width: var(--grid-4);
     margin-left: var(--grid-1-1);
   }
 }
-@media screen {
-  html:not([data-disable-css-warnings-with-abandon=true]) .FooterInfo__group--main ~ .FooterInfo__group--main {
-    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
-  }
-  html:not([data-disable-css-warnings-with-abandon=true]) .FooterInfo__group--main ~ .FooterInfo__group--main::before {
-    all: initial !important;
-    order: -999 !important;
-    font-family: sans-serif !important;
-    position: absolute !important;
-    white-space: nowrap !important;
-    z-index: 2 !important;
-    font-size: 12px !important;
-    line-height: 1.5em !important;
-    color: red !important;
-    background-color: rgba(255, 230, 230, 0.5) !important;
-    padding: 0 0.5em !important;
-    content: "Multiple `--main` groups are not supported" !important;
-  }
+
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .FooterInfo__group--main
+  ~ .FooterInfo__group--main:hover {
+  --WARNING--message: "Multiple `--main` groups are not supported";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
-@media screen {
-  .FooterInfo__grouptitle {
-    font: var(--font-sh-s);
-    margin-bottom: var(--space-3);
-  }
+
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .FooterInfo__group--main
+  ~ .FooterInfo__group--main:hover::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
 }
-@media screen {
-  .FooterInfo__groupcontent h4 {
-    font: var(--font-sh-s);
-    margin-bottom: var(--space-1);
-  }
+.FooterInfo__grouptitle {
+  font: var(--font-sh-s);
+  margin-bottom: var(--space-3);
 }
-@media screen {
-  .FooterInfo__groupcontent h4:not(:first-child) {
-    margin-top: var(--space-3);
-  }
+.FooterInfo__groupcontent {
 }
-@media screen {
-  .FooterInfo__groupcontent p,
+
+.FooterInfo__groupcontent h4 {
+  font: var(--font-sh-s);
+  margin-bottom: var(--space-1);
+}
+.FooterInfo__groupcontent h4:not(:first-child) {
+  margin-top: var(--space-3);
+}
+
+.FooterInfo__groupcontent p,
 .FooterInfo__groupcontent ul,
 .FooterInfo__groupcontent li {
-    margin-bottom: var(--space-2);
-    --current-link-color: var(--link-color);
-  }
+  margin-bottom: var(--space-2);
+  --current-link-color: var(--link-color);
 }
-@media screen {
-  .FooterInfo__groupcontent a[href^="tel:"] {
-    --link-color: var(--current-link-color);
-  }
+
+.FooterInfo__groupcontent a[href^="tel:"] {
+  --link-color: var(--current-link-color);
 }
-@media screen {
-  .FooterInfo__groupcontent a > small {
-    font-size: 1em;
-    display: block;
-    font-weight: 400;
-    text-decoration: none;
-    color: #707275;
-  }
+.FooterInfo__groupcontent a > small {
+  font-size: 1em;
+  display: block;
+  font-weight: var(--font-weight--normal);
+  text-decoration: none;
+  color: var(--color-suld-150);
 }

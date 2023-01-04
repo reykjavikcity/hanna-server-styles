@@ -1,15 +1,15 @@
-@charset "UTF-8";
 @media screen {
   .WizardStepper {
     counter-reset: step;
   }
-
   .WizardStepper__step {
-    --WizardStepper-ballBackground: var(--color-faxafloi-75);
-    --WizardStepper-ballColor: var(--color-suld-0);
-    --WizardStepper-ballIcon: "";
-    --WizardStepper-lineColor: var(--color-faxafloi-100);
+    --WizardStepper--ballBackground: var(--color-faxafloi-75);
+    --WizardStepper--ballColor: var(--color-suld-0);
+    --WizardStepper--ballIcon: var(--icon--checkmark);
+    --WizardStepper--lineColor: var(--color-faxafloi-100);
+
     color: var(--color-faxafloi-100);
+
     display: block;
     line-height: 1.35;
     padding: 0.75rem 0;
@@ -20,9 +20,10 @@
     position: relative;
     margin-bottom: 2.125rem;
     font-size: 0.75rem;
+    /* NOTE: Counter increment must not be on the ::before because of*/
+    /* this browser bug: https://bugs.chromium.org/p/chromium/issues/detail?id=487515*/
     counter-increment: step;
   }
-
   .WizardStepper__step::before {
     content: counter(step);
     width: 1.5rem;
@@ -30,11 +31,11 @@
     position: absolute;
     top: 0.5rem;
     left: 0.5rem;
-    background: var(--WizardStepper-ballBackground);
+    background: var(--WizardStepper--ballBackground);
     border-radius: 50%;
-    color: var(--WizardStepper-ballColor);
+    color: var(--WizardStepper--ballColor);
     font-size: 0.875rem;
-    font-weight: 700;
+    font-weight: var(--font-weight--bold);
     text-align: center;
   }
 
@@ -45,9 +46,8 @@
     bottom: -1.5rem;
     left: 1.1875rem;
     width: 0.125rem;
-    background: var(--WizardStepper-lineColor);
+    background: var(--WizardStepper--lineColor);
   }
-
   .WizardStepper__step:last-child::after {
     content: none;
   }
@@ -55,77 +55,72 @@
   .WizardStepper__step--neutral {
     counter-increment: none;
   }
-
   .WizardStepper__step--neutral::before {
     content: "•";
     font-size: 1.25rem;
   }
 
   .WizardStepper--preview > .WizardStepper__step,
-[aria-current=step] ~ .WizardStepper__step {
-    --WizardStepper-ballBackground: var(--color-suld-50);
-    --WizardStepper-ballColor: var(--color-suld-100);
-    --WizardStepper-lineColor: var(--color-suld-75);
+  [aria-current="step"] ~ .WizardStepper__step {
+    --WizardStepper--ballBackground: var(--color-suld-50);
+    --WizardStepper--ballColor: var(--color-suld-100);
+    --WizardStepper--lineColor: var(--color-suld-75);
+
     color: var(--color-suld-150);
   }
-
   .WizardStepper--preview > .WizardStepper__step--done,
-[aria-current=step] ~ .WizardStepper__step--done {
-    --WizardStepper-ballColor: var(--color-suld-150);
+  [aria-current="step"] ~ .WizardStepper__step--done {
+    --WizardStepper--ballColor: var(--color-suld-150);
   }
 
-  .WizardStepper__step[aria-current=step] {
-    --WizardStepper-ballBackground: var(--color-faxafloi-100);
-    --WizardStepper-ballIcon: "";
-    --WizardStepper-lineColor: var(--color-suld-75);
+  .WizardStepper__step[aria-current="step"] {
+    --WizardStepper--ballBackground: var(--color-faxafloi-100);
+    --WizardStepper--ballIcon: var(--icon--pen);
+    --WizardStepper--lineColor: var(--color-suld-75);
   }
 
   .WizardStepper__step--done::before,
-.WizardStepper__step[aria-current=step]::before {
+  .WizardStepper__step[aria-current="step"]::before {
     display: inline-block;
     text-indent: 0;
     text-align: center;
     vertical-align: top;
-    font-family: "icons", Arial, Helvetica, sans-serif;
-    speak: none;
+    /* iconFontStyling*/
+    font-family: icons, Esja, Helvetica, Arial, sans-serif;
+    speak: none; /* speak property is deprecated*/
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: 0;
-    content: var(--WizardStepper-ballIcon);
+    content: "";
+
+    content: var(--WizardStepper--ballIcon);
     font-size: 0.75rem;
   }
 
   button.WizardStepper__step:hover,
-button.WizardStepper__step:active {
+  button.WizardStepper__step:active {
     color: var(--link-color--hover);
     text-decoration: underline;
   }
 
-  html:not([data-disable-css-warnings-with-abandon=true]) :not(.WizardStepper--preview) > .WizardStepper__step:last-child:not([aria-current=step]):not([aria-current=step] ~ *) {
-    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
-  }
-  html:not([data-disable-css-warnings-with-abandon=true]) :not(.WizardStepper--preview) > .WizardStepper__step:last-child:not([aria-current=step]):not([aria-current=step] ~ *)::before {
-    all: initial !important;
-    order: -999 !important;
-    font-family: sans-serif !important;
-    position: absolute !important;
-    white-space: nowrap !important;
-    z-index: 2 !important;
-    font-size: 12px !important;
-    line-height: 1.5em !important;
-    color: red !important;
-    background-color: rgba(255, 230, 230, 0.5) !important;
-    padding: 0 0.5em !important;
-    content: 'You forgot aria-current="step".' !important;
-  }
+  /* ---------------------------------------------------------------------------*/
 
-  html:not([data-disable-css-warnings-with-abandon=true]) .WizardStepper--preview > .WizardStepper__step[aria-current=step] {
-    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    :not(.WizardStepper--preview)
+    > .WizardStepper__step:last-child:not([aria-current="step"]):not(
+      [aria-current="step"] ~ *
+    ):hover {
+    --WARNING--message: 'You forgot aria-current="step".';
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
-  html:not([data-disable-css-warnings-with-abandon=true]) .WizardStepper--preview > .WizardStepper__step[aria-current=step]::before {
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    :not(.WizardStepper--preview)
+    > .WizardStepper__step:last-child:not([aria-current="step"]):not(
+      [aria-current="step"] ~ *
+    ):hover::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -135,12 +130,35 @@ button.WizardStepper__step:active {
     font-size: 12px !important;
     line-height: 1.5em !important;
     color: red !important;
-    background-color: rgba(255, 230, 230, 0.5) !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
     padding: 0 0.5em !important;
-    content: "Remove the `--preview` modifier on parent" !important;
+    content: var(--WARNING--message) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .WizardStepper--preview
+    > .WizardStepper__step[aria-current="step"]:hover {
+    --WARNING--message: "Remove the `--preview` modifier on parent";
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .WizardStepper--preview
+    > .WizardStepper__step[aria-current="step"]:hover::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: var(--WARNING--message) !important;
   }
 }
-@media screen and (max-width: 759px) {
+
+@media (max-width: 759px) {
   .WizardStepper__step {
     width: 0;
     overflow: hidden;

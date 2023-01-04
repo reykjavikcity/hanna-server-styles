@@ -1,65 +1,66 @@
-@charset "UTF-8";
 @media screen {
-  .AccordionList {
-    max-width: 792px;
-    margin-top: calc(2.5862068966% + 24.7586206897px);
-    --leftIndent: calc(3.6363636364vw + 20.3636363636px);
-    --iconWidth: calc(2.7272727273vw + 15.2727272727px);
-  }
-  .before-sprinkling .AccordionList, .AccordionList[data-is-seen=false] {
+  .before-sprinkling .AccordionList,
+  .AccordionList[data-is-seen="false"] {
     opacity: 0;
     transform: translateY(200px);
   }
-  .AccordionList[data-is-seen=""], .AccordionList[data-is-seen=true] {
+
+  .AccordionList[data-is-seen=""],
+  .AccordionList[data-is-seen="true"] {
     opacity: 1;
     transform: none;
   }
-  .AccordionList[data-is-seen=true] {
+
+  .AccordionList[data-is-seen="true"] {
     transition: all 500ms ease-in-out;
+
     transition-property: opacity, transform;
   }
-}
-@media screen and (min-width: 760px) {
+
   .AccordionList {
-    --leftIndent: var(--grid-1-1);
-    --iconWidth: var(--grid-1);
+    max-width: 792px;
+    margin-top: calc(2.586206896551724% + 24.758620689655174px);
+
+    --leftIndent: calc(3.6363636363636362vw + 20.363636363636363px);
+    --iconWidth: calc(2.727272727272727vw + 15.272727272727273px);
   }
-}
-@media screen {
+
+  @media (min-width: 760px) {
+    .AccordionList {
+      --leftIndent: var(--grid-1-1);
+      --iconWidth: var(--grid-1);
+    }
+  }
   .AccordionList--wide {
     max-width: 1104px;
   }
-}
-@media screen {
+
   .AccordionList__item {
-    margin-bottom: 3.5rem;
+    margin-bottom: var(--space-7);
   }
-}
-@media screen {
   .AccordionList__item--disabled {
     opacity: 0.5;
   }
-}
-@media screen {
+
   .AccordionList__title {
     font: var(--font-sh-s);
-    font-weight: 700;
+    font-weight: var(--font-weight--bold);
     padding-left: var(--leftIndent);
   }
-}
-@media screen {
   .AccordionList__button {
     position: relative;
     color: inherit;
     margin-left: calc(-1 * var(--leftIndent));
     padding-left: var(--leftIndent);
   }
-}
-@media screen {
-  html:not([data-disable-css-warnings-with-abandon=true]) button.AccordionList__button:not([aria-controls]) {
-    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    button.AccordionList__button:not([aria-controls]):hover {
+    --WARNING--message: "`aria-controls` missing.";
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
-  html:not([data-disable-css-warnings-with-abandon=true]) button.AccordionList__button:not([aria-controls])::before {
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    button.AccordionList__button:not([aria-controls]):hover::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -69,70 +70,58 @@
     font-size: 12px !important;
     line-height: 1.5em !important;
     color: red !important;
-    background-color: rgba(255, 230, 230, 0.5) !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
     padding: 0 0.5em !important;
-    content: "`aria-controls` missing." !important;
+    content: var(--WARNING--message) !important;
   }
-}
-@media screen {
   .AccordionList__button:hover,
-.AccordionList__button:active {
-    color: #0367e1;
+  .AccordionList__button:active {
+    color: var(--color-faxafloi-100);
   }
-}
-@media screen {
-  .AccordionList__button[disabled] {
+  .AccordionList__button:disabled {
     color: inherit;
   }
-}
-@media screen {
+
   .AccordionList__button::before {
-    content: "";
     display: inline-block;
     text-indent: 0;
     text-align: center;
     vertical-align: top;
-    font-family: "icons", Arial, Helvetica, sans-serif;
-    speak: none;
+    /* iconFontStyling*/
+    font-family: icons, Esja, Helvetica, Arial, sans-serif;
+    speak: none; /* speak property is deprecated*/
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: 0;
+    content: var(--icon--close);
+
     position: absolute;
     left: 0;
     width: var(--iconWidth);
-    font-size: 0.7em;
-    color: #2a2b2c;
+    font-size: 0.75em;
+    color: var(--color-suld-200);
     transform: rotateZ(45deg);
     transition: transform 200ms ease-in;
   }
-}
-@media screen {
-  .AccordionList__button[aria-pressed=true]::before,
-.AccordionList__button[aria-expanded=true]::before {
+  .AccordionList__button[aria-pressed="true"]::before,
+  .AccordionList__button[aria-expanded="true"]::before {
     transform: rotateZ(0);
   }
-}
-@media screen {
   .AccordionList__button:hover::before,
-.AccordionList__button:active::before {
-    color: #013b70;
+  .AccordionList__button:active::before {
+    color: var(--color-faxafloi-150);
   }
-}
-@media screen {
+
+  /* ---------------------------------------------------------------------------*/
+
   .AccordionList__content {
     font: var(--font-bd-l);
-    font: var(--font-bd-l);
-    transition: all 200ms ease-in;
-    transition-property: opacity, visibility, max-height, padding-top;
-    overflow: hidden;
-    margin-left: var(--leftIndent);
-    padding-top: 2rem;
-    max-height: 4000px;
-    opacity: 1;
+    /* no headings above h4*/ /* DECIDE: is this enough?*/
   }
+
   .AccordionList__content h2 {
     font: var(--font-hd-s);
     margin-bottom: var(--h2--marginBottom, var(--baseVerticalMargin));
@@ -161,11 +150,13 @@
     padding: 0;
     margin-bottom: var(--baseVerticalMargin);
   }
+
   .AccordionList__content ul > li {
     margin-bottom: var(--space-2);
     position: relative;
     padding-left: var(--space-4);
   }
+
   .AccordionList__content ul > li::before {
     content: " ";
     float: left;
@@ -180,22 +171,23 @@
     margin-bottom: var(--baseVerticalMargin);
   }
   .AccordionList__content li ol,
-.AccordionList__content li ul {
+  .AccordionList__content li ul {
     margin-bottom: 0;
   }
-  .AccordionList__content blockquote:not(.BlockQuote__quote):not(.PullQuote__quote) {
+  /* blockquote:not([class]), // Too strict??*/
+  .AccordionList__content
+    blockquote:not(.BlockQuote__quote):not(.PullQuote__quote) {
     --Quote--line: 2px solid var(--theme-color-primary);
     --Quote--indent: 0;
+
     max-width: calc(792px - var(--Quote--indent));
     padding-top: var(--space-5);
     margin-left: var(--Quote--indent);
     position: relative;
-    font: var(--font-bd-s);
-    position: relative;
-    margin-bottom: var(--space-4);
-    padding-left: calc(var(--space-2) + 2px);
   }
-  .AccordionList__content blockquote:not(.BlockQuote__quote):not(.PullQuote__quote)::before {
+
+  .AccordionList__content
+    blockquote:not(.BlockQuote__quote):not(.PullQuote__quote)::before {
     content: "”";
     color: var(--theme-color-primary);
     font-size: 4.5rem;
@@ -207,15 +199,23 @@
     width: 0.6em;
     margin-left: -0.3em;
   }
-}
-@media screen and (min-width: 480px) {
-  .AccordionList__content blockquote:not(.BlockQuote__quote):not(.PullQuote__quote) {
-    padding-left: calc(var(--space-3) + 2px);
-    --Quote--indent: var(--space-2);
+
+  .AccordionList__content
+    blockquote:not(.BlockQuote__quote):not(.PullQuote__quote) {
+    font: var(--font-bd-s);
+    position: relative;
+    margin-bottom: var(--space-4);
+    padding-left: calc(var(--space-2) + 2px);
   }
-}
-@media screen {
-  .AccordionList__content blockquote:not(.BlockQuote__quote):not(.PullQuote__quote)::after {
+  @media (min-width: 480px) {
+    .AccordionList__content
+      blockquote:not(.BlockQuote__quote):not(.PullQuote__quote) {
+      padding-left: calc(var(--space-3) + 2px);
+      --Quote--indent: var(--space-2);
+    }
+  }
+  .AccordionList__content
+    blockquote:not(.BlockQuote__quote):not(.PullQuote__quote)::after {
     content: "";
     position: absolute;
     border-left: var(--Quote--line);
@@ -224,26 +224,48 @@
     left: 0;
     width: 2px;
   }
-}
-@media screen {
-  .AccordionList__content blockquote:not(.BlockQuote__quote):not(.PullQuote__quote) > *:last-child {
+  .AccordionList__content
+    blockquote:not(.BlockQuote__quote):not(.PullQuote__quote)
+    > *:last-child {
     margin-bottom: 0;
   }
-}
-@media screen {
+
   .AccordionList__content > :last-child {
     margin-bottom: 0;
   }
-}
-@media screen {
-  html:not([data-disable-css-warnings-with-abandon=true]) .AccordionList__content h1,
-html:not([data-disable-css-warnings-with-abandon=true]) .AccordionList__content h2,
-html:not([data-disable-css-warnings-with-abandon=true]) .AccordionList__content h3 {
-    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.5) !important;
+
+  .AccordionList__content {
+    font: var(--font-bd-l);
+    transition: all 200ms ease-in;
+    transition-property: opacity, visibility, max-height, padding-top;
+    overflow: hidden;
+    margin-left: var(--leftIndent);
+    padding-top: var(--space-4);
+    max-height: 4000px;
+    opacity: 1;
   }
-  html:not([data-disable-css-warnings-with-abandon=true]) .AccordionList__content h1::before,
-html:not([data-disable-css-warnings-with-abandon=true]) .AccordionList__content h2::before,
-html:not([data-disable-css-warnings-with-abandon=true]) .AccordionList__content h3::before {
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .AccordionList__content
+    h1:hover,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .AccordionList__content
+    h2:hover,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .AccordionList__content
+    h3:hover {
+    --WARNING--message: "Only use <h4/> and below here";
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .AccordionList__content
+    h1:hover::before,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .AccordionList__content
+    h2:hover::before,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .AccordionList__content
+    h3:hover::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -253,25 +275,24 @@ html:not([data-disable-css-warnings-with-abandon=true]) .AccordionList__content 
     font-size: 12px !important;
     line-height: 1.5em !important;
     color: red !important;
-    background-color: rgba(255, 230, 230, 0.5) !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
     padding: 0 0.5em !important;
-    content: "Only use <h4/> and below here" !important;
+    content: var(--WARNING--message) !important;
   }
-}
-@media screen {
+
   .AccordionList__content .TextBlock {
     max-width: none;
     margin: 0;
   }
-}
-@media screen {
-  html.before-sprinkling .AccordionList__item:not([data-sprinkled]) > .AccordionList__content {
+
+  html.before-sprinkling
+    .AccordionList__item:not([data-sprinkled])
+    > .AccordionList__content {
     display: none;
   }
-}
-@media screen {
+
   .AccordionList__content[hidden] {
-    display: block;
+    display: block; /* override default*/
     padding-top: 0;
     max-height: 0;
     opacity: 0;

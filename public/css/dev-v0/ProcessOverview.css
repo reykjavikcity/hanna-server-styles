@@ -1,13 +1,13 @@
 @media screen {
   .ProcessOverview {
-    background-color: #f8f8f9;
+    background-color: var(--color-suld-25);
     margin: 0 var(--grid-margin--neg);
     padding: 0 var(--grid-margin);
-    margin-bottom: calc(9.6982758621% + 2.8448275862px);
-    padding-top: calc(7.5431034483% + 28.8793103448px);
-    padding-bottom: calc(15.3017241379% + 7.1551724138px);
+    /* $ {extendBackgroundWithUnderlay}; // <-- this could be used also*/
+    margin-bottom: calc(9.698275862068966% + 2.844827586206904px);
+    padding-top: calc(7.543103448275862% + 28.879310344827587px);
+    padding-bottom: calc(15.301724137931034% + 7.15517241379311px);
   }
-
   .ProcessOverview--transparent {
     background: 0;
     padding-top: 0;
@@ -16,28 +16,30 @@
 
   .ProcessOverview__title {
     font: var(--font-hd-s);
-    margin-bottom: calc(7.4427480916vw + 16.1832061069px);
+    margin-bottom: calc(7.442748091603053vw + 16.18320610687023px);
   }
-}
-@media screen and (min-width: 1368px) {
-  .ProcessOverview__title {
-    margin-bottom: 7.375rem;
+
+  @media (min-width: 1368px) {
+    .ProcessOverview__title {
+      margin-bottom: 7.375rem;
+    }
   }
-}
-@media screen {
+
   .ProcessOverview__item {
     margin-bottom: 5rem;
     position: relative;
   }
-}
-@media screen {
+
   .ProcessOverview__item__title {
     font: var(--font-sh-l);
     display: flex;
+
     margin-bottom: var(--baseVerticalMargin);
   }
+
   .ProcessOverview__item__title::before {
     content: "";
+
     float: left;
     margin-top: 0.7em;
     height: 0.25rem;
@@ -45,21 +47,20 @@
     transform: translateY(-50%);
     width: var(--dash-width, 1.125em);
     margin-right: var(--dash-margin, 0.625em);
-    margin-left: var(--dash-indent, 0);
+    margin-left: var(--dash-indent);
   }
-}
-@media screen {
+
   .ProcessOverview__item__content {
     font: var(--font-bd-l);
   }
-}
-@media screen {
+
   .ProcessOverview__attention {
     font: var(--font-bd-l);
     position: relative;
     padding-left: 2.5rem;
-    margin-top: calc(1.5267175573vw + 59.1145038168px);
+    margin-top: calc(1.5267175572519083vw + 59.1145038167939px);
   }
+
   .ProcessOverview__attention::before {
     content: "";
     background-color: var(--theme-color-primary);
@@ -69,13 +70,17 @@
     left: 0;
     bottom: 0;
   }
-}
-@media screen and (min-width: 1368px) {
-  .ProcessOverview__attention {
-    margin-top: 80px;
+
+  @media (min-width: 1368px) {
+    .ProcessOverview__attention {
+      margin-top: 80px;
+    }
   }
 }
-@media screen and (min-width: 760px) {
+
+/* ---------------------------------------------------------------------------*/
+
+@media (min-width: 760px) {
   .ProcessOverview__item {
     display: flex;
     align-items: flex-start;
@@ -84,29 +89,27 @@
   :not(.ProcessOverview--narrow) > * > .ProcessOverview__item__title {
     display: block;
     position: relative;
-    width: 34.4370860927%;
+    width: 34.437086092715234%;
     --dash-width: calc(0.45 * var(--grid-margin));
     --dash-margin: 0;
     --dash-indent: var(--grid-margin--neg);
   }
-
   .ProcessOverview--narrow > * > .ProcessOverview__item__title {
-    width: 22.5165562914%;
+    width: 22.516556291390728%;
     --dash-margin: var(--grid-gutter);
   }
 
   .ProcessOverview__item__content,
-.ProcessOverview__attention {
-    width: 56.9536423841%;
+  .ProcessOverview__attention {
+    width: 56.95364238410596%;
     margin-left: auto;
   }
-
   .ProcessOverview--narrow > * > .ProcessOverview__item__content,
-.ProcessOverview--narrow > .ProcessOverview__attention {
-    margin-right: 17.2185430464%;
+  .ProcessOverview--narrow > .ProcessOverview__attention {
+    margin-right: 17.218543046357617%;
   }
 
   .ProcessOverview__attention {
-    padding-right: 5.298013245%;
+    padding-right: 5.298013245033113%;
   }
 }
