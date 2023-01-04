@@ -4,6 +4,19 @@
 
 - ... <!-- Add new lines here. -->
 
+## 0.8.72
+
+_2022-12-30_
+
+- feat: Update styling of `.SearchInput__button`
+- fix: Remove automatic quotations off `.PullQuote__quote`
+- fix: Apply disabled styles to `.FormField`s inside disabled `.FieldGroup`
+- fix: Suppress border effect when `:hover`ing `.FormField__input`s
+- fix: Font-size in `.FormField--small .FormField__input`s
+- fix: Page header cutoff after input field focus on iPhones
+- fix: Reduce line-height within `BreadCrumbs`
+- fix: Suppress `.MainMenu` flicker on window resize
+
 ## 0.8.71
 
 _2022-11-23_
