@@ -1,3 +1,4 @@
-/*!@deps
-	RowBlockColumn
-*/@media screen{.Illustration{display:block;margin:0 var(--grid-gutter--neg);margin-bottom:var(--grid-1)}}@media screen and (max-width:759px){.Illustration>img{max-width:500px}}@media screen and (min-width:760px){.Illustration{margin:var(--grid-gutter--neg);min-height:100%;padding-top:67%;position:relative;z-index:-1}.Illustration>img{left:0;pointer-events:auto;position:absolute;top:50%;transform:translateY(-50%);width:100%}}
+
+  /*!@deps
+    RowBlockColumn
+  */@media screen{.Illustration{display:block;margin:0 var(--grid-gutter--neg);margin-bottom:var(--grid-1)}}@media (max-width:759px){.Illustration>img{max-width:500px}}@media (min-width:760px){.Illustration{margin:var(--grid-gutter--neg);min-height:100%;padding-top:67%;position:relative;z-index:-1}.Illustration>img{left:0;pointer-events:auto;position:absolute;top:50%;transform:translateY(-50%);width:100%}}
