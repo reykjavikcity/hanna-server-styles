@@ -1,2 +1,3 @@
-.BgBox{position:relative}.BgBox:before{background:inherit;bottom:0;content:"";left:var(--grid-margin--neg);position:absolute;right:var(--grid-margin--neg);top:0;z-index:-1}
-  ;.BgBox{background-color:var(--color-suld-25);margin-bottom:var(--component-vspace--medium);padding:70px 0;padding:min(calc(5.72519vw + 11.67939px),90px) 0}.BgBox[class]>:last-child{margin-bottom:0}
+/*!@deps
+
+*/.BgBox{background-color:#f8f8f9;margin-bottom:var(--component-vspace--medium);padding:70px 0;position:relative}.BgBox:before{background:inherit;bottom:0;content:"";left:var(--grid-margin--neg);position:absolute;right:var(--grid-margin--neg);top:0;z-index:-1}.BgBox{padding:min(calc(5.72519vw + 11.67939px),90px) 0}.BgBox[class]>:last-child{margin-bottom:0}
