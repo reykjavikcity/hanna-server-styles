@@ -37,6 +37,7 @@
     text-shadow: none;
     white-space: nowrap;
   }
+
   .MainMenu__link {
     text-decoration: none;
     color: var(--link-color);
@@ -56,6 +57,7 @@
 
   .MainMenu__link {
     display: block;
+    width: -moz-max-content;
     width: max-content;
     font-weight: var(--font-weight--bold);
   }
@@ -485,6 +487,7 @@
     width: 100%;
 
     display: grid;
+    -moz-column-gap: var(--grid-gutter);
     column-gap: var(--grid-gutter);
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
@@ -574,6 +577,7 @@
     padding: 0 0.5em !important;
     content: var(--WARNING--message) !important;
   }
+
   html:not([data-disable-css-warnings-with-abandon="true"])
     .MainMenu:not([aria-label]):not([aria-labelledby]):hover {
     --WARNING--message: "Please add `aria-label` or `aria-labelledby`";
@@ -594,6 +598,7 @@
     padding: 0 0.5em !important;
     content: var(--WARNING--message) !important;
   }
+
   html:not([data-disable-css-warnings-with-abandon="true"])
     .MainMenu[aria-labelledby]
     > .MainMenu__title:not([id]):hover {
@@ -616,6 +621,7 @@
     padding: 0 0.5em !important;
     content: var(--WARNING--message) !important;
   }
+
   html:not([data-disable-css-warnings-with-abandon="true"])
     .MainMenu__separator:not(.MainMenu__items > *):hover {
     --WARNING--message: "Separators must be child of ul.MainMenu__items";
@@ -636,6 +642,7 @@
     padding: 0 0.5em !important;
     content: var(--WARNING--message) !important;
   }
+
   html:not([data-disable-css-warnings-with-abandon="true"])
     .MainMenu__list:first-child:hover {
     --WARNING--message: "`.MainMenu__title` missing";
@@ -656,6 +663,7 @@
     padding: 0 0.5em !important;
     content: var(--WARNING--message) !important;
   }
+
   html:not([data-disable-css-warnings-with-abandon="true"])
     .MainMenu__item:first-child:not(.MainMenu__item--home):hover {
     --WARNING--message: "Home link missing";
@@ -714,7 +722,7 @@
   }
 
   /* .MainMenu[data-sprinkled] .PrimaryPanel__title {*/
-  /*   $ {sr_only};*/
+  /*   $ {sr_only}*/
   /* }*/
 
   .PrimaryPanel__item {
@@ -744,6 +752,7 @@
     padding-top: var(--Layout__header-height);
     padding-bottom: 7.8125rem; /* clear .MainMenu__megapanel__backtomenu*/
     grid-column: 2 / span 7;
+    -moz-column-gap: var(--grid-gutter);
     column-gap: var(--grid-gutter);
   }
   .PrimaryPanel--active {
@@ -767,6 +776,7 @@
   .PrimaryPanel--twocol .PrimaryPanel__items {
     grid-column: span 8;
     display: grid;
+    -moz-column-gap: var(--grid-gutter);
     column-gap: var(--grid-gutter);
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }

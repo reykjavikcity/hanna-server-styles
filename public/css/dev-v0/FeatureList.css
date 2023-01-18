@@ -54,12 +54,14 @@
 
   .FeatureList__list {
     margin-left: var(--left-offset);
+    -moz-column-gap: 0;
     column-gap: 0;
   }
 
   @media (min-width: 480px) and (max-width: 759px) {
     .FeatureList__list {
       width: var(--grid-10-10);
+      -moz-columns: 2;
       columns: 2;
     }
   }
@@ -67,11 +69,13 @@
     .FeatureList__list {
       width: calc(var(--grid-9-9) + 3 * var(--grid-0-1));
       max-width: 936px;
+      -moz-columns: 3;
       columns: 3;
     }
   }
   .FeatureList__feature {
     position: relative;
+    -moz-column-break-inside: avoid;
     break-inside: avoid;
     padding-bottom: var(--grid-0-1);
     padding-right: var(--grid-0-1);

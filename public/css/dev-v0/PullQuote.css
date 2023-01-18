@@ -78,6 +78,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   padding: 0 0.5em !important;
   content: var(--WARNING--message) !important;
 }
+
 .PullQuote__by {
   position: relative;
   top: var(--space-1);
@@ -107,6 +108,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   color: var(--ButtonTertiary--color);
   position: relative;
   display: inline-block;
+  width: -moz-max-content;
   width: max-content;
   max-width: 100%;
   vertical-align: middle;
@@ -188,6 +190,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
   border-radius: 0.5rem;
 }
+
 html:not([data-disable-css-warnings-with-abandon="true"])
   .PullQuote__by
   > *:not(span):span(a):hover {

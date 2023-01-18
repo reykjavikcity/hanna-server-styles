@@ -40,7 +40,7 @@
 
     --link-color: _inherit;
     --link-color--hover: var(--link-color);
-    --link-underline: 1px dotted currentColor;
+    --link-underline: var(--link-underline--hairline);
     --link-underline--hover: 2px solid currentColor;
 
     --ButtonTertiary--dashColor: currentColor; /* var(--theme-color-primary--dark);*/
@@ -72,6 +72,7 @@
     color: var(--ButtonTertiary--color);
     position: relative;
     display: inline-block;
+    width: -moz-max-content;
     width: max-content;
     max-width: 100%;
     vertical-align: middle;
@@ -131,6 +132,7 @@
     border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
     border-radius: 0.5rem;
   }
+
   .IslandBlock__button:focus-visible::after {
     content: "";
     position: absolute;
@@ -171,6 +173,7 @@
     left: 0;
     width: 100%;
     height: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
   }
   .IslandBlock__image > svg {

@@ -75,7 +75,7 @@
 
   .WizardStepper__step[aria-current="step"] {
     --WizardStepper--ballBackground: var(--color-faxafloi-100);
-    --WizardStepper--ballIcon: var(--icon--pen);
+    --WizardStepper--ballIcon: var(--icon--edit);
     --WizardStepper--lineColor: var(--color-suld-75);
   }
 
@@ -134,6 +134,7 @@
     padding: 0 0.5em !important;
     content: var(--WARNING--message) !important;
   }
+
   html:not([data-disable-css-warnings-with-abandon="true"])
     .WizardStepper--preview
     > .WizardStepper__step[aria-current="step"]:hover {

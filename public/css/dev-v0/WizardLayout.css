@@ -68,7 +68,9 @@
     height: 100%;
     display: inline-block;
     vertical-align: top;
+    -o-object-fit: contain;
     object-fit: contain;
+    -o-object-position: 0% 50%;
     object-position: 0% 50%;
     margin-right: 0.625rem;
     margin-left: -1px;
@@ -96,6 +98,7 @@
     .WizardLayout__header__logo > * > svg,
     .WizardLayout__header__logo > * > img {
       width: 11.5625rem;
+      -o-object-fit: cover;
       object-fit: cover;
       margin-right: 1.3125rem;
     }
@@ -280,7 +283,7 @@
 /* ===========================================================================*/
 /* BEGIN @deprecated  (remove in v0.9)*/
 /* Styles to make the addition of .WizardLayout__content non-breaking*/
-.Layout {
+.WizardLayout {
   display: flex;
   flex-flow: column nowrap;
 }

@@ -5,8 +5,8 @@
   font-weight: normal;
   font-style: normal;
   font-display: block;
-  src: url("i/icons.woff2?c5730a0509864400d986b9d55fb69a96") format("woff2"),
-    url("i/icons.woff?c5730a0509864400d986b9d55fb69a96") format("woff");
+  src: url("i/icons.woff2?f5efe88940ce00b5baf7c51f89dd1fd4") format("woff2"),
+    url("i/icons.woff?f5efe88940ce00b5baf7c51f89dd1fd4") format("woff");
 }
 
 @font-face {
@@ -45,7 +45,7 @@
   /**/
 
 :root {
-  --cssVersion: "0.8.72";
+  --cssVersion: "0.8.73";
   --browser-scrollbar-width: 16px;
   --bp-w-phone: 320px;
   --bp-w-phablet: 480px;
@@ -113,6 +113,7 @@
   --link-color--hover: var(--color-faxafloi-100);
   --link-weight: var(--font-weight--bold);
   --link-underline--thickness: 0.125rem;
+  --link-underline--hairline: 1px dotted currentColor;
   --link-underline: var(--link-underline--thickness) solid transparent;
   --link-underline--hover: var(--link-underline--thickness) solid currentColor;
   --link-underline-offset: 0.15em;
@@ -596,6 +597,7 @@ a {
 abbr {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
+  -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted; /* 2 */
 }
 
@@ -1004,6 +1006,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
 *,
 *::before,
 *::after {
@@ -1025,6 +1028,7 @@ table {
   outline-color: var(--link-focus-outlineColor);
   outline-offset: var(--link-focus-outlineOffset);
 }
+
 *:focus[tabindex="-1"],
 [data-js-focus-visible] *:focus:not([data-focus-visible-added]) {
   outline: none;
@@ -1034,6 +1038,7 @@ table {
   outline: none;
   outline-offset: 0;
 }
+
 html {
   min-height: 100vh;
   min-width: calc(320px - var(--browser-scrollbar-width));
@@ -1073,6 +1078,16 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   height: 100vh;
+}
+
+/* nextjs@11 injects this and it triggers scrolling bugs*/
+/* (including double-scrollbar) in Chrome/Blink.*/
+/* (Relevant PR: https://github.com/vercel/next.js/pull/44853)*/
+/* Next.js is common-enough consumer of the Hanna CSS*/
+/* to justify special handling here.*/
+next-route-announcer {
+  position: absolute;
+  top: 0;
 }
 
 *:first-child {
@@ -1136,6 +1151,7 @@ address {
 }
 
 img {
+  -o-object-position: var(--focalPoint);
   object-position: var(--focalPoint);
 }
 img,
@@ -1161,6 +1177,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   iframe:not([title]):not([aria-label]):hover {
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
+
 table {
   border-collapse: separate;
 }
@@ -1232,6 +1249,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   padding: 0 0.5em !important;
   content: var(--WARNING--message) !important;
 }
+
 button {
   border: 0;
   border-radius: 0;
@@ -1355,6 +1373,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   padding: 0 0.5em !important;
   content: var(--WARNING--message) !important;
 }
+
 hr {
   display: block;
   margin: var(--baseVerticalMargin) 0;

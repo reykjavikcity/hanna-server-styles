@@ -19,6 +19,7 @@
     color: var(--ButtonTertiary--color);
     position: relative;
     display: inline-block;
+    width: -moz-max-content;
     width: max-content;
     max-width: 100%;
     vertical-align: middle;
@@ -78,6 +79,7 @@
     border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
     border-radius: 0.5rem;
   }
+
   .ButtonBack:focus-visible::after {
     content: "";
     position: absolute;
@@ -89,6 +91,7 @@
     border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
     border-radius: 0.5rem;
   }
+
   .ButtonBack:disabled,
   .ButtonBack[aria-disabled="true"] {
     --dashWidth: var(--ButtonTertiary--dashWidth);
@@ -98,6 +101,7 @@
     opacity: 0.5;
     pointer-events: none;
   }
+
   .ButtonBack {
     font-size: var(--font-label-size);
   }

@@ -66,13 +66,16 @@
 
   @media (min-width: 760px) {
     .InfoBlock__items {
+      -moz-column-count: 2;
       column-count: 2;
+      -moz-column-gap: 2.8125rem;
       column-gap: 2.8125rem;
     }
   }
   .InfoBlock__item {
     padding-left: 1.75rem;
     margin-bottom: 1rem;
+    -moz-column-break-inside: avoid;
     break-inside: avoid;
   }
   .InfoBlock__item::before {

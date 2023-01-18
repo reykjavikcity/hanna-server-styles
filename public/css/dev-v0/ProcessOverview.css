@@ -3,7 +3,7 @@
     background-color: var(--color-suld-25);
     margin: 0 var(--grid-margin--neg);
     padding: 0 var(--grid-margin);
-    /* $ {extendBackgroundWithUnderlay}; // <-- this could be used also*/
+    /* $ {extendBackgroundWithUnderlay} // <-- this could be used also*/
     margin-bottom: calc(9.698275862068966% + 2.844827586206904px);
     padding-top: calc(7.543103448275862% + 28.879310344827587px);
     padding-bottom: calc(15.301724137931034% + 7.15517241379311px);

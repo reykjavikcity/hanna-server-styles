@@ -65,6 +65,7 @@
     padding: 0 0.5em !important;
     content: var(--WARNING--message) !important;
   }
+
   html:not([data-disable-css-warnings-with-abandon="true"])
     .RowBlock
     > .RowBlockColumn:first-child:last-child:hover {
@@ -87,6 +88,7 @@
     padding: 0 0.5em !important;
     content: var(--WARNING--message) !important;
   }
+
   html:not([data-disable-css-warnings-with-abandon="true"])
     .RowBlock
     > :not(.RowBlockColumn):hover {
@@ -134,7 +136,7 @@
 
     --link-color: _inherit;
     --link-color--hover: var(--link-color);
-    --link-underline: 1px dotted currentColor;
+    --link-underline: var(--link-underline--hairline);
     --link-underline--hover: 2px solid currentColor;
 
     --ButtonTertiary--dashColor: currentColor; /* var(--theme-color-primary--dark);*/

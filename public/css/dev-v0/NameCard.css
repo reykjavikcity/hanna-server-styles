@@ -41,6 +41,7 @@
     color: var(--ButtonTertiary--color);
     position: relative;
     display: inline-block;
+    width: -moz-max-content;
     width: max-content;
     max-width: 100%;
     vertical-align: middle;
@@ -91,6 +92,7 @@
     color: var(--ButtonTertiary--color);
     position: relative;
     display: inline-block;
+    width: -moz-max-content;
     width: max-content;
     max-width: 100%;
     vertical-align: middle;
@@ -164,6 +166,7 @@
     border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
     border-radius: 0.5rem;
   }
+
   .NameCard__tel__number:focus-visible::after,
   a.NameCard__contactinfo__item:focus-visible::after,
   button.NameCard__contactinfo__item:focus-visible::after {

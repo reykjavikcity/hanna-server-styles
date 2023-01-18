@@ -124,7 +124,7 @@
   /*
       // FIXME: Enable this instead in v0.9
       .Modal__blings > not(.Modal__blings__inner) {
-        $ {WARNING__('Only place .Modal__blings__inner inside .Modal__blings')};
+        $ {WARNING__('Only place .Modal__blings__inner inside .Modal__blings')}
       }
     */
 
@@ -150,6 +150,7 @@
     padding: 0 0.5em !important;
     content: var(--WARNING--message) !important;
   }
+
   .Modal__closebutton {
     overflow: hidden;
     white-space: nowrap;

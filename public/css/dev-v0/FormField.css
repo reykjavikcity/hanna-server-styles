@@ -115,6 +115,11 @@
     font-size: var(--FormField--input--font-size);
     line-height: var(--FormField--input--line-height);
   }
+  .FormField__input::-moz-placeholder,
+  .FormField__input > *::-moz-placeholder {
+    opacity: 1; /* override browser default styling*/
+    color: var(--FormField--input--color-placeholder);
+  }
   .FormField--empty > .FormField__input,
   .FormField__input::placeholder,
   .FormField__input > *::placeholder {

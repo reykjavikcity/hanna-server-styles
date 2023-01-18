@@ -533,6 +533,8 @@
   .react-datepicker__year-option:last-of-type,
   .react-datepicker__month-option:last-of-type,
   .react-datepicker__month-year-option:last-of-type {
+    -webkit-user-select: none;
+    -moz-user-select: none;
     user-select: none;
   }
 

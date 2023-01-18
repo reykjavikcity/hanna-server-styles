@@ -115,6 +115,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   padding: 0 0.5em !important;
   content: var(--WARNING--message) !important;
 }
+
 .FooterInfo__grouptitle {
   font: var(--font-sh-s);
   margin-bottom: var(--space-3);

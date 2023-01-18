@@ -203,6 +203,7 @@
   color: var(--ButtonTertiary--color);
   position: relative;
   display: inline-block;
+  width: -moz-max-content;
   width: max-content;
   max-width: 100%;
   vertical-align: middle;
@@ -284,6 +285,7 @@
   border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
   border-radius: 0.5rem;
 }
+
 html:not([data-disable-css-warnings-with-abandon="true"])
   .BlockQuote__by
   > *:not(span):span(a):hover {

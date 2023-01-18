@@ -30,17 +30,15 @@
     margin: 0 auto;
   }
 
-  .ContentArticle > .PageHeading,
-  .ContentArticle > .Heading,
-  .ContentArticle > .TextBlock {
+  .ContentArticle .PageHeading,
+  .ContentArticle .Heading,
+  .ContentArticle .TextBlock {
     width: auto;
     max-width: none;
     margin-left: 0;
   }
 
   /* ===========================================================================*/
-
-  /* TODO: The following css in not included in https://styles.reykjavik.is/css/v0.8/CenterColumn.css Why not?*/
 
   html:not([data-disable-css-warnings-with-abandon="true"])
     .ContentArticle
@@ -53,10 +51,12 @@
     > .TextBlock--labelled:hover,
   html:not([data-disable-css-warnings-with-abandon="true"])
     .ContentArticle
-    > *:not(.TextBlock):not(.PageHeading):not(.SubHeading):not(.Heading):not(
-      .ContentImage
-    ):not(.RelatedLinks):not(.ArticleMeta):not(.VSpacer):not(hr):hover {
-    --WARNING--message: "Only use plain `PageHeading`, `Heading`, `Subheading`, `TextBlock`, `ContentImage`, `RelatedLinks`, `ArticleMeta`, `VSpacer`, `<hr/>` inside this parent wrapper.";
+    > *:not(.TextBlock):not(.PageHeading):not(.Heading):not(.ContentImage):not(
+      .RelatedLinks
+    ):not(.ArticleMeta):not(.VSpacer):not(hr):not(
+      .ContentArticle__header
+    ):hover {
+    --WARNING--message: "Only use plain `PageHeading`, `Heading`, `TextBlock`, `ContentImage`, `RelatedLinks`, `ArticleMeta`, `VSpacer`, `<hr/>` inside this parent wrapper.";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -70,9 +70,11 @@
     > .TextBlock--labelled:hover::before,
   html:not([data-disable-css-warnings-with-abandon="true"])
     .ContentArticle
-    > *:not(.TextBlock):not(.PageHeading):not(.SubHeading):not(.Heading):not(
-      .ContentImage
-    ):not(.RelatedLinks):not(.ArticleMeta):not(.VSpacer):not(hr):hover::before {
+    > *:not(.TextBlock):not(.PageHeading):not(.Heading):not(.ContentImage):not(
+      .RelatedLinks
+    ):not(.ArticleMeta):not(.VSpacer):not(hr):not(
+      .ContentArticle__header
+    ):hover::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -86,6 +88,7 @@
     padding: 0 0.5em !important;
     content: var(--WARNING--message) !important;
   }
+
   html:not([data-disable-css-warnings-with-abandon="true"])
     .ContentArticle
     > [class*="--align--"][class],
@@ -94,9 +97,30 @@
     > [class*="--wide"][class] {
     --WARNING--message: "Do not use --align-- or --wide modifiers.";
   }
+
   html:not([data-disable-css-warnings-with-abandon="true"])
     .ContentArticle
     > .TextBlock--labelled[class] {
     --WARNING--message: "Do not use the --labelled modifier.";
+  }
+
+  .ContentArticle__header {
+    display: flex;
+    flex-flow: column;
+  }
+  .ContentArticle__header > .PageHeading,
+  .ContentArticle__header > .Heading {
+    order: 1;
+  }
+  .ContentArticle__header > .Heading:not(:last-child) {
+    margin-top: 0;
+  }
+
+  /* Support for simpler (and legacy) usage patterns where __heaeder*/
+  /* is NOT present and .Heading is preceeded by .ArticlaMeta, etc.*/
+  .ContentArticle > .Heading:nth-child(2),
+  .ContentArticle > .Heading:nth-child(3),
+  .ContentArticle > .Heading:nth-child(4) {
+    margin-top: 0;
   }
 }

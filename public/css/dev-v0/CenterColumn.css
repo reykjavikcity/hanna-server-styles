@@ -4,17 +4,15 @@
     margin: 0 auto;
   }
 
-  .CenterColumn > .PageHeading,
-  .CenterColumn > .Heading,
-  .CenterColumn > .TextBlock {
+  .CenterColumn .PageHeading,
+  .CenterColumn .Heading,
+  .CenterColumn .TextBlock {
     width: auto;
     max-width: none;
     margin-left: 0;
   }
 
   /* ===========================================================================*/
-
-  /* TODO: The following css in not included in https://styles.reykjavik.is/css/v0.8/CenterColumn.css Why not?*/
 
   html:not([data-disable-css-warnings-with-abandon="true"])
     .CenterColumn
@@ -27,10 +25,10 @@
     > .TextBlock--labelled:hover,
   html:not([data-disable-css-warnings-with-abandon="true"])
     .CenterColumn
-    > *:not(.TextBlock):not(.PageHeading):not(.SubHeading):not(.Heading):not(
-      .ContentImage
-    ):not(.RelatedLinks):not(.ArticleMeta):not(.VSpacer):not(hr):hover {
-    --WARNING--message: "Only use plain `PageHeading`, `Heading`, `Subheading`, `TextBlock`, `ContentImage`, `RelatedLinks`, `ArticleMeta`, `VSpacer`, `<hr/>` inside this parent wrapper.";
+    > *:not(.TextBlock):not(.PageHeading):not(.Heading):not(.ContentImage):not(
+      .RelatedLinks
+    ):not(.ArticleMeta):not(.VSpacer):not(hr):hover {
+    --WARNING--message: "Only use plain `PageHeading`, `Heading`, `TextBlock`, `ContentImage`, `RelatedLinks`, `ArticleMeta`, `VSpacer`, `<hr/>` inside this parent wrapper.";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -44,9 +42,9 @@
     > .TextBlock--labelled:hover::before,
   html:not([data-disable-css-warnings-with-abandon="true"])
     .CenterColumn
-    > *:not(.TextBlock):not(.PageHeading):not(.SubHeading):not(.Heading):not(
-      .ContentImage
-    ):not(.RelatedLinks):not(.ArticleMeta):not(.VSpacer):not(hr):hover::before {
+    > *:not(.TextBlock):not(.PageHeading):not(.Heading):not(.ContentImage):not(
+      .RelatedLinks
+    ):not(.ArticleMeta):not(.VSpacer):not(hr):hover::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -60,6 +58,7 @@
     padding: 0 0.5em !important;
     content: var(--WARNING--message) !important;
   }
+
   html:not([data-disable-css-warnings-with-abandon="true"])
     .CenterColumn
     > [class*="--align--"][class],
@@ -68,6 +67,7 @@
     > [class*="--wide"][class] {
     --WARNING--message: "Do not use --align-- or --wide modifiers.";
   }
+
   html:not([data-disable-css-warnings-with-abandon="true"])
     .CenterColumn
     > .TextBlock--labelled[class] {

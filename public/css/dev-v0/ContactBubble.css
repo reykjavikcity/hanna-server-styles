@@ -16,7 +16,7 @@
       z-index: calc(var(--zindex--header) - 1);
     }
   }
-  @media ($_mq-Popup) {
+  @media (min-width: 760px) {
     .ContactBubble__wrapper {
       z-index: calc(var(--zindex--header) + 5);
     }
@@ -314,9 +314,13 @@
     float: left;
     margin-left: -3rem;
     vertical-align: top;
+    -webkit-mask-image: var(--ContactBubble--type--icon);
     mask-image: var(--ContactBubble--type--icon);
+    -webkit-mask-size: auto 100%;
     mask-size: auto 100%;
+    -webkit-mask-position: 0% 50%;
     mask-position: 0% 50%;
+    -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     transition: inherit;
   }

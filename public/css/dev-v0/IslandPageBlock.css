@@ -82,6 +82,7 @@
     color: var(--ButtonTertiary--color);
     position: relative;
     display: inline-block;
+    width: -moz-max-content;
     width: max-content;
     max-width: 100%;
     vertical-align: middle;
@@ -141,6 +142,7 @@
     border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
     border-radius: 0.5rem;
   }
+
   .IslandPageBlock__button:focus-visible::after {
     content: "";
     position: absolute;

@@ -127,6 +127,7 @@ html.before-sprinkling .Carousel:not([data-sprinkled]) {
 
 .CarouselStepper {
   margin: 0 var(--space-0_5--neg);
+  width: -moz-max-content;
   width: max-content;
   display: flex;
   align-items: flex-end;

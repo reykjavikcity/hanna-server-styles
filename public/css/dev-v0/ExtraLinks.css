@@ -242,6 +242,7 @@
   .ExtraLinks__card__summary {
     font: var(--font-bd-s);
   }
+
   .ExtraLinks__card[class] {
     /* double strentgh selector to override defaut link :hover styling*/
     border: var(--border-default);

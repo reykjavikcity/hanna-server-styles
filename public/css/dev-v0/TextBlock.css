@@ -153,6 +153,7 @@
   .TextBlock > :last-child {
     margin-bottom: 0;
   }
+
   .before-sprinkling .TextBlock,
   .TextBlock[data-is-seen="false"] {
     opacity: 0;
@@ -271,6 +272,7 @@
     padding: 0 0.5em !important;
     content: var(--WARNING--message) !important;
   }
+
   html:not([data-disable-css-warnings-with-abandon="true"])
     .TextBlock--wide.TextBlock--labelled:hover {
     --WARNING--message: "`--wide` can't be `--labelled`";
@@ -291,6 +293,7 @@
     padding: 0 0.5em !important;
     content: var(--WARNING--message) !important;
   }
+
   /* ---------------------------------------------------------------------------*/
 
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -313,6 +316,7 @@
     padding: 0 0.5em !important;
     content: var(--WARNING--message) !important;
   }
+
   html:not([data-disable-css-warnings-with-abandon="true"])
     .TextBlock__title:hover {
     --WARNING--message: "`__title` is Outdated. Use PageHeading/SubHeading";
@@ -333,6 +337,7 @@
     padding: 0 0.5em !important;
     content: var(--WARNING--message) !important;
   }
+
   html:not([data-disable-css-warnings-with-abandon="true"])
     .TextBlock
     .PageHeading:hover,
@@ -757,6 +762,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   padding: 0 0.5em !important;
   content: var(--WARNING--message) !important;
 }
+
 /* Warn about redundant classNames*/
 html:not([data-disable-css-warnings-with-abandon="true"])
   [class*="VSpacer--top--"][class*="VSpacer--bottom--"]
@@ -824,6 +830,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   padding: 0 0.5em !important;
   content: var(--WARNING--message) !important;
 }
+
 @media screen {
   .ArticleMeta {
     font: var(--font-bd-s);

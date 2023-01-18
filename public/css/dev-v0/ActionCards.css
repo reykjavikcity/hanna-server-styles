@@ -20,6 +20,7 @@
   @media (min-width: 760px) {
     .ActionCards {
       display: grid;
+      -moz-column-gap: var(--grid-gutter);
       column-gap: var(--grid-gutter);
       grid-template: "title list" / var(--grid-3) var(--grid-9);
     }

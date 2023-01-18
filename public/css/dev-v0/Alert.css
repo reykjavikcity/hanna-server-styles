@@ -78,6 +78,7 @@
     padding: 0 0.5em !important;
     content: var(--WARNING--message) !important;
   }
+
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Alert:not([role="alert"]):hover {
     --WARNING--message: 'Should be role="alert"';
@@ -98,6 +99,7 @@
     padding: 0 0.5em !important;
     content: var(--WARNING--message) !important;
   }
+
   /*  // This is the default styling state*/
   /*  .Alert--info {*/
   /* }*/

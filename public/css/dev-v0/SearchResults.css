@@ -243,6 +243,7 @@
     color: var(--ButtonTertiary--color);
     position: relative;
     display: inline-block;
+    width: -moz-max-content;
     width: max-content;
     max-width: 100%;
     vertical-align: middle;
@@ -302,6 +303,7 @@
     border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
     border-radius: 0.5rem;
   }
+
   .SearchResults__loadmore:focus-visible::after {
     content: "";
     position: absolute;
@@ -436,6 +438,7 @@
   }
   .SearchResultsHighlightItem__image > img {
     position: absolute;
+    -o-object-fit: contain;
     object-fit: contain;
   }
 

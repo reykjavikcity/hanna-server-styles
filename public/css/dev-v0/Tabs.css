@@ -230,6 +230,7 @@
     padding: 0 0.5em !important;
     content: var(--WARNING--message) !important;
   }
+
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Tabs
     > .Tabs:not(:last-child):hover {
@@ -252,6 +253,7 @@
     padding: 0 0.5em !important;
     content: var(--WARNING--message) !important;
   }
+
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Tabs--vertical
     > .Tabs--vertical:hover {
@@ -274,6 +276,7 @@
     padding: 0 0.5em !important;
     content: var(--WARNING--message) !important;
   }
+
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Tabs
     > .Tabs

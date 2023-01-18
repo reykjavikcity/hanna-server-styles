@@ -9,6 +9,7 @@
   @media (min-width: 760px) {
     .ImageCards {
       display: grid;
+      -moz-column-gap: var(--grid-gutter);
       column-gap: var(--grid-gutter);
       grid-template: "title list" / var(--grid-3) var(--grid-9);
     }
@@ -222,6 +223,7 @@
     left: 0;
     width: 100%;
     height: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
   }
 

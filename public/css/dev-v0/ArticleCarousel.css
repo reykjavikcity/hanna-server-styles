@@ -117,6 +117,7 @@
   .ArticleCarousel__itemlist > * {
     scroll-snap-align: start;
   }
+
   .before-sprinkling .ArticleCarousel,
   .ArticleCarousel[data-is-seen="false"] {
     opacity: 0;
@@ -202,6 +203,7 @@
     padding: 0 0.5em !important;
     content: var(--WARNING--message) !important;
   }
+
   .ArticleCarouselCard {
     border: var(--border-default);
     border-width: 2px;
@@ -314,10 +316,13 @@
     right: var(--grid-column--neg);
     width: calc(100% + var(--grid-column) + var(--grid-column));
     height: 100%;
+    -o-object-fit: contain;
     object-fit: contain;
+    -o-object-position: center;
     object-position: center;
   }
   .ArticleCarouselCard__illustration--photo > img {
+    -o-object-fit: cover;
     object-fit: cover;
     top: 0;
   }
@@ -353,6 +358,7 @@
     color: var(--ButtonTertiary--color);
     position: relative;
     display: inline-block;
+    width: -moz-max-content;
     width: max-content;
     max-width: 100%;
     vertical-align: middle;
@@ -412,6 +418,7 @@
     border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
     border-radius: 0.5rem;
   }
+
   .ArticleCarouselCard__morelink:focus-visible::after {
     content: "";
     position: absolute;
@@ -423,6 +430,7 @@
     border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
     border-radius: 0.5rem;
   }
+
   html:not([data-disable-css-warnings-with-abandon="true"])
     .ArticleCarouselCard__morelink:not([aria-label]):hover {
     --WARNING--message: 'aria-label="" is missing';
@@ -443,6 +451,7 @@
     padding: 0 0.5em !important;
     content: var(--WARNING--message) !important;
   }
+
   .ArticleCarousel > .CarouselStepper {
     margin-top: var(--space-3);
   }

@@ -16,6 +16,7 @@
   color: var(--ButtonTertiary--color);
   position: relative;
   display: inline-block;
+  width: -moz-max-content;
   width: max-content;
   max-width: 100%;
   vertical-align: middle;
@@ -76,6 +77,7 @@
   border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
   border-radius: 0.5rem;
 }
+
 .ButtonTertiary:focus-visible::after {
   content: "";
   position: absolute;
@@ -87,6 +89,7 @@
   border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
   border-radius: 0.5rem;
 }
+
 .ButtonTertiary--go--back {
   order: -10;
 }
@@ -138,6 +141,7 @@
   opacity: 0.5;
   pointer-events: none;
 }
+
 /* ---------------------------------------------------------------------------*/
 
 html:not([data-disable-css-warnings-with-abandon="true"])
@@ -161,6 +165,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   padding: 0 0.5em !important;
   content: var(--WARNING--message) !important;
 }
+
 html:not([data-disable-css-warnings-with-abandon="true"])
   .ButtonTertiary--go--back.ButtonTertiary--destructive:hover {
   --WARNING--message: "`--destructive` and `--go--back` do NOT mix";
@@ -182,6 +187,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   padding: 0 0.5em !important;
   content: var(--WARNING--message) !important;
 }
+
 html:not([data-disable-css-warnings-with-abandon="true"])
   .ButtonTertiary--go--forward:hover {
   --WARNING--message: "`--go--forward` not supported on `ButtonTertiary`";

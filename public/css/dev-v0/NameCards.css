@@ -4,6 +4,7 @@
 @media screen {
   .NameCards {
     display: grid;
+    -moz-column-gap: var(--grid-gutter);
     column-gap: var(--grid-gutter);
   }
 

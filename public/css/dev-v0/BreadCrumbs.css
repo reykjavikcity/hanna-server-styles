@@ -111,6 +111,7 @@
     padding: 0 0.5em !important;
     content: var(--WARNING--message) !important;
   }
+
   html:not([data-disable-css-warnings-with-abandon="true"])
     .BreadCrumbs:not(nav):hover {
     --WARNING--message: "Please use <nav/>";
@@ -131,6 +132,7 @@
     padding: 0 0.5em !important;
     content: var(--WARNING--message) !important;
   }
+
   html:not([data-disable-css-warnings-with-abandon="true"])
     .BreadCrumbs:not([aria-label]):not([aria-labelledby]):hover {
     --WARNING--message: "Please add `aria-label` or `aria-labelledby`";
@@ -151,6 +153,7 @@
     padding: 0 0.5em !important;
     content: var(--WARNING--message) !important;
   }
+
   html:not([data-disable-css-warnings-with-abandon="true"])
     .BreadCrumbs[aria-labelledby]
     > .BreadCrumbs__title:not([id]):hover {
