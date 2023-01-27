@@ -22,7 +22,7 @@
 .FooterInfo::before {
   content: "";
   display: block;
-  margin: 0 auto calc(2 * var(--space-6)) auto;
+  margin: 0 auto var(--space-4) auto;
   background: url(/assets/reykjavik-logo-notext.svg) 50% 50% no-repeat;
   background-size: auto 100%;
   width: 2.1875rem;
