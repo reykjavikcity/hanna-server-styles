@@ -150,8 +150,10 @@
     transition-property: background-color, box-shadow;
   }
 
-  html.menu-is-open > body {
+  html.menu-is-open {
     overflow-y: hidden;
+  }
+  html.menu-is-open > body {
     padding-right: var(--grid-margin);
   }
 

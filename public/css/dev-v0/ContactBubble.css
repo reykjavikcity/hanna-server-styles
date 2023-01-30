@@ -37,8 +37,10 @@
     /* [data-freeze-scroll]*/
     /* Env tweaks (side-effects)*/
 
-    html[data-contact-bubble] > body {
+    html[data-contact-bubble] {
       overflow-y: hidden;
+    }
+    html[data-contact-bubble] > body {
       padding-right: var(--grid-margin);
     }
 
