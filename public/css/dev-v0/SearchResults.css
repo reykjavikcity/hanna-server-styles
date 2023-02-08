@@ -1,3 +1,8 @@
+/*!@deps
+    Tabs,
+    Alert
+  */
+
 @media screen {
   .SiteSearchPage {
     position: relative;

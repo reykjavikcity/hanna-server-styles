@@ -741,6 +741,12 @@
 
     margin: -1px;
   }
+
+  :not(.MainMenu__panelsWrap--active) > * > .PrimaryPanel--active {
+    opacity: 0;
+
+    transition: all 500ms ease-in-out;
+  }
 }
 
 /* ===========================================================================*/

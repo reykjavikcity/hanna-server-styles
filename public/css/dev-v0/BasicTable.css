@@ -1,3 +1,7 @@
+/*!@deps
+    Footnote
+  */
+
 @media screen {
   .before-sprinkling .TableWrapper,
   .TableWrapper[data-is-seen="false"] {
