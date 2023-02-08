@@ -28,17 +28,14 @@ System requirements:
 - `yarn >= 1.22`
 
 ```sh
-git clone -b master git@github.com:rvk-utd/hanna-styles.git style-server
-cd style-server
+git clone git@github.com:reykjavikcity/hanna-server-styles.git hanna-server-styles
+cd hanna-server-styles
 ```
 
 ```sh
 yarn install --production
 yarn run start
 ```
-
-The `master` branch is the "live" branch, whereas the most recent
-content/features are on `feature/style-server`
 
 This starts a HTTP server with the config specified in
 [cssserve-prod.json](./cssserve-prod.json).
@@ -124,8 +121,3 @@ minor `0.*` version. (Like so `/bundle/v0.8`.)
 
 The CSS files and other assets are built from sources stored in the main
 [Hanna monorepo](https://github.com/rvk-utd/hanna).
-
-Infornmation about how to delpoy new version to production can be found in in
-the file
-[`/README-deployment.md`](https://github.com/rvk-utd/hanna-styles/blob/develop/README-deployment.md)
-on the `develop` branch.

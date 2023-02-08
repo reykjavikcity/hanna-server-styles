@@ -545,9 +545,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hanna-style-server@workspace:.":
+"hanna-server-styles@workspace:.":
   version: 0.0.0-use.local
-  resolution: "hanna-style-server@workspace:."
+  resolution: "hanna-server-styles@workspace:."
   dependencies:
     cssserve: ^2.2.1
   languageName: unknown
