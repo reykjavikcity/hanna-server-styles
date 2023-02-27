@@ -1,0 +1,126 @@
+/*!@deps
+    ButtonPrimary
+    ButtonTertiary
+  */
+@media screen {
+  .before-sprinkling .HeroBlock,
+  .HeroBlock[data-is-seen="false"] {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+
+  .HeroBlock[data-is-seen=""],
+  .HeroBlock[data-is-seen="true"] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .HeroBlock[data-is-seen="true"] {
+    transition: all 500ms ease-in-out;
+
+    transition-property: opacity, transform;
+  }
+
+  .HeroBlock {
+    padding: calc(0.8620689655172413% + -2.413793103448276px) 0;
+    margin-bottom: calc(7.543103448275862% + 8.879310344827587px);
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  .HeroBlock__title {
+    font: var(--font-hd-l);
+    margin-bottom: 0.625em;
+  }
+
+  .HeroBlock__image {
+    display: block;
+    margin: var(--space-2) calc(0.5 * var(--grid-margin--neg));
+    order: 1;
+  }
+
+  .HeroBlock__summary {
+    font: var(--font-bd-l);
+    margin-bottom: 2em;
+  }
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .HeroBlock__summary
+    li:not([class]),
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .HeroBlock__summary
+    blockquote {
+    --WARNING--message: "Use simple markup only";
+    box-shadow: 0 0 0 2px rgba(255, 165, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .HeroBlock__summary
+    li:not([class])::before,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .HeroBlock__summary
+    blockquote::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: orange !important;
+    background-color: rgba(255, 174, 26, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: var(--WARNING--message) !important;
+  }
+
+  .HeroBlock__summary > p {
+    margin-bottom: var(--baseVerticalMargin);
+  }
+
+  .HeroBlock > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* ---------------------------------------------------------------------------*/
+
+@media (min-width: 480px) and (max-width: 979px) {
+  .HeroBlock {
+    padding-right: calc(62.4vw + -299.52px);
+  }
+}
+
+/* ---------------------------------------------------------------------------*/
+
+@media (min-width: 980px) {
+  .HeroBlock {
+    position: relative;
+    padding-right: 51.65562913907284%;
+    min-height: 26.25rem;
+    z-index: 0; /* scope the *__image underlap*/
+  }
+
+  .HeroBlock__image {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    right: -3.3112582781456954%;
+    width: 54.966887417218544%;
+    padding-top: 48.34437086092716%;
+    margin: 0;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  .HeroBlock__image > img {
+    pointer-events: initial;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    -o-object-fit: contain;
+    object-fit: contain;
+  }
+}

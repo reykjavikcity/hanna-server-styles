@@ -1,0 +1,161 @@
+@media screen {
+  .InfoBlock {
+    background-color: var(--color-suld-25);
+    padding: calc(8.620689655172415% + 15.862068965517238px) 8.609271523178808%;
+    padding-left: var(--grid-margin);
+    margin-left: var(--grid-margin--neg);
+    box-sizing: content-box;
+    position: relative;
+    max-width: 1000px;
+    margin-bottom: 4rem;
+  }
+  .InfoBlock::before {
+    display: inline-block;
+    text-indent: 0;
+    text-align: center;
+    vertical-align: top;
+    /* iconFontStyling*/
+    font-family: icons, Esja, Helvetica, Arial, sans-serif;
+    speak: none; /* speak property is deprecated*/
+    font-weight: normal;
+    font-style: normal;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0;
+    content: var(--icon--fatchevron-up);
+
+    color: var(--theme-color-secondary);
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    margin: -0.2em -0.5em;
+    max-width: calc(0.5em + var(--grid-margin--right));
+    margin-right: max(var(--grid-margin--right--neg), -0.5em);
+    font-size: calc(3.816793893129771vw + 36.786259541984734px);
+    overflow: hidden;
+  }
+
+  @media (min-width: 1368px) {
+    .InfoBlock::before {
+      font-size: 5.5625rem;
+    }
+  }
+
+  .InfoBlock__title {
+    font: var(--font-hd-s);
+    margin-bottom: 1.25rem;
+  }
+
+  .InfoBlock__subtitle {
+    font: var(--font-bd-l);
+  }
+
+  @media (min-width: 760px) {
+    .InfoBlock__subtitle {
+      width: 39.735099337748345%;
+      min-width: 350px;
+    }
+  }
+
+  .InfoBlock__items {
+    margin-top: calc(3.775% + 26.25px);
+  }
+
+  @media (min-width: 760px) {
+    .InfoBlock__items {
+      -moz-column-count: 2;
+      column-count: 2;
+      -moz-column-gap: 2.8125rem;
+      column-gap: 2.8125rem;
+    }
+  }
+  .InfoBlock__item {
+    padding-left: 1.75rem;
+    margin-bottom: 1rem;
+    -moz-column-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .InfoBlock__item::before {
+    content: "";
+    display: inline-block;
+    background-color: var(--theme-color-primary--safeish);
+    margin-right: 1rem;
+    width: 0.75rem;
+    height: 0.25rem;
+    margin-left: -1.75rem;
+  }
+
+  .InfoBlock__extrainfo,
+  .InfoBlock__attention {
+    font: var(--font-bd-l);
+    position: relative;
+    padding-left: 2.5rem;
+    margin-top: calc(1.5267175572519083vw + 59.1145038167939px);
+
+    border-top: var(--border-dark);
+    padding-top: calc(2.2900763358778624vw + 32.671755725190835px);
+  }
+
+  .InfoBlock__extrainfo::before,
+  .InfoBlock__attention::before {
+    content: "";
+    background-color: var(--theme-color-primary);
+    width: 0.5rem;
+    position: absolute;
+    top: calc(2.2900763358778624vw + 32.671755725190835px);
+    left: 0;
+    bottom: 0;
+  }
+
+  @media (min-width: 1368px) {
+    .InfoBlock__extrainfo,
+    .InfoBlock__attention {
+      margin-top: 80px;
+
+      padding-top: 64px;
+    }
+    .InfoBlock__extrainfo::before,
+    .InfoBlock__attention::before {
+      top: 64px;
+    }
+  }
+
+  .InfoBlock__extrainfo {
+    padding-left: 0;
+  }
+  .InfoBlock__extrainfo::before {
+    content: none;
+  }
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .InfoBlock__extrainfo
+    + .InfoBlock__attention:hover,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .InfoBlock__attention
+    + .InfoBlock__extrainfo:hover {
+    --WARNING--message: "Choose *EITHER* `__extrainfo` *OR* `__attention`.";
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .InfoBlock__extrainfo
+    + .InfoBlock__attention:hover::before,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .InfoBlock__attention
+    + .InfoBlock__extrainfo:hover::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: var(--WARNING--message) !important;
+  }
+}

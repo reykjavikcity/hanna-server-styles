@@ -1,0 +1,454 @@
+@media screen {
+  /* Script-only wrapper element*/
+  .ContactBubble__wrapper {
+    pointer-events: none;
+    position: fixed;
+    bottom: 0;
+    right: var(--grid-margin--right);
+    left: var(--grid-margin);
+    max-width: 75.5rem;
+    margin: 0 auto;
+    transition: all 600ms ease-in-out;
+  }
+
+  @media (max-width: 759px) {
+    .ContactBubble__wrapper {
+      z-index: calc(var(--zindex--header) - 1);
+    }
+  }
+  @media (min-width: 760px) {
+    .ContactBubble__wrapper {
+      z-index: calc(var(--zindex--header) + 5);
+    }
+  }
+
+  html.before-sprinkling .ContactBubble__wrapper:not([data-show]) {
+    display: none;
+  }
+  html.menu-is-open .ContactBubble__wrapper,
+  .ContactBubble__wrapper[data-show="false"] {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .ContactBubble__wrapper[data-show="true"] {
+  }
+
+  @media (max-width: 759px) {
+    /* [data-freeze-scroll]*/
+    /* Env tweaks (side-effects)*/
+
+    html[data-contact-bubble] {
+      overflow-y: hidden;
+    }
+    html[data-contact-bubble] > body {
+      padding-right: var(--grid-margin);
+    }
+
+    html[data-contact-bubble] .Layout__alerts {
+      max-height: 0;
+    }
+
+    html[data-contact-bubble] .Layout__header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: var(--browser-scrollbar-width);
+    }
+
+    html[data-contact-bubble] .Layout__header__skiplink {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  /* ---------------------------------------------------------------------------*/
+
+  /* Script-only button*/
+  .ContactBubble__openbtn {
+    position: absolute;
+    right: var(--space-1);
+    bottom: var(--space-3);
+    pointer-events: auto;
+    box-sizing: content-box;
+    font-size: var(--font-bd-l-size);
+    font-weight: var(--font-weight--bold);
+    background-color: var(--color-suld-25);
+    color: var(--color-faxafloi-100);
+    border-radius: 2.25rem;
+    border: var(--border-default);
+    height: var(--space-3);
+    line-height: var(--space-3);
+    padding: var(--space-3) 0;
+    padding-left: var(--space-9);
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  @media (min-width: 760px) {
+    .ContactBubble__openbtn {
+      display: block;
+      right: var(--space-2--neg);
+      bottom: 4vh;
+      bottom: min(4vh, var(--space-5));
+      width: auto;
+      transition: all 300ms ease-in-out;
+      max-width: 20em;
+      padding-right: 1.5rem;
+    }
+  }
+
+  .ContactBubble__openbtn:hover {
+    color: var(--color-faxafloi-150);
+    border-color: var(--color-suld-100);
+    background-color: var(--color-suld-50);
+  }
+  @media (max-width: 759px) {
+    .ContactBubble__openbtn[aria-expanded="true"] {
+      opacity: 0;
+    }
+  }
+  @media (min-width: 760px) {
+    .ContactBubble__openbtn[aria-expanded="true"] {
+      max-width: 0;
+      padding-right: 0;
+    }
+  }
+
+  .ContactBubble__openbtn::before,
+  .ContactBubble__openbtn::after {
+    display: inline-block;
+    text-indent: 0;
+    text-align: center;
+    vertical-align: top;
+    /* iconFontStyling*/
+    font-family: icons, Esja, Helvetica, Arial, sans-serif;
+    speak: none; /* speak property is deprecated*/
+    font-weight: normal;
+    font-style: normal;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0;
+    content: var(--icon--chat);
+
+    position: absolute;
+    top: 50%;
+    font-size: 2.5rem;
+    left: 1rem;
+    margin-top: -0.5em;
+    width: 2.5rem;
+    height: 1em;
+    line-height: 1em;
+    transition: opacity 200ms ease-in;
+  }
+  .ContactBubble__openbtn::after {
+    content: var(--icon--close);
+    opacity: 0;
+    font-size: 1.625rem;
+  }
+
+  .ContactBubble__openbtn[aria-expanded="true"]::before {
+    opacity: 0;
+    transition-delay: 200ms;
+    transition-duration: 200ms;
+  }
+  .ContactBubble__openbtn[aria-expanded="true"]::after {
+    opacity: 1;
+    transition-delay: 200ms;
+    transition-duration: 200ms;
+  }
+
+  /* ---------------------------------------------------------------------------*/
+
+  html.before-sprinkling .ContactBubble:not([data-sprinkled]) {
+    display: none;
+  }
+  .ContactBubble {
+    pointer-events: auto;
+    background-color: var(--color-suld-25);
+    padding: 2rem;
+    opacity: 1;
+    transition: all 300ms ease-in-out;
+    transition-property: opacity, visibility;
+  }
+
+  @media (min-width: 760px) {
+    .ContactBubble {
+      max-width: 23.4375rem;
+      border: var(--border-default);
+    }
+  }
+  /* .ContactBubble[data-sprinkled] {*/
+  @media (max-width: 759px) {
+    .ContactBubble__wrapper > .ContactBubble {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      /* right: calc(-1 * var(--browser-scrollbar-width));*/
+      left: 0;
+      /* overflow-y: scroll;*/
+      overflow: auto;
+      padding-top: var(--Layout__header-height);
+      /* …*/
+    }
+  }
+  @media (min-width: 760px) {
+    .ContactBubble__wrapper > .ContactBubble {
+      overflow: auto;
+      position: absolute;
+      right: -1rem;
+
+      --bottomOffset: calc(4vh + 11 * var(--space-1));
+      bottom: var(--bottomOffset);
+      max-height: calc(100vh - var(--bottomOffset));
+
+      --bottomOffsetMin: calc(min(4vh, var(--space-5)) + 11 * var(--space-1));
+      bottom: var(--bottomOffsetMin);
+      max-height: calc(100vh - var(--bottomOffsetMin));
+    }
+  }
+
+  .ContactBubble[hidden] {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  @media (max-width: 759px) {
+    /* underlay for .Layout__header*/
+    .ContactBubble::before {
+      content: "";
+      position: fixed;
+      z-index: 1;
+      color: var(--color-suld-25);
+      background-color: currentColor;
+      box-shadow: 0 0.67em 0.33em -0.33em currentColor;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--Layout__header-height);
+    }
+    .ContactBubble::after {
+      content: "";
+      display: block;
+      height: 0;
+      margin-top: var(--space-8);
+      padding-top: 49.18032786885246%;
+      background: url("i/ContactBubble/illustration.png") 50% 50% / 100% auto
+        no-repeat;
+      max-width: 500px;
+    }
+  }
+  @media (max-width: 759px) {
+    .ContactBubble__title {
+      font: var(--font-hd-l);
+      max-width: 9em; /* Makes for nice line-wrap in the text 'Hvað getum við 
+ gert fyrir þig?' */
+      margin-bottom: calc(12.048192771084338vh + -33.831325301204814px);
+      margin-bottom: min(
+        var(--space-8),
+        calc(12.048192771084338vh + -33.831325301204814px)
+      );
+    }
+  }
+  @media (min-width: 760px) {
+    .ContactBubble__title {
+      font: var(--font-bd-l);
+      font-weight: var(--font-weight--bold);
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .ContactBubble__list {
+    font: var(--font-bd-s);
+    border-top: 1px solid var(--color-suld-50);
+    font-weight: var(--font-weight--bold);
+  }
+
+  .ContactBubble__item {
+    box-sizing: content-box;
+    padding: 1rem 2rem;
+    padding-left: 3.5rem;
+    min-height: calc(var(--font-bd-s-leading) + var(--font-label-leading));
+    border-bottom: 1px solid var(--color-suld-50);
+    --link-underline: none;
+    --link-underline--hover: none;
+
+    --ContactBubble--type--icon: none;
+  }
+  .ContactBubble__item--type--suggestions {
+    --ContactBubble--type--icon: url(i/ContactBubble/paperplane.svg);
+  }
+  .ContactBubble__item--type--phone {
+    --ContactBubble--type--icon: url(i/ContactBubble/phone.svg);
+  }
+  .ContactBubble__item--type--faq {
+    --ContactBubble--type--icon: url(i/ContactBubble/faq.svg);
+  }
+  .ContactBubble__item--type--livechat {
+    --ContactBubble--type--icon: url(i/ContactBubble/chat.svg);
+  }
+
+  .ContactBubble__link {
+    display: block;
+    color: var(--link-color);
+  }
+  .ContactBubble__link > small {
+    font: var(--font-label);
+    font-weight: var(--font-weight--normal);
+    display: block;
+    color: var(--color-suld-200);
+    text-decoration: none;
+    transition: inherit;
+  }
+  .ContactBubble__link:hover > small {
+    color: inherit;
+  }
+
+  .ContactBubble__link::before {
+    content: "";
+    background-color: var(--color-suld-100);
+    width: 2rem;
+    height: 1.75rem;
+    line-height: 1.75rem;
+    float: left;
+    margin-left: -3rem;
+    vertical-align: top;
+    -webkit-mask-image: var(--ContactBubble--type--icon);
+    mask-image: var(--ContactBubble--type--icon);
+    -webkit-mask-size: auto 100%;
+    mask-size: auto 100%;
+    -webkit-mask-position: 0% 50%;
+    mask-position: 0% 50%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    transition: inherit;
+  }
+  .ContactBubble__link:hover::before {
+    background-color: currentColor;
+  }
+
+  /* ---------------------------------------------------------------------------*/
+
+  /* Script-only button*/
+  @media (max-width: 759px) {
+    .ContactBubble__closebtn {
+      position: fixed;
+      z-index: 1;
+      top: calc(0.5 * var(--Layout__header-height));
+      right: var(--grid-margin--right);
+
+      overflow: hidden;
+      white-space: nowrap;
+
+      margin: var(--space-3--neg) var(--space-0_5);
+      width: var(--space-6);
+      height: var(--space-6);
+      line-height: var(--space-6);
+      color: var(--color-faxafloi-100);
+      transition: all 200ms ease-in-out;
+    }
+    .ContactBubble__closebtn:hover {
+      color: inherit;
+      transform: scale(1.15);
+    }
+    .ContactBubble__closebtn::before {
+      display: inline-block;
+      text-indent: 0;
+      text-align: center;
+      vertical-align: top;
+      /* iconFontStyling*/
+      font-family: icons, Esja, Helvetica, Arial, sans-serif;
+      speak: none; /* speak property is deprecated*/
+      font-weight: normal;
+      font-style: normal;
+      white-space: nowrap;
+      -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
+      -moz-osx-font-smoothing: grayscale;
+      letter-spacing: 0;
+      content: var(--icon--close);
+
+      font-size: 1.625rem;
+      width: 100%;
+      margin-right: 1px;
+    }
+  }
+
+  @media (min-width: 760px) {
+    .ContactBubble__closebtn {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      opacity: 0.00001;
+      pointer-events: none;
+
+      margin: -1px;
+    }
+
+    .ContactBubble__closebtn[data-focus-visible-added] {
+      width: auto;
+      height: auto;
+      overflow: visible;
+      clip: auto;
+      opacity: 1;
+      pointer-events: auto;
+
+      margin: 0;
+
+      z-index: var(--zindex--sr-only);
+      font-size: 1em;
+      background: var(--color-suld-0);
+      border: 3px double var(--link-color--hover);
+      margin: 0;
+      padding: 0.2em 0.33em;
+      color: var(--link-color--hover);
+      text-shadow: none;
+      white-space: nowrap;
+    }
+    .ContactBubble__closebtn:focus-visible {
+      width: auto;
+      height: auto;
+      overflow: visible;
+      clip: auto;
+      opacity: 1;
+      pointer-events: auto;
+
+      margin: 0;
+
+      z-index: var(--zindex--sr-only);
+      font-size: 1em;
+      background: var(--color-suld-0);
+      border: 3px double var(--link-color--hover);
+      margin: 0;
+      padding: 0.2em 0.33em;
+      color: var(--link-color--hover);
+      text-shadow: none;
+      white-space: nowrap;
+    }
+
+    .ContactBubble__closebtn:focus-within:not(:focus) {
+      width: auto;
+      height: auto;
+      overflow: visible;
+      clip: auto;
+      opacity: 1;
+      pointer-events: auto;
+
+      margin: 0;
+
+      z-index: var(--zindex--sr-only);
+      font-size: 1em;
+      background: var(--color-suld-0);
+      border: 3px double var(--link-color--hover);
+      margin: 0;
+      padding: 0.2em 0.33em;
+      color: var(--link-color--hover);
+      text-shadow: none;
+      white-space: nowrap;
+    }
+  }
+}

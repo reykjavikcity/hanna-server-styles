@@ -1,0 +1,104 @@
+/*!@deps
+    Bling
+    efnistakn
+  */
+@media screen {
+  .before-sprinkling .FeatureList,
+  .FeatureList[data-is-seen="false"] {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+
+  .FeatureList[data-is-seen=""],
+  .FeatureList[data-is-seen="true"] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .FeatureList[data-is-seen="true"] {
+    transition: all 500ms ease-in-out;
+
+    transition-property: opacity, transform;
+  }
+
+  .FeatureList {
+    --efnistakn: "";
+    background-color: var(--color-suld-25);
+    --left-offset: var(--grid-1);
+    padding-top: calc(4.310344827586207% + 11.93103448275862px);
+    padding-bottom: calc(5.172413793103448% + 17.51724137931035px);
+    margin-top: calc(7.543103448275862% + 8.879310344827587px);
+    margin-bottom: calc(7.543103448275862% + 8.879310344827587px);
+  } /* scope variable to container.*/
+
+  @media (max-width: 479px) {
+    .FeatureList {
+      --left-offset: var(--grid-0-1);
+      margin-left: var(--grid-0-1--neg);
+      margin-right: var(--grid-0-1--neg);
+    }
+  }
+
+  @media (min-width: 1368px) {
+    .FeatureList {
+      --left-offset: var(--grid-1-1);
+    }
+  }
+
+  .FeatureList__title {
+    font: var(--font-hd-s);
+    max-width: 416px;
+    margin-bottom: calc(6.896551724137931% + 0.6896551724137936px);
+    margin-left: var(--left-offset);
+  }
+
+  .FeatureList__list {
+    margin-left: var(--left-offset);
+    -moz-column-gap: 0;
+    column-gap: 0;
+  }
+
+  @media (min-width: 480px) and (max-width: 759px) {
+    .FeatureList__list {
+      width: var(--grid-10-10);
+      -moz-columns: 2;
+      columns: 2;
+    }
+  }
+  @media (min-width: 760px) {
+    .FeatureList__list {
+      width: calc(var(--grid-9-9) + 3 * var(--grid-0-1));
+      max-width: 936px;
+      -moz-columns: 3;
+      columns: 3;
+    }
+  }
+  .FeatureList__feature {
+    position: relative;
+    -moz-column-break-inside: avoid;
+    break-inside: avoid;
+    padding-bottom: var(--grid-0-1);
+    padding-right: var(--grid-0-1);
+    padding-left: 2.5rem;
+    box-sizing: content-box;
+    /* Fix for Firefox css column rendering glitch which*/
+    /* causes the .FeatureList__feature::before icon to blink*/
+    /* in/out as the viewport is resized.*/
+    min-height: calc(var(--font-base-leading) + 1px);
+  }
+
+  .FeatureList__feature:not([data-efnistakn]) {
+    --efnistakn: url("/assets/efnistakn/skipurit_01.svg");
+  }
+
+  .FeatureList__feature::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -0.125rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--efnistakn) no-repeat;
+    background-size: contain;
+  }
+}

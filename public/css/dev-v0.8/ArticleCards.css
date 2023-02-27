@@ -1,0 +1,106 @@
+.ArticleCards {
+  --ArticleCards--fallback: url("/assets/illustrations/esjan.png");
+
+  grid-area: list;
+  display: grid;
+  grid-auto-flow: row;
+  gap: var(--grid-gutter);
+  grid-template-columns: repeat(auto-fill, var(--grid-3));
+}
+
+@media (max-width: 479px) {
+  .ArticleCards {
+    grid-template-columns: 100%;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 759px) {
+  .ArticleCards {
+    grid-template-columns: repeat(auto-fill, var(--grid-6));
+  }
+}
+
+@media (min-width: 760px) and (max-width: 979px) {
+  .ArticleCards {
+    grid-template-columns: repeat(auto-fill, var(--grid-4));
+  }
+}
+
+.ArticleCards {
+  margin-bottom: 60px;
+}
+
+.ArticleCards {
+  margin-bottom: min(calc(3.0534351145038165vw + 38.22900763358779px), 80px);
+}
+
+.ArticleCards {
+  row-gap: 60px;
+}
+
+.ArticleCards {
+  row-gap: min(calc(3.0534351145038165vw + 38.22900763358779px), 80px);
+}
+
+.ArticleCards__item {
+  /* …*/
+}
+
+.ArticleCards__card {
+  --link-color: _inherit;
+  --link-underline: 1px solid var(--color-suld-200);
+  --link-underline--hover: 1px solid var(--color-faxafloi-100);
+
+  display: block;
+  height: 100%;
+  padding-bottom: var(--space-2);
+}
+
+.ArticleCards__card {
+  padding-bottom: min(
+    calc(0.7633587786259541vw + 13.557251908396948px),
+    var(--space-3)
+  );
+}
+
+.ArticleCards__image {
+  display: block;
+  position: relative;
+  padding-top: 61.76470588235294%;
+  margin-bottom: var(--space-2);
+}
+
+.ArticleCards__image {
+  margin-bottom: min(
+    calc(1.1450381679389312vw + 8.335877862595419px),
+    var(--space-3)
+  );
+}
+.ArticleCards__image--missing {
+  border: 0.75rem solid transparent;
+  /* TODO: Verify value*/
+  padding-top: calc(61.76470588235294% - (2 * 0.75rem));
+  background: var(--ArticleCards--fallback) 50% 50% / contain no-repeat;
+}
+
+.ArticleCards__image > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -o-object-fit: cover;
+}
+
+.ArticleCards__card__title {
+  margin-bottom: var(--space-1);
+  font: var(--font-sh-s);
+  display: block;
+}
+
+.ArticleCards__card__meta {
+  font: var(--font-bd-s);
+  color: var(--color-suld-150);
+  font-weight: var(--font-weight--normal);
+}

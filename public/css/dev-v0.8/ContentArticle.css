@@ -1,0 +1,126 @@
+/*!@deps
+    ArticleMeta
+    Heading
+    ContentImage
+    TextBlock
+    VSpacer
+    RelatedLinks
+  */
+@media screen {
+  .before-sprinkling .ContentArticle,
+  .ContentArticle[data-is-seen="false"] {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+
+  .ContentArticle[data-is-seen=""],
+  .ContentArticle[data-is-seen="true"] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .ContentArticle[data-is-seen="true"] {
+    transition: all 500ms ease-in-out;
+
+    transition-property: opacity, transform;
+  }
+
+  .ContentArticle {
+    max-width: 792px;
+    margin: 0 auto;
+  }
+
+  .ContentArticle .PageHeading,
+  .ContentArticle .Heading,
+  .ContentArticle .TextBlock {
+    width: auto;
+    max-width: none;
+    margin-left: 0;
+  }
+
+  /* ===========================================================================*/
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .ContentArticle
+    > [class*="--align--"]:hover,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .ContentArticle
+    > [class*="--wide"]:hover,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .ContentArticle
+    > .TextBlock--labelled:hover,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .ContentArticle
+    > *:not(.TextBlock):not(.PageHeading):not(.Heading):not(.ContentImage):not(
+      .RelatedLinks
+    ):not(.ArticleMeta):not(.VSpacer):not(hr):not(
+      .ContentArticle__header
+    ):hover {
+    --WARNING--message: "Only use plain `PageHeading`, `Heading`, `TextBlock`, `ContentImage`, `RelatedLinks`, `ArticleMeta`, `VSpacer`, `<hr/>` inside this parent wrapper.";
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .ContentArticle
+    > [class*="--align--"]:hover::before,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .ContentArticle
+    > [class*="--wide"]:hover::before,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .ContentArticle
+    > .TextBlock--labelled:hover::before,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .ContentArticle
+    > *:not(.TextBlock):not(.PageHeading):not(.Heading):not(.ContentImage):not(
+      .RelatedLinks
+    ):not(.ArticleMeta):not(.VSpacer):not(hr):not(
+      .ContentArticle__header
+    ):hover::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: var(--WARNING--message) !important;
+  }
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .ContentArticle
+    > [class*="--align--"][class],
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .ContentArticle
+    > [class*="--wide"][class] {
+    --WARNING--message: "Do not use --align-- or --wide modifiers.";
+  }
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .ContentArticle
+    > .TextBlock--labelled[class] {
+    --WARNING--message: "Do not use the --labelled modifier.";
+  }
+
+  .ContentArticle__header {
+    display: flex;
+    flex-flow: column;
+  }
+  .ContentArticle__header > .PageHeading,
+  .ContentArticle__header > .Heading {
+    order: 1;
+  }
+  .ContentArticle__header > .Heading:not(:last-child) {
+    margin-top: 0;
+  }
+
+  /* Support for simpler (and legacy) usage patterns where __heaeder*/
+  /* is NOT present and .Heading is preceeded by .ArticlaMeta, etc.*/
+  .ContentArticle > .Heading:nth-child(2),
+  .ContentArticle > .Heading:nth-child(3),
+  .ContentArticle > .Heading:nth-child(4) {
+    margin-top: 0;
+  }
+}

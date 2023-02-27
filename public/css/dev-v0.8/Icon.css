@@ -1,0 +1,199 @@
+@media screen {
+  [data-icon] {
+    /* Reset icon name to prevent accidental bubbling*/
+    /* from ancestral `data-icon=""` attributes*/
+
+    /* NOTE: Add `--Icon--enabled: initial;`*/
+    /* to elements where you want to opt-in*/
+    /* to allow icons on ::before*/
+
+    --Icon: none;
+    --Icon--size: inherit;
+    --Icon--enabled: none;
+  }
+  [data-icon]::before {
+    display: inline-block;
+    text-indent: 0;
+    text-align: center;
+    vertical-align: top;
+    /* iconFontStyling*/
+    font-family: icons, Esja, Helvetica, Arial, sans-serif;
+    speak: none; /* speak property is deprecated*/
+    font-weight: normal;
+    font-style: normal;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0;
+
+    /* prettier-ignore*/
+    content: var(--Icon--enabled, var(--Icon));
+    font-size: var(--Icon--size);
+    margin-right: var(--space-1);
+  }
+
+  /* ---------------------------------------------------------------------------*/
+
+  [data-icon-after] {
+    /* Reset icon name to prevent accidental bubbling*/
+    /* from ancestral `data-icon-after=""` attributes*/
+
+    /* NOTE: Add `--Icon-after--enabled: initial;`*/
+    /* to elements where you want to opt-in*/
+    /* to allow icons on ::after*/
+
+    --Icon-after: none;
+    --Icon-after--size: inherit;
+    --Icon-after--enabled: none;
+  }
+  [data-icon-after]::after {
+    display: inline-block;
+    text-indent: 0;
+    text-align: center;
+    vertical-align: top;
+    /* iconFontStyling*/
+    font-family: icons, Esja, Helvetica, Arial, sans-serif;
+    speak: none; /* speak property is deprecated*/
+    font-weight: normal;
+    font-style: normal;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0;
+
+    /* prettier-ignore*/
+    content: var(--Icon-after--enabled, var(--Icon-after));
+    font-size: var(--Icon-after--size);
+    margin-left: var(--space-1_5);
+  }
+
+  /* ===========================================================================*/
+
+  /* ===========================================================================*/
+
+  [data-icon="calendar"] {
+    --Icon: var(--icon--calendar);
+  }
+  [data-icon-after="calendar"] {
+    --Icon-after: var(--icon--calendar);
+  }
+
+  [data-icon="chat"] {
+    --Icon: var(--icon--chat);
+  }
+  [data-icon-after="chat"] {
+    --Icon-after: var(--icon--chat);
+  }
+
+  [data-icon="checkmark"] {
+    --Icon: var(--icon--checkmark);
+  }
+  [data-icon-after="checkmark"] {
+    --Icon-after: var(--icon--checkmark);
+  }
+
+  [data-icon="close"] {
+    --Icon: var(--icon--close);
+  }
+  [data-icon-after="close"] {
+    --Icon-after: var(--icon--close);
+  }
+
+  [data-icon="data"] {
+    --Icon: var(--icon--data);
+  }
+  [data-icon-after="data"] {
+    --Icon-after: var(--icon--data);
+  }
+
+  [data-icon="document"] {
+    --Icon: var(--icon--document);
+  }
+  [data-icon-after="document"] {
+    --Icon-after: var(--icon--document);
+  }
+
+  [data-icon="edit"] {
+    --Icon: var(--icon--edit);
+  }
+  [data-icon-after="edit"] {
+    --Icon-after: var(--icon--edit);
+  }
+
+  [data-icon="external"] {
+    --Icon: var(--icon--external);
+  }
+  [data-icon-after="external"] {
+    --Icon-after: var(--icon--external);
+  }
+
+  [data-icon="file_pdf"] {
+    --Icon: var(--icon--file-pdf);
+  }
+  [data-icon-after="file_pdf"] {
+    --Icon-after: var(--icon--file-pdf);
+  }
+
+  [data-icon="home"] {
+    --Icon: var(--icon--home);
+  }
+  [data-icon-after="home"] {
+    --Icon-after: var(--icon--home);
+  }
+
+  [data-icon="info"] {
+    --Icon: var(--icon--info);
+  }
+  [data-icon-after="info"] {
+    --Icon-after: var(--icon--info);
+  }
+
+  [data-icon="link"] {
+    --Icon: var(--icon--link);
+  }
+  [data-icon-after="link"] {
+    --Icon-after: var(--icon--link);
+  }
+
+  [data-icon="location"] {
+    --Icon: var(--icon--location);
+  }
+  [data-icon-after="location"] {
+    --Icon-after: var(--icon--location);
+  }
+
+  [data-icon="pen"] {
+    --Icon: var(--icon--pen);
+  }
+  [data-icon-after="pen"] {
+    --Icon-after: var(--icon--pen);
+  }
+
+  [data-icon="search"] {
+    --Icon: var(--icon--search);
+  }
+  [data-icon-after="search"] {
+    --Icon-after: var(--icon--search);
+  }
+
+  [data-icon="text"] {
+    --Icon: var(--icon--text);
+  }
+  [data-icon-after="text"] {
+    --Icon-after: var(--icon--text);
+  }
+
+  [data-icon="time"] {
+    --Icon: var(--icon--time);
+  }
+  [data-icon-after="time"] {
+    --Icon-after: var(--icon--time);
+  }
+
+  [data-icon="user"] {
+    --Icon: var(--icon--user);
+  }
+  [data-icon-after="user"] {
+    --Icon-after: var(--icon--user);
+  }
+}

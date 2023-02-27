@@ -1,0 +1,216 @@
+.PullQuote {
+  --Quote--line: 2px solid var(--theme-color-primary);
+  --Quote--indent: 0;
+
+  max-width: calc(792px - var(--Quote--indent));
+  padding-top: var(--space-5);
+  margin-left: var(--Quote--indent);
+  position: relative;
+}
+
+.PullQuote::before {
+  content: "”";
+  color: var(--theme-color-primary);
+  font-size: 4.5rem;
+  line-height: 1;
+  position: absolute;
+  top: 0;
+  left: 2px;
+  text-align: center;
+  width: 0.6em;
+  margin-left: -0.3em;
+}
+
+.PullQuote {
+  padding-bottom: var(--space-5);
+  margin-bottom: var(--space-3);
+}
+
+@media (min-width: 480px) {
+  .PullQuote {
+    margin-bottom: var(--space-5);
+    --Quote--indent: var(--grid-0-1);
+  }
+}
+
+.PullQuote__quote {
+  border-left: var(--Quote--line);
+  padding-left: var(--space-2);
+
+  color: var(--color-suld-150);
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+@media (min-width: 480px) {
+  .PullQuote__quote {
+    font-size: calc(1.3513513513513513vw + 13.513513513513512px);
+    padding-left: var(--grid-0-1);
+  }
+}
+
+@media (min-width: 1368px) {
+  .PullQuote__quote {
+    font-size: 32px;
+  }
+}
+
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .PullQuote__quote
+  > *:not(p):hover {
+  --WARNING--message: "Only <p> is allowed inside `.PullQuote`";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .PullQuote__quote
+  > *:not(p):hover::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}
+
+.PullQuote__by {
+  position: relative;
+  top: var(--space-1);
+  text-align: right;
+  line-height: 1;
+}
+
+@media (min-width: 480px) {
+  .PullQuote__by {
+    margin-top: var(--space-1);
+    margin-bottom: calc(-1 * var(--ButtonTertiary--height));
+  }
+}
+
+.PullQuote__by > a,
+.PullQuote__by > span {
+  --link-color: _inherit;
+  --link-weight: _inherit;
+  --link-underline: none;
+
+  /* NOTE: This intentionally doesn't reset the :hover style*/
+  /* unless..*/
+  --link-color--hover: var(--link-color);
+  --link-underline--hover: none;
+  --link-underline-offset: 0;
+
+  color: var(--ButtonTertiary--color);
+  position: relative;
+  display: inline-block;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 100%;
+  vertical-align: middle;
+  font: var(--font-button);
+  padding: 2px 0;
+  --dashWidth: var(--ButtonTertiary--dashWidth);
+  padding-left: calc(var(--ButtonTertiary--dashSpace) + var(--dashWidth));
+  padding-right: calc(
+    var(--ButtonTertiary--hover--dashWidth) - var(--dashWidth)
+  );
+  margin-right: var(--ButtonTertiary--gapH);
+  margin-bottom: var(--space-1);
+  font-weight: 700;
+  transition: all 100ms ease-in;
+}
+
+.PullQuote__by > a::before,
+.PullQuote__by > span::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: var(--dashWidth);
+  height: var(--ButtonTertiary--dashHeight);
+  display: inline-block;
+  vertical-align: middle;
+  background-color: currentColor;
+  color: var(--ButtonTertiary--dashColor);
+  transform: translateY(-50%);
+  transition: inherit;
+}
+
+.PullQuote__by > a,
+.PullQuote__by > span {
+  margin: 0;
+  margin-right: calc(
+    -1 * (var(--ButtonTertiary--hover--dashWidth) -
+          var(--ButtonTertiary--dashWidth))
+  );
+}
+.PullQuote__by > span {
+  font-weight: var(--font-weight--normal);
+  --ButtonTertiary--dashColor: var(--color-suld-150);
+}
+.PullQuote__by > a:active,
+.PullQuote__by > a:hover,
+.PullQuote__by > a[data-focus-visible-added] {
+  --dashWidth: var(--ButtonTertiary--hover--dashWidth);
+  color: var(--ButtonTertiary--color);
+  outline: 0;
+}
+.PullQuote__by > a:focus-visible {
+  --dashWidth: var(--ButtonTertiary--hover--dashWidth);
+  color: var(--ButtonTertiary--color);
+  outline: 0;
+}
+.PullQuote__by > a:active::before {
+  width: var(--ButtonTertiary--dashWidth);
+}
+.PullQuote__by > a[data-focus-visible-added]::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: -0.8125rem -1rem;
+  border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
+  border-radius: 0.5rem;
+}
+.PullQuote__by > a:focus-visible::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: -0.8125rem -1rem;
+  border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
+  border-radius: 0.5rem;
+}
+
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .PullQuote__by
+  > *:not(span):span(a):hover {
+  --WARNING--message: 'Only <span> or <a href=""> is allowed inside `.PullQuote__by`';
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .PullQuote__by
+  > *:not(span):span(a):hover::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}

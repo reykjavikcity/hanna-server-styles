@@ -1,0 +1,304 @@
+@media screen {
+  .Tabs {
+    --Tabs--borderWidth: 2px;
+    --Tabs__tab--borderWidth: 4px;
+  }
+
+  .before-sprinkling .Tabs,
+  .Tabs[data-is-seen="false"] {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+
+  .Tabs[data-is-seen=""],
+  .Tabs[data-is-seen="true"] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .Tabs[data-is-seen="true"] {
+    transition: all 500ms ease-in-out;
+
+    transition-property: opacity, transform;
+  }
+
+  /* @deprecated  Remove this mixin in v0.9*/
+
+  .before-sprinkling [data-is-seen] .Tabs,
+  [data-is-seen] .Tabs[data-is-seen="false"] {
+    opacity: 1;
+    transform: none;
+  }
+
+  [data-is-seen] .Tabs[data-is-seen=""],
+  [data-is-seen] .Tabs[data-is-seen="true"] {
+    opacity: initial;
+    transform: initial;
+  }
+
+  [data-is-seen] .Tabs[data-is-seen="true"] {
+    transition: none;
+  }
+
+  .Tabs {
+    display: flex;
+    flex-flow: row wrap;
+    border-bottom: var(--Tabs--borderWidth) solid var(--color-suld-50);
+    font: var(--font-button);
+    font-weight: var(--font-weight--bold);
+    margin: var(--space-5) 0;
+  }
+  .Tabs::after {
+    content: "";
+    width: 100%;
+    height: var(--Tabs--borderWidth);
+    background-color: var(--color-suld-50);
+  }
+
+  .Tabs__tab {
+    --link-color: _inherit;
+    --link-weight: _inherit;
+    --link-underline: none;
+
+    /* NOTE: This intentionally doesn't reset the :hover style*/
+    /* unless..*/
+    --link-color--hover: var(--link-color);
+    --link-underline--hover: none;
+    --link-underline-offset: 0;
+
+    white-space: nowrap;
+    border-bottom: var(--Tabs__tab--borderWidth) solid var(--color-suld-50);
+    margin-bottom: calc(-1 * var(--Tabs__tab--borderWidth));
+    color: var(--color-suld-200);
+    position: relative;
+    z-index: 1; /* overlap subTabs*/
+
+    /* NOTE: left/right paddings must *NOT* be %-based because*/
+    /* it triggers a Chrome bug that collapses the width of <button/> flex-items*/
+    /* ARGH!...  --Már @ 2020-10-28*/
+    padding: calc(1.1450381679389312vw + 8.335877862595419px)
+      calc(2.385496183206107vw + 7.366412213740453px);
+  }
+  @media (min-width: 1368px) {
+    .Tabs__tab {
+      padding: 24px 40px;
+    }
+  }
+  .Tabs__tab:hover,
+  .Tabs__tab:active,
+  .Tabs__tab[data-active="true"],
+  .Tabs__tab[aria-pressed="true"] {
+    border-bottom: var(--Tabs__tab--borderWidth) solid
+      var(--theme-color-primary--safeish);
+  }
+
+  .Tabs__tab__badge {
+    font: var(--font-label);
+    font-weight: var(--font-weight--normal);
+    color: var(--color-suld-150);
+    margin-left: var(--space-0_5);
+    margin-right: var(--space-1--neg);
+  }
+
+  .before-sprinkling .TabPanel:not([data-sprinkled]) {
+    display: none;
+  }
+
+  .TabPanel[data-focus-visible-added] {
+    outline-color: var(--color-suld-100);
+    outline-style: dotted;
+    outline-offset: var(--space-1);
+  }
+  .TabPanel:focus-visible {
+    outline-color: var(--color-suld-100);
+    outline-style: dotted;
+    outline-offset: var(--space-1);
+  }
+
+  /* Nested/sub-tabs*/
+
+  .Tabs > .Tabs {
+    --Tabs__tab--borderWidth: 2px;
+    margin: 0;
+    width: 100%;
+    border-bottom: 0;
+  }
+  .Tabs > .Tabs::after {
+    content: none;
+  }
+  .Tabs:not(.Tabs--vertical) > .Tabs {
+    border-top: var(--Tabs--borderWidth) solid var(--color-suld-50);
+    order: 1;
+  }
+  .Tabs > * > .Tabs__tab {
+    font-weight: var(--font-weight--normal);
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+  }
+
+  /* ===========================================================================*/
+  /* Overrides for --vertical*/
+
+  .Tabs--vertical[class] {
+    --Tabs--borderWidth: 2px;
+    --Tabs__tab--borderWidth: 2px;
+    float: left; /* default layout behavior*/
+    width: 100%;
+    margin-top: 0;
+    max-width: 272px;
+    border-bottom: 0;
+    flex-direction: column;
+  }
+
+  @media (min-width: 760px) {
+    .Tabs--vertical[class] {
+      position: sticky;
+      top: 0;
+      max-height: 100vh;
+      overflow-y: auto;
+    }
+  }
+  .Tabs--vertical::after {
+    content: none;
+  }
+
+  .Tabs--vertical .Tabs__tab {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: var(--space-2) var(--space-1);
+    white-space: normal;
+  }
+
+  .Tabs--vertical .Tabs__tab[data-focus-visible-added] {
+    outline-offset: -3px;
+  }
+  .Tabs--vertical .Tabs__tab:focus-visible {
+    outline-offset: -3px;
+  }
+  .Tabs--vertical > .Tabs__tab {
+    margin-top: var(--space-0_5);
+  }
+
+  /* Nested/sub-tabs*/
+
+  .Tabs--vertical > .Tabs {
+    flex-direction: column;
+  }
+  .Tabs--vertical > * > .Tabs__tab {
+    padding: var(--space-1_5) var(--space-1);
+    padding-left: var(--space-2);
+  }
+  .Tabs--vertical > * > .Tabs__tab:hover,
+  .Tabs--vertical > * > .Tabs__tab:active,
+  .Tabs--vertical > * > .Tabs__tab[data-active="true"],
+  .Tabs--vertical > * > .Tabs__tab[aria-pressed="true"] {
+    border-color: var(--color-suld-50);
+    color: var(--theme-color-primary--safeish);
+  }
+  .Tabs--vertical > * > .Tabs__tab[data-active="true"],
+  .Tabs--vertical > * > .Tabs__tab[aria-pressed="true"] {
+    font-weight: var(--font-weight--bold);
+  }
+
+  .Tabs--vertical .Tabs__tab[data-active="true"] ~ .Tabs__tab,
+  .Tabs--vertical .Tabs__tab[aria-pressed="true"] ~ .Tabs__tab {
+    order: 1;
+  }
+
+  /* ---------------------------------------------------------------------------*/
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Tabs
+    > *:not(.Tabs__tab):not(.Tabs):hover {
+    --WARNING--message: "Only .Tabs__tab or `.Tabs` are allowed here";
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Tabs
+    > *:not(.Tabs__tab):not(.Tabs):hover::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: var(--WARNING--message) !important;
+  }
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Tabs
+    > .Tabs:not(:last-child):hover {
+    --WARNING--message: "Nested .Tabs must be :last-child";
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Tabs
+    > .Tabs:not(:last-child):hover::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: var(--WARNING--message) !important;
+  }
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Tabs--vertical
+    > .Tabs--vertical:hover {
+    --WARNING--message: ".Tabs--vertical not supported as sub-Tabs";
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Tabs--vertical
+    > .Tabs--vertical:hover::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: var(--WARNING--message) !important;
+  }
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Tabs
+    > .Tabs
+    > .Tabs:hover {
+    --WARNING--message: "For the love of god, DO NOT nest your already nested .Tabs";
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Tabs
+    > .Tabs
+    > .Tabs:hover::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: var(--WARNING--message) !important;
+  }
+}

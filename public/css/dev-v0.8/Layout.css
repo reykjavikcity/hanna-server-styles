@@ -1,0 +1,469 @@
+@media screen {
+  body {
+    padding-left: var(--grid-margin);
+    padding-right: var(--grid-margin--right);
+  }
+
+  .Layout {
+    min-height: 100vh;
+    width: 100%;
+    max-width: 75.5rem;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+  }
+
+  .Layout__alerts {
+    max-height: 1000px;
+    overflow: hidden;
+    margin: 0 -0.9375rem;
+    transition: max-height 400ms ease-in;
+  }
+
+  @media (min-width: 760px) {
+    .Layout__alerts {
+      margin: 0;
+    }
+  }
+  .Layout__alerts .Alert {
+    margin: 1rem 0 0 0;
+  }
+
+  .Layout__content {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    padding-top: var(--Layout__header-height);
+    position: relative;
+  }
+
+  .Layout__header {
+    position: absolute;
+    z-index: var(--zindex--header);
+    top: 0;
+    left: var(--grid-margin--neg);
+    right: var(--grid-margin--right--neg);
+    padding-left: var(--grid-margin);
+    padding-right: var(--grid-margin--right);
+    margin: 0 auto;
+    max-width: 1368px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--Layout__header-height);
+    background-color: var(--Layout__header-backgroundColor);
+    pointer-events: none;
+  }
+  .Layout__header > * {
+    pointer-events: auto;
+  }
+
+  .Layout__header__logo {
+    --link-color: _inherit;
+    --link-weight: _inherit;
+    --link-underline: none;
+
+    /* NOTE: This intentionally doesn't reset the :hover style*/
+    /* unless..*/
+    --link-color--hover: var(--link-color);
+    --link-underline--hover: none;
+    --link-underline-offset: 0;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    display: block;
+    width: 11.375rem;
+    height: 3.3125rem;
+  }
+
+  .Layout__header__logo > svg,
+  .Layout__header__logo > img,
+  .Layout__header__logo > * > svg,
+  .Layout__header__logo > * > img {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    -o-object-fit: contain;
+    object-fit: contain;
+    -o-object-position: 0% 50%;
+    object-position: 0% 50%;
+    margin-right: 0.625rem;
+    margin-left: -1px;
+  }
+
+  @media (max-width: 979px) {
+    .Layout__header__logo {
+      margin: -0.625rem;
+      padding: 0.625rem;
+      overflow: hidden;
+      box-sizing: content-box;
+
+      /* // Hide the text layer within the logo*/
+      /* svg .logo-text {*/
+      /* 	display: none;*/
+      /* }*/
+    }
+
+    .Layout__header__logo > div {
+      display: inline-block;
+    }
+
+    .Layout__header__logo > svg,
+    .Layout__header__logo > img,
+    .Layout__header__logo > * > svg,
+    .Layout__header__logo > * > img {
+      width: 11.5625rem;
+      -o-object-fit: cover;
+      object-fit: cover;
+      margin-right: 1.3125rem;
+    }
+  }
+
+  .Layout__main {
+    padding-top: 3.125rem;
+    flex-grow: 1;
+    padding-bottom: 1.875rem;
+    min-height: 60vh;
+  }
+
+  .Layout__footer {
+    position: relative;
+    border-top: 1px solid var(--color-suld-75);
+    padding-bottom: 2rem;
+  }
+}
+
+/* ===========================================================================*/
+/*  Mobile / Hamburger*/
+/* ===========================================================================*/
+
+@media (max-width: 979px) {
+  .Layout__header {
+    --logo-transition: 200ms var(--logo-transition-delay, 100ms) ease-in;
+    box-shadow: 0 0 0.33em 0.33em var(--Layout__header-backgroundColor);
+
+    transition: all 200ms ease-in;
+    transition-property: background-color, box-shadow;
+  }
+
+  html.menu-is-open {
+    overflow-y: hidden;
+  }
+  html.menu-is-open > body {
+    padding-right: var(--grid-margin);
+  }
+
+  html.menu-is-open .Layout__alerts {
+    max-height: 0;
+  }
+
+  html.menu-is-open .Layout__header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: var(--browser-scrollbar-width);
+  }
+  html.menu-is-open .Layout__header {
+    --logo-fill-color: var(--color-suld-0);
+    --logo-text-color: var(--color-suld-0);
+    --logo-transition-delay: 0ms;
+    --logo-background-color: var(--color-faxafloi-100);
+
+    --link-focus-outline: var(--color-suld-0);
+
+    transition-duration: 400ms;
+    --Layout__header-backgroundColor: var(--color-faxafloi-100);
+  }
+
+  .Layout__header__skiplink[class] {
+    overflow: hidden;
+    white-space: nowrap;
+
+    --link-color: _inherit;
+    --link-weight: _inherit;
+    --link-underline: none;
+
+    /* NOTE: This intentionally doesn't reset the :hover style*/
+    /* unless..*/
+    --link-color--hover: var(--link-color);
+    --link-underline--hover: none;
+    --link-underline-offset: 0;
+
+    position: relative;
+    color: var(--color-faxafloi-100);
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    margin-right: -0.5rem;
+    transition-duration: 200ms;
+    --open-icon-color: _inherit;
+    --close-icon-color: transparent;
+  }
+  html.menu-is-open .Layout__header__skiplink {
+    color: var(--color-suld-0);
+    --open-icon-color: transparent;
+    --close-icon-color: _inherit;
+    /* margin-right: var(--browser-scrollbar-width);*/
+  }
+  .Layout__header__skiplink:hover,
+  .Layout__header__skiplink:active {
+    text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  }
+
+  .Layout__header__skiplink::before,
+  .Layout__header__skiplink::after {
+    display: inline-block;
+    text-indent: 0;
+    text-align: center;
+    vertical-align: top;
+    /* iconFontStyling*/
+    font-family: icons, Esja, Helvetica, Arial, sans-serif;
+    speak: none; /* speak property is deprecated*/
+    font-weight: normal;
+    font-style: normal;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0;
+    content: "";
+
+    width: 100%;
+    margin-right: 1px;
+    transition: inherit;
+  }
+
+  .Layout__header__skiplink::before {
+    content: var(--icon--menu);
+    font-size: 2.125rem;
+    color: var(--open-icon-color);
+  }
+  .Layout__header__skiplink::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: var(--icon--close);
+    font-size: 1.625rem;
+    color: var(--close-icon-color);
+  }
+
+  /* Page content fadeout during menu open*/
+  html.menu-is-active .Layout__nav::before {
+    content: "";
+    position: fixed;
+    z-index: calc(var(--zindex--header) - 1);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--color-suld-0);
+    opacity: 0;
+    visibility: hidden;
+    transition: (
+      opacity 400ms 200ms ease-in-out,
+      visibility 0ms (400ms + 200ms)
+    );
+  }
+  html.menu-is-open .Layout__nav::before {
+    transition-delay: 0ms;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .Layout__nav__closebutton {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    opacity: 0.00001;
+    pointer-events: none;
+
+    margin: -1px;
+  }
+
+  .Layout__nav__closebutton[data-focus-visible-added] {
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    opacity: 1;
+    pointer-events: auto;
+
+    margin: 0;
+
+    z-index: var(--zindex--sr-only);
+    font-size: 1em;
+    background: var(--color-suld-0);
+    border: 3px double var(--link-color--hover);
+    margin: 0;
+    padding: 0.2em 0.33em;
+    color: var(--link-color--hover);
+    text-shadow: none;
+    white-space: nowrap;
+  }
+  .Layout__nav__closebutton:focus-visible {
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    opacity: 1;
+    pointer-events: auto;
+
+    margin: 0;
+
+    z-index: var(--zindex--sr-only);
+    font-size: 1em;
+    background: var(--color-suld-0);
+    border: 3px double var(--link-color--hover);
+    margin: 0;
+    padding: 0.2em 0.33em;
+    color: var(--link-color--hover);
+    text-shadow: none;
+    white-space: nowrap;
+  }
+
+  .Layout__nav__closebutton:focus-within:not(:focus) {
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    opacity: 1;
+    pointer-events: auto;
+
+    margin: 0;
+
+    z-index: var(--zindex--sr-only);
+    font-size: 1em;
+    background: var(--color-suld-0);
+    border: 3px double var(--link-color--hover);
+    margin: 0;
+    padding: 0.2em 0.33em;
+    color: var(--link-color--hover);
+    text-shadow: none;
+    white-space: nowrap;
+  }
+}
+
+/* ===========================================================================*/
+/*  Desktop*/
+/* ===========================================================================*/
+
+@media (min-width: 980px) {
+  .Layout__header__skiplink {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    opacity: 0.00001;
+    pointer-events: none;
+
+    margin: -1px;
+  }
+
+  .Layout__header__skiplink[data-focus-visible-added] {
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    opacity: 1;
+    pointer-events: auto;
+
+    margin: 0;
+
+    z-index: var(--zindex--sr-only);
+    font-size: 1em;
+    background: var(--color-suld-0);
+    border: 3px double var(--link-color--hover);
+    margin: 0;
+    padding: 0.2em 0.33em;
+    color: var(--link-color--hover);
+    text-shadow: none;
+    white-space: nowrap;
+  }
+  .Layout__header__skiplink:focus-visible {
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    opacity: 1;
+    pointer-events: auto;
+
+    margin: 0;
+
+    z-index: var(--zindex--sr-only);
+    font-size: 1em;
+    background: var(--color-suld-0);
+    border: 3px double var(--link-color--hover);
+    margin: 0;
+    padding: 0.2em 0.33em;
+    color: var(--link-color--hover);
+    text-shadow: none;
+    white-space: nowrap;
+  }
+
+  .Layout__header__skiplink:focus-within:not(:focus) {
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    opacity: 1;
+    pointer-events: auto;
+
+    margin: 0;
+
+    z-index: var(--zindex--sr-only);
+    font-size: 1em;
+    background: var(--color-suld-0);
+    border: 3px double var(--link-color--hover);
+    margin: 0;
+    padding: 0.2em 0.33em;
+    color: var(--link-color--hover);
+    text-shadow: none;
+    white-space: nowrap;
+  }
+  html[data-mega-panel-active] .Layout__header__logo {
+    --logo-fill-color: var(--color-suld-0);
+    --logo-text-color: var(--color-suld-0);
+    --logo-transition-delay: 0ms;
+    --logo-background-color: var(--color-faxafloi-100);
+
+    --link-focus-outline: var(--color-suld-0);
+  }
+}
+
+/* ===========================================================================*/
+/* Grid helper*/
+/* ===========================================================================*/
+
+html[data-grid-overlay] body:hover {
+  --show-grid-lines: "";
+}
+html[data-grid-overlay] .Layout:hover {
+  /**/ /**/
+  --show-grid-lines: initial;
+  /**/
+}
+html[data-grid-overlay] .Layout::after {
+  content: var(--show-grid-lines, none);
+  pointer-events: none;
+  position: absolute;
+  z-index: calc(var(--zindex--modal) + 100);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background-image: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.04) 0,
+    rgba(0, 0, 0, 0.04) 61.53846153846154%,
+    rgba(255, 255, 255, 0.06) 61.53846153846154%,
+    rgba(255, 255, 255, 0.06) 100%
+  );
+  background-size: 8.609271523178808% 100%;
+}

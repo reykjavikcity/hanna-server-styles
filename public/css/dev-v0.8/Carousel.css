@@ -1,0 +1,168 @@
+html.before-sprinkling .Carousel:not([data-sprinkled]) {
+  padding-bottom: var(--CarouselStepper--height);
+}
+.Carousel__itemlist {
+  display: flex;
+  flex-flow: row;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  padding-left: calc(50vw - 50%);
+  margin: 0 calc(-50vw - -50%);
+  scroll-padding-left: var(--Carousel--leftOffset, 20px);
+  width: 100vw;
+
+  position: static;
+}
+/* hide scrollbars */
+.Carousel__itemlist {
+  -ms-overflow-style: none; /* Edge, Internet Explorer */
+  scrollbar-width: none; /* Firefox */
+}
+.Carousel__itemlist::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+.Carousel__itemlist-wrapper {
+  position: relative;
+}
+.Carousel__itemlist-goRight,
+.Carousel__itemlist-goLeft {
+  position: absolute;
+  width: 3rem;
+  /* outline: 1px dashed rgba(255, 255, 255, 0.4); */
+}
+.Carousel__itemlist-goRight,
+.Carousel__itemlist-goLeft {
+  width: max(calc(20vw - 20%), calc(1.2 * var(--grid-margin)), 2rem);
+}
+.Carousel__itemlist-goRight,
+.Carousel__itemlist-goLeft {
+  top: -0.67rem;
+  bottom: -0.67rem;
+  cursor: pointer;
+  background-image: linear-gradient(
+    -90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.5) 67%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  display: none;
+  opacity: 0;
+  transition: opacity var(--link-transition);
+}
+:hover > .Carousel__itemlist-goRight,
+:hover > .Carousel__itemlist-goLeft {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  opacity: 0.0001;
+}
+.Carousel__itemlist-goRight:hover,
+.Carousel__itemlist-goLeft:hover {
+  opacity: 1;
+}
+.Carousel__itemlist-goRight::before,
+.Carousel__itemlist-goLeft::before {
+  display: inline-block;
+  text-indent: 0;
+  text-align: center;
+  vertical-align: top;
+  /* iconFontStyling*/
+  font-family: icons, Esja, Helvetica, Arial, sans-serif;
+  speak: none; /* speak property is deprecated*/
+  font-weight: normal;
+  font-style: normal;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0;
+  content: var(--icon--chevron-right);
+
+  font-size: 2.5rem;
+  margin-right: 0.5rem;
+  color: var(--color-suld-150);
+  text-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff;
+}
+.Carousel__itemlist-goRight {
+  cursor: e-resize;
+  right: calc(calc(-50vw - -50%) + var(--browser-scrollbar-width));
+}
+.Carousel__itemlist-goLeft {
+  transform: rotate(180deg);
+  cursor: w-resize;
+  left: calc(-50vw - -50%);
+}
+/* Ensure that the last item can scroll all the way to the left edge.*/
+/* Padding-right on the parent doesn't fully work in FF and Chrome.*/
+.Carousel__itemlist::after {
+  content: "";
+  width: 90vw;
+}
+.Carousel__itemlist[data-scroll-snapping] {
+  scroll-snap-type: x mandatory;
+}
+.Carousel__itemlist > * {
+  scroll-snap-align: start;
+}
+.Carousel__itemlist > * {
+  margin-right: var(--space-3);
+}
+
+/* @deprecated  (Remove in v0.9)*/
+.Carousel__items {
+  display: flex;
+  flex-flow: row;
+}
+/* @deprecated  (Remove in v0.9)*/
+.Carousel__items > * {
+  margin-right: var(--space-3);
+}
+
+/* ---------------------------------------------------------------------------*/
+
+:root {
+  --CarouselStepper--height: var(--space-4);
+}
+
+/* ---------------------------------------------------------------------------*/
+
+.CarouselStepper {
+  margin: 0 var(--space-0_5--neg);
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  align-items: flex-end;
+  padding-top: var(--space-1);
+  height: var(--CarouselStepper--height);
+}
+
+.CarouselStepper__button {
+  flex: none;
+
+  position: relative;
+
+  width: var(--space-1);
+  height: 100%;
+
+  margin: 0 var(--space-0_5);
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 150%;
+
+  background: var(--theme-color-primary-50);
+
+  transform: scaleY(0.6666666666666666);
+  transform-origin: bottom center;
+
+  transition: transform 200ms ease-in;
+}
+
+.CarouselStepper__button:hover {
+  background: var(--color-suld-150);
+  transform: scaleY(0.8333333333333334);
+}
+
+.CarouselStepper__button[aria-pressed="true"] {
+  background: var(--theme-color-primary);
+  transform: none;
+}

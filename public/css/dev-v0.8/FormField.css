@@ -1,0 +1,397 @@
+@media screen {
+  .FormField {
+    --FormField--input--border-color: var(--color-suld-100);
+    --FormField--input--border-radius: 0.1875rem;
+    --FormField--input--border-inner-radius: 0.125rem;
+    --FormField--input--height: 3.5rem;
+    --FormField--input--height-inner: calc(
+      var(--FormField--input--height) - 2px
+    );
+    --FormField--input--padding-top: 0.75rem;
+    --FormField--input--padding-bottom: 0px;
+    --FormField--input--font-size: var(--font-bd-l-size);
+    --FormField--input--color: var(--color-suld-200);
+    --FormField--input--color-placeholder: var(--color-suld-150);
+    --FormField--input--line-height: calc(
+      var(--FormField--input--height-inner) -
+        var(--FormField--input--padding-top) -
+        var(--FormField--input--padding-bottom)
+    );
+    --FormField--input--paddingH: var(--space-2);
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+
+  .FormField--nolabel {
+    --FormField--input--padding-top: 0.375rem;
+    --FormField--input--padding-bottom: 0.375rem;
+  }
+
+  .FormField--small {
+    --FormField--input--font-size: var(--font-bd-s-size);
+    --FormField--input--height: 2.5rem;
+    --FormField--input--padding-top: 0px;
+    --FormField--input--padding-bottom: 0px;
+  }
+
+  .FormField--filled {
+    --FormField--input--border-color: var(--color-faxafloi-100);
+  }
+
+  .FormField__label {
+    position: relative;
+    z-index: 1;
+    font-weight: var(--font-weight--bold);
+    margin-bottom: 0.625rem;
+    align-self: flex-start;
+  }
+  :disabled > .FormField__label,
+  .FormField--disabled > .FormField__label {
+    opacity: 0.5;
+  }
+
+  label.FormField__label {
+    color: var(--color-suld-150);
+    font-size: var(--font-label-size);
+    font-weight: var(--font-weight--normal);
+    line-height: 0.875rem;
+    transition: all 200ms ease-in;
+  }
+  :not(.FormField--small) > label.FormField__label {
+    position: absolute;
+    top: 1px;
+    left: 1rem;
+    line-height: 1.5rem;
+    pointer-events: none;
+    max-width: calc(100% - 1.5rem);
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .FormField--empty:not(.FormField--small):not(.FormField--focused)
+    > label.FormField__label {
+    font-size: var(--font-bd-s-size);
+    line-height: var(--FormField--input--height-inner);
+  }
+
+  .FormField--nolabel > .FormField__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    opacity: 0.00001;
+    pointer-events: none;
+
+    margin: -1px;
+  }
+
+  .FormField__label__reqstar {
+    border-bottom: none;
+    float: left;
+    margin-right: 0.15em;
+  }
+
+  /* ---------------------------------------------------------------------------*/
+
+  .FormField__input {
+    font-size: var(--font-bd-l-size);
+    position: relative;
+    display: flex;
+    width: 100%;
+    background-color: var(--color-suld-0);
+    color: var(--FormField--input--color);
+    border: 0.0625rem solid var(--FormField--input--border-color);
+    transition: all 400ms ease-in;
+    transition-property: color, border-color, box-shadow, background-color;
+    border-radius: var(--FormField--input--border-radius);
+    padding: var(--FormField--input--padding-bottom)
+      var(--FormField--input--paddingH);
+    padding-top: var(--FormField--input--padding-top);
+    height: var(--FormField--input--height);
+    font-size: var(--FormField--input--font-size);
+    line-height: var(--FormField--input--line-height);
+  }
+  .FormField__input::-moz-placeholder,
+  .FormField__input > *::-moz-placeholder {
+    opacity: 1; /* override browser default styling*/
+    color: var(--FormField--input--color-placeholder);
+  }
+  .FormField--empty > .FormField__input,
+  .FormField__input::placeholder,
+  .FormField__input > *::placeholder {
+    opacity: 1; /* override browser default styling*/
+    color: var(--FormField--input--color-placeholder);
+  }
+  .FormField--filled > .FormField__input {
+    --FormField--input--border-color: var(--color-faxafloi-100);
+  }
+  .FormField--invalid > .FormField__input,
+  .FormField__input[aria-invalid="true"] {
+    --FormField--input--border-color: var(--color-heidmork-100);
+    --FormField--input--color: var(--color-heidmork-100);
+  }
+  .FormField--readonly > .FormField__input,
+  .FormField__input[readonly] {
+    --FormField--input--border-color: var(--color-suld-100);
+
+    background-color: var(--color-suld-50);
+  }
+  /* .FormField__input--focused[class],*/
+  .FormField--focused > .FormField__input,
+  .FormField__input:hover,
+  .FormField__input:focus {
+    --FormField--input--border-color: var(--color-faxafloi-100);
+
+    color: var(--color-suld-200);
+    box-shadow: inset 0 0 0 1px var(--FormField--input--border-color);
+    outline: 0;
+  }
+  :disabled .FormField__input,
+  .FormField--disabled > .FormField__input,
+  .FormField__input:disabled {
+    --FormField--input--border-color: var(--color-suld-100);
+
+    box-shadow: none;
+    background-color: var(--color-suld-50);
+    opacity: 0.5;
+  }
+
+  /* Reset contained field elements by default ...*/
+  .FormField__input > * {
+    border: 0;
+    background: 0;
+    padding: 0;
+    width: 100%;
+    flex-shrink: 1;
+    height: auto;
+    line-height: inherit;
+    color: inherit;
+  }
+  .FormField__input > *:focus {
+    outline: 0;
+  }
+
+  /* ---------------------------------------------------------------------------*/
+
+  .FormField__options {
+  }
+  .FormField__options__item {
+  }
+
+  /* ---------------------------------------------------------------------------*/
+
+  .FormField__assist,
+  .FormField__error {
+    color: var(--color-heidmork-100);
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+    padding-left: var(--space-2);
+    margin-top: 0.5625rem;
+  }
+
+  .FormField__assist::before,
+  .FormField__error::before {
+    display: inline-block;
+    text-indent: 0;
+    text-align: center;
+    vertical-align: top;
+    /* iconFontStyling*/
+    font-family: icons, Esja, Helvetica, Arial, sans-serif;
+    speak: none; /* speak property is deprecated*/
+    font-weight: normal;
+    font-style: normal;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0;
+    content: var(--icon--error);
+
+    margin-right: 0.5rem;
+    font-size: 0.625rem;
+  }
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .FormField__assist:not([id]):hover,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .FormField__error:not([id]):hover {
+    --WARNING--message: "should have id atribute to match input[aria-describedby]";
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .FormField__assist:not([id]):hover::after,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .FormField__error:not([id]):hover::after {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: var(--WARNING--message) !important;
+  }
+  .FormField__assist {
+    color: var(--color-suld-150);
+  }
+  .FormField__assist::before {
+    content: var(--icon--alert);
+    font-size: 0.6875rem;
+  }
+}
+
+/* ===========================================================================*/
+
+/* Inline the most common input types for better*/
+/* compression and loading speed*/
+
+@media screen {
+  .Selectbox {
+  }
+
+  .Selectbox > .FormField__input--disabled {
+  }
+  .Selectbox > .FormField__input--focused {
+  }
+
+  .Selectbox > .FormField__input::after {
+    display: inline-block;
+    text-indent: 0;
+    text-align: center;
+    vertical-align: top;
+    /* iconFontStyling*/
+    font-family: icons, Esja, Helvetica, Arial, sans-serif;
+    speak: none; /* speak property is deprecated*/
+    font-weight: normal;
+    font-style: normal;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0;
+    content: var(--icon--chevron-down);
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 1.25rem;
+    pointer-events: none;
+    margin: auto;
+    color: var(--FormField--input--border-color);
+    transition: all 200ms ease-in;
+    font-size: 1rem;
+    height: 1em;
+    line-height: 1em;
+  }
+
+  .Selectbox:not(.FormField--filled):not(.FormField--empty)
+    > .FormField__input {
+    color: var(--FormField--input--color-placeholder);
+  }
+  /* select options are not necessarily visible on focus,*/
+  /* * leaving this arrow in reversed state with no visible dropdown*/
+  /*
+      .Selectbox > .FormField__input--focused::after {
+        transform: rotate(180deg);
+      }
+    */
+
+  .Selectbox > * > .FormField__input__value {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    /* white-space: nowrap;*/
+    /* overflow: hidden;*/
+    display: block;
+    margin-right: 3.125rem;
+  }
+
+  .Selectbox > * > .FormField__input__value--empty {
+  }
+}
+
+@media screen {
+  .TextInput {
+  }
+  .TextInput--multiline > .FormField__input {
+    --FormField--input--font-size: var(--font-bd-s-size);
+
+    --TextInput--textarea--leading: var(--font-bd-s-leading);
+    --TextInput--textarea--rows: 2;
+    --TextInput--textarea--extraPad: calc(
+      (
+          var(--FormField--input--line-height) -
+            var(--TextInput--textarea--leading)
+        ) / 2
+    );
+
+    height: calc(
+      var(--TextInput--textarea--rows) * var(--TextInput--textarea--leading) +
+        var(--FormField--input--height)
+    );
+    line-height: var(--TextInput--textarea--leading);
+    padding-top: calc(
+      var(--FormField--input--padding-top) +
+        var(--TextInput--textarea--extraPad)
+    );
+    padding-bottom: calc(
+      var(--FormField--input--padding-bottom) +
+        var(--TextInput--textarea--extraPad)
+    );
+  }
+
+  .TextInput--multiline > .FormField__input[rows="4"] {
+    --TextInput--textarea--rows: 3;
+  }
+
+  .TextInput--multiline > .FormField__input[rows="5"] {
+    --TextInput--textarea--rows: 4;
+  }
+
+  .TextInput--multiline > .FormField__input[rows="6"] {
+    --TextInput--textarea--rows: 5;
+  }
+
+  .TextInput--multiline > .FormField__input[rows="7"] {
+    --TextInput--textarea--rows: 6;
+  }
+
+  .TextInput--multiline > .FormField__input[rows="8"] {
+    --TextInput--textarea--rows: 7;
+  }
+
+  .TextInput--multiline > .FormField__input[rows="9"] {
+    --TextInput--textarea--rows: 8;
+  }
+
+  .TextInput--multiline > .FormField__input[rows="10"] {
+    --TextInput--textarea--rows: 9;
+  }
+
+  .TextInput--multiline > .FormField__input[rows="11"] {
+    --TextInput--textarea--rows: 10;
+  }
+
+  .TextInput--multiline > .FormField__input[rows="12"] {
+    --TextInput--textarea--rows: 11;
+  }
+
+  .TextInput--multiline > .FormField__input[rows="13"] {
+    --TextInput--textarea--rows: 12;
+  }
+
+  .TextInput--multiline > .FormField__input[rows="14"] {
+    --TextInput--textarea--rows: 13;
+  }
+
+  .TextInput--multiline > .FormField__input[rows="15"] {
+    --TextInput--textarea--rows: 14;
+  }
+}

@@ -1,0 +1,109 @@
+.Tooltip {
+  display: inline-block;
+  position: relative;
+
+  text-decoration: none;
+  color: var(--link-color);
+  font-weight: var(--link-weight);
+  padding-bottom: var(--link-underline-offset);
+  border-bottom: var(--link-underline);
+  transition: var(--link-transition);
+  transition-property: border-color, background-color, color, text-shadow,
+    box-shadow, outline;
+}
+
+.Tooltip:hover,
+.Tooltip:active {
+  color: var(--link-color--hover);
+  border-bottom: var(--link-underline--hover);
+}
+
+.Tooltip {
+  transition: none;
+}
+
+.Tooltip:hover,
+.Tooltip:active {
+  border-bottom-color: rgb(255, 255, 255);
+}
+
+.Tooltip__trigger::marker {
+  content: none;
+}
+.Tooltip__trigger::-webkit-details-marker {
+  display: none;
+}
+
+.Tooltip__trigger--icononly {
+  overflow: hidden;
+  white-space: nowrap;
+
+  width: 1.5625rem;
+}
+
+.Tooltip__trigger::before {
+  display: inline-block;
+  text-indent: 0;
+  text-align: center;
+  vertical-align: top;
+  /* iconFontStyling*/
+  font-family: icons, Esja, Helvetica, Arial, sans-serif;
+  speak: none; /* speak property is deprecated*/
+  font-weight: normal;
+  font-style: normal;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0;
+  content: var(--icon--info);
+
+  width: 1.5625rem;
+  height: 1.5625rem;
+  display: inline-block;
+  text-align: center;
+}
+
+.Tooltip__content {
+  width: 15.625rem;
+  color: var(--color-white);
+  background-color: rgba(0, 0, 0, 0.7);
+  font-weight: normal;
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  line-height: 1.5;
+  padding: 0.625rem 1.25rem;
+  position: absolute;
+  top: var(--tooltip-content-pos-y);
+  left: var(--tooltip-content-pos-x);
+  z-index: 1;
+}
+.Tooltip__content::after {
+  content: "";
+  position: absolute;
+  border-width: 0 0.375rem;
+  border-top-width: 0.25rem;
+  border-style: solid;
+  margin: 0 -0.375rem;
+  border-color: rgba(0, 0, 0, 0.7) transparent transparent transparent;
+}
+
+.Tooltip--top .Tooltip__content::after {
+  left: var(--tooltip-arrow-pos-x);
+  bottom: var(--tooltip-arrow-pos-y);
+}
+
+.Tooltip--bottom .Tooltip__content::after {
+  left: var(--tooltip-arrow-pos-x);
+  top: var(--tooltip-arrow-pos-y);
+  transform: rotate(180deg);
+}
+
+.Tooltip__content a {
+  --link-color: _inherit;
+  --link-color--hover: var(--link-color);
+  --link-underline: var(--link-underline--hairline);
+  --link-underline--hover: 2px solid currentColor;
+
+  --ButtonTertiary--dashColor: currentColor; /* var(--theme-color-primary--dark);*/
+}

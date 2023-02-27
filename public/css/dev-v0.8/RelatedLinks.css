@@ -1,0 +1,103 @@
+@media screen {
+  .RelatedLinks {
+    margin-bottom: var(--baseVerticalMargin);
+  }
+  .RelatedLinks__title {
+    font-size: var(--font-bd-l-size);
+    line-height: var(--font-bd-l-leading);
+    font-weight: var(--font-weight--bold);
+    color: var(--color-suld-150);
+    margin-bottom: 0.5rem;
+  }
+  .RelatedLinks__list {
+    display: flex;
+    flex-flow: row wrap;
+    margin-right: calc(var(--grid-gutter--neg) - 1px);
+  }
+  .RelatedLinks__item {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    margin-right: var(--grid-gutter);
+    width: var(--grid-12);
+    min-width: 250px;
+  }
+
+  @media (min-width: 480px) and (max-width: 979px) {
+    .RelatedLinks__item {
+      width: var(--grid-6);
+    }
+  }
+  @media (min-width: 980px) {
+    .RelatedLinks__item {
+      width: var(--grid-4);
+    }
+  }
+  .RelatedLinks__link {
+    --link-color: _inherit;
+    --link-weight: _inherit;
+    --link-underline: none;
+
+    /* NOTE: This intentionally doesn't reset the :hover style*/
+    /* unless..*/
+    --link-color--hover: var(--link-color);
+    --link-underline--hover: none;
+    --link-underline-offset: 0;
+
+    --link-color: var(--color-faxafloi-100);
+
+    position: relative;
+    display: block;
+    background-color: var(--color-suld-25);
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    padding-left: 3.5rem;
+    outline: 1px solid transparent;
+  }
+  .RelatedLinks__link:hover {
+    outline: 1px solid currentColor;
+  }
+  .RelatedLinks__link::before {
+    display: inline-block;
+    text-indent: 0;
+    text-align: center;
+    vertical-align: top;
+    /* iconFontStyling*/
+    font-family: icons, Esja, Helvetica, Arial, sans-serif;
+    speak: none; /* speak property is deprecated*/
+    font-weight: normal;
+    font-style: normal;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0;
+    content: var(--icon--link);
+
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    font-size: 1.5rem;
+    width: 1em;
+    line-height: 1em;
+    margin-top: -0.5em;
+  }
+
+  .RelatedLinks__link[target]::before {
+    content: var(--icon--external);
+  }
+  /* exclude taget="_self" without increasing selector specificity*/
+  .RelatedLinks__link:not([target="_self"])::before {
+    content: var(--icon--link);
+  }
+
+  .RelatedLinks__link[href$=".pdf"]::before,
+  .RelatedLinks__link[href*=".pdf?"]::before,
+  .RelatedLinks__link[data-type="pdf"]::before {
+    content: var(--icon--file-pdf);
+  }
+  .RelatedLinks__link[data-type="document"]::before {
+    content: var(--icon--document);
+  }
+  .RelatedLinks__link[data-type="external"]::before {
+    content: var(--icon--external);
+  }
+}

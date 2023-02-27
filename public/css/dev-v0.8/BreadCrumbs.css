@@ -1,0 +1,179 @@
+@media screen {
+  .BreadCrumbs {
+    color: var(--color-suld-150);
+    font: var(--font-label);
+  }
+
+  .Layout__nav .BreadCrumbs {
+    position: absolute;
+    top: var(--Layout__header-height);
+    margin-top: 2px;
+    left: 0;
+    max-width: 100%;
+  }
+
+  .BreadCrumbs__title {
+    display: none; /* ok as aria-label/aria-labelledby is also required!*/
+  }
+
+  .BreadCrumbs__item {
+    display: inline-block;
+    vertical-align: top;
+    font-weight: 400;
+  }
+  .BreadCrumbs__item:not(:last-child) {
+    --link-color: _inherit;
+    --link-weight: _inherit;
+    --link-underline: none;
+
+    /* NOTE: This intentionally doesn't reset the :hover style*/
+    /* unless..*/
+  }
+
+  .BreadCrumbs__title + .BreadCrumbs__item {
+    overflow: hidden;
+    white-space: nowrap;
+
+    width: 1.5625rem;
+    margin: 0 -0.3125rem;
+  }
+  .BreadCrumbs__title + .BreadCrumbs__item::before {
+    display: inline-block;
+    text-indent: 0;
+    text-align: center;
+    vertical-align: top;
+    /* iconFontStyling*/
+    font-family: icons, Esja, Helvetica, Arial, sans-serif;
+    speak: none; /* speak property is deprecated*/
+    font-weight: normal;
+    font-style: normal;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0;
+    content: var(--icon--home);
+
+    width: 100%;
+    margin-right: 1px;
+    font-size: 0.875rem;
+  }
+
+  /* .BreadCrumbs__item[aria-current='true'] {*/
+  /* }*/
+
+  .BreadCrumbs__separator {
+    overflow: hidden;
+    white-space: nowrap;
+
+    display: inline-block;
+    width: 0.8125rem;
+  }
+  .BreadCrumbs__separator::before {
+    display: inline-block;
+    text-indent: 0;
+    text-align: center;
+    vertical-align: top;
+    /* iconFontStyling*/
+    font-family: icons, Esja, Helvetica, Arial, sans-serif;
+    speak: none; /* speak property is deprecated*/
+    font-weight: normal;
+    font-style: normal;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0;
+    content: var(--icon--chevron-soft-right);
+
+    width: 100%;
+    margin-right: 1px;
+    font-size: 0.3125rem;
+  }
+
+  /* ------------------------------------------------------------------------ */
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .BreadCrumbs__item:last-child:not([aria-current="true"]):hover {
+    --WARNING--message: 'You forgot aria-current="true"';
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .BreadCrumbs__item:last-child:not([aria-current="true"]):hover::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: var(--WARNING--message) !important;
+  }
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .BreadCrumbs:not(nav):hover {
+    --WARNING--message: "Please use <nav/>";
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .BreadCrumbs:not(nav):hover::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: var(--WARNING--message) !important;
+  }
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .BreadCrumbs:not([aria-label]):not([aria-labelledby]):hover {
+    --WARNING--message: "Please add `aria-label` or `aria-labelledby`";
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .BreadCrumbs:not([aria-label]):not([aria-labelledby]):hover::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: var(--WARNING--message) !important;
+  }
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .BreadCrumbs[aria-labelledby]
+    > .BreadCrumbs__title:not([id]):hover {
+    --WARNING--message: "Please add `id` attribute";
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .BreadCrumbs[aria-labelledby]
+    > .BreadCrumbs__title:not([id]):hover::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: var(--WARNING--message) !important;
+  }
+}

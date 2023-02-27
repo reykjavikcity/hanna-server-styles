@@ -1,0 +1,340 @@
+@media screen {
+  .NameCard {
+    border: var(--border-default);
+    padding: var(--space-3);
+    display: flex;
+    flex-flow: column;
+    min-height: 14.375rem;
+    /* for standalone-display*/
+    max-width: 376px;
+    flex-grow: 1;
+    margin-bottom: var(--grid-gutter);
+  }
+  .NameCard > :last-child {
+    margin-bottom: 0;
+  }
+
+  .NameCard__name {
+    width: 100%;
+    font: var(--font-bd-l);
+    font-weight: var(--font-weight--bold);
+    margin-bottom: var(--space-1);
+  }
+
+  .NameCard__contactinfo {
+    margin-bottom: var(--space-2);
+    display: flex;
+    flex-flow: row wrap;
+    margin-right: var(--space-1--neg);
+  }
+  span.NameCard__contactinfo__item {
+    --link-color: _inherit;
+    --link-weight: _inherit;
+    --link-underline: none;
+
+    /* NOTE: This intentionally doesn't reset the :hover style*/
+    /* unless..*/
+    --link-color--hover: var(--link-color);
+    --link-underline--hover: none;
+    --link-underline-offset: 0;
+
+    color: var(--ButtonTertiary--color);
+    position: relative;
+    display: inline-block;
+    width: -moz-max-content;
+    width: max-content;
+    max-width: 100%;
+    vertical-align: middle;
+    font: var(--font-button);
+    padding: 2px 0;
+    --dashWidth: var(--ButtonTertiary--dashWidth);
+    padding-left: calc(var(--ButtonTertiary--dashSpace) + var(--dashWidth));
+    padding-right: calc(
+      var(--ButtonTertiary--hover--dashWidth) - var(--dashWidth)
+    );
+    margin-right: var(--ButtonTertiary--gapH);
+    margin-bottom: var(--space-1);
+    font-weight: 700;
+    transition: all 100ms ease-in;
+  }
+
+  span.NameCard__contactinfo__item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: var(--dashWidth);
+    height: var(--ButtonTertiary--dashHeight);
+    display: inline-block;
+    vertical-align: middle;
+    background-color: currentColor;
+    color: var(--ButtonTertiary--dashColor);
+    transform: translateY(-50%);
+    transition: inherit;
+  }
+
+  span.NameCard__contactinfo__item {
+    margin-right: var(--space-1);
+  }
+  .NameCard__tel__number, /* @deprecated (remove in v0.9)*/
+	  a.NameCard__contactinfo__item,
+	  button.NameCard__contactinfo__item {
+    --link-color: _inherit;
+    --link-weight: _inherit;
+    --link-underline: none;
+
+    /* NOTE: This intentionally doesn't reset the :hover style*/
+    /* unless..*/
+    --link-color--hover: var(--link-color);
+    --link-underline--hover: none;
+    --link-underline-offset: 0;
+
+    color: var(--ButtonTertiary--color);
+    position: relative;
+    display: inline-block;
+    width: -moz-max-content;
+    width: max-content;
+    max-width: 100%;
+    vertical-align: middle;
+    font: var(--font-button);
+    padding: 2px 0;
+    --dashWidth: var(--ButtonTertiary--dashWidth);
+    padding-left: calc(var(--ButtonTertiary--dashSpace) + var(--dashWidth));
+    padding-right: calc(
+      var(--ButtonTertiary--hover--dashWidth) - var(--dashWidth)
+    );
+    margin-right: var(--ButtonTertiary--gapH);
+    margin-bottom: var(--space-1);
+    font-weight: 700;
+    transition: all 100ms ease-in;
+  }
+
+  .NameCard__tel__number::before,
+  a.NameCard__contactinfo__item::before,
+  button.NameCard__contactinfo__item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: var(--dashWidth);
+    height: var(--ButtonTertiary--dashHeight);
+    display: inline-block;
+    vertical-align: middle;
+    background-color: currentColor;
+    color: var(--ButtonTertiary--dashColor);
+    transform: translateY(-50%);
+    transition: inherit;
+  }
+
+  .NameCard__tel__number:active,
+  .NameCard__tel__number:hover,
+  .NameCard__tel__number[data-focus-visible-added],
+  a.NameCard__contactinfo__item:active,
+  a.NameCard__contactinfo__item:hover,
+  a.NameCard__contactinfo__item[data-focus-visible-added],
+  button.NameCard__contactinfo__item:active,
+  button.NameCard__contactinfo__item:hover,
+  button.NameCard__contactinfo__item[data-focus-visible-added] {
+    --dashWidth: var(--ButtonTertiary--hover--dashWidth);
+    color: var(--ButtonTertiary--color);
+    outline: 0;
+  }
+  .NameCard__tel__number:focus-visible,
+  a.NameCard__contactinfo__item:focus-visible,
+  button.NameCard__contactinfo__item:focus-visible {
+    --dashWidth: var(--ButtonTertiary--hover--dashWidth);
+    color: var(--ButtonTertiary--color);
+    outline: 0;
+  }
+
+  .NameCard__tel__number:active::before,
+  a.NameCard__contactinfo__item:active::before,
+  button.NameCard__contactinfo__item:active::before {
+    width: var(--ButtonTertiary--dashWidth);
+  }
+
+  .NameCard__tel__number[data-focus-visible-added]::after,
+  a.NameCard__contactinfo__item[data-focus-visible-added]::after,
+  button.NameCard__contactinfo__item[data-focus-visible-added]::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: -0.8125rem -1rem;
+    border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
+    border-radius: 0.5rem;
+  }
+
+  .NameCard__tel__number:focus-visible::after,
+  a.NameCard__contactinfo__item:focus-visible::after,
+  button.NameCard__contactinfo__item:focus-visible::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: -0.8125rem -1rem;
+    border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
+    border-radius: 0.5rem;
+  }
+  .NameCard__tel__number,
+  a.NameCard__contactinfo__item,
+  button.NameCard__contactinfo__item {
+    margin-right: var(--space-1);
+  }
+
+  .NameCard__location,
+  .NameCard__hours {
+    margin-bottom: var(--space-1);
+    padding-left: var(--space-4);
+  }
+  .NameCard__location:before,
+  .NameCard__hours::before {
+    display: inline-block;
+    text-indent: 0;
+    text-align: center;
+    vertical-align: top;
+    /* iconFontStyling*/
+    font-family: icons, Esja, Helvetica, Arial, sans-serif;
+    speak: none; /* speak property is deprecated*/
+    font-weight: normal;
+    font-style: normal;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0;
+    content: var(--icon--location);
+
+    float: left;
+    margin-left: var(--space-4--neg);
+    width: var(--space-3);
+    color: var(--color-suld-150);
+  }
+  .NameCard__hours:before {
+    content: var(--icon--time);
+  }
+
+  .NameCard__abouttext {
+    margin-bottom: var(--space-1);
+  }
+  .NameCard__location + .NameCard__abouttext,
+  .NameCard__hours + .NameCard__abouttext {
+    margin-top: var(--space-2);
+  }
+
+  .NameCard__meta {
+    margin-top: auto;
+    padding-top: var(--space-1);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .NameCard__vacancy, /* @deprecated (remove in v0.9)*/
+	.NameCard__availability {
+    color: var(--color-suld-150);
+    --led-color: var(--color-suld-150);
+    margin-top: var(--space-1);
+    margin-right: var(--space-2);
+  }
+  .NameCard__vacancy--vacany, /* @deprecated (remove in v0.9)*/
+	.NameCard__availability--available {
+    color: var(--color-suld-200);
+    --led-color: var(--color-ellidaardalur-100);
+  }
+  .NameCard__vacancy::before, /* @deprecated (remove in v0.9)*/
+	.NameCard__availability::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-right: var(--space-1);
+    border-radius: 50%;
+    background-color: var(--led-color);
+  }
+
+  .NameCard__updated {
+    font: var(--font-label);
+    color: var(--color-suld-150);
+    margin-left: auto;
+    align-self: flex-end;
+    margin-top: var(--space-1);
+  }
+}
+
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .NameCard__location
+  p:hover,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .NameCard__location
+  div:hover,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .NameCard__location
+  ul:hover,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .NameCard__hours
+  p:hover,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .NameCard__hours
+  div:hover,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .NameCard__hours
+  ul:hover,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .NameCard__aboutText
+  p:hover,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .NameCard__aboutText
+  div:hover,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .NameCard__aboutText
+  ul:hover {
+  --WARNING--message: "Only use simple, inline HTML element inside this field.";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .NameCard__location
+  p:hover::before,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .NameCard__location
+  div:hover::before,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .NameCard__location
+  ul:hover::before,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .NameCard__hours
+  p:hover::before,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .NameCard__hours
+  div:hover::before,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .NameCard__hours
+  ul:hover::before,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .NameCard__aboutText
+  p:hover::before,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .NameCard__aboutText
+  div:hover::before,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .NameCard__aboutText
+  ul:hover::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}

@@ -1,0 +1,225 @@
+@media screen {
+  .Alert {
+    --Alert--background: rgb(224, 238, 251);
+    --Alert--icon-color: var(--color-faxafloi-100);
+    --Alert--icon: var(--icon--info);
+
+    --link-color: rgb(3, 94, 202);
+    --link-color--hover: rgb(3, 94, 202);
+
+    background: var(--Alert--background);
+    border-radius: 0.5rem;
+    position: relative;
+
+    padding: 0.8125rem 1.25rem 0.75rem 2.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  @media (min-width: 760px) {
+    .Alert {
+      padding: 1.0625rem 2rem 1rem 4rem;
+      margin-bottom: 1.875rem;
+    }
+  }
+  .Alert::before {
+    display: inline-block;
+    text-indent: 0;
+    text-align: center;
+    vertical-align: top;
+    /* iconFontStyling*/
+    font-family: icons, Esja, Helvetica, Arial, sans-serif;
+    speak: none; /* speak property is deprecated*/
+    font-weight: normal;
+    font-style: normal;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0;
+    content: var(--icon--info);
+
+    content: var(--Alert--icon);
+    color: var(--Alert--icon-color);
+
+    font-size: 1rem;
+    /* line-height: 0.75rem;*/
+    position: absolute;
+    top: 0.875rem;
+    left: 0.875rem;
+  }
+
+  @media (min-width: 760px) {
+    .Alert::before {
+      top: 1.0625rem;
+      left: 1.5625rem;
+    }
+  }
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Alert:not(.Alert--info):not(.Alert--success):not(.Alert--warning):not(
+      .Alert--error
+    ):not(.Alert--critical):hover {
+    --WARNING--message: '"Type" modifier class-name is missing';
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Alert:not(.Alert--info):not(.Alert--success):not(.Alert--warning):not(
+      .Alert--error
+    ):not(.Alert--critical):hover::after {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: var(--WARNING--message) !important;
+  }
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Alert:not([role="alert"]):hover {
+    --WARNING--message: 'Should be role="alert"';
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Alert:not([role="alert"]):hover::after {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: var(--WARNING--message) !important;
+  }
+
+  /*  // This is the default styling state*/
+  /*  .Alert--info {*/
+  /* }*/
+
+  .Alert--critical,
+  .Alert--error {
+    --Alert--background: rgb(250, 228, 229);
+    --Alert--icon-color: var(--color-heidmork-100);
+    --Alert--icon: var(--icon--error);
+  }
+  .Alert--warning {
+    --Alert--background: var(--color-nautholsvik-50);
+    --Alert--icon-color: rgb(213, 179, 74);
+    --Alert--icon: var(--icon--warning);
+  }
+  .Alert--success {
+    --Alert--background: rgb(220, 247, 230);
+    --Alert--icon-color: rgb(70, 177, 109);
+    --Alert--icon: var(--icon--checkmark);
+  }
+
+  /* ---------------------------------------------------------------------------*/
+
+  /* // NOTE: This className is only used to signal to hanna-sprinkles that*/
+  /* // a .Alert__close button should be injected*/
+  /* .Alert--closable {}*/
+
+  .Alert {
+    transition: all 400ms 0ms;
+    transition-timing-function: ease-in, cubic-bezier(0.165, 0.84, 0.44, 1),
+      ease-in, ease-in, ease-in-out;
+    transition-property: visibility, max-height, opacity, margin, padding;
+    max-height: 1000px;
+
+    overflow: hidden;
+    padding-right: 1.5625rem;
+  }
+
+  @media (min-width: 760px) {
+    .Alert {
+      padding-right: 3rem;
+    }
+  }
+  .Alert[hidden][hidden] {
+    display: block; /* override default :hidden styling*/
+    transition-delay: 0ms 0ms 400ms 0ms;
+    opacity: 0;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    visibility: hidden;
+  }
+
+  .Alert[hidden][hidden]::before {
+    transition: opacity 200ms ease-in;
+    opacity: 0;
+  }
+
+  .Alert__close {
+    --link-color: _inherit;
+    --link-weight: _inherit;
+    --link-underline: none;
+
+    /* NOTE: This intentionally doesn't reset the :hover style*/
+    /* unless..*/
+    --link-color--hover: var(--link-color);
+    --link-underline--hover: none;
+    --link-underline-offset: 0;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    position: absolute;
+    top: 0.1875rem;
+    right: -0.4375rem;
+    width: 2.625rem;
+    height: 2.625rem;
+    line-height: 2.5rem;
+    transition: all 200ms ease-in;
+    transition-property: font-size, opacity;
+    font-size: 0.5625rem;
+    opacity: 0.67;
+  }
+
+  @media (min-width: 760px) {
+    .Alert__close {
+      opacity: 1;
+      top: 0.4375rem;
+      right: 0.375rem;
+      font-size: 0.75rem;
+    }
+  }
+  .Alert__close:hover,
+  .Alert__close:active {
+    opacity: 1;
+    font-size: 1rem;
+  }
+  .Alert__close::before {
+    display: inline-block;
+    text-indent: 0;
+    text-align: center;
+    vertical-align: top;
+    /* iconFontStyling*/
+    font-family: icons, Esja, Helvetica, Arial, sans-serif;
+    speak: none; /* speak property is deprecated*/
+    font-weight: normal;
+    font-style: normal;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0;
+    content: var(--icon--close);
+
+    margin-right: 1px;
+    width: 100%;
+  }
+
+  [hidden] > .Alert__close {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,127 @@
+.ButtonBar {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-right: calc(-1 * var(--Button--gapH));
+}
+
+.ButtonBar--align--right {
+  justify-content: flex-end;
+}
+.ButtonBar > * {
+  margin-right: var(--Button--gapH);
+}
+
+.ButtonBar[class] > * {
+  margin-bottom: var(--Button--gapV);
+}
+
+.ButtonBar > .ButtonBar {
+  margin: 0;
+}
+
+.ButtonBar > .ButtonBar__split {
+  width: 0;
+  margin: 0 auto;
+  flex-grow: 1;
+}
+
+/* ---------------------------------------------------------------------------*/
+
+html:not([data-disable-css-warnings-with-abandon="true"])
+  :not(.ButtonBar)
+  > .ButtonBar__split:hover {
+  --WARNING--message: "`.ButtonBar__split` must be direct child of `.ButtonBar`";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+
+html:not([data-disable-css-warnings-with-abandon="true"])
+  :not(.ButtonBar)
+  > .ButtonBar__split:hover::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .ButtonBar
+  > br:hover {
+  --WARNING--message: "No `<br/>` children in `.ButtonBar`";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .ButtonBar
+  > br:hover::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .ButtonBar
+  > hr:hover {
+  --WARNING--message: "No `<hr/>` children in `.ButtonBar`";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .ButtonBar
+  > hr:hover::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .ButtonBar
+  > :last-child:not(.ButtonPrimary):not(.ButtonSecondary):not(
+    .ButtonTertiary
+  ):not(.ButtonPrimary ~ *):not(.ButtonSecondary ~ *):not(
+    .ButtonTertiary ~ *
+  ):hover {
+  --WARNING--message: "`.ButtonBar` should contain Buttons";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .ButtonBar
+  > :last-child:not(.ButtonPrimary):not(.ButtonSecondary):not(
+    .ButtonTertiary
+  ):not(.ButtonPrimary ~ *):not(.ButtonSecondary ~ *):not(
+    .ButtonTertiary ~ *
+  ):hover::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}

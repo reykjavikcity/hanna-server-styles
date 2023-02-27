@@ -1,0 +1,191 @@
+@media screen {
+  .before-sprinkling .IslandPageBlock,
+  .IslandPageBlock[data-is-seen="false"] {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+
+  .IslandPageBlock[data-is-seen=""],
+  .IslandPageBlock[data-is-seen="true"] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .IslandPageBlock[data-is-seen="true"] {
+    transition: all 500ms ease-in-out;
+
+    transition-property: opacity, transform;
+  }
+
+  .IslandPageBlock {
+    margin-bottom: calc(10.02155172413793% + 11.939655172413794px);
+    display: flex;
+    flex-flow: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @media (min-width: 760px) {
+    .IslandPageBlock {
+      flex-flow: row;
+    }
+    .IslandPageBlock--align--right {
+      flex-flow: row-reverse;
+    }
+  }
+
+  .IslandPageBlock__content {
+    padding: var(--space-2) 0;
+  }
+
+  @media (min-width: 760px) {
+    .IslandPageBlock__content {
+      width: var(--grid-6);
+    }
+  }
+  .IslandPageBlock__image {
+    margin: 0 var(--grid-0-1--neg);
+  }
+
+  @media (max-width: 759px) {
+    .IslandPageBlock__image {
+      max-width: 400px;
+      align-self: flex-start;
+      margin-bottom: var(--space-2);
+    }
+  }
+  @media (min-width: 760px) {
+    .IslandPageBlock__image {
+      width: calc(var(--grid-6-6) + var(--grid-0-1));
+    }
+  }
+
+  .IslandPageBlock__title {
+    font: var(--font-hd-s);
+    margin-bottom: var(--space-3);
+  }
+
+  .IslandPageBlock__summary {
+    font: var(--font-bd-l);
+    margin-bottom: var(--space-3);
+  }
+  .IslandPageBlock__button {
+    --link-color: _inherit;
+    --link-weight: _inherit;
+    --link-underline: none;
+
+    /* NOTE: This intentionally doesn't reset the :hover style*/
+    /* unless..*/
+    --link-color--hover: var(--link-color);
+    --link-underline--hover: none;
+    --link-underline-offset: 0;
+
+    color: var(--ButtonTertiary--color);
+    position: relative;
+    display: inline-block;
+    width: -moz-max-content;
+    width: max-content;
+    max-width: 100%;
+    vertical-align: middle;
+    font: var(--font-button);
+    padding: 2px 0;
+    --dashWidth: var(--ButtonTertiary--dashWidth);
+    padding-left: calc(var(--ButtonTertiary--dashSpace) + var(--dashWidth));
+    padding-right: calc(
+      var(--ButtonTertiary--hover--dashWidth) - var(--dashWidth)
+    );
+    margin-right: var(--ButtonTertiary--gapH);
+    margin-bottom: var(--space-1);
+    font-weight: 700;
+    transition: all 100ms ease-in;
+  }
+
+  .IslandPageBlock__button::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: var(--dashWidth);
+    height: var(--ButtonTertiary--dashHeight);
+    display: inline-block;
+    vertical-align: middle;
+    background-color: currentColor;
+    color: var(--ButtonTertiary--dashColor);
+    transform: translateY(-50%);
+    transition: inherit;
+  }
+
+  .IslandPageBlock__button:active,
+  .IslandPageBlock__button:hover,
+  .IslandPageBlock__button[data-focus-visible-added] {
+    --dashWidth: var(--ButtonTertiary--hover--dashWidth);
+    color: var(--ButtonTertiary--color);
+    outline: 0;
+  }
+  .IslandPageBlock__button:focus-visible {
+    --dashWidth: var(--ButtonTertiary--hover--dashWidth);
+    color: var(--ButtonTertiary--color);
+    outline: 0;
+  }
+
+  .IslandPageBlock__button:active::before {
+    width: var(--ButtonTertiary--dashWidth);
+  }
+
+  .IslandPageBlock__button[data-focus-visible-added]::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: -0.8125rem -1rem;
+    border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
+    border-radius: 0.5rem;
+  }
+
+  .IslandPageBlock__button:focus-visible::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: -0.8125rem -1rem;
+    border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
+    border-radius: 0.5rem;
+  }
+  .IslandPageBlock__button {
+    display: block;
+  }
+
+  /* Background variant. ------------------------------------------------------*/
+
+  .IslandPageBlock--background--gray,
+  .IslandPageBlock--background--secondary {
+    position: relative;
+  }
+
+  .IslandPageBlock--background--gray::before,
+  .IslandPageBlock--background--secondary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    left: var(--grid-margin--neg);
+
+    right: var(--grid-margin--neg);
+
+    z-index: -1;
+    background: inherit;
+  }
+
+  .IslandPageBlock--background--gray,
+  .IslandPageBlock--background--secondary {
+    padding: calc(1.9396551724137931% + 24.568965517241377px) 0;
+    background-color: var(--color-suld-25);
+  }
+  .IslandPageBlock--background--secondary {
+    background-color: var(--theme-color-secondary-25);
+  }
+}

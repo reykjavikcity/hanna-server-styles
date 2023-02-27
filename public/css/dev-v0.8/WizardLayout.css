@@ -1,0 +1,290 @@
+@media screen {
+  .WizardLayout {
+    min-height: 100vh;
+    width: 100%;
+    max-width: 75.5rem;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+  }
+
+  .WizardLayout__alerts {
+    max-height: 1000px;
+    overflow: hidden;
+    margin: 0 -0.625rem;
+    transition: max-height 400ms ease-in;
+  }
+
+  @media (min-width: 760px) {
+    .WizardLayout__alerts {
+      margin: 0;
+    }
+  }
+  .WizardLayout__alerts .Alert {
+    margin: 1rem 0 0 0;
+  }
+
+  .WizardLayout__content {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    /* align-items: center;*/
+    position: relative;
+  }
+
+  .WizardLayout__header {
+    position: relative;
+    z-index: 3; /* ??? var(--zindex--header);*/
+    height: var(--Layout__header-height);
+    display: flex;
+    align-items: center;
+  }
+
+  .WizardLayout__header__logo {
+    --link-color: _inherit;
+    --link-weight: _inherit;
+    --link-underline: none;
+
+    /* NOTE: This intentionally doesn't reset the :hover style*/
+    /* unless..*/
+    --link-color--hover: var(--link-color);
+    --link-underline--hover: none;
+    --link-underline-offset: 0;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    display: block;
+    width: 11.375rem;
+    height: 3.3125rem;
+  }
+
+  .WizardLayout__header__logo > svg,
+  .WizardLayout__header__logo > img,
+  .WizardLayout__header__logo > * > svg,
+  .WizardLayout__header__logo > * > img {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    -o-object-fit: contain;
+    object-fit: contain;
+    -o-object-position: 0% 50%;
+    object-position: 0% 50%;
+    margin-right: 0.625rem;
+    margin-left: -1px;
+  }
+
+  @media (max-width: 979px) {
+    .WizardLayout__header__logo {
+      margin: -0.625rem;
+      padding: 0.625rem;
+      overflow: hidden;
+      box-sizing: content-box;
+
+      /* // Hide the text layer within the logo*/
+      /* svg .logo-text {*/
+      /* 	display: none;*/
+      /* }*/
+    }
+
+    .WizardLayout__header__logo > div {
+      display: inline-block;
+    }
+
+    .WizardLayout__header__logo > svg,
+    .WizardLayout__header__logo > img,
+    .WizardLayout__header__logo > * > svg,
+    .WizardLayout__header__logo > * > img {
+      width: 11.5625rem;
+      -o-object-fit: cover;
+      object-fit: cover;
+      margin-right: 1.3125rem;
+    }
+  }
+
+  .WizardLayout__wrap {
+    flex-grow: 1;
+    position: relative;
+    z-index: 2;
+  }
+
+  .WizardLayout__deco {
+    display: none;
+  }
+}
+
+@media (max-width: 759px) {
+  body {
+    --grid--margin: var(--space-2);
+    padding-left: var(--grid-margin);
+    padding-right: var(--grid-margin--right);
+  }
+
+  .WizardLayout__wrap {
+    padding-left: 3rem;
+  }
+
+  .WizardLayout__stepper {
+    float: left;
+    position: sticky;
+    top: 1rem;
+    padding-top: 0.5rem;
+    margin-left: -2.5rem;
+    width: 1.5rem;
+  }
+}
+
+@media (min-width: 760px) {
+  .WizardLayout {
+    position: static;
+  }
+  .WizardLayout__header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .WizardLayout__alerts {
+    margin-left: 0.5rem;
+    max-width: 936px;
+  }
+
+  .WizardLayout__wrap {
+    width: var(--grid-10);
+    display: flex;
+    padding-left: 1rem;
+  }
+  .WizardLayout__stepper {
+    flex-shrink: 1;
+    width: 10.625rem;
+    margin-right: 1.875rem;
+  }
+  .WizardLayout__main {
+    flex-shrink: 1;
+    width: 100%;
+    max-width: 580px;
+  }
+}
+
+@media (min-width: 980px) {
+  .WizardLayout::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: calc((100vw / 2) - (75.5rem / 3));
+    background: var(--color-suld-50);
+  }
+
+  .WizardLayout__main {
+    min-height: 600px;
+  }
+}
+
+@media (min-width: 1368px) {
+  .WizardLayout__header {
+    padding: 2.5rem 0.5rem 3.75rem;
+  }
+
+  .WizardLayout__progress {
+    margin-right: 3.4375rem;
+  }
+
+  .WizardLayout__deco {
+    display: block;
+    position: absolute;
+    top: 100px;
+    right: -121px;
+  }
+  .WizardLayout__deco--geometry {
+    background: url("/assets/WizardLayout-deco.png") 0 0 no-repeat;
+    width: 217px;
+    height: 468px;
+  }
+}
+
+@media screen {
+  .WizardLayoutClose {
+    font: var(--font-bd-s);
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    top: 1.25rem;
+    color: var(--color-suld-200);
+    font-weight: 700;
+  }
+  a.WizardLayoutClose {
+    --link-color: _inherit;
+    --link-weight: _inherit;
+    --link-underline: none;
+
+    /* NOTE: This intentionally doesn't reset the :hover style*/
+    /* unless..*/
+    --link-color--hover: var(--link-color);
+    --link-underline--hover: none;
+    --link-underline-offset: 0;
+  }
+
+  .WizardLayoutClose::after {
+    display: inline-block;
+    text-indent: 0;
+    text-align: center;
+    vertical-align: top;
+    /* iconFontStyling*/
+    font-family: icons, Esja, Helvetica, Arial, sans-serif;
+    speak: none; /* speak property is deprecated*/
+    font-weight: normal;
+    font-style: normal;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0;
+    content: var(--icon--close);
+
+    font-size: 0.8125rem;
+    margin-left: 0.8125rem;
+    padding-top: 0.0625rem;
+    transition: transform var(--link-transition);
+  }
+
+  .WizardLayoutClose:hover,
+  .WizardLayoutClose:active {
+    color: var(--color-faxafloi-100);
+  }
+
+  .WizardLayoutClose:hover::after,
+  .WizardLayoutClose:active::after {
+    transform: scale(1.3);
+  }
+}
+@media (min-width: 760px) {
+  .WizardLayoutClose {
+    right: 1.875rem;
+    top: calc(4.276315789473684vw + -2.5px);
+  }
+}
+
+@media (min-width: 980px) {
+  .WizardLayoutClose {
+    top: 3.5rem;
+  }
+}
+
+@media (min-width: 1368px) {
+  .WizardLayoutClose {
+    top: 3.5rem;
+    right: calc((100vw / 2) - (75.5rem / 2));
+  }
+}
+
+/* ===========================================================================*/
+/* BEGIN @deprecated  (remove in v0.9)*/
+/* Styles to make the addition of .WizardLayout__content non-breaking*/
+.WizardLayout {
+  display: flex;
+  flex-flow: column nowrap;
+}
+/* END @deprecated*/

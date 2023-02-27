@@ -1,0 +1,85 @@
+/*!@deps
+    Layout-full
+  */
+
+@media screen {
+  .Layout--HomePage .RowBlock {
+    margin-bottom: calc(14.00862068965517% + 30.775862068965523px);
+  }
+
+  /* ---------------------------------------------------------------------------*/
+
+  .ScrollCTA {
+    display: none;
+    margin-top: calc(-5.387931034482758% + -14.913793103448285px);
+    margin-bottom: calc(19.396551724137932% + -24.310344827586192px);
+    /* TODO: Is font-size right value? Is '12' on prod.*/
+    font-size: 0.75rem;
+    font-weight: var(--font-weight--bold);
+  }
+
+  @media (min-width: 760px) {
+    .ScrollCTA {
+      display: block;
+    }
+  }
+  .ScrollCTA::after {
+    display: inline-block;
+    text-indent: 0;
+    text-align: center;
+    vertical-align: top;
+    /* iconFontStyling*/
+    font-family: icons, Esja, Helvetica, Arial, sans-serif;
+    speak: none; /* speak property is deprecated*/
+    font-weight: normal;
+    font-style: normal;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0;
+    content: var(--icon--chevron-down);
+
+    display: block;
+    margin-top: 0.375rem;
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    color: var(--color-faxafloi-100);
+  }
+
+  /* ---------------------------------------------------------------------------*/
+
+  .Layout--HomePage .GridBlocks {
+    margin-bottom: calc(14.00862068965517% + 0.7758620689655231px);
+  }
+
+  /* ---------------------------------------------------------------------------*/
+
+  .Layout--HomePage .ExtraLinks::before {
+    border-left: 0;
+  }
+
+  .Layout--HomePage .ExtraLinks__card {
+    border-color: transparent;
+    background-color: var(--color-suld-0);
+    --Card-lineColor: var(--color-faxafloi-100);
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+  .Layout--HomePage .ExtraLinks__card::after {
+    margin-top: 2rem;
+    height: 0.25rem;
+    max-width: 67%;
+  }
+  .ExtraLinks__card:hover,
+  .ExtraLinks__card:active {
+    border-color: transparent;
+    background-color: var(--color-suld-0);
+    color: inherit;
+    outline: normal;
+  }
+  .ExtraLinks__card:hover > .ExtraLinks__card__title,
+  .ExtraLinks__card:active > .ExtraLinks__card__title {
+    color: var(--color-faxafloi-100);
+  }
+}
