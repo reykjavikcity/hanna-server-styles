@@ -265,9 +265,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cssserve@npm:^2.2.1":
-  version: 2.2.1
-  resolution: "cssserve@npm:2.2.1"
+"cssserve@npm:^2.2.2":
+  version: 2.2.2
+  resolution: "cssserve@npm:2.2.2"
   dependencies:
     "@fastify/compress": ^6.1.1
     "@fastify/cors": ^8.1.0
@@ -279,7 +279,7 @@ __metadata:
     rc: ^1.2.8
   bin:
     cssserve: server.js
-  checksum: fd05ce279e5f857b4e8bfc231649639426ffe7fb6cf7c1d18fc464ea5f21ecd123f6d9a0843609d6d0da2fc62458545209f8f0d5b6399e3d3f9de64e830c72c7
+  checksum: c0d86ea6951e282d71b3d70247e1df17eb4a8423f69191e9dc56dead3b3da226aa47b1c099e18fb739177beb8a3d65c9f96e3ed038dc79aac64c00a109ff02ca
   languageName: node
   linkType: hard
 
@@ -549,7 +549,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "hanna-server-styles@workspace:."
   dependencies:
-    cssserve: ^2.2.1
+    cssserve: ^2.2.2
   languageName: unknown
   linkType: soft
 

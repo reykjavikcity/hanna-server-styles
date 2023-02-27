@@ -4,6 +4,18 @@
 
 - ... <!-- Add new lines here. -->
 
+## 0.8.76
+
+_2023-02-28_
+
+- feat: Rename dev css folder to `dev-v0.8`
+- feat: Add svg favicon assets:
+  - `favicon.svg`
+  - `favicon-maskable.svg`
+  - `favicon-black.svg`
+  - `favicon-black-maskable.svg`
+- feat: Add component `Tooltip`
+
 ## 0.8.75
 
 _2023-02-15_
