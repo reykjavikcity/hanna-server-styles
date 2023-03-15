@@ -124,9 +124,9 @@
   }
 
   .Layout__main {
-    padding-top: 3.125rem;
+    padding-top: var(--Layout__main-paddingTop);
     flex-grow: 1;
-    padding-bottom: 1.875rem;
+    padding-bottom: var(--space-4);
     min-height: 60vh;
   }
 

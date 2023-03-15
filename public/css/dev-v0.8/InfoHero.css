@@ -113,6 +113,11 @@
     display: block;
   }
 
+  .InfoHero__footer {
+    font: var(--font-bd-l);
+    margin-top: 2rem;
+  }
+
   /* ------------------------------------------------------------------------ */
   /*
       BEGIN: Styling for weird custom markup changes in some places on www.reykjavik.is

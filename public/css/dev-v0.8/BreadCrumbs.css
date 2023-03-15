@@ -7,7 +7,7 @@
   .Layout__nav .BreadCrumbs {
     position: absolute;
     top: var(--Layout__header-height);
-    margin-top: 2px;
+    transform: translateY(-33%);
     left: 0;
     max-width: 100%;
   }

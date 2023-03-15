@@ -45,7 +45,7 @@
   /**/
 
 :root {
-  --cssVersion: "0.8.76";
+  --cssVersion: "0.8.77";
   --browser-scrollbar-width: 16px;
   --bp-w-phone: 320px;
   --bp-w-phablet: 480px;
@@ -424,6 +424,7 @@
 
   --Layout__header-height: 96px;
   --Layout__header-backgroundColor: transparent;
+  --Layout__main-paddingTop: var(--space-4);
 }
 
 @media (min-width: 980px) {
