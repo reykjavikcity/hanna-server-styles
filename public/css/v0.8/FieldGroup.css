@@ -1,1 +1,1 @@
-@media screen{.FieldGroup{margin-bottom:calc(4.31034% + 17.93103px)}.FieldGroup__legend{font:var(--font-sh-l);margin-bottom:1.25rem}}
+@media screen{.FieldGroup{--FieldGroup--legendSize:var(--font-sh-l);--FieldGroup--legendMargin:var(--space-2);margin-bottom:calc(4.31034% + 17.93103px)}.FieldGroup--small{--FieldGroup--legendSize:var(--font-sh-s);--FieldGroup--legendMargin:var(--space-1)}.FieldGroup__legend{font:var(--FieldGroup--legendSize);margin-bottom:var(--FieldGroup--legendMargin)}}
