@@ -33,6 +33,12 @@
     margin-bottom: 0.625em;
   }
 
+  .HeroBlock__image > img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
   .HeroBlock__image {
     display: block;
     margin: var(--space-2) calc(0.5 * var(--grid-margin--neg));

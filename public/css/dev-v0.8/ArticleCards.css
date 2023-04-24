@@ -76,6 +76,12 @@
     var(--space-3)
   );
 }
+
+.ArticleCards__image > img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 .ArticleCards__image--missing {
   border: 0.75rem solid transparent;
   /* TODO: Verify value*/

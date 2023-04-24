@@ -250,35 +250,35 @@
   .ArticleCarouselCard[data-color="esja"]::after {
     background-color: var(--color-esja-100);
   }
-
+  ,
   .ArticleCarouselCard[data-color="faxafloi"]::after {
     background-color: var(--color-faxafloi-100);
   }
-
+  ,
   .ArticleCarouselCard[data-color="nautholsvik"]::after {
     background-color: var(--color-nautholsvik-100);
   }
-
+  ,
   .ArticleCarouselCard[data-color="heidmork"]::after {
     background-color: var(--color-heidmork-100);
   }
-
+  ,
   .ArticleCarouselCard[data-color="ellidaardalur"]::after {
     background-color: var(--color-ellidaardalur-100);
   }
-
+  ,
   .ArticleCarouselCard[data-color="blafjoll"]::after {
     background-color: var(--color-blafjoll-100);
   }
-
+  ,
   .ArticleCarouselCard[data-color="sund"]::after {
     background-color: var(--color-sund-100);
   }
-
+  ,
   .ArticleCarouselCard[data-color="rokkur"]::after {
     background-color: var(--color-rokkur-100);
   }
-
+  ,
   .ArticleCarouselCard[data-color="suld"]::after {
     background-color: var(--color-suld-100);
   }

@@ -100,7 +100,7 @@
     margin-right: var(--space-1--neg);
   }
 
-  .before-sprinkling .TabPanel:not([data-sprinkled]) {
+  html.before-sprinkling .TabPanel:not([data-sprinkled]) {
     display: none;
   }
 

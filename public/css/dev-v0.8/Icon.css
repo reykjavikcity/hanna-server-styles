@@ -77,119 +77,119 @@
   [data-icon-after="calendar"] {
     --Icon-after: var(--icon--calendar);
   }
-
+  ,
   [data-icon="chat"] {
     --Icon: var(--icon--chat);
   }
   [data-icon-after="chat"] {
     --Icon-after: var(--icon--chat);
   }
-
+  ,
   [data-icon="checkmark"] {
     --Icon: var(--icon--checkmark);
   }
   [data-icon-after="checkmark"] {
     --Icon-after: var(--icon--checkmark);
   }
-
+  ,
   [data-icon="close"] {
     --Icon: var(--icon--close);
   }
   [data-icon-after="close"] {
     --Icon-after: var(--icon--close);
   }
-
+  ,
   [data-icon="data"] {
     --Icon: var(--icon--data);
   }
   [data-icon-after="data"] {
     --Icon-after: var(--icon--data);
   }
-
+  ,
   [data-icon="document"] {
     --Icon: var(--icon--document);
   }
   [data-icon-after="document"] {
     --Icon-after: var(--icon--document);
   }
-
+  ,
   [data-icon="edit"] {
     --Icon: var(--icon--edit);
   }
   [data-icon-after="edit"] {
     --Icon-after: var(--icon--edit);
   }
-
+  ,
   [data-icon="external"] {
     --Icon: var(--icon--external);
   }
   [data-icon-after="external"] {
     --Icon-after: var(--icon--external);
   }
-
+  ,
   [data-icon="file_pdf"] {
     --Icon: var(--icon--file-pdf);
   }
   [data-icon-after="file_pdf"] {
     --Icon-after: var(--icon--file-pdf);
   }
-
+  ,
   [data-icon="home"] {
     --Icon: var(--icon--home);
   }
   [data-icon-after="home"] {
     --Icon-after: var(--icon--home);
   }
-
+  ,
   [data-icon="info"] {
     --Icon: var(--icon--info);
   }
   [data-icon-after="info"] {
     --Icon-after: var(--icon--info);
   }
-
+  ,
   [data-icon="link"] {
     --Icon: var(--icon--link);
   }
   [data-icon-after="link"] {
     --Icon-after: var(--icon--link);
   }
-
+  ,
   [data-icon="location"] {
     --Icon: var(--icon--location);
   }
   [data-icon-after="location"] {
     --Icon-after: var(--icon--location);
   }
-
+  ,
   [data-icon="pen"] {
     --Icon: var(--icon--pen);
   }
   [data-icon-after="pen"] {
     --Icon-after: var(--icon--pen);
   }
-
+  ,
   [data-icon="search"] {
     --Icon: var(--icon--search);
   }
   [data-icon-after="search"] {
     --Icon-after: var(--icon--search);
   }
-
+  ,
   [data-icon="text"] {
     --Icon: var(--icon--text);
   }
   [data-icon-after="text"] {
     --Icon-after: var(--icon--text);
   }
-
+  ,
   [data-icon="time"] {
     --Icon: var(--icon--time);
   }
   [data-icon-after="time"] {
     --Icon-after: var(--icon--time);
   }
-
+  ,
   [data-icon="user"] {
     --Icon: var(--icon--user);
   }

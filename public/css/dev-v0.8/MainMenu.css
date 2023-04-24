@@ -146,13 +146,15 @@
     );
   }
 
-  html.menu-is-active:not(.menu-is-open) .MainMenu, /* @deprecated (.menu-is-closed is always set now) Remove this selector in v0.9*/
+  html.menu-is-active:not(html.menu-is-open) .MainMenu, /* @deprecated ('htmlCl.menuIsOpen' is always set now) Remove this selector in v0.9*/
 	  html.menu-is-closed .MainMenu {
     visibility: hidden;
     opacity: 0;
     margin-top: -100vh;
   }
   html.menu-is-open {
+    --Layout__header-logo-color: var(--color-suld-0);
+    --Layout__header-color: var(--color-suld-0);
     --Layout__header-backgroundColor: var(--color-faxafloi-100);
   }
   html.menu-is-open .MainMenu {
@@ -314,6 +316,11 @@
 /* ===========================================================================*/
 
 @media (min-width: 980px) {
+  html[data-mega-panel-active] {
+    --Layout__header-logo-color: var(--color-suld-0);
+    --Layout__header-color: var(--color-suld-0);
+  }
+
   .MainMenu {
   }
 

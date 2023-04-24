@@ -24,7 +24,7 @@
 
 .Tooltip:hover,
 .Tooltip:active {
-  border-bottom-color: rgb(255, 255, 255);
+  border-bottom-color: #ffffff;
 }
 
 .Tooltip__trigger::marker {

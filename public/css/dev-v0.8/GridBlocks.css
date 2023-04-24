@@ -92,6 +92,12 @@
     transition-delay: 1650ms;
   }
 
+  .GridBlocks__illustration > img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
   .GridBlocks__illustration {
     width: 5rem;
     margin-top: 0.625rem;

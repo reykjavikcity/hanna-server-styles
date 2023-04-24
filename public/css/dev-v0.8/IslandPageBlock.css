@@ -42,6 +42,13 @@
       width: var(--grid-6);
     }
   }
+
+  .IslandPageBlock__image > img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
   .IslandPageBlock__image {
     margin: 0 var(--grid-0-1--neg);
   }

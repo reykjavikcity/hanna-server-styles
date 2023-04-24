@@ -26,6 +26,10 @@
     margin-left: auto;
     flex-shrink: 1;
   }
-  .ContentImage__image {
+
+  .ContentImage__image > img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 }

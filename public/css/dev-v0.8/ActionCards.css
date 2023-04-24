@@ -69,6 +69,8 @@
       grid-template-columns: repeat(auto-fill, var(--grid-4));
     }
   }
+  .ActionCards__item {
+  }
   .ActionCards__card {
     --link-color: _inherit;
     --link-weight: _inherit;
@@ -78,6 +80,7 @@
     /* unless..*/
 
     display: block;
+    width: 100%;
     padding: 1.5rem 1.5rem 2rem 1.5rem;
     min-height: 10.5rem;
     height: 100%;

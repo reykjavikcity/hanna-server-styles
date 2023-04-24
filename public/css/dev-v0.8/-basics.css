@@ -45,7 +45,7 @@
   /**/
 
 :root {
-  --cssVersion: "0.8.77";
+  --cssVersion: "0.8.78";
   --browser-scrollbar-width: 16px;
   --bp-w-phone: 320px;
   --bp-w-phablet: 480px;
@@ -53,55 +53,55 @@
   --bp-w-netbook: 980px;
   --bp-w-wide: 1368px;
   --bp-w-Hamburger: var(--bp-w-netbook);
-  --color-esja-25: rgb(244, 247, 255);
-  --color-esja-50: rgb(232, 238, 255);
-  --color-esja-75: rgb(210, 221, 254);
-  --color-esja-100: rgb(165, 187, 253);
-  --color-esja-150: rgb(82, 94, 127);
-  --color-faxafloi-25: rgb(224, 238, 251);
-  --color-faxafloi-50: rgb(192, 221, 247);
-  --color-faxafloi-75: rgb(129, 187, 240);
-  --color-faxafloi-100: rgb(3, 103, 225);
-  --color-faxafloi-150: rgb(1, 59, 112);
-  --color-nautholsvik-25: rgb(255, 250, 234);
-  --color-nautholsvik-50: rgb(255, 245, 213);
-  --color-nautholsvik-75: rgb(255, 234, 172);
-  --color-nautholsvik-100: rgb(255, 214, 89);
-  --color-nautholsvik-150: rgb(128, 107, 44);
-  --color-heidmork-25: rgb(250, 228, 229);
-  --color-heidmork-50: rgb(245, 200, 203);
-  --color-heidmork-75: rgb(236, 145, 151);
-  --color-heidmork-100: rgb(216, 34, 47);
-  --color-heidmork-150: rgb(108, 17, 24);
-  --color-ellidaardalur-25: rgb(226, 249, 234);
-  --color-ellidaardalur-50: rgb(196, 242, 213);
-  --color-ellidaardalur-75: rgb(137, 230, 171);
-  --color-ellidaardalur-100: rgb(100, 214, 142);
-  --color-ellidaardalur-150: rgb(10, 102, 43);
-  --color-blafjoll-25: rgb(255, 237, 233);
-  --color-blafjoll-50: rgb(255, 219, 211);
-  --color-blafjoll-75: rgb(250, 183, 169);
-  --color-blafjoll-100: rgb(247, 114, 87);
-  --color-blafjoll-150: rgb(128, 87, 55);
-  --color-sund-25: rgb(234, 251, 255);
-  --color-sund-50: rgb(212, 246, 255);
-  --color-sund-75: rgb(169, 237, 255);
-  --color-sund-100: rgb(83, 218, 255);
-  --color-sund-150: rgb(41, 109, 128);
-  --color-rokkur-25: rgb(255, 241, 246);
-  --color-rokkur-50: rgb(255, 227, 236);
-  --color-rokkur-75: rgb(255, 198, 218);
-  --color-rokkur-100: rgb(255, 141, 181);
-  --color-rokkur-150: rgb(128, 71, 90);
-  --color-suld-0: rgb(255, 255, 255);
-  --color-suld-25: rgb(248, 248, 249);
-  --color-suld-50: rgb(241, 242, 243);
-  --color-suld-75: rgb(227, 229, 231);
-  --color-suld-100: rgb(199, 203, 208);
-  --color-suld-150: rgb(112, 114, 117);
-  --color-suld-200: rgb(42, 43, 44);
-  --color-white: rgb(255, 255, 255);
-  --color-blackish: rgb(42, 43, 44);
+  --color-esja-25: #f4f7ff;
+  --color-esja-50: #e8eeff;
+  --color-esja-75: #d2ddfe;
+  --color-esja-100: #a5bbfd;
+  --color-esja-150: #525e7f;
+  --color-faxafloi-25: #e0eefb;
+  --color-faxafloi-50: #c0ddf7;
+  --color-faxafloi-75: #81bbf0;
+  --color-faxafloi-100: #0367e1;
+  --color-faxafloi-150: #013b70;
+  --color-nautholsvik-25: #fffaea;
+  --color-nautholsvik-50: #fff5d5;
+  --color-nautholsvik-75: #ffeaac;
+  --color-nautholsvik-100: #ffd659;
+  --color-nautholsvik-150: #806b2c;
+  --color-heidmork-25: #fae4e5;
+  --color-heidmork-50: #f5c8cb;
+  --color-heidmork-75: #ec9197;
+  --color-heidmork-100: #d8222f;
+  --color-heidmork-150: #6c1118;
+  --color-ellidaardalur-25: #e2f9ea;
+  --color-ellidaardalur-50: #c4f2d5;
+  --color-ellidaardalur-75: #89e6ab;
+  --color-ellidaardalur-100: #64d68e;
+  --color-ellidaardalur-150: #0a662b;
+  --color-blafjoll-25: #ffede9;
+  --color-blafjoll-50: #ffdbd3;
+  --color-blafjoll-75: #fab7a9;
+  --color-blafjoll-100: #f77257;
+  --color-blafjoll-150: #805737;
+  --color-sund-25: #eafbff;
+  --color-sund-50: #d4f6ff;
+  --color-sund-75: #a9edff;
+  --color-sund-100: #53daff;
+  --color-sund-150: #296d80;
+  --color-rokkur-25: #fff1f6;
+  --color-rokkur-50: #ffe3ec;
+  --color-rokkur-75: #ffc6da;
+  --color-rokkur-100: #ff8db5;
+  --color-rokkur-150: #80475a;
+  --color-suld-0: #ffffff;
+  --color-suld-25: #f8f8f9;
+  --color-suld-50: #f1f2f3;
+  --color-suld-75: #e3e5e7;
+  --color-suld-100: #c7cbd0;
+  --color-suld-150: #707275;
+  --color-suld-200: #2a2b2c;
+  --color-white: #ffffff;
+  --color-blackish: #2a2b2c;
 
   /* @deprecated This was a typo (Will be removed in version v0.9)*/
   --color-ellidarardalur-25: var(--color-ellidaardalur-25);
@@ -424,6 +424,8 @@
 
   --Layout__header-height: 96px;
   --Layout__header-backgroundColor: transparent;
+  --Layout__header-logo-color: initial;
+  --Layout__header-color: initial;
   --Layout__main-paddingTop: var(--space-4);
 }
 
@@ -1068,7 +1070,9 @@ html {
       See: https://www.npmjs.com/package/@reykjavik/hanna-css#getessentialhannascripts
     */
   overflow-x: clip; /* For Safari 16+*/
+}
 
+body {
   /* "Fix" nasty/smudgy font rendering on mac*/
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1088,16 +1092,6 @@ html {
 }
 *:lang(pl) {
   quotes: "„" "”" "‘" "’";
-}
-
-/* nextjs@11 injects this and it triggers scrolling bugs*/
-/* (including double-scrollbar) in Chrome/Blink.*/
-/* (Relevant PR: https://github.com/vercel/next.js/pull/44853)*/
-/* Next.js is common-enough consumer of the Hanna CSS*/
-/* to justify special handling here.*/
-next-route-announcer {
-  position: absolute;
-  top: 0;
 }
 
 *:first-child {
@@ -1166,9 +1160,6 @@ img {
 }
 img,
 video {
-  width: 100%;
-  height: auto;
-  display: block;
 }
 iframe {
   width: 100%;
@@ -1585,29 +1576,17 @@ tbody > * > td {
     content: "phone";
   }
 }
-
-@media (min-width: 480px) and (max-width: 759px) {
-  #mediaformat::after {
-    content: "phablet";
-  }
+@media (min-width: 480px) and (max-width: 759px) #mediaformat::after {
+  content: "phablet";
 }
-
-@media (min-width: 760px) and (max-width: 979px) {
-  #mediaformat::after {
-    content: "tablet";
-  }
+@media (min-width: 760px) and (max-width: 979px) #mediaformat::after {
+  content: "tablet";
 }
-
-@media (min-width: 980px) and (max-width: 1367px) {
-  #mediaformat::after {
-    content: "netbook";
-  }
+@media (min-width: 980px) and (max-width: 1367px) #mediaformat::after {
+  content: "netbook";
 }
-
-@media (min-width: 1368px) {
-  #mediaformat::after {
-    content: "wide";
-  }
+@media (min-width: 1368px) #mediaformat::after {
+  content: "wide";
 }
 
 #mediaformat::after {
