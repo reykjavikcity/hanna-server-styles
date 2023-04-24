@@ -4,6 +4,18 @@
 
 - ... <!-- Add new lines here. -->
 
+## 0.8.78
+
+_2023-04-25_
+
+- Global `-basics` styles:
+  - feat: Remove aggressive global reset for all `img` and `video` elements
+  - feat: Shift typography style declarations from `html` to `body`
+- feat: Make `MainMenu` responsible for changing `Layout__header` colors on
+  `html.menu-is-open`
+- feat: Add CSS variables `--Layout__header-logo-color`,
+  `--Layout__header-color`
+
 ## 0.8.77
 
 _2023-03-16_
