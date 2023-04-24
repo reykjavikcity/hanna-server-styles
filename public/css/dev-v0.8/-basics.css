@@ -1576,17 +1576,29 @@ tbody > * > td {
     content: "phone";
   }
 }
-@media (min-width: 480px) and (max-width: 759px) #mediaformat::after {
-  content: "phablet";
+
+@media (min-width: 480px) and (max-width: 759px) {
+  #mediaformat::after {
+    content: "phablet";
+  }
 }
-@media (min-width: 760px) and (max-width: 979px) #mediaformat::after {
-  content: "tablet";
+
+@media (min-width: 760px) and (max-width: 979px) {
+  #mediaformat::after {
+    content: "tablet";
+  }
 }
-@media (min-width: 980px) and (max-width: 1367px) #mediaformat::after {
-  content: "netbook";
+
+@media (min-width: 980px) and (max-width: 1367px) {
+  #mediaformat::after {
+    content: "netbook";
+  }
 }
-@media (min-width: 1368px) #mediaformat::after {
-  content: "wide";
+
+@media (min-width: 1368px) {
+  #mediaformat::after {
+    content: "wide";
+  }
 }
 
 #mediaformat::after {

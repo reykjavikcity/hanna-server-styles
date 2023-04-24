@@ -319,11 +319,11 @@
   .ExtraLinks__related__link--text::before {
     content: var(--icon--text);
   }
-  ,
+
   .ExtraLinks__related__link--pdf::before {
     content: var(--icon--file-pdf);
   }
-  ,
+
   .ExtraLinks__related__link--link::before {
     content: var(--icon--link);
   }

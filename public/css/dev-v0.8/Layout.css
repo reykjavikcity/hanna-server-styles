@@ -249,6 +249,9 @@
     color: var(--close-icon-color);
   }
 
+  html.menu-is-active .Layout__nav > * {
+    z-index: calc(var(--zindex--header) - 1);
+  }
   /* Page content fadeout during menu open*/
   html.menu-is-active .Layout__nav::before {
     content: "";

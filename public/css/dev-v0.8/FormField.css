@@ -350,36 +350,47 @@
   .TextInput--multiline > .FormField__input[rows="4"] {
     --TextInput--textarea--rows: 3;
   }
+
   .TextInput--multiline > .FormField__input[rows="5"] {
     --TextInput--textarea--rows: 4;
   }
+
   .TextInput--multiline > .FormField__input[rows="6"] {
     --TextInput--textarea--rows: 5;
   }
+
   .TextInput--multiline > .FormField__input[rows="7"] {
     --TextInput--textarea--rows: 6;
   }
+
   .TextInput--multiline > .FormField__input[rows="8"] {
     --TextInput--textarea--rows: 7;
   }
+
   .TextInput--multiline > .FormField__input[rows="9"] {
     --TextInput--textarea--rows: 8;
   }
+
   .TextInput--multiline > .FormField__input[rows="10"] {
     --TextInput--textarea--rows: 9;
   }
+
   .TextInput--multiline > .FormField__input[rows="11"] {
     --TextInput--textarea--rows: 10;
   }
+
   .TextInput--multiline > .FormField__input[rows="12"] {
     --TextInput--textarea--rows: 11;
   }
+
   .TextInput--multiline > .FormField__input[rows="13"] {
     --TextInput--textarea--rows: 12;
   }
+
   .TextInput--multiline > .FormField__input[rows="14"] {
     --TextInput--textarea--rows: 13;
   }
+
   .TextInput--multiline > .FormField__input[rows="15"] {
     --TextInput--textarea--rows: 14;
   }
