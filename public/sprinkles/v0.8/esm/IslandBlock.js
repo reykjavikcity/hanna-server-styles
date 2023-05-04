@@ -1,0 +1,1 @@
+import"./initHannaNamespace.js";import{inlineSVG as m}from"./utils/inlineSVG.js";import"../_chunks/focus-visible-d727a811.js";import"../_chunks/qj-afc7b5d6.js";import"../_chunks/utils-96e946f5.js";window.Hanna.makeSprinkle({name:"IslandBlock",init:i=>{m('.IslandBlock__image > img[src*=".svg"]',i)}});

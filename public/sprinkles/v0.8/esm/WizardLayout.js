@@ -1,0 +1,1 @@
+import"./initHannaNamespace.js";import{a as m}from"../_chunks/qj-afc7b5d6.js";import{inlineSVG as a}from"./utils/inlineSVG.js";import"../_chunks/focus-visible-d727a811.js";import"../_chunks/utils-96e946f5.js";window.Hanna.makeSprinkle({name:"WizardLayout",init:i=>{const o=m(".Layout__header__logo",i);o&&a("img",o)}});

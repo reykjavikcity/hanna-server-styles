@@ -1,0 +1,1 @@
+System.register(["./initHannaNamespace.js","./utils/inlineSVG.js","../_chunks/focus-visible-464088f4.js","../_chunks/qj-f461fc7f.js","../_chunks/utils-1076813e.js"],function(e,i){"use strict";var s;return{setters:[null,n=>{s=n.inlineSVG},null,null,null],execute:function(){window.Hanna.makeSprinkle({name:"IslandBlock",init:n=>{s('.IslandBlock__image > img[src*=".svg"]',n)}})}}});
