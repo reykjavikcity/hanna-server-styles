@@ -4,9 +4,20 @@
 
 - ... <!-- Add new lines here. -->
 
+## 0.8.79
+
+_2023-07-07_
+
+- feat: Add component `Multiselect`
+- feat: Add component `ReadSpeakerPlayer`
+- feat: Add `[readonly]` styling on checkboxes and radio buttons
+- fix: Hide newly added visible screen-reader label in `Datepicker`
+- fix: Increase image–text spacing in `.IslandPageBlock--align--right`
+- fix: Shift Checkboxes/Radios up a notch
+
 ## 0.8.78
 
-_2023-04-26_
+_2023-05-10_
 
 - Global `-basics` styles:
   - feat: Remove aggressive global reset for all `img` and `video` elements
@@ -19,7 +30,7 @@ _2023-04-26_
 
 ## 0.8.77
 
-_2023-03-16_
+_2023-03-20_
 
 - feat: Decrease top padding of `Layout__main`, shift `BreadCrumbs` a bit
 - feat: Add styling for `.FieldGroup--small`
