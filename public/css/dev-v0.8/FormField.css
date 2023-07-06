@@ -52,6 +52,7 @@
     opacity: 0.5;
   }
 
+  [data-inputlabel].FormField__label,
   label.FormField__label {
     color: var(--color-suld-150);
     font-size: var(--font-label-size);
@@ -59,6 +60,7 @@
     line-height: 0.875rem;
     transition: all 200ms ease-in;
   }
+  :not(.FormField--small) > [data-inputlabel].FormField__label,
   :not(.FormField--small) > label.FormField__label {
     position: absolute;
     top: 1px;
@@ -71,6 +73,8 @@
     white-space: nowrap;
     overflow: hidden;
   }
+  .FormField--empty:not(.FormField--small):not(.FormField--focused)
+    > [data-inputlabel].FormField__label,
   .FormField--empty:not(.FormField--small):not(.FormField--focused)
     > label.FormField__label {
     font-size: var(--font-bd-s-size);

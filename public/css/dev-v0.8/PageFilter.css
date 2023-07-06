@@ -10,7 +10,7 @@
   */
 
 @media screen {
-  .before-sprinkling .PageFilter,
+  html.before-sprinkling .PageFilter,
   .PageFilter[data-is-seen="false"] {
     opacity: 0;
     transform: translateY(200px);

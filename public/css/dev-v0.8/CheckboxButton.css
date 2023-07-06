@@ -43,7 +43,7 @@
     content: "";
 
     float: left;
-    margin-top: 0.125rem;
+    /* margin-top: 0.125rem; */
     margin-left: -2.25rem;
     width: 1.25rem;
     height: 1.25rem;
@@ -97,6 +97,9 @@
     --Toggler--label--color: var(--color-suld-200);
 
     opacity: 0.5;
+  }
+  .CheckboxButton__input[class][readonly] + .CheckboxButton__label {
+    opacity: 1;
   }
   .CheckboxButton__input[class]:disabled + .CheckboxButton__label::before {
     border-color: var(--color-suld-100);
@@ -376,7 +379,7 @@
     content: "";
 
     float: left;
-    margin-top: 0.125rem;
+    /* margin-top: 0.125rem; */
     margin-left: -2.25rem;
     width: 1.25rem;
     height: 1.25rem;
@@ -432,6 +435,9 @@
     --Toggler--label--color: var(--color-suld-200);
 
     opacity: 0.5;
+  }
+  .RadioButton__input[class][readonly] + .RadioButton__label {
+    opacity: 1;
   }
   .RadioButton__input[class]:disabled + .RadioButton__label::before {
     border-color: var(--color-suld-100);

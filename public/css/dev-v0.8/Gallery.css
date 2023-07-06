@@ -7,7 +7,7 @@
     padding-bottom: var(--CarouselStepper--height);
   }
 
-  .before-sprinkling .Gallery,
+  html.before-sprinkling .Gallery,
   .Gallery[data-is-seen="false"] {
     opacity: 0;
     transform: translateY(200px);

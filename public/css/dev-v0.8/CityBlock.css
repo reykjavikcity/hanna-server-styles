@@ -3,7 +3,7 @@
     ButtonTertiary
   */
 @media screen {
-  .before-sprinkling .CityBlock,
+  html.before-sprinkling .CityBlock,
   .CityBlock[data-is-seen="false"] {
     opacity: 0;
     transform: translateY(200px);

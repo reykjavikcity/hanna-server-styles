@@ -1,5 +1,5 @@
 @media screen {
-  .before-sprinkling .IslandBlock,
+  html.before-sprinkling .IslandBlock,
   .IslandBlock[data-is-seen="false"] {
     opacity: 0;
     transform: translateY(200px);

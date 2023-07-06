@@ -1,0 +1,176 @@
+/*!@deps
+    Tagpill
+    FormField
+    TextInput
+    Checkbox
+  */
+
+.Multiselect__input {
+  height: auto;
+  min-height: var(--FormField--input--height);
+  padding-right: var(--space-4);
+  flex-flow: row wrap;
+}
+
+.Multiselect__input[data-sprinkled]::after {
+  display: inline-block;
+  text-indent: 0;
+  text-align: center;
+  vertical-align: top;
+  /* iconFontStyling*/
+  font-family: icons, Esja, Helvetica, Arial, sans-serif;
+  speak: none; /* speak property is deprecated*/
+  font-weight: normal;
+  font-style: normal;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0;
+  content: var(--icon--chevron-down);
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 1.25rem;
+  pointer-events: none;
+  margin: auto;
+  color: var(--FormField--input--border-color);
+  transition: all 200ms ease-in;
+  font-size: 1rem;
+  height: 1em;
+  line-height: 1em;
+}
+.Multiselect__input--open[data-sprinkled]::after {
+  transform: scaleY(-1);
+}
+
+.Multiselect__toggler {
+  color: var(--FormField--input--color-placeholder);
+}
+
+:not(.Multiselect__input--open) > .Multiselect__search,
+:not(.Multiselect__input--open) > .Multiselect__toggler {
+  position: absolute;
+  z-index: 1;
+}
+
+.FormField--focused > * > .Multiselect__search,
+.FormField--focused > * > .Multiselect__toggler {
+}
+
+html.before-sprinkling
+  .Multiselect__input:not([data-sprinkled])
+  > .Multiselect__choices {
+  display: none;
+}
+
+.Multiselect__input--open > .Multiselect__choices {
+  position: absolute;
+  top: 100%;
+  margin-top: 1px;
+  left: -1px;
+  right: -1px;
+  width: auto;
+  max-height: 500px;
+  overflow-y: auto;
+  background: var(--color-white);
+  box-shadow: 0px 60px 120px rgba(0, 0, 0, 0.08),
+    0px 30px 60px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--color-suld-100);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  z-index: var(--zindex--overlay);
+}
+
+:not(.Multiselect__input--open) > * > .Multiselect__currentvalues {
+  line-height: 1;
+  padding-top: var(--space-1);
+  margin-bottom: -2px;
+}
+.FormField--small
+  > :not(.Multiselect__input--open)
+  > *
+  > .Multiselect__currentvalues {
+  margin-top: -2px;
+  margin-bottom: -4px;
+}
+.Multiselect__input--open > * > .Multiselect__currentvalues {
+  padding: var(--space-1) 0 0 var(--space-2);
+}
+.Multiselect__input--open > * > .Multiselect__currentvalues::after {
+  content: "";
+  display: block;
+  margin-top: var(--space-0_5);
+  margin-right: var(--space-2);
+  border-bottom: var(--border-default);
+}
+
+/* prettier-ignore */
+.Multiselect--nowrap > :not(.Multiselect__input--open) > * > .Multiselect__currentvalues {
+    padding-right: var(--space-1);
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+
+  }
+.Multiselect--nowrap
+  > :not(.Multiselect__input--open)
+  > *
+  > .Multiselect__currentvalues::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+
+  right: 0;
+  width: 2em;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    #fff 100%
+  );
+}
+
+.Multiselect__currentvalues > .TagPill {
+  margin-bottom: var(--space-1);
+  --TagPill--background: rgba(199, 203, 208, 0.25);
+}
+:not(.Multiselect__input--open) > * > .Multiselect__currentvalues > .TagPill {
+  margin-right: var(--space-1);
+}
+.FormField--invalid > * > * > .Multiselect__currentvalues > .TagPill {
+  --TagPill--color: var(--color-heidmork-100);
+}
+
+.Multiselect__options:not([aria-expanded]) {
+  padding: var(--space-1) 0;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0 var(--space-4);
+}
+
+.Multiselect__option[class] {
+  margin: 0;
+}
+
+.Multiselect__option:hover {
+  /* background-color: var(--color-suld-50);*/
+}
+
+[aria-expanded] > .Multiselect__option > .Checkbox__label {
+  padding-top: var(--space-2);
+  padding-right: var(--space-2);
+  padding-bottom: var(--space-2);
+  border-left: var(--space-2) solid transparent;
+  width: 100%;
+}
+
+.Multiselect__option--focused {
+  background-color: var(--color-suld-50);
+}
+
+.Multiselect__noresults {
+  font: var(--font-button);
+  font-weight: var(--font-weight--bold);
+  padding: var(--space-2) var(--space-2);
+}

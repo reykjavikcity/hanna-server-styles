@@ -1,5 +1,5 @@
 @media screen {
-  .before-sprinkling .IslandPageBlock,
+  html.before-sprinkling .IslandPageBlock,
   .IslandPageBlock[data-is-seen="false"] {
     opacity: 0;
     transform: translateY(200px);
@@ -63,6 +63,11 @@
   @media (min-width: 760px) {
     .IslandPageBlock__image {
       width: calc(var(--grid-6-6) + var(--grid-0-1));
+    }
+  }
+  @media (min-width: 760px) {
+    .IslandPageBlock--align--right > .IslandPageBlock__image {
+      width: calc(var(--grid-6-6) + 0.5 * var(--grid-0-1));
     }
   }
 

@@ -4,7 +4,7 @@
   */
 
 @media screen {
-  .before-sprinkling .LabeledTextBlock,
+  html.before-sprinkling .LabeledTextBlock,
   .LabeledTextBlock[data-is-seen="false"] {
     opacity: 0;
     transform: translateY(200px);

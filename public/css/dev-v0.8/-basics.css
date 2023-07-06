@@ -45,7 +45,7 @@
   /**/
 
 :root {
-  --cssVersion: "0.8.78";
+  --cssVersion: "0.8.79";
   --browser-scrollbar-width: 16px;
   --bp-w-phone: 320px;
   --bp-w-phablet: 480px;
@@ -1463,11 +1463,11 @@ tbody > * > td {
   margin: 0;
 }
 
-.before-sprinkling [data-seen-effect=""],
+html.before-sprinkling [data-seen-effect=""],
 [data-seen-effect=""][data-is-seen="false"],
-.before-sprinkling [data-seen-effect="true"],
+html.before-sprinkling [data-seen-effect="true"],
 [data-seen-effect="true"][data-is-seen="false"],
-.before-sprinkling [data-seen-effect="fadeup"],
+html.before-sprinkling [data-seen-effect="fadeup"],
 [data-seen-effect="fadeup"][data-is-seen="false"] {
   opacity: 0;
   transform: translateY(200px);
@@ -1490,7 +1490,7 @@ tbody > * > td {
 
   transition-property: opacity, transform;
 }
-.before-sprinkling [data-seen-effect="fadein"],
+html.before-sprinkling [data-seen-effect="fadein"],
 [data-seen-effect="fadein"][data-is-seen="false"] {
   opacity: 0;
 }
@@ -1503,7 +1503,7 @@ tbody > * > td {
 
   transition-property: opacity, transform;
 }
-.before-sprinkling [data-seen-effect="fadeleft"],
+html.before-sprinkling [data-seen-effect="fadeleft"],
 [data-seen-effect="fadeleft"][data-is-seen="false"] {
   opacity: 0;
   transform: translateX(-200px);

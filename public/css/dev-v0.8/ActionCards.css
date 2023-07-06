@@ -1,5 +1,5 @@
 @media screen {
-  .before-sprinkling .ActionCards,
+  html.before-sprinkling .ActionCards,
   .ActionCards[data-is-seen="false"] {
     opacity: 0;
     transform: translateY(200px);

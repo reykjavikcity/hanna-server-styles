@@ -3,7 +3,7 @@
     efnistakn
   */
 @media screen {
-  .before-sprinkling .FeatureList,
+  html.before-sprinkling .FeatureList,
   .FeatureList[data-is-seen="false"] {
     opacity: 0;
     transform: translateY(200px);

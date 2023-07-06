@@ -118,7 +118,7 @@
     scroll-snap-align: start;
   }
 
-  .before-sprinkling .ArticleCarousel,
+  html.before-sprinkling .ArticleCarousel,
   .ArticleCarousel[data-is-seen="false"] {
     opacity: 0;
     transform: translateY(200px);

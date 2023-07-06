@@ -14,8 +14,6 @@
     display: none; /* ok if aria-label/aria-labelled by is used!*/
   }
   .MainMenu__item--home[class] {
-    position: absolute;
-
     right: 9999px;
     left: auto;
   }
@@ -23,8 +21,6 @@
   .MainMenu__item--home[class] a:focus,
   .MainMenu__item--home[class] a:active,
   .MainMenu__item--home[class] button:focus {
-    position: absolute;
-
     right: -9999px;
 
     z-index: var(--zindex--sr-only);
@@ -333,7 +329,7 @@
     z-index: var(--zindex--header);
     top: 0;
     right: 0;
-    left: 25.82781456953642%;
+    left: var(--grid-3-3);
     height: var(--Layout__header-height);
     padding-bottom: 0.625rem;
     margin-right: calc(-3.0927835051546393vw + 22.309278350515463px);

@@ -20,7 +20,7 @@
   /* transition specifics*/
   /* transition specifics*/
 
-  .before-sprinkling .GridBlocks > .GridBlocks__item,
+  html.before-sprinkling .GridBlocks > .GridBlocks__item,
   .GridBlocks[data-is-seen="false"] > .GridBlocks__item {
     opacity: 0;
     transform: translateY(200px);

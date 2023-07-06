@@ -10,7 +10,7 @@
     align-items: center;
   }
 
-  .before-sprinkling .RowBlock > .RowBlockColumn,
+  html.before-sprinkling .RowBlock > .RowBlockColumn,
   .RowBlock[data-is-seen="false"] > .RowBlockColumn {
     opacity: 0;
     transform: translateY(200px);

@@ -72,6 +72,18 @@
     color: var(--color-faxafloi-100);
   }
 
+  .react-datepicker__aria-live {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    opacity: 0.00001;
+    pointer-events: none;
+
+    margin: -1px;
+  }
+
   /* The popper*/
   .react-datepicker-popper {
     z-index: var(--zindex--overlay);

@@ -154,7 +154,7 @@
     margin-bottom: 0;
   }
 
-  .before-sprinkling .TextBlock,
+  html.before-sprinkling .TextBlock,
   .TextBlock[data-is-seen="false"] {
     opacity: 0;
     transform: translateY(200px);
@@ -172,7 +172,7 @@
     transition-property: opacity, transform;
   }
 
-  .before-sprinkling [data-is-seen] .TextBlock,
+  html.before-sprinkling [data-is-seen] .TextBlock,
   [data-is-seen] .TextBlock[data-is-seen="false"] {
     opacity: 1;
     transform: none;
@@ -370,7 +370,7 @@
 
 /* ===========================================================================*/
 
-.before-sprinkling .PageHeading,
+html.before-sprinkling .PageHeading,
 .PageHeading[data-is-seen="false"] {
   opacity: 0;
   transform: translateY(200px);
@@ -388,7 +388,7 @@
   transition-property: opacity, transform;
 }
 
-.before-sprinkling [data-is-seen] .PageHeading,
+html.before-sprinkling [data-is-seen] .PageHeading,
 [data-is-seen] .PageHeading[data-is-seen="false"] {
   opacity: 1;
   transform: none;
@@ -514,7 +514,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   content: var(--WARNING--message) !important;
 }
 
-.before-sprinkling .SubHeading,
+html.before-sprinkling .SubHeading,
 .SubHeading[data-is-seen="false"] {
   opacity: 0;
   transform: translateY(200px);
@@ -532,7 +532,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   transition-property: opacity, transform;
 }
 
-.before-sprinkling [data-is-seen] .SubHeading,
+html.before-sprinkling [data-is-seen] .SubHeading,
 [data-is-seen] .SubHeading[data-is-seen="false"] {
   opacity: 1;
   transform: none;

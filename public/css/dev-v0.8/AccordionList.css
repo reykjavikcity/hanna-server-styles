@@ -1,5 +1,5 @@
 @media screen {
-  .before-sprinkling .AccordionList,
+  html.before-sprinkling .AccordionList,
   .AccordionList[data-is-seen="false"] {
     opacity: 0;
     transform: translateY(200px);
