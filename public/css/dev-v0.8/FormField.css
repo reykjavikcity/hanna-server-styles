@@ -3,7 +3,7 @@
     --FormField--input--border-color: var(--color-suld-100);
     --FormField--input--border-radius: 0.1875rem;
     --FormField--input--border-inner-radius: 0.125rem;
-    --FormField--input--height: 3.5rem;
+    --FormField--input--height: var(--space-7);
     --FormField--input--height-inner: calc(
       var(--FormField--input--height) - 2px
     );

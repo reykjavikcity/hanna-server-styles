@@ -21,7 +21,7 @@
   --Button--backgroundColor: var(--Button--color);
   --Button--backgroundColor--active: var(--Button--color--active);
   --Button--border: 0px;
-  --Button--height: var(--space-8);
+  --Button--height: var(--space-7);
   --Button--iconOutdent: var(--space-0_5--neg);
   --Button--iconSpace: var(--space-1);
 
