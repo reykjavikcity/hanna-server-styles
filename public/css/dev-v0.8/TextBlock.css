@@ -154,7 +154,7 @@
     margin-bottom: 0;
   }
 
-  html.before-sprinkling .TextBlock,
+  .before-sprinkling .TextBlock,
   .TextBlock[data-is-seen="false"] {
     opacity: 0;
     transform: translateY(200px);
@@ -172,7 +172,7 @@
     transition-property: opacity, transform;
   }
 
-  html.before-sprinkling [data-is-seen] .TextBlock,
+  .before-sprinkling [data-is-seen] .TextBlock,
   [data-is-seen] .TextBlock[data-is-seen="false"] {
     opacity: 1;
     transform: none;
@@ -370,7 +370,7 @@
 
 /* ===========================================================================*/
 
-html.before-sprinkling .PageHeading,
+.before-sprinkling .PageHeading,
 .PageHeading[data-is-seen="false"] {
   opacity: 0;
   transform: translateY(200px);
@@ -388,7 +388,7 @@ html.before-sprinkling .PageHeading,
   transition-property: opacity, transform;
 }
 
-html.before-sprinkling [data-is-seen] .PageHeading,
+.before-sprinkling [data-is-seen] .PageHeading,
 [data-is-seen] .PageHeading[data-is-seen="false"] {
   opacity: 1;
   transform: none;
@@ -514,7 +514,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   content: var(--WARNING--message) !important;
 }
 
-html.before-sprinkling .SubHeading,
+.before-sprinkling .SubHeading,
 .SubHeading[data-is-seen="false"] {
   opacity: 0;
   transform: translateY(200px);
@@ -532,7 +532,7 @@ html.before-sprinkling .SubHeading,
   transition-property: opacity, transform;
 }
 
-html.before-sprinkling [data-is-seen] .SubHeading,
+.before-sprinkling [data-is-seen] .SubHeading,
 [data-is-seen] .SubHeading[data-is-seen="false"] {
   opacity: 1;
   transform: none;

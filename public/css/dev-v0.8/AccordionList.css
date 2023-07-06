@@ -1,5 +1,5 @@
 @media screen {
-  html.before-sprinkling .AccordionList,
+  .before-sprinkling .AccordionList,
   .AccordionList[data-is-seen="false"] {
     opacity: 0;
     transform: translateY(200px);
@@ -285,7 +285,7 @@
     margin: 0;
   }
 
-  html.before-sprinkling
+  .before-sprinkling
     .AccordionList__item:not([data-sprinkled])
     > .AccordionList__content {
     display: none;

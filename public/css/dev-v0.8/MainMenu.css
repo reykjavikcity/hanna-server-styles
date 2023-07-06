@@ -92,7 +92,7 @@
 /* ===========================================================================*/
 
 @media (max-width: 979px) {
-  html.before-sprinkling .MainMenu:not([data-sprinkled]) {
+  .before-sprinkling .MainMenu:not([data-sprinkled]) {
     display: none;
   }
   .MainMenu {
@@ -122,7 +122,7 @@
   .MainMenu[data-sprinkled] {
     display: none;
   }
-  html.menu-is-active .MainMenu {
+  .menu-is-active .MainMenu {
     display: flex;
     position: fixed;
     /* Technically redundant but makes the component more resilient to extraneous div wrappers */
@@ -144,18 +144,18 @@
     );
   }
 
-  html.menu-is-active:not(html.menu-is-open) .MainMenu, /* @deprecated ('htmlCl.menuIsOpen' is always set now) Remove this selector in v0.9*/
-	  html.menu-is-closed .MainMenu {
+  .menu-is-active:not(.menu-is-open) .MainMenu, /* @deprecated ('htmlCl.menuIsOpen' is always set now) Remove this selector in v0.9*/
+	  .menu-is-closed .MainMenu {
     visibility: hidden;
     opacity: 0;
     margin-top: -100vh;
   }
-  html.menu-is-open {
+  .menu-is-open {
     --Layout__header-logo-color: var(--color-suld-0);
     --Layout__header-color: var(--color-suld-0);
     --Layout__header-backgroundColor: var(--color-faxafloi-100);
   }
-  html.menu-is-open .MainMenu {
+  .menu-is-open .MainMenu {
     transition-delay: 0ms;
 
     visibility: visible;
@@ -380,7 +380,7 @@
   .MainMenu__item:not(.MainMenu__separator ~ *) {
     --MainMenu--item-padding: 0.625rem;
   }
-  html.menu-is-open .MainMenu__item:not(.MainMenu__separator ~ *),
+  .menu-is-open .MainMenu__item:not(.MainMenu__separator ~ *),
   html[data-mega-panel-active] .MainMenu__item:not(.MainMenu__separator ~ *) {
     --link-color--hover: var(--color-suld-0);
 
@@ -431,7 +431,7 @@
     transition-duration: 0ms;
   }
 
-  html.before-sprinkling *:not([data-sprinkled]) > .MainMenu__panelsWrap {
+  .before-sprinkling *:not([data-sprinkled]) > .MainMenu__panelsWrap {
     display: none;
   }
 

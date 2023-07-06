@@ -3,7 +3,7 @@
     ButtonTertiary
   */
 @media screen {
-  html.before-sprinkling .HeroBlock,
+  .before-sprinkling .HeroBlock,
   .HeroBlock[data-is-seen="false"] {
     opacity: 0;
     transform: translateY(200px);

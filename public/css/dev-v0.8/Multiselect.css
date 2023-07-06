@@ -58,7 +58,7 @@
 .FormField--focused > * > .Multiselect__toggler {
 }
 
-html.before-sprinkling
+.before-sprinkling
   .Multiselect__input:not([data-sprinkled])
   > .Multiselect__choices {
   display: none;

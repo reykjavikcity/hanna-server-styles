@@ -3,7 +3,7 @@
   */
 
 @media screen {
-  html.before-sprinkling .TableWrapper,
+  .before-sprinkling .TableWrapper,
   .TableWrapper[data-is-seen="false"] {
     opacity: 0;
     transform: translateY(200px);
@@ -23,7 +23,7 @@
 
   /* @deprecated  Remove this mixin in v0.9*/
 
-  html.before-sprinkling [data-is-seen] .TableWrapper,
+  .before-sprinkling [data-is-seen] .TableWrapper,
   [data-is-seen] .TableWrapper[data-is-seen="false"] {
     opacity: 1;
     transform: none;

@@ -1,4 +1,4 @@
-html.before-sprinkling .Carousel:not([data-sprinkled]) {
+.before-sprinkling .Carousel:not([data-sprinkled]) {
   padding-bottom: var(--CarouselStepper--height);
 }
 .Carousel__itemlist {

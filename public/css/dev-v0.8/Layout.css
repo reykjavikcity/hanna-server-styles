@@ -157,24 +157,24 @@
     transition-property: background-color, box-shadow;
   }
 
-  html.menu-is-open {
+  .menu-is-open {
     overflow-y: hidden;
   }
-  html.menu-is-open > body {
+  .menu-is-open > body {
     padding-right: var(--grid-margin);
   }
 
-  html.menu-is-open .Layout__alerts {
+  .menu-is-open .Layout__alerts {
     max-height: 0;
   }
 
-  html.menu-is-open .Layout__header {
+  .menu-is-open .Layout__header {
     position: fixed;
     top: 0;
     left: 0;
     right: var(--browser-scrollbar-width);
   }
-  html.menu-is-open .Layout__header {
+  .menu-is-open .Layout__header {
     transition-duration: 400ms;
   }
 
@@ -202,7 +202,7 @@
     --open-icon-color: _inherit;
     --close-icon-color: transparent;
   }
-  html.menu-is-open .Layout__header__skiplink {
+  .menu-is-open .Layout__header__skiplink {
     color: var(--color-suld-0);
     --open-icon-color: transparent;
     --close-icon-color: _inherit;
@@ -249,11 +249,11 @@
     color: var(--close-icon-color);
   }
 
-  html.menu-is-active .Layout__nav > * {
+  .menu-is-active .Layout__nav > * {
     z-index: calc(var(--zindex--header) - 1);
   }
   /* Page content fadeout during menu open*/
-  html.menu-is-active .Layout__nav::before {
+  .menu-is-active .Layout__nav::before {
     content: "";
     position: fixed;
     z-index: calc(var(--zindex--header) - 1);
@@ -269,7 +269,7 @@
       visibility 0ms (400ms + 200ms)
     );
   }
-  html.menu-is-open .Layout__nav::before {
+  .menu-is-open .Layout__nav::before {
     transition-delay: 0ms;
     opacity: 1;
     visibility: visible;

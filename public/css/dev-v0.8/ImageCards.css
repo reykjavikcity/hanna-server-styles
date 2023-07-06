@@ -23,7 +23,7 @@
     margin-bottom: calc(5.387931034482758% + 44.913793103448285px);
   }
 
-  html.before-sprinkling .ImageCards .ImageCards__summary,
+  .before-sprinkling .ImageCards .ImageCards__summary,
   .ImageCards[data-is-seen="false"] .ImageCards__summary {
     opacity: 0;
     transform: translateY(200px);
@@ -41,7 +41,7 @@
     transition-property: opacity, transform;
   }
 
-  html.before-sprinkling .ImageCards .ImageCards__item,
+  .before-sprinkling .ImageCards .ImageCards__item,
   .ImageCards[data-is-seen="false"] .ImageCards__item {
     opacity: 0;
   }

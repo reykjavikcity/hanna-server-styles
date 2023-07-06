@@ -22,10 +22,10 @@
     }
   }
 
-  html.before-sprinkling .ContactBubble__wrapper:not([data-show]) {
+  .before-sprinkling .ContactBubble__wrapper:not([data-show]) {
     display: none;
   }
-  html.menu-is-open .ContactBubble__wrapper,
+  .menu-is-open .ContactBubble__wrapper,
   .ContactBubble__wrapper[data-show="false"] {
     opacity: 0;
     visibility: hidden;
@@ -161,7 +161,7 @@
 
   /* ---------------------------------------------------------------------------*/
 
-  html.before-sprinkling .ContactBubble:not([data-sprinkled]) {
+  .before-sprinkling .ContactBubble:not([data-sprinkled]) {
     display: none;
   }
   .ContactBubble {
