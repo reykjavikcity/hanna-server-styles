@@ -4,6 +4,12 @@
 
 - ... <!-- Add new lines here. -->
 
+## 0.8.45
+
+_2023-07-06_
+
+- fix: Temporarily revert "base import URL" resolution changes
+
 ## 0.8.44
 
 _2023-07-06_
@@ -12,7 +18,7 @@ _2023-07-06_
 
 ## 0.8.43
 
-_2023-05-19_
+_2023-05-05_
 
 - feat: Add `version` property to `window.Hanna` object
 - feat: Publish sprinkle scripts on styles.reykjavik.is/sprinkles
