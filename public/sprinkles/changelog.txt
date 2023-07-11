@@ -4,21 +4,23 @@
 
 - ... <!-- Add new lines here. -->
 
-## 0.8.45
+## 0.8.46
 
-_2023-07-06_
+_2023-07-11_
 
-- fix: Temporarily revert "base import URL" resolution changes
-
-## 0.8.44
-
-_2023-07-06_
-
+- feat: Upgrade `sitewideAlerts` to support renamed property `renderedAlert`
 - feat: Make `loadSprinkles`' "base inport URL" resolution more resilient
+
+## 0.8.44 – 0.8.45
+
+_2023-07-06_
+
+- feat: ~~Make `loadSprinkles`' "base inport URL" resolution more resilient~~
+  (Temporarily reverted)
 
 ## 0.8.43
 
-_2023-05-05_
+_2023-05-19_
 
 - feat: Add `version` property to `window.Hanna` object
 - feat: Publish sprinkle scripts on styles.reykjavik.is/sprinkles
