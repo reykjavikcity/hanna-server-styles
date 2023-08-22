@@ -159,7 +159,7 @@
     margin-bottom: 1rem;
     margin-left: var(--grid-column--neg);
 
-    margin-right: calc(-1.4312977099236641vw + -4.419847328244277px);
+    margin-right: calc(-1.4312977099236641vw - 4.419847328244277px);
     padding-right: calc(1.5267175572519083vw + 3.1145038167938957px);
     transition: padding-right 200ms ease-in;
   }

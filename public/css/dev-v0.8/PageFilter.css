@@ -56,7 +56,7 @@
   .PageFilter::before {
     border-left: calc(1.5267175572519083vw + 3.1145038167938957px) solid
       var(--theme-color-primary);
-    margin-bottom: calc(-3.4482758620689653% + -22.344827586206897px);
+    margin-bottom: calc(-3.4482758620689653% - 22.344827586206897px);
     pointer-events: none;
   }
 
@@ -86,7 +86,7 @@
     flex-flow: row wrap;
     align-items: flex-start;
     margin-top: 1.25rem;
-    margin-bottom: calc(2.586206896551724% + -7.241379310344826px);
+    margin-bottom: calc(2.586206896551724% - 7.241379310344826px);
     width: 100%;
     max-width: 936px;
   }
@@ -106,7 +106,7 @@
 
   .PageFilter__buttons {
     margin-top: 1.25rem;
-    margin-bottom: calc(2.586206896551724% + -7.241379310344826px);
+    margin-bottom: calc(2.586206896551724% - 7.241379310344826px);
   }
 
   .PageFilter__buttons > .ButtonTertiary:last-child,
@@ -128,6 +128,6 @@
     left: 0;
     right: 0;
     border-top: 1px solid currentColor;
-    margin-top: calc(-3.0172413793103448% + -3.551724137931032px);
+    margin-top: calc(-3.0172413793103448% - 3.551724137931032px);
   }
 }

@@ -29,7 +29,7 @@
   .IslandBlock__content {
     display: block;
     margin: 0 var(--grid-margin--neg);
-    padding: calc(10.775862068965516% + -10.17241379310343px) var(--grid-margin);
+    padding: calc(10.775862068965516% - 10.17241379310343px) var(--grid-margin);
   }
   .IslandBlock__content {
     background-color: var(--color-suld-25);
@@ -212,12 +212,12 @@
   .IslandBlock--align--left > .IslandBlock__content:first-child,
   .IslandBlock--align--right > .IslandBlock__content:last-child,
   .IslandBlock--align--right > .IslandBlock__image {
-    margin-right: calc(13.636363636363635vw + -43.636363636363626px);
+    margin-right: calc(13.636363636363635vw - 43.636363636363626px);
   }
   .IslandBlock--align--right > .IslandBlock__content:first-child,
   .IslandBlock--align--left > .IslandBlock__content:last-child,
   .IslandBlock--align--left > .IslandBlock__image {
-    margin-left: calc(13.636363636363635vw + -43.636363636363626px);
+    margin-left: calc(13.636363636363635vw - 43.636363636363626px);
   }
   .IslandBlock__image {
     min-height: calc(43.18181818181818vw + 71.81818181818181px);

@@ -45,7 +45,7 @@
   /**/
 
 :root {
-  --cssVersion: "0.8.79";
+  --cssVersion: "0.8.80";
   --browser-scrollbar-width: 16px;
   --bp-w-phone: 320px;
   --bp-w-phablet: 480px;
@@ -314,37 +314,37 @@
   --zindex--Bling: -10;
 
   --grid-margin: calc(5.7251908396946565vw + 1.6793893129771078px);
-  --grid-margin--neg: calc(-5.7251908396946565vw + -1.6793893129771078px);
+  --grid-margin--neg: calc(-1 * var(--grid-margin));
   --grid-margin--right: calc(
     var(--grid-margin) - var(--browser-scrollbar-width)
   );
   --grid-margin--right--neg: calc(
-    var(--grid-margin--neg) + var(--browser-scrollbar-width)
+    -1 * var(--grid-margin) + var(--browser-scrollbar-width)
   );
-  --grid-0-1: calc(2.9321065669076387vw + -0.11121783529650031px);
-  --grid-1: calc(4.6913705070522225vw + -0.17794853647438913px);
-  --grid-1-1: calc(7.623477073959862vw + -0.28916637177088944px);
-  --grid-2: calc(12.314847581012083vw + -0.4671149082452928px);
-  --grid-2-2: calc(15.246954147919723vw + -0.5783327435417789px);
-  --grid-3: calc(19.938324654971943vw + -0.7562812800161964px);
-  --grid-3-3: calc(22.870431221879585vw + -0.8674991153126825px);
-  --grid-4: calc(27.5618017289318vw + -1.0454476517870148px);
-  --grid-4-4: calc(30.493908295839447vw + -1.1566654870835578px);
-  --grid-5: calc(35.185278802891666vw + -1.334614023557947px);
-  --grid-5-5: calc(38.11738536979931vw + -1.4458318588544898px);
-  --grid-6: calc(42.80875587685152vw + -1.6237803953288221px);
-  --grid-6-6: calc(45.74086244375917vw + -1.734998230625365px);
-  --grid-7: calc(50.43223295081138vw + -1.9129467670996974px);
-  --grid-7-7: calc(53.36433951771903vw + -2.024164602396354px);
-  --grid-8: calc(58.055710024771244vw + -2.2021131388706863px);
-  --grid-8-8: calc(60.98781659167889vw + -2.3133309741671155px);
-  --grid-9: calc(65.67918709873109vw + -2.491279510641448px);
-  --grid-9-9: calc(68.61129366563875vw + -2.6024973459381044px);
-  --grid-10: calc(73.30266417269097vw + -2.7804458824124367px);
-  --grid-10-10: calc(76.23477073959862vw + -2.8916637177089797px);
-  --grid-11: calc(80.92614124665083vw + -3.069612254183312px);
-  --grid-11-11: calc(83.85824781355848vw + -3.1808300894799686px);
-  --grid-12: calc(88.54961832061069vw + -3.358778625954301px);
+  --grid-0-1: calc(2.9321065669076387vw - 0.11121783529650031px);
+  --grid-1: calc(4.6913705070522225vw - 0.17794853647438913px);
+  --grid-1-1: calc(7.623477073959862vw - 0.28916637177088944px);
+  --grid-2: calc(12.314847581012083vw - 0.4671149082452928px);
+  --grid-2-2: calc(15.246954147919723vw - 0.5783327435417789px);
+  --grid-3: calc(19.938324654971943vw - 0.7562812800161964px);
+  --grid-3-3: calc(22.870431221879585vw - 0.8674991153126825px);
+  --grid-4: calc(27.5618017289318vw - 1.0454476517870148px);
+  --grid-4-4: calc(30.493908295839447vw - 1.1566654870835578px);
+  --grid-5: calc(35.185278802891666vw - 1.334614023557947px);
+  --grid-5-5: calc(38.11738536979931vw - 1.4458318588544898px);
+  --grid-6: calc(42.80875587685152vw - 1.6237803953288221px);
+  --grid-6-6: calc(45.74086244375917vw - 1.734998230625365px);
+  --grid-7: calc(50.43223295081138vw - 1.9129467670996974px);
+  --grid-7-7: calc(53.36433951771903vw - 2.024164602396354px);
+  --grid-8: calc(58.055710024771244vw - 2.2021131388706863px);
+  --grid-8-8: calc(60.98781659167889vw - 2.3133309741671155px);
+  --grid-9: calc(65.67918709873109vw - 2.491279510641448px);
+  --grid-9-9: calc(68.61129366563875vw - 2.6024973459381044px);
+  --grid-10: calc(73.30266417269097vw - 2.7804458824124367px);
+  --grid-10-10: calc(76.23477073959862vw - 2.8916637177089797px);
+  --grid-11: calc(80.92614124665083vw - 3.069612254183312px);
+  --grid-11-11: calc(83.85824781355848vw - 3.1808300894799686px);
+  --grid-12: calc(88.54961832061069vw - 3.358778625954301px);
   --grid-gutter: var(--grid-0-1);
   --grid-column: var(--grid-1);
   --grid-0-1--neg: calc(-2.9321065669076387vw + 0.11121783529650031px);
@@ -404,6 +404,7 @@
   --space-7: 3.5rem;
   --space-8: 4rem;
   --space-9: 4.5rem;
+  --space-10: 5rem;
   --space-0_5: 0.25rem;
   --space-1_5: 0.75rem;
   --space-1--neg: -0.5rem;
@@ -415,6 +416,7 @@
   --space-7--neg: -3.5rem;
   --space-8--neg: -4rem;
   --space-9--neg: -4.5rem;
+  --space-10--neg: -5rem;
   --space-0_5--neg: -0.25rem;
   --space-1_5--neg: -0.75rem;
   --component-vspace--small: calc(4.310344827586207% + 17.93103448275862px);
@@ -431,7 +433,7 @@
 
 @media (min-width: 980px) {
   :root {
-    --Layout__header-height: calc(10.309278350515463vw + -5.0309278350515285px);
+    --Layout__header-height: calc(10.309278350515463vw - 5.0309278350515285px);
   }
 }
 
@@ -446,6 +448,10 @@
   --MainMenu-background: var(--color-faxafloi-100);
   --border-default: 1px solid var(--color-suld-75);
   --border-dark: 1px solid var(--color-suld-150);
+  --boxShadow-subtle: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+  --boxShadow-hover: 0 12px 16px 0 rgba(0, 0, 0, 0.08);
+  --boxShadow-elevated: 0 30px 60px 0 rgba(0, 0, 0, 0.08),
+    0 60px 120px 0 rgba(0, 0, 0, 0.08);
 
   --Button--gapH: calc(1.5267175572519083vw + 11.114503816793896px);
   --Button--gapV: var(--space-2);

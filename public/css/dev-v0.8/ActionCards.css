@@ -51,22 +51,23 @@
     display: grid;
     grid-auto-flow: row;
     gap: var(--grid-gutter);
-    grid-template-columns: repeat(auto-fill, var(--grid-3));
+    grid-template-columns: repeat(auto-fill, var(--card-width));
+    --card-width: 100%;
   }
 
-  @media (max-width: 479px) {
-    .ActionCards__list {
-      grid-template-columns: 100%;
-    }
-  }
   @media (min-width: 480px) and (max-width: 759px) {
     .ActionCards__list {
-      grid-template-columns: repeat(auto-fill, var(--grid-6));
+      --card-width: var(--grid-6);
     }
   }
   @media (min-width: 760px) and (max-width: 979px) {
     .ActionCards__list {
-      grid-template-columns: repeat(auto-fill, var(--grid-4));
+      --card-width: var(--grid-4);
+    }
+  }
+  @media (min-width: 980px) {
+    .ActionCards__list {
+      --card-width: var(--grid-3);
     }
   }
   .ActionCards__item {
@@ -79,6 +80,7 @@
     /* NOTE: This intentionally doesn't reset the :hover style*/
     /* unless..*/
 
+    font: var(--font-bd-s);
     display: block;
     width: 100%;
     padding: 1.5rem 1.5rem 2rem 1.5rem;
@@ -89,10 +91,10 @@
   .ActionCards__card::after {
     content: "";
     display: block;
-    width: 2.5rem;
+    width: var(--space-5);
     height: 0.125rem;
     background: var(--Card-lineColor, currentColor);
-    margin-top: 1rem;
+    margin-top: var(--space-2);
     transition: width 200ms ease-in;
   }
 
@@ -107,12 +109,19 @@
 
   .ActionCards__card__title {
     font: var(--font-bd-l);
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+    font-weight: var(--font-weight--bold);
+  }
+  .ActionCards__card__title:last-child {
+    margin-bottom: var(--space-1);
+  }
+
+  .ActionCards__card__meta {
+    color: var(--color-suld-150);
+    margin-top: var(--space-1);
   }
 
   .ActionCards__card__summary {
-    font: var(--font-bd-s);
+    margin-top: var(--space-1);
   }
 
   .ActionCards__card {

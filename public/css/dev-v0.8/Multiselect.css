@@ -8,8 +8,29 @@
 .Multiselect__input {
   height: auto;
   min-height: var(--FormField--input--height);
-  padding-right: var(--space-4);
+  min-width: 98px; /* to approximately match an empty Selectbox */
+  padding-right: calc(var(--space-5) + var(--FormField--input--paddingH));
   flex-flow: row wrap;
+}
+
+.Multiselect__input[data-sprinkled]::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+  width: var(--space-7);
+  pointer-events: none;
+  background-image: linear-gradient(
+    -90deg,
+    var(--FormField--input--background-color) var(--space-4),
+    transparent 100%
+  );
+}
+.Multiselect--nowrap:not(.FormField--empty)
+  > .Multiselect__input[data-sprinkled]::before {
+  width: var(--space-9);
 }
 
 .Multiselect__input[data-sprinkled]::after {
@@ -17,21 +38,24 @@
   text-indent: 0;
   text-align: center;
   vertical-align: top;
-  /* iconFontStyling*/
+
   font-family: icons, Esja, Helvetica, Arial, sans-serif;
-  speak: none; /* speak property is deprecated*/
+  speak: none;
   font-weight: normal;
   font-style: normal;
   white-space: nowrap;
-  -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
+
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0;
   content: var(--icon--chevron-down);
 
   position: absolute;
+  z-index: 2;
   top: 0;
   bottom: 0;
-  right: 1.25rem;
+  right: var(--space-2);
+  width: var(--space-3);
   pointer-events: none;
   margin: auto;
   color: var(--FormField--input--border-color);
@@ -46,12 +70,15 @@
 
 .Multiselect__toggler {
   color: var(--FormField--input--color-placeholder);
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 :not(.Multiselect__input--open) > .Multiselect__search,
 :not(.Multiselect__input--open) > .Multiselect__toggler {
   position: absolute;
   z-index: 1;
+  width: calc(100% - 2 * var(--FormField--input--paddingH));
 }
 
 .FormField--focused > * > .Multiselect__search,
@@ -74,8 +101,7 @@
   max-height: 500px;
   overflow-y: auto;
   background: var(--color-white);
-  box-shadow: 0px 60px 120px rgba(0, 0, 0, 0.08),
-    0px 30px 60px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--boxShadow-elevated);
   border: 1px solid var(--color-suld-100);
   border-top: none;
   border-radius: 0 0 4px 4px;
@@ -86,6 +112,9 @@
   line-height: 1;
   padding-top: var(--space-1);
   margin-bottom: -2px;
+  overflow: hidden;
+  margin-right: var(--space-3--neg);
+  position: relative;
 }
 .FormField--small
   > :not(.Multiselect__input--open)
@@ -107,29 +136,8 @@
 
 /* prettier-ignore */
 .Multiselect--nowrap > :not(.Multiselect__input--open) > * > .Multiselect__currentvalues {
-    padding-right: var(--space-1);
     white-space: nowrap;
-    overflow: hidden;
-    position: relative;
-
   }
-.Multiselect--nowrap
-  > :not(.Multiselect__input--open)
-  > *
-  > .Multiselect__currentvalues::after {
-  content: "";
-  position: absolute;
-  top: 5px;
-  bottom: 5px;
-
-  right: 0;
-  width: 2em;
-  background-image: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    #fff 100%
-  );
-}
 
 .Multiselect__currentvalues > .TagPill {
   margin-bottom: var(--space-1);

@@ -1,5 +1,6 @@
 @media screen {
   .FormField {
+    --FormField--input--background-color: var(--color-suld-0);
     --FormField--input--border-color: var(--color-suld-100);
     --FormField--input--border-radius: 0.1875rem;
     --FormField--input--border-inner-radius: 0.125rem;
@@ -106,7 +107,7 @@
     position: relative;
     display: flex;
     width: 100%;
-    background-color: var(--color-suld-0);
+    background-color: var(--FormField--input--background-color);
     color: var(--FormField--input--color);
     border: 0.0625rem solid var(--FormField--input--border-color);
     transition: all 400ms ease-in;
@@ -140,9 +141,8 @@
   }
   .FormField--readonly > .FormField__input,
   .FormField__input[readonly] {
+    --FormField--input--background-color: var(--color-suld-50);
     --FormField--input--border-color: var(--color-suld-100);
-
-    background-color: var(--color-suld-50);
   }
   /* .FormField__input--focused[class],*/
   .FormField--focused > .FormField__input,
@@ -157,10 +157,10 @@
   :disabled .FormField__input,
   .FormField--disabled > .FormField__input,
   .FormField__input:disabled {
+    --FormField--input--background-color: var(--color-suld-50);
     --FormField--input--border-color: var(--color-suld-100);
 
     box-shadow: none;
-    background-color: var(--color-suld-50);
     opacity: 0.5;
   }
 
@@ -203,13 +203,14 @@
     text-indent: 0;
     text-align: center;
     vertical-align: top;
-    /* iconFontStyling*/
+
     font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none; /* speak property is deprecated*/
+    speak: none;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-    -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
+
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: 0;
     content: var(--icon--error);
@@ -265,26 +266,47 @@
   .Selectbox > .FormField__input--focused {
   }
 
+  /* // Same styling as Multiselect */
+  .Selectbox > .FormField__input::before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: 1px;
+    bottom: 1px;
+    right: 1px;
+    width: var(--space-7);
+    pointer-events: none;
+    background-image: linear-gradient(
+      -90deg,
+      var(--FormField--input--background-color) var(--space-4),
+      transparent 100%
+    );
+  }
+  /**/
+
   .Selectbox > .FormField__input::after {
     display: inline-block;
     text-indent: 0;
     text-align: center;
     vertical-align: top;
-    /* iconFontStyling*/
+
     font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none; /* speak property is deprecated*/
+    speak: none;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-    -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
+
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: 0;
     content: var(--icon--chevron-down);
 
     position: absolute;
+    z-index: 2;
     top: 0;
     bottom: 0;
-    right: 1.25rem;
+    right: var(--space-2);
+    width: var(--space-3);
     pointer-events: none;
     margin: auto;
     color: var(--FormField--input--border-color);
@@ -314,7 +336,7 @@
     /* white-space: nowrap;*/
     /* overflow: hidden;*/
     display: block;
-    margin-right: 3.125rem;
+    margin-right: var(--space-5);
   }
 
   .Selectbox > * > .FormField__input__value--empty {

@@ -121,13 +121,14 @@
     text-indent: 0;
     text-align: center;
     vertical-align: top;
-    /* iconFontStyling*/
+
     font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none; /* speak property is deprecated*/
+    speak: none;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-    -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
+
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: 0;
     content: var(--icon--chat);
@@ -246,10 +247,10 @@
       font: var(--font-hd-l);
       max-width: 9em; /* Makes for nice line-wrap in the text 'Hvað getum við 
  gert fyrir þig?' */
-      margin-bottom: calc(12.048192771084338vh + -33.831325301204814px);
+      margin-bottom: calc(12.048192771084338vh - 33.831325301204814px);
       margin-bottom: min(
         var(--space-8),
-        calc(12.048192771084338vh + -33.831325301204814px)
+        calc(12.048192771084338vh - 33.831325301204814px)
       );
     }
   }
@@ -359,13 +360,14 @@
       text-indent: 0;
       text-align: center;
       vertical-align: top;
-      /* iconFontStyling*/
+
       font-family: icons, Esja, Helvetica, Arial, sans-serif;
-      speak: none; /* speak property is deprecated*/
+      speak: none;
       font-weight: normal;
       font-style: normal;
       white-space: nowrap;
-      -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
+
+      -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       letter-spacing: 0;
       content: var(--icon--close);

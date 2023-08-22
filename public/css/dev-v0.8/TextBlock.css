@@ -420,7 +420,7 @@
 
 .PageHeading {
   font: var(--font-hd-l);
-  margin-top: calc(2.586206896551724% + -7.241379310344826px);
+  margin-top: calc(2.586206896551724% - 7.241379310344826px);
   margin-bottom: 0.625em;
 }
 .PageHeading--small {

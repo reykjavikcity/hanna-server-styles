@@ -24,7 +24,7 @@
   .CityBlock {
     display: flex;
     flex-flow: column-reverse;
-    margin-bottom: calc(14.00862068965517% + -9.224137931034477px);
+    margin-bottom: calc(14.00862068965517% - 9.224137931034477px);
   }
   .CityBlock__content {
     background-color: var(--theme-color-primary);

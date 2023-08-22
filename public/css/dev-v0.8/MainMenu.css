@@ -35,6 +35,17 @@
     white-space: nowrap;
   }
 
+  .MainMenu__item > :not(.MainMenu__link) {
+    margin: 0;
+    /*
+        without this elements with "width: max-content;"
+        **and**, it seems, complex (calc-based) padding or min-wdith
+        will cause Firefox (as of 117 at least) to expand the width of the
+        outer .MainMenu__item container.  Chrome does not do this.
+        Remove this once Firefox has got its act together
+      */
+    width: auto;
+  }
   .MainMenu__link {
     text-decoration: none;
     color: var(--link-color);
@@ -64,13 +75,14 @@
     text-indent: 0;
     text-align: center;
     vertical-align: top;
-    /* iconFontStyling*/
+
     font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none; /* speak property is deprecated*/
+    speak: none;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-    -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
+
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: 0;
 
@@ -309,7 +321,7 @@
 
 /* ===========================================================================*/
 /**/
-/* Desktop Menu*/
+/* Desktop (Top) Menu*/
 /**/
 /* ===========================================================================*/
 
@@ -332,7 +344,9 @@
     right: 0;
     left: var(--grid-3-3);
     height: var(--Layout__header-height);
-    padding-bottom: 0.625rem;
+    padding-bottom: calc(
+      var(--link-underline--thickness) + var(--link-underline-offset)
+    );
     margin-right: calc(-3.0927835051546393vw + 22.309278350515463px);
     margin-left: calc(-1.5463917525773196vw + 1.1546391752577314px);
     display: flex;
@@ -348,13 +362,11 @@
   }
 
   .MainMenu__item {
-    --MainMenu--item-padding: calc(
-      1.5463917525773196vw + -11.154639175257731px
-    );
+    --MainMenu--item-padding: calc(1.5463917525773196vw - 11.154639175257731px);
 
     color: var(--color-suld-200);
     white-space: nowrap;
-    margin: 0 calc(1.5463917525773196vw + -11.154639175257731px);
+    margin: 0 calc(1.5463917525773196vw - 11.154639175257731px);
   }
 
   @media (min-width: 1368px) {
@@ -368,7 +380,6 @@
   .MainMenu__item[aria-current="true"] {
     color: var(--color-faxafloi-100);
   }
-
   html[data-mega-panel-active] .MainMenu__item[aria-current="true"] {
     color: var(--color-suld-0);
   }
@@ -380,16 +391,38 @@
   .MainMenu__item:not(.MainMenu__separator ~ *) {
     --MainMenu--item-padding: 0.625rem;
   }
-  .menu-is-open .MainMenu__item:not(.MainMenu__separator ~ *),
   html[data-mega-panel-active] .MainMenu__item:not(.MainMenu__separator ~ *) {
     --link-color--hover: var(--color-suld-0);
 
     color: rgba(248, 248, 249, 0.7);
   }
 
+  html[data-mega-panel-active]
+    .MainMenu__item:not(.MainMenu__separator ~ *)
+    > .ButtonPrimary {
+    --Button--color: var(--color-suld-0);
+    --Button--color--active: var(--color-faxafloi-25);
+    --Button--textColor: var(--color-faxafloi-100);
+    --Button--textColor--active: var(--color-faxafloi-150);
+  }
+  html[data-mega-panel-active]
+    .MainMenu__item:not(.MainMenu__separator ~ *)
+    > .ButtonSecondary {
+    --Button--color: var(--color-suld-0);
+    --Button--color--active: var(--color-faxafloi-25);
+    --Button--backgroundColor: var(--color-faxafloi-100);
+    --Button--backgroundColor--active: var(--color-faxafloi-150);
+    --Button--textColor: var(--color-suld-0);
+    --Button--textColor--active: var(--color-faxafloi-25);
+  }
+
   .MainMenu__link {
     padding: 0.625rem var(--MainMenu--item-padding);
     padding-bottom: 0;
+    margin-top: calc(
+      var(--link-underline--thickness) + var(--link-underline-offset)
+    );
+    margin-bottom: 0.625rem;
   }
   .MainMenu__link[aria-pressed="true"] {
     color: var(--color-suld-0);
@@ -526,13 +559,14 @@
     text-indent: 0;
     text-align: center;
     vertical-align: top;
-    /* iconFontStyling*/
+
     font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none; /* speak property is deprecated*/
+    speak: none;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-    -webkit-font-smoothing: antialiased; /* fix for light text on dark background from beeing smudgy in webkit/mac*/
+
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: 0;
     content: var(--icon--close);

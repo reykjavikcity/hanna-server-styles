@@ -2,7 +2,7 @@
   .MiniMetrics {
     position: relative;
     margin-top: calc(19.396551724137932% + 5.689655172413808px);
-    margin-bottom: calc(24.78448275862069% + -9.396551724137964px);
+    margin-bottom: calc(24.78448275862069% - 9.396551724137964px);
     display: flex;
     flex-flow: column;
     justify-content: center;
