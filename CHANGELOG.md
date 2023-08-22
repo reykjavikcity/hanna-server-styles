@@ -4,6 +4,21 @@
 
 - ... <!-- Add new lines here. -->
 
+## 0.8.80
+
+_2023-09-01_
+
+- feat: Add styling for `.ArticleCards--large`
+- feat: Add styling for `.ActionCards__item__meta`
+- feat: Add `__item__summary` styling for `ArticleCards` and `ImageCards`
+- feat: Tweak `.MainMenu__items` styling to better tolerate custom children
+- feat: Add CSS variables `--boxShadow-(subtle|hover|elevated)`
+- feat: Add CSS variables `--space-10` and `--space-10--neg`
+- feat: Make `--grid-margin--neg` inherit from `--grid-margin`
+- feat: Reduce `--small` min-width of `ButtonPrimary` and `ButtonSecondary`
+- fix: `MultiSelect` overflow and space-contraint styling
+- fix: Tweak overflow styling of `Selectbox`
+
 ## 0.8.79
 
 _2023-07-06_
