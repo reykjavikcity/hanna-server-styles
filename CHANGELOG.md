@@ -8,6 +8,16 @@
 
 _2023-09-01_
 
+- feat: Add component `Pagination`
+- feat: Add `/assets/reykjavik-logo-notext.png` — along with `--small` (x0.5)
+  and `--large` (x2) variants
+- Seen-effect changes:
+  - Remove default/implicit seen-effect styling from all components
+  - Seen effects are now opt-in, via the `[data-seen-effect]` attribute, or a
+    custom sprinkle JS effect
+  - Add `-legacy-AutoSeenEffects` CSS token as back-compat option.
+- fix: Add missing thumbnails for the `hanna-*` illustrations
+- fix: Improve `InfoHero` styling in `phablet` viewport mode
 - feat: Add styling for `.ArticleCards--large`
 - feat: Add styling for `.ActionCards__item__meta`
 - feat: Add `__item__summary` styling for `ArticleCards` and `ImageCards`
@@ -16,7 +26,7 @@ _2023-09-01_
 - feat: Add CSS variables `--space-10` and `--space-10--neg`
 - feat: Make `--grid-margin--neg` inherit from `--grid-margin`
 - feat: Reduce `--small` min-width of `ButtonPrimary` and `ButtonSecondary`
-- fix: `MultiSelect` overflow and space-contraint styling
+- fix: `Multiselect` overflow and space-contraint styling
 - fix: Tweak overflow styling of `Selectbox`
 
 ## 0.8.79
@@ -306,8 +316,8 @@ _2022-03-31_
 
 _2022-03-28_
 
-- feat: Add `/assets/reykjavik-logo.png` — with `--small` (x0.5) and `--large`
-  (x2) variants
+- feat: Add `/assets/reykjavik-logo.png` — along with `--small` (x0.5) and
+  `--large` (x2) variants
 - feat: Add styling for `.Tabs--vertical`
 - feat: Add experimental styling for `.Skeleton`
 
