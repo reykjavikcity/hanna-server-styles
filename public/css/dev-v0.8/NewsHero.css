@@ -4,24 +4,6 @@
     Bling
   */
 @media screen {
-  .before-sprinkling .NewsHero,
-  .NewsHero[data-is-seen="false"] {
-    opacity: 0;
-    transform: translateY(200px);
-  }
-
-  .NewsHero[data-is-seen=""],
-  .NewsHero[data-is-seen="true"] {
-    opacity: 1;
-    transform: none;
-  }
-
-  .NewsHero[data-is-seen="true"] {
-    transition: all 500ms ease-in-out;
-
-    transition-property: opacity, transform;
-  }
-
   .NewsHero {
     position: relative;
     display: flex;

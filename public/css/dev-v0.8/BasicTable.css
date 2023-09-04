@@ -3,42 +3,6 @@
   */
 
 @media screen {
-  .before-sprinkling .TableWrapper,
-  .TableWrapper[data-is-seen="false"] {
-    opacity: 0;
-    transform: translateY(200px);
-  }
-
-  .TableWrapper[data-is-seen=""],
-  .TableWrapper[data-is-seen="true"] {
-    opacity: 1;
-    transform: none;
-  }
-
-  .TableWrapper[data-is-seen="true"] {
-    transition: all 500ms ease-in-out;
-
-    transition-property: opacity, transform;
-  }
-
-  /* @deprecated  Remove this mixin in v0.9*/
-
-  .before-sprinkling [data-is-seen] .TableWrapper,
-  [data-is-seen] .TableWrapper[data-is-seen="false"] {
-    opacity: 1;
-    transform: none;
-  }
-
-  [data-is-seen] .TableWrapper[data-is-seen=""],
-  [data-is-seen] .TableWrapper[data-is-seen="true"] {
-    opacity: initial;
-    transform: initial;
-  }
-
-  [data-is-seen] .TableWrapper[data-is-seen="true"] {
-    transition: none;
-  }
-
   .TableWrapper {
     position: relative;
     overflow-x: auto;

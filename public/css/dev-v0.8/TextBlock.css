@@ -154,40 +154,6 @@
     margin-bottom: 0;
   }
 
-  .before-sprinkling .TextBlock,
-  .TextBlock[data-is-seen="false"] {
-    opacity: 0;
-    transform: translateY(200px);
-  }
-
-  .TextBlock[data-is-seen=""],
-  .TextBlock[data-is-seen="true"] {
-    opacity: 1;
-    transform: none;
-  }
-
-  .TextBlock[data-is-seen="true"] {
-    transition: all 500ms ease-in-out;
-
-    transition-property: opacity, transform;
-  }
-
-  .before-sprinkling [data-is-seen] .TextBlock,
-  [data-is-seen] .TextBlock[data-is-seen="false"] {
-    opacity: 1;
-    transform: none;
-  }
-
-  [data-is-seen] .TextBlock[data-is-seen=""],
-  [data-is-seen] .TextBlock[data-is-seen="true"] {
-    opacity: initial;
-    transform: initial;
-  }
-
-  [data-is-seen] .TextBlock[data-is-seen="true"] {
-    transition: none;
-  }
-
   .TextBlock {
     position: relative;
     margin-bottom: calc(1.0775862068965518% + 16.982758620689655px);
@@ -370,40 +336,6 @@
 
 /* ===========================================================================*/
 
-.before-sprinkling .PageHeading,
-.PageHeading[data-is-seen="false"] {
-  opacity: 0;
-  transform: translateY(200px);
-}
-
-.PageHeading[data-is-seen=""],
-.PageHeading[data-is-seen="true"] {
-  opacity: 1;
-  transform: none;
-}
-
-.PageHeading[data-is-seen="true"] {
-  transition: all 500ms ease-in-out;
-
-  transition-property: opacity, transform;
-}
-
-.before-sprinkling [data-is-seen] .PageHeading,
-[data-is-seen] .PageHeading[data-is-seen="false"] {
-  opacity: 1;
-  transform: none;
-}
-
-[data-is-seen] .PageHeading[data-is-seen=""],
-[data-is-seen] .PageHeading[data-is-seen="true"] {
-  opacity: initial;
-  transform: initial;
-}
-
-[data-is-seen] .PageHeading[data-is-seen="true"] {
-  transition: none;
-}
-
 @media screen {
   .PageHeading {
     width: 100%;
@@ -512,40 +444,6 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   background-color: rgba(255, 26, 26, 0.5) !important;
   padding: 0 0.5em !important;
   content: var(--WARNING--message) !important;
-}
-
-.before-sprinkling .SubHeading,
-.SubHeading[data-is-seen="false"] {
-  opacity: 0;
-  transform: translateY(200px);
-}
-
-.SubHeading[data-is-seen=""],
-.SubHeading[data-is-seen="true"] {
-  opacity: 1;
-  transform: none;
-}
-
-.SubHeading[data-is-seen="true"] {
-  transition: all 500ms ease-in-out;
-
-  transition-property: opacity, transform;
-}
-
-.before-sprinkling [data-is-seen] .SubHeading,
-[data-is-seen] .SubHeading[data-is-seen="false"] {
-  opacity: 1;
-  transform: none;
-}
-
-[data-is-seen] .SubHeading[data-is-seen=""],
-[data-is-seen] .SubHeading[data-is-seen="true"] {
-  opacity: initial;
-  transform: initial;
-}
-
-[data-is-seen] .SubHeading[data-is-seen="true"] {
-  transition: none;
 }
 
 @media screen {

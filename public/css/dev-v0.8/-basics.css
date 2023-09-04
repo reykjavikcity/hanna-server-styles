@@ -1056,7 +1056,7 @@ html {
   overflow-y: scroll;
   overflow-x: hidden; /* Normal browsers respect this.*/
   /**
-      **NOTE:**
+      __NOTE:__
       Older Safari versions need to register this side-scroll-killer
       script to prevent side-scrolling on the <html/> element.
 
@@ -1469,60 +1469,75 @@ tbody > * > td {
   margin: 0;
 }
 
-.before-sprinkling [data-seen-effect=""],
-[data-seen-effect=""][data-is-seen="false"],
-.before-sprinkling [data-seen-effect="true"],
-[data-seen-effect="true"][data-is-seen="false"],
-.before-sprinkling [data-seen-effect="fadeup"],
-[data-seen-effect="fadeup"][data-is-seen="false"] {
+.before-sprinkling [data-seen-effect="fadeup"][data-seen-effect],
+.before-sprinkling [data-seen-effect] [data-seen-effect="fadeup"],
+[data-seen-effect="fadeup"][data-seen-effect][data-is-seen="false"],
+[data-seen-effect][data-is-seen="false"] [data-seen-effect="fadeup"],
+.before-sprinkling [data-seen-effect=""][data-seen-effect],
+.before-sprinkling [data-seen-effect] [data-seen-effect=""],
+[data-seen-effect=""][data-seen-effect][data-is-seen="false"],
+[data-seen-effect][data-is-seen="false"] [data-seen-effect=""] {
   opacity: 0;
   transform: translateY(200px);
 }
 
-[data-seen-effect=""][data-is-seen=""],
-[data-seen-effect=""][data-is-seen="true"],
-[data-seen-effect="true"][data-is-seen=""],
-[data-seen-effect="true"][data-is-seen="true"],
-[data-seen-effect="fadeup"][data-is-seen=""],
-[data-seen-effect="fadeup"][data-is-seen="true"] {
+[data-seen-effect="fadeup"][data-seen-effect][data-is-seen="true"],
+[data-seen-effect][data-is-seen="true"] [data-seen-effect="fadeup"],
+[data-seen-effect="fadeup"][data-seen-effect][data-is-seen=""],
+[data-seen-effect][data-is-seen=""] [data-seen-effect="fadeup"],
+[data-seen-effect=""][data-seen-effect][data-is-seen="true"],
+[data-seen-effect][data-is-seen="true"] [data-seen-effect=""],
+[data-seen-effect=""][data-seen-effect][data-is-seen=""],
+[data-seen-effect][data-is-seen=""] [data-seen-effect=""] {
   opacity: 1;
   transform: none;
 }
 
-[data-seen-effect=""][data-is-seen="true"],
-[data-seen-effect="true"][data-is-seen="true"],
-[data-seen-effect="fadeup"][data-is-seen="true"] {
-  transition: all 500ms ease-in-out;
-
+[data-seen-effect="fadeup"][data-seen-effect][data-is-seen="true"],
+[data-seen-effect][data-is-seen="true"] [data-seen-effect="fadeup"],
+[data-seen-effect=""][data-seen-effect][data-is-seen="true"],
+[data-seen-effect][data-is-seen="true"] [data-seen-effect=""] {
+  transition: all 400ms ease-in-out;
   transition-property: opacity, transform;
 }
-.before-sprinkling [data-seen-effect="fadein"],
-[data-seen-effect="fadein"][data-is-seen="false"] {
+.before-sprinkling [data-seen-effect="fadein"][data-seen-effect],
+.before-sprinkling [data-seen-effect] [data-seen-effect="fadein"],
+[data-seen-effect="fadein"][data-seen-effect][data-is-seen="false"],
+[data-seen-effect][data-is-seen="false"] [data-seen-effect="fadein"] {
   opacity: 0;
 }
-[data-seen-effect="fadein"][data-is-seen=""],
-[data-seen-effect="fadein"][data-is-seen="true"] {
+[data-seen-effect="fadein"][data-seen-effect][data-is-seen="true"],
+[data-seen-effect][data-is-seen="true"] [data-seen-effect="fadein"],
+[data-seen-effect="fadein"][data-seen-effect][data-is-seen=""],
+[data-seen-effect][data-is-seen=""] [data-seen-effect="fadein"] {
   opacity: 1;
 }
-[data-seen-effect="fadein"][data-is-seen="true"] {
-  transition: all 500ms ease-in-out;
-
+[data-seen-effect="fadein"][data-seen-effect][data-is-seen="true"],
+[data-seen-effect][data-is-seen="true"] [data-seen-effect="fadein"] {
+  transition: all 400ms ease-in-out;
   transition-property: opacity, transform;
 }
-.before-sprinkling [data-seen-effect="fadeleft"],
-[data-seen-effect="fadeleft"][data-is-seen="false"] {
+.before-sprinkling [data-seen-effect="fadeleft"][data-seen-effect],
+.before-sprinkling [data-seen-effect] [data-seen-effect="fadeleft"],
+[data-seen-effect="fadeleft"][data-seen-effect][data-is-seen="false"],
+[data-seen-effect][data-is-seen="false"] [data-seen-effect="fadeleft"] {
   opacity: 0;
   transform: translateX(-200px);
 }
-[data-seen-effect="fadeleft"][data-is-seen=""],
-[data-seen-effect="fadeleft"][data-is-seen="true"] {
+[data-seen-effect="fadeleft"][data-seen-effect][data-is-seen="true"],
+[data-seen-effect][data-is-seen="true"] [data-seen-effect="fadeleft"],
+[data-seen-effect="fadeleft"][data-seen-effect][data-is-seen=""],
+[data-seen-effect][data-is-seen=""] [data-seen-effect="fadeleft"] {
   opacity: 1;
   transform: none;
 }
-[data-seen-effect="fadeleft"][data-is-seen="true"] {
-  transition: all 500ms ease-in-out;
-
+[data-seen-effect="fadeleft"][data-seen-effect][data-is-seen="true"],
+[data-seen-effect][data-is-seen="true"] [data-seen-effect="fadeleft"] {
+  transition: all 400ms ease-in-out;
   transition-property: opacity, transform;
+}
+[data-seen-effect="custom"] {
+  /* Custom effect styles are implemented in the contained component. */
 }
 
 /* ===========================================================================*/

@@ -3,6 +3,10 @@
 */
 
 @media screen {
+  .ArticleCarousel {
+    margin-bottom: calc(9.698275862068966% + 12.844827586206904px);
+  }
+
   .before-sprinkling .ArticleCarousel:not([data-sprinkled]) {
     padding-bottom: var(--CarouselStepper--height);
   }
@@ -117,28 +121,6 @@
   }
   .ArticleCarousel__itemlist > * {
     scroll-snap-align: start;
-  }
-
-  .before-sprinkling .ArticleCarousel,
-  .ArticleCarousel[data-is-seen="false"] {
-    opacity: 0;
-    transform: translateY(200px);
-  }
-
-  .ArticleCarousel[data-is-seen=""],
-  .ArticleCarousel[data-is-seen="true"] {
-    opacity: 1;
-    transform: none;
-  }
-
-  .ArticleCarousel[data-is-seen="true"] {
-    transition: all 500ms ease-in-out;
-
-    transition-property: opacity, transform;
-  }
-
-  .ArticleCarousel {
-    margin-bottom: calc(9.698275862068966% + 12.844827586206904px);
   }
 
   .ArticleCarousel__title {

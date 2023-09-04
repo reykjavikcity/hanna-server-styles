@@ -22,87 +22,136 @@
   .ImageCards {
     margin-bottom: calc(5.387931034482758% + 44.913793103448285px);
   }
+  /* Custom (optional) transition effect */
 
-  .before-sprinkling .ImageCards .ImageCards__summary,
-  .ImageCards[data-is-seen="false"] .ImageCards__summary {
-    opacity: 0;
-    transform: translateY(200px);
-  }
-
-  .ImageCards[data-is-seen=""] .ImageCards__summary,
-  .ImageCards[data-is-seen="true"] .ImageCards__summary {
+  .before-sprinkling * .ImageCards[data-seen-effect=""],
+  .before-sprinkling [data-seen-effect=""] * .ImageCards,
+  * .ImageCards[data-seen-effect=""][data-is-seen="false"],
+  [data-seen-effect=""][data-is-seen="false"] * .ImageCards {
     opacity: 1;
     transform: none;
   }
 
-  .ImageCards[data-is-seen="true"] .ImageCards__summary {
-    transition: all 500ms ease-in-out;
+  * .ImageCards[data-seen-effect=""][data-is-seen="true"],
+  [data-seen-effect=""][data-is-seen="true"] * .ImageCards,
+  * .ImageCards[data-seen-effect=""][data-is-seen=""],
+  [data-seen-effect=""][data-is-seen=""] * .ImageCards {
+    opacity: initial;
+    transform: initial;
+  }
 
+  * .ImageCards[data-seen-effect=""][data-is-seen="true"],
+  [data-seen-effect=""][data-is-seen="true"] * .ImageCards {
+    transition: none;
+  }
+
+  .before-sprinkling *[data-seen-effect] .ImageCards__summary,
+  .before-sprinkling [data-seen-effect] * .ImageCards__summary,
+  *[data-seen-effect][data-is-seen="false"] .ImageCards__summary,
+  [data-seen-effect][data-is-seen="false"] * .ImageCards__summary {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+
+  *[data-seen-effect][data-is-seen="true"] .ImageCards__summary,
+  [data-seen-effect][data-is-seen="true"] * .ImageCards__summary,
+  *[data-seen-effect][data-is-seen=""] .ImageCards__summary,
+  [data-seen-effect][data-is-seen=""] * .ImageCards__summary {
+    opacity: 1;
+    transform: none;
+  }
+
+  *[data-seen-effect][data-is-seen="true"] .ImageCards__summary,
+  [data-seen-effect][data-is-seen="true"] * .ImageCards__summary {
+    transition: all 400ms ease-in-out;
     transition-property: opacity, transform;
   }
 
-  .before-sprinkling .ImageCards .ImageCards__item,
-  .ImageCards[data-is-seen="false"] .ImageCards__item {
+  .before-sprinkling *[data-seen-effect] .ImageCards__item,
+  .before-sprinkling [data-seen-effect] * .ImageCards__item,
+  *[data-seen-effect][data-is-seen="false"] .ImageCards__item,
+  [data-seen-effect][data-is-seen="false"] * .ImageCards__item {
     opacity: 0;
   }
 
-  .ImageCards[data-is-seen=""] .ImageCards__item,
-  .ImageCards[data-is-seen="true"] .ImageCards__item {
+  *[data-seen-effect][data-is-seen="true"] .ImageCards__item,
+  [data-seen-effect][data-is-seen="true"] * .ImageCards__item,
+  *[data-seen-effect][data-is-seen=""] .ImageCards__item,
+  [data-seen-effect][data-is-seen=""] * .ImageCards__item {
     opacity: 1;
   }
 
-  .ImageCards[data-is-seen="true"] .ImageCards__item {
-    transition: all 500ms ease-in-out;
-
+  *[data-seen-effect][data-is-seen="true"] .ImageCards__item,
+  [data-seen-effect][data-is-seen="true"] * .ImageCards__item {
+    transition: all 400ms ease-in-out;
     transition-property: opacity, transform;
   }
 
-  .ImageCards[data-is-seen="true"] .ImageCards__item:nth-child(1) {
+  *[data-seen-effect][data-is-seen="true"] .ImageCards__item:nth-child(1),
+  [data-seen-effect][data-is-seen="true"] * .ImageCards__item:nth-child(1) {
+    transition-delay: 150ms;
+  }
+
+  *[data-seen-effect][data-is-seen="true"] .ImageCards__item:nth-child(2),
+  [data-seen-effect][data-is-seen="true"] * .ImageCards__item:nth-child(2) {
+    transition-delay: 200ms;
+  }
+
+  *[data-seen-effect][data-is-seen="true"] .ImageCards__item:nth-child(3),
+  [data-seen-effect][data-is-seen="true"] * .ImageCards__item:nth-child(3) {
     transition-delay: 250ms;
   }
 
-  .ImageCards[data-is-seen="true"] .ImageCards__item:nth-child(2) {
+  *[data-seen-effect][data-is-seen="true"] .ImageCards__item:nth-child(4),
+  [data-seen-effect][data-is-seen="true"] * .ImageCards__item:nth-child(4) {
     transition-delay: 300ms;
   }
 
-  .ImageCards[data-is-seen="true"] .ImageCards__item:nth-child(3) {
+  *[data-seen-effect][data-is-seen="true"] .ImageCards__item:nth-child(5),
+  [data-seen-effect][data-is-seen="true"] * .ImageCards__item:nth-child(5) {
     transition-delay: 350ms;
   }
 
-  .ImageCards[data-is-seen="true"] .ImageCards__item:nth-child(4) {
+  *[data-seen-effect][data-is-seen="true"] .ImageCards__item:nth-child(6),
+  [data-seen-effect][data-is-seen="true"] * .ImageCards__item:nth-child(6) {
     transition-delay: 400ms;
   }
 
-  .ImageCards[data-is-seen="true"] .ImageCards__item:nth-child(5) {
+  *[data-seen-effect][data-is-seen="true"] .ImageCards__item:nth-child(7),
+  [data-seen-effect][data-is-seen="true"] * .ImageCards__item:nth-child(7) {
     transition-delay: 450ms;
   }
 
-  .ImageCards[data-is-seen="true"] .ImageCards__item:nth-child(6) {
+  *[data-seen-effect][data-is-seen="true"] .ImageCards__item:nth-child(8),
+  [data-seen-effect][data-is-seen="true"] * .ImageCards__item:nth-child(8) {
     transition-delay: 500ms;
   }
 
-  .ImageCards[data-is-seen="true"] .ImageCards__item:nth-child(7) {
+  *[data-seen-effect][data-is-seen="true"] .ImageCards__item:nth-child(9),
+  [data-seen-effect][data-is-seen="true"] * .ImageCards__item:nth-child(9) {
     transition-delay: 550ms;
   }
 
-  .ImageCards[data-is-seen="true"] .ImageCards__item:nth-child(8) {
+  *[data-seen-effect][data-is-seen="true"] .ImageCards__item:nth-child(10),
+  [data-seen-effect][data-is-seen="true"] * .ImageCards__item:nth-child(10) {
     transition-delay: 600ms;
   }
 
-  .ImageCards[data-is-seen="true"] .ImageCards__item:nth-child(9) {
+  *[data-seen-effect][data-is-seen="true"] .ImageCards__item:nth-child(11),
+  [data-seen-effect][data-is-seen="true"] * .ImageCards__item:nth-child(11) {
     transition-delay: 650ms;
   }
 
-  .ImageCards[data-is-seen="true"] .ImageCards__item:nth-child(10) {
+  *[data-seen-effect][data-is-seen="true"] .ImageCards__item:nth-child(12),
+  [data-seen-effect][data-is-seen="true"] * .ImageCards__item:nth-child(12) {
     transition-delay: 700ms;
   }
 
-  .ImageCards[data-is-seen="true"] .ImageCards__item:nth-child(11) {
-    transition-delay: 750ms;
-  }
+  /* Default delay, applied to for items where n > 12*/
 
-  .ImageCards[data-is-seen="true"] .ImageCards__item:nth-child(12) {
-    transition-delay: 800ms;
+  *[data-seen-effect][data-is-seen="true"] .ImageCards__item,
+  [data-seen-effect][data-is-seen="true"] * .ImageCards__item {
+    transition-delay: 750ms;
   }
 
   .ImageCards--background {

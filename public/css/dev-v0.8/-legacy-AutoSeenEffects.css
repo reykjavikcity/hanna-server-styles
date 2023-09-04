@@ -1,0 +1,629 @@
+/*
+    This CSS module implements a backwards compatible selectors for
+    on-by-default/implicit/automatic "SeenEffect" animations on certain
+    Hanna components.
+
+    (The latest version of `window.Hanna.loadSprinkles('SeenEffects');`
+    searches for this CSS module token and only performs the
+    legacy sprinkling of these elements if it is found.)
+  */
+@media screen {
+  .before-sprinkling .AccordionList[data-seen-effect],
+  .before-sprinkling [data-seen-effect] .AccordionList,
+  .AccordionList[data-seen-effect][data-is-seen="false"],
+  [data-seen-effect][data-is-seen="false"] .AccordionList,
+  .before-sprinkling .ActionCards[data-seen-effect],
+  .before-sprinkling [data-seen-effect] .ActionCards,
+  .ActionCards[data-seen-effect][data-is-seen="false"],
+  [data-seen-effect][data-is-seen="false"] .ActionCards,
+  .before-sprinkling .ArticleCarousel[data-seen-effect],
+  .before-sprinkling [data-seen-effect] .ArticleCarousel,
+  .ArticleCarousel[data-seen-effect][data-is-seen="false"],
+  [data-seen-effect][data-is-seen="false"] .ArticleCarousel,
+  .before-sprinkling .CityBlock[data-seen-effect],
+  .before-sprinkling [data-seen-effect] .CityBlock,
+  .CityBlock[data-seen-effect][data-is-seen="false"],
+  [data-seen-effect][data-is-seen="false"] .CityBlock,
+  .before-sprinkling .ContentArticle[data-seen-effect],
+  .before-sprinkling [data-seen-effect] .ContentArticle,
+  .ContentArticle[data-seen-effect][data-is-seen="false"],
+  [data-seen-effect][data-is-seen="false"] .ContentArticle,
+  .before-sprinkling .FeatureList[data-seen-effect],
+  .before-sprinkling [data-seen-effect] .FeatureList,
+  .FeatureList[data-seen-effect][data-is-seen="false"],
+  [data-seen-effect][data-is-seen="false"] .FeatureList,
+  .before-sprinkling .Gallery[data-seen-effect],
+  .before-sprinkling [data-seen-effect] .Gallery,
+  .Gallery[data-seen-effect][data-is-seen="false"],
+  [data-seen-effect][data-is-seen="false"] .Gallery,
+  .before-sprinkling .HeroBlock[data-seen-effect],
+  .before-sprinkling [data-seen-effect] .HeroBlock,
+  .HeroBlock[data-seen-effect][data-is-seen="false"],
+  [data-seen-effect][data-is-seen="false"] .HeroBlock,
+  .before-sprinkling .IslandBlock[data-seen-effect],
+  .before-sprinkling [data-seen-effect] .IslandBlock,
+  .IslandBlock[data-seen-effect][data-is-seen="false"],
+  [data-seen-effect][data-is-seen="false"] .IslandBlock,
+  .before-sprinkling .IslandPageBlock[data-seen-effect],
+  .before-sprinkling [data-seen-effect] .IslandPageBlock,
+  .IslandPageBlock[data-seen-effect][data-is-seen="false"],
+  [data-seen-effect][data-is-seen="false"] .IslandPageBlock,
+  .before-sprinkling .LabeledTextBlock[data-seen-effect],
+  .before-sprinkling [data-seen-effect] .LabeledTextBlock,
+  .LabeledTextBlock[data-seen-effect][data-is-seen="false"],
+  [data-seen-effect][data-is-seen="false"] .LabeledTextBlock,
+  .before-sprinkling .NewsHero[data-seen-effect],
+  .before-sprinkling [data-seen-effect] .NewsHero,
+  .NewsHero[data-seen-effect][data-is-seen="false"],
+  [data-seen-effect][data-is-seen="false"] .NewsHero,
+  .before-sprinkling .MiniMetrics[data-seen-effect],
+  .before-sprinkling [data-seen-effect] .MiniMetrics,
+  .MiniMetrics[data-seen-effect][data-is-seen="false"],
+  [data-seen-effect][data-is-seen="false"] .MiniMetrics,
+  .before-sprinkling .PageFilter[data-seen-effect],
+  .before-sprinkling [data-seen-effect] .PageFilter,
+  .PageFilter[data-seen-effect][data-is-seen="false"],
+  [data-seen-effect][data-is-seen="false"] .PageFilter,
+  .before-sprinkling .PageHeading[data-seen-effect],
+  .before-sprinkling [data-seen-effect] .PageHeading,
+  .PageHeading[data-seen-effect][data-is-seen="false"],
+  [data-seen-effect][data-is-seen="false"] .PageHeading,
+  .before-sprinkling .SubHeading[data-seen-effect],
+  .before-sprinkling [data-seen-effect] .SubHeading,
+  .SubHeading[data-seen-effect][data-is-seen="false"],
+  [data-seen-effect][data-is-seen="false"] .SubHeading,
+  .before-sprinkling .Tabs[data-seen-effect],
+  .before-sprinkling [data-seen-effect] .Tabs,
+  .Tabs[data-seen-effect][data-is-seen="false"],
+  [data-seen-effect][data-is-seen="false"] .Tabs,
+  .before-sprinkling .TableWrapper[data-seen-effect],
+  .before-sprinkling [data-seen-effect] .TableWrapper,
+  .TableWrapper[data-seen-effect][data-is-seen="false"],
+  [data-seen-effect][data-is-seen="false"] .TableWrapper,
+  .before-sprinkling .TextBlock[data-seen-effect],
+  .before-sprinkling [data-seen-effect] .TextBlock,
+  .TextBlock[data-seen-effect][data-is-seen="false"],
+  [data-seen-effect][data-is-seen="false"] .TextBlock,
+  .before-sprinkling .___[data-seen-effect],
+  .before-sprinkling [data-seen-effect] .___,
+  .___[data-seen-effect][data-is-seen="false"],
+  [data-seen-effect][data-is-seen="false"] .___ {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+
+  .AccordionList[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .AccordionList,
+  .AccordionList[data-seen-effect][data-is-seen=""],
+  [data-seen-effect][data-is-seen=""] .AccordionList,
+  .ActionCards[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .ActionCards,
+  .ActionCards[data-seen-effect][data-is-seen=""],
+  [data-seen-effect][data-is-seen=""] .ActionCards,
+  .ArticleCarousel[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .ArticleCarousel,
+  .ArticleCarousel[data-seen-effect][data-is-seen=""],
+  [data-seen-effect][data-is-seen=""] .ArticleCarousel,
+  .CityBlock[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .CityBlock,
+  .CityBlock[data-seen-effect][data-is-seen=""],
+  [data-seen-effect][data-is-seen=""] .CityBlock,
+  .ContentArticle[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .ContentArticle,
+  .ContentArticle[data-seen-effect][data-is-seen=""],
+  [data-seen-effect][data-is-seen=""] .ContentArticle,
+  .FeatureList[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .FeatureList,
+  .FeatureList[data-seen-effect][data-is-seen=""],
+  [data-seen-effect][data-is-seen=""] .FeatureList,
+  .Gallery[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .Gallery,
+  .Gallery[data-seen-effect][data-is-seen=""],
+  [data-seen-effect][data-is-seen=""] .Gallery,
+  .HeroBlock[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .HeroBlock,
+  .HeroBlock[data-seen-effect][data-is-seen=""],
+  [data-seen-effect][data-is-seen=""] .HeroBlock,
+  .IslandBlock[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .IslandBlock,
+  .IslandBlock[data-seen-effect][data-is-seen=""],
+  [data-seen-effect][data-is-seen=""] .IslandBlock,
+  .IslandPageBlock[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .IslandPageBlock,
+  .IslandPageBlock[data-seen-effect][data-is-seen=""],
+  [data-seen-effect][data-is-seen=""] .IslandPageBlock,
+  .LabeledTextBlock[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .LabeledTextBlock,
+  .LabeledTextBlock[data-seen-effect][data-is-seen=""],
+  [data-seen-effect][data-is-seen=""] .LabeledTextBlock,
+  .NewsHero[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .NewsHero,
+  .NewsHero[data-seen-effect][data-is-seen=""],
+  [data-seen-effect][data-is-seen=""] .NewsHero,
+  .MiniMetrics[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .MiniMetrics,
+  .MiniMetrics[data-seen-effect][data-is-seen=""],
+  [data-seen-effect][data-is-seen=""] .MiniMetrics,
+  .PageFilter[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .PageFilter,
+  .PageFilter[data-seen-effect][data-is-seen=""],
+  [data-seen-effect][data-is-seen=""] .PageFilter,
+  .PageHeading[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .PageHeading,
+  .PageHeading[data-seen-effect][data-is-seen=""],
+  [data-seen-effect][data-is-seen=""] .PageHeading,
+  .SubHeading[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .SubHeading,
+  .SubHeading[data-seen-effect][data-is-seen=""],
+  [data-seen-effect][data-is-seen=""] .SubHeading,
+  .Tabs[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .Tabs,
+  .Tabs[data-seen-effect][data-is-seen=""],
+  [data-seen-effect][data-is-seen=""] .Tabs,
+  .TableWrapper[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .TableWrapper,
+  .TableWrapper[data-seen-effect][data-is-seen=""],
+  [data-seen-effect][data-is-seen=""] .TableWrapper,
+  .TextBlock[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .TextBlock,
+  .TextBlock[data-seen-effect][data-is-seen=""],
+  [data-seen-effect][data-is-seen=""] .TextBlock,
+  .___[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .___,
+  .___[data-seen-effect][data-is-seen=""],
+  [data-seen-effect][data-is-seen=""] .___ {
+    opacity: 1;
+    transform: none;
+  }
+
+  .AccordionList[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .AccordionList,
+  .ActionCards[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .ActionCards,
+  .ArticleCarousel[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .ArticleCarousel,
+  .CityBlock[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .CityBlock,
+  .ContentArticle[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .ContentArticle,
+  .FeatureList[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .FeatureList,
+  .Gallery[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .Gallery,
+  .HeroBlock[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .HeroBlock,
+  .IslandBlock[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .IslandBlock,
+  .IslandPageBlock[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .IslandPageBlock,
+  .LabeledTextBlock[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .LabeledTextBlock,
+  .NewsHero[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .NewsHero,
+  .MiniMetrics[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .MiniMetrics,
+  .PageFilter[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .PageFilter,
+  .PageHeading[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .PageHeading,
+  .SubHeading[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .SubHeading,
+  .Tabs[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .Tabs,
+  .TableWrapper[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .TableWrapper,
+  .TextBlock[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .TextBlock,
+  .___[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] .___ {
+    transition: all 400ms ease-in-out;
+    transition-property: opacity, transform;
+  }
+  /* @deprecated  Remove this mixin in v0.9*/
+
+  .before-sprinkling [data-is-seen] .PageHeading,
+  [data-is-seen] .PageHeading[data-is-seen="false"],
+  .before-sprinkling [data-is-seen] .SubHeading,
+  [data-is-seen] .SubHeading[data-is-seen="false"],
+  .before-sprinkling [data-is-seen] .Tabs,
+  [data-is-seen] .Tabs[data-is-seen="false"],
+  .before-sprinkling [data-is-seen] .TableWrapper,
+  [data-is-seen] .TableWrapper[data-is-seen="false"],
+  .before-sprinkling [data-is-seen] .TextBlock,
+  [data-is-seen] .TextBlock[data-is-seen="false"] {
+    opacity: 1;
+    transform: none;
+  }
+
+  [data-is-seen] .PageHeading[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] [data-is-seen] .PageHeading,
+  [data-is-seen] .PageHeading[data-seen-effect][data-is-seen=""],
+  [data-seen-effect][data-is-seen=""] [data-is-seen] .PageHeading,
+  [data-is-seen] .SubHeading[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] [data-is-seen] .SubHeading,
+  [data-is-seen] .SubHeading[data-seen-effect][data-is-seen=""],
+  [data-seen-effect][data-is-seen=""] [data-is-seen] .SubHeading,
+  [data-is-seen] .Tabs[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] [data-is-seen] .Tabs,
+  [data-is-seen] .Tabs[data-seen-effect][data-is-seen=""],
+  [data-seen-effect][data-is-seen=""] [data-is-seen] .Tabs,
+  [data-is-seen] .TableWrapper[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] [data-is-seen] .TableWrapper,
+  [data-is-seen] .TableWrapper[data-seen-effect][data-is-seen=""],
+  [data-seen-effect][data-is-seen=""] [data-is-seen] .TableWrapper,
+  [data-is-seen] .TextBlock[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] [data-is-seen] .TextBlock,
+  [data-is-seen] .TextBlock[data-seen-effect][data-is-seen=""],
+  [data-seen-effect][data-is-seen=""] [data-is-seen] .TextBlock {
+    opacity: initial;
+    transform: initial;
+  }
+
+  [data-is-seen] .PageHeading[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] [data-is-seen] .PageHeading,
+  [data-is-seen] .SubHeading[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] [data-is-seen] .SubHeading,
+  [data-is-seen] .Tabs[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] [data-is-seen] .Tabs,
+  [data-is-seen] .TableWrapper[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] [data-is-seen] .TableWrapper,
+  [data-is-seen] .TextBlock[data-seen-effect][data-is-seen="true"],
+  [data-seen-effect][data-is-seen="true"] [data-is-seen] .TextBlock {
+    transition: none;
+  }
+
+  .before-sprinkling .ExtraLinks .ExtraLinks::after,
+  .before-sprinkling .ExtraLinks .ExtraLinks::after,
+  .ExtraLinks[data-is-seen="false"] .ExtraLinks::after,
+  [data-is-seen="false"] .ExtraLinks .ExtraLinks::after {
+    border-left: calc(1.5267175572519083vw + 3.1145038167938957px) solid
+      var(--color-suld-25);
+  }
+
+  .ExtraLinks[data-is-seen="true"] .ExtraLinks::after,
+  [data-is-seen="true"] .ExtraLinks .ExtraLinks::after,
+  .ExtraLinks[data-is-seen=""] .ExtraLinks::after,
+  [data-is-seen=""] .ExtraLinks .ExtraLinks::after {
+    transform: scaleY(0);
+    transform-origin: 0 100%;
+  }
+
+  .ExtraLinks[data-is-seen="true"] .ExtraLinks::after,
+  [data-is-seen="true"] .ExtraLinks .ExtraLinks::after {
+    transition: all 500ms ease-in-out;
+    transition-property: transform;
+  }
+
+  .before-sprinkling .ExtraLinks .ExtraLinks__title,
+  .before-sprinkling .ExtraLinks .ExtraLinks__title,
+  .ExtraLinks[data-is-seen="false"] .ExtraLinks__title,
+  [data-is-seen="false"] .ExtraLinks .ExtraLinks__title {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+
+  .ExtraLinks[data-is-seen="true"] .ExtraLinks__title,
+  [data-is-seen="true"] .ExtraLinks .ExtraLinks__title,
+  .ExtraLinks[data-is-seen=""] .ExtraLinks__title,
+  [data-is-seen=""] .ExtraLinks .ExtraLinks__title {
+    opacity: 1;
+    transform: none;
+  }
+
+  .ExtraLinks[data-is-seen="true"] .ExtraLinks__title,
+  [data-is-seen="true"] .ExtraLinks .ExtraLinks__title {
+    transition: all 400ms ease-in-out;
+    transition-property: opacity, transform;
+  }
+
+  .before-sprinkling .ExtraLinks .ExtraLinks__item,
+  .before-sprinkling .ExtraLinks .ExtraLinks__item,
+  .ExtraLinks[data-is-seen="false"] .ExtraLinks__item,
+  [data-is-seen="false"] .ExtraLinks .ExtraLinks__item {
+    opacity: 0;
+  }
+
+  .ExtraLinks[data-is-seen="true"] .ExtraLinks__item,
+  [data-is-seen="true"] .ExtraLinks .ExtraLinks__item,
+  .ExtraLinks[data-is-seen=""] .ExtraLinks__item,
+  [data-is-seen=""] .ExtraLinks .ExtraLinks__item {
+    opacity: 1;
+  }
+
+  .ExtraLinks[data-is-seen="true"] .ExtraLinks__item,
+  [data-is-seen="true"] .ExtraLinks .ExtraLinks__item {
+    transition: all 400ms ease-in-out;
+    transition-property: opacity, transform;
+  }
+
+  .ExtraLinks[data-is-seen="true"] .ExtraLinks__item:nth-child(1),
+  [data-is-seen="true"] .ExtraLinks .ExtraLinks__item:nth-child(1) {
+    transition-delay: 160ms;
+  }
+
+  .ExtraLinks[data-is-seen="true"] .ExtraLinks__item:nth-child(2),
+  [data-is-seen="true"] .ExtraLinks .ExtraLinks__item:nth-child(2) {
+    transition-delay: 220ms;
+  }
+
+  .ExtraLinks[data-is-seen="true"] .ExtraLinks__item:nth-child(3),
+  [data-is-seen="true"] .ExtraLinks .ExtraLinks__item:nth-child(3) {
+    transition-delay: 280ms;
+  }
+
+  .ExtraLinks[data-is-seen="true"] .ExtraLinks__item:nth-child(4),
+  [data-is-seen="true"] .ExtraLinks .ExtraLinks__item:nth-child(4) {
+    transition-delay: 340ms;
+  }
+
+  .ExtraLinks[data-is-seen="true"] .ExtraLinks__item:nth-child(5),
+  [data-is-seen="true"] .ExtraLinks .ExtraLinks__item:nth-child(5) {
+    transition-delay: 400ms;
+  }
+
+  .ExtraLinks[data-is-seen="true"] .ExtraLinks__item:nth-child(6),
+  [data-is-seen="true"] .ExtraLinks .ExtraLinks__item:nth-child(6) {
+    transition-delay: 460ms;
+  }
+
+  .ExtraLinks[data-is-seen="true"] .ExtraLinks__item:nth-child(7),
+  [data-is-seen="true"] .ExtraLinks .ExtraLinks__item:nth-child(7) {
+    transition-delay: 520ms;
+  }
+
+  .ExtraLinks[data-is-seen="true"] .ExtraLinks__item:nth-child(8),
+  [data-is-seen="true"] .ExtraLinks .ExtraLinks__item:nth-child(8) {
+    transition-delay: 580ms;
+  }
+
+  .ExtraLinks[data-is-seen="true"] .ExtraLinks__item:nth-child(9),
+  [data-is-seen="true"] .ExtraLinks .ExtraLinks__item:nth-child(9) {
+    transition-delay: 640ms;
+  }
+
+  .ExtraLinks[data-is-seen="true"] .ExtraLinks__item:nth-child(10),
+  [data-is-seen="true"] .ExtraLinks .ExtraLinks__item:nth-child(10) {
+    transition-delay: 700ms;
+  }
+
+  .ExtraLinks[data-is-seen="true"] .ExtraLinks__item:nth-child(11),
+  [data-is-seen="true"] .ExtraLinks .ExtraLinks__item:nth-child(11) {
+    transition-delay: 760ms;
+  }
+
+  .ExtraLinks[data-is-seen="true"] .ExtraLinks__item:nth-child(12),
+  [data-is-seen="true"] .ExtraLinks .ExtraLinks__item:nth-child(12) {
+    transition-delay: 820ms;
+  }
+  /* Default delay, applied to for items where n > 12*/
+
+  .ExtraLinks[data-is-seen="true"] .ExtraLinks__item,
+  [data-is-seen="true"] .ExtraLinks .ExtraLinks__item {
+    transition-delay: 880ms;
+  }
+
+  .before-sprinkling .GridBlocks > .GridBlocks__item,
+  .before-sprinkling .GridBlocks > .GridBlocks__item,
+  .GridBlocks[data-is-seen="false"] > .GridBlocks__item,
+  [data-is-seen="false"] .GridBlocks > .GridBlocks__item {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+
+  .GridBlocks[data-is-seen="true"] > .GridBlocks__item,
+  [data-is-seen="true"] .GridBlocks > .GridBlocks__item,
+  .GridBlocks[data-is-seen=""] > .GridBlocks__item,
+  [data-is-seen=""] .GridBlocks > .GridBlocks__item {
+    opacity: 1;
+    transform: none;
+  }
+
+  .GridBlocks[data-is-seen="true"] > .GridBlocks__item,
+  [data-is-seen="true"] .GridBlocks > .GridBlocks__item {
+    transition: all 400ms ease-in-out;
+    transition-property: opacity, transform;
+  }
+
+  .GridBlocks[data-is-seen="true"] > .GridBlocks__item:nth-child(1),
+  [data-is-seen="true"] .GridBlocks > .GridBlocks__item:nth-child(1) {
+    transition-delay: 0ms;
+  }
+
+  .GridBlocks[data-is-seen="true"] > .GridBlocks__item:nth-child(2),
+  [data-is-seen="true"] .GridBlocks > .GridBlocks__item:nth-child(2) {
+    transition-delay: 150ms;
+  }
+
+  .GridBlocks[data-is-seen="true"] > .GridBlocks__item:nth-child(3),
+  [data-is-seen="true"] .GridBlocks > .GridBlocks__item:nth-child(3) {
+    transition-delay: 300ms;
+  }
+
+  .GridBlocks[data-is-seen="true"] > .GridBlocks__item:nth-child(4),
+  [data-is-seen="true"] .GridBlocks > .GridBlocks__item:nth-child(4) {
+    transition-delay: 450ms;
+  }
+
+  .GridBlocks[data-is-seen="true"] > .GridBlocks__item:nth-child(5),
+  [data-is-seen="true"] .GridBlocks > .GridBlocks__item:nth-child(5) {
+    transition-delay: 600ms;
+  }
+
+  .GridBlocks[data-is-seen="true"] > .GridBlocks__item:nth-child(6),
+  [data-is-seen="true"] .GridBlocks > .GridBlocks__item:nth-child(6) {
+    transition-delay: 750ms;
+  }
+
+  .GridBlocks[data-is-seen="true"] > .GridBlocks__item:nth-child(7),
+  [data-is-seen="true"] .GridBlocks > .GridBlocks__item:nth-child(7) {
+    transition-delay: 900ms;
+  }
+
+  .GridBlocks[data-is-seen="true"] > .GridBlocks__item:nth-child(8),
+  [data-is-seen="true"] .GridBlocks > .GridBlocks__item:nth-child(8) {
+    transition-delay: 1050ms;
+  }
+
+  .GridBlocks[data-is-seen="true"] > .GridBlocks__item:nth-child(9),
+  [data-is-seen="true"] .GridBlocks > .GridBlocks__item:nth-child(9) {
+    transition-delay: 1200ms;
+  }
+
+  .GridBlocks[data-is-seen="true"] > .GridBlocks__item:nth-child(10),
+  [data-is-seen="true"] .GridBlocks > .GridBlocks__item:nth-child(10) {
+    transition-delay: 1350ms;
+  }
+
+  .GridBlocks[data-is-seen="true"] > .GridBlocks__item:nth-child(11),
+  [data-is-seen="true"] .GridBlocks > .GridBlocks__item:nth-child(11) {
+    transition-delay: 1500ms;
+  }
+
+  .GridBlocks[data-is-seen="true"] > .GridBlocks__item:nth-child(12),
+  [data-is-seen="true"] .GridBlocks > .GridBlocks__item:nth-child(12) {
+    transition-delay: 1650ms;
+  }
+
+  /* Default delay, applied to for items where n > 12*/
+
+  .GridBlocks[data-is-seen="true"] > .GridBlocks__item,
+  [data-is-seen="true"] .GridBlocks > .GridBlocks__item {
+    transition-delay: 1800ms;
+  }
+
+  .before-sprinkling .ImageCards .ImageCards__summary,
+  .before-sprinkling .ImageCards .ImageCards__summary,
+  .ImageCards[data-is-seen="false"] .ImageCards__summary,
+  [data-is-seen="false"] .ImageCards .ImageCards__summary {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+
+  .ImageCards[data-is-seen="true"] .ImageCards__summary,
+  [data-is-seen="true"] .ImageCards .ImageCards__summary,
+  .ImageCards[data-is-seen=""] .ImageCards__summary,
+  [data-is-seen=""] .ImageCards .ImageCards__summary {
+    opacity: 1;
+    transform: none;
+  }
+
+  .ImageCards[data-is-seen="true"] .ImageCards__summary,
+  [data-is-seen="true"] .ImageCards .ImageCards__summary {
+    transition: all 400ms ease-in-out;
+    transition-property: opacity, transform;
+  }
+
+  .before-sprinkling .ImageCards .ImageCards__item,
+  .before-sprinkling .ImageCards .ImageCards__item,
+  .ImageCards[data-is-seen="false"] .ImageCards__item,
+  [data-is-seen="false"] .ImageCards .ImageCards__item {
+    opacity: 0;
+  }
+
+  .ImageCards[data-is-seen="true"] .ImageCards__item,
+  [data-is-seen="true"] .ImageCards .ImageCards__item,
+  .ImageCards[data-is-seen=""] .ImageCards__item,
+  [data-is-seen=""] .ImageCards .ImageCards__item {
+    opacity: 1;
+  }
+
+  .ImageCards[data-is-seen="true"] .ImageCards__item,
+  [data-is-seen="true"] .ImageCards .ImageCards__item {
+    transition: all 400ms ease-in-out;
+    transition-property: opacity, transform;
+  }
+
+  .ImageCards[data-is-seen="true"] .ImageCards__item:nth-child(1),
+  [data-is-seen="true"] .ImageCards .ImageCards__item:nth-child(1) {
+    transition-delay: 150ms;
+  }
+
+  .ImageCards[data-is-seen="true"] .ImageCards__item:nth-child(2),
+  [data-is-seen="true"] .ImageCards .ImageCards__item:nth-child(2) {
+    transition-delay: 200ms;
+  }
+
+  .ImageCards[data-is-seen="true"] .ImageCards__item:nth-child(3),
+  [data-is-seen="true"] .ImageCards .ImageCards__item:nth-child(3) {
+    transition-delay: 250ms;
+  }
+
+  .ImageCards[data-is-seen="true"] .ImageCards__item:nth-child(4),
+  [data-is-seen="true"] .ImageCards .ImageCards__item:nth-child(4) {
+    transition-delay: 300ms;
+  }
+
+  .ImageCards[data-is-seen="true"] .ImageCards__item:nth-child(5),
+  [data-is-seen="true"] .ImageCards .ImageCards__item:nth-child(5) {
+    transition-delay: 350ms;
+  }
+
+  .ImageCards[data-is-seen="true"] .ImageCards__item:nth-child(6),
+  [data-is-seen="true"] .ImageCards .ImageCards__item:nth-child(6) {
+    transition-delay: 400ms;
+  }
+
+  .ImageCards[data-is-seen="true"] .ImageCards__item:nth-child(7),
+  [data-is-seen="true"] .ImageCards .ImageCards__item:nth-child(7) {
+    transition-delay: 450ms;
+  }
+
+  .ImageCards[data-is-seen="true"] .ImageCards__item:nth-child(8),
+  [data-is-seen="true"] .ImageCards .ImageCards__item:nth-child(8) {
+    transition-delay: 500ms;
+  }
+
+  .ImageCards[data-is-seen="true"] .ImageCards__item:nth-child(9),
+  [data-is-seen="true"] .ImageCards .ImageCards__item:nth-child(9) {
+    transition-delay: 550ms;
+  }
+
+  .ImageCards[data-is-seen="true"] .ImageCards__item:nth-child(10),
+  [data-is-seen="true"] .ImageCards .ImageCards__item:nth-child(10) {
+    transition-delay: 600ms;
+  }
+
+  .ImageCards[data-is-seen="true"] .ImageCards__item:nth-child(11),
+  [data-is-seen="true"] .ImageCards .ImageCards__item:nth-child(11) {
+    transition-delay: 650ms;
+  }
+
+  .ImageCards[data-is-seen="true"] .ImageCards__item:nth-child(12),
+  [data-is-seen="true"] .ImageCards .ImageCards__item:nth-child(12) {
+    transition-delay: 700ms;
+  }
+
+  /* Default delay, applied to for items where n > 12*/
+
+  .ImageCards[data-is-seen="true"] .ImageCards__item,
+  [data-is-seen="true"] .ImageCards .ImageCards__item {
+    transition-delay: 750ms;
+  }
+
+  .before-sprinkling .RowBlock > .RowBlockColumn,
+  .before-sprinkling .RowBlock > .RowBlockColumn,
+  .RowBlock[data-is-seen="false"] > .RowBlockColumn,
+  [data-is-seen="false"] .RowBlock > .RowBlockColumn {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+
+  .RowBlock[data-is-seen="true"] > .RowBlockColumn,
+  [data-is-seen="true"] .RowBlock > .RowBlockColumn,
+  .RowBlock[data-is-seen=""] > .RowBlockColumn,
+  [data-is-seen=""] .RowBlock > .RowBlockColumn {
+    opacity: 1;
+    transform: none;
+  }
+
+  .RowBlock[data-is-seen="true"] > .RowBlockColumn,
+  [data-is-seen="true"] .RowBlock > .RowBlockColumn {
+    transition: all 400ms ease-in-out;
+    transition-property: opacity, transform;
+  }
+
+  .RowBlock[data-is-seen="true"] > .RowBlockColumn + .RowBlockColumn,
+  [data-is-seen="true"] .RowBlock > .RowBlockColumn + .RowBlockColumn {
+    transition-delay: 100ms;
+  }
+}

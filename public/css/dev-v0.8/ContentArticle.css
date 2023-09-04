@@ -7,24 +7,6 @@
     RelatedLinks
   */
 @media screen {
-  .before-sprinkling .ContentArticle,
-  .ContentArticle[data-is-seen="false"] {
-    opacity: 0;
-    transform: translateY(200px);
-  }
-
-  .ContentArticle[data-is-seen=""],
-  .ContentArticle[data-is-seen="true"] {
-    opacity: 1;
-    transform: none;
-  }
-
-  .ContentArticle[data-is-seen="true"] {
-    transition: all 500ms ease-in-out;
-
-    transition-property: opacity, transform;
-  }
-
   .ContentArticle {
     max-width: 792px;
     margin: 0 auto;

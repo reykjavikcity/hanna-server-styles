@@ -9,26 +9,56 @@
     justify-content: space-between;
     align-items: center;
   }
+  /* Custom (optional) transition effect */
 
-  .before-sprinkling .RowBlock > .RowBlockColumn,
-  .RowBlock[data-is-seen="false"] > .RowBlockColumn {
-    opacity: 0;
-    transform: translateY(200px);
-  }
-
-  .RowBlock[data-is-seen=""] > .RowBlockColumn,
-  .RowBlock[data-is-seen="true"] > .RowBlockColumn {
+  .before-sprinkling * .RowBlock[data-seen-effect=""],
+  .before-sprinkling [data-seen-effect=""] * .RowBlock,
+  * .RowBlock[data-seen-effect=""][data-is-seen="false"],
+  [data-seen-effect=""][data-is-seen="false"] * .RowBlock {
     opacity: 1;
     transform: none;
   }
 
-  .RowBlock[data-is-seen="true"] > .RowBlockColumn {
-    transition: all 500ms ease-in-out;
+  * .RowBlock[data-seen-effect=""][data-is-seen="true"],
+  [data-seen-effect=""][data-is-seen="true"] * .RowBlock,
+  * .RowBlock[data-seen-effect=""][data-is-seen=""],
+  [data-seen-effect=""][data-is-seen=""] * .RowBlock {
+    opacity: initial;
+    transform: initial;
+  }
 
+  * .RowBlock[data-seen-effect=""][data-is-seen="true"],
+  [data-seen-effect=""][data-is-seen="true"] * .RowBlock {
+    transition: none;
+  }
+
+  .before-sprinkling *[data-seen-effect] > .RowBlockColumn,
+  .before-sprinkling [data-seen-effect] * > .RowBlockColumn,
+  *[data-seen-effect][data-is-seen="false"] > .RowBlockColumn,
+  [data-seen-effect][data-is-seen="false"] * > .RowBlockColumn {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+
+  *[data-seen-effect][data-is-seen="true"] > .RowBlockColumn,
+  [data-seen-effect][data-is-seen="true"] * > .RowBlockColumn,
+  *[data-seen-effect][data-is-seen=""] > .RowBlockColumn,
+  [data-seen-effect][data-is-seen=""] * > .RowBlockColumn {
+    opacity: 1;
+    transform: none;
+  }
+
+  *[data-seen-effect][data-is-seen="true"] > .RowBlockColumn,
+  [data-seen-effect][data-is-seen="true"] * > .RowBlockColumn {
+    transition: all 400ms ease-in-out;
     transition-property: opacity, transform;
   }
 
-  .RowBlock[data-is-seen="true"] > .RowBlockColumn + .RowBlockColumn {
+  *[data-seen-effect][data-is-seen="true"] > .RowBlockColumn + .RowBlockColumn,
+  [data-seen-effect][data-is-seen="true"]
+    *
+    > .RowBlockColumn
+    + .RowBlockColumn {
     transition-delay: 100ms;
   }
 

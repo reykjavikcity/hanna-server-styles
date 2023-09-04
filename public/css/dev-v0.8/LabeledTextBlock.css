@@ -4,24 +4,6 @@
   */
 
 @media screen {
-  .before-sprinkling .LabeledTextBlock,
-  .LabeledTextBlock[data-is-seen="false"] {
-    opacity: 0;
-    transform: translateY(200px);
-  }
-
-  .LabeledTextBlock[data-is-seen=""],
-  .LabeledTextBlock[data-is-seen="true"] {
-    opacity: 1;
-    transform: none;
-  }
-
-  .LabeledTextBlock[data-is-seen="true"] {
-    transition: all 500ms ease-in-out;
-
-    transition-property: opacity, transform;
-  }
-
   .LabeledTextBlock {
     margin-bottom: calc(7.543103448275862% + 8.879310344827587px);
   }

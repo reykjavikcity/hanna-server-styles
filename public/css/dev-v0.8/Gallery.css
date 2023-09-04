@@ -7,24 +7,6 @@
     padding-bottom: var(--CarouselStepper--height);
   }
 
-  .before-sprinkling .Gallery,
-  .Gallery[data-is-seen="false"] {
-    opacity: 0;
-    transform: translateY(200px);
-  }
-
-  .Gallery[data-is-seen=""],
-  .Gallery[data-is-seen="true"] {
-    opacity: 1;
-    transform: none;
-  }
-
-  .Gallery[data-is-seen="true"] {
-    transition: all 500ms ease-in-out;
-
-    transition-property: opacity, transform;
-  }
-
   .Gallery {
     margin-bottom: calc(10.560344827586206% + 2.431034482758619px);
   }

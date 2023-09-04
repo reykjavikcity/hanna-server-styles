@@ -1,22 +1,4 @@
 @media screen {
-  .before-sprinkling .IslandBlock,
-  .IslandBlock[data-is-seen="false"] {
-    opacity: 0;
-    transform: translateY(200px);
-  }
-
-  .IslandBlock[data-is-seen=""],
-  .IslandBlock[data-is-seen="true"] {
-    opacity: 1;
-    transform: none;
-  }
-
-  .IslandBlock[data-is-seen="true"] {
-    transition: all 500ms ease-in-out;
-
-    transition-property: opacity, transform;
-  }
-
   .IslandBlock {
     display: flex;
     flex-flow: column-reverse;

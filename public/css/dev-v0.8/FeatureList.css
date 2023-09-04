@@ -3,33 +3,15 @@
     efnistakn
   */
 @media screen {
-  .before-sprinkling .FeatureList,
-  .FeatureList[data-is-seen="false"] {
-    opacity: 0;
-    transform: translateY(200px);
-  }
-
-  .FeatureList[data-is-seen=""],
-  .FeatureList[data-is-seen="true"] {
-    opacity: 1;
-    transform: none;
-  }
-
-  .FeatureList[data-is-seen="true"] {
-    transition: all 500ms ease-in-out;
-
-    transition-property: opacity, transform;
-  }
-
   .FeatureList {
-    --efnistakn: "";
+    --efnistakn: ""; /* scope variable to container.*/
     background-color: var(--color-suld-25);
     --left-offset: var(--grid-1);
     padding-top: calc(4.310344827586207% + 11.93103448275862px);
     padding-bottom: calc(5.172413793103448% + 17.51724137931035px);
     margin-top: calc(7.543103448275862% + 8.879310344827587px);
     margin-bottom: calc(7.543103448275862% + 8.879310344827587px);
-  } /* scope variable to container.*/
+  }
 
   @media (max-width: 479px) {
     .FeatureList {
