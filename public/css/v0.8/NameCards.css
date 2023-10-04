@@ -1,4 +1,2 @@
 
-  /*!@deps
-    NameCard
-  */@media screen{.NameCards{-moz-column-gap:var(--grid-gutter);column-gap:var(--grid-gutter);display:grid}@media (min-width:480px) and (max-width:979px){.NameCards{grid-template-columns:repeat(auto-fill,48.34437086092716%)}}@media (min-width:980px){.NameCards{grid-template-columns:repeat(auto-fill,31.125827814569533%)}}}
+  /*!@deps NameCard */@media screen{.NameCards{-moz-column-gap:var(--grid-gutter);column-gap:var(--grid-gutter);display:grid}@media (min-width:480px) and (max-width:979px){.NameCards{grid-template-columns:repeat(auto-fill,48.34437086092716%)}}@media (min-width:980px){.NameCards{grid-template-columns:repeat(auto-fill,31.125827814569533%)}}}
