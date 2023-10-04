@@ -4,6 +4,18 @@
 
 - ... <!-- Add new lines here. -->
 
+## 0.8.81
+
+_2023-10-05_
+
+- `Layout` and `WizardLayout`:
+  - feat: Add styling for `__header__homelink` and `__header__sitename`
+- feat: Add `<title />` to `reykjavik-logo*.svg` asset files
+- feat: Add component `AutosuggestSearch`
+- feat: Style `SiteSearchInput` when it has no `<button/>`
+- feat: Tweaked styling of `.SiteSearchAutocomplete` dropdown
+- fix: Typo in `Mutiselect`'s dependency list
+
 ## 0.8.80
 
 _2023-09-07_
