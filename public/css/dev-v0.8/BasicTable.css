@@ -1,11 +1,10 @@
-/*!@deps
-    Footnote
-  */
+/*!@deps Footnote */
 
 @media screen {
   .TableWrapper {
     position: relative;
     overflow-x: auto;
+    display: flex;
 
     --BasicTable--width: auto;
     --BasicTable--margin-left: 0px;
@@ -59,16 +58,17 @@
 
   .TableWrapper > table,
   .TableWrapper > * > table {
-    margin: 0;
+    max-width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   .TableWrapper--at::before,
   .TableWrapper--at::after {
     content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
+    position: sticky;
     left: 0;
+    margin-right: var(--space-3--neg);
     width: var(--space-3);
     background-image: linear-gradient(
       90deg,
@@ -81,7 +81,9 @@
   }
   .TableWrapper--at::after {
     left: auto;
+    margin-right: 0;
     right: 0;
+    margin-left: var(--space-3--neg);
     transform: scaleX(-1);
   }
 
@@ -92,11 +94,6 @@
   .TableWrapper--at--end::after {
     /* content: none*/
     opacity: 0;
-  }
-  .TableWrapper__scroller {
-    overflow-x: auto;
-    padding-left: var(--BasicTable--pad-left);
-    padding-right: var(--BasicTable--pad-right);
   }
 
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -152,6 +149,12 @@
   .TableWrapper--BasicTable {
     margin-bottom: 1.875rem;
   }
+
+  .BasicTable {
+    margin-left: var(--BasicTable--pad-left);
+    margin-right: var(--BasicTable--pad-right);
+  }
+
   @media (max-width: 759px) {
     .BasicTable {
       width: 100%;

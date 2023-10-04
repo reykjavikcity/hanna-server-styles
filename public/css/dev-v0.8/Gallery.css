@@ -1,6 +1,4 @@
-/*!@deps
-    Carousel
-  */
+/*!@deps Carousel */
 
 @media screen {
   .before-sprinkling .Gallery:not([data-sprinkled]) {

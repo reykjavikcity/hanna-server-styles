@@ -1,6 +1,5 @@
-/*!@deps
-    NameCard
-  */
+/*!@deps NameCard */
+
 @media screen {
   .NameCards {
     display: grid;

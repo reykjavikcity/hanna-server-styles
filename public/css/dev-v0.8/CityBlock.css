@@ -1,7 +1,5 @@
-/*!@deps
-    ButtonPrimary
-    ButtonTertiary
-  */
+/*!@deps ButtonPrimary, ButtonTertiary */
+
 @media screen {
   .CityBlock {
     display: flex;

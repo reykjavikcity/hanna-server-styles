@@ -1,6 +1,5 @@
-/*!@deps
-    RowBlockColumn
-  */
+/*!@deps RowBlockColumn */
+
 @media screen {
   .RowBlock {
     margin-bottom: var(--component-vspace--large);

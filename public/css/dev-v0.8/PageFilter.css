@@ -1,13 +1,4 @@
-/*!@deps
-    TextInput
-    SearchInput
-    Datepicker
-    Selectbox
-    ButtonPrimary
-    ButtonSecondary
-    ButtonTertiary
-    Footnote
-  */
+/*!@deps TextInput, SearchInput, Datepicker, Selectbox, ButtonPrimary, ButtonSecondary, ButtonTertiary, Footnote */
 
 @media screen {
   .PageFilter {

@@ -1,6 +1,4 @@
-/*!@deps
-    FormField
-  */
+/*!@deps FormField */
 
 @media screen {
   .SiteSearchInput {
@@ -10,12 +8,11 @@
     /*   input__border_color: vars.color_suld_75,*/
     /*   input__border_radius: 0,*/
     /* })}*/
-    --ssi-height: calc(3.0534351145038165vw + 54.22900763358779px);
-  }
-  @media (min-width: 1368px) {
-    .SiteSearchInput {
-      --ssi-height: 96px;
-    }
+    --ssi-height: clamp(
+      64px,
+      calc(3.0534351145038165vw + 54.22900763358779px),
+      96px
+    );
   }
   .SiteSearchInput > .FormField__label {
     position: absolute;
@@ -30,24 +27,24 @@
   }
 
   .SiteSearchInput > .FormField__input {
-    padding: 0 var(--ssi-height) 0 0;
+    padding: 0;
     height: auto;
   }
   .SiteSearchInput > .FormField__input > input {
-    padding: calc(1.5267175572519083vw + 5.114503816793896px) 0;
-    padding-left: calc(1.5267175572519083vw + 11.114503816793896px);
-  }
-
-  @media (min-width: 1368px) {
-    .SiteSearchInput > .FormField__input > input {
-      padding: 26px 0;
-      padding-left: 32px;
-    }
+    padding: clamp(10px, calc(1.5267175572519083vw + 5.114503816793896px), 26px)
+      2px;
+    padding-left: clamp(
+      16px,
+      calc(1.5267175572519083vw + 11.114503816793896px),
+      32px
+    );
+    border-right: var(--ssi-height) solid transparent;
   }
 
   /* .SiteSearchInput__input {*/
   /* }*/
 
+  .SiteSearchInput > .FormField__input::after,
   .SiteSearchInput__button {
     overflow: hidden;
     white-space: nowrap;
@@ -59,9 +56,20 @@
     margin: -0.0625rem;
     width: var(--ssi-height);
     height: var(--ssi-height);
-    background-color: var(--color-faxafloi-100);
+    line-height: var(--ssi-height);
+    border: solid 0.125rem transparent;
     border-radius: 0 var(--FormField--input--border-radius)
       var(--FormField--input--border-radius) 0;
+  }
+  .SiteSearchInput > .FormField__input::after {
+    color: var(--color-suld-100);
+    background-color: var(--color-suld-0);
+    background-clip: padding-box;
+    pointer-events: none;
+  }
+  .SiteSearchInput__button {
+    z-index: 1;
+    background-color: var(--color-faxafloi-100);
     color: var(--color-suld-0);
   }
 
@@ -75,6 +83,7 @@
     background-color: var(--color-faxafloi-150);
     color: var(--color-suld-0);
   }
+  .SiteSearchInput > .FormField__input::after,
   .SiteSearchInput__button::before {
     display: inline-block;
     text-indent: 0;
@@ -92,8 +101,10 @@
     letter-spacing: 0;
     content: var(--icon--search);
 
+    font-size: 1.6rem;
+  }
+  .SiteSearchInput__button::before {
     width: 100%;
     margin-right: 1px;
-    font-size: 1.6rem;
   }
 }

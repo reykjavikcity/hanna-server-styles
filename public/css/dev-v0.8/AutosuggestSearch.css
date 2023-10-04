@@ -1,14 +1,14 @@
-/*!@deps SiteSearchInput */
+/*!@deps SearchInput */
 
 @media screen {
-  .SiteSearchAutocomplete {
+  .AutosuggestSearch {
     position: relative;
   }
-  .SiteSearchAutocomplete--open {
+  .AutosuggestSearch--open {
     z-index: var(--zindex--overlay);
   }
 
-  .SiteSearchAutocomplete__container {
+  .AutosuggestSearch__container {
     position: absolute;
     z-index: -1;
     top: 100%;
@@ -27,32 +27,42 @@
     box-shadow: var(--boxShadow-elevated);
   }
 
-  .SiteSearchAutocomplete__container--open {
+  .AutosuggestSearch__container--open {
     opacity: 1;
     max-height: 800px;
     padding: var(--space-1) 0;
   }
 
-  .SiteSearchAutocomplete__item {
+  .AutosuggestSearch__list {
+    --action-icon: none;
+  }
+  .AutosuggestSearch__list--action--search {
+    --action-icon: var(--icon--search);
+  }
+  .AutosuggestSearch__list--action--go {
+    --action-icon: var(--icon--arrow-right);
+  }
+
+  .AutosuggestSearch__item {
     font: var(--font-bd-l);
     padding: var(--space-2) var(--space-4);
     padding-right: var(--space-7);
   }
 
   @media (max-width: 759px) {
-    .SiteSearchAutocomplete__item {
+    .AutosuggestSearch__item {
       padding-left: var(--space-2);
       padding-right: var(--space-4);
     }
   }
 
-  .SiteSearchAutocomplete__item--highlighted {
+  .AutosuggestSearch__item--highlighted {
     position: relative;
     cursor: pointer;
     color: var(--color-faxafloi-100);
     background-color: var(--color-suld-25);
   }
-  .SiteSearchAutocomplete__item--highlighted::before {
+  .AutosuggestSearch__item--highlighted::before {
     display: inline-block;
     text-indent: 0;
     text-align: center;
@@ -67,8 +77,8 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: 0;
-    content: var(--icon--search);
 
+    content: var(--action-icon);
     color: var(--color-suld-100);
     float: right;
     font-size: var(--font-bd-s-size);
@@ -78,7 +88,7 @@
   }
 
   @media (max-width: 759px) {
-    .SiteSearchAutocomplete__item--highlighted::before {
+    .AutosuggestSearch__item--highlighted::before {
       margin-right: var(--space-2--neg);
       margin-left: var(--space-0_5);
     }

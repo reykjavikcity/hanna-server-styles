@@ -1,6 +1,5 @@
-/*!@deps
-    ButtonTertiary
-  */
+/*!@deps ButtonTertiary */
+
 @media screen {
   .ImageCards {
     --ImageCards--fallback: url("/assets/illustrations/esjan.png");

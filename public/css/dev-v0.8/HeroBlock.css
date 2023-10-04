@@ -1,7 +1,5 @@
-/*!@deps
-    ButtonPrimary
-    ButtonTertiary
-  */
+/*!@deps ButtonPrimary, ButtonTertiary */
+
 @media screen {
   .HeroBlock {
     padding: calc(0.8620689655172413% - 2.413793103448276px) 0;

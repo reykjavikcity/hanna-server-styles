@@ -41,7 +41,20 @@
     align-items: center;
   }
 
-  .WizardLayout__header__logo {
+  /** @deprecated Back-compat  (Remove in Hanna 0.9) */
+  a.WizardLayout__header__logo {
+    --link-color: _inherit;
+    --link-weight: _inherit;
+    --link-underline: none;
+
+    /* NOTE: This intentionally doesn't reset the :hover style*/
+    /* unless..*/
+    --link-color--hover: var(--link-color);
+    --link-underline--hover: none;
+    --link-underline-offset: 0;
+  }
+
+  .WizardLayout__header__homelink {
     --link-color: _inherit;
     --link-weight: _inherit;
     --link-underline: none;
@@ -52,18 +65,40 @@
     --link-underline--hover: none;
     --link-underline-offset: 0;
 
+    margin: -0.5rem;
+    padding: 0.5rem;
+    padding-right: 0;
+    margin-right: 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    box-sizing: content-box;
+    max-width: 14rem;
+  }
+  .WizardLayout__header__logo {
+    order: -1;
+
     overflow: hidden;
     white-space: nowrap;
 
     display: block;
-    width: 11.375rem;
+    width: 2.1875rem; /* -notext Logo variant */
     height: 3.3125rem;
   }
+  .WizardLayout__header__logo:last-child {
+    width: 11.375rem; /** Normal full-logo  */
+  }
+  /** @deprecated Back-compat selector  (Remove in Hanna 0.9) */
+  a.WizardLayout__header__logo {
+    width: 11.375rem;
+    margin: -0.5rem;
+    padding: 0.5rem;
+  }
 
-  .WizardLayout__header__logo > svg,
-  .WizardLayout__header__logo > img,
   .WizardLayout__header__logo > * > svg,
-  .WizardLayout__header__logo > * > img {
+  .WizardLayout__header__logo > * > img,
+  .WizardLayout__header__logo > svg,
+  .WizardLayout__header__logo > img {
     width: 100%;
     height: 100%;
     display: inline-block;
@@ -76,32 +111,42 @@
     margin-left: -1px;
   }
 
+  /** @deprecated Back-compat styles (Remove in Hanna 0.9) */
   @media (max-width: 979px) {
-    .WizardLayout__header__logo {
-      margin: -0.625rem;
-      padding: 0.625rem;
+    a.WizardLayout__header__link {
       overflow: hidden;
       box-sizing: content-box;
-
-      /* // Hide the text layer within the logo*/
-      /* svg .logo-text {*/
-      /* 	display: none;*/
-      /* }*/
     }
-
-    .WizardLayout__header__logo > div {
+    a.WizardLayout__header__logo > div {
       display: inline-block;
     }
-
-    .WizardLayout__header__logo > svg,
-    .WizardLayout__header__logo > img,
-    .WizardLayout__header__logo > * > svg,
-    .WizardLayout__header__logo > * > img {
-      width: 11.5625rem;
-      -o-object-fit: cover;
-      object-fit: cover;
+    a.WizardLayout__header__logo svg,
+    a.WizardLayout__header__logo img {
       margin-right: 1.3125rem;
     }
+  }
+
+  .WizardLayout__header__sitename {
+    position: relative;
+    flex-shrink: 1;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    font-weight: var(--font-weight--bold);
+    margin-top: -0.25em;
+    margin-left: var(--space-1_5);
+    padding-left: var(--space-1_5);
+    border-left: 1px solid transparent;
+  }
+  .WizardLayout__header__sitename::before {
+    content: "";
+    position: absolute;
+    top: 0.25em;
+    left: -1px;
+    bottom: 0;
+    width: 1px;
+    height: var(--space-4);
+    background-color: var(--color-suld-100);
+    margin: auto 0;
   }
 
   .WizardLayout__wrap {

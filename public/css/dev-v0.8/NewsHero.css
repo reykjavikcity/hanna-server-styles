@@ -1,8 +1,5 @@
-/*!@deps
-    PageHeading
-    ShareButtons
-    Bling
-  */
+/*!@deps PageHeading, ShareButtons, Bling */
+
 @media screen {
   .NewsHero {
     position: relative;

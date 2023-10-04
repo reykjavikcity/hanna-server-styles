@@ -1,6 +1,5 @@
-/*!@deps
-    FormField
-  */
+/*!@deps FormField */
+
 @media screen {
   .FileInput {
     margin-bottom: calc(4.310344827586207% + 17.93103448275862px);

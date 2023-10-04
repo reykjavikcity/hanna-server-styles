@@ -1,9 +1,4 @@
-/*!@deps
-    Tagpill
-    FormField
-    TextInput
-    Checkbox
-  */
+/*!@deps TagPill, FormField, TextInput, Checkbox */
 
 .Multiselect__input {
   height: auto;

@@ -1,7 +1,5 @@
-/*!@deps
-    Bling
-    efnistakn
-  */
+/*!@deps Bling, efnistakn */
+
 @media screen {
   .FeatureList {
     --efnistakn: ""; /* scope variable to container.*/

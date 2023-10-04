@@ -1,6 +1,4 @@
-/*!@deps
-    ButtonBar
-  */
+/*!@deps ButtonBar */
 
 .ButtonTertiary {
   --link-color: _inherit;

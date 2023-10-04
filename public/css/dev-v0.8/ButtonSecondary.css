@@ -1,7 +1,4 @@
-/*!@deps
-    Icon
-    ButtonBar
-  */
+/*!@deps Icon, ButtonBar */
 
 .ButtonSecondary {
   --link-color: _inherit;

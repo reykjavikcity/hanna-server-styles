@@ -1,11 +1,5 @@
-/*!@deps
-    ArticleMeta
-    Heading
-    ContentImage
-    TextBlock
-    VSpacer
-    RelatedLinks
-  */
+/*!@deps ArticleMeta, Heading, ContentImage, TextBlock, VSpacer, RelatedLinks */
+
 @media screen {
   .ContentArticle {
     max-width: 792px;
