@@ -164,6 +164,7 @@
   }
   .menu-is-open {
     --Layout__header-logo-color: var(--color-suld-0);
+    --Layout__header-homelink-divColor: var(--color-faxafloi-75);
     --Layout__header-color: var(--color-suld-0);
     --Layout__header-backgroundColor: var(--color-faxafloi-100);
   }
@@ -328,7 +329,12 @@
 @media (min-width: 980px) {
   html[data-mega-panel-active] {
     --Layout__header-logo-color: var(--color-suld-0);
+    --Layout__header-homelink-divColor: var(--color-faxafloi-75);
     --Layout__header-color: var(--color-suld-0);
+  }
+
+  :root {
+    --Layout__header-homelink-width: 18.5rem;
   }
 
   .MainMenu {
@@ -342,7 +348,7 @@
     z-index: var(--zindex--header);
     top: 0;
     right: 0;
-    left: var(--grid-3-3);
+    left: var(--Layout__header-homelink-space);
     height: var(--Layout__header-height);
     padding-bottom: calc(
       var(--link-underline--thickness) + var(--link-underline-offset)
