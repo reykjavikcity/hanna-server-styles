@@ -1,1 +1,1 @@
-import"../../_chunks/qj-a13fcd70.js";import{d as t}from"../../_chunks/utils-9450e812.js";export{t as detectEdgeScroll};
+import"../../_chunks/qj-f5658347.js";import{d as t}from"../../_chunks/utils-ed8ff0d8.js";export{t as detectEdgeScroll};
