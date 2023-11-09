@@ -4,6 +4,18 @@
 
 - ... <!-- Add new lines here. -->
 
+## 0.8.84
+
+_2023-11-10_
+
+- feat: Partially revert `--Layout__header-height` reduction on wide viewports
+- `CheckboxButtonsGroup` and `RadioButtonsGroup`
+  - feat: Add styling for `--stacked` variant
+  - feat: Cap item row-gap to be more reasonable height
+- feat: Add styling for `.Multiselect__optionSeparator`
+- feat: Add dev warnings for non-table content inside `.TableWrapper`s
+- fix: Horizontal shift during `.Modal` close-transition
+
 ## 0.8.83
 
 _2023-10-26_
