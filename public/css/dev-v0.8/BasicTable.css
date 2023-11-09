@@ -110,6 +110,35 @@
   }
 
   html:not([data-disable-css-warnings-with-abandon="true"])
+    .TableWrapper
+    > :nth-of-type(1):hover,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .TableWrapper
+    > :not(table):not(.TableWrapper__scroller):hover {
+    --WARNING--message: "TableWrapper should only contain a single <table/>";
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .TableWrapper
+    > :nth-of-type(1):hover::before,
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .TableWrapper
+    > :not(table):not(.TableWrapper__scroller):hover::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: var(--WARNING--message) !important;
+  }
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
     .TableWrapper--BasicTable--align--right.TableWrapper--BasicTable--fullwidth:hover {
     --WARNING--message: "--align-right and --fullwidth should not be used together";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;

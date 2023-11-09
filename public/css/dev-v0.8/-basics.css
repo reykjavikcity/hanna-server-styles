@@ -45,7 +45,7 @@
   /**/
 
 :root {
-  --cssVersion: "0.8.83";
+  --cssVersion: "0.8.84";
   --browser-scrollbar-width: 16px;
   --bp-w-phone: 320px;
   --bp-w-phablet: 480px;
@@ -438,7 +438,7 @@
 
 @media (min-width: 980px) {
   :root {
-    --Layout__header-height: 88px;
+    --Layout__header-height: 120px;
     --Layout__header-homelink-width: 28.5rem;
     --Layout__header-homelink-space: calc(
       var(--Layout__header-homelink-width) + var(--grid-0-1)

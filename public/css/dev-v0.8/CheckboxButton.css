@@ -239,21 +239,27 @@
 /* Inline for better compression and loading speed*/
 
 @media screen {
+  .CheckboxButtonsGroup > .FormField__options {
+    -moz-column-gap: var(--grid-0-1);
+    column-gap: var(--grid-0-1);
+  }
+
   @media (min-width: 480px) {
     .CheckboxButtonsGroup > .FormField__options {
-      margin-right: var(--grid-0-1--neg);
       display: flex;
       flex-flow: row wrap;
     }
   }
   .CheckboxButtonsGroup > * > .FormField__options__item {
-    margin-bottom: var(--space-2);
+    margin-bottom: clamp(
+      16px,
+      calc(0.9009009009009009vw + 11.675675675675675px),
+      24px
+    );
   }
 
   @media (min-width: 480px) {
     .CheckboxButtonsGroup > * > .FormField__options__item {
-      margin-bottom: var(--grid-0-1);
-      margin-right: var(--grid-0-1);
       width: var(--grid-6);
     }
   }
@@ -266,6 +272,10 @@
     .CheckboxButtonsGroup > * > .FormField__options__item {
       width: var(--grid-3);
     }
+  }
+
+  .CheckboxButtonsGroup--stacked > * > .FormField__options__item {
+    width: 100%;
   }
 
   .CheckboxButtonsGroup > .FormField__error,
@@ -507,21 +517,28 @@
     box-shadow: none;
     opacity: 0.5;
   }
+
+  .RadioButtonsGroup > .FormField__options {
+    -moz-column-gap: var(--grid-0-1);
+    column-gap: var(--grid-0-1);
+  }
+
   @media (min-width: 480px) {
     .RadioButtonsGroup > .FormField__options {
-      margin-right: var(--grid-0-1--neg);
       display: flex;
       flex-flow: row wrap;
     }
   }
   .RadioButtonsGroup > * > .FormField__options__item {
-    margin-bottom: var(--space-2);
+    margin-bottom: clamp(
+      16px,
+      calc(0.9009009009009009vw + 11.675675675675675px),
+      24px
+    );
   }
 
   @media (min-width: 480px) {
     .RadioButtonsGroup > * > .FormField__options__item {
-      margin-bottom: var(--grid-0-1);
-      margin-right: var(--grid-0-1);
       width: var(--grid-6);
     }
   }
@@ -534,6 +551,10 @@
     .RadioButtonsGroup > * > .FormField__options__item {
       width: var(--grid-3);
     }
+  }
+
+  .RadioButtonsGroup--stacked > * > .FormField__options__item {
+    width: 100%;
   }
 
   .RadioButtonsGroup > .FormField__error,

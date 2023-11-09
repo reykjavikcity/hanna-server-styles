@@ -26,6 +26,9 @@
       padding: 6.25rem 0;
     }
   }
+  html.modal-open .Modalwrapper {
+    padding-right: var(--browser-scrollbar-width);
+  }
 
   [hidden].Modalwrapper {
     display: block; /* override default '[hidden][hidden]' styling*/
