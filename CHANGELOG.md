@@ -4,6 +4,21 @@
 
 - ... <!-- Add new lines here. -->
 
+## 0.8.85
+
+_2023-12-11_
+
+- feat: Add component `MainMenu2`
+- feat: Deprecate variable `--bp-w-Hamburger` in favor of `--bp-w-netbook`
+- feat: Add `.Layout__header__navlink`, deprecate `.Layout__header__skiplink`
+- fix: Stop SVG minifier from re-introducing `<style/>` elements
+- fix: Add back smooth transitions on mobile menu open/close
+- fix: Prevent `Modal`s shifting when page scrollbars appear
+- fix: Missing part of `ExtraLinks`' "is-seen" transition styling
+- fix: Tweak `MainMenu` white link hover color
+- fix: Make markup/a11y dev WARNING messages visible by default, again
+- fix: Remove incorrect dev WARNING when hovering valid `BasicTable` markup
+
 ## 0.8.84
 
 _2023-11-10_
