@@ -1,0 +1,1 @@
+const a="is",p="en",c=new Set(["is","en","pl"]);let s=a;const n=[],o=t=>{s=t?c.has(t)?t:p:a,n[0]=s};o.push=t=>{n.unshift(s),o(t)},o.pop=()=>{n.shift(),s=n[0]||a};const l=(t,e)=>(console.error(`language '${t}' not supported`),e),g=(t,e)=>{const r=t.lang||s;return t.texts||e[r]||l(r,e[s])};export{s as D,g,o as s};

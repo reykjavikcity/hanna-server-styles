@@ -1,0 +1,1 @@
+import{o as c}from"./jsxRuntime.module-98db1a52.js";const u=e=>{const r=e.Tag||"span";return c(r,{tabIndex:0,onFocus:o=>{var n;let t=o.currentTarget,l=Math.max(e.depth||1,1);for(;l--&&t;)t=t.parentElement;if(!t)return;const a=t.querySelectorAll("a,input, select, textarea,button, [tabindex]"),s=e.atTop?a.length-1:0;(n=a[s])==null||n.focus()}})};export{u as F};
