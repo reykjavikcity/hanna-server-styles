@@ -57,14 +57,14 @@
 
 html:not([data-disable-css-warnings-with-abandon="true"])
   .PullQuote__quote
-  > *:not(p):hover {
+  > *:not(p) {
   --WARNING--message: "Only <p> is allowed inside `.PullQuote`";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
 html:not([data-disable-css-warnings-with-abandon="true"])
   .PullQuote__quote
-  > *:not(p):hover::before {
+  > *:not(p)::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;
@@ -193,14 +193,14 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 
 html:not([data-disable-css-warnings-with-abandon="true"])
   .PullQuote__by
-  > *:not(span):span(a):hover {
+  > *:not(span):span(a) {
   --WARNING--message: 'Only <span> or <a href=""> is allowed inside `.PullQuote__by`';
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
 html:not([data-disable-css-warnings-with-abandon="true"])
   .PullQuote__by
-  > *:not(span):span(a):hover::before {
+  > *:not(span):span(a)::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;

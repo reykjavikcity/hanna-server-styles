@@ -74,13 +74,13 @@
 
   html:not([data-disable-css-warnings-with-abandon="true"])
     .RowBlock
-    > .RowBlockColumn:nth-child(n + 3):hover {
+    > .RowBlockColumn:nth-child(n + 3) {
     --WARNING--message: "Only two `RowBlockColumn`s allowed here";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
     .RowBlock
-    > .RowBlockColumn:nth-child(n + 3):hover::before {
+    > .RowBlockColumn:nth-child(n + 3)::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -97,13 +97,13 @@
 
   html:not([data-disable-css-warnings-with-abandon="true"])
     .RowBlock
-    > .RowBlockColumn:first-child:last-child:hover {
+    > .RowBlockColumn:first-child:last-child {
     --WARNING--message: "Two `RowBlockColumn`s are required";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
     .RowBlock
-    > .RowBlockColumn:first-child:last-child:hover::before {
+    > .RowBlockColumn:first-child:last-child::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -120,13 +120,13 @@
 
   html:not([data-disable-css-warnings-with-abandon="true"])
     .RowBlock
-    > :not(.RowBlockColumn):hover {
+    > :not(.RowBlockColumn) {
     --WARNING--message: "Only `RowBlockColumn`s allowed here";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
     .RowBlock
-    > :not(.RowBlockColumn):hover::before {
+    > :not(.RowBlockColumn)::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -204,13 +204,13 @@
 @media screen {
   html:not([data-disable-css-warnings-with-abandon="true"])
     :not(.RowBlock)
-    > .RowBlockColumn:hover {
+    > .RowBlockColumn {
     --WARNING--message: "Must be direct child of a `RowBlock`";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
     :not(.RowBlock)
-    > .RowBlockColumn:hover::before {
+    > .RowBlockColumn::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;

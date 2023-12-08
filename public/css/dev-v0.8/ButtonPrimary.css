@@ -22,7 +22,7 @@
   --Button--iconOutdent: var(--space-0_5--neg);
   --Button--iconSpace: var(--space-1);
 
-  /* normalize links*/
+  /* normalize links */
   white-space: nowrap;
   vertical-align: middle;
 
@@ -62,7 +62,7 @@
 .ButtonPrimary[data-focus-visible-added] {
   outline: 0;
   text-decoration: none;
-  /* box-shadow: var(--boxShadow-hover);*/
+  /* box-shadow: var(--boxShadow-hover); */
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   color: var(--Button--textColor);
   border: var(--Button--border) solid var(--Button--color);
@@ -71,7 +71,7 @@
 .ButtonPrimary:focus-visible {
   outline: 0;
   text-decoration: none;
-  /* box-shadow: var(--boxShadow-hover);*/
+  /* box-shadow: var(--boxShadow-hover); */
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   color: var(--Button--textColor);
   border: var(--Button--border) solid var(--Button--color);
@@ -196,13 +196,13 @@
 /* ---------------------------------------------------------------------------*/
 
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .ButtonPrimary--small.ButtonPrimary--wide:hover {
+  .ButtonPrimary--small.ButtonPrimary--wide {
   --WARNING--message: "`--small` and `--wide` do NOT mix.";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .ButtonPrimary--small.ButtonPrimary--wide:hover::before {
+  .ButtonPrimary--small.ButtonPrimary--wide::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;
@@ -218,17 +218,17 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 }
 
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .ButtonPrimary--go--back[data-icon]:hover,
+  .ButtonPrimary--go--back[data-icon],
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .ButtonPrimary--go--forward[data-icon]:hover {
+  .ButtonPrimary--go--forward[data-icon] {
   --WARNING--message: "Icons and `--go--(back|forward)` do NOT mix.";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .ButtonPrimary--go--back[data-icon]:hover::before,
+  .ButtonPrimary--go--back[data-icon]::before,
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .ButtonPrimary--go--forward[data-icon]:hover::before {
+  .ButtonPrimary--go--forward[data-icon]::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;
@@ -244,17 +244,17 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 }
 
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .ButtonPrimary--go-back.ButtonPrimary--destructive:hover,
+  .ButtonPrimary--go-back.ButtonPrimary--destructive,
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .ButtonPrimary--go--forward.ButtonPrimary--destructive:hover {
+  .ButtonPrimary--go--forward.ButtonPrimary--destructive {
   --WARNING--message: "`--destructive` and `--go--(back|forward)` do NOT mix";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .ButtonPrimary--go-back.ButtonPrimary--destructive:hover::before,
+  .ButtonPrimary--go-back.ButtonPrimary--destructive::before,
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .ButtonPrimary--go--forward.ButtonPrimary--destructive:hover::before {
+  .ButtonPrimary--go--forward.ButtonPrimary--destructive::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;

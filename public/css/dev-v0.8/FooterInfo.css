@@ -94,14 +94,14 @@
 
 html:not([data-disable-css-warnings-with-abandon="true"])
   .FooterInfo__group--main
-  ~ .FooterInfo__group--main:hover {
+  ~ .FooterInfo__group--main {
   --WARNING--message: "Multiple `--main` groups are not supported";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
 html:not([data-disable-css-warnings-with-abandon="true"])
   .FooterInfo__group--main
-  ~ .FooterInfo__group--main:hover::before {
+  ~ .FooterInfo__group--main::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;

@@ -141,13 +141,12 @@
   }
   /* @deprecated  (Remove in v0.9)*/
 
-  html:not([data-disable-css-warnings-with-abandon="true"])
-    .Gallerty__track:hover {
+  html:not([data-disable-css-warnings-with-abandon="true"]) .Gallerty__track {
     --WARNING--message: "Unsupported: use `.Gallery__items` instead";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .Gallerty__track:hover::before {
+    .Gallerty__track::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;

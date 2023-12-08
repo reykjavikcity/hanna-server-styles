@@ -228,12 +228,12 @@
     */
 
   html:not([data-disable-css-warnings-with-abandon="true"])
-    [class].react-datepicker__navigation--years:hover {
+    [class].react-datepicker__navigation--years {
     --WARNING--message: initial;
     box-shadow: none !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    [class].react-datepicker__navigation--years:hover::before {
+    [class].react-datepicker__navigation--years::before {
     content: none !important;
   }
   [class].react-datepicker__navigation--years {

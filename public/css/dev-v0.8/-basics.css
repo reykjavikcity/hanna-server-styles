@@ -45,7 +45,7 @@
   /**/
 
 :root {
-  --cssVersion: "0.8.84";
+  --cssVersion: "0.8.85";
   --browser-scrollbar-width: 16px;
   --bp-w-phone: 320px;
   --bp-w-phablet: 480px;
@@ -1127,24 +1127,22 @@ blockquote {
   margin: 0;
 }
 
-html:not([data-disable-css-warnings-with-abandon="true"]) p ul:hover,
-html:not([data-disable-css-warnings-with-abandon="true"]) p ol:hover,
-html:not([data-disable-css-warnings-with-abandon="true"]) p div:hover,
-html:not([data-disable-css-warnings-with-abandon="true"]) p p:hover,
-html:not([data-disable-css-warnings-with-abandon="true"]) p dl:hover,
-html:not([data-disable-css-warnings-with-abandon="true"]) p blockquote:hover {
+html:not([data-disable-css-warnings-with-abandon="true"]) p ul,
+html:not([data-disable-css-warnings-with-abandon="true"]) p ol,
+html:not([data-disable-css-warnings-with-abandon="true"]) p div,
+html:not([data-disable-css-warnings-with-abandon="true"]) p p,
+html:not([data-disable-css-warnings-with-abandon="true"]) p dl,
+html:not([data-disable-css-warnings-with-abandon="true"]) p blockquote {
   --WARNING--message: "No block-level tags inside <p/>";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
-html:not([data-disable-css-warnings-with-abandon="true"]) p ul:hover::before,
-html:not([data-disable-css-warnings-with-abandon="true"]) p ol:hover::before,
-html:not([data-disable-css-warnings-with-abandon="true"]) p div:hover::before,
-html:not([data-disable-css-warnings-with-abandon="true"]) p p:hover::before,
-html:not([data-disable-css-warnings-with-abandon="true"]) p dl:hover::before,
-html:not([data-disable-css-warnings-with-abandon="true"])
-  p
-  blockquote:hover::before {
+html:not([data-disable-css-warnings-with-abandon="true"]) p ul::before,
+html:not([data-disable-css-warnings-with-abandon="true"]) p ol::before,
+html:not([data-disable-css-warnings-with-abandon="true"]) p div::before,
+html:not([data-disable-css-warnings-with-abandon="true"]) p p::before,
+html:not([data-disable-css-warnings-with-abandon="true"]) p dl::before,
+html:not([data-disable-css-warnings-with-abandon="true"]) p blockquote::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;
@@ -1178,13 +1176,13 @@ iframe:not([frameborder="yes"]) {
   border: 0;
 }
 
-html:not([data-disable-css-warnings-with-abandon="true"]) img:not([alt]):hover,
+html:not([data-disable-css-warnings-with-abandon="true"]) img:not([alt]),
 html:not([data-disable-css-warnings-with-abandon="true"])
-  audio:not([title]):not([aria-label]):hover,
+  audio:not([title]):not([aria-label]),
 html:not([data-disable-css-warnings-with-abandon="true"])
-  video:not([title]):not([aria-label]):hover,
+  video:not([title]):not([aria-label]),
 html:not([data-disable-css-warnings-with-abandon="true"])
-  iframe:not([title]):not([aria-label]):hover {
+  iframe:not([title]):not([aria-label]) {
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
@@ -1218,15 +1216,14 @@ a:active {
   color: var(--link-color--hover);
   border-bottom: var(--link-underline--hover);
 }
-html:not([data-disable-css-warnings-with-abandon="true"]) a[href="#"]:hover,
-html:not([data-disable-css-warnings-with-abandon="true"]) a:not([href]):hover {
+html:not([data-disable-css-warnings-with-abandon="true"]) a[href="#"],
+html:not([data-disable-css-warnings-with-abandon="true"]) a:not([href]) {
   --WARNING--message: "Use <button/> instead";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
+html:not([data-disable-css-warnings-with-abandon="true"]) a[href="#"]::before,
 html:not([data-disable-css-warnings-with-abandon="true"])
-  a[href="#"]:hover::before,
-html:not([data-disable-css-warnings-with-abandon="true"])
-  a:not([href]):hover::before {
+  a:not([href])::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;
@@ -1240,12 +1237,11 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   padding: 0 0.5em !important;
   content: var(--WARNING--message) !important;
 }
-html:not([data-disable-css-warnings-with-abandon="true"]) button[href]:hover {
+html:not([data-disable-css-warnings-with-abandon="true"]) button[href] {
   --WARNING--message: 'Use <a href=""/>';
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
-html:not([data-disable-css-warnings-with-abandon="true"])
-  button[href]:hover::before {
+html:not([data-disable-css-warnings-with-abandon="true"]) button[href]::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;
@@ -1333,13 +1329,13 @@ ol[data-oltype="I"] > li::before {
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
   :not(ul):not(ol)
-  > li:hover {
+  > li {
   --WARNING--message: "<li/> must be inside <ol/> or <ul/>";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
   :not(ul):not(ol)
-  > li:hover::before {
+  > li::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;
@@ -1353,23 +1349,17 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   padding: 0 0.5em !important;
   content: var(--WARNING--message) !important;
 }
-html:not([data-disable-css-warnings-with-abandon="true"]) ol > :not(li):hover,
-html:not([data-disable-css-warnings-with-abandon="true"]) ul > :not(li):hover,
-html:not([data-disable-css-warnings-with-abandon="true"])
-  menu
-  > :not(li):hover {
+html:not([data-disable-css-warnings-with-abandon="true"]) ol > :not(li),
+html:not([data-disable-css-warnings-with-abandon="true"]) ul > :not(li),
+html:not([data-disable-css-warnings-with-abandon="true"]) menu > :not(li) {
   --WARNING--message: "Lists may only contain <li/>s";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
-html:not([data-disable-css-warnings-with-abandon="true"])
-  ol
-  > :not(li):hover::before,
-html:not([data-disable-css-warnings-with-abandon="true"])
-  ul
-  > :not(li):hover::before,
+html:not([data-disable-css-warnings-with-abandon="true"]) ol > :not(li)::before,
+html:not([data-disable-css-warnings-with-abandon="true"]) ul > :not(li)::before,
 html:not([data-disable-css-warnings-with-abandon="true"])
   menu
-  > :not(li):hover::before {
+  > :not(li)::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;
@@ -1403,13 +1393,13 @@ legend {
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
   :not(fieldset)
-  > legend:hover {
+  > legend {
   --WARNING--message: "<legend/> must be first-child of <fieldset/>";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
   :not(fieldset)
-  > legend:hover::before {
+  > legend::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;

@@ -135,12 +135,12 @@
   /* @deprecated  (Remove in v0.9)*/
 
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .ArticleCarousel__items:hover {
+    .ArticleCarousel__items {
     --WARNING--message: "Unsupported: use `.ArticleCarousel__itemlist` instead";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .ArticleCarousel__items:hover::before {
+    .ArticleCarousel__items::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -165,12 +165,12 @@
   /* @deprecated  (Remove in v0.9)*/
 
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .ArticleCarousel__track:hover {
+    .ArticleCarousel__track {
     --WARNING--message: "Unsupported: use `.ArticleCarousel__itemlist` instead";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .ArticleCarousel__track:hover::before {
+    .ArticleCarousel__track::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -413,12 +413,12 @@
   }
 
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .ArticleCarouselCard__morelink:not([aria-label]):hover {
+    .ArticleCarouselCard__morelink:not([aria-label]) {
     --WARNING--message: 'aria-label="" is missing';
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .ArticleCarouselCard__morelink:not([aria-label]):hover::before {
+    .ArticleCarouselCard__morelink:not([aria-label])::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;

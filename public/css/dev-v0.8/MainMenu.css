@@ -1,3 +1,5 @@
+/*!@deps MobileMenuToggler */
+
 @keyframes MainMenu__mega__item--fadeup {
   0% {
     opacity: 0;
@@ -149,14 +151,11 @@
     overflow-x: hidden;
     overflow-y: scroll;
 
-    transition: (
-      margin-top 400ms 0ms ease-in-out,
-      opacity 400ms 0ms,
-      visibility 0ms 400ms
-    );
+    transition: margin-top 400ms 0ms ease-in-out, opacity 400ms 0ms,
+      visibility 0ms 400ms;
   }
 
-  .menu-is-active:not(.menu-is-open) .MainMenu, /* @deprecated ('htmlCl.menuIsOpen' is always set now) Remove this selector in v0.9*/
+  .menu-is-active:not(.menu-is-open) .MainMenu, /* @deprecated ('menuIsOpen' is always set now) Remove this selector in v0.9*/
 	  .menu-is-closed .MainMenu {
     visibility: hidden;
     opacity: 0;
@@ -179,7 +178,7 @@
   .MainMenu__items {
     color: var(--color-suld-0);
     --link-color: _inherit;
-    --link-color--hover: var(--color-suld-25);
+    --link-color--hover: var(--color-faxafloi-25);
 
     display: flex;
     flex-flow: row wrap;
@@ -477,10 +476,10 @@
   .MainMenu__panelsWrap {
     background-color: var(--color-faxafloi-100);
 
-    margin-left: calc(50% - 50vw + 0px);
-    padding-left: calc(50vw - 50% + 0px);
-    margin-right: calc(50% - 50vw + 0px);
-    padding-right: calc(50vw - 50% + 0px);
+    margin-left: calc(50% - 50vw);
+    padding-left: calc(50vw - 50%);
+    margin-right: calc(50% - 50vw);
+    padding-right: calc(50vw - 50%);
     position: relative;
   }
   .MainMenu__panelsWrap:before {
@@ -604,13 +603,12 @@
 /* ===========================================================================*/
 
 @media screen {
-  html:not([data-disable-css-warnings-with-abandon="true"])
-    .MainMenu:not(nav):hover {
+  html:not([data-disable-css-warnings-with-abandon="true"]) .MainMenu:not(nav) {
     --WARNING--message: "Please use <nav/>";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .MainMenu:not(nav):hover::before {
+    .MainMenu:not(nav)::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -626,12 +624,12 @@
   }
 
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .MainMenu:not([aria-label]):not([aria-labelledby]):hover {
+    .MainMenu:not([aria-label]):not([aria-labelledby]) {
     --WARNING--message: "Please add `aria-label` or `aria-labelledby`";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .MainMenu:not([aria-label]):not([aria-labelledby]):hover::before {
+    .MainMenu:not([aria-label]):not([aria-labelledby])::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -648,13 +646,13 @@
 
   html:not([data-disable-css-warnings-with-abandon="true"])
     .MainMenu[aria-labelledby]
-    > .MainMenu__title:not([id]):hover {
+    > .MainMenu__title:not([id]) {
     --WARNING--message: "Please add `id` attribute";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
     .MainMenu[aria-labelledby]
-    > .MainMenu__title:not([id]):hover::before {
+    > .MainMenu__title:not([id])::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -670,12 +668,12 @@
   }
 
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .MainMenu__separator:not(.MainMenu__items > *):hover {
+    .MainMenu__separator:not(.MainMenu__items > *) {
     --WARNING--message: "Separators must be child of ul.MainMenu__items";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .MainMenu__separator:not(.MainMenu__items > *):hover::before {
+    .MainMenu__separator:not(.MainMenu__items > *)::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -691,12 +689,12 @@
   }
 
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .MainMenu__list:first-child:hover {
+    .MainMenu__list:first-child {
     --WARNING--message: "`.MainMenu__title` missing";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .MainMenu__list:first-child:hover::before {
+    .MainMenu__list:first-child::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -712,12 +710,12 @@
   }
 
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .MainMenu__item:first-child:not(.MainMenu__item--home):hover {
+    .MainMenu__item:first-child:not(.MainMenu__item--home) {
     --WARNING--message: "Home link missing";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .MainMenu__item:first-child:not(.MainMenu__item--home):hover::before {
+    .MainMenu__item:first-child:not(.MainMenu__item--home)::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -928,10 +926,10 @@
     padding-top: 35.38461538461539%;
   }
 
-  html.menu-is-open .AuxiliaryPanel::after {
+  .menu-is-open .AuxiliaryPanel::after {
     transition: visibility 0s linear, opacity 600ms 200ms;
   }
-  html.menu-is-closed .AuxiliaryPanel::after {
+  .menu-is-closed .AuxiliaryPanel::after {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s 300ms linear, opacity 300ms;

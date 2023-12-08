@@ -134,45 +134,44 @@
     color: var(--TagPill--color--hover);
   }
 
+  html:not([data-disable-css-warnings-with-abandon="true"]) .TagPill:disabled,
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .TagPill:disabled:hover,
+    .TagPill[aria-disabled],
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .TagPill[aria-disabled]:hover,
+    .TagPill[aria-pressed],
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .TagPill[aria-pressed]:hover,
+    .TagPill__button:disabled,
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .TagPill__button:disabled:hover,
+    .TagPill__button[aria-disabled],
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .TagPill__button[aria-disabled]:hover,
+    .TagPill__button[aria-pressed],
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .TagPill__button[aria-pressed]:hover,
+    .TagPill__remove:disabled,
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .TagPill__remove:disabled:hover,
+    .TagPill__remove[aria-disabled],
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .TagPill__remove[aria-disabled]:hover,
-  html:not([data-disable-css-warnings-with-abandon="true"])
-    .TagPill__remove[aria-pressed]:hover {
+    .TagPill__remove[aria-pressed] {
     --WARNING--message: ".TagPill buttons/links can not be disabled";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .TagPill:disabled:hover::before,
+    .TagPill:disabled::before,
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .TagPill[aria-disabled]:hover::before,
+    .TagPill[aria-disabled]::before,
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .TagPill[aria-pressed]:hover::before,
+    .TagPill[aria-pressed]::before,
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .TagPill__button:disabled:hover::before,
+    .TagPill__button:disabled::before,
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .TagPill__button[aria-disabled]:hover::before,
+    .TagPill__button[aria-disabled]::before,
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .TagPill__button[aria-pressed]:hover::before,
+    .TagPill__button[aria-pressed]::before,
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .TagPill__remove:disabled:hover::before,
+    .TagPill__remove:disabled::before,
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .TagPill__remove[aria-disabled]:hover::before,
+    .TagPill__remove[aria-disabled]::before,
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .TagPill__remove[aria-pressed]:hover::before {
+    .TagPill__remove[aria-pressed]::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;

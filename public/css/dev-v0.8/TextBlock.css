@@ -20,12 +20,12 @@
     }
 
     html:not([data-disable-css-warnings-with-abandon="true"])
-      .TextBlock--align--right.TextBlock--wide:hover {
+      .TextBlock--align--right.TextBlock--wide {
       --WARNING--message: "`--align--right` can't be `--wide`";
       box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
     }
     html:not([data-disable-css-warnings-with-abandon="true"])
-      .TextBlock--align--right.TextBlock--wide:hover::before {
+      .TextBlock--align--right.TextBlock--wide::before {
       all: initial !important;
       order: -999 !important;
       font-family: sans-serif !important;
@@ -217,12 +217,12 @@
   /* ---------------------------------------------------------------------------*/
 
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .TextBlock--small.TextBlock--labelled:hover {
+    .TextBlock--small.TextBlock--labelled {
     --WARNING--message: "`--small` can't be `--labelled`";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .TextBlock--small.TextBlock--labelled:hover::before {
+    .TextBlock--small.TextBlock--labelled::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -238,12 +238,12 @@
   }
 
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .TextBlock--wide.TextBlock--labelled:hover {
+    .TextBlock--wide.TextBlock--labelled {
     --WARNING--message: "`--wide` can't be `--labelled`";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .TextBlock--wide.TextBlock--labelled:hover::before {
+    .TextBlock--wide.TextBlock--labelled::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -261,12 +261,12 @@
   /* ---------------------------------------------------------------------------*/
 
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .TextBlock--largetext:hover {
+    .TextBlock--largetext {
     --WARNING--message: '`--largetext` is Outdated. TextBlock is "large" by default';
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .TextBlock--largetext:hover::before {
+    .TextBlock--largetext::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -281,13 +281,12 @@
     content: var(--WARNING--message) !important;
   }
 
-  html:not([data-disable-css-warnings-with-abandon="true"])
-    .TextBlock__title:hover {
+  html:not([data-disable-css-warnings-with-abandon="true"]) .TextBlock__title {
     --WARNING--message: "`__title` is Outdated. Use PageHeading/SubHeading";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .TextBlock__title:hover::before {
+    .TextBlock__title::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -304,19 +303,19 @@
 
   html:not([data-disable-css-warnings-with-abandon="true"])
     .TextBlock
-    .PageHeading:hover,
+    .PageHeading,
   html:not([data-disable-css-warnings-with-abandon="true"])
     .TextBlock
-    .SubHeading:hover {
+    .SubHeading {
     --WARNING--message: "Should NOT be used inside TextBlock";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
     .TextBlock
-    .PageHeading:hover::before,
+    .PageHeading::before,
   html:not([data-disable-css-warnings-with-abandon="true"])
     .TextBlock
-    .SubHeading:hover::before {
+    .SubHeading::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -376,12 +375,12 @@
   }
 
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .Heading--align--right.Heading--wide:hover {
+    .Heading--align--right.Heading--wide {
     --WARNING--message: "`--align--right` can't be `--wide`";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .Heading--align--right.Heading--wide:hover::before {
+    .Heading--align--right.Heading--wide::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -423,13 +422,13 @@
 }
 
 html:not([data-disable-css-warnings-with-abandon="true"])
-  h1.Heading:not([data-dev-forcedh1]):hover {
+  h1.Heading:not([data-dev-forcedh1]) {
   --WARNING--message: "Only use <H2/> or lower for .Heading";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
 html:not([data-disable-css-warnings-with-abandon="true"])
-  h1.Heading:not([data-dev-forcedh1]):hover::before {
+  h1.Heading:not([data-dev-forcedh1])::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;
@@ -463,12 +462,12 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   }
 
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .SubHeading--align--right.SubHeading--wide:hover {
+    .SubHeading--align--right.SubHeading--wide {
     --WARNING--message: "`--align--right` can't be `--wide`";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .SubHeading--align--right.SubHeading--wide:hover::before {
+    .SubHeading--align--right.SubHeading--wide::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -506,13 +505,13 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   --link-underline--hover: none;
 }
 
-html:not([data-disable-css-warnings-with-abandon="true"]) h1.SubHeading:hover {
+html:not([data-disable-css-warnings-with-abandon="true"]) h1.SubHeading {
   --WARNING--message: "Only use <H2/> or lower for .SubHeading";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
 html:not([data-disable-css-warnings-with-abandon="true"])
-  h1.SubHeading:hover::before {
+  h1.SubHeading::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;
@@ -535,25 +534,20 @@ div.Sharpie {
   color: inherit;
 }
 
-html:not([data-disable-css-warnings-with-abandon="true"]) p.Sharpie:hover,
-html:not([data-disable-css-warnings-with-abandon="true"]) ol.Sharpie:hover,
-html:not([data-disable-css-warnings-with-abandon="true"]) ul.Sharpie:hover,
-html:not([data-disable-css-warnings-with-abandon="true"]) li.Sharpie:hover,
-html:not([data-disable-css-warnings-with-abandon="true"]) div.Sharpie:hover {
+html:not([data-disable-css-warnings-with-abandon="true"]) p.Sharpie,
+html:not([data-disable-css-warnings-with-abandon="true"]) ol.Sharpie,
+html:not([data-disable-css-warnings-with-abandon="true"]) ul.Sharpie,
+html:not([data-disable-css-warnings-with-abandon="true"]) li.Sharpie,
+html:not([data-disable-css-warnings-with-abandon="true"]) div.Sharpie {
   --WARNING--message: "Only use `Sharpie` on inline elements";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
-html:not([data-disable-css-warnings-with-abandon="true"])
-  p.Sharpie:hover::before,
-html:not([data-disable-css-warnings-with-abandon="true"])
-  ol.Sharpie:hover::before,
-html:not([data-disable-css-warnings-with-abandon="true"])
-  ul.Sharpie:hover::before,
-html:not([data-disable-css-warnings-with-abandon="true"])
-  li.Sharpie:hover::before,
-html:not([data-disable-css-warnings-with-abandon="true"])
-  div.Sharpie:hover::before {
+html:not([data-disable-css-warnings-with-abandon="true"]) p.Sharpie::before,
+html:not([data-disable-css-warnings-with-abandon="true"]) ol.Sharpie::before,
+html:not([data-disable-css-warnings-with-abandon="true"]) ul.Sharpie::before,
+html:not([data-disable-css-warnings-with-abandon="true"]) li.Sharpie::before,
+html:not([data-disable-css-warnings-with-abandon="true"]) div.Sharpie::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;
@@ -639,12 +633,12 @@ br.VSpacer + [class], /* @deprecated (remove in v0.9)*/
   margin-bottom: var(--component-vspace--small);
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .VSpacer--top--none.VSpacer--bottom--none:hover {
+  .VSpacer--top--none.VSpacer--bottom--none {
   --WARNING--message: "VSpacer can't be both `--top--none` and  `--bottom--none`";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .VSpacer--top--none.VSpacer--bottom--none:hover::before {
+  .VSpacer--top--none.VSpacer--bottom--none::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;
@@ -662,13 +656,13 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 /* Warn about redundant classNames*/
 html:not([data-disable-css-warnings-with-abandon="true"])
   [class*="VSpacer--top--"][class*="VSpacer--bottom--"]
-  .VSpacer--small:hover {
+  .VSpacer--small {
   --WARNING--message: "The class-name `.VSpacer--small` is redundant";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
   [class*="VSpacer--top--"][class*="VSpacer--bottom--"]
-  .VSpacer--small:hover::before {
+  .VSpacer--small::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;
@@ -684,13 +678,13 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
   [class*="VSpacer--top--"][class*="VSpacer--bottom--"]
-  .VSpacer--large:hover {
+  .VSpacer--large {
   --WARNING--message: "The class-name `.VSpacer--large` is redundant";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
   [class*="VSpacer--top--"][class*="VSpacer--bottom--"]
-  .VSpacer--large:hover::before {
+  .VSpacer--large::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;
@@ -706,13 +700,13 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
   [class*="VSpacer--top--"][class*="VSpacer--bottom--"]
-  .VSpacer--xlarge:hover {
+  .VSpacer--xlarge {
   --WARNING--message: "The class-name `.VSpacer--xlarge` is redundant";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
   [class*="VSpacer--top--"][class*="VSpacer--bottom--"]
-  .VSpacer--xlarge:hover::before {
+  .VSpacer--xlarge::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;

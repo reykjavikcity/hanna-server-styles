@@ -111,19 +111,19 @@
 
   html:not([data-disable-css-warnings-with-abandon="true"])
     .TableWrapper
-    > :nth-of-type(1):hover,
+    > :nth-of-type(2),
   html:not([data-disable-css-warnings-with-abandon="true"])
     .TableWrapper
-    > :not(table):not(.TableWrapper__scroller):hover {
+    > :not(table):not(.TableWrapper__scroller) {
     --WARNING--message: "TableWrapper should only contain a single <table/>";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
     .TableWrapper
-    > :nth-of-type(1):hover::before,
+    > :nth-of-type(2)::before,
   html:not([data-disable-css-warnings-with-abandon="true"])
     .TableWrapper
-    > :not(table):not(.TableWrapper__scroller):hover::before {
+    > :not(table):not(.TableWrapper__scroller)::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -139,12 +139,12 @@
   }
 
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .TableWrapper--BasicTable--align--right.TableWrapper--BasicTable--fullwidth:hover {
+    .TableWrapper--BasicTable--align--right.TableWrapper--BasicTable--fullwidth {
     --WARNING--message: "--align-right and --fullwidth should not be used together";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .TableWrapper--BasicTable--align--right.TableWrapper--BasicTable--fullwidth:hover::before {
+    .TableWrapper--BasicTable--align--right.TableWrapper--BasicTable--fullwidth::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;

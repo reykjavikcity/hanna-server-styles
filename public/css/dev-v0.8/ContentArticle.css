@@ -18,39 +18,37 @@
 
   html:not([data-disable-css-warnings-with-abandon="true"])
     .ContentArticle
-    > [class*="--align--"]:hover,
+    > [class*="--align--"],
   html:not([data-disable-css-warnings-with-abandon="true"])
     .ContentArticle
-    > [class*="--wide"]:hover,
+    > [class*="--wide"],
   html:not([data-disable-css-warnings-with-abandon="true"])
     .ContentArticle
-    > .TextBlock--labelled:hover,
+    > .TextBlock--labelled,
   html:not([data-disable-css-warnings-with-abandon="true"])
     .ContentArticle
     > *:not(.TextBlock):not(.PageHeading):not(.Heading):not(.ContentImage):not(
       .RelatedLinks
-    ):not(.ArticleMeta):not(.VSpacer):not(hr):not(
-      .ContentArticle__header
-    ):hover {
+    ):not(.ArticleMeta):not(.VSpacer):not(hr):not(.ContentArticle__header) {
     --WARNING--message: "Only use plain `PageHeading`, `Heading`, `TextBlock`, `ContentImage`, `RelatedLinks`, `ArticleMeta`, `VSpacer`, `<hr/>` inside this parent wrapper.";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
     .ContentArticle
-    > [class*="--align--"]:hover::before,
+    > [class*="--align--"]::before,
   html:not([data-disable-css-warnings-with-abandon="true"])
     .ContentArticle
-    > [class*="--wide"]:hover::before,
+    > [class*="--wide"]::before,
   html:not([data-disable-css-warnings-with-abandon="true"])
     .ContentArticle
-    > .TextBlock--labelled:hover::before,
+    > .TextBlock--labelled::before,
   html:not([data-disable-css-warnings-with-abandon="true"])
     .ContentArticle
     > *:not(.TextBlock):not(.PageHeading):not(.Heading):not(.ContentImage):not(
       .RelatedLinks
     ):not(.ArticleMeta):not(.VSpacer):not(hr):not(
       .ContentArticle__header
-    ):hover::before {
+    )::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;

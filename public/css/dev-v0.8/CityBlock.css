@@ -65,19 +65,19 @@
 
   html:not([data-disable-css-warnings-with-abandon="true"])
     .CityBlock__summary
-    li:not([class]),
+    li:not([class]):hover,
   html:not([data-disable-css-warnings-with-abandon="true"])
     .CityBlock__summary
-    blockquote {
+    blockquote:hover {
     --WARNING--message: "Use simple markup only";
     box-shadow: 0 0 0 2px rgba(255, 165, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
     .CityBlock__summary
-    li:not([class])::before,
+    li:not([class]):hover::before,
   html:not([data-disable-css-warnings-with-abandon="true"])
     .CityBlock__summary
-    blockquote::before {
+    blockquote:hover::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;

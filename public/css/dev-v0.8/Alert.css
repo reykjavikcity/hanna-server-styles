@@ -58,14 +58,14 @@
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Alert:not(.Alert--info):not(.Alert--success):not(.Alert--warning):not(
       .Alert--error
-    ):not(.Alert--critical):hover {
+    ):not(.Alert--critical) {
     --WARNING--message: '"Type" modifier class-name is missing';
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Alert:not(.Alert--info):not(.Alert--success):not(.Alert--warning):not(
       .Alert--error
-    ):not(.Alert--critical):hover::after {
+    ):not(.Alert--critical)::after {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -81,12 +81,12 @@
   }
 
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .Alert:not([role="alert"]):hover {
+    .Alert:not([role="alert"]) {
     --WARNING--message: 'Should be role="alert"';
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .Alert:not([role="alert"]):hover::after {
+    .Alert:not([role="alert"])::after {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;

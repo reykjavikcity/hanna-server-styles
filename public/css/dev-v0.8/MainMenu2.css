@@ -1,0 +1,652 @@
+/*!@deps ButtonPrimary, ButtonSecondary */
+
+.menu-is-open {
+  overflow-y: hidden;
+}
+
+.menu-is-open > body {
+  padding-right: var(--grid-margin);
+}
+
+.menu-is-open .Layout__alerts {
+  max-height: 0;
+}
+
+.menu-is-open .Layout__header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: var(--browser-scrollbar-width);
+}
+
+.menu-is-open {
+  --Layout__header-logo-color: var(--color-suld-0);
+  --Layout__header-homelink-divColor: var(--color-faxafloi-75);
+  --Layout__header-color: var(--color-suld-0);
+}
+
+.before-sprinkling .MainMenu2:not([data-sprinkled]) {
+  display: none;
+}
+
+.MainMenu2 {
+  z-index: 1;
+  --MainMenu2--padding-bottom: var(--space-8);
+  --MainMenu2--mainLink--paddingBottom: var(--space-2);
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw + var(--browser-scrollbar-width));
+}
+
+.MainMenu2[data-sprinkled] {
+  position: absolute;
+  z-index: calc(var(--zindex--header) - 1);
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.MainMenu2--open[class] {
+  position: fixed;
+  margin-left: 0;
+  margin-right: 0;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.MainMenu2--open::before {
+  content: "";
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  /* Avoid overlapping the scrollbars */
+  left: 20px;
+  right: 20px;
+  height: var(--Layout__header-height);
+  background: inherit;
+}
+
+.MainMenu2--closed {
+  pointer-events: none;
+}
+.MainMenu2__content > * {
+  pointer-events: auto;
+}
+
+:not([data-sprinkled]) > .MainMenu2__content {
+  padding-top: var(--space-3);
+}
+.MainMenu2__content {
+  margin: auto;
+  min-height: 100%;
+  box-sizing: content-box;
+  max-width: 1208px;
+  padding-left: var(--grid-margin);
+  padding-right: var(--grid-margin--right);
+}
+[data-sprinkled] > .MainMenu2__content {
+  position: relative;
+}
+
+.MainMenu2__title {
+  display: none; /* ok as long as aria-label/aria-labelledby is used!*/
+}
+
+.MainMenu2--closed > * > .MainMenu2__hot__items,
+.MainMenu2--closed > * > .MainMenu2__main,
+.MainMenu2--closed > * > .MainMenu2__extra__items,
+.MainMenu2--closed > * > .MainMenu2__related {
+  display: none !important;
+}
+
+.MainMenu2__toggler {
+  grid-area: toggler;
+  align-self: center;
+  justify-self: flex-end;
+
+  margin: 0;
+  width: auto; /* DO NOT REMVE!*/
+}
+.MainMenu2__toggler[aria-pressed="true"] {
+  position: sticky;
+  top: calc(0.5 * calc(var(--Layout__header-height) - var(--Button--height)));
+  z-index: 1;
+  --Button--backgroundColor--active: var(--color-faxafloi-100);
+}
+a.MainMenu2__toggler {
+  position: absolute;
+  z-index: var(--zindex--header);
+  top: calc(0.5 * var(--Layout__header-height));
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.MainMenu2__main {
+  grid-area: main;
+  color: var(--color-suld-0);
+  --link-color: _inherit;
+  --link-color--hover: var(--color-faxafloi-25);
+}
+
+.MainMenu2__main__item > * {
+  margin: 0;
+  /*
+      Without this elements with "width: max-content;"
+      AND, it seems, complex (calc-based) padding or min-wdith
+      will cause Firefox (as of 117 at least) to expand the width of the
+      outer .MainMenu__item container.  Chrome does not do this.
+      Remove this once Firefox has got its act together
+    */
+  width: auto;
+}
+.MainMenu2__main__item[aria-current="true"] {
+}
+.MainMenu2__main__item--home {
+  position: absolute;
+  right: 9999px;
+  left: auto;
+}
+.MainMenu2__main__item--home a:focus,
+.MainMenu2__main__item--home a:active,
+.MainMenu2__main__item--home button:focus {
+  right: -9999px;
+
+  z-index: var(--zindex--sr-only);
+  font-size: 1em;
+  background: var(--color-suld-0);
+  border: 3px double var(--link-color--hover);
+  margin: 0;
+  padding: 0.2em 0.33em;
+  color: var(--link-color--hover);
+  text-shadow: none;
+  white-space: nowrap;
+}
+.MainMenu2__main__link[class] {
+  --link-color: _inherit;
+  --link-weight: _inherit;
+  --link-underline: none;
+
+  /* NOTE: This intentionally doesn't reset the :hover style*/
+  /* unless..*/
+
+  display: inline-block;
+  font-weight: var(--font-weight--bold);
+  padding-top: var(--space-1);
+  padding-bottom: calc(var(--MainMenu2--mainLink--paddingBottom) - 2px);
+  border-bottom: 2px solid transparent;
+}
+.MainMenu2__main__link[aria-pressed="true"] {
+  border-color: currentColor;
+}
+[aria-current="true"] > a.MainMenu2__main__link {
+  border-color: currentColor;
+}
+
+.MainMenu2__main__sub__items {
+}
+
+.MainMenu2__main__sub__item > * {
+  margin: 0;
+  /*
+      Without this elements with "width: max-content;"
+      AND, it seems, complex (calc-based) padding or min-wdith
+      will cause Firefox (as of 117 at least) to expand the width of the
+      outer .MainMenu__item container.  Chrome does not do this.
+      Remove this once Firefox has got its act together
+    */
+  width: auto;
+}
+.MainMenu2__main__sub__item[aria-current="true"] {
+}
+.MainMenu2__main__sub__link {
+}
+[aria-current="true"] > .MainMenu2__main__sub__link {
+  border-color: currentColor;
+}
+.MainMenu2__main__sub__link__descr {
+}
+
+.MainMenu2__hot__items {
+  grid-area: hot;
+}
+.MainMenu2__hot__item > * {
+  margin: 0;
+  /*
+      Without this elements with "width: max-content;"
+      AND, it seems, complex (calc-based) padding or min-wdith
+      will cause Firefox (as of 117 at least) to expand the width of the
+      outer .MainMenu__item container.  Chrome does not do this.
+      Remove this once Firefox has got its act together
+    */
+  width: auto;
+}
+.MainMenu2__hot__item[aria-current="true"] {
+}
+.MainMenu2__hot__item--login {
+}
+.MainMenu2__hot__link {
+  margin: ;
+}
+
+.MainMenu2__extra__items {
+  grid-area: extra;
+}
+.MainMenu2__extra__item > * {
+  margin: 0;
+  /*
+      Without this elements with "width: max-content;"
+      AND, it seems, complex (calc-based) padding or min-wdith
+      will cause Firefox (as of 117 at least) to expand the width of the
+      outer .MainMenu__item container.  Chrome does not do this.
+      Remove this once Firefox has got its act together
+    */
+  width: auto;
+}
+.MainMenu2__extra__item[aria-current="true"] {
+}
+.MainMenu2__extra__item--messages {
+}
+.MainMenu2__extra__item--search {
+}
+.MainMenu2__extra__link {
+}
+
+.MainMenu2__related {
+  grid-area: related;
+  color: var(--color-suld-200);
+}
+
+.MainMenu2__related__title {
+  font-weight: var(--font-weight--bold);
+  padding-top: var(--space-1);
+  padding-bottom: calc(var(--MainMenu2--mainLink--paddingBottom) - 1px);
+  /* color: var(--color-faxafloi-100);
+    border-bottom: 1px solid var(--color-faxafloi-75); */
+  color: var(--color-suld-150);
+  border-bottom: 1px solid var(--color-suld-100);
+}
+.MainMenu2__related__items {
+  padding-top: var(--space-3);
+}
+.MainMenu2__related__item > * {
+  margin: 0;
+  /*
+      Without this elements with "width: max-content;"
+      AND, it seems, complex (calc-based) padding or min-wdith
+      will cause Firefox (as of 117 at least) to expand the width of the
+      outer .MainMenu__item container.  Chrome does not do this.
+      Remove this once Firefox has got its act together
+    */
+  width: auto;
+}
+.MainMenu2__related__item {
+  margin-bottom: var(--space-2);
+}
+.MainMenu2__related__item[aria-current="true"] {
+}
+.MainMenu2__related__link {
+}
+
+/*
+
+   ==========================================================================
+    Mobile mode
+   ==========================================================================
+  */
+
+@media (max-width: 979px) {
+  .MainMenu2 {
+    --MainMenu2--mainLink--paddingBottom: var(--space-1);
+    background: var(--color-faxafloi-100);
+  }
+  .MainMenu2--closed {
+    background: none;
+  }
+
+  .MainMenu2__content > * {
+    padding-left: var(--space-3);
+    padding-right: var(--space-3);
+  }
+  @media (max-width: 350px) {
+    .MainMenu2__content > * {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .MainMenu2__content {
+    display: grid;
+    grid-template:
+      ".       toggler" var(--Layout__header-height)
+      "main       main" auto
+      "hot         hot" auto
+      "extra     extra" auto
+      "related related" 1fr
+      "illstr   illstr" clamp(175px, 35.38461538461539vw, 250px)
+      / var(--Layout__header-homelink-width) auto;
+  }
+
+  :not([data-sprinkled]) > .MainMenu2__content::after,
+  .MainMenu2--open > .MainMenu2__content::after {
+    content: "";
+    grid-area: illstr;
+    margin: 0 var(--grid-margin--neg);
+    background: var(--color-suld-0) url("/assets/valmundur-a-sundi.png")
+      calc(40% - 10px) 100% / auto 90% repeat-x;
+    /* mix-blend-mode: multiply; */
+  }
+
+  .MainMenu2__toggler {
+    overflow: hidden;
+    width: 0;
+    padding-left: 0;
+    padding-right: 0;
+    min-width: var(--space-8);
+  }
+  .MainMenu2__toggler[class]::before {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 1px;
+  }
+
+  .MainMenu2__toggler[aria-pressed="true"] {
+    --Button--color: var(--color-suld-0);
+    --Button--border: 1px;
+  }
+  .MainMenu2 .ButtonSecondary {
+    --Button--backgroundColor: var(--color-faxafloi-100);
+    --Button--backgroundColor--active: var(--color-faxafloi-150);
+    --Button--color: var(--color-suld-0);
+    --Button--color--active: var(--color-suld-50);
+  }
+
+  .MainMenu2__main {
+    padding-top: var(--space-2);
+    margin-bottom: var(--space-3);
+  }
+
+  .MainMenu2__main__item {
+    font-size: 1.25rem;
+    line-height: 2rem;
+    margin-bottom: var(--space-1);
+  }
+
+  .MainMenu2__main__link:active,
+  .MainMenu2__main__link:hover,
+  .MainMenu2__main__link[data-focus-visible-added] {
+    color: var(--color-suld-0);
+    border-color: currentColor;
+  }
+  .MainMenu2__main__link:focus-visible {
+    color: var(--color-suld-0);
+    border-color: currentColor;
+  }
+
+  .MainMenu2__main__sub__items {
+    margin-top: var(--space-2);
+    margin-left: var(--space-2);
+    margin-bottom: var(--space-1);
+  }
+  .MainMenu2__main__sub__item {
+    margin-bottom: var(--space-2);
+  }
+  .MainMenu2__main__sub__link {
+  }
+  .MainMenu2__main__sub__link__descr {
+    display: none;
+  }
+
+  .MainMenu2__hot__items,
+  .MainMenu2__extra__items {
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--space-2);
+    align-items: center;
+    margin-bottom: var(--space-2);
+  }
+
+  .MainMenu2__related {
+    position: relative;
+    z-index: 1;
+    margin-top: var(--space-4);
+    background-color: var(--color-suld-0);
+    padding-top: var(--space-6);
+    padding-bottom: var(--space-4);
+
+    position: relative;
+  }
+
+  .MainMenu2__related::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--grid-margin--neg);
+    right: var(--grid-margin--neg);
+    z-index: -1;
+    background: inherit;
+  }
+  .MainMenu2__related__title {
+    font-size: 1.25rem;
+    line-height: 2rem;
+  }
+}
+
+/*
+
+   ==========================================================================
+    Desktop mode
+   ==========================================================================
+  */
+
+@media (min-width: 980px) {
+  .MainMenu2 {
+    --MainMenu2--main--width: calc(
+      50% + clamp(40px, calc(16.49484536082474vw - 121.64948453608247px), 104px)
+    );
+  }
+  .MainMenu2__content {
+    display: grid;
+    grid-template:
+      ".     . hot    " var(--space-10)
+      "main  . related" auto
+      "main  . extra  " 1fr
+      / var(--MainMenu2--main--width) var(--grid-1) auto;
+  }
+  [data-sprinkled] > .MainMenu2__content {
+    grid-template:
+      ".     hot      hot  toggler" var(--Layout__header-height)
+      "main  .    related  related" auto
+      "main  .    extra      extra" 1fr
+      / var(--MainMenu2--main--width) var(--grid-1) 1fr auto;
+  }
+
+  .MainMenu2:not([data-sprinkled]),
+  .MainMenu2--open {
+    background: var(--color-suld-0);
+    background-image: linear-gradient(
+      90deg,
+      var(--color-faxafloi-100) var(--MainMenu2--main--width),
+      transparent 0%
+    );
+  }
+
+  .MainMenu2--open .MainMenu2__content::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 50%;
+    width: 50vw;
+    height: 100%;
+    background: var(--menu-image, none) var(--grid-3) 95% no-repeat;
+  }
+
+  .MainMenu2__toggler {
+  }
+
+  .MainMenu2__main {
+    position: relative;
+    margin-right: var(--grid-1);
+    padding-bottom: var(--MainMenu2--padding-bottom);
+  }
+  [data-sprinkled] > * > .MainMenu2__main {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+  }
+  :not([data-sprinkled]) > * > * > .MainMenu2__main__item {
+    border-bottom: 1px solid var(--color-faxafloi-75);
+  }
+  :not([data-sprinkled]) > * > * > * > a.MainMenu2__main__link {
+    color: inherit;
+  }
+  .MainMenu2__main__link {
+    color: var(--color-faxafloi-75);
+    /* margin-right: var(--grid-0-1); */
+    margin-right: clamp(
+      16px,
+      calc(6.185567010309279vw - 44.618556701030926px),
+      40px
+    );
+  }
+  .MainMenu2__main--noneActive > * > .MainMenu2__main__link {
+    color: inherit;
+  }
+
+  .MainMenu2__main__link:not(strong):active,
+  .MainMenu2__main__link:not(strong):hover,
+  .MainMenu2__main__link:not(strong)[data-focus-visible-added] {
+    color: inherit;
+    border-color: currentColor;
+  }
+  .MainMenu2__main__link:not(strong):focus-visible {
+    color: inherit;
+    border-color: currentColor;
+  }
+  .MainMenu2__main__link[aria-pressed="true"] {
+    color: var(--color-suld-0);
+  }
+
+  .MainMenu2__main__sub__items {
+    width: 100%;
+    margin-top: -1px;
+    margin-bottom: var(--space-4);
+    border-top: 1px solid var(--color-faxafloi-75);
+    padding-top: var(--space-3);
+    order: 2;
+    transition: all 500ms ease-in-out;
+    transition-property: visibility, opacity;
+  }
+
+  @media (min-width: 1368px) {
+    .MainMenu2__main__sub__items {
+      -moz-column-count: 2;
+      column-count: 2;
+      -moz-column-gap: clamp(
+        16px,
+        calc(4.123711340206185vw - 24.412371134020617px),
+        32px
+      );
+      column-gap: clamp(
+        16px,
+        calc(4.123711340206185vw - 24.412371134020617px),
+        32px
+      );
+    }
+  }
+
+  .MainMenu2__main__sub__items[hidden] {
+    order: 1;
+    position: absolute;
+    top: calc(var(--font-base-leading) + var(--space-3));
+    display: block;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .MainMenu2__main__sub__item {
+    margin-bottom: var(--space-4);
+  }
+
+  @media (min-width: 1368px) {
+    .MainMenu2__main__sub__item {
+      min-height: 5rem;
+      -moz-column-break-inside: avoid;
+      break-inside: avoid;
+    }
+  }
+
+  .MainMenu2__main__sub__link {
+    font-size: 1.25rem;
+    line-height: 2rem;
+  }
+  .MainMenu2__main__sub__link__descr {
+    display: block;
+    font: var(--font-base);
+    font-weight: var(--font-weight--normal);
+  }
+
+  :not([data-sprinkled]) > * > .MainMenu2__hot__items {
+    justify-content: flex-start;
+    position: static;
+    margin-bottom: var(--space-2);
+  }
+  .MainMenu2__hot__items {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  .MainMenu2--closed > * > .MainMenu2__hot__items {
+    display: flex !important;
+  }
+  .MainMenu2__hot__item {
+    margin-right: var(--space-2);
+  }
+
+  .MainMenu2__extra__items,
+  :not(.MainMenu2__extra__items) + .MainMenu2__related {
+    padding-bottom: 235px;
+    margin-bottom: var(--space-2);
+  }
+
+  .MainMenu2__extra__item {
+    margin-bottom: var(--space-2);
+  }
+
+  .MainMenu2__related {
+    margin-bottom: var(--space-4);
+  }
+
+  .MainMenu2__related__link {
+    background-color: var(--color-suld-0);
+  }
+}
+
+/* ------------------------------------------------------------------------ */
+/* Dev warnings                                                             */
+/* ------------------------------------------------------------------------ */
+
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .MainMenu2:not([aria-label]) {
+  --WARNING--message: 'aria-label="" is missing';
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .MainMenu2:not([aria-label])::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}

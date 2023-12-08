@@ -133,19 +133,19 @@
 
   html:not([data-disable-css-warnings-with-abandon="true"])
     .InfoBlock__extrainfo
-    + .InfoBlock__attention:hover,
+    + .InfoBlock__attention,
   html:not([data-disable-css-warnings-with-abandon="true"])
     .InfoBlock__attention
-    + .InfoBlock__extrainfo:hover {
+    + .InfoBlock__extrainfo {
     --WARNING--message: "Choose *EITHER* `__extrainfo` *OR* `__attention`.";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
     .InfoBlock__extrainfo
-    + .InfoBlock__attention:hover::before,
+    + .InfoBlock__attention::before,
   html:not([data-disable-css-warnings-with-abandon="true"])
     .InfoBlock__attention
-    + .InfoBlock__extrainfo:hover::before {
+    + .InfoBlock__extrainfo::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;

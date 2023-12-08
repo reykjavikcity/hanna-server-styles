@@ -635,20 +635,30 @@
     transition: none;
   }
 
+  .ExtraLinks[data-is-seen] .ExtraLinks:after,
+  [data-is-seen] .ExtraLinks .ExtraLinks:after {
+    content: "";
+    position: absolute;
+    left: var(--grid-margin--neg);
+    top: 0;
+    bottom: 0;
+    border-left: calc(1.5267175572519083vw + 3.1145038167938957px) solid
+      var(--color-suld-25);
+    transform: scaleY(0);
+    transform-origin: 0 100%;
+  }
+
   .before-sprinkling .ExtraLinks .ExtraLinks::after,
   .before-sprinkling .ExtraLinks .ExtraLinks::after,
   .ExtraLinks[data-is-seen="false"] .ExtraLinks::after,
   [data-is-seen="false"] .ExtraLinks .ExtraLinks::after {
-    border-left: calc(1.5267175572519083vw + 3.1145038167938957px) solid
-      var(--color-suld-25);
+    transform: scaleY(1);
   }
 
   .ExtraLinks[data-is-seen="true"] .ExtraLinks::after,
   [data-is-seen="true"] .ExtraLinks .ExtraLinks::after,
   .ExtraLinks[data-is-seen=""] .ExtraLinks::after,
   [data-is-seen=""] .ExtraLinks .ExtraLinks::after {
-    transform: scaleY(0);
-    transform-origin: 0 100%;
   }
 
   .ExtraLinks[data-is-seen="true"] .ExtraLinks::after,

@@ -151,16 +151,16 @@
   }
 
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .CheckboxButton__note:not([id]):hover,
+    .CheckboxButton__note:not([id]),
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .CheckboxButton__error:not([id]):hover {
+    .CheckboxButton__error:not([id]) {
     --WARNING--message: "should have id atribute to match input[aria-describedby]";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .CheckboxButton__note:not([id]):hover::after,
+    .CheckboxButton__note:not([id])::after,
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .CheckboxButton__error:not([id]):hover::after {
+    .CheckboxButton__error:not([id])::after {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -285,12 +285,12 @@
   }
 
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .CheckboxButtonsGroup--slim:hover {
+    .CheckboxButtonsGroup--slim {
     --WARNING--message: "Deprecated: .CheckboxButtonsGroup --slim is no longer supported";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .CheckboxButtonsGroup--slim:hover::before {
+    .CheckboxButtonsGroup--slim::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -306,12 +306,12 @@
   }
 
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .CheckboxButtonsGroup--2col:hover {
+    .CheckboxButtonsGroup--2col {
     --WARNING--message: " Deprecated: . CheckboxButtonsGroup --2col is no longer supported";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .CheckboxButtonsGroup--2col:hover::before {
+    .CheckboxButtonsGroup--2col::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -327,12 +327,12 @@
   }
 
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .CheckboxButtonsGroup--3col:hover {
+    .CheckboxButtonsGroup--3col {
     --WARNING--message: "Deprecated: . CheckboxButtonsGroup --3col is no longer supported";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .CheckboxButtonsGroup--3col:hover::before {
+    .CheckboxButtonsGroup--3col::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -564,12 +564,12 @@
   }
 
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .RadioButtonsGroup--slim:hover {
+    .RadioButtonsGroup--slim {
     --WARNING--message: "Deprecated: .RadioButtonsGroup --slim is no longer supported";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .RadioButtonsGroup--slim:hover::before {
+    .RadioButtonsGroup--slim::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -585,12 +585,12 @@
   }
 
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .RadioButtonsGroup--2col:hover {
+    .RadioButtonsGroup--2col {
     --WARNING--message: " Deprecated: . RadioButtonsGroup --2col is no longer supported";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .RadioButtonsGroup--2col:hover::before {
+    .RadioButtonsGroup--2col::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -606,12 +606,12 @@
   }
 
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .RadioButtonsGroup--3col:hover {
+    .RadioButtonsGroup--3col {
     --WARNING--message: "Deprecated: . RadioButtonsGroup --3col is no longer supported";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .RadioButtonsGroup--3col:hover::before {
+    .RadioButtonsGroup--3col::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;

@@ -21,13 +21,12 @@
 
   /* @deprecated (Remove in v0.9)*/
 
-  html:not([data-disable-css-warnings-with-abandon="true"])
-    .Attention--strong:hover {
+  html:not([data-disable-css-warnings-with-abandon="true"]) .Attention--strong {
     --WARNING--message: "Deprecated: `.Attention--strong` is no longer supported";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .Attention--strong:hover::before {
+    .Attention--strong::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -55,35 +54,33 @@
     margin-bottom: 0;
   }
 
-  html:not([data-disable-css-warnings-with-abandon="true"]) .Attention h1:hover,
-  html:not([data-disable-css-warnings-with-abandon="true"]) .Attention h2:hover,
-  html:not([data-disable-css-warnings-with-abandon="true"]) .Attention h3:hover,
-  html:not([data-disable-css-warnings-with-abandon="true"]) .Attention h4:hover,
-  html:not([data-disable-css-warnings-with-abandon="true"]) .Attention ul:hover,
-  html:not([data-disable-css-warnings-with-abandon="true"])
-    .Attention
-    ol:hover {
+  html:not([data-disable-css-warnings-with-abandon="true"]) .Attention h1,
+  html:not([data-disable-css-warnings-with-abandon="true"]) .Attention h2,
+  html:not([data-disable-css-warnings-with-abandon="true"]) .Attention h3,
+  html:not([data-disable-css-warnings-with-abandon="true"]) .Attention h4,
+  html:not([data-disable-css-warnings-with-abandon="true"]) .Attention ul,
+  html:not([data-disable-css-warnings-with-abandon="true"]) .Attention ol {
     --WARNING--message: "Fancy rich text content is not supported";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Attention
-    h1:hover::before,
+    h1::before,
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Attention
-    h2:hover::before,
+    h2::before,
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Attention
-    h3:hover::before,
+    h3::before,
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Attention
-    h4:hover::before,
+    h4::before,
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Attention
-    ul:hover::before,
+    ul::before,
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Attention
-    ol:hover::before {
+    ol::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;

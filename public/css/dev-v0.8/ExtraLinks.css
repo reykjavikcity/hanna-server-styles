@@ -12,28 +12,8 @@
     position: absolute;
     top: 0;
     bottom: 0;
-
     left: var(--grid-margin--neg);
-
     right: var(--grid-margin--neg);
-
-    z-index: -1;
-    background: inherit;
-  }
-
-  /* Custom (optional) transition effect */
-  .ExtraLinks {
-    position: relative;
-  }
-
-  .ExtraLinks::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-
-    left: var(--grid-margin--neg);
-
     z-index: -1;
     background: inherit;
   }
@@ -59,20 +39,30 @@
     transition: none;
   }
 
+  *[data-seen-effect][data-is-seen] .ExtraLinks:after,
+  [data-seen-effect][data-is-seen] * .ExtraLinks:after {
+    content: "";
+    position: absolute;
+    left: var(--grid-margin--neg);
+    top: 0;
+    bottom: 0;
+    border-left: calc(1.5267175572519083vw + 3.1145038167938957px) solid
+      var(--color-suld-25);
+    transform: scaleY(0);
+    transform-origin: 0 100%;
+  }
+
   .before-sprinkling *[data-seen-effect] .ExtraLinks::after,
   .before-sprinkling [data-seen-effect] * .ExtraLinks::after,
   *[data-seen-effect][data-is-seen="false"] .ExtraLinks::after,
   [data-seen-effect][data-is-seen="false"] * .ExtraLinks::after {
-    border-left: calc(1.5267175572519083vw + 3.1145038167938957px) solid
-      var(--color-suld-25);
+    transform: scaleY(1);
   }
 
   *[data-seen-effect][data-is-seen="true"] .ExtraLinks::after,
   [data-seen-effect][data-is-seen="true"] * .ExtraLinks::after,
   *[data-seen-effect][data-is-seen=""] .ExtraLinks::after,
   [data-seen-effect][data-is-seen=""] * .ExtraLinks::after {
-    transform: scaleY(0);
-    transform-origin: 0 100%;
   }
 
   *[data-seen-effect][data-is-seen="true"] .ExtraLinks::after,

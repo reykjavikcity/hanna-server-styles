@@ -171,13 +171,13 @@
 
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Tabs
-    > *:not(.Tabs__tab):not(.Tabs):hover {
+    > *:not(.Tabs__tab):not(.Tabs) {
     --WARNING--message: "Only .Tabs__tab or `.Tabs` are allowed here";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Tabs
-    > *:not(.Tabs__tab):not(.Tabs):hover::before {
+    > *:not(.Tabs__tab):not(.Tabs)::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -194,13 +194,13 @@
 
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Tabs
-    > .Tabs:not(:last-child):hover {
+    > .Tabs:not(:last-child) {
     --WARNING--message: "Nested .Tabs must be :last-child";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Tabs
-    > .Tabs:not(:last-child):hover::before {
+    > .Tabs:not(:last-child)::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -217,13 +217,13 @@
 
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Tabs--vertical
-    > .Tabs--vertical:hover {
+    > .Tabs--vertical {
     --WARNING--message: ".Tabs--vertical not supported as sub-Tabs";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Tabs--vertical
-    > .Tabs--vertical:hover::before {
+    > .Tabs--vertical::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -241,14 +241,14 @@
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Tabs
     > .Tabs
-    > .Tabs:hover {
+    > .Tabs {
     --WARNING--message: "For the love of god, DO NOT nest your already nested .Tabs";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Tabs
     > .Tabs
-    > .Tabs:hover::before {
+    > .Tabs::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;

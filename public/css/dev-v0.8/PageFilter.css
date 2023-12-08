@@ -17,11 +17,8 @@
     position: absolute;
     top: 0;
     bottom: 0;
-
     left: var(--grid-margin--neg);
-
     right: var(--grid-margin--neg);
-
     z-index: -1;
     background: inherit;
   }

@@ -94,12 +94,12 @@
   /* ------------------------------------------------------------------------ */
 
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .BreadCrumbs__item:last-child:not([aria-current="true"]):hover {
+    .BreadCrumbs__item:last-child:not([aria-current="true"]) {
     --WARNING--message: 'You forgot aria-current="true"';
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .BreadCrumbs__item:last-child:not([aria-current="true"]):hover::before {
+    .BreadCrumbs__item:last-child:not([aria-current="true"])::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -115,12 +115,12 @@
   }
 
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .BreadCrumbs:not(nav):hover {
+    .BreadCrumbs:not(nav) {
     --WARNING--message: "Please use <nav/>";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .BreadCrumbs:not(nav):hover::before {
+    .BreadCrumbs:not(nav)::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -136,12 +136,12 @@
   }
 
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .BreadCrumbs:not([aria-label]):not([aria-labelledby]):hover {
+    .BreadCrumbs:not([aria-label]):not([aria-labelledby]) {
     --WARNING--message: "Please add `aria-label` or `aria-labelledby`";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .BreadCrumbs:not([aria-label]):not([aria-labelledby]):hover::before {
+    .BreadCrumbs:not([aria-label]):not([aria-labelledby])::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -158,13 +158,13 @@
 
   html:not([data-disable-css-warnings-with-abandon="true"])
     .BreadCrumbs[aria-labelledby]
-    > .BreadCrumbs__title:not([id]):hover {
+    > .BreadCrumbs__title:not([id]) {
     --WARNING--message: "Please add `id` attribute";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
     .BreadCrumbs[aria-labelledby]
-    > .BreadCrumbs__title:not([id]):hover::before {
+    > .BreadCrumbs__title:not([id])::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;

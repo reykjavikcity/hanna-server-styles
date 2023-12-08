@@ -12,17 +12,17 @@
   --link-underline-offset: 0;
 
   --Button--color: var(--color-faxafloi-100);
-  --Button--color--active: var(--color-faxafloi-150);
-  --Button--textColor: var(--color-suld-0);
-  --Button--textColor--active: var(--color-suld-0);
-  --Button--backgroundColor: var(--Button--color);
-  --Button--backgroundColor--active: var(--Button--color--active);
-  --Button--border: 0px;
+  --Button--color--active: var(--color-faxafloi-100);
+  --Button--textColor: var(--Button--color);
+  --Button--textColor--active: var(--Button--color--active);
+  --Button--backgroundColor: var(--color-suld-0);
+  --Button--backgroundColor--active: var(--color-suld-50);
+  --Button--border: 1px;
   --Button--height: var(--space-7);
   --Button--iconOutdent: var(--space-0_5--neg);
   --Button--iconSpace: var(--space-1);
 
-  /* normalize links*/
+  /* normalize links */
   white-space: nowrap;
   vertical-align: middle;
 
@@ -62,7 +62,7 @@
 .ButtonSecondary[data-focus-visible-added] {
   outline: 0;
   text-decoration: none;
-  /* box-shadow: var(--boxShadow-hover);*/
+  /* box-shadow: var(--boxShadow-hover); */
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   color: var(--Button--textColor);
   border: var(--Button--border) solid var(--Button--color);
@@ -71,7 +71,7 @@
 .ButtonSecondary:focus-visible {
   outline: 0;
   text-decoration: none;
-  /* box-shadow: var(--boxShadow-hover);*/
+  /* box-shadow: var(--boxShadow-hover); */
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   color: var(--Button--textColor);
   border: var(--Button--border) solid var(--Button--color);
@@ -196,13 +196,13 @@
 /* ---------------------------------------------------------------------------*/
 
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .ButtonSecondary--small.ButtonSecondary--wide:hover {
+  .ButtonSecondary--small.ButtonSecondary--wide {
   --WARNING--message: "`--small` and `--wide` do NOT mix.";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .ButtonSecondary--small.ButtonSecondary--wide:hover::before {
+  .ButtonSecondary--small.ButtonSecondary--wide::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;
@@ -218,17 +218,17 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 }
 
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .ButtonSecondary--go--back[data-icon]:hover,
+  .ButtonSecondary--go--back[data-icon],
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .ButtonSecondary--go--forward[data-icon]:hover {
+  .ButtonSecondary--go--forward[data-icon] {
   --WARNING--message: "Icons and `--go--(back|forward)` do NOT mix.";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .ButtonSecondary--go--back[data-icon]:hover::before,
+  .ButtonSecondary--go--back[data-icon]::before,
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .ButtonSecondary--go--forward[data-icon]:hover::before {
+  .ButtonSecondary--go--forward[data-icon]::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;
@@ -244,17 +244,17 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 }
 
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .ButtonSecondary--go-back.ButtonSecondary--destructive:hover,
+  .ButtonSecondary--go-back.ButtonSecondary--destructive,
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .ButtonSecondary--go--forward.ButtonSecondary--destructive:hover {
+  .ButtonSecondary--go--forward.ButtonSecondary--destructive {
   --WARNING--message: "`--destructive` and `--go--(back|forward)` do NOT mix";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .ButtonSecondary--go-back.ButtonSecondary--destructive:hover::before,
+  .ButtonSecondary--go-back.ButtonSecondary--destructive::before,
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .ButtonSecondary--go--forward.ButtonSecondary--destructive:hover::before {
+  .ButtonSecondary--go--forward.ButtonSecondary--destructive::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;
@@ -267,15 +267,6 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   background-color: rgba(255, 26, 26, 0.5) !important;
   padding: 0 0.5em !important;
   content: var(--WARNING--message) !important;
-}
-
-.ButtonSecondary {
-  --Button--color--active: var(--color-faxafloi-100);
-  --Button--textColor: var(--Button--color);
-  --Button--textColor--active: var(--Button--color--active);
-  --Button--backgroundColor: var(--color-suld-0);
-  --Button--backgroundColor--active: var(--color-suld-50);
-  --Button--border: 1px;
 }
 
 .ButtonSecondary:disabled,

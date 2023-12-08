@@ -144,13 +144,13 @@
 /* ---------------------------------------------------------------------------*/
 
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .ButtonTertiary[data-icon]:hover {
+  .ButtonTertiary[data-icon] {
   --WARNING--message: "No icons on `ButtonTertiary`";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .ButtonTertiary[data-icon]:hover::before {
+  .ButtonTertiary[data-icon]::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;
@@ -166,13 +166,13 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 }
 
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .ButtonTertiary--go--back.ButtonTertiary--destructive:hover {
+  .ButtonTertiary--go--back.ButtonTertiary--destructive {
   --WARNING--message: "`--destructive` and `--go--back` do NOT mix";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .ButtonTertiary--go--back.ButtonTertiary--destructive:hover::before {
+  .ButtonTertiary--go--back.ButtonTertiary--destructive::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;
@@ -188,13 +188,13 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 }
 
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .ButtonTertiary--go--forward:hover {
+  .ButtonTertiary--go--forward {
   --WARNING--message: "`--go--forward` not supported on `ButtonTertiary`";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .ButtonTertiary--go--forward:hover::before {
+  .ButtonTertiary--go--forward::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;

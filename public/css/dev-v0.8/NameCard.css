@@ -268,64 +268,56 @@
   }
 }
 
+html:not([data-disable-css-warnings-with-abandon="true"]) .NameCard__location p,
 html:not([data-disable-css-warnings-with-abandon="true"])
   .NameCard__location
-  p:hover,
+  div,
 html:not([data-disable-css-warnings-with-abandon="true"])
   .NameCard__location
-  div:hover,
-html:not([data-disable-css-warnings-with-abandon="true"])
-  .NameCard__location
-  ul:hover,
-html:not([data-disable-css-warnings-with-abandon="true"])
-  .NameCard__hours
-  p:hover,
-html:not([data-disable-css-warnings-with-abandon="true"])
-  .NameCard__hours
-  div:hover,
-html:not([data-disable-css-warnings-with-abandon="true"])
-  .NameCard__hours
-  ul:hover,
+  ul,
+html:not([data-disable-css-warnings-with-abandon="true"]) .NameCard__hours p,
+html:not([data-disable-css-warnings-with-abandon="true"]) .NameCard__hours div,
+html:not([data-disable-css-warnings-with-abandon="true"]) .NameCard__hours ul,
 html:not([data-disable-css-warnings-with-abandon="true"])
   .NameCard__aboutText
-  p:hover,
+  p,
 html:not([data-disable-css-warnings-with-abandon="true"])
   .NameCard__aboutText
-  div:hover,
+  div,
 html:not([data-disable-css-warnings-with-abandon="true"])
   .NameCard__aboutText
-  ul:hover {
+  ul {
   --WARNING--message: "Only use simple, inline HTML element inside this field.";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
 html:not([data-disable-css-warnings-with-abandon="true"])
   .NameCard__location
-  p:hover::before,
+  p::before,
 html:not([data-disable-css-warnings-with-abandon="true"])
   .NameCard__location
-  div:hover::before,
+  div::before,
 html:not([data-disable-css-warnings-with-abandon="true"])
   .NameCard__location
-  ul:hover::before,
+  ul::before,
 html:not([data-disable-css-warnings-with-abandon="true"])
   .NameCard__hours
-  p:hover::before,
+  p::before,
 html:not([data-disable-css-warnings-with-abandon="true"])
   .NameCard__hours
-  div:hover::before,
+  div::before,
 html:not([data-disable-css-warnings-with-abandon="true"])
   .NameCard__hours
-  ul:hover::before,
+  ul::before,
 html:not([data-disable-css-warnings-with-abandon="true"])
   .NameCard__aboutText
-  p:hover::before,
+  p::before,
 html:not([data-disable-css-warnings-with-abandon="true"])
   .NameCard__aboutText
-  div:hover::before,
+  div::before,
 html:not([data-disable-css-warnings-with-abandon="true"])
   .NameCard__aboutText
-  ul:hover::before {
+  ul::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;

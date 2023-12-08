@@ -1,0 +1,275 @@
+/* ------------------------------------------------------------------------ */
+/* Mobile / Hamburger*/
+
+@media (max-width: 979px) {
+  .MobileMenuToggler[class] {
+    --link-color: _inherit;
+    --link-weight: _inherit;
+    --link-underline: none;
+
+    /* NOTE: This intentionally doesn't reset the :hover style*/
+    /* unless..*/
+    --link-color--hover: var(--link-color);
+    --link-underline--hover: none;
+    --link-underline-offset: 0;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    position: absolute;
+    top: calc(0.5 * var(--Layout__header-height));
+    right: 0;
+    z-index: var(--zindex--header);
+    width: 3rem;
+    height: 3rem;
+    transform: translateY(-50%);
+    line-height: 3rem;
+    margin-right: -0.5rem;
+    transition-property: opacity;
+    transition-duration: 500ms;
+    --open-icon-opacity: 1;
+    --close-icon-opacity: 0;
+  }
+  .menu-is-open .MobileMenuToggler {
+    position: fixed;
+    right: max(calc(50vw - 604px), var(--grid-margin));
+    --open-icon-opacity: 0;
+    --close-icon-opacity: 1;
+    /* margin-right: var(--browser-scrollbar-width);*/
+  }
+  .MobileMenuToggler:hover,
+  .MobileMenuToggler:active {
+    text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  }
+
+  .MobileMenuToggler::before,
+  .MobileMenuToggler::after {
+    display: inline-block;
+    text-indent: 0;
+    text-align: center;
+    vertical-align: top;
+
+    font-family: icons, Esja, Helvetica, Arial, sans-serif;
+    speak: none;
+    font-weight: normal;
+    font-style: normal;
+    white-space: nowrap;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0;
+
+    width: 100%;
+    margin-right: 1px;
+    transition: inherit;
+  }
+
+  .MobileMenuToggler::before {
+    content: var(--icon--menu);
+    color: var(--color-faxafloi-100);
+    font-size: 2.125rem;
+    opacity: var(--open-icon-opacity);
+  }
+  .MobileMenuToggler::after {
+    content: var(--icon--close);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--color-suld-0);
+    font-size: 1.625rem;
+    opacity: var(--close-icon-opacity);
+  }
+
+  .menu-is-open {
+    overflow-y: hidden;
+  }
+  .menu-is-open > body {
+    padding-right: var(--grid-margin);
+  }
+
+  .menu-is-open .Layout__alerts {
+    max-height: 0;
+  }
+
+  .menu-is-open .Layout__header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: var(--browser-scrollbar-width);
+  }
+  .menu-is-open .Layout__header {
+    transition-duration: 400ms;
+  }
+  /* Page content fadeout during menu open*/
+  .menu-is-active .Layout__nav::before {
+    content: "";
+    position: fixed;
+    z-index: calc(var(--zindex--header) - 1);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--color-suld-0);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 400ms 200ms ease-in-out, visibility 0ms 600ms;
+  }
+  .menu-is-open .Layout__nav::before {
+    transition-delay: 0ms;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .MobileMenuToggler__closebutton {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    opacity: 0.00001;
+    pointer-events: none;
+
+    margin: -1px;
+  }
+
+  .MobileMenuToggler__closebutton[data-focus-visible-added] {
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    opacity: 1;
+    pointer-events: auto;
+
+    margin: 0;
+
+    z-index: var(--zindex--sr-only);
+    font-size: 1em;
+    background: var(--color-suld-0);
+    border: 3px double var(--link-color--hover);
+    margin: 0;
+    padding: 0.2em 0.33em;
+    color: var(--link-color--hover);
+    text-shadow: none;
+    white-space: nowrap;
+  }
+  .MobileMenuToggler__closebutton:focus-visible {
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    opacity: 1;
+    pointer-events: auto;
+
+    margin: 0;
+
+    z-index: var(--zindex--sr-only);
+    font-size: 1em;
+    background: var(--color-suld-0);
+    border: 3px double var(--link-color--hover);
+    margin: 0;
+    padding: 0.2em 0.33em;
+    color: var(--link-color--hover);
+    text-shadow: none;
+    white-space: nowrap;
+  }
+
+  .MobileMenuToggler__closebutton:focus-within:not(:focus) {
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    opacity: 1;
+    pointer-events: auto;
+
+    margin: 0;
+
+    z-index: var(--zindex--sr-only);
+    font-size: 1em;
+    background: var(--color-suld-0);
+    border: 3px double var(--link-color--hover);
+    margin: 0;
+    padding: 0.2em 0.33em;
+    color: var(--link-color--hover);
+    text-shadow: none;
+    white-space: nowrap;
+  }
+}
+
+/* ------------------------------------------------------------------------ */
+/* Desktop / Topmenu */
+
+@media (min-width: 980px) {
+  .MobileMenuToggler {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    opacity: 0.00001;
+    pointer-events: none;
+
+    margin: -1px;
+  }
+
+  .MobileMenuToggler[data-focus-visible-added] {
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    opacity: 1;
+    pointer-events: auto;
+
+    margin: 0;
+
+    z-index: var(--zindex--sr-only);
+    font-size: 1em;
+    background: var(--color-suld-0);
+    border: 3px double var(--link-color--hover);
+    margin: 0;
+    padding: 0.2em 0.33em;
+    color: var(--link-color--hover);
+    text-shadow: none;
+    white-space: nowrap;
+  }
+  .MobileMenuToggler:focus-visible {
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    opacity: 1;
+    pointer-events: auto;
+
+    margin: 0;
+
+    z-index: var(--zindex--sr-only);
+    font-size: 1em;
+    background: var(--color-suld-0);
+    border: 3px double var(--link-color--hover);
+    margin: 0;
+    padding: 0.2em 0.33em;
+    color: var(--link-color--hover);
+    text-shadow: none;
+    white-space: nowrap;
+  }
+
+  .MobileMenuToggler:focus-within:not(:focus) {
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    opacity: 1;
+    pointer-events: auto;
+
+    margin: 0;
+
+    z-index: var(--zindex--sr-only);
+    font-size: 1em;
+    background: var(--color-suld-0);
+    border: 3px double var(--link-color--hover);
+    margin: 0;
+    padding: 0.2em 0.33em;
+    color: var(--link-color--hover);
+    text-shadow: none;
+    white-space: nowrap;
+  }
+}

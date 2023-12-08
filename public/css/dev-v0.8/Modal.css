@@ -13,7 +13,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    overflow-y: auto;
+    overflow-y: scroll;
     background-color: rgba(0, 0, 0, 0.5);
     padding: calc(7.633587786259542vw - 4.427480916030532px) 0;
 
@@ -107,13 +107,13 @@
 
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Modal__blings
-    > :not(.Bling):not(.Modal__blings__inner):hover {
+    > :not(.Bling):not(.Modal__blings__inner) {
     --WARNING--message: "Only place .Bling content inside .Modal__blings";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Modal__blings
-    > :not(.Bling):not(.Modal__blings__inner):hover::before {
+    > :not(.Bling):not(.Modal__blings__inner)::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -136,13 +136,13 @@
 
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Modal__blings__inner
-    > :not(.Bling):hover {
+    > :not(.Bling) {
     --WARNING--message: "Only place .Bling content inside .Modal__blings";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Modal__blings__inner
-    > :not(.Bling):hover::before {
+    > :not(.Bling)::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
