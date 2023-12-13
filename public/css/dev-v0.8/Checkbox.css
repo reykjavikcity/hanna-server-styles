@@ -1,6 +1,10 @@
 /*!@deps FormField */
 
 @media screen {
+  .Checkbox {
+    margin-bottom: var(--space-3);
+  }
+
   .Checkbox__input {
     position: absolute;
     width: 1px;
@@ -110,17 +114,13 @@
 
   /* Disabled + Checked*/
 
-  .Checkbox:not(.FormField__options__item) {
-    margin-bottom: var(--space-3);
-  }
   .Checkbox__label__reqstar {
     border-bottom: none;
     float: left;
     margin-right: 0.15em;
   }
 
-  .Checkbox__note, /**/
-    .Checkbox__error {
+  .Checkbox__error {
     color: var(--color-heidmork-100);
     font-size: 0.75rem;
     line-height: 0.875rem;
@@ -128,7 +128,6 @@
     margin-top: 0;
   }
 
-  .Checkbox__note::before,
   .Checkbox__error::before {
     display: inline-block;
     text-indent: 0;
@@ -151,16 +150,67 @@
   }
 
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .Checkbox__note:not([id]),
-  html:not([data-disable-css-warnings-with-abandon="true"])
     .Checkbox__error:not([id]) {
     --WARNING--message: "should have id atribute to match input[aria-describedby]";
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
-    .Checkbox__note:not([id])::after,
-  html:not([data-disable-css-warnings-with-abandon="true"])
     .Checkbox__error:not([id])::after {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: var(--WARNING--message) !important;
+  }
+
+  /*
+    No-label variant
+  */
+  .Checkbox--nolabel {
+    overflow: hidden;
+    white-space: nowrap;
+
+    margin-right: var(--space-2);
+    display: inline-block;
+    height: 1.5rem;
+    margin-left: -2px;
+    width: 1.5rem;
+    vertical-align: top;
+  }
+  .Checkbox--nolabel > .Checkbox__label {
+    padding: 2px 0;
+  }
+  .Checkbox--nolabel > .Checkbox__label::before {
+    margin-left: 2px;
+    display: inline-block;
+    margin-right: 3px;
+  }
+  .Checkbox--nolabel > .Checkbox__error {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    opacity: 0.00001;
+    pointer-events: none;
+
+    margin: -1px;
+  }
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Checkbox--nolabel:not(div) {
+    --WARNING--message: "--nolabel should only be used on <div/>s";
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Checkbox--nolabel:not(div)::before {
     all: initial !important;
     order: -999 !important;
     font-family: sans-serif !important;
@@ -185,6 +235,9 @@
     display: flex;
     flex-flow: row wrap;
   }
+  .CheckboxGroup > * > .FormField__options__item {
+    margin-bottom: 0;
+  }
   .CheckboxGroup--inline > * > .FormField__options__item {
     margin-left: 0.9375rem;
     margin-right: 0.9375rem;
@@ -193,6 +246,10 @@
 }
 
 @media screen {
+  .Radio {
+    margin-bottom: var(--space-3);
+  }
+
   .Radio__input {
     position: absolute;
     width: 1px;
@@ -309,10 +366,120 @@
     color: var(--color-suld-50);
   }
 
+  .Radio__error {
+    color: var(--color-heidmork-100);
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+    padding-left: 2.25rem;
+    margin-top: 0;
+  }
+
+  .Radio__error::before {
+    display: inline-block;
+    text-indent: 0;
+    text-align: center;
+    vertical-align: top;
+
+    font-family: icons, Esja, Helvetica, Arial, sans-serif;
+    speak: none;
+    font-weight: normal;
+    font-style: normal;
+    white-space: nowrap;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0;
+    content: var(--icon--error);
+
+    margin-right: 0.5rem;
+    font-size: 0.625rem;
+  }
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Radio__error:not([id]) {
+    --WARNING--message: "should have id atribute to match input[aria-describedby]";
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Radio__error:not([id])::after {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: var(--WARNING--message) !important;
+  }
+
+  /*
+    No-label variant
+  */
+  .Radio--nolabel {
+    overflow: hidden;
+    white-space: nowrap;
+
+    margin-right: var(--space-2);
+    display: inline-block;
+    height: 1.5rem;
+    margin-left: -2px;
+    width: 1.5rem;
+    vertical-align: top;
+  }
+  .Radio--nolabel > .Radio__label {
+    padding: 2px 0;
+  }
+  .Radio--nolabel > .Radio__label::before {
+    margin-left: 2px;
+    display: inline-block;
+    margin-right: 3px;
+  }
+  .Radio--nolabel > .Radio__error {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    opacity: 0.00001;
+    pointer-events: none;
+
+    margin: -1px;
+  }
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Radio--nolabel:not(div) {
+    --WARNING--message: "--nolabel should only be used on <div/>s";
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .Radio--nolabel:not(div)::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: var(--WARNING--message) !important;
+  }
+}
+
+@media screen {
   .RadioGroup--inline > .FormField__options {
     margin: 0 -0.9375rem;
     display: flex;
     flex-flow: row wrap;
+  }
+  .RadioGroup > * > .FormField__options__item {
+    margin-bottom: 0;
   }
   .RadioGroup--inline > * > .FormField__options__item {
     margin-left: 0.9375rem;

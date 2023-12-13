@@ -33,6 +33,13 @@
     padding: var(--space-1) 0;
   }
 
+  .AutosuggestSearch__emptyMessage {
+    padding: var(--space-2) var(--space-4);
+  }
+  .AutosuggestSearch__emptyMessage--loading {
+    opacity: 0.5;
+  }
+
   .AutosuggestSearch__list {
     --action-icon: none;
   }
