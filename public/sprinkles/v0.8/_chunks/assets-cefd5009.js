@@ -1,0 +1,1 @@
+System.register([],function(e,n){"use strict";return{execute:function(){let l=e("s","https://styles.reykjavik.is");const s=t=>`${l}/assets/${t}`,i=e("g",(t,r)=>s(`illustrations/${r==="thumb"?"thumb/":""}${t}.png`)),o=e("a",t=>s(`bling/${t}.svg`))}}});
