@@ -4,6 +4,12 @@
 
 - ... <!-- Add new lines here. -->
 
+## 0.8.87
+
+_2024-01-10_
+
+- feat: Set `.MainMenu2__toggler` icon in CSS
+
 ## 0.8.86
 
 _2023-12-18_
