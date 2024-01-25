@@ -21,6 +21,16 @@
     outline: 0;
   }
 
+  .Datepicker {
+    --iconWidth: var(--space-8);
+  }
+  .Datepicker--small {
+    --iconWidth: var(--space-6);
+  }
+  .Datepicker:not(.FormField--small) .FormField__label {
+    padding-right: calc(var(--iconWidth) - var(--space-1));
+  }
+
   .react-datepicker {
     background-color: var(--color-suld-0);
     display: block;
@@ -55,7 +65,7 @@
     transform: translateY(-50%);
     box-sizing: content-box;
     right: 1px;
-    width: var(--space-8);
+    width: var(--iconWidth);
     border-left: 2px solid var(--color-suld-150);
     color: var(--color-suld-150);
     line-height: var(--space-4);
@@ -63,7 +73,6 @@
   }
   .FormField--small .react-datepicker__input-container::after {
     line-height: calc(var(--space-0_5) + var(--space-2));
-    width: var(--space-6);
   }
 
   .FormField--focused .react-datepicker__input-container::after {
