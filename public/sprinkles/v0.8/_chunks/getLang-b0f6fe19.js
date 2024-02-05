@@ -1,0 +1,1 @@
+System.register(["./qj-d717b116.js","./i18n-6c3e4ded.js"],function(i,r){"use strict";var e,n;return{setters:[t=>{e=t.h},t=>{n=t.D}],execute:function(){const t={is:"is",en:"en",pl:"pl"},c=i("g",s=>t[(s?e(s):e())||n]||n)}}});
