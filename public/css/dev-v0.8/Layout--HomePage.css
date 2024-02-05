@@ -1,5 +1,25 @@
 /*!@deps Layout-full */
 
+html:not([data-disable-css-warnings-with-abandon="true"]) .Layout {
+  --WARNING--message: 'The CSS token "Layout--HomePage" is deprecated.';
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+
+html:not([data-disable-css-warnings-with-abandon="true"]) .Layout::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}
+
 @media screen {
   .Layout--HomePage .RowBlock {
     margin-bottom: calc(14.00862068965517% + 30.775862068965523px);

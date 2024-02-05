@@ -602,133 +602,145 @@
 /**/
 /* ===========================================================================*/
 
-@media screen {
-  html:not([data-disable-css-warnings-with-abandon="true"]) .MainMenu:not(nav) {
-    --WARNING--message: "Please use <nav/>";
-    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
-  }
-  html:not([data-disable-css-warnings-with-abandon="true"])
-    .MainMenu:not(nav)::before {
-    all: initial !important;
-    order: -999 !important;
-    font-family: sans-serif !important;
-    position: absolute !important;
-    white-space: nowrap !important;
-    z-index: 2 !important;
-    font-size: 12px !important;
-    line-height: 1.5em !important;
-    color: red !important;
-    background-color: rgba(255, 26, 26, 0.5) !important;
-    padding: 0 0.5em !important;
-    content: var(--WARNING--message) !important;
-  }
+html:not([data-disable-css-warnings-with-abandon="true"]) .MainMenu:not(nav) {
+  --WARNING--message: "Please use <nav/>";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
 
-  html:not([data-disable-css-warnings-with-abandon="true"])
-    .MainMenu:not([aria-label]):not([aria-labelledby]) {
-    --WARNING--message: "Please add `aria-label` or `aria-labelledby`";
-    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
-  }
-  html:not([data-disable-css-warnings-with-abandon="true"])
-    .MainMenu:not([aria-label]):not([aria-labelledby])::before {
-    all: initial !important;
-    order: -999 !important;
-    font-family: sans-serif !important;
-    position: absolute !important;
-    white-space: nowrap !important;
-    z-index: 2 !important;
-    font-size: 12px !important;
-    line-height: 1.5em !important;
-    color: red !important;
-    background-color: rgba(255, 26, 26, 0.5) !important;
-    padding: 0 0.5em !important;
-    content: var(--WARNING--message) !important;
-  }
-
-  html:not([data-disable-css-warnings-with-abandon="true"])
-    .MainMenu[aria-labelledby]
-    > .MainMenu__title:not([id]) {
-    --WARNING--message: "Please add `id` attribute";
-    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
-  }
-  html:not([data-disable-css-warnings-with-abandon="true"])
-    .MainMenu[aria-labelledby]
-    > .MainMenu__title:not([id])::before {
-    all: initial !important;
-    order: -999 !important;
-    font-family: sans-serif !important;
-    position: absolute !important;
-    white-space: nowrap !important;
-    z-index: 2 !important;
-    font-size: 12px !important;
-    line-height: 1.5em !important;
-    color: red !important;
-    background-color: rgba(255, 26, 26, 0.5) !important;
-    padding: 0 0.5em !important;
-    content: var(--WARNING--message) !important;
-  }
-
-  html:not([data-disable-css-warnings-with-abandon="true"])
-    .MainMenu__separator:not(.MainMenu__items > *) {
-    --WARNING--message: "Separators must be child of ul.MainMenu__items";
-    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
-  }
-  html:not([data-disable-css-warnings-with-abandon="true"])
-    .MainMenu__separator:not(.MainMenu__items > *)::before {
-    all: initial !important;
-    order: -999 !important;
-    font-family: sans-serif !important;
-    position: absolute !important;
-    white-space: nowrap !important;
-    z-index: 2 !important;
-    font-size: 12px !important;
-    line-height: 1.5em !important;
-    color: red !important;
-    background-color: rgba(255, 26, 26, 0.5) !important;
-    padding: 0 0.5em !important;
-    content: var(--WARNING--message) !important;
-  }
-
-  html:not([data-disable-css-warnings-with-abandon="true"])
-    .MainMenu__list:first-child {
-    --WARNING--message: "`.MainMenu__title` missing";
-    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
-  }
-  html:not([data-disable-css-warnings-with-abandon="true"])
-    .MainMenu__list:first-child::before {
-    all: initial !important;
-    order: -999 !important;
-    font-family: sans-serif !important;
-    position: absolute !important;
-    white-space: nowrap !important;
-    z-index: 2 !important;
-    font-size: 12px !important;
-    line-height: 1.5em !important;
-    color: red !important;
-    background-color: rgba(255, 26, 26, 0.5) !important;
-    padding: 0 0.5em !important;
-    content: var(--WARNING--message) !important;
-  }
-
-  html:not([data-disable-css-warnings-with-abandon="true"])
-    .MainMenu__item:first-child:not(.MainMenu__item--home) {
-    --WARNING--message: "Home link missing";
-    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
-  }
-  html:not([data-disable-css-warnings-with-abandon="true"])
-    .MainMenu__item:first-child:not(.MainMenu__item--home)::before {
-    all: initial !important;
-    order: -999 !important;
-    font-family: sans-serif !important;
-    position: absolute !important;
-    white-space: nowrap !important;
-    z-index: 2 !important;
-    font-size: 12px !important;
-    line-height: 1.5em !important;
-    color: red !important;
-    background-color: rgba(255, 26, 26, 0.5) !important;
-    padding: 0 0.5em !important;
-    content: var(--WARNING--message) !important;
-  }
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .MainMenu:not(nav)::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .MainMenu:not([aria-label]):not([aria-labelledby]) {
+  --WARNING--message: "Please add `aria-label` or `aria-labelledby`";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .MainMenu:not([aria-label]):not([aria-labelledby])::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .MainMenu[aria-labelledby]
+  > .MainMenu__title:not([id]) {
+  --WARNING--message: "Please add `id` attribute";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .MainMenu[aria-labelledby]
+  > .MainMenu__title:not([id])::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .MainMenu__separator:not(.MainMenu__items > *) {
+  --WARNING--message: "Separators must be child of ul.MainMenu__items";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .MainMenu__separator:not(.MainMenu__items > *)::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .MainMenu__list:first-child {
+  --WARNING--message: "`.MainMenu__title` missing";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .MainMenu__list:first-child::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .MainMenu__item:first-child:not(.MainMenu__item--home) {
+  --WARNING--message: "Home link missing";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .MainMenu__item:first-child:not(.MainMenu__item--home)::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"]) .MainMenu2 {
+  --WARNING--message: "`MainMenu2` can not be used when `MainMenu.css` is loaded";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"]) .MainMenu2::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
 }
 
 /* ===========================================================================*/
