@@ -1,4 +1,4 @@
-/*!@deps Layout-full */
+/*!@deps Alert, Layout, FooterInfo, BreadCrumbs, MainMenu */
 
 html:not([data-disable-css-warnings-with-abandon="true"]) .Layout {
   --WARNING--message: 'The CSS token "Layout--HomePage" is deprecated.';

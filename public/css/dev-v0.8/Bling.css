@@ -61,14 +61,11 @@
       var(--bling-offset-ish, var(--bling-offset)) / 1208 *
         var(--Bling--baseWitdh)
     );
-    @if isDevMode() {
-      /* prettier-ignore*/
-      --notDefined--bling-offset-ish: var(--bling-offset-ish, );
-      outline: var(--notDefined--bling-offset-ish)
-        10px
-        dashed
-        rgba(255, 0, 0, 0.25);
-    }
+
+    /* prettier-ignore*/
+    --notDefined--bling-offset-ish: var(--bling-offset-ish, );
+    outline: var(--notDefined--bling-offset-ish) 10px dashed
+      rgba(255, 0, 0, 0.25);
   }
   .Bling--align--left-center > svg,
   .Bling--align--right-center > svg {

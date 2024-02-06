@@ -332,10 +332,6 @@
     --Layout__header-color: var(--color-suld-0);
   }
 
-  :root {
-    --Layout__header-homelink-width: 18.5rem;
-  }
-
   .MainMenu {
   }
 
@@ -353,7 +349,7 @@
       var(--link-underline--thickness) + var(--link-underline-offset)
     );
     margin-right: calc(-3.0927835051546393vw + 22.309278350515463px);
-    margin-left: calc(-1.5463917525773196vw + 1.1546391752577314px);
+    margin-left: calc(-1.5463917525773196vw - 158.84536082474227px);
     display: flex;
     justify-content: flex-end;
     align-items: center;
