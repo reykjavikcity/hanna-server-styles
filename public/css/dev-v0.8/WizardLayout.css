@@ -1,10 +1,11 @@
 @media screen {
   .WizardLayout {
     min-height: 100vh;
-    width: 100%;
+    width: calc(100vw - 2 * var(--grid-margin));
     max-width: 75.5rem;
     margin: 0 auto;
     position: relative;
+    left: calc(0.5 * var(--browser-scrollbar-width));
     display: flex;
     flex-flow: column;
   }
@@ -187,10 +188,8 @@
 }
 
 @media (max-width: 759px) {
-  body {
-    --grid--margin: var(--space-2);
-    padding-left: var(--grid-margin);
-    padding-right: var(--grid-margin--right);
+  .WizardLayout {
+    --grid-margin: var(--space-2);
   }
 
   .WizardLayout__wrap {
@@ -351,52 +350,6 @@
     right: calc((100vw / 2) - (75.5rem / 2));
   }
 }
-
-html:not([data-disable-css-warnings-with-abandon="true"]) .IframedLayout {
-  --WARNING--message: "`IframedLayout` can not be used when `WizardLayout.css` is loaded";
-  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
-}
-
-html:not([data-disable-css-warnings-with-abandon="true"])
-  .IframedLayout::before {
-  all: initial !important;
-  order: -999 !important;
-  font-family: sans-serif !important;
-  position: absolute !important;
-  white-space: nowrap !important;
-  z-index: 2 !important;
-  font-size: 12px !important;
-  line-height: 1.5em !important;
-  color: red !important;
-  background-color: rgba(255, 26, 26, 0.5) !important;
-  padding: 0 0.5em !important;
-  content: var(--WARNING--message) !important;
-}
-/* .Layout {
-    
-    html:not([data-disable-css-warnings-with-abandon='true']) & {
-      --WARNING--message: "`Layout` can not be used when `WizardLayout.css` is loaded";
-;
-      
-  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
-
-    }
-    html:not([data-disable-css-warnings-with-abandon='true']) &::before {
-      all: initial !important;
-      order: -999 !important;
-      font-family: sans-serif !important;
-      position: absolute !important;
-      white-space: nowrap !important;
-      z-index: 2 !important;
-      font-size: 12px !important;
-      line-height: 1.5em !important;
-      color: red !important;
-      background-color: rgba(255, 26, 26, 0.5) !important;
-      padding: 0 0.5em !important;
-      content: var(--WARNING--message) !important;
-    }
-  
-  } */
 
 /* ===========================================================================*/
 /* BEGIN @deprecated  (remove in v0.9)*/
