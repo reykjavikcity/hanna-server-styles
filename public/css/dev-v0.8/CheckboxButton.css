@@ -323,6 +323,10 @@
     }
   }
 
+  .CheckboxButtonsGroup > * > .FormField__options__item > .CheckboxButton {
+    margin-bottom: 0;
+  }
+
   .CheckboxButtonsGroup--stacked > * > .FormField__options__item {
     width: 100%;
   }
@@ -714,6 +718,10 @@
     .RadioButtonsGroup > * > .FormField__options__item {
       width: var(--grid-3);
     }
+  }
+
+  .RadioButtonsGroup > * > .FormField__options__item > .RadioButton {
+    margin-bottom: 0;
   }
 
   .RadioButtonsGroup--stacked > * > .FormField__options__item {

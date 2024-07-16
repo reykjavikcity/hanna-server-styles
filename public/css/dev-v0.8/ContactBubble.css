@@ -39,9 +39,7 @@
 
     html[data-contact-bubble] {
       overflow-y: hidden;
-    }
-    html[data-contact-bubble] > body {
-      padding-right: var(--grid-margin);
+      padding-right: var(--browser-scrollbar-width);
     }
 
     html[data-contact-bubble] .Layout__alerts {

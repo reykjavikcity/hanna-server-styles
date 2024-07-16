@@ -238,6 +238,9 @@
   .CheckboxGroup > * > .FormField__options__item {
     margin-bottom: 0;
   }
+  .CheckboxGroup > * > .FormField__options__item > .Checkbox {
+    margin-bottom: 0;
+  }
   .CheckboxGroup--inline > * > .FormField__options__item {
     margin-left: 0.9375rem;
     margin-right: 0.9375rem;
@@ -479,6 +482,9 @@
     flex-flow: row wrap;
   }
   .RadioGroup > * > .FormField__options__item {
+    margin-bottom: 0;
+  }
+  .RadioGroup > * > .FormField__options__item > .Radio {
     margin-bottom: 0;
   }
   .RadioGroup--inline > * > .FormField__options__item {

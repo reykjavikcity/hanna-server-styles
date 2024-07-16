@@ -2,10 +2,7 @@
 
 .menu-is-open {
   overflow-y: hidden;
-}
-
-.menu-is-open > body {
-  padding-right: var(--grid-margin);
+  padding-right: var(--browser-scrollbar-width);
 }
 
 .menu-is-open .Layout__alerts {

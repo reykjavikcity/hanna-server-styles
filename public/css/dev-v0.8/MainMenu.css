@@ -454,9 +454,7 @@
 
   html[data-mega-panel-active] {
     overflow-y: hidden;
-  }
-  html[data-mega-panel-active] > body {
-    padding-right: var(--grid-margin);
+    padding-right: var(--browser-scrollbar-width);
   }
 
   html[data-mega-panel-active] .Layout__alerts {
