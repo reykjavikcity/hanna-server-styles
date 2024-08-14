@@ -1,4 +1,4 @@
-/*!@deps ButtonPrimary, ButtonSecondary */
+/*!@deps ButtonPrimary, ButtonSecondary, Icon */
 
 .menu-is-open {
   overflow-y: hidden;
@@ -14,12 +14,6 @@
   top: 0;
   left: 0;
   right: var(--browser-scrollbar-width);
-}
-
-.menu-is-open {
-  --Layout__header-logo-color: var(--color-suld-0);
-  --Layout__header-homelink-divColor: var(--color-faxafloi-75);
-  --Layout__header-color: var(--color-suld-0);
 }
 
 .before-sprinkling .MainMenu2:not([data-sprinkled]) {
@@ -48,17 +42,27 @@
   height: 100vh;
   overflow-y: scroll;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 .MainMenu2--open::before {
-  content: "";
+  /*
+      This ::before sets up a same-background underlap for the layout
+      logo/header so that the menu can be scrolled under it.
+    */
+  content: "...";
   position: fixed;
   z-index: 1;
   top: 0;
   /* Avoid overlapping the scrollbars */
   left: 20px;
   right: 20px;
+  left: 0;
+  right: 0;
+  overflow-y: scroll;
+  scrollbar-color: transparent transparent;
   height: var(--Layout__header-height);
   background: inherit;
+  background-color: var(--MainMenu2--bgHead, inherit);
 }
 
 .MainMenu2--closed {
@@ -93,6 +97,8 @@
 .MainMenu2--closed > * > .MainMenu2__related {
   display: none !important;
 }
+
+/* ---------------------- */
 
 .MainMenu2__toggler {
   grid-area: toggler;
@@ -139,6 +145,8 @@ a.MainMenu2__toggler {
   transform: translateY(-50%);
 }
 
+/* ---------------------- */
+
 .MainMenu2__main {
   grid-area: main;
   color: var(--color-suld-0);
@@ -156,6 +164,11 @@ a.MainMenu2__toggler {
       Remove this once Firefox has got its act together
     */
   width: auto;
+}
+
+.MainMenu2__main__item {
+  font: var(--font-sh-s);
+  margin-bottom: var(--space-1);
 }
 .MainMenu2__main__item[aria-current="true"] {
 }
@@ -193,6 +206,16 @@ a.MainMenu2__toggler {
   padding-bottom: calc(var(--MainMenu2--mainLink--paddingBottom) - 2px);
   border-bottom: 2px solid transparent;
 }
+.MainMenu2__main__link:active,
+.MainMenu2__main__link:hover,
+.MainMenu2__main__link[data-focus-visible-added] {
+  color: var(--color-suld-0);
+  border-color: currentColor;
+}
+.MainMenu2__main__link:focus-visible {
+  color: var(--color-suld-0);
+  border-color: currentColor;
+}
 .MainMenu2__main__link[aria-pressed="true"] {
   border-color: currentColor;
 }
@@ -201,6 +224,9 @@ a.MainMenu2__toggler {
 }
 
 .MainMenu2__main__sub__items {
+  margin-top: var(--space-2);
+  margin-left: var(--space-2);
+  margin-bottom: var(--space-3);
 }
 
 .MainMenu2__main__sub__item > * {
@@ -214,6 +240,10 @@ a.MainMenu2__toggler {
     */
   width: auto;
 }
+
+.MainMenu2__main__sub__item {
+  margin-bottom: var(--space-2);
+}
 .MainMenu2__main__sub__item[aria-current="true"] {
 }
 .MainMenu2__main__sub__link {
@@ -222,7 +252,10 @@ a.MainMenu2__toggler {
   border-color: currentColor;
 }
 .MainMenu2__main__sub__link__descr {
+  display: none;
 }
+
+/* ---------------------- */
 
 .MainMenu2__hot__items {
   grid-area: hot;
@@ -244,6 +277,8 @@ a.MainMenu2__toggler {
 }
 .MainMenu2__hot__link {
 }
+
+/* ---------------------- */
 
 .MainMenu2__extra__items {
   grid-area: extra;
@@ -268,18 +303,17 @@ a.MainMenu2__toggler {
 .MainMenu2__extra__link {
 }
 
+/* ---------------------- */
+
 .MainMenu2__related {
   grid-area: related;
   color: var(--color-suld-200);
 }
 
 .MainMenu2__related__title {
-  font-weight: var(--font-weight--bold);
+  font: var(--font-sh-s);
   padding-top: var(--space-1);
   padding-bottom: calc(var(--MainMenu2--mainLink--paddingBottom) - 1px);
-  /* color: var(--color-faxafloi-100);
-    border-bottom: 1px solid var(--color-faxafloi-75); */
-  color: var(--color-suld-150);
   border-bottom: 1px solid var(--color-suld-100);
 }
 .MainMenu2__related__items {
@@ -303,6 +337,17 @@ a.MainMenu2__toggler {
 }
 .MainMenu2__related__link {
 }
+.MainMenu2__related__link[data-icon]::before {
+  --Icon--enabled: initial;
+
+  margin-right: var(--space-1);
+}
+/* Indent all __related__links at least one of them has an icon */
+:has(.MainMenu2__related__link[data-icon])
+  > *
+  > .MainMenu2__related__link:not([data-icon]) {
+  padding-left: var(--space-3);
+}
 
 /*
 
@@ -312,6 +357,12 @@ a.MainMenu2__toggler {
   */
 
 @media (max-width: 979px) {
+  .menu-is-open {
+    --Layout__header-logo-color: var(--color-suld-0);
+    --Layout__header-homelink-divColor: var(--color-faxafloi-75);
+    --Layout__header-color: var(--color-suld-0);
+  }
+
   .MainMenu2 {
     --MainMenu2--mainLink--paddingBottom: var(--space-1);
     background: var(--color-faxafloi-100);
@@ -339,7 +390,7 @@ a.MainMenu2__toggler {
       "hot         hot" auto
       "extra     extra" auto
       "related related" 1fr
-      "illstr   illstr" clamp(175px, 35.38461538461539vw, 250px)
+      "illstr   illstr" min(100vw, 300px)
       / var(--Layout__header-homelink-width) auto;
   }
 
@@ -348,10 +399,11 @@ a.MainMenu2__toggler {
     content: "";
     grid-area: illstr;
     margin: 0 var(--grid-margin--neg);
-    background: var(--color-suld-0) url("/assets/valmundur-a-sundi.png")
-      calc(40% - 10px) 100% / auto 90% repeat-x;
-    /* mix-blend-mode: multiply; */
+    background: var(--color-suld-0) var(--menu-image, none) 50%
+      calc(100% - 10px) / auto 90% no-repeat;
   }
+
+  /* ---------------------- */
 
   .MainMenu2__toggler {
     overflow: hidden;
@@ -377,41 +429,14 @@ a.MainMenu2__toggler {
     --Button--color--active: var(--color-suld-50);
   }
 
+  /* ---------------------- */
+
   .MainMenu2__main {
-    padding-top: var(--space-2);
-    margin-bottom: var(--space-3);
-  }
-
-  .MainMenu2__main__item {
-    font-size: 1.25rem;
-    line-height: 2rem;
-    margin-bottom: var(--space-1);
-  }
-
-  .MainMenu2__main__link:active,
-  .MainMenu2__main__link:hover,
-  .MainMenu2__main__link[data-focus-visible-added] {
-    color: var(--color-suld-0);
-    border-color: currentColor;
-  }
-  .MainMenu2__main__link:focus-visible {
-    color: var(--color-suld-0);
-    border-color: currentColor;
-  }
-
-  .MainMenu2__main__sub__items {
     margin-top: var(--space-2);
-    margin-left: var(--space-2);
     margin-bottom: var(--space-1);
   }
-  .MainMenu2__main__sub__item {
-    margin-bottom: var(--space-2);
-  }
-  .MainMenu2__main__sub__link {
-  }
-  .MainMenu2__main__sub__link__descr {
-    display: none;
-  }
+
+  /* ---------------------- */
 
   .MainMenu2__hot__items,
   .MainMenu2__extra__items {
@@ -419,16 +444,21 @@ a.MainMenu2__toggler {
     flex-flow: row wrap;
     gap: var(--space-2);
     align-items: center;
-    margin-bottom: var(--space-2);
+    margin-top: var(--space-2);
   }
+  .MainMenu2__hot__items:last-child,
+  .MainMenu2__extra__items:last-child {
+    margin-bottom: var(--space-6);
+  }
+
+  /* ---------------------- */
 
   .MainMenu2__related {
     position: relative;
-    z-index: 1;
-    margin-top: var(--space-4);
     background-color: var(--color-suld-0);
     padding-top: var(--space-6);
-    padding-bottom: var(--space-4);
+    /* padding-bottom: var(--space-4); */
+    padding-bottom: var(--space-2);
 
     position: relative;
   }
@@ -443,9 +473,11 @@ a.MainMenu2__toggler {
     z-index: -1;
     background: inherit;
   }
+  .MainMenu2__related:not(:first-child):not(button + *) {
+    margin-top: var(--space-6);
+  }
+
   .MainMenu2__related__title {
-    font-size: 1.25rem;
-    line-height: 2rem;
   }
 }
 
@@ -457,38 +489,62 @@ a.MainMenu2__toggler {
   */
 
 @media (min-width: 980px) {
+  .menu-is-open:has(.MainMenu2__related):has(.MainMenu2__main) {
+    --Layout__header-logo-color: var(--color-suld-0);
+    --Layout__header-homelink-divColor: var(--color-faxafloi-75);
+    --Layout__header-color: var(--color-suld-0);
+  }
   .MainMenu2 {
+    /* font: var(--font-bd-l);*/
     --MainMenu2--main--width: calc(
       50% + clamp(40px, calc(16.49484536082474vw - 121.64948453608247px), 104px)
     );
-  }
-  .MainMenu2__content {
-    display: grid;
-    grid-template:
-      ".     . hot    " var(--space-10)
-      "main  . related" auto
-      "main  . extra  " 1fr
-      / var(--MainMenu2--main--width) var(--grid-1) auto;
-  }
-  [data-sprinkled] > .MainMenu2__content {
-    grid-template:
-      ".     hot      hot  toggler" var(--Layout__header-height)
-      "main  .    related  related" auto
-      "main  .    extra      extra" 1fr
-      / var(--MainMenu2--main--width) var(--grid-1) 1fr auto;
+    --MainMenu2--bgLeft: var(--color-faxafloi-100);
+    --MainMenu2--bgShadw: var(--MainMenu2--bgLeft);
+    --MainMenu2--bgRight: var(--color-suld-0);
+    --MainMenu2--bgHead: var(--color-suld-0);
   }
 
   .MainMenu2:not([data-sprinkled]),
   .MainMenu2--open {
-    background: var(--color-suld-0);
     background-image: linear-gradient(
       90deg,
-      var(--color-faxafloi-100) var(--MainMenu2--main--width),
-      transparent 0%
+      var(--MainMenu2--bgLeft)
+        calc(var(--MainMenu2--main--width) - var(--space-4)),
+      var(--MainMenu2--bgShadw) var(--MainMenu2--main--width),
+      var(--MainMenu2--bgRight) 0%
     );
   }
+  .MainMenu2:not(:has(.MainMenu2__related)) {
+    --MainMenu2--bgLeft: rgba(255, 255, 255, 0.67);
+    --MainMenu2--bgShadw: rgba(0, 0, 0, 0.07);
+    --MainMenu2--bgRight: var(--color-faxafloi-100);
+  }
+  .MainMenu2:not(:has(.MainMenu2__main)) {
+    --MainMenu2--bgLeft: rgba(255, 255, 255, 0.67);
+    --MainMenu2--bgShadw: rgba(0, 0, 0, 0.07);
+  }
 
-  .MainMenu2--open .MainMenu2__content::after {
+  .MainMenu2__content {
+    display: grid;
+    grid-template:
+      ".     hot      hot  toggler" var(--Layout__header-height)
+      "main  .    related  related" auto
+      "main  .    extra      extra" auto
+      ".     .    .              ." 1fr
+      / var(--MainMenu2--main--width) var(--grid-1) 1fr auto;
+  }
+  .MainMenu2__content:not(:has(.MainMenu2__related):has(.MainMenu2__main)) {
+    grid-template:
+      ".  hot  hot      toggler" var(--Layout__header-height)
+      ".  .    main        main" auto
+      ".  .    related  related" auto
+      ".  .    extra      extra" auto
+      ".  .    .              ." 1fr
+      / var(--MainMenu2--main--width) var(--grid-1) 1fr auto;
+  }
+
+  .MainMenu2--open .MainMenu2__content:has(.MainMenu2__related)::after {
     content: "";
     position: absolute;
     z-index: -1;
@@ -499,115 +555,20 @@ a.MainMenu2__toggler {
     background: var(--menu-image, none) var(--grid-3) 95% no-repeat;
   }
 
+  /* ---------------------- */
+
   .MainMenu2__toggler {
   }
 
+  /* ---------------------- */
+
   .MainMenu2__main {
-    position: relative;
-    margin-right: var(--grid-1);
-    padding-bottom: var(--MainMenu2--padding-bottom);
-  }
-  [data-sprinkled] > * > .MainMenu2__main {
-    display: flex;
-    flex-flow: row wrap;
-    align-content: flex-start;
-  }
-  :not([data-sprinkled]) > * > * > .MainMenu2__main__item {
-    border-bottom: 1px solid var(--color-faxafloi-75);
-  }
-  :not([data-sprinkled]) > * > * > * > a.MainMenu2__main__link {
-    color: inherit;
-  }
-  .MainMenu2__main__link {
-    color: var(--color-faxafloi-75);
-    /* margin-right: var(--grid-0-1); */
-    margin-right: clamp(
-      16px,
-      calc(6.185567010309279vw - 44.618556701030926px),
-      40px
-    );
-  }
-  .MainMenu2__main--noneActive > * > .MainMenu2__main__link {
-    color: inherit;
+    margin-bottom: var(--space-6);
   }
 
-  .MainMenu2__main__link:not(strong):active,
-  .MainMenu2__main__link:not(strong):hover,
-  .MainMenu2__main__link:not(strong)[data-focus-visible-added] {
-    color: inherit;
-    border-color: currentColor;
-  }
-  .MainMenu2__main__link:not(strong):focus-visible {
-    color: inherit;
-    border-color: currentColor;
-  }
-  .MainMenu2__main__link[aria-pressed="true"] {
-    color: var(--color-suld-0);
-  }
-
-  .MainMenu2__main__sub__items {
-    width: 100%;
-    margin-top: -1px;
-    margin-bottom: var(--space-4);
-    border-top: 1px solid var(--color-faxafloi-75);
-    padding-top: var(--space-3);
-    order: 2;
-    transition: all 500ms ease-in-out;
-    transition-property: visibility, opacity;
-  }
-
-  @media (min-width: 1368px) {
-    .MainMenu2__main__sub__items {
-      -moz-column-count: 2;
-      column-count: 2;
-      -moz-column-gap: clamp(
-        16px,
-        calc(4.123711340206185vw - 24.412371134020617px),
-        32px
-      );
-      column-gap: clamp(
-        16px,
-        calc(4.123711340206185vw - 24.412371134020617px),
-        32px
-      );
-      /* display: grid;
-        grid-template-columns: repeat(2, 1fr); */
-    }
-  }
-
-  .MainMenu2__main__sub__items[hidden] {
-    order: 1;
-    position: absolute;
-    top: calc(var(--font-base-leading) + var(--space-3));
-    display: block;
-    pointer-events: none;
-    visibility: hidden;
-    opacity: 0;
-  }
-  .MainMenu2__main__sub__item {
-    margin-bottom: var(--space-4);
-  }
-
-  @media (min-width: 1368px) {
-    .MainMenu2__main__sub__item {
-      min-height: 5rem;
-      -moz-column-break-inside: avoid;
-      break-inside: avoid;
-    }
-  }
-
-  .MainMenu2__main__sub__link {
-    font-size: 1.25rem;
-    line-height: 2rem;
-  }
-  .MainMenu2__main__sub__link__descr {
-    display: block;
-    font: var(--font-base);
-    font-weight: var(--font-weight--normal);
-  }
+  /* ---------------------- */
 
   :not([data-sprinkled]) > * > .MainMenu2__hot__items {
-    justify-content: flex-start;
     position: static;
     margin-bottom: var(--space-2);
   }
@@ -627,20 +588,22 @@ a.MainMenu2__toggler {
     margin-right: var(--space-2);
   }
 
+  /* ---------------------- */
+
   .MainMenu2__extra__items,
   :not(.MainMenu2__extra__items) + .MainMenu2__related {
     padding-bottom: 235px;
     margin-bottom: var(--space-2);
   }
-
   .MainMenu2__extra__item {
     margin-bottom: var(--space-2);
   }
 
+  /* ---------------------- */
+
   .MainMenu2__related {
     margin-bottom: var(--space-4);
   }
-
   .MainMenu2__related__link {
     background-color: var(--color-suld-0);
   }
