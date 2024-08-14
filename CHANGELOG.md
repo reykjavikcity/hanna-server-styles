@@ -6,8 +6,14 @@
 
 ## 0.8.91
 
-_2024-07-17_
+_2024-08-16_
 
+- `MainMenu2` (desktop):
+  - feat: Unify styling of `.MainMenu2__main` items closer to mobile version,
+    use same illustration for both
+  - feat: Right-align menu if either "related" or "main" items are missing
+  - feat: Tweak overall font-sizes and spacing, fix header overlap in mobile
+  - feat: Support `[data-icon]` attributes on `.MainMenu2__related__link`s
 - feat: Remove margins from checkbox/radio item children of
   `.FormField__options__item`
 - fix: Layout jank when <html> scrollbars are frozen — (affected `Modal`,
