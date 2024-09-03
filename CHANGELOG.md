@@ -4,6 +4,17 @@
 
 - ... <!-- Add new lines here. -->
 
+## 0.8.92
+
+_2024-09-04_
+
+- `MainMenu2`:
+  - feat: Add styling for `.MainMenu--variant--light`
+  - fix: Remove stray `...` in upper-left corner of open menu
+- fix: Improve focus styling of screen-reader-only links
+  - links appear more often "in-place" rather than off to the side
+  - links always appear blue-on-white, regardless of local color overrides
+
 ## 0.8.91
 
 _2024-08-16_
