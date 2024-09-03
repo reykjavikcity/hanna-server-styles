@@ -49,7 +49,7 @@
       This ::before sets up a same-background underlap for the layout
       logo/header so that the menu can be scrolled under it.
     */
-  content: "...";
+  content: "";
   position: fixed;
   z-index: 1;
   top: 0;
@@ -108,11 +108,18 @@
   margin: 0;
   width: auto; /* DO NOT REMVE!*/
 }
+.MainMenu2--variant--light .MainMenu2__toggler {
+  --Button--color: var(--color-suld-200);
+  --Button--color--active: var(--color-faxafloi-150);
+}
 .MainMenu2__toggler[aria-pressed="true"] {
   position: sticky;
   top: calc(0.5 * calc(var(--Layout__header-height) - var(--Button--height)));
   z-index: 1;
   --Button--backgroundColor--active: var(--color-faxafloi-100);
+}
+.MainMenu2--variant--light .MainMenu2__toggler[aria-pressed="true"] {
+  --Button--backgroundColor--active: var(--color-suld-200);
 }
 .MainMenu2__toggler::before {
   display: inline-block;
@@ -153,6 +160,10 @@ a.MainMenu2__toggler {
   --link-color: _inherit;
   --link-color--hover: var(--color-faxafloi-25);
 }
+.MainMenu2--variant--light .MainMenu2__main {
+  color: var(--color-faxafloi-100);
+  --link-color--hover: var(--color-faxafloi-150);
+}
 
 .MainMenu2__main__item > * {
   margin: 0;
@@ -174,21 +185,21 @@ a.MainMenu2__toggler {
 }
 .MainMenu2__main__item--home {
   position: absolute;
-  right: 9999px;
-  left: auto;
+  z-index: var(--zindex--sr-only);
+  transform: translateX(-9999px);
 }
-.MainMenu2__main__item--home a:focus,
-.MainMenu2__main__item--home a:active,
-.MainMenu2__main__item--home button:focus {
-  right: -9999px;
+.MainMenu2__main__item--home a:focus:focus,
+.MainMenu2__main__item--home a:active:active,
+.MainMenu2__main__item--home button:focus:focus {
+  transform: translateX(9999px);
 
   z-index: var(--zindex--sr-only);
   font-size: 1em;
   background: var(--color-suld-0);
-  border: 3px double var(--link-color--hover);
+  border: 3px double var(--color-faxafloi-100);
   margin: 0;
   padding: 0.2em 0.33em;
-  color: var(--link-color--hover);
+  color: var(--color-faxafloi-100);
   text-shadow: none;
   white-space: nowrap;
 }
@@ -206,16 +217,7 @@ a.MainMenu2__toggler {
   padding-bottom: calc(var(--MainMenu2--mainLink--paddingBottom) - 2px);
   border-bottom: 2px solid transparent;
 }
-.MainMenu2__main__link:active,
-.MainMenu2__main__link:hover,
-.MainMenu2__main__link[data-focus-visible-added] {
-  color: var(--color-suld-0);
-  border-color: currentColor;
-}
-.MainMenu2__main__link:focus-visible {
-  color: var(--color-suld-0);
-  border-color: currentColor;
-}
+
 .MainMenu2__main__link[aria-pressed="true"] {
   border-color: currentColor;
 }
@@ -362,10 +364,18 @@ a.MainMenu2__toggler {
     --Layout__header-homelink-divColor: var(--color-faxafloi-75);
     --Layout__header-color: var(--color-suld-0);
   }
+  .menu-is-open:has(.MainMenu2--variant--light) {
+    --Layout__header-logo-color: initial;
+    --Layout__header-homelink-divColor: var(--color-suld-100);
+    --Layout__header-color: initial;
+  }
 
   .MainMenu2 {
     --MainMenu2--mainLink--paddingBottom: var(--space-1);
     background: var(--color-faxafloi-100);
+  }
+  .MainMenu2--variant--light {
+    background: var(--color-faxafloi-25);
   }
   .MainMenu2--closed {
     background: none;
@@ -489,11 +499,19 @@ a.MainMenu2__toggler {
   */
 
 @media (min-width: 980px) {
-  .menu-is-open:has(.MainMenu2__related):has(.MainMenu2__main) {
+  .menu-is-open {
     --Layout__header-logo-color: var(--color-suld-0);
     --Layout__header-homelink-divColor: var(--color-faxafloi-75);
     --Layout__header-color: var(--color-suld-0);
   }
+  .menu-is-open[class]:has(.MainMenu2--variant--light),
+  .menu-is-open[class]:not(:has(.MainMenu2__related)),
+  .menu-is-open[class]:not(:has(.MainMenu2__main)) {
+    --Layout__header-logo-color: initial;
+    --Layout__header-homelink-divColor: var(--color-suld-100);
+    --Layout__header-color: initial;
+  }
+
   .MainMenu2 {
     /* font: var(--font-bd-l);*/
     --MainMenu2--main--width: calc(
@@ -503,6 +521,9 @@ a.MainMenu2__toggler {
     --MainMenu2--bgShadw: var(--MainMenu2--bgLeft);
     --MainMenu2--bgRight: var(--color-suld-0);
     --MainMenu2--bgHead: var(--color-suld-0);
+  }
+  .MainMenu2--variant--light {
+    --MainMenu2--bgLeft: var(--color-faxafloi-25);
   }
 
   .MainMenu2:not([data-sprinkled]),
@@ -586,6 +607,10 @@ a.MainMenu2__toggler {
   }
   .MainMenu2__hot__item {
     margin-right: var(--space-2);
+  }
+  .MainMenu2--variant--light .MainMenu2__hot__items .ButtonSecondary {
+    --Button--color: var(--color-suld-200);
+    --Button--color--active: var(--color-faxafloi-150);
   }
 
   /* ---------------------- */
