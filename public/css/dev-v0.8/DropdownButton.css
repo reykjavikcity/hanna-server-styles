@@ -1,0 +1,94 @@
+/*!@deps
+    ButtonPrimary
+    ButtonSecondary
+  */
+
+@keyframes DropdownButton-open {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.DropdownButton {
+  display: inline-block;
+  position: relative;
+  margin-right: var(--Button--gapH);
+  margin-bottom: var(--Button--gapV);
+}
+
+/* Doubles also as 'ButtonSecondary' or 'ButtonPrimary' */
+.DropdownButton__toggler {
+  margin: 0;
+  min-width: 0;
+  width: auto; /* needed by Firefox (as of 2024-11) Some conflicts between .Button* styles applying a min-width and width:max-content  */
+}
+
+.DropdownButton__menu {
+  position: absolute;
+  top: var(--DropdownButton-pos-y);
+  left: var(--DropdownButton-pos-x);
+  z-index: var(--zindex--overlay);
+  margin: var(--space-0_5) 0;
+
+  max-width: 31.25rem;
+  width: -moz-max-content;
+  width: max-content;
+
+  background: var(--color-white);
+  box-shadow: var(--boxShadow-elevated);
+  border: 1px solid var(--color-suld-100);
+  border-radius: var(--space-0_5);
+}
+[open] > .DropdownButton__menu {
+  animation: DropdownButton-open 200ms ease-in;
+}
+
+.DropdownButton__item {
+}
+.DropdownButton__item:not(:last-child) {
+  border-bottom: var(--border-default);
+}
+
+.DropdownButton__itembutton {
+  text-decoration: none;
+  color: var(--link-color);
+  font-weight: var(--link-weight);
+  padding-bottom: var(--link-underline-offset);
+  border-bottom: var(--link-underline);
+  transition: var(--link-transition);
+  transition-property: border-color, background-color, color, text-shadow,
+    box-shadow, outline;
+}
+
+.DropdownButton__itembutton:hover,
+.DropdownButton__itembutton:active {
+  color: var(--link-color--hover);
+  border-bottom: var(--link-underline--hover);
+}
+.DropdownButton__itembutton[class] {
+  display: block;
+  width: 100%;
+  --DropdownButton--padH: var(--space-2);
+  padding: var(--space-1) var(--DropdownButton--padH);
+  border: none;
+  border-radius: calc(var(--space-0_5) - 1px);
+}
+.DropdownButton__itembutton[data-icon]::before {
+  --Icon--enabled: initial;
+
+  margin-right: var(--space-1);
+}
+/* Indent all __related__links at least one of them has an icon */
+:has(.DropdownButton__itembutton[data-icon])
+  > *
+  > .DropdownButton__itembutton:not([data-icon]) {
+  padding-left: calc(var(--DropdownButton--padH) + var(--space-3));
+}
+
+.DropdownButton__itembutton:hover,
+.DropdownButton__itembutton:focus {
+  background-color: var(--color-suld-50);
+}

@@ -116,6 +116,7 @@
   position: sticky;
   top: calc(0.5 * calc(var(--Layout__header-height) - var(--Button--height)));
   z-index: 1;
+  outline: 1px solid currentColor;
   --Button--backgroundColor--active: var(--color-faxafloi-100);
 }
 .MainMenu2--variant--light .MainMenu2__toggler[aria-pressed="true"] {
@@ -540,6 +541,9 @@ a.MainMenu2__toggler {
     --MainMenu2--bgLeft: rgba(255, 255, 255, 0.67);
     --MainMenu2--bgShadw: rgba(236, 236, 236, 0.67);
     --MainMenu2--bgRight: var(--color-faxafloi-100);
+  }
+  .MainMenu2--variant--light:not(:has(.MainMenu2__related)) {
+    --MainMenu2--bgRight: var(--color-faxafloi-25);
   }
   .MainMenu2:not(:has(.MainMenu2__main)) {
     --MainMenu2--bgLeft: rgba(255, 255, 255, 0.67);

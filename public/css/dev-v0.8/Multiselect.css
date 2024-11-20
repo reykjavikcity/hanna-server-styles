@@ -108,7 +108,9 @@
   padding-top: var(--space-1);
   margin-bottom: -2px;
   overflow: hidden;
-  margin-right: var(--space-3--neg);
+  margin-right: var(--space-7--neg);
+  padding-right: var(--space-4);
+
   position: relative;
 }
 .FormField--small

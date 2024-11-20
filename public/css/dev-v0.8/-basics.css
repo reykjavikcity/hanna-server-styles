@@ -45,7 +45,7 @@
   /**/
 
 :root {
-  --cssVersion: "0.8.92";
+  --cssVersion: "0.8.93";
   --browser-scrollbar-width: 16px;
   --bp-w-phone: 320px;
   --bp-w-phablet: 480px;
@@ -1056,6 +1056,7 @@ html {
   min-width: calc(320px - var(--browser-scrollbar-width));
   box-sizing: border-box;
   position: relative;
+  scroll-behavior: smooth;
   overflow-y: scroll;
   overflow-x: hidden; /* Normal browsers respect this.*/
   /**
@@ -1415,6 +1416,14 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 }
 legend + * {
   clear: both;
+}
+
+summary {
+  display: block;
+  cursor: pointer; /* the default is silly IMO */
+}
+summary > * {
+  display: inline;
 }
 
 /* ===========================================================================*/
