@@ -4,6 +4,21 @@
 
 - ... <!-- Add new lines here. -->
 
+## 0.8.94
+
+_2025-03-31_
+
+- `Tooltip`:
+  - fix: Set `vertical-align: top` as a better default
+  - fix: Tweak `__content` styles to fix floating-ui arrow pos calc bug
+- `IframedLayout`:
+  - fix: Remove min-height rule preventing auto-reducing height of iframes
+- `MainMenu2`:
+  - feat: Make white page-overlay slightly more opaque
+- `DropdownButton`:
+  - feat: Add `[aria-crurrent]` styling for menu items
+- perf: Remove stylings aimed at the `focus-visible` JavaScript polyfill
+
 ## 0.8.93
 
 _2024-11-22_
