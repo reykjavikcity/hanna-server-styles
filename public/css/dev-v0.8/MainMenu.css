@@ -256,47 +256,7 @@
     margin: -1px;
   }
 
-  .MainMenu__megapanel__backtomenu[data-focus-visible-added] {
-    width: auto;
-    height: auto;
-    overflow: visible;
-    clip: auto;
-    opacity: 1;
-    pointer-events: auto;
-
-    margin: 0;
-
-    z-index: var(--zindex--sr-only);
-    font-size: 1em;
-    background: var(--color-suld-0);
-    border: 3px double var(--color-faxafloi-100);
-    margin: 0;
-    padding: 0.2em 0.33em;
-    color: var(--color-faxafloi-100);
-    text-shadow: none;
-    white-space: nowrap;
-  }
-  .MainMenu__megapanel__backtomenu:focus-visible {
-    width: auto;
-    height: auto;
-    overflow: visible;
-    clip: auto;
-    opacity: 1;
-    pointer-events: auto;
-
-    margin: 0;
-
-    z-index: var(--zindex--sr-only);
-    font-size: 1em;
-    background: var(--color-suld-0);
-    border: 3px double var(--color-faxafloi-100);
-    margin: 0;
-    padding: 0.2em 0.33em;
-    color: var(--color-faxafloi-100);
-    text-shadow: none;
-    white-space: nowrap;
-  }
-
+  .MainMenu__megapanel__backtomenu:focus-visible,
   .MainMenu__megapanel__backtomenu:focus-within:not(:focus) {
     width: auto;
     height: auto;

@@ -128,13 +128,10 @@
 
   .NameCard__tel__number:active,
   .NameCard__tel__number:hover,
-  .NameCard__tel__number[data-focus-visible-added],
   a.NameCard__contactinfo__item:active,
   a.NameCard__contactinfo__item:hover,
-  a.NameCard__contactinfo__item[data-focus-visible-added],
   button.NameCard__contactinfo__item:active,
-  button.NameCard__contactinfo__item:hover,
-  button.NameCard__contactinfo__item[data-focus-visible-added] {
+  button.NameCard__contactinfo__item:hover {
     --dashWidth: var(--ButtonTertiary--hover--dashWidth);
     color: var(--ButtonTertiary--color);
     outline: 0;
@@ -153,20 +150,6 @@
     width: var(--ButtonTertiary--dashWidth);
   }
 
-  .NameCard__tel__number[data-focus-visible-added]::after,
-  a.NameCard__contactinfo__item[data-focus-visible-added]::after,
-  button.NameCard__contactinfo__item[data-focus-visible-added]::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: -0.8125rem -1rem;
-    border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
-    border-radius: 0.5rem;
-  }
-
   .NameCard__tel__number:focus-visible::after,
   a.NameCard__contactinfo__item:focus-visible::after,
   button.NameCard__contactinfo__item:focus-visible::after {
@@ -180,6 +163,7 @@
     border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
     border-radius: 0.5rem;
   }
+
   .NameCard__tel__number,
   a.NameCard__contactinfo__item,
   button.NameCard__contactinfo__item {

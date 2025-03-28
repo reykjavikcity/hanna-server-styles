@@ -45,7 +45,7 @@
   /**/
 
 :root {
-  --cssVersion: "0.8.93";
+  --cssVersion: "0.8.94";
   --browser-scrollbar-width: 16px;
   --bp-w-phone: 320px;
   --bp-w-phablet: 480px;
@@ -1029,8 +1029,8 @@ table {
   display: none;
 }
 
-*:focus:focus,
-*:focus[data-focus-visible-added] {
+/* Set default keyboard focus style */
+*:focus:focus {
   outline: var(--link-focus-outline);
   outline-color: var(--link-focus-outlineColor);
   outline-offset: var(--link-focus-outlineOffset);
@@ -1040,9 +1040,8 @@ table {
   outline-color: var(--link-focus-outlineColor);
   outline-offset: var(--link-focus-outlineOffset);
 }
-
-*:focus[tabindex="-1"],
-[data-js-focus-visible] *:focus:not([data-focus-visible-added]) {
+/* Set default non-keyboard focus style */
+*:focus[tabindex="-1"] {
   outline: none;
   outline-offset: 0;
 }

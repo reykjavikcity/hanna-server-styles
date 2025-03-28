@@ -74,8 +74,7 @@
   }
 
   .SiteSearchInput__button:active,
-  .SiteSearchInput__button:hover,
-  .SiteSearchInput__button[data-focus-visible-added] {
+  .SiteSearchInput__button:hover {
     background-color: var(--color-faxafloi-150);
     color: var(--color-suld-0);
   }

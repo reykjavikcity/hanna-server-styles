@@ -64,12 +64,6 @@
   .before-sprinkling .TabPanel:not([data-sprinkled]) {
     display: none;
   }
-
-  .TabPanel[data-focus-visible-added] {
-    outline-color: var(--color-suld-100);
-    outline-style: dotted;
-    outline-offset: var(--space-1);
-  }
   .TabPanel:focus-visible {
     outline-color: var(--color-suld-100);
     outline-style: dotted;
@@ -129,10 +123,6 @@
     margin: 0;
     padding: var(--space-2) var(--space-1);
     white-space: normal;
-  }
-
-  .Tabs--vertical .Tabs__tab[data-focus-visible-added] {
-    outline-offset: -3px;
   }
   .Tabs--vertical .Tabs__tab:focus-visible {
     outline-offset: -3px;

@@ -154,8 +154,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   --ButtonTertiary--dashColor: var(--color-suld-150);
 }
 .PullQuote__by > a:active,
-.PullQuote__by > a:hover,
-.PullQuote__by > a[data-focus-visible-added] {
+.PullQuote__by > a:hover {
   --dashWidth: var(--ButtonTertiary--hover--dashWidth);
   color: var(--ButtonTertiary--color);
   outline: 0;
@@ -167,17 +166,6 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 }
 .PullQuote__by > a:active::before {
   width: var(--ButtonTertiary--dashWidth);
-}
-.PullQuote__by > a[data-focus-visible-added]::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: -0.8125rem -1rem;
-  border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
-  border-radius: 0.5rem;
 }
 .PullQuote__by > a:focus-visible::after {
   content: "";

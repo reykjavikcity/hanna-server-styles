@@ -19,12 +19,16 @@
   margin-bottom: var(--Button--gapV);
 }
 
+/* ------------------------------------------------------------------------ */
+
 /* Doubles also as 'ButtonSecondary' or 'ButtonPrimary' */
 .DropdownButton__toggler {
   margin: 0;
   min-width: 0;
   width: auto; /* needed by Firefox (as of 2024-11) Some conflicts between .Button* styles applying a min-width and width:max-content  */
 }
+
+/* ------------------------------------------------------------------------ */
 
 .DropdownButton__menu {
   position: absolute;
@@ -46,11 +50,15 @@
   animation: DropdownButton-open 200ms ease-in;
 }
 
+/* ------------------------------------------------------------------------ */
+
 .DropdownButton__item {
 }
 .DropdownButton__item:not(:last-child) {
   border-bottom: var(--border-default);
 }
+
+/* ------------------------------------------------------------------------ */
 
 .DropdownButton__itembutton {
   text-decoration: none;
@@ -76,6 +84,17 @@
   border: none;
   border-radius: calc(var(--space-0_5) - 1px);
 }
+.DropdownButton__itembutton:hover,
+.DropdownButton__itembutton:focus {
+  background-color: var(--color-suld-50);
+}
+
+[aria-current="true"] > .DropdownButton__itembutton {
+  --link-color: var(--color-faxafloi-150);
+
+  background: var(--color-faxafloi-25);
+}
+
 .DropdownButton__itembutton[data-icon]::before {
   --Icon--enabled: initial;
 
@@ -86,9 +105,4 @@
   > *
   > .DropdownButton__itembutton:not([data-icon]) {
   padding-left: calc(var(--DropdownButton--padH) + var(--space-3));
-}
-
-.DropdownButton__itembutton:hover,
-.DropdownButton__itembutton:focus {
-  background-color: var(--color-suld-50);
 }

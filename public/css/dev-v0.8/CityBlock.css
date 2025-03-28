@@ -142,8 +142,7 @@
   }
 
   .CityBlock__button:active,
-  .CityBlock__button:hover,
-  .CityBlock__button[data-focus-visible-added] {
+  .CityBlock__button:hover {
     --dashWidth: var(--ButtonTertiary--hover--dashWidth);
     color: var(--ButtonTertiary--color);
     outline: 0;
@@ -158,18 +157,6 @@
     width: var(--ButtonTertiary--dashWidth);
   }
 
-  .CityBlock__button[data-focus-visible-added]::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: -0.8125rem -1rem;
-    border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
-    border-radius: 0.5rem;
-  }
-
   .CityBlock__button:focus-visible::after {
     content: "";
     position: absolute;
@@ -181,6 +168,7 @@
     border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
     border-radius: 0.5rem;
   }
+
   .CityBlock__button {
     display: block;
     margin-bottom: 0.5rem;

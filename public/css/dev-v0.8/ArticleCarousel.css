@@ -372,8 +372,7 @@
   }
 
   .ArticleCarouselCard__morelink:active,
-  .ArticleCarouselCard__morelink:hover,
-  .ArticleCarouselCard__morelink[data-focus-visible-added] {
+  .ArticleCarouselCard__morelink:hover {
     --dashWidth: var(--ButtonTertiary--hover--dashWidth);
     color: var(--ButtonTertiary--color);
     outline: 0;
@@ -386,18 +385,6 @@
 
   .ArticleCarouselCard__morelink:active::before {
     width: var(--ButtonTertiary--dashWidth);
-  }
-
-  .ArticleCarouselCard__morelink[data-focus-visible-added]::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: -0.8125rem -1rem;
-    border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
-    border-radius: 0.5rem;
   }
 
   .ArticleCarouselCard__morelink:focus-visible::after {

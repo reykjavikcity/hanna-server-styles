@@ -249,8 +249,7 @@
   --ButtonTertiary--dashColor: var(--color-suld-150);
 }
 .BlockQuote__by > a:active,
-.BlockQuote__by > a:hover,
-.BlockQuote__by > a[data-focus-visible-added] {
+.BlockQuote__by > a:hover {
   --dashWidth: var(--ButtonTertiary--hover--dashWidth);
   color: var(--ButtonTertiary--color);
   outline: 0;
@@ -262,17 +261,6 @@
 }
 .BlockQuote__by > a:active::before {
   width: var(--ButtonTertiary--dashWidth);
-}
-.BlockQuote__by > a[data-focus-visible-added]::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: -0.8125rem -1rem;
-  border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
-  border-radius: 0.5rem;
 }
 .BlockQuote__by > a:focus-visible::after {
   content: "";

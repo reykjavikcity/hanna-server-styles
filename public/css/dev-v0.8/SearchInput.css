@@ -104,14 +104,12 @@
     transition: all 100ms ease-in;
   }
 
-  .SearchInput__button:not(:disabled):hover,
-  .SearchInput__button:not(:disabled)[data-focus-visible-added] {
+  .SearchInput__button:not(:disabled):hover {
     background-color: var(--color-suld-25);
     color: var(--color-faxafloi-100);
   }
 
-  .SearchInput__button:not(:disabled):hover::before,
-  .SearchInput__button:not(:disabled)[data-focus-visible-added]::before {
+  .SearchInput__button:not(:disabled):hover::before {
     transform: scale(1.15);
   }
   .SearchInput__button:not(:disabled):focus-visible {

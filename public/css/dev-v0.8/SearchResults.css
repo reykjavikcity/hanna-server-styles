@@ -182,18 +182,14 @@
   }
 
   .SearchResultsItem__link:active > .SearchResultsItem__title,
-  .SearchResultsItem__link:hover > .SearchResultsItem__title,
-  .SearchResultsItem__link[data-focus-visible-added]
-    > .SearchResultsItem__title {
+  .SearchResultsItem__link:hover > .SearchResultsItem__title {
     padding-right: 0;
 
     --dash-width: calc(2.9580152671755724vw + 7.5343511450381655px);
   }
   @media (min-width: 1368px) {
     .SearchResultsItem__link:active > .SearchResultsItem__title,
-    .SearchResultsItem__link:hover > .SearchResultsItem__title,
-    .SearchResultsItem__link[data-focus-visible-added]
-      > .SearchResultsItem__title {
+    .SearchResultsItem__link:hover > .SearchResultsItem__title {
       --dash-width: 3rem;
     }
   }
@@ -278,8 +274,7 @@
   }
 
   .SearchResults__loadmore:active,
-  .SearchResults__loadmore:hover,
-  .SearchResults__loadmore[data-focus-visible-added] {
+  .SearchResults__loadmore:hover {
     --dashWidth: var(--ButtonTertiary--hover--dashWidth);
     color: var(--ButtonTertiary--color);
     outline: 0;
@@ -294,18 +289,6 @@
     width: var(--ButtonTertiary--dashWidth);
   }
 
-  .SearchResults__loadmore[data-focus-visible-added]::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: -0.8125rem -1rem;
-    border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
-    border-radius: 0.5rem;
-  }
-
   .SearchResults__loadmore:focus-visible::after {
     content: "";
     position: absolute;
@@ -317,6 +300,7 @@
     border: 0.0625rem dotted var(--ButtonTertiary--dashColor);
     border-radius: 0.5rem;
   }
+
   .SearchResults__loadmore {
     display: block;
     border: 50px solid transparent;

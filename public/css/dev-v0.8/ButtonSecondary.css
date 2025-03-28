@@ -58,8 +58,7 @@
 }
 
 .ButtonSecondary:active,
-.ButtonSecondary:hover,
-.ButtonSecondary[data-focus-visible-added] {
+.ButtonSecondary:hover {
   outline: 0;
   text-decoration: none;
   /* box-shadow: var(--boxShadow-hover); */
@@ -83,11 +82,6 @@
   --Button--color: var(--Button--color--active);
   --Button--textColor: var(--Button--textColor--active);
   --Button--backgroundColor: var(--Button--backgroundColor--active);
-}
-
-.ButtonSecondary[data-focus-visible-added] {
-  outline: 0.125rem solid var(--Button--color);
-  outline-offset: 0.125rem;
 }
 
 .ButtonSecondary:focus-visible {

@@ -9,6 +9,7 @@
 
 .Tooltip {
   display: inline-block;
+  vertical-align: top;
   position: relative;
 
   text-decoration: none;
@@ -84,6 +85,7 @@
   top: var(--tooltip-content-pos-y);
   left: var(--tooltip-content-pos-x);
   z-index: 1;
+  transform: translateX(0px); /* Needed to fix floating-ui arrow pos calc bug*/
 }
 [open] > .Tooltip__content {
   animation: Tooltip-open 200ms ease-in;

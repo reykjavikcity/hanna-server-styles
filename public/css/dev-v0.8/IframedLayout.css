@@ -1,5 +1,6 @@
 .IframedLayout {
-  min-height: 100vh;
+  /* Must not be set to 100vh lest the iframe can't auto-reduce its height. */
+  /* min-height: 100vh; */
   width: 100%;
   max-width: 75.5rem;
   margin: 0 auto;
