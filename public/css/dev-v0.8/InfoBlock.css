@@ -46,12 +46,12 @@
   }
 
   .InfoBlock__title {
-    font: var(--font-hd-s);
+    font: var(--font-heading-m);
     margin-bottom: 1.25rem;
   }
 
   .InfoBlock__subtitle {
-    font: var(--font-bd-l);
+    font: var(--font-body-l);
   }
 
   @media (min-width: 760px) {
@@ -91,7 +91,7 @@
 
   .InfoBlock__extrainfo,
   .InfoBlock__attention {
-    font: var(--font-bd-l);
+    font: var(--font-body-l);
     position: relative;
     padding-left: 2.5rem;
     margin-top: calc(1.5267175572519083vw + 59.1145038167939px);

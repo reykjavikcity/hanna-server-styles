@@ -6,7 +6,6 @@
     flex-flow: row wrap;
     border-bottom: var(--Tabs--borderWidth) solid var(--color-suld-50);
     font: var(--font-button);
-    font-weight: var(--font-weight--bold);
     margin: var(--space-5) 0;
   }
   .Tabs::after {

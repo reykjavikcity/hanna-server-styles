@@ -3,8 +3,8 @@
     margin-bottom: var(--baseVerticalMargin);
   }
   .RelatedLinks__title {
-    font-size: var(--font-bd-l-size);
-    line-height: var(--font-bd-l-leading);
+    font-size: var(--font-body-l-size);
+    line-height: var(--font-body-l-leading);
     font-weight: var(--font-weight--bold);
     color: var(--color-suld-150);
     margin-bottom: 0.5rem;

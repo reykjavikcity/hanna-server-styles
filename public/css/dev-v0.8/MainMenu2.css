@@ -179,7 +179,7 @@ a.MainMenu2__toggler {
 }
 
 .MainMenu2__main__item {
-  font: var(--font-sh-s);
+  font: var(--font-heading-s);
   margin-bottom: var(--space-1);
 }
 .MainMenu2__main__item[aria-current="true"] {
@@ -314,7 +314,7 @@ a.MainMenu2__toggler {
 }
 
 .MainMenu2__related__title {
-  font: var(--font-sh-s);
+  font: var(--font-heading-s);
   padding-top: var(--space-1);
   padding-bottom: calc(var(--MainMenu2--mainLink--paddingBottom) - 1px);
   border-bottom: 1px solid var(--color-suld-100);
@@ -514,7 +514,7 @@ a.MainMenu2__toggler {
   }
 
   .MainMenu2 {
-    /* font: var(--font-bd-l);*/
+    /* font: var(--font-body-l);*/
     --MainMenu2--main--width: calc(
       50% + clamp(40px, calc(16.49484536082474vw - 121.64948453608247px), 104px)
     );

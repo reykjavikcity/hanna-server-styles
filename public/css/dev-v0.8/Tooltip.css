@@ -9,8 +9,10 @@
 
 .Tooltip {
   display: inline-block;
-  vertical-align: top;
   position: relative;
+  vertical-align: top;
+  font-size: var(--font-base-size);
+  transition: none;
 
   text-decoration: none;
   color: var(--link-color);
@@ -27,10 +29,6 @@
   color: var(--link-color--hover);
   border-bottom: var(--link-underline--hover);
 }
-
-.Tooltip {
-  transition: none;
-}
 .Tooltip,
 .Tooltip:hover,
 .Tooltip:active {
@@ -45,7 +43,7 @@
   overflow: hidden;
   white-space: nowrap;
 
-  width: 1.5625rem;
+  width: 1.5625em;
 }
 
 .Tooltip__trigger::before {
@@ -65,8 +63,8 @@
   letter-spacing: 0;
   content: var(--icon--info);
 
-  width: 1.5625rem;
-  height: 1.5625rem;
+  width: 1.5625em;
+  height: 1.5625em;
   display: inline-block;
   text-align: center;
 }
@@ -76,10 +74,10 @@
   color: var(--color-white);
   background-color: rgba(0, 0, 0, 0.7);
   font-weight: normal;
-  font-size: 0.75rem;
+  font-size: var(--font-label-size);
+  line-height: 1.5em;
   border-radius: 0.5rem;
   box-sizing: border-box;
-  line-height: 1.5;
   padding: 0.625rem 1.25rem;
   position: absolute;
   top: var(--tooltip-content-pos-y);

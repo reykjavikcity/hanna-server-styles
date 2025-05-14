@@ -192,7 +192,7 @@
   }
 
   .MainMenu__item {
-    font: var(--font-bd-l);
+    font: var(--font-body-l);
     width: 100%;
     margin-bottom: 1rem;
   }
@@ -209,7 +209,7 @@
   }
 
   .MainMenu__separator ~ .MainMenu__item {
-    font: var(--font-bd-s);
+    font: var(--font-body-m);
   }
 
   .MainMenu__item--lang {
@@ -733,7 +733,7 @@ html:not([data-disable-css-warnings-with-abandon="true"]) .MainMenu2::before {
   }
 
   .PrimaryPanel__title {
-    font: var(--font-sh-s);
+    font: var(--font-heading-s);
   }
 
   /* .MainMenu[data-sprinkled] .PrimaryPanel__title {*/
@@ -810,7 +810,7 @@ html:not([data-disable-css-warnings-with-abandon="true"]) .MainMenu2::before {
   }
 
   .PrimaryPanel__linkTitle {
-    font: var(--font-bd-l);
+    font: var(--font-body-l);
   }
 
   .PrimaryPanel__summary {
@@ -863,7 +863,7 @@ html:not([data-disable-css-warnings-with-abandon="true"]) .MainMenu2::before {
   }
 
   .AuxiliaryPanel__title {
-    font: var(--font-sh-s);
+    font: var(--font-heading-s);
     padding-bottom: var(--space-1);
     margin-bottom: var(--space-2);
     margin-right: 0;

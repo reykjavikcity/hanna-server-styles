@@ -1,7 +1,4 @@
-/*!@deps
-    ButtonPrimary
-    ButtonSecondary
-  */
+/*!@deps ButtonPrimary, ButtonSecondary */
 
 @keyframes DropdownButton-open {
   0% {

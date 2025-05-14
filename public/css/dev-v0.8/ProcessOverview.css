@@ -15,7 +15,7 @@
   }
 
   .ProcessOverview__title {
-    font: var(--font-hd-s);
+    font: var(--font-heading-m);
     margin-bottom: calc(7.442748091603053vw + 16.18320610687023px);
   }
 
@@ -31,7 +31,7 @@
   }
 
   .ProcessOverview__item__title {
-    font: var(--font-sh-l);
+    font: var(--font-heading-m);
     display: flex;
 
     margin-bottom: var(--baseVerticalMargin);
@@ -51,11 +51,11 @@
   }
 
   .ProcessOverview__item__content {
-    font: var(--font-bd-l);
+    font: var(--font-body-l);
   }
 
   .ProcessOverview__attention {
-    font: var(--font-bd-l);
+    font: var(--font-body-l);
     position: relative;
     padding-left: 2.5rem;
     margin-top: calc(1.5267175572519083vw + 59.1145038167939px);

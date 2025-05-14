@@ -214,7 +214,7 @@
 
   .GalleryItem__caption {
     --leading: 1.25em;
-    font-size: var(--font-bd-l-size);
+    font-size: var(--font-body-l-size);
     line-height: var(--leading);
 
     width: 0;
@@ -420,7 +420,7 @@
   }
 
   .GalleryModalItem__caption {
-    font: var(--font-sh-s);
+    font: var(--font-heading-s);
     margin-bottom: var(--space-2);
   }
 

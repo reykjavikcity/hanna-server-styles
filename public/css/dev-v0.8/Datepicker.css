@@ -460,7 +460,7 @@
     visibility: visible !important; /* override inline 'visibility: hidden'*/
     text-transform: capitalize;
     color: var(--color-suld-0);
-    font: var(--font-bd-l);
+    font: var(--font-body-l);
     font-weight: var(--font-weight--bold);
   }
 

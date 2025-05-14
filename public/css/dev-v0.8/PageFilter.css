@@ -42,7 +42,7 @@
   }
 
   .PageFilter__title {
-    font: var(--font-hd-s);
+    font: var(--font-heading-m);
     margin-bottom: 0.3125em;
     width: 100%;
   }

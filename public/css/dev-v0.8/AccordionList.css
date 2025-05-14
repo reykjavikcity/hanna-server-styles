@@ -25,8 +25,7 @@
   }
 
   .AccordionList__title {
-    font: var(--font-sh-s);
-    font-weight: var(--font-weight--bold);
+    font: var(--font-heading-s);
     padding-left: var(--leftIndent);
   }
   .AccordionList__button {
@@ -101,28 +100,57 @@
   /* ---------------------------------------------------------------------------*/
 
   .AccordionList__content {
-    font: var(--font-bd-l);
-    /* no headings above h4*/ /* DECIDE: is this enough?*/
+    font: var(--font-body-l); /* DECIDE: is this enough?*/
   }
 
-  .AccordionList__content h2 {
-    font: var(--font-hd-s);
-    margin-bottom: var(--h2--marginBottom, var(--baseVerticalMargin));
-    clear: both;
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .AccordionList__content
+    h2 {
+    --WARNING--message: "<h2/> not allowed here.";
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
-  .AccordionList__content * + h2 {
-    margin-top: var(--h2--marginTop, 1.5em);
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .AccordionList__content
+    h2::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: var(--WARNING--message) !important;
   }
-  .AccordionList__content h3 {
-    font: var(--font-sh-l);
-    margin-bottom: var(--baseVerticalMargin);
-    clear: both;
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .AccordionList__content
+    h3 {
+    --WARNING--message: "<h3/> not allowed here.";
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
-  .AccordionList__content * + h3 {
-    margin-top: var(--h3--marginTop, 1.25em);
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .AccordionList__content
+    h3::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: var(--WARNING--message) !important;
   }
+
   .AccordionList__content h4 {
-    font: var(--font-sh-s);
+    font: var(--font-heading-s);
     margin-bottom: var(--baseVerticalMargin);
   }
   .AccordionList__content p {
@@ -157,6 +185,7 @@
   .AccordionList__content li ul {
     margin-bottom: 0;
   }
+
   /* blockquote:not([class]), // Too strict??*/
   .AccordionList__content
     blockquote:not(.BlockQuote__quote):not(.PullQuote__quote) {
@@ -185,7 +214,7 @@
 
   .AccordionList__content
     blockquote:not(.BlockQuote__quote):not(.PullQuote__quote) {
-    font: var(--font-bd-s);
+    font: var(--font-body-m);
     position: relative;
     margin-bottom: var(--space-4);
     padding-left: calc(var(--space-2) + 2px);
@@ -218,7 +247,7 @@
   }
 
   .AccordionList__content {
-    font: var(--font-bd-l);
+    font: var(--font-body-l);
     transition: all 200ms ease-in;
     transition-property: opacity, visibility, max-height, padding-top;
     overflow: hidden;

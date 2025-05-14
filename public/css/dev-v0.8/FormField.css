@@ -10,7 +10,7 @@
     );
     --FormField--input--padding-top: 0.75rem;
     --FormField--input--padding-bottom: 0px;
-    --FormField--input--font-size: var(--font-bd-l-size);
+    --FormField--input--font-size: var(--font-body-l-size);
     --FormField--input--color: var(--color-suld-200);
     --FormField--input--color-placeholder: var(--color-suld-150);
     --FormField--input--line-height: calc(
@@ -31,7 +31,7 @@
   }
 
   .FormField--small {
-    --FormField--input--font-size: var(--font-bd-s-size);
+    --FormField--input--font-size: var(--font-body-m-size);
     --FormField--input--height: 2.5rem;
     --FormField--input--padding-top: 0px;
     --FormField--input--padding-bottom: 0px;
@@ -78,7 +78,7 @@
     > [data-inputlabel].FormField__label,
   .FormField--empty:not(.FormField--small):not(.FormField--focused)
     > label.FormField__label {
-    font-size: var(--font-bd-s-size);
+    font-size: var(--font-body-m-size);
     line-height: var(--FormField--input--height-inner);
   }
 
@@ -103,7 +103,7 @@
   /* ---------------------------------------------------------------------------*/
 
   .FormField__input {
-    font-size: var(--font-bd-l-size);
+    font-size: var(--font-body-l-size);
     position: relative;
     display: flex;
     width: 100%;
@@ -347,9 +347,9 @@
   .TextInput {
   }
   .TextInput--multiline > .FormField__input {
-    --FormField--input--font-size: var(--font-bd-s-size);
+    --FormField--input--font-size: var(--font-body-m-size);
 
-    --TextInput--textarea--leading: var(--font-bd-s-leading);
+    --TextInput--textarea--leading: var(--font-body-m-leading);
     --TextInput--textarea--rows: 2;
     --TextInput--textarea--extraPad: calc(
       (

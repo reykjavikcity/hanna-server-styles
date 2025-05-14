@@ -10,9 +10,9 @@
   }
 
   .MiniMetrics__text {
-    font: var(--font-hd-xl);
+    font: var(--font-heading-xl);
     display: block;
-    margin-bottom: 0.5555555555555556em;
+    margin-bottom: 0.625em;
     max-width: 896px;
   }
   .MiniMetrics__more {
@@ -42,7 +42,6 @@
     );
     margin-right: var(--ButtonTertiary--gapH);
     margin-bottom: var(--space-1);
-    font-weight: 700;
     transition: all 100ms ease-in;
     /* --ButtonTertiary--hover--dashWidth: 3rem;*/
   }
@@ -91,12 +90,12 @@
   }
 
   .MiniMetrics__more {
-    font: var(--font-sh-s);
+    font: var(--font-heading-s);
     --ButtonTertiary--dashWidth: 1rem;
     --ButtonTertiary--dashHeight: 0.16666666666666666rem;
   }
   .MiniMetrics__more::before {
-    top: calc(0.5 * var(--font-sh-s-leading));
+    top: calc(0.5 * var(--font-heading-s-leading));
   }
 
   @media (min-width: 480px) {

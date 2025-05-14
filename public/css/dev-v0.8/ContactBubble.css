@@ -68,7 +68,7 @@
     bottom: var(--space-3);
     pointer-events: auto;
     box-sizing: content-box;
-    font-size: var(--font-bd-l-size);
+    font-size: var(--font-body-l-size);
     font-weight: var(--font-weight--bold);
     background-color: var(--color-suld-25);
     color: var(--color-faxafloi-100);
@@ -242,7 +242,7 @@
   }
   @media (max-width: 759px) {
     .ContactBubble__title {
-      font: var(--font-hd-l);
+      font: var(--font-heading-xl);
       max-width: 9em; /* Makes for nice line-wrap in the text 'Hvað getum við 
  gert fyrir þig?' */
       margin-bottom: calc(12.048192771084338vh - 33.831325301204814px);
@@ -254,14 +254,14 @@
   }
   @media (min-width: 760px) {
     .ContactBubble__title {
-      font: var(--font-bd-l);
+      font: var(--font-body-l);
       font-weight: var(--font-weight--bold);
       margin-bottom: 1.5rem;
     }
   }
 
   .ContactBubble__list {
-    font: var(--font-bd-s);
+    font: var(--font-body-m);
     border-top: 1px solid var(--color-suld-50);
     font-weight: var(--font-weight--bold);
   }
@@ -270,7 +270,7 @@
     box-sizing: content-box;
     padding: 1rem 2rem;
     padding-left: 3.5rem;
-    min-height: calc(var(--font-bd-s-leading) + var(--font-label-leading));
+    min-height: calc(var(--font-body-m-leading) + var(--font-label-leading));
     border-bottom: 1px solid var(--color-suld-50);
     --link-underline: none;
     --link-underline--hover: none;

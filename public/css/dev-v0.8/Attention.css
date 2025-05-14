@@ -1,14 +1,14 @@
 @media screen {
   .Attention {
     margin: var(--baseVerticalMargin-2) 0;
-    font: var(--font-bd-l);
+    font: var(--font-body-l);
     border-left: var(--space-1) solid var(--theme-color-primary);
     padding-left: var(--space-4);
     padding-right: var(--grid-column);
   }
 
   .Attention--small {
-    font: var(--font-bd-s);
+    font: var(--font-body-m);
     padding-left: var(--space-3);
   }
 

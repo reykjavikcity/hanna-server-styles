@@ -63,7 +63,7 @@
   --link-underline--hover: 1px solid var(--color-faxafloi-100);
   --link-weight: var(--font-weight--normal);
 
-  font: var(--font-bd-s);
+  font: var(--font-body-m);
 
   display: flex;
   flex-flow: column;
@@ -115,7 +115,7 @@
 }
 
 .ArticleCards__card__title {
-  font: var(--font-sh-s);
+  font: var(--font-heading-s);
 }
 .ArticleCards__card__title:last-child {
   margin-bottom: var(--space-1);

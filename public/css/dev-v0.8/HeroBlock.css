@@ -9,7 +9,7 @@
   }
 
   .HeroBlock__title {
-    font: var(--font-hd-l);
+    font: var(--font-heading-xl);
     margin-bottom: 0.625em;
   }
 
@@ -26,7 +26,7 @@
   }
 
   .HeroBlock__summary {
-    font: var(--font-bd-l);
+    font: var(--font-body-l);
     margin-bottom: 2em;
   }
 

@@ -26,7 +26,7 @@
   }
 
   .FeatureList__title {
-    font: var(--font-hd-s);
+    font: var(--font-heading-m);
     max-width: 416px;
     margin-bottom: calc(6.896551724137931% + 0.6896551724137936px);
     margin-left: var(--left-offset);

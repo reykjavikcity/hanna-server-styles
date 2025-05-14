@@ -29,12 +29,12 @@
   }
 
   .IslandBlock__title {
-    font: var(--font-hd-s);
+    font: var(--font-heading-m);
     margin-bottom: 1.5rem;
   }
 
   .IslandBlock__summary {
-    font: var(--font-bd-l);
+    font: var(--font-body-l);
     margin-bottom: 2rem;
   }
 
@@ -67,7 +67,6 @@
     );
     margin-right: var(--ButtonTertiary--gapH);
     margin-bottom: var(--space-1);
-    font-weight: 700;
     transition: all 100ms ease-in;
   }
 

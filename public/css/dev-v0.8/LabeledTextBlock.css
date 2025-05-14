@@ -6,7 +6,7 @@
   }
 
   .LabeledTextBlock__label {
-    font: var(--font-sh-l);
+    font: var(--font-heading-m);
     display: flex;
 
     margin-bottom: var(--baseVerticalMargin);
@@ -26,27 +26,29 @@
   }
 
   .LabeledTextBlock__summary {
-    font: var(--font-bd-l);
+    font: var(--font-body-l);
   }
 
   .LabeledTextBlock__summary h2 {
-    font: var(--font-hd-s);
+    font: var(--font-heading-l);
     margin-bottom: var(--h2--marginBottom, var(--baseVerticalMargin));
     clear: both;
   }
   .LabeledTextBlock__summary * + h2 {
     margin-top: var(--h2--marginTop, 1.5em);
   }
+
   .LabeledTextBlock__summary h3 {
-    font: var(--font-sh-l);
+    font: var(--font-heading-m);
     margin-bottom: var(--baseVerticalMargin);
     clear: both;
   }
   .LabeledTextBlock__summary * + h3 {
     margin-top: var(--h3--marginTop, 1.25em);
   }
+
   .LabeledTextBlock__summary h4 {
-    font: var(--font-sh-s);
+    font: var(--font-heading-s);
     margin-bottom: var(--baseVerticalMargin);
   }
   .LabeledTextBlock__summary p {
@@ -81,6 +83,7 @@
   .LabeledTextBlock__summary li ul {
     margin-bottom: 0;
   }
+
   /* blockquote:not([class]), // Too strict??*/
   .LabeledTextBlock__summary
     blockquote:not(.BlockQuote__quote):not(.PullQuote__quote) {
@@ -109,7 +112,7 @@
 
   .LabeledTextBlock__summary
     blockquote:not(.BlockQuote__quote):not(.PullQuote__quote) {
-    font: var(--font-bd-s);
+    font: var(--font-body-m);
     position: relative;
     margin-bottom: var(--space-4);
     padding-left: calc(var(--space-2) + 2px);

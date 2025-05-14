@@ -196,7 +196,7 @@
   .ExtraLinks__title {
     grid-area: title;
     margin-bottom: var(--baseVerticalMargin);
-    font: var(--font-hd-s);
+    font: var(--font-heading-m);
     margin-bottom: calc(3.1488549618320607vw + 13.92366412213741px);
   }
   @media (min-width: 1368px) {
@@ -237,7 +237,7 @@
     /* NOTE: This intentionally doesn't reset the :hover style*/
     /* unless..*/
 
-    font: var(--font-bd-s);
+    font: var(--font-body-m);
     display: block;
     width: 100%;
     padding: 1.5rem 1.5rem 2rem 1.5rem;
@@ -265,7 +265,7 @@
   }
 
   .ExtraLinks__card__title {
-    font: var(--font-bd-l);
+    font: var(--font-heading-xs);
     font-weight: var(--font-weight--bold);
   }
   .ExtraLinks__card__title:last-child {
@@ -317,7 +317,7 @@
   }
 
   .ExtraLinks__related__title {
-    font: var(--font-hd-s);
+    font: var(--font-heading-m);
     margin-bottom: calc(3.1488549618320607vw + 9.92366412213741px);
   }
 
@@ -326,7 +326,7 @@
     position: relative;
   }
   .ExtraLinks__related__link {
-    font: var(--font-bd-l);
+    font: var(--font-body-l);
     color: var(--color-suld-200);
   }
   .ExtraLinks__related__link::before {

@@ -47,12 +47,12 @@
   }
 
   .CityBlock__title {
-    font: var(--font-hd-s);
+    font: var(--font-heading-m);
     margin-bottom: 2rem;
   }
   .CityBlock__summary {
     margin-bottom: 2rem;
-    font: var(--font-bd-l);
+    font: var(--font-body-l);
   }
   .CityBlock__summary a {
     --link-color: _inherit;
@@ -122,7 +122,6 @@
     );
     margin-right: var(--ButtonTertiary--gapH);
     margin-bottom: var(--space-1);
-    font-weight: 700;
     transition: all 100ms ease-in;
   }
 

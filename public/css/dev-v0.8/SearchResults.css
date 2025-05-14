@@ -24,7 +24,7 @@
   }
 
   .SearchResults__title {
-    font: var(--font-hd-m);
+    font: var(--font-heading-l);
     margin-bottom: calc(1.5267175572519083vw + 43.1145038167939px);
   }
 
@@ -35,7 +35,7 @@
   }
 
   .SearchResults__query {
-    font: var(--font-sh-s);
+    font: var(--font-heading-s);
     display: block;
   }
   .SearchResults__query::before {
@@ -133,7 +133,7 @@
     --dash-margin: calc(2.0038167938931295vw + 4.587786259541986px);
     --dash-indent: calc(0.5725190839694656vw + 0.16793893129770954px);
 
-    font: var(--font-sh-l);
+    font: var(--font-heading-m);
     display: flex;
 
     margin-bottom: var(--baseVerticalMargin);
@@ -254,7 +254,6 @@
     );
     margin-right: var(--ButtonTertiary--gapH);
     margin-bottom: var(--space-1);
-    font-weight: 700;
     transition: all 100ms ease-in;
   }
 
@@ -321,9 +320,7 @@
     }
   }
   .SearchResults__loadmore__count {
-    /* TODO: Check if value is right*/
-    /* font-size: var(--font-label-size); */
-    font-size: 12px;
+    font-size: var(--font-label-size);
     color: var(--color-suld-150);
     font-weight: var(--font-weight--normal);
     margin-left: 0.25rem;
@@ -389,12 +386,12 @@
     box-shadow: inset 0 0 0 1px var(--color-faxafloi-100);
   }
   .SearchResultsHighlightItem__title {
-    font: var(--font-hd-s);
+    font: var(--font-heading-m);
     margin-bottom: 1.5rem;
   }
 
   .SearchResultsHighlightItem__meta {
-    /* font: var(--font-bd-s); */
+    /* font: var(--font-body-m); */
     font: var(--font-label);
     color: var(--color-suld-150);
     margin-top: var(--space-1_5--neg);

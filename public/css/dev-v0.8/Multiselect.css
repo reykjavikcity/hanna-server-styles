@@ -164,6 +164,7 @@
   padding: 0 var(--space-1_5);
   padding-top: var(--space-1);
   font: var(--font-button);
+  font-weight: var(--font-weight--normal);
   color: var(--color-suld-100);
 }
 
@@ -197,6 +198,5 @@
 
 .Multiselect__noresults {
   font: var(--font-button);
-  font-weight: var(--font-weight--bold);
   padding: var(--space-2) var(--space-2);
 }

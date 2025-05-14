@@ -42,27 +42,29 @@
   }
 
   .TextBlock {
-    font: var(--font-bd-l);
+    font: var(--font-body-l);
   }
 
   .TextBlock h2 {
-    font: var(--font-hd-s);
+    font: var(--font-heading-l);
     margin-bottom: var(--h2--marginBottom, var(--baseVerticalMargin));
     clear: both;
   }
   .TextBlock * + h2 {
     margin-top: var(--h2--marginTop, 1.5em);
   }
+
   .TextBlock h3 {
-    font: var(--font-sh-l);
+    font: var(--font-heading-m);
     margin-bottom: var(--baseVerticalMargin);
     clear: both;
   }
   .TextBlock * + h3 {
     margin-top: var(--h3--marginTop, 1.25em);
   }
+
   .TextBlock h4 {
-    font: var(--font-sh-s);
+    font: var(--font-heading-s);
     margin-bottom: var(--baseVerticalMargin);
   }
   .TextBlock p {
@@ -97,6 +99,7 @@
   .TextBlock li ul {
     margin-bottom: 0;
   }
+
   /* blockquote:not([class]), // Too strict??*/
   .TextBlock blockquote:not(.BlockQuote__quote):not(.PullQuote__quote) {
     --Quote--line: 2px solid var(--theme-color-primary);
@@ -122,7 +125,7 @@
   }
 
   .TextBlock blockquote:not(.BlockQuote__quote):not(.PullQuote__quote) {
-    font: var(--font-bd-s);
+    font: var(--font-body-m);
     position: relative;
     margin-bottom: var(--space-4);
     padding-left: calc(var(--space-2) + 2px);
@@ -157,24 +160,24 @@
     margin-bottom: calc(1.0775862068965518% + 16.982758620689655px);
   }
   .TextBlock--small {
-    font: var(--font-bd-s);
+    font: var(--font-body-m);
   }
 
   .TextBlock--small h2 {
-    font: var(--font-sh-l);
+    font: var(--font-heading-m);
   }
   .TextBlock--small h3 {
-    font: var(--font-sh-s);
+    font: var(--font-heading-s);
   }
   .TextBlock--small h4 {
-    font: var(--font-bd-l);
+    font: var(--font-body-l);
     font-weight: var(--font-weight--bold);
   }
 
   /* ---------------------------------------------------------------------------*/
 
   .TextBlock--labelled h2 {
-    font: var(--font-sh-l);
+    font: var(--font-heading-m);
     display: flex;
   }
 
@@ -348,12 +351,12 @@
 }
 
 .PageHeading {
-  font: var(--font-hd-l);
+  font: var(--font-heading-xl);
   margin-top: calc(2.586206896551724% - 7.241379310344826px);
   margin-bottom: 0.625em;
 }
 .PageHeading--small {
-  font: var(--font-hd-m);
+  font: var(--font-heading-l);
 }
 
 @media screen {
@@ -397,7 +400,7 @@
 }
 
 .Heading {
-  font: var(--font-hd-m);
+  font: var(--font-heading-l);
   margin-top: calc(1.9083969465648856vw + 33.89312977099237px);
   margin-bottom: calc(0.7633587786259541vw + 21.55725190839695px);
 }
@@ -409,10 +412,10 @@
   }
 }
 .Heading--large {
-  font: var(--font-hd-l);
+  font: var(--font-heading-xl);
 }
 .Heading--small {
-  font: var(--font-hd-s);
+  font: var(--font-heading-m);
 }
 
 .Heading a {
@@ -484,7 +487,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 }
 
 .SubHeading {
-  font: var(--font-sh-l);
+  font: var(--font-heading-m);
   margin-top: calc(0.9541984732824428vw + 36.94656488549619px);
   margin-bottom: calc(0.9541984732824428vw + 16.946564885496183px);
 }
@@ -496,7 +499,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   }
 }
 .SubHeading--small {
-  font: var(--font-sh-s);
+  font: var(--font-heading-s);
 }
 
 .SubHeading a {
@@ -723,7 +726,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 
 @media screen {
   .ArticleMeta {
-    font: var(--font-bd-s);
+    font: var(--font-body-m);
     color: var(--color-suld-150);
     margin-bottom: var(--space-1);
   }

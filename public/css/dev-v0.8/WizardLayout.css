@@ -278,7 +278,7 @@
 
 @media screen {
   .WizardLayoutClose {
-    font: var(--font-bd-s);
+    font: var(--font-body-m);
     position: absolute;
     z-index: 5;
     right: 0;

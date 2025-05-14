@@ -1,11 +1,11 @@
 @media screen {
   .FieldGroup {
     margin-bottom: calc(4.310344827586207% + 17.93103448275862px);
-    --FieldGroup--legendSize: var(--font-sh-l);
+    --FieldGroup--legendSize: var(--font-heading-m);
     --FieldGroup--legendMargin: var(--space-2);
   }
   .FieldGroup--small {
-    --FieldGroup--legendSize: var(--font-sh-s);
+    --FieldGroup--legendSize: var(--font-heading-s);
     --FieldGroup--legendMargin: var(--space-1);
   }
   .FieldGroup__legend {

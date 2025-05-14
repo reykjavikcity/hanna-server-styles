@@ -45,7 +45,7 @@
   /**/
 
 :root {
-  --cssVersion: "0.8.94";
+  --cssVersion: "0.8.95";
   --browser-scrollbar-width: 16px;
   --bp-w-phone: 320px;
   --bp-w-phablet: 480px;
@@ -103,7 +103,7 @@
   --color-white: #ffffff;
   --color-blackish: #2a2b2c;
 
-  /* @deprecated This was a typo (Will be removed in version v0.9)*/
+  /* @deprecated This was a typo (Will be removed in version v0.9) */
   --color-ellidarardalur-25: var(--color-ellidaardalur-25);
   --color-ellidarardalur-50: var(--color-ellidaardalur-50);
   --color-ellidarardalur-75: var(--color-ellidaardalur-75);
@@ -125,55 +125,81 @@
   --font-family: Esja, Helvetica, Arial, sans-serif;
   --font-weight--normal: 400;
   --font-weight--bold: 700;
-  --font-base-size: 16px;
-  --font-base-leading: 24px;
   --font-base: var(--font-base-size) / var(--font-base-leading)
     var(--font-family);
-  --font-hd-xl: var(--font-weight--bold) var(--font-hd-xl-size) /
-    var(--font-hd-xl-leading) var(--font-family);
-  --font-hd-l: var(--font-weight--bold) var(--font-hd-l-size) /
-    var(--font-hd-l-leading) var(--font-family);
-  --font-hd-m: var(--font-weight--bold) var(--font-hd-m-size) /
-    var(--font-hd-m-leading) var(--font-family);
-  --font-hd-s: var(--font-weight--bold) var(--font-hd-s-size) /
-    var(--font-hd-s-leading) var(--font-family);
-  --font-sh-l: var(--font-weight--bold) var(--font-sh-l-size) /
-    var(--font-sh-l-leading) var(--font-family);
-  --font-sh-l-thin: var(--font-sh-l-size) / var(--font-sh-l-leading)
-    var(--font-family);
-  --font-sh-s: var(--font-weight--bold) var(--font-sh-s-size) /
-    var(--font-sh-s-leading) var(--font-family);
-  --font-bd-l: var(--font-bd-l-size) / var(--font-bd-l-leading)
-    var(--font-family);
-  --font-bd-s: var(--font-bd-s-size) / var(--font-bd-s-leading)
-    var(--font-family);
-  --font-button: var(--font-button-size) / var(--font-button-leading)
-    var(--font-family);
+  --font-heading-xl: var(--font-weight--bold) var(--font-heading-xl-size) /
+    var(--font-heading-xl-leading) var(--font-family);
+  --font-heading-l: var(--font-weight--bold) var(--font-heading-l-size) /
+    var(--font-heading-l-leading) var(--font-family);
+  --font-heading-m: var(--font-weight--bold) var(--font-heading-m-size) /
+    var(--font-heading-m-leading) var(--font-family);
+  --font-heading-s: var(--font-weight--bold) var(--font-heading-s-size) /
+    var(--font-heading-s-leading) var(--font-family);
+  --font-heading-xs: var(--font-weight--bold) var(--font-heading-xs-size) /
+    var(--font-heading-xs-leading) var(--font-family);
+  --font-body-l: var(--font-weight--normal) var(--font-body-l-size) /
+    var(--font-body-l-leading) var(--font-family);
+  --font-body-m: var(--font-weight--normal) var(--font-body-m-size) /
+    var(--font-body-m-leading) var(--font-family);
+  --font-body-s: var(--font-weight--normal) var(--font-body-s-size) /
+    var(--font-body-s-leading) var(--font-family);
+  --font-button: var(--font-weight--bold) var(--font-button-size) /
+    var(--font-button-leading) var(--font-family);
   --font-label: var(--font-label-size) / var(--font-label-leading)
     var(--font-family);
-  --font-hd-xl-size: 40px;
-  --font-hd-xl-leading: 50px;
-  --font-hd-l-size: 32px;
-  --font-hd-l-leading: 40px;
-  --font-hd-m-size: 24px;
-  --font-hd-m-leading: 40px;
-  --font-hd-s-size: 20px;
-  --font-hd-s-leading: 30px;
-  --font-sh-l-size: 20px;
-  --font-sh-l-leading: 30px;
-  --font-sh-s-size: 20px;
-  --font-sh-s-leading: 30px;
-  --font-bd-l-size: 20px;
-  --font-bd-l-leading: 32px;
-  --font-bd-s-size: 16px;
-  --font-bd-s-leading: 24px;
+  --font-base-size: 16px;
+  --font-base-leading: 24px;
+  --font-heading-xl-size: 40px;
+  --font-heading-xl-leading: 48px;
+  --font-heading-l-size: 32px;
+  --font-heading-l-leading: 40px;
+  --font-heading-m-size: 24px;
+  --font-heading-m-leading: 28px;
+  --font-heading-s-size: 20px;
+  --font-heading-s-leading: 24px;
+  --font-heading-xs-size: 20px;
+  --font-heading-xs-leading: 24px;
+  --font-body-l-size: 16px;
+  --font-body-l-leading: 24px;
+  --font-body-m-size: 16px;
+  --font-body-m-leading: 24px;
+  --font-body-s-size: 12px;
+  --font-body-s-leading: 16px;
   --font-button-size: 16px;
   --font-button-leading: 20px;
   --font-label-size: 12px;
   --font-label-leading: 16px;
   --baseVerticalMargin: calc(0.7633587786259541vw + 13.557251908396948px);
   --baseVerticalMargin-2: calc(1.5267175572519083vw + 27.114503816793896px);
+  --font-hd-xl: var(--font-heading-xl);
+  --font-hd-l: var(--font-heading-xl);
+  --font-hd-m: var(--font-heading-l);
+  --font-hd-s: var(--font-heading-m);
+  --font-sh-l: var(--font-heading-m);
+  --font-sh-l-thin: var(--font-heading-m-size) / var(--font-heading-m-leading)
+    var(--font-family);
+  --font-sh-s: var(--font-heading-s);
+  --font-bd-l: var(--font-body-l);
+  --font-bd-s: var(--font-body-m);
+  --font-hd-xl-size: var(--font-heading-xl-size);
+  --font-hd-xl-leading: var(--font-heading-xl-leading);
+  --font-hd-l-size: var(--font-heading-xl-size);
+  --font-hd-l-leading: var(--font-heading-xl-leading);
+  --font-hd-m-size: var(--font-heading-l-size);
+  --font-hd-m-leading: var(--font-heading-l-leading);
+  --font-hd-s-size: var(--font-heading-m-size);
+  --font-hd-s-leading: var(--font-heading-m-leading);
+  --font-sh-l-size: var(--font-heading-m-size);
+  --font-sh-l-leading: var(--font-heading-m-leading);
+  --font-sh-s-size: var(--font-heading-s-size);
+  --font-sh-s-leading: var(--font-heading-s-leading);
+  --font-bd-l-size: var(--font-body-l-size);
+  --font-bd-l-leading: var(--font-body-l-leading);
+  --font-bd-s-size: var(--font-body-m-size);
+  --font-bd-s-leading: var(--font-body-m-leading);
 }
+
+/* END: deprecation */
 
 :root:root,
 [data-color-theme][data-color-theme],
@@ -271,35 +297,33 @@
 
 @media (min-width: 480px) and (max-width: 1367px) {
   :root {
-    --font-hd-xl-size: calc(3.6036036036036037vw + 22.7027027027027px);
-    --font-hd-xl-leading: calc(4.504504504504505vw + 28.37837837837838px);
-    --font-hd-l-size: calc(3.6036036036036037vw + 14.702702702702702px);
-    --font-hd-l-leading: calc(4.504504504504505vw + 18.37837837837838px);
-    --font-hd-m-size: calc(2.7027027027027026vw + 11.027027027027025px);
-    --font-hd-m-leading: calc(2.2522522522522523vw + 29.18918918918919px);
-    --font-hd-s-size: calc(2.2522522522522523vw + 9.18918918918919px);
-    --font-hd-s-leading: calc(2.2522522522522523vw + 19.18918918918919px);
-    --font-sh-l-size: calc(1.3513513513513513vw + 13.513513513513512px);
-    --font-sh-l-leading: calc(1.1261261261261262vw + 24.594594594594597px);
-    --font-sh-s-size: calc(0.45045045045045046vw + 17.83783783783784px);
-    --font-sh-s-leading: calc(0.22522522522522523vw + 28.91891891891892px);
+    --font-heading-xl-size: calc(2.7027027027027026vw + 27.027027027027025px);
+    --font-heading-xl-leading: calc(
+      2.7027027027027026vw + 35.027027027027025px
+    );
+    --font-heading-l-size: calc(0.9009009009009009vw + 27.675675675675677px);
+    --font-heading-l-leading: calc(0.9009009009009009vw + 35.67567567567568px);
+    --font-heading-m-size: calc(0.9009009009009009vw + 19.675675675675677px);
+    --font-heading-m-leading: calc(1.3513513513513513vw + 21.513513513513512px);
+    --font-heading-s-size: calc(0.45045045045045046vw + 17.83783783783784px);
+    --font-heading-s-leading: calc(0.45045045045045046vw + 21.83783783783784px);
+    --font-body-l-size: calc(0.45045045045045046vw + 13.837837837837839px);
+    --font-body-l-leading: calc(0.9009009009009009vw + 19.675675675675677px);
   }
 }
 
 @media (min-width: 1368px) {
   :root {
-    --font-hd-xl-size: 72px;
-    --font-hd-xl-leading: 90px;
-    --font-hd-l-size: 64px;
-    --font-hd-l-leading: 80px;
-    --font-hd-m-size: 48px;
-    --font-hd-m-leading: 60px;
-    --font-hd-s-size: 40px;
-    --font-hd-s-leading: 50px;
-    --font-sh-l-size: 32px;
-    --font-sh-l-leading: 40px;
-    --font-sh-s-size: 24px;
-    --font-sh-s-leading: 32px;
+    --font-heading-xl-size: 64px;
+    --font-heading-xl-leading: 72px;
+    --font-heading-l-size: 40px;
+    --font-heading-l-leading: 48px;
+    --font-heading-m-size: 32px;
+    --font-heading-m-leading: 40px;
+    --font-heading-s-size: 24px;
+    --font-heading-s-leading: 28px;
+    --font-body-l-size: 20px;
+    --font-body-l-leading: 32px;
     --baseVerticalMargin: 24px;
     --baseVerticalMargin-2: 48px;
   }
@@ -359,7 +383,7 @@
 
 /* @deprecated (Remove in v0.9)*/
 
-/* END: deprecation*/
+/* END: deprecation */
 
 @media (min-width: 1368px) {
   :root {
@@ -1428,7 +1452,7 @@ summary > * {
 /* ===========================================================================*/
 
 table {
-  font: var(--font-bd-s);
+  font: var(--font-body-m);
   border-collapse: collapse;
   margin-bottom: var(--baseVerticalMargin);
 }
