@@ -8,11 +8,15 @@
 
 _2025-05-23_
 
-- feat: Add new `--foint-heading-*` and `--font-body-*` variables — with new
-  responsive sizing strategies
-- feat: Deprecate all `--font-hd-*`, `--font-sh-*`, `--font-bd-*` variables —
-  and map all existing text styles to the new variables
-- fix: Make `--font-button` styling bold by default
+- Font styling:
+  - feat: Add new `--foint-heading-*` and `--font-body-*` variables — with new
+    responsive sizing strategies
+  - feat: Deprecate all `--font-hd-*`, `--font-sh-*`, `--font-bd-*` variables
+    — and map all existing text styles to the new variables
+  - fix: Make `--font-button` styling bold by default
+- `BasicTable`
+  - feat: Update styles with new zebra-design
+  - feat: Apply colors to `--Cell--number--(pos|neg)` variants
 - fix: Set `.Tooltip`'s trigger icon to a fixed `font-size`
 - fix: feat: Remove styles for unsupported rich text content inside
   `AccordionList`, `BlockQuote` and `LabeledTextBlock`
