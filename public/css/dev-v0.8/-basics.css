@@ -1464,7 +1464,6 @@ td {
   text-align: left;
   vertical-align: top;
   padding: var(--space-1) var(--space-2);
-  color: var(--color-suld-150);
   font-weight: var(--font-weight--normal);
 }
 th:first-child,

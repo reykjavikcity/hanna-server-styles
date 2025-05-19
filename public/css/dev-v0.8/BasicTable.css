@@ -228,25 +228,6 @@
     );
   }
 
-  @media (max-width: 759px) {
-    table.BasicTable {
-      max-width: calc(
-        100% - var(--BasicTable--pad-left) - var(--BasicTable--pad-right) + 2 *
-          var(--BasicTable--cellPad-X)
-      );
-      margin-left: calc(
-        var(--BasicTable--pad-left) - var(--BasicTable--cellPad-X)
-      );
-      margin-right: calc(
-        var(--BasicTable--pad-right) - var(--BasicTable--cellPad-X)
-      );
-    }
-    .BasicTable > caption {
-      padding-left: var(--BasicTable--cellPad-X);
-      padding-right: var(--BasicTable--cellPad-X);
-    }
-  }
-
   .BasicTable > tbody > tr:nth-child(odd) {
     background-color: var(--color-esja-25);
   }
