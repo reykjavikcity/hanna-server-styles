@@ -4,6 +4,23 @@
 
 - ... <!-- Add new lines here. -->
 
+## 0.8.96
+
+_2026-01-19_
+
+- feat: Add component `Icon` for inlined icons
+- feat: Grow the list of available Button-related icons via `IconToken` type
+- feat: Add component `ReykjavikWaves` (Also works as "utility class")
+- `MainMenu2`
+  - feat: Update styling of mobile menu to match latest design tweaks
+  - feat: Add support for `--redhot` for "hot" items
+- `DropdownButton`:
+  - feat: Update styling of dropdown menu to match latest design tweaks
+  - feat: Limit dropdown `max-width` to viewport width
+- feat: Support `.Layout__header__logo--custom` with automatic width
+- fix: Remove `:active` styling on disabled `*Buttons`
+- fix: Use `boxShadow_*` tokens for button hover state and `Modal` shadow
+
 ## 0.8.95
 
 _2025-06-11_
@@ -14,7 +31,7 @@ _2025-06-11_
   - feat: Deprecate all `--font-hd-*`, `--font-sh-*`, `--font-bd-*` variables
     — and map all existing text styles to the new variables
   - fix: Make `--font-button` styling bold by default
-- `BasicTable`
+- `BasicTable`:
   - feat: Update styles with new zebra-design
   - feat: Apply colors to `--Cell--number--(pos|neg)` variants
 - fix: Set `.Tooltip`'s trigger icon to a fixed `font-size`
