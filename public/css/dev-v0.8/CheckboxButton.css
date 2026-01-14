@@ -28,61 +28,56 @@
     position: relative;
     color: var(--Toggler--label--color);
   }
-  .CheckboxButton__label::before {
-    display: inline-block;
-    text-indent: 0;
-    text-align: center;
-    vertical-align: top;
 
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
-    font-weight: normal;
-    font-style: normal;
-    white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
+  .CheckboxButton__label::before,
+  .CheckboxButton__label::after {
     content: "";
-
-    float: left;
-    /* margin-top: 0.125rem; */
-    margin-left: -2.25rem;
+    position: absolute;
+    top: var(--space-1);
+    left: 0;
     width: 1.25rem;
     height: 1.25rem;
-    line-height: 1.125rem;
-    font-size: 1rem;
-
-    border: 0.0625rem solid var(--Toggler--knob--color);
     transition: all 200ms ease-in;
     transition-property: box-shadow, border-color, background-color, outline;
+  }
+
+  .CheckboxButton__label::before {
+    border: 0.0625rem solid var(--Toggler--knob--color);
     outline: 0 solid transparent;
+  }
+  .CheckboxButton__label::after {
   }
 
   /* Focus/Hover*/
   .CheckboxButton__label[class]:hover, /**/
-  .CheckboxButton__input:focus + .CheckboxButton__label {
+    .CheckboxButton__input:focus + .CheckboxButton__label {
     color: var(--Toggler--label--color);
   }
   .CheckboxButton__label[class]:hover::before, /**/
-  .CheckboxButton__input:focus + .CheckboxButton__label::before {
+    .CheckboxButton__input:focus + .CheckboxButton__label::before {
     border-color: var(--Toggler--knob--color-active);
     box-shadow: inset 0 0 0 2px var(--Toggler--knob--color-active);
   }
 
   /* Checked*/
   .CheckboxButton__input:checked + .CheckboxButton__label::before {
-    content: var(--icon--checkmark);
     border-color: transparent;
     background-color: var(--Toggler--knob--color-active);
     color: var(--color-suld-0);
   }
-
   /* Checked + Focus/Hover*/
   .CheckboxButton__input:checked + .CheckboxButton__label:hover::before, /**/
-  .CheckboxButton__input:checked:focus + .CheckboxButton__label::before {
+    .CheckboxButton__input:checked:focus + .CheckboxButton__label::before {
     outline: 0.0625rem solid var(--Toggler--knob--color-active);
     outline-offset: 0.0625rem;
+  }
+
+  .CheckboxButton__input:checked + .CheckboxButton__label::after {
+    -webkit-mask: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M15.7072%203.70712L5.00008%2014.4142L0.292969%209.70712L1.70718%208.29291L5.00008%2011.5858L14.293%202.29291L15.7072%203.70712Z%22%20%2F%3E%0A%3C%2Fsvg%3E%0A")
+      50% / 16px 16px no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M15.7072%203.70712L5.00008%2014.4142L0.292969%209.70712L1.70718%208.29291L5.00008%2011.5858L14.293%202.29291L15.7072%203.70712Z%22%20%2F%3E%0A%3C%2Fsvg%3E%0A")
+      50% / 16px 16px no-repeat;
+    background-color: var(--color-suld-0);
   }
 
   /* Invalid*/
@@ -114,6 +109,10 @@
 
   /* Disabled + Checked*/
 
+  .CheckboxButton__input:disabled:checked + .CheckboxButton__label::after {
+    background-color: var(--color-suld-100);
+  }
+
   .CheckboxButton__label__reqstar {
     border-bottom: none;
     float: left;
@@ -129,24 +128,28 @@
   }
 
   .CheckboxButton__error::before {
+    content: "error";
+    content: "error" / "";
+
+    font-variation-settings: "FILL" 1;
+
     display: inline-block;
     text-indent: 0;
     text-align: center;
+    width: 1em;
     vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
+    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    letter-spacing: normal;
+    font-size: var(--icon-size--small);
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
-    content: var(--icon--error);
 
     margin-right: 0.5rem;
-    font-size: 0.625rem;
   }
 
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -185,12 +188,17 @@
     vertical-align: top;
   }
   .CheckboxButton--nolabel > .CheckboxButton__label {
-    padding: 2px 0;
+    height: 100%;
+    padding-top: 2px;
+    padding-bottom: 2px;
   }
   .CheckboxButton--nolabel > .CheckboxButton__label::before {
-    margin-left: 2px;
-    display: inline-block;
-    margin-right: 3px;
+    top: 2px;
+    left: 2px;
+  }
+  .CheckboxButton--nolabel > .CheckboxButton__label::after {
+    top: 2px;
+    left: 2px;
   }
   .CheckboxButton--nolabel > .CheckboxButton__error {
     position: absolute;
@@ -247,8 +255,8 @@
     font-weight: var(--font-weight--normal);
   }
 
-  .CheckboxButton__label::before {
-    position: absolute;
+  .CheckboxButton__label::before,
+  .CheckboxButton__label::after {
     top: 50%;
     left: var(--space-3);
     margin-top: -0.625rem;
@@ -429,63 +437,58 @@
     position: relative;
     color: var(--Toggler--label--color);
   }
-  .RadioButton__label::before {
-    display: inline-block;
-    text-indent: 0;
-    text-align: center;
-    vertical-align: top;
 
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
-    font-weight: normal;
-    font-style: normal;
-    white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
+  .RadioButton__label::before,
+  .RadioButton__label::after {
     content: "";
-
-    float: left;
-    /* margin-top: 0.125rem; */
-    margin-left: -2.25rem;
+    position: absolute;
+    top: var(--space-1);
+    left: 0;
     width: 1.25rem;
     height: 1.25rem;
-    line-height: 1.125rem;
-    font-size: 0.875rem;
+    transition: all 200ms ease-in;
+    transition-property: box-shadow, border-color, background-color, outline;
+  }
 
+  .RadioButton__label::before {
     border-radius: 50%;
 
     border: 0.0625rem solid var(--Toggler--knob--color);
-    transition: all 200ms ease-in;
-    transition-property: box-shadow, border-color, background-color, outline;
     outline: 0 solid transparent;
+  }
+  .RadioButton__label::after {
   }
 
   /* Focus/Hover*/
   .RadioButton__label[class]:hover, /**/
-  .RadioButton__input:focus + .RadioButton__label {
+    .RadioButton__input:focus + .RadioButton__label {
     color: var(--Toggler--label--color);
   }
   .RadioButton__label[class]:hover::before, /**/
-  .RadioButton__input:focus + .RadioButton__label::before {
+    .RadioButton__input:focus + .RadioButton__label::before {
     border-color: var(--Toggler--knob--color-active);
     box-shadow: inset 0 0 0 2px var(--Toggler--knob--color-active);
   }
 
   /* Checked*/
   .RadioButton__input:checked + .RadioButton__label::before {
-    content: var(--icon--radioball);
     border-color: transparent;
     background-color: var(--Toggler--knob--color-active);
     color: var(--color-suld-0);
   }
-
   /* Checked + Focus/Hover*/
   .RadioButton__input:checked + .RadioButton__label:hover::before, /**/
-  .RadioButton__input:checked:focus + .RadioButton__label::before {
+    .RadioButton__input:checked:focus + .RadioButton__label::before {
     outline: 0.0625rem solid var(--Toggler--knob--color-active);
     outline-offset: 0.0625rem;
+  }
+
+  .RadioButton__input:checked + .RadioButton__label::after {
+    -webkit-mask: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M50%2C0C22.4%2C0%2C0%2C22.4%2C0%2C50s22.4%2C50%2C50%2C50s50-22.4%2C50-50S77.6%2C0%2C50%2C0z%20M50%2C80c-16.6%2C0-30-13.4-30-30%20s13.4-30%2C30-30s30%2C13.4%2C30%2C30S66.6%2C80%2C50%2C80z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+      50% / 16px 16px no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M50%2C0C22.4%2C0%2C0%2C22.4%2C0%2C50s22.4%2C50%2C50%2C50s50-22.4%2C50-50S77.6%2C0%2C50%2C0z%20M50%2C80c-16.6%2C0-30-13.4-30-30%20s13.4-30%2C30-30s30%2C13.4%2C30%2C30S66.6%2C80%2C50%2C80z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+      50% / 16px 16px no-repeat;
+    background-color: var(--color-suld-0);
   }
 
   /* Invalid*/
@@ -531,24 +534,28 @@
   }
 
   .RadioButton__error::before {
+    content: "error";
+    content: "error" / "";
+
+    font-variation-settings: "FILL" 1;
+
     display: inline-block;
     text-indent: 0;
     text-align: center;
+    width: 1em;
     vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
+    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    letter-spacing: normal;
+    font-size: var(--icon-size--small);
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
-    content: var(--icon--error);
 
     margin-right: 0.5rem;
-    font-size: 0.625rem;
   }
 
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -587,12 +594,17 @@
     vertical-align: top;
   }
   .RadioButton--nolabel > .RadioButton__label {
-    padding: 2px 0;
+    height: 100%;
+    padding-top: 2px;
+    padding-bottom: 2px;
   }
   .RadioButton--nolabel > .RadioButton__label::before {
-    margin-left: 2px;
-    display: inline-block;
-    margin-right: 3px;
+    top: 2px;
+    left: 2px;
+  }
+  .RadioButton--nolabel > .RadioButton__label::after {
+    top: 2px;
+    left: 2px;
   }
   .RadioButton--nolabel > .RadioButton__error {
     position: absolute;
@@ -649,8 +661,8 @@
     font-weight: var(--font-weight--normal);
   }
 
-  .RadioButton__label::before {
-    position: absolute;
+  .RadioButton__label::before,
+  .RadioButton__label::after {
     top: 50%;
     left: var(--space-3);
     margin-top: -0.625rem;

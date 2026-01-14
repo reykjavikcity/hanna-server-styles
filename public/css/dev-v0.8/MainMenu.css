@@ -56,7 +56,7 @@
     border-bottom: var(--link-underline);
     transition: var(--link-transition);
     transition-property: border-color, background-color, color, text-shadow,
-      box-shadow, outline;
+      box-shadow;
   }
 
   .MainMenu__link:hover,
@@ -76,26 +76,28 @@
     display: inline-block;
     text-indent: 0;
     text-align: center;
+    width: 1em;
     vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
+    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    letter-spacing: normal;
+    font-size: var(--icon-size--medium);
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
 
-    margin-right: 0.5rem;
-    vertical-align: -0.1875rem;
+    margin-right: var(--space-1);
   }
   .MainMenu__item--mypages > .MainMenu__link::before {
-    content: var(--icon--user);
+    content: "account_circle";
+    content: "account_circle" / "";
   }
   .MainMenu__item--search > .MainMenu__link::before {
-    content: var(--icon--search);
+    content: "search";
+    content: "search" / "";
   }
 }
 
@@ -514,23 +516,25 @@
   }
 
   .MainMenu__megapanel__backtomenu::before {
+    content: "close";
+    content: "close" / "";
+
     display: inline-block;
     text-indent: 0;
     text-align: center;
+    width: 1em;
     vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
+    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    letter-spacing: normal;
+    font-size: var(--icon-size--medium);
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
-    content: var(--icon--close);
 
-    font-size: 1rem;
     width: 100%;
     text-align: left;
     margin-left: 8px;

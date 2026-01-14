@@ -7,30 +7,64 @@
     /* to elements where you want to opt-in*/
     /* to allow icons on ::before*/
 
-    --Icon: none;
-    --Icon--size: inherit;
+    --Icon: initial;
+    --Icon--size: var(--icon-size--medium);
     --Icon--enabled: none;
   }
+
+  [data-icon="check_box_filled"] {
+    --Icon: "check_box";
+  }
+
+  [data-icon="error_filled"] {
+    --Icon: "error";
+  }
+
+  [data-icon="favorite_filled"] {
+    --Icon: "favorite";
+  }
+
+  [data-icon="info_filled"] {
+    --Icon: "info";
+  }
+
+  [data-icon="warning_filled"] {
+    --Icon: "warning";
+  }
+
   [data-icon]::before {
     display: inline-block;
     text-indent: 0;
     text-align: center;
+    width: 1em;
     vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
+    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    letter-spacing: normal;
+    font-size: var(--icon-size--medium);
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
-
-    /* prettier-ignore*/
-    content: var(--Icon--enabled, var(--Icon));
+    content: var(--Icon--enabled, var(--Icon, attr(data-icon)));
     font-size: var(--Icon--size);
     margin-right: var(--space-1);
+  }
+  [data-icon$="_filled"]::before {
+    font-variation-settings: "FILL" 1;
+  }
+
+  [data-icon-size="small"] {
+    --Icon--size: var(--icon-size--small);
+
+    --Icon-after--size: var(--icon-size--small);
+  }
+  [data-icon-size="large"] {
+    --Icon--size: var(--icon-size--large);
+
+    --Icon-after--size: var(--icon-size--large);
   }
 
   /* ---------------------------------------------------------------------------*/
@@ -43,159 +77,232 @@
     /* to elements where you want to opt-in*/
     /* to allow icons on ::after*/
 
-    --Icon-after: none;
-    --Icon-after--size: inherit;
+    --Icon-after: initial;
+    --Icon-after--size: var(--icon-size--medium);
     --Icon-after--enabled: none;
   }
+
+  [data-icon-after="check_box_filled"] {
+    --Icon-after: "check_box";
+  }
+
+  [data-icon-after="error_filled"] {
+    --Icon-after: "error";
+  }
+
+  [data-icon-after="favorite_filled"] {
+    --Icon-after: "favorite";
+  }
+
+  [data-icon-after="info_filled"] {
+    --Icon-after: "info";
+  }
+
+  [data-icon-after="warning_filled"] {
+    --Icon-after: "warning";
+  }
+
   [data-icon-after]::after {
     display: inline-block;
     text-indent: 0;
     text-align: center;
+    width: 1em;
     vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
+    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    letter-spacing: normal;
+    font-size: var(--icon-size--medium);
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
-
-    /* prettier-ignore*/
-    content: var(--Icon-after--enabled, var(--Icon-after));
+    content: var(
+      --Icon-after--enabled,
+      var(--Icon-after, attr(data-icon-after))
+    );
     font-size: var(--Icon-after--size);
     margin-left: var(--space-1_5);
   }
+  [data-icon-after$="_filled"]::after {
+    font-variation-settings: "FILL" 1;
+  }
+
+  /* ---------------------------------------------------------------------------*/
+
+  /* Styling for the Icon component (which uses the 'data-icon' attributes styled above) */
+  .Icon {
+    --Icon--enabled: initial;
+  }
 
   /* ===========================================================================*/
 
   /* ===========================================================================*/
+
+  /* Support old icon names for back-compatibility*/
+  /* with a couple of type-assertion hacks pushing officially unsupported icon*/
+  /* names into button components.*/
+
+  /** @deprecated  (Remove in v0.9 or after 2027-01-01, whichever comes first) */
 
   [data-icon="calendar"] {
-    --Icon: var(--icon--calendar);
+    --Icon: "calendar_month";
   }
   [data-icon-after="calendar"] {
-    --Icon-after: var(--icon--calendar);
+    --Icon-after: "calendar_month";
   }
+  /* ---- */
 
   [data-icon="chat"] {
-    --Icon: var(--icon--chat);
+    --Icon: "forum";
   }
   [data-icon-after="chat"] {
-    --Icon-after: var(--icon--chat);
+    --Icon-after: "forum";
   }
+  /* ---- */
 
   [data-icon="checkmark"] {
-    --Icon: var(--icon--checkmark);
+    --Icon: "check";
   }
   [data-icon-after="checkmark"] {
-    --Icon-after: var(--icon--checkmark);
+    --Icon-after: "check";
   }
+  /* ---- */
 
   [data-icon="close"] {
-    --Icon: var(--icon--close);
+    --Icon: "close";
   }
   [data-icon-after="close"] {
-    --Icon-after: var(--icon--close);
+    --Icon-after: "close";
   }
+  /* ---- */
 
   [data-icon="data"] {
-    --Icon: var(--icon--data);
+    --Icon: "pie_chart";
   }
   [data-icon-after="data"] {
-    --Icon-after: var(--icon--data);
+    --Icon-after: "pie_chart";
   }
+  /* ---- */
 
   [data-icon="document"] {
-    --Icon: var(--icon--document);
+    --Icon: "docs";
   }
   [data-icon-after="document"] {
-    --Icon-after: var(--icon--document);
+    --Icon-after: "docs";
   }
+  /* ---- */
 
   [data-icon="edit"] {
-    --Icon: var(--icon--edit);
+    --Icon: "edit";
   }
   [data-icon-after="edit"] {
-    --Icon-after: var(--icon--edit);
+    --Icon-after: "edit";
   }
+  /* ---- */
 
   [data-icon="external"] {
-    --Icon: var(--icon--external);
+    --Icon: "open_in_new";
   }
   [data-icon-after="external"] {
-    --Icon-after: var(--icon--external);
+    --Icon-after: "open_in_new";
   }
+  /* ---- */
 
   [data-icon="file_pdf"] {
-    --Icon: var(--icon--file-pdf);
+    --Icon: "picture_as_pdf";
   }
   [data-icon-after="file_pdf"] {
-    --Icon-after: var(--icon--file-pdf);
+    --Icon-after: "picture_as_pdf";
   }
+  /* ---- */
 
   [data-icon="home"] {
-    --Icon: var(--icon--home);
+    --Icon: "home";
   }
   [data-icon-after="home"] {
-    --Icon-after: var(--icon--home);
+    --Icon-after: "home";
   }
+  /* ---- */
 
   [data-icon="info"] {
-    --Icon: var(--icon--info);
+    --Icon: "info_filled";
+  }
+
+  [data-icon="info"]::before {
+    font-variation-settings: "FILL" 1;
   }
   [data-icon-after="info"] {
-    --Icon-after: var(--icon--info);
+    --Icon-after: "info_filled";
   }
+
+  [data-icon-after="info"]::after {
+    font-variation-settings: "FILL" 1;
+  }
+  /* ---- */
 
   [data-icon="link"] {
-    --Icon: var(--icon--link);
+    --Icon: "link";
   }
   [data-icon-after="link"] {
-    --Icon-after: var(--icon--link);
+    --Icon-after: "link";
   }
+  /* ---- */
 
   [data-icon="location"] {
-    --Icon: var(--icon--location);
+    --Icon: "location_on";
   }
   [data-icon-after="location"] {
-    --Icon-after: var(--icon--location);
+    --Icon-after: "location_on";
   }
+  /* ---- */
 
   [data-icon="pen"] {
-    --Icon: var(--icon--pen);
+    --Icon: "edit";
   }
   [data-icon-after="pen"] {
-    --Icon-after: var(--icon--pen);
+    --Icon-after: "edit";
   }
+  /* ---- */
 
   [data-icon="search"] {
-    --Icon: var(--icon--search);
+    --Icon: "search";
   }
   [data-icon-after="search"] {
-    --Icon-after: var(--icon--search);
+    --Icon-after: "search";
   }
+  /* ---- */
 
   [data-icon="text"] {
-    --Icon: var(--icon--text);
+    --Icon: "notes";
   }
   [data-icon-after="text"] {
-    --Icon-after: var(--icon--text);
+    --Icon-after: "notes";
   }
+  /* ---- */
 
   [data-icon="time"] {
-    --Icon: var(--icon--time);
+    --Icon: "schedule";
   }
   [data-icon-after="time"] {
-    --Icon-after: var(--icon--time);
+    --Icon-after: "schedule";
   }
+  /* ---- */
 
   [data-icon="user"] {
-    --Icon: var(--icon--user);
+    --Icon: "account_circle";
   }
   [data-icon-after="user"] {
-    --Icon-after: var(--icon--user);
+    --Icon-after: "account_circle";
   }
+  /* ---- */
+
+  [data-icon="globe"] {
+    --Icon: "language";
+  }
+  [data-icon-after="globe"] {
+    --Icon-after: "language";
+  }
+  /* ---- */
 }

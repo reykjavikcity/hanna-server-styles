@@ -20,8 +20,6 @@
     --link-weight: _inherit;
     --link-underline: none;
 
-    /* NOTE: This intentionally doesn't reset the :hover style*/
-    /* unless..*/
     --link-color--hover: var(--link-color);
     --link-underline--hover: none;
     --link-underline-offset: 0;
@@ -111,12 +109,8 @@
         padding-top: 10.513245033112582%;
         /* background-color: var(--theme-color-secondary);*/
         background-color: var(--color-rokkur-100);
-        -webkit-mask-image: url("/assets/bling/circle-small.svg");
-        mask-image: url("/assets/bling/circle-small.svg");
-        -webkit-mask-position: 50% 50%;
-        mask-position: 50% 50%;
-        -webkit-mask-repeat: no-repeat;
-        mask-repeat: no-repeat;
+        -webkit-mask: url("/assets/bling/circle-small.svg") 50% 50% no-repeat;
+        mask: url("/assets/bling/circle-small.svg") 50% 50% no-repeat;
       }
       .MiniMetrics::after {
         content: "";
@@ -129,14 +123,10 @@
         padding-top: 19.205298013245034%;
         /* background-color: var(--theme-color-tertiary);*/
         background-color: var(--color-esja-100);
-        -webkit-mask-image: url("/assets/bling/waves-medium.svg");
-        mask-image: url("/assets/bling/waves-medium.svg");
-        -webkit-mask-size: 133.33% auto;
-        mask-size: 133.33% auto;
-        -webkit-mask-position: 0% 50%;
-        mask-position: 0% 50%;
-        -webkit-mask-repeat: no-repeat;
-        mask-repeat: no-repeat;
+        -webkit-mask: url("/assets/bling/waves-medium.svg") 0% 50% / 133.33%
+          auto no-repeat;
+        mask: url("/assets/bling/waves-medium.svg") 0% 50% / 133.33% auto
+          no-repeat;
       }
     }
   }

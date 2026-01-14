@@ -2,7 +2,7 @@
   .Alert {
     --Alert--background: rgb(224, 238, 251);
     --Alert--icon-color: var(--color-faxafloi-100);
-    --Alert--icon: var(--icon--info);
+    --Alert--icon: "info";
 
     --link-color: rgb(3, 94, 202);
     --link-color--hover: rgb(3, 94, 202);
@@ -11,38 +11,39 @@
     border-radius: 0.5rem;
     position: relative;
 
-    padding: 0.8125rem 1.25rem 0.75rem 2.75rem;
+    padding: 0.8125rem 1.25rem 0.75rem 2.5rem;
     margin-bottom: 1.25rem;
   }
 
   @media (min-width: 760px) {
     .Alert {
-      padding: 1.0625rem 2rem 1rem 4rem;
+      padding: 1.0625rem 2rem 1rem 3.375rem;
       margin-bottom: 1.875rem;
     }
   }
   .Alert::before {
+    content: var(--Alert--icon);
+    content: var(--Alert--icon) / "";
+
+    font-variation-settings: "FILL" 1;
+
     display: inline-block;
     text-indent: 0;
     text-align: center;
+    width: 1em;
     vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
+    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    letter-spacing: normal;
+    font-size: var(--icon-size--small);
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
-    content: var(--icon--info);
 
-    content: var(--Alert--icon);
     color: var(--Alert--icon-color);
-
-    font-size: 1rem;
-    /* line-height: 0.75rem;*/
     position: absolute;
     top: 0.875rem;
     left: 0.875rem;
@@ -109,17 +110,17 @@
   .Alert--error {
     --Alert--background: rgb(250, 228, 229);
     --Alert--icon-color: var(--color-heidmork-100);
-    --Alert--icon: var(--icon--error);
+    --Alert--icon: "error";
   }
   .Alert--warning {
     --Alert--background: var(--color-nautholsvik-50);
     --Alert--icon-color: rgb(213, 179, 74);
-    --Alert--icon: var(--icon--warning);
+    --Alert--icon: "warning";
   }
   .Alert--success {
     --Alert--background: rgb(220, 247, 230);
     --Alert--icon-color: rgb(70, 177, 109);
-    --Alert--icon: var(--icon--checkmark);
+    --Alert--icon: "check";
   }
 
   /* ---------------------------------------------------------------------------*/
@@ -166,8 +167,6 @@
     --link-weight: _inherit;
     --link-underline: none;
 
-    /* NOTE: This intentionally doesn't reset the :hover style*/
-    /* unless..*/
     --link-color--hover: var(--link-color);
     --link-underline--hover: none;
     --link-underline-offset: 0;
@@ -201,21 +200,24 @@
     font-size: 1rem;
   }
   .Alert__close::before {
+    content: "close";
+    content: "close" / "";
+
     display: inline-block;
     text-indent: 0;
     text-align: center;
+    width: 1em;
     vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
+    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    letter-spacing: normal;
+    font-size: var(--icon-size--small);
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
-    content: var(--icon--close);
 
     margin-right: 1px;
     width: 100%;

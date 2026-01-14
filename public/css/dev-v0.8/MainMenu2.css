@@ -91,7 +91,6 @@
   display: none; /* ok as long as aria-label/aria-labelledby is used!*/
 }
 
-.MainMenu2--closed > * > .MainMenu2__hot__items,
 .MainMenu2--closed > * > .MainMenu2__main,
 .MainMenu2--closed > * > .MainMenu2__extra__items,
 .MainMenu2--closed > * > .MainMenu2__related {
@@ -123,26 +122,30 @@
   --Button--backgroundColor--active: var(--color-suld-200);
 }
 .MainMenu2__toggler::before {
+  content: "menu";
+  content: "menu" / "";
+
   display: inline-block;
   text-indent: 0;
   text-align: center;
+  width: 1em;
   vertical-align: top;
-
-  font-family: icons, Esja, Helvetica, Arial, sans-serif;
-  speak: none;
+  font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
   white-space: nowrap;
-
-  -webkit-font-smoothing: antialiased;
+  word-wrap: normal;
+  direction: ltr;
+  -moz-font-feature-settings: "liga";
+  letter-spacing: normal;
+  font-size: var(--icon-size--medium);
   -moz-osx-font-smoothing: grayscale;
-  letter-spacing: 0;
-  content: var(--icon--text);
   margin-left: var(--Button--iconOutdent);
   margin-right: var(--Button--iconSpace);
 }
 .MainMenu2__toggler[aria-pressed="true"]::before {
-  content: var(--icon--close);
+  content: "close";
+  content: "close" / "";
 }
 
 a.MainMenu2__toggler {
@@ -208,9 +211,6 @@ a.MainMenu2__toggler {
   --link-color: _inherit;
   --link-weight: _inherit;
   --link-underline: none;
-
-  /* NOTE: This intentionally doesn't reset the :hover style*/
-  /* unless..*/
 
   display: inline-block;
   font-weight: var(--font-weight--bold);
@@ -312,12 +312,14 @@ a.MainMenu2__toggler {
   grid-area: related;
   color: var(--color-suld-200);
 }
-
-.MainMenu2__related__title {
+j .MainMenu2__related__title {
   font: var(--font-heading-s);
   padding-top: var(--space-1);
   padding-bottom: calc(var(--MainMenu2--mainLink--paddingBottom) - 1px);
   border-bottom: 1px solid var(--color-suld-100);
+  width: -moz-max-content;
+  width: max-content;
+  min-width: 10em;
 }
 .MainMenu2__related__items {
   padding-top: var(--space-3);
@@ -342,22 +344,17 @@ a.MainMenu2__toggler {
 }
 .MainMenu2__related__link[data-icon]::before {
   --Icon--enabled: initial;
+  --Icon--size: var(--icon-size--small);
 
   margin-right: var(--space-1);
+  margin-left: var(--space-0_5--neg);
 }
 /* Indent all __related__links at least one of them has an icon */
 :has(.MainMenu2__related__link[data-icon])
   > *
   > .MainMenu2__related__link:not([data-icon]) {
-  padding-left: var(--space-3);
+  padding-left: calc(var(--icon-size--small) + var(--space-0_5));
 }
-
-/*
-
-   ==========================================================================
-    Mobile mode
-   ==========================================================================
-  */
 
 @media (max-width: 979px) {
   .menu-is-open {
@@ -405,6 +402,13 @@ a.MainMenu2__toggler {
       / var(--Layout__header-homelink-width) auto;
   }
 
+  .MainMenu2--closed > .MainMenu2__content {
+    grid-template:
+      ".    toggler" var(--Layout__header-height)
+      "hot      hot" auto
+      / var(--Layout__header-homelink-width) auto;
+  }
+
   :not([data-sprinkled]) > .MainMenu2__content::after,
   .MainMenu2--open > .MainMenu2__content::after {
     content: "";
@@ -421,7 +425,13 @@ a.MainMenu2__toggler {
     width: 0;
     padding-left: 0;
     padding-right: 0;
-    min-width: var(--space-8);
+    min-width: var(--space-5);
+  }
+  .MainMenu2--open > * > .MainMenu2__toggler {
+    --Button--backgroundColor: var(--color-suld-0);
+    --Button--backgroundColor--active: var(--color-suld-50);
+    --Button--textColor: var(--color-faxafloi-100);
+    --Button--textColor--active: var(--color-faxafloi-150);
   }
   .MainMenu2__toggler[class]::before {
     width: 100%;
@@ -433,7 +443,7 @@ a.MainMenu2__toggler {
     --Button--color: var(--color-suld-0);
     --Button--border: 1px;
   }
-  .MainMenu2 .ButtonSecondary {
+  .MainMenu2--open > * > * > .MainMenu2__hot__item--redhot .ButtonSecondary {
     --Button--backgroundColor: var(--color-faxafloi-100);
     --Button--backgroundColor--active: var(--color-faxafloi-150);
     --Button--color: var(--color-suld-0);
@@ -455,11 +465,89 @@ a.MainMenu2__toggler {
     flex-flow: row wrap;
     gap: var(--space-2);
     align-items: center;
-    margin-top: var(--space-2);
+    padding-top: var(--space-4);
+    background-color: var(--color-suld-0);
+
+    position: relative;
   }
+
+  .MainMenu2__hot__items::before,
+  .MainMenu2__extra__items::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--grid-margin--neg);
+    right: var(--grid-margin--neg);
+    z-index: -1;
+    background: inherit;
+  }
+  .MainMenu2__hot__items + .MainMenu2__extra__items {
+    padding-top: var(--space-2);
+  }
+
   .MainMenu2__hot__items:last-child,
   .MainMenu2__extra__items:last-child {
-    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-6);
+  }
+
+  /* Move "--redhot" item out of flow and fix its position*/
+  /* next to the toggler button*/
+  .MainMenu2--closed
+    > *
+    > *
+    > .MainMenu2__hot__item:not(.MainMenu2__hot__item--redhot) {
+    display: none !important;
+  }
+  [data-sprinkled] > * > * > .MainMenu2__hot__item--redhot {
+    position: fixed;
+    z-index: 1;
+    top: calc(var(--Layout__header-height) / 2);
+    right: var(--grid-margin--right);
+    margin-right: var(--space-7);
+    transform: translateY(-50%);
+  }
+  .MainMenu2--open > * > * > .MainMenu2__hot__item--redhot {
+    right: var(--grid-margin);
+  }
+  .MainMenu2__hot__item--redhot ~ .MainMenu2__hot__item--redhot {
+    position: static;
+  }
+
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .MainMenu2__hot__item--redhot
+    ~ .MainMenu2__hot__item--redhot {
+    --WARNING--message: "Only one `--redhot` item is allowed per menu";
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+  }
+  html:not([data-disable-css-warnings-with-abandon="true"])
+    .MainMenu2__hot__item--redhot
+    ~ .MainMenu2__hot__item--redhot::before {
+    all: initial !important;
+    order: -999 !important;
+    font-family: sans-serif !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    z-index: 2 !important;
+    font-size: 12px !important;
+    line-height: 1.5em !important;
+    color: red !important;
+    background-color: rgba(255, 26, 26, 0.5) !important;
+    padding: 0 0.5em !important;
+    content: var(--WARNING--message) !important;
+  }
+
+  .MainMenu2__hot__item--redhot > .ButtonSecondary[data-icon] {
+    overflow: hidden;
+    width: 0;
+    padding-left: 0;
+    padding-right: 0;
+    min-width: var(--space-5);
+  }
+  .MainMenu2__hot__item--redhot > .ButtonSecondary[data-icon]::before {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 1px;
   }
 
   /* ---------------------- */
@@ -485,19 +573,12 @@ a.MainMenu2__toggler {
     background: inherit;
   }
   .MainMenu2__related:not(:first-child):not(button + *) {
-    margin-top: var(--space-6);
+    padding-top: var(--space-4);
   }
 
   .MainMenu2__related__title {
   }
 }
-
-/*
-
-   ==========================================================================
-    Desktop mode
-   ==========================================================================
-  */
 
 @media (min-width: 980px) {
   .menu-is-open {
@@ -619,13 +700,19 @@ a.MainMenu2__toggler {
 
   /* ---------------------- */
 
+  .MainMenu2__extra__items {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+  }
+
   .MainMenu2__extra__items,
   :not(.MainMenu2__extra__items) + .MainMenu2__related {
     padding-bottom: 235px;
     margin-bottom: var(--space-2);
   }
   .MainMenu2__extra__item {
-    margin-bottom: var(--space-2);
+    margin-right: var(--space-2);
   }
 
   /* ---------------------- */

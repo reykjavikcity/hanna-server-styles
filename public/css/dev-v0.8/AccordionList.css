@@ -64,26 +64,28 @@
   }
 
   .AccordionList__button::before {
+    content: "close_small";
+    content: "close_small" / "";
+
     display: inline-block;
     text-indent: 0;
     text-align: center;
+    width: 1em;
     vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
+    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    letter-spacing: normal;
+    font-size: var(--icon-size--large);
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
-    content: var(--icon--close);
 
     position: absolute;
     left: 0;
     width: var(--iconWidth);
-    font-size: 0.75em;
     color: var(--color-suld-200);
     transform: rotateZ(45deg);
     transition: transform 200ms ease-in;

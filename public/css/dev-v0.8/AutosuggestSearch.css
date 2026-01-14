@@ -41,13 +41,13 @@
   }
 
   .AutosuggestSearch__list {
-    --action-icon: none;
+    --AutosuggestSearch--action-icon: none;
   }
   .AutosuggestSearch__list--action--search {
-    --action-icon: var(--icon--search);
+    --AutosuggestSearch--action-icon: "search";
   }
   .AutosuggestSearch__list--action--go {
-    --action-icon: var(--icon--arrow-right);
+    --AutosuggestSearch--action-icon: "arrow_forward";
   }
 
   .AutosuggestSearch__item {
@@ -70,25 +70,27 @@
     background-color: var(--color-suld-25);
   }
   .AutosuggestSearch__item--highlighted::before {
+    content: var(--AutosuggestSearch--action-icon);
+    content: var(--AutosuggestSearch--action-icon) / "";
+
     display: inline-block;
     text-indent: 0;
     text-align: center;
+    width: 1em;
     vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
+    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    letter-spacing: normal;
+    font-size: var(--icon-size--medium);
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
 
-    content: var(--action-icon);
     color: var(--color-suld-100);
     float: right;
-    font-size: var(--font-body-m-size);
     width: var(--space-1_5);
     margin-right: var(--space-3--neg);
     margin-left: var(--space-1);

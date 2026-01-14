@@ -48,8 +48,6 @@
     --link-weight: _inherit;
     --link-underline: none;
 
-    /* NOTE: This intentionally doesn't reset the :hover style*/
-    /* unless..*/
     --link-color--hover: var(--link-color);
     --link-underline--hover: none;
     --link-underline-offset: 0;
@@ -60,8 +58,6 @@
     --link-weight: _inherit;
     --link-underline: none;
 
-    /* NOTE: This intentionally doesn't reset the :hover style*/
-    /* unless..*/
     --link-color--hover: var(--link-color);
     --link-underline--hover: none;
     --link-underline-offset: 0;
@@ -107,6 +103,11 @@
       width: 10.75rem;
     }
   }
+
+  .WizardLayout__header__logo--custom {
+    width: auto;
+  }
+
   /** @deprecated Back-compat selector  (Remove in Hanna 0.9) */
   a.WizardLayout__header__logo {
     box-sizing: content-box;
@@ -140,39 +141,35 @@
     margin-left: -1px;
   }
 
+  .WizardLayout__header__logo--custom > svg,
+  .WizardLayout__header__logo--custom > img {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   .WizardLayout__header__sitename {
     position: relative;
     flex-shrink: 1;
-    font-size: 1rem;
-    line-height: 1.5;
-    font-weight: var(--font-weight--bold);
+    font: var(--font-heading-xs);
     margin-left: 13px;
-    padding-left: 16px;
   }
-
   @media (min-width: 980px) {
     .WizardLayout__header__sitename {
       font-size: 1.5rem;
       line-height: 1.2;
-      margin-left: 21px;
+      margin-left: 24px;
       padding-left: 24px;
     }
-  }
-  .WizardLayout__header__sitename::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 2px;
-    height: 1.75rem;
-    background-color: var(--Layout__header-homelink-divColor);
-    margin: auto 0;
-  }
-
-  @media (min-width: 980px) {
     .WizardLayout__header__sitename::before {
-      height: 2rem;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -1px;
+      bottom: 0;
+      width: 2px;
+      height: 32px;
+      background-color: var(--Layout__header-homelink-divColor);
+      margin: auto 0;
     }
   }
 
@@ -291,32 +288,32 @@
     --link-weight: _inherit;
     --link-underline: none;
 
-    /* NOTE: This intentionally doesn't reset the :hover style*/
-    /* unless..*/
     --link-color--hover: var(--link-color);
     --link-underline--hover: none;
     --link-underline-offset: 0;
   }
 
   .WizardLayoutClose::after {
+    content: "close";
+    content: "close" / "";
+
     display: inline-block;
     text-indent: 0;
     text-align: center;
+    width: 1em;
     vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
+    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    letter-spacing: normal;
+    font-size: var(--icon-size--small);
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
-    content: var(--icon--close);
 
-    font-size: 0.8125rem;
-    margin-left: 0.8125rem;
+    margin-left: var(--space-1);
     padding-top: 0.0625rem;
     transition: transform var(--link-transition);
   }

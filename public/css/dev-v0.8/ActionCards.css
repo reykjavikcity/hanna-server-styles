@@ -59,9 +59,6 @@
     --link-weight: _inherit;
     --link-underline: none;
 
-    /* NOTE: This intentionally doesn't reset the :hover style*/
-    /* unless..*/
-
     font: var(--font-body-m);
     display: block;
     width: 100%;

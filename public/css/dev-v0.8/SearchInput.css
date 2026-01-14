@@ -18,28 +18,30 @@
 
   /* underlying inactive button-like icon*/
   .SearchInput > .FormField__input::after {
+    content: "search";
+    content: "search" / "";
+
     display: inline-block;
     text-indent: 0;
     text-align: center;
+    width: 1em;
     vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
+    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    letter-spacing: normal;
+    font-size: var(--icon-size--medium);
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
-    content: var(--icon--search);
 
     display: block;
     position: absolute;
     top: 0px;
     right: 0px;
     bottom: 0px;
-    font-size: 1em;
     width: var(--buttonWidth);
     line-height: var(--FormField--input--height-inner);
     color: var(--buttonColor);
@@ -83,22 +85,26 @@
     opacity: 0.5;
   }
   .SearchInput__button::before {
+    content: "search";
+    content: "search" / "";
+
     display: inline-block;
     text-indent: 0;
     text-align: center;
+    width: 1em;
     vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
+    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    letter-spacing: normal;
+    font-size: var(--icon-size--medium);
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
-    content: var(--icon--search);
 
+    /* font-size: 28px; */
     width: 100%;
     margin-right: 1px;
     transition: all 100ms ease-in;

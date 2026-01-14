@@ -67,8 +67,6 @@
     --link-weight: _inherit;
     --link-underline: none;
 
-    /* NOTE: This intentionally doesn't reset the :hover style*/
-    /* unless..*/
     --link-color--hover: var(--link-color);
     --link-underline--hover: none;
     --link-underline-offset: 0;

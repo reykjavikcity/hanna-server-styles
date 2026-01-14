@@ -18,11 +18,65 @@
 
 /* ------------------------------------------------------------------------ */
 
-/* Doubles also as 'ButtonSecondary' or 'ButtonPrimary' */
+/* Doubles also as 'ButtonSecondary' or 'ButtonPrimary' by default */
 .DropdownButton__toggler {
   margin: 0;
   min-width: 0;
   width: auto; /* needed by Firefox (as of 2024-11) Some conflicts between .Button* styles applying a min-width and width:max-content  */
+}
+summary:where(.DropdownButton__toggler) {
+  list-style: none; /* reset default disclosure triangle */
+  cursor: pointer;
+  display: inline-block;
+  width: auto;
+}
+
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .DropdownButton__toggler
+  a {
+  --WARNING--message: "<a/> is not allowed inside <summary/>";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .DropdownButton__toggler
+  a::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}
+
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .DropdownButton__toggler
+  button {
+  --WARNING--message: "<button/> is not allowed inside <summary/>";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .DropdownButton__toggler
+  button::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
 }
 
 /* ------------------------------------------------------------------------ */
@@ -34,14 +88,16 @@
   z-index: var(--zindex--overlay);
   margin: var(--space-0_5) 0;
 
-  max-width: 31.25rem;
+  max-width: min(30rem, 90vw);
   width: -moz-max-content;
   width: max-content;
+  min-width: 12.5rem;
 
   background: var(--color-white);
   box-shadow: var(--boxShadow-elevated);
-  border: 1px solid var(--color-suld-100);
   border-radius: var(--space-0_5);
+
+  font: var(--font-button);
 }
 [open] > .DropdownButton__menu {
   animation: DropdownButton-open 200ms ease-in;
@@ -50,56 +106,194 @@
 /* ------------------------------------------------------------------------ */
 
 .DropdownButton__item {
+  --link-focus-outlineColor: var(--color-faxafloi-100);
+  --link-focus-outlineOffset: 0;
 }
-.DropdownButton__item:not(:last-child) {
-  border-bottom: var(--border-default);
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .DropdownButton__item[aria-current="true"]:has(
+    > .DropdownButton__itembutton--destructive
+  ) {
+  --WARNING--message: "Destructive and current do not mix";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .DropdownButton__item[aria-current="true"]:has(
+    > .DropdownButton__itembutton--destructive
+  )::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.DropdownButton__itemDivider {
+  /* border-top: 1px solid var(--color-suld-50); */
+  border-top: var(--border-default);
+  margin: 0 var(--space-2);
+  height: 0;
+}
+.DropdownButton__itemDivider--labelled {
+  height: auto;
+  padding: var(--space-1) 0;
+  color: var(--color-suld-100);
+}
+:has(.DropdownButton__itembutton[data-icon])
+  > *
+  > .DropdownButton__itemDivider--labelled {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+  padding-left: var(--space-1);
+}
+.DropdownButton__itemDivider--labelled:first-child {
+  border-top: none;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .DropdownButton__itemDivider:first-child:not(
+    .DropdownButton__itemDivider--labelled
+  ) {
+  --WARNING--message: "First item __itemDivider makes no sense";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .DropdownButton__itemDivider:first-child:not(
+    .DropdownButton__itemDivider--labelled
+  )::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .DropdownButton__itemDivider:last-child {
+  --WARNING--message: "Last item __itemDivider makes no sense";
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .DropdownButton__itemDivider:last-child::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
 }
 
 /* ------------------------------------------------------------------------ */
 
 .DropdownButton__itembutton {
-  text-decoration: none;
-  color: var(--link-color);
-  font-weight: var(--link-weight);
-  padding-bottom: var(--link-underline-offset);
-  border-bottom: var(--link-underline);
-  transition: var(--link-transition);
-  transition-property: border-color, background-color, color, text-shadow,
-    box-shadow, outline;
-}
+  --link-color: _inherit;
+  --link-weight: _inherit;
+  --link-underline: none;
 
-.DropdownButton__itembutton:hover,
-.DropdownButton__itembutton:active {
-  color: var(--link-color--hover);
-  border-bottom: var(--link-underline--hover);
+  --link-color--hover: var(--link-color);
+  --link-underline--hover: none;
+  --link-underline-offset: 0;
+
+  font-weight: var(--font-weight--normal);
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+  position: relative;
 }
 .DropdownButton__itembutton[class] {
   display: block;
   width: 100%;
-  --DropdownButton--padH: var(--space-2);
-  padding: var(--space-1) var(--DropdownButton--padH);
+  padding: var(--space-2);
   border: none;
-  border-radius: calc(var(--space-0_5) - 1px);
 }
+:first-child > .DropdownButton__itembutton {
+  border-radius: var(--space-0_5) var(--space-0_5) 0 0;
+}
+/** FIXME: .FocusTrap is the :last-child, must handle that... */
+:last-child > .DropdownButton__itembutton {
+  border-radius: 0 0 var(--space-0_5) var(--space-0_5);
+}
+
 .DropdownButton__itembutton:hover,
 .DropdownButton__itembutton:focus {
-  background-color: var(--color-suld-50);
+  background-color: var(--color-esja-25);
+  z-index: 1;
+}
+
+.DropdownButton__itembutton--destructive {
+  --link-color: var(--color-heidmork-100);
+}
+.DropdownButton__itembutton--destructive:hover,
+.DropdownButton__itembutton--destructive:focus {
+  background-color: var(--color-heidmork-25);
 }
 
 [aria-current="true"] > .DropdownButton__itembutton {
   --link-color: var(--color-faxafloi-150);
 
-  background: var(--color-faxafloi-25);
+  padding-right: var(--space-6);
+  background: var(--color-esja-50);
+}
+[aria-current="true"] > .DropdownButton__itembutton:hover,
+[aria-current="true"] > .DropdownButton__itembutton:focus {
+  background-color: var(--color-esja-75);
 }
 
+[aria-current="true"] > .DropdownButton__itembutton::after {
+  content: "check";
+  content: "check" / "";
+
+  display: inline-block;
+  text-indent: 0;
+  text-align: center;
+  width: 1em;
+  vertical-align: top;
+  font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -moz-font-feature-settings: "liga";
+  letter-spacing: normal;
+  font-size: var(--icon-size--medium);
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--color-suld-200);
+  position: absolute;
+  right: var(--space-2);
+  top: var(--space-2);
+}
+
+/* Indent all buttons if at least one of them has an icon */
+:has(.DropdownButton__itembutton[data-icon]) > * > .DropdownButton__itembutton {
+  padding-left: var(--space-7);
+}
 .DropdownButton__itembutton[data-icon]::before {
   --Icon--enabled: initial;
 
-  margin-right: var(--space-1);
-}
-/* Indent all __related__links at least one of them has an icon */
-:has(.DropdownButton__itembutton[data-icon])
-  > *
-  > .DropdownButton__itembutton:not([data-icon]) {
-  padding-left: calc(var(--DropdownButton--padH) + var(--space-3));
+  margin-left: var(--space-5--neg);
+  margin-right: var(--space-2);
 }

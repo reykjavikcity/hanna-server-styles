@@ -1,0 +1,12 @@
+.ReykjavikWaves::before {
+  content: "";
+  display: block;
+  width: clamp(22px, calc(2.272727272727273vw + 14.727272727272727px), 32px);
+  max-width: 100%;
+  aspect-ratio: 22 / 57;
+  background: url("http://localhost:4000/assets/pdf/reykjavik-waves.svg") center /
+    contain no-repeat;
+}
+.ReykjavikWaves--small::before {
+  width: 22px;
+}

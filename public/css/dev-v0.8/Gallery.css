@@ -75,21 +75,24 @@
 
   .Gallery__itemlist-goRight::before,
   .Gallery__itemlist-goLeft::before {
+    content: "arrow_forward_ios";
+    content: "arrow_forward_ios" / "";
+
     display: inline-block;
     text-indent: 0;
     text-align: center;
+    width: 1em;
     vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
+    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    letter-spacing: normal;
+    font-size: var(--icon-size--large);
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
-    content: var(--icon--chevron-right);
 
     font-size: 2.5rem;
     margin-right: 0.5rem;
@@ -189,8 +192,6 @@
     --link-weight: _inherit;
     --link-underline: none;
 
-    /* NOTE: This intentionally doesn't reset the :hover style*/
-    /* unless..*/
     --link-color--hover: var(--link-color);
     --link-underline--hover: none;
     --link-underline-offset: 0;
@@ -285,23 +286,24 @@
 
   .GalleryModalPager__button::before,
   .GalleryModal__closebutton::before {
+    content: "arrow_back";
+    content: "arrow_back" / "";
+
     display: inline-block;
     text-indent: 0;
     text-align: center;
+    width: 1em;
     vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
+    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    letter-spacing: normal;
+    font-size: var(--icon-size--large);
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
-    content: var(--icon--arrow-left);
-
-    font-size: 23px;
   }
 
   .GalleryModalPager__button {
@@ -335,7 +337,8 @@
     right: var(--grid-margin);
   }
   .GalleryModalPager__button--next::before {
-    content: var(--icon--arrow-right);
+    content: "arrow_forward";
+    content: "arrow_forward" / "";
   }
   .GalleryModalPager__button:disabled {
     display: none;

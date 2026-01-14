@@ -29,21 +29,24 @@
 }
 
 .Multiselect__input[data-sprinkled]::after {
+  content: "keyboard_arrow_down";
+  content: "keyboard_arrow_down" / "";
+
   display: inline-block;
   text-indent: 0;
   text-align: center;
+  width: 1em;
   vertical-align: top;
-
-  font-family: icons, Esja, Helvetica, Arial, sans-serif;
-  speak: none;
+  font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
   white-space: nowrap;
-
-  -webkit-font-smoothing: antialiased;
+  word-wrap: normal;
+  direction: ltr;
+  -moz-font-feature-settings: "liga";
+  letter-spacing: normal;
+  font-size: var(--icon-size--medium);
   -moz-osx-font-smoothing: grayscale;
-  letter-spacing: 0;
-  content: var(--icon--chevron-down);
 
   position: absolute;
   z-index: 2;
@@ -55,7 +58,6 @@
   margin: auto;
   color: var(--FormField--input--border-color);
   transition: all 200ms ease-in;
-  font-size: 1rem;
   height: 1em;
   line-height: 1em;
 }

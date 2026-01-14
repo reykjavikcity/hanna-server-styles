@@ -25,7 +25,6 @@
 
     width: 35px;
     height: 35px;
-    line-height: 35px;
     border-radius: 50%;
     background-color: var(--theme-color-primary);
     color: var(--theme-color-primary--text);
@@ -39,29 +38,17 @@
   }
 
   .ShareButtons__link::before {
-    display: inline-block;
-    text-indent: 0;
-    text-align: center;
-    vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
-    font-weight: normal;
-    font-style: normal;
-    white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
     content: "";
-
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    top: 50%;
     left: 0;
     text-indent: 0;
     text-align: center;
+    font-weight: bold;
+    width: 100%;
+    height: 1em;
+    line-height: 1.1;
+    margin-top: -0.5em;
   }
 
   .ShareButtons__item {
@@ -71,20 +58,23 @@
     margin-left: 0;
   }
 
-  .ShareButtons__link--facebook::before {
-    content: var(--icon--facebook);
+  .ShareButtons__link--facebook::before,
+  .ShareButtons__link--twitter::before {
+    -webkit-mask: url("i/icons/facebook.svg") 50% 50% / 1em auto no-repeat;
+    mask: url("i/icons/facebook.svg") 50% 50% / 1em auto no-repeat;
+    background-color: currentColor;
   }
   .ShareButtons__link--twitter::before {
-    content: var(--icon--twitter);
+    -webkit-mask-image: url("i/icons/twitter.svg");
+    mask-image: url("i/icons/twitter.svg");
   }
   .ShareButtons__link--linkedin::before {
-    content: "Li";
-    font-weight: bold;
-    line-height: 31px;
+    font-size: 20px;
+    content: "in";
   }
   .ShareButtons__link--email::before {
+    font-size: 20px;
     content: "@";
-    font-weight: bold;
-    line-height: 28px;
+    margin-top: -0.6em;
   }
 }

@@ -21,7 +21,7 @@
   border-bottom: var(--link-underline);
   transition: var(--link-transition);
   transition-property: border-color, background-color, color, text-shadow,
-    box-shadow, outline;
+    box-shadow;
 }
 
 .Tooltip:hover,
@@ -43,28 +43,34 @@
   overflow: hidden;
   white-space: nowrap;
 
-  width: 1.5625em;
+  width: var(--icon-size--small);
 }
 
 .Tooltip__trigger::before {
+  content: "info";
+  content: "info" / "";
+
+  font-variation-settings: "FILL" 1;
+
   display: inline-block;
   text-indent: 0;
   text-align: center;
+  width: 1em;
   vertical-align: top;
-
-  font-family: icons, Esja, Helvetica, Arial, sans-serif;
-  speak: none;
+  font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
   white-space: nowrap;
-
-  -webkit-font-smoothing: antialiased;
+  word-wrap: normal;
+  direction: ltr;
+  -moz-font-feature-settings: "liga";
+  letter-spacing: normal;
+  font-size: var(--icon-size--small);
   -moz-osx-font-smoothing: grayscale;
-  letter-spacing: 0;
-  content: var(--icon--info);
 
-  width: 1.5625em;
-  height: 1.5625em;
+  width: 1em;
+  height: 1em;
+  margin-right: var(--space-0_5);
   display: inline-block;
   text-align: center;
 }

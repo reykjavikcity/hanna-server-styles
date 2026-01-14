@@ -48,21 +48,24 @@
   }
 
   .FileInput__droptext::before {
+    content: "arrow_upward";
+    content: "arrow_upward" / "";
+
     display: inline-block;
     text-indent: 0;
     text-align: center;
+    width: 1em;
     vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
+    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    letter-spacing: normal;
+    font-size: var(--icon-size--medium);
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
-    content: var(--icon--arrow-up-long);
 
     position: absolute;
     top: 0;
@@ -70,7 +73,6 @@
     width: 4rem;
     margin-left: -2rem;
     line-height: 4rem;
-    font-size: 1.5rem;
     color: #fff; /* TODO: Should this be hardcoded?*/
     background: var(--color-faxafloi-100);
     border-radius: 50%;
@@ -153,32 +155,32 @@
     white-space: nowrap;
 
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 0;
     color: inherit;
-    width: 0.625rem;
-    margin-top: -0.3125rem;
+    width: var(--icon-size--small);
   }
 
   .FileInput__file-remove::before {
+    content: "close";
+    content: "close" / "";
+
     display: inline-block;
     text-indent: 0;
     text-align: center;
+    width: 1em;
     vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
+    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    letter-spacing: normal;
+    font-size: var(--icon-size--small);
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
-    content: var(--icon--close);
 
-    font-size: 0.625rem;
-    line-height: 1;
     color: var(--color-faxafloi-100);
   }
 

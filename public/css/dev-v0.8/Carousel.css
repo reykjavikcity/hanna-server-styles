@@ -62,21 +62,24 @@
 }
 .Carousel__itemlist-goRight::before,
 .Carousel__itemlist-goLeft::before {
+  content: "arrow_forward_ios";
+  content: "arrow_forward_ios" / "";
+
   display: inline-block;
   text-indent: 0;
   text-align: center;
+  width: 1em;
   vertical-align: top;
-
-  font-family: icons, Esja, Helvetica, Arial, sans-serif;
-  speak: none;
+  font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
   white-space: nowrap;
-
-  -webkit-font-smoothing: antialiased;
+  word-wrap: normal;
+  direction: ltr;
+  -moz-font-feature-settings: "liga";
+  letter-spacing: normal;
+  font-size: var(--icon-size--large);
   -moz-osx-font-smoothing: grayscale;
-  letter-spacing: 0;
-  content: var(--icon--chevron-right);
 
   font-size: 2.5rem;
   margin-right: 0.5rem;

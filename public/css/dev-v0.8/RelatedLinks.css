@@ -37,8 +37,6 @@
     --link-weight: _inherit;
     --link-underline: none;
 
-    /* NOTE: This intentionally doesn't reset the :hover style*/
-    /* unless..*/
     --link-color--hover: var(--link-color);
     --link-underline--hover: none;
     --link-underline-offset: 0;
@@ -57,48 +55,51 @@
     outline: 1px solid currentColor;
   }
   .RelatedLinks__link::before {
+    content: "link";
+    content: "link" / "";
+
     display: inline-block;
     text-indent: 0;
     text-align: center;
+    width: 1em;
     vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
+    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    letter-spacing: normal;
+    font-size: var(--icon-size--medium);
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
-    content: var(--icon--link);
 
     position: absolute;
-    top: 50%;
     left: 1rem;
-    font-size: 1.5rem;
-    width: 1em;
-    line-height: 1em;
-    margin-top: -0.5em;
   }
 
   .RelatedLinks__link[target]::before {
-    content: var(--icon--external);
+    content: "open_in_new";
+    content: "open_in_new" / "";
   }
   /* exclude taget="_self" without increasing selector specificity*/
   .RelatedLinks__link:not([target="_self"])::before {
-    content: var(--icon--link);
+    content: "link";
+    content: "link" / "";
   }
 
   .RelatedLinks__link[href$=".pdf"]::before,
   .RelatedLinks__link[href*=".pdf?"]::before,
   .RelatedLinks__link[data-type="pdf"]::before {
-    content: var(--icon--file-pdf);
+    content: "picture_as_pdf";
+    content: "picture_as_pdf" / "";
   }
   .RelatedLinks__link[data-type="document"]::before {
-    content: var(--icon--document);
+    content: "docs";
+    content: "docs" / "";
   }
   .RelatedLinks__link[data-type="external"]::before {
-    content: var(--icon--external);
+    content: "open_in_new";
+    content: "open_in_new" / "";
   }
 }

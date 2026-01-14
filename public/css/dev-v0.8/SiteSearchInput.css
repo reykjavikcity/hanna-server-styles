@@ -44,6 +44,43 @@
   /* .SiteSearchInput__input {*/
   /* }*/
 
+  .SiteSearchInput__button {
+    z-index: 1;
+    background-color: var(--color-faxafloi-100);
+    color: var(--color-suld-0);
+  }
+
+  .SiteSearchInput__button:active,
+  .SiteSearchInput__button:hover {
+    background-color: var(--color-faxafloi-150);
+    color: var(--color-suld-0);
+  }
+  .SiteSearchInput__button:focus-visible {
+    background-color: var(--color-faxafloi-150);
+    color: var(--color-suld-0);
+  }
+
+  .SiteSearchInput > .FormField__input::after,
+  .SiteSearchInput__button::before {
+    content: "search";
+    content: "search" / "";
+
+    display: inline-block;
+    text-indent: 0;
+    text-align: center;
+    width: 1em;
+    vertical-align: top;
+    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    letter-spacing: normal;
+    font-size: var(--icon-size--large);
+    -moz-osx-font-smoothing: grayscale;
+  }
   .SiteSearchInput > .FormField__input::after,
   .SiteSearchInput__button {
     overflow: hidden;
@@ -61,49 +98,14 @@
     border-radius: 0 var(--FormField--input--border-radius)
       var(--FormField--input--border-radius) 0;
   }
+  .SiteSearchInput__button::before {
+    width: 100%;
+    margin-right: 1px;
+  }
   .SiteSearchInput > .FormField__input::after {
     color: var(--color-suld-100);
     background-color: var(--color-suld-0);
     background-clip: padding-box;
     pointer-events: none;
-  }
-  .SiteSearchInput__button {
-    z-index: 1;
-    background-color: var(--color-faxafloi-100);
-    color: var(--color-suld-0);
-  }
-
-  .SiteSearchInput__button:active,
-  .SiteSearchInput__button:hover {
-    background-color: var(--color-faxafloi-150);
-    color: var(--color-suld-0);
-  }
-  .SiteSearchInput__button:focus-visible {
-    background-color: var(--color-faxafloi-150);
-    color: var(--color-suld-0);
-  }
-  .SiteSearchInput > .FormField__input::after,
-  .SiteSearchInput__button::before {
-    display: inline-block;
-    text-indent: 0;
-    text-align: center;
-    vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
-    font-weight: normal;
-    font-style: normal;
-    white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
-    content: var(--icon--search);
-
-    font-size: 1.6rem;
-  }
-  .SiteSearchInput__button::before {
-    width: 100%;
-    margin-right: 1px;
   }
 }

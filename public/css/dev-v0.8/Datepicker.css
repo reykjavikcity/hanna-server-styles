@@ -41,25 +41,27 @@
   .react-datepicker__input-container {
   }
   .react-datepicker__input-container::after {
+    content: "calendar_month";
+    content: "calendar_month" / "";
+
     display: inline-block;
     text-indent: 0;
     text-align: center;
+    width: 1em;
     vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
+    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    letter-spacing: normal;
+    font-size: var(--icon-size--medium);
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
-    content: var(--icon--calendar);
 
     display: block;
     color: var(--color-suld-0);
-    font-size: 1em;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -185,30 +187,31 @@
   }
 
   .react-datepicker__navigation::after {
+    content: "arrow_back_ios_new";
+    content: "arrow_back_ios_new" / "";
+
     display: inline-block;
     text-indent: 0;
     text-align: center;
+    width: 1em;
     vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
+    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    letter-spacing: normal;
+    font-size: var(--icon-size--small);
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
-    content: var(--icon--chevron-left);
 
     display: block;
     color: var(--color-suld-0);
-    font-size: 10px;
     position: absolute;
     top: 0;
     left: 0;
-    width: 1.5rem;
-    line-height: 1.5rem;
+    width: 100%;
   }
 
   .react-datepicker__navigation:hover::after,
@@ -226,7 +229,11 @@
         left: auto;
 
         &::after {
-          content: var(--icon--chevron-right);
+         
+    content: "arrow_forward_ios";
+    content: "arrow_forward_ios" / '';
+    
+  ;
         }
       }
 
@@ -246,6 +253,7 @@
     content: none !important;
   }
   [class].react-datepicker__navigation--years {
+    display: block;
     position: relative;
     top: auto;
     left: auto;
@@ -258,7 +266,9 @@
   }
 
   [class].react-datepicker__navigation--years::after {
-    content: var(--icon--chevron-down);
+    content: "keyboard_arrow_down";
+    content: "keyboard_arrow_down" / "";
+
     color: var(--color-suld-150);
   }
   [class].react-datepicker__navigation--years:hover::after,
@@ -267,7 +277,8 @@
   }
 
   [class].react-datepicker__navigation--years-upcoming::after {
-    content: var(--icon--chevron-up);
+    content: "keyboard_arrow_up";
+    content: "keyboard_arrow_up" / "";
   }
 
   .react-datepicker__month .react-datepicker__month-text {
@@ -478,25 +489,27 @@
   .react-datepicker__year-read-view--down-arrow::before,
   .react-datepicker__month-read-view--down-arrow::before,
   .react-datepicker__month-year-read-view--down-arrow::before {
+    content: "keyboard_arrow_down";
+    content: "keyboard_arrow_down" / "";
+
     display: inline-block;
     text-indent: 0;
     text-align: center;
+    width: 1em;
     vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
+    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    letter-spacing: normal;
+    font-size: var(--icon-size--small);
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
-    content: var(--icon--chevron-down);
 
     display: block;
     color: var(--color-suld-0);
-    font-size: 10px;
     position: absolute;
     top: 0;
     left: 0;

@@ -10,23 +10,12 @@
     margin-bottom: 4rem;
   }
   .InfoBlock::before {
-    display: inline-block;
-    text-indent: 0;
-    text-align: center;
-    vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
-    font-weight: normal;
-    font-style: normal;
-    white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
-    content: var(--icon--fatchevron-up);
-
-    color: var(--theme-color-secondary);
+    content: " ";
+    -webkit-mask: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M0%2C36v51.1l50.5-33.9L100%2C87V36L50.5%2C2.9L0%2C36z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+      center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M0%2C36v51.1l50.5-33.9L100%2C87V36L50.5%2C2.9L0%2C36z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+      center / contain no-repeat;
+    background-color: var(--theme-color-secondary);
     position: absolute;
     right: 0;
     width: 1em;

@@ -115,47 +115,55 @@
 
   .ContactBubble__openbtn::before,
   .ContactBubble__openbtn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    width: 2.5rem;
+    margin-top: -1em;
+    height: 2em;
+    line-height: 2em;
+  }
+
+  .ContactBubble__openbtn::before {
+    background-color: currentColor;
+    -webkit-mask: url(i/ContactBubble/chat-toggler.svg) 5% 50% / auto 40px
+      no-repeat;
+    mask: url(i/ContactBubble/chat-toggler.svg) 5% 50% / auto 40px no-repeat;
+    display: inline-block;
+    transition: background-color 250ms 150ms ease-in;
+  }
+  .ContactBubble__openbtn[aria-expanded="true"]::before {
+    background-color: transparent;
+    transition-delay: 0ms;
+  }
+
+  .ContactBubble__openbtn::after {
+    content: "close";
+    content: "close" / "";
+
     display: inline-block;
     text-indent: 0;
     text-align: center;
+    width: 1em;
     vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
+    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    letter-spacing: normal;
+    font-size: var(--icon-size--large);
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
-    content: var(--icon--chat);
 
-    position: absolute;
-    top: 50%;
-    font-size: 2.5rem;
-    left: 1rem;
-    margin-top: -0.5em;
-    width: 2.5rem;
-    height: 1em;
-    line-height: 1em;
-    transition: opacity 200ms ease-in;
-  }
-  .ContactBubble__openbtn::after {
-    content: var(--icon--close);
+    transition: opacity 250ms 50ms ease-in;
     opacity: 0;
-    font-size: 1.625rem;
-  }
-
-  .ContactBubble__openbtn[aria-expanded="true"]::before {
-    opacity: 0;
-    transition-delay: 200ms;
-    transition-duration: 200ms;
   }
   .ContactBubble__openbtn[aria-expanded="true"]::after {
     opacity: 1;
     transition-delay: 200ms;
-    transition-duration: 200ms;
   }
 
   /* ---------------------------------------------------------------------------*/
@@ -315,14 +323,8 @@
     float: left;
     margin-left: -3rem;
     vertical-align: top;
-    -webkit-mask-image: var(--ContactBubble--type--icon);
-    mask-image: var(--ContactBubble--type--icon);
-    -webkit-mask-size: auto 100%;
-    mask-size: auto 100%;
-    -webkit-mask-position: 0% 50%;
-    mask-position: 0% 50%;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
+    -webkit-mask: var(--ContactBubble--type--icon) 0% 50% / auto 100% no-repeat;
+    mask: var(--ContactBubble--type--icon) 0% 50% / auto 100% no-repeat;
     transition: inherit;
   }
   .ContactBubble__link:hover::before {
@@ -354,23 +356,25 @@
       transform: scale(1.15);
     }
     .ContactBubble__closebtn::before {
+      content: "close";
+      content: "close" / "";
+
       display: inline-block;
       text-indent: 0;
       text-align: center;
+      width: 1em;
       vertical-align: top;
-
-      font-family: icons, Esja, Helvetica, Arial, sans-serif;
-      speak: none;
+      font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
       font-weight: normal;
       font-style: normal;
       white-space: nowrap;
-
-      -webkit-font-smoothing: antialiased;
+      word-wrap: normal;
+      direction: ltr;
+      -moz-font-feature-settings: "liga";
+      letter-spacing: normal;
+      font-size: var(--icon-size--large);
       -moz-osx-font-smoothing: grayscale;
-      letter-spacing: 0;
-      content: var(--icon--close);
 
-      font-size: 1.625rem;
       width: 100%;
       margin-right: 1px;
     }

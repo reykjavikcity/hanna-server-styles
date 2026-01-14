@@ -199,24 +199,28 @@
 
   .FormField__assist::before,
   .FormField__error::before {
+    content: "error";
+    content: "error" / "";
+
+    font-variation-settings: "FILL" 1;
+
     display: inline-block;
     text-indent: 0;
     text-align: center;
+    width: 1em;
     vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
+    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    letter-spacing: normal;
+    font-size: var(--icon-size--small);
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
-    content: var(--icon--error);
 
     margin-right: 0.5rem;
-    font-size: 0.625rem;
   }
 
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -247,8 +251,10 @@
     color: var(--color-suld-150);
   }
   .FormField__assist::before {
-    content: var(--icon--alert);
-    font-size: 0.6875rem;
+    content: "warning";
+    content: "warning" / "";
+
+    font-variation-settings: "FILL" 1;
   }
 }
 
@@ -285,21 +291,24 @@
   /**/
 
   .Selectbox > .FormField__input::after {
+    content: "keyboard_arrow_down";
+    content: "keyboard_arrow_down" / "";
+
     display: inline-block;
     text-indent: 0;
     text-align: center;
+    width: 1em;
     vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
+    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    letter-spacing: normal;
+    font-size: var(--icon-size--medium);
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
-    content: var(--icon--chevron-down);
 
     position: absolute;
     z-index: 2;
@@ -311,7 +320,6 @@
     margin: auto;
     color: var(--FormField--input--border-color);
     transition: all 200ms ease-in;
-    font-size: 1rem;
     height: 1em;
     line-height: 1em;
   }

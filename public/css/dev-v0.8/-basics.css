@@ -1,12 +1,23 @@
 /*! Reykjavík Design System basic CSS styles */
 
 @font-face {
-  font-family: icons;
+  /* eslint-disable-next-line deprecation/deprecation*/
+  font-family: iconfont;
   font-weight: normal;
   font-style: normal;
   font-display: block;
-  src: url("i/icons.woff2?9f944e2ff68b2059de747eca6f8a0499") format("woff2"),
-    url("i/icons.woff?9f944e2ff68b2059de747eca6f8a0499") format("woff");
+  src: url("i/iconfont.woff2?7ecfdb5302299a69e7b88ebbb015ab19") format("woff2");
+}
+
+@font-face {
+  /* @deprecated, only left in as a fallback icon front
+      to prevent old HTML data-icon="" values from breaking
+    */
+  font-family: icons;
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* don't block */
+  src: url("i/icons.woff2?7ecfdb5302299a69e7b88ebbb015ab19") format("woff2");
 }
 
 @font-face {
@@ -45,7 +56,7 @@
   /**/
 
 :root {
-  --cssVersion: "0.8.95";
+  --cssVersion: "0.8.96";
   --browser-scrollbar-width: 16px;
   --bp-w-phone: 320px;
   --bp-w-phablet: 480px;
@@ -119,7 +130,7 @@
   --link-underline-offset: 0.15em;
   --link-transition: 200ms ease-in;
   --link-focus-outlineColor: currentColor;
-  --link-focus-outline: 3px solid currentColor;
+  --link-focus-outline: 2px solid currentColor;
   --link-focus-outlineOffset: 2px;
 
   --font-family: Esja, Helvetica, Arial, sans-serif;
@@ -491,6 +502,9 @@
 }
 
 :root {
+  --icon-size--small: 20px;
+  --icon-size--medium: 24px;
+  --icon-size--large: 40px;
   --icon--alert: "";
   --icon--arrow-left-long: "";
   --icon--arrow-left: "";
@@ -499,35 +513,36 @@
   --icon--calendar: "";
   --icon--chat: "";
   --icon--checkmark: "";
-  --icon--chevron-down: "";
-  --icon--chevron-left: "";
-  --icon--chevron-right: "";
-  --icon--chevron-soft-right: "";
-  --icon--chevron-up: "";
-  --icon--close-thin: "";
-  --icon--close: "";
-  --icon--dash: "";
-  --icon--data: "";
-  --icon--document: "";
-  --icon--edit: "";
-  --icon--error: "";
-  --icon--external: "";
-  --icon--facebook: "";
-  --icon--fatchevron-up: "";
-  --icon--file-pdf: "";
-  --icon--home: "";
-  --icon--info: "";
-  --icon--link: "";
-  --icon--location: "";
-  --icon--menu: "";
-  --icon--pen: "";
-  --icon--radioball: "";
-  --icon--search: "";
-  --icon--text: "";
-  --icon--time: "";
-  --icon--twitter: "";
-  --icon--user: "";
-  --icon--warning: "";
+  --icon--chek--do-not-use: "";
+  --icon--chevron-down: "";
+  --icon--chevron-left: "";
+  --icon--chevron-right: "";
+  --icon--chevron-soft-right: "";
+  --icon--chevron-up: "";
+  --icon--close-thin: "";
+  --icon--close: "";
+  --icon--dash: "";
+  --icon--data: "";
+  --icon--document: "";
+  --icon--edit: "";
+  --icon--error: "";
+  --icon--external: "";
+  --icon--facebook: "";
+  --icon--fatchevron-up: "";
+  --icon--file-pdf: "";
+  --icon--home: "";
+  --icon--info: "";
+  --icon--link: "";
+  --icon--location: "";
+  --icon--menu: "";
+  --icon--pen: "";
+  --icon--radioball: "";
+  --icon--search: "";
+  --icon--text: "";
+  --icon--time: "";
+  --icon--twitter: "";
+  --icon--user: "";
+  --icon--warning: "";
 
   --ButtonTertiary--height: calc(var(--font-button-leading) + 4px);
   --ButtonTertiary--color: _inherit;
@@ -1233,7 +1248,7 @@ a {
   border-bottom: var(--link-underline);
   transition: var(--link-transition);
   transition-property: border-color, background-color, color, text-shadow,
-    box-shadow, outline;
+    box-shadow;
 }
 a:hover,
 a:active {

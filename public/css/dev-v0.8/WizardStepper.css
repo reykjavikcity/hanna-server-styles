@@ -5,7 +5,7 @@
   .WizardStepper__step {
     --WizardStepper--ballBackground: var(--color-faxafloi-75);
     --WizardStepper--ballColor: var(--color-suld-0);
-    --WizardStepper--ballIcon: var(--icon--checkmark);
+    --WizardStepper--ballIcon: "check";
     --WizardStepper--lineColor: var(--color-faxafloi-100);
 
     color: var(--color-faxafloi-100);
@@ -75,30 +75,32 @@
 
   .WizardStepper__step[aria-current="step"] {
     --WizardStepper--ballBackground: var(--color-faxafloi-100);
-    --WizardStepper--ballIcon: var(--icon--edit);
+    --WizardStepper--ballIcon: "edit";
     --WizardStepper--lineColor: var(--color-suld-75);
   }
 
   .WizardStepper__step--done::before,
   .WizardStepper__step[aria-current="step"]::before {
+    content: var(--WizardStepper--ballIcon);
+    content: var(--WizardStepper--ballIcon) / "";
+
     display: inline-block;
     text-indent: 0;
     text-align: center;
+    width: 1em;
     vertical-align: top;
-
-    font-family: icons, Esja, Helvetica, Arial, sans-serif;
-    speak: none;
+    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
-
-    -webkit-font-smoothing: antialiased;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: "liga";
+    letter-spacing: normal;
+    font-size: var(--icon-size--small);
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0;
-    content: "";
 
-    content: var(--WizardStepper--ballIcon);
-    font-size: 0.75rem;
+    width: 1.5rem;
   }
 
   button.WizardStepper__step:hover,
