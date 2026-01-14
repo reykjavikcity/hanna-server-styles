@@ -1,1 +1,36 @@
-import"../_chunks/initHannaNamespace-21359965.js";import{E as t}from"../_chunks/qj-0db0624e.js";import{d as i}from"../_chunks/Alert-125dae8a.js";import{g as l}from"../_chunks/i18n-45294c51.js";import{g as a}from"../_chunks/getLang-c224bf02.js";import"../_chunks/compat.module-6d0944a1.js";import"../_chunks/jsxRuntime.module-9d76abce.js";import"../_chunks/getSVGtext-03122a1f.js";import"../_chunks/_Button-aa4a4856.js";import"../_chunks/_Link-7f48f5da.js";import"../_chunks/env-dad6c8ea.js";import"../_chunks/_useMobileMenuToggling-404bacd2.js";window.Hanna.makeSprinkle({name:"Alert",selector:".Alert--closable",init:o=>{if(o.querySelector(".Alert__close"))return;const{closeLabel:r,closeLabelLong:e}=l({lang:a(o)},i);o.append(" ",t("button",{className:"Alert__close",type:"button",onClick:()=>{o.hidden=!0},"aria-label":e,title:e||r},r))}});
+import "../_chunks/initHannaNamespace-f4f98843.js";
+import { E } from "../_chunks/qj-1c8d4095.js";
+import { d as defaultAlertTexts } from "../_chunks/Alert-11447dea.js";
+import { g as getTexts } from "../_chunks/i18n-a7278b6d.js";
+import { g as getLang } from "../_chunks/getLang-8d69057b.js";
+import "../_chunks/compat.module-0843eda4.js";
+import "../_chunks/jsxRuntime.module-b4e3cc20.js";
+import "../_chunks/getSVGtext-b918ded2.js";
+import "../_chunks/_Button-bcc13c44.js";
+import "../_chunks/_Link-980948f0.js";
+import "../_chunks/env-e5e0e8b6.js";
+import "../_chunks/_useMobileMenuToggling-ec254f95.js";
+window.Hanna.makeSprinkle({
+  name: "Alert",
+  selector: ".Alert--closable",
+  init: (alertElm) => {
+    if (alertElm.querySelector(".Alert__close")) {
+      return;
+    }
+    const {
+      closeLabel,
+      closeLabelLong
+    } = getTexts({
+      lang: getLang(alertElm)
+    }, defaultAlertTexts);
+    alertElm.append(" ", E("button", {
+      className: "Alert__close",
+      type: "button",
+      onClick: () => {
+        alertElm.hidden = true;
+      },
+      "aria-label": closeLabelLong,
+      title: closeLabelLong || closeLabel
+    }, closeLabel));
+  }
+});

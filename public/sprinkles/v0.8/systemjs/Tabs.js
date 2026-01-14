@@ -1,1 +1,166 @@
-System.register(["../_chunks/initHannaNamespace-722ec071.js","../_chunks/compat.module-f329784f.js","../_chunks/qj-f4bfbfcd.js","../_chunks/Tabs-8f4c0354.js","../_chunks/_useMobileMenuToggling-5dfba98d.js","../_chunks/getSVGtext-ef8676a9.js","../_chunks/misc-c537bf75.js","../_chunks/i18n-6c3e4ded.js","../_chunks/addSeenEffect-00c08965.js","../_chunks/jsxRuntime.module-2cafdad3.js","../_chunks/getLang-45de5ff2.js"],function(L,N){"use strict";var u,g,h,p,v,A,_,k,x,b;return{setters:[null,n=>{u=n.C,g=n.h,h=n.F},n=>{p=n.f},n=>{v=n.T},n=>{A=n.d},null,n=>{_=n.n},null,n=>{k=n.a,x=n.b},n=>{b=n.o},null],execute:function(){const n=(t,a)=>{a?(t.hidden=!1,t.tabIndex=0):(t.hidden=!0,t.removeAttribute("tabindex"))},y=t=>t.hasAttribute("aria-label")||t.hasAttribute("aria-labelledby"),d=(...t)=>console.info("Tabs sprinkle: ",...t),S=t=>{const{tabPanelPairs:a,startingIdx:i,label:r,labelledBy:e,id:s}=t,[o,l]=g(i),{tabs:f,onSetActive:P}=h(()=>({tabs:a.map(c=>c.tab),onSetActive:c=>{const j=a[c];if(!j)return;const T=o!==void 0&&a[o];T&&n(T.panelElm,!1),n(j.panelElm,!0),l(c)}}),[o,a]);return b(v,{tabs:f,id:s,"aria-label":r,"aria-labelledby":e,role:"tablist",activeIdx:o,onSetActive:P,ssr:!1})},I=t=>{const a=Array.from(t.querySelectorAll(".Tabs__tab")),i=a.filter(e=>{e=e.cloneNode(!0);const s="href"in e;return s||d("Not an anchor element",e),s}).map(e=>{const s=e.getAttribute("aria-controls")||p.getFrag(e.href)||void 0,o=s&&document.getElementById(s);if(!o){d(s?"tab panel elm not found for":"ID pointer missing on",e);return}const l=e.querySelector(".Tabs__tab__badge")||void 0;l&&l.remove();const f=l&&l.textContent.trim().replace(/(?:^\(|\)$)/g,"");return{panelElm:o,isActive:e.dataset.active==="true",tab:{id:e.id||A(),"aria-controls":s,label:e.textContent,badge:f,longLabel:e.getAttribute("aria-label")||void 0}}}).filter(_);if(i.length!==a.length)return;const r=i.findIndex(e=>e.isActive);return{id:t.id||void 0,label:t.getAttribute("aria-label")||void 0,labelledBy:t.getAttribute("aria-labelledby")||void 0,tabPanelPairs:i.map(e=>({tab:e.tab,panelElm:e.panelElm})),startingIdx:r>=0?r:void 0}};window.Hanna.makeSprinkle({name:"Tabs",init:t=>{const a=I(t);if(a){a.tabPanelPairs.forEach(({tab:r,panelElm:e},s)=>{n(e,s===a.startingIdx),e.setAttribute("role","tabpanel"),e.classList.contains("TabPanel")&&(e.dataset.sprinkled="true"),y(e)||e.setAttribute("aria-label",r.longLabel||r.label)});const i=t;return t.getAttributeNames().forEach(r=>{t.removeAttribute(r)}),u.render(b(S,{...a,wrapperProps:k(t)}),i,()=>x()),i}},unmount:(t,a)=>{a&&u.unmountComponentAtNode(a)}})}}});
+System.register(["../_chunks/compat.module-919773fc.js", "../_chunks/initHannaNamespace-77b40001.js", "../_chunks/qj-0ce4c6bc.js", "../_chunks/Tabs-ebeffc47.js", "../_chunks/_useMobileMenuToggling-b1fb85e8.js", "../_chunks/getSVGtext-2c45db0c.js", "../_chunks/misc-20452715.js", "../_chunks/i18n-5b23de04.js", "../_chunks/addSeenEffect-212ed7c0.js", "../_chunks/jsxRuntime.module-791778ad.js", "../_chunks/getLang-61538edc.js"], function(exports, module) {
+  "use strict";
+  var Cn, t, h, F, frag, Tabs, domid, notNully, autoSeenEffectWrapperProps, autoSeenEffectsRefresh, o;
+  return {
+    setters: [(module2) => {
+      Cn = module2.C;
+      t = module2.t;
+      h = module2.h;
+      F = module2.F;
+    }, null, (module2) => {
+      frag = module2.f;
+    }, (module2) => {
+      Tabs = module2.T;
+    }, (module2) => {
+      domid = module2.d;
+    }, null, (module2) => {
+      notNully = module2.n;
+    }, null, (module2) => {
+      autoSeenEffectWrapperProps = module2.a;
+      autoSeenEffectsRefresh = module2.b;
+    }, (module2) => {
+      o = module2.o;
+    }, null],
+    execute: function() {
+      var _jsxFileName = "/Users/maro5239/work/hanna/modules/hanna-sprinkles/src/Tabs.tsx";
+      const setPanelDisplay = (panelElm, isActive) => {
+        if (isActive) {
+          panelElm.hidden = false;
+          panelElm.tabIndex = 0;
+        } else {
+          panelElm.hidden = true;
+          panelElm.removeAttribute("tabindex");
+        }
+      };
+      const isAriaLabelled = (elm) => elm.hasAttribute("aria-label") || elm.hasAttribute("aria-labelledby");
+      const log = (...args) => console.info("Tabs sprinkle: ", ...args);
+      const SprinkledTabs = (props) => {
+        const {
+          tabPanelPairs,
+          startingIdx,
+          label,
+          labelledBy,
+          id
+        } = props;
+        const [activeIdx, setActiveIdx] = t(h(startingIdx), "activeIdx");
+        const {
+          tabs,
+          onSetActive
+        } = t(F(() => ({
+          tabs: tabPanelPairs.map((d) => d.tab),
+          onSetActive: (newActiveIdx) => {
+            const newTab = tabPanelPairs[newActiveIdx];
+            if (!newTab) {
+              return;
+            }
+            const currentTab = activeIdx !== void 0 && tabPanelPairs[activeIdx];
+            currentTab && setPanelDisplay(currentTab.panelElm, false);
+            setPanelDisplay(newTab.panelElm, true);
+            setActiveIdx(newActiveIdx);
+          }
+        }), [activeIdx, tabPanelPairs]), "tabs");
+        return o(Tabs, {
+          tabs,
+          id,
+          "aria-label": label,
+          "aria-labelledby": labelledBy,
+          role: "tablist",
+          activeIdx,
+          onSetActive,
+          ssr: false
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 59,
+          columnNumber: 5
+        }, globalThis);
+      };
+      const getTabsData = (elm) => {
+        const tabElms = Array.from(elm.querySelectorAll(".Tabs__tab"));
+        const data = tabElms.filter((tabElm) => {
+          tabElm = tabElm.cloneNode(true);
+          const isLink = "href" in tabElm;
+          if (!isLink) {
+            log("Not an anchor element", tabElm);
+          }
+          return isLink;
+        }).map((tabElm) => {
+          const controlsId = tabElm.getAttribute("aria-controls") || frag.getFrag(tabElm.href) || void 0;
+          const panelElm = controlsId && document.getElementById(controlsId);
+          if (!panelElm) {
+            if (!controlsId) {
+              log("ID pointer missing on", tabElm);
+            } else {
+              log("tab panel elm not found for", tabElm);
+            }
+            return;
+          }
+          const badgeElm = tabElm.querySelector(".Tabs__tab__badge") || void 0;
+          badgeElm && badgeElm.remove();
+          const badge = badgeElm && badgeElm.textContent.trim().replace(/(?:^\(|\)$)/g, "");
+          return {
+            panelElm,
+            isActive: tabElm.dataset.active === "true",
+            tab: {
+              id: tabElm.id || domid(),
+              "aria-controls": controlsId,
+              label: tabElm.textContent,
+              badge,
+              longLabel: tabElm.getAttribute("aria-label") || void 0
+            }
+          };
+        }).filter(notNully);
+        if (data.length !== tabElms.length) {
+          return;
+        }
+        const activeIdx = data.findIndex((item) => item.isActive);
+        return {
+          id: elm.id || void 0,
+          label: elm.getAttribute("aria-label") || void 0,
+          labelledBy: elm.getAttribute("aria-labelledby") || void 0,
+          tabPanelPairs: data.map((item) => ({
+            tab: item.tab,
+            panelElm: item.panelElm
+          })),
+          startingIdx: activeIdx >= 0 ? activeIdx : void 0
+        };
+      };
+      window.Hanna.makeSprinkle({
+        name: "Tabs",
+        init: (elm) => {
+          const props = getTabsData(elm);
+          if (props) {
+            props.tabPanelPairs.forEach(({
+              tab,
+              panelElm
+            }, i) => {
+              setPanelDisplay(panelElm, i === props.startingIdx);
+              panelElm.setAttribute("role", "tabpanel");
+              if (panelElm.classList.contains("TabPanel")) {
+                panelElm.dataset.sprinkled = "true";
+              }
+              if (!isAriaLabelled(panelElm)) {
+                panelElm.setAttribute("aria-label", tab.longLabel || tab.label);
+              }
+            });
+            const root = elm;
+            elm.getAttributeNames().forEach((attrName) => {
+              elm.removeAttribute(attrName);
+            });
+            Cn.render(o(SprinkledTabs, {
+              ...props,
+              wrapperProps: autoSeenEffectWrapperProps(elm)
+            }, void 0, false, {
+              fileName: _jsxFileName,
+              lineNumber: 166,
+              columnNumber: 9
+            }, globalThis), root, () => autoSeenEffectsRefresh());
+            return root;
+          }
+        },
+        unmount: (elm, root) => {
+          root && Cn.unmountComponentAtNode(root);
+        }
+      });
+    }
+  };
+});

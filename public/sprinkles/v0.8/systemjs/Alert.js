@@ -1,1 +1,41 @@
-System.register(["../_chunks/initHannaNamespace-722ec071.js","../_chunks/qj-f4bfbfcd.js","../_chunks/Alert-f414d2c7.js","../_chunks/i18n-6c3e4ded.js","../_chunks/getLang-45de5ff2.js","../_chunks/compat.module-f329784f.js","../_chunks/jsxRuntime.module-2cafdad3.js","../_chunks/getSVGtext-ef8676a9.js","../_chunks/_Button-4ce1d666.js","../_chunks/_Link-7fe03f09.js","../_chunks/env-60bbcb5a.js","../_chunks/_useMobileMenuToggling-5dfba98d.js"],function(o,a){"use strict";var n,s,t,l;return{setters:[null,e=>{n=e.E},e=>{s=e.d},e=>{t=e.g},e=>{l=e.g},null,null,null,null,null,null,null],execute:function(){window.Hanna.makeSprinkle({name:"Alert",selector:".Alert--closable",init:e=>{if(e.querySelector(".Alert__close"))return;const{closeLabel:u,closeLabelLong:c}=t({lang:l(e)},s);e.append(" ",n("button",{className:"Alert__close",type:"button",onClick:()=>{e.hidden=!0},"aria-label":c,title:c||u},u))}})}}});
+System.register(["../_chunks/initHannaNamespace-77b40001.js", "../_chunks/qj-0ce4c6bc.js", "../_chunks/Alert-349b2825.js", "../_chunks/i18n-5b23de04.js", "../_chunks/getLang-61538edc.js", "../_chunks/compat.module-919773fc.js", "../_chunks/jsxRuntime.module-791778ad.js", "../_chunks/getSVGtext-2c45db0c.js", "../_chunks/_Button-14554c59.js", "../_chunks/_Link-8229a97c.js", "../_chunks/env-c53cf972.js", "../_chunks/_useMobileMenuToggling-b1fb85e8.js"], function(exports, module) {
+  "use strict";
+  var E, defaultAlertTexts, getTexts, getLang;
+  return {
+    setters: [null, (module2) => {
+      E = module2.E;
+    }, (module2) => {
+      defaultAlertTexts = module2.d;
+    }, (module2) => {
+      getTexts = module2.g;
+    }, (module2) => {
+      getLang = module2.g;
+    }, null, null, null, null, null, null, null],
+    execute: function() {
+      window.Hanna.makeSprinkle({
+        name: "Alert",
+        selector: ".Alert--closable",
+        init: (alertElm) => {
+          if (alertElm.querySelector(".Alert__close")) {
+            return;
+          }
+          const {
+            closeLabel,
+            closeLabelLong
+          } = getTexts({
+            lang: getLang(alertElm)
+          }, defaultAlertTexts);
+          alertElm.append(" ", E("button", {
+            className: "Alert__close",
+            type: "button",
+            onClick: () => {
+              alertElm.hidden = true;
+            },
+            "aria-label": closeLabelLong,
+            title: closeLabelLong || closeLabel
+          }, closeLabel));
+        }
+      });
+    }
+  };
+});

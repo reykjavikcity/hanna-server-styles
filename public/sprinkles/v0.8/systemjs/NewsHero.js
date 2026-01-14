@@ -1,1 +1,22 @@
-System.register(["./Bling.js","./ShareButtons.js","../_chunks/initHannaNamespace-722ec071.js","../_chunks/qj-f4bfbfcd.js","../_chunks/i18n-6c3e4ded.js","../_chunks/getLang-45de5ff2.js","../_chunks/getSVGtext-ef8676a9.js","../_chunks/assets-cefd5009.js"],function(t,u){"use strict";return{setters:[null,null,null,null,null,null,null,null],execute:function(){const{makeSprinkle:e,sprinkles:s}=window.Hanna,n=()=>{s.Bling(),s.ShareButtons()};e({name:"NewsHero",init:n,refresh:n,unmount:n})}}});
+System.register(["./Bling.js", "./ShareButtons.js", "../_chunks/initHannaNamespace-77b40001.js", "../_chunks/qj-0ce4c6bc.js", "../_chunks/i18n-5b23de04.js", "../_chunks/getLang-61538edc.js", "../_chunks/getSVGtext-2c45db0c.js", "../_chunks/assets-7c5ecab5.js", "../_chunks/ObjectHelpers-a9c65074.js"], function(exports, module) {
+  "use strict";
+  return {
+    setters: [null, null, null, null, null, null, null, null, null],
+    execute: function() {
+      const {
+        makeSprinkle,
+        sprinkles
+      } = window.Hanna;
+      const alias = () => {
+        sprinkles.Bling();
+        sprinkles.ShareButtons();
+      };
+      makeSprinkle({
+        name: "NewsHero",
+        init: alias,
+        refresh: alias,
+        unmount: alias
+      });
+    }
+  };
+});

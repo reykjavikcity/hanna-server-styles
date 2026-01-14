@@ -1,9 +1,328 @@
-import"../_chunks/initHannaNamespace-21359965.js";import{h as j,_ as D,F,p as q,C as $}from"../_chunks/compat.module-6d0944a1.js";import{b as O,q as x,a as G}from"../_chunks/qj-0db0624e.js";import{o as n,u as I,m as z}from"../_chunks/jsxRuntime.module-9d76abce.js";import"../_chunks/getSVGtext-03122a1f.js";import{g as J}from"../_chunks/i18n-45294c51.js";import{L as K}from"../_chunks/_Link-7f48f5da.js";import{u as M}from"../_chunks/_useMobileMenuToggling-404bacd2.js";import{n as Q}from"../_chunks/misc-29f84158.js";import{g as U}from"../_chunks/getLang-c224bf02.js";const V=e=>e&&e.trim().replace(/(?:\n\s*)+/g,`
-
-`).split(/\n/).map((l,r)=>l||n("br",{},r)),W={is:{openBtn:"Hafa samband",closeBtn:"Loka",closeBtnLong:"Loka valmynd"},en:{openBtn:"Contact us",closeBtn:"Close",closeBtnLong:"Close bubble"},pl:{openBtn:"Skontaktuj si\u0119 z nami",closeBtn:"Zamkn\u0105\u0107",closeBtnLong:"Zamkn\u0105\u0107 p\u0119cherzyk"}},X={suggestions:1,phone:1,faq:1,livechat:1,other:0},P=e=>e&&X[e]?e:void 0,Y=e=>{const{title:l,links:r,onToggle:s,alwaysShow:h,wrapperProps:f={}}=e,p=J(e,W),v=e.openBtnLabel||p.openBtn,E=e.openBtnLabel?void 0:p.openBtnLong,a=e.open==null,[B,_]=j(!1),c=a?B:e.open,i=I(e.ssr),C=M(),y=D(null),g=f.ref||y,{openBubble:T,closeBubble:u}=F(()=>({openBubble:()=>{a&&_(!0),s&&s(!0)},closeBubble:o=>{a&&_(!1),s&&s(!1),o!==!1&&O.focusElm(g.current)}}),[a,s]);if(q(()=>{const o=g.current;if(!o)return;if(h){o.dataset.show="true";return}let m=0;const t=()=>{m||(m=requestAnimationFrame(()=>{const{scrollTop:b,scrollHeight:d,clientHeight:N}=document.documentElement,L=d-N,k=1,w=b>k*130&&L-b>k*200;o.dataset.show=String(w),!w&&u(!1),m=0}))};return t(),document.addEventListener("scroll",t),document.documentElement.addEventListener("scroll",t),()=>{document.removeEventListener("scroll",t),document.documentElement.removeEventListener("scroll",t)}},[i,h,u]),q(()=>{const o=b=>b.key==="Escape"&&u(),m=b=>{var d;c&&!((d=g.current)!=null&&d.contains(b.target))&&u(!1)};document.addEventListener("keydown",o),document.addEventListener("click",m,!0);const t=document.documentElement.dataset;return c?t.contactBubble="true":delete t.contactBubble,()=>{delete t.contactBubble,document.removeEventListener("keydown",o),document.removeEventListener("click",m,!0)}},[c,u]),r.length===0)return null;const S=n("div",{...e.wrapperProps,className:z("ContactBubble",null,f.className),id:i&&C,hidden:i&&!c,"data-label-openbtn":e.openBtnLabel,"data-always-show":h||void 0,"data-sprinkled":i,children:[n("h2",{className:"ContactBubble__title",children:l||v}),n("ul",{className:"ContactBubble__list",children:r.map((o,m)=>{const{href:t,label:b,extraLabel:d,target:N,onClick:L}=o,k=P(o.icon),w=z("ContactBubble__item",k&&`type--${k}`),A=Z=>{L&&L()!==!0&&Z.preventDefault(),u(!1)},H=[" ",b,`
-`,d&&n("small",{children:V(d)},"\u{1F921}"),`
-`];return n("li",{className:w,children:t&&t!=="#"?n(K,{className:"ContactBubble__link",href:t,onClick:A,target:N,children:H}):n("button",{className:"ContactBubble__link",onClick:A,type:"button",children:H})},m)})}),`
-
-`,i&&n("button",{className:"ContactBubble__closebtn","aria-controls":C,"aria-label":p.closeBtnLong,onClick:()=>u(),type:"button",children:p.closeBtn})]});return i?n("div",{className:"ContactBubble__wrapper",ref:g,children:[n("button",{className:"ContactBubble__openbtn","aria-controls":C,"aria-expanded":c,"aria-label":E,onClick:c?()=>u():T,type:"button",children:v}),`
-
-`,S]}):S},R=/(?:^| )ContactBubble__item--type--(.+?)(?: |$)/,ee=e=>{var l;const r=e.dataset.alwaysShow==="true",s=e.dataset.labelOpenbtn,h=U(e),f=((l=x(".ContactBubble__title",e))==null?void 0:l.textContent)||void 0,p=G(".ContactBubble__item",e).map((v,E)=>{const a=x(".ContactBubble__link",v);if(!a)return;const B=x("small",a);B?.remove();const _=a.textContent||`Link ${E+1}`,c=B?.textContent||void 0,i=a.getAttribute("href")||"",C=a.target||void 0,y=(v.className.match(R)||[])[1];return{icon:P(y),extraLabel:c,href:i,label:_,target:C}}).filter(Q);return{title:f,links:p,alwaysShow:r,openBtnLabel:s,lang:h}};window.Hanna.makeSprinkle({name:"ContactBubble",init:e=>{const l=ee(e),r=e;return e.getAttributeNames().forEach(s=>{e.removeAttribute(s)}),$.render(n(Y,{...l,ssr:!1}),r),r},unmount:(e,l)=>{$.unmountComponentAtNode(l)}});
+import "../_chunks/initHannaNamespace-f4f98843.js";
+import { t, h, _, F, p, C as Cn } from "../_chunks/compat.module-0843eda4.js";
+import { b as focusElm, q, a as qq } from "../_chunks/qj-1c8d4095.js";
+import { o, u as useIsBrowserSide, m as modifiedClass } from "../_chunks/jsxRuntime.module-b4e3cc20.js";
+import "../_chunks/getSVGtext-b918ded2.js";
+import { g as getTexts } from "../_chunks/i18n-a7278b6d.js";
+import { L as Link } from "../_chunks/_Link-980948f0.js";
+import { u as useDomid } from "../_chunks/_useMobileMenuToggling-ec254f95.js";
+import { n as notNully } from "../_chunks/misc-d1570401.js";
+import { g as getLang } from "../_chunks/getLang-8d69057b.js";
+var _jsxFileName$2 = "/Users/maro5239/work/hanna/modules/hanna-react/src/_abstract/breakOnNL.tsx";
+const breakOnNL = (text) => text && text.trim().replace(/(?:\n\s*)+/g, "\n\n").split(/\n/).map((bit, i) => bit || o("br", {}, i, false, {
+  fileName: _jsxFileName$2,
+  lineNumber: 9,
+  columnNumber: 29
+}, void 0));
+var _jsxFileName$1 = "/Users/maro5239/work/hanna/modules/hanna-react/src/ContactBubble.tsx";
+const defaultTexts = {
+  is: {
+    openBtn: "Hafa samband",
+    closeBtn: "Loka",
+    closeBtnLong: "Loka valmynd"
+  },
+  en: {
+    openBtn: "Contact us",
+    closeBtn: "Close",
+    closeBtnLong: "Close bubble"
+  },
+  pl: {
+    openBtn: "Skontaktuj się z nami",
+    closeBtn: "Zamknąć",
+    closeBtnLong: "Zamknąć pęcherzyk"
+  }
+};
+const icons = {
+  suggestions: 1,
+  phone: 1,
+  faq: 1,
+  livechat: 1,
+  other: 0
+};
+const ensureIcon = (maybeIcon) => maybeIcon && icons[maybeIcon] ? maybeIcon : void 0;
+const ContactBubble = (props) => {
+  const {
+    title,
+    links,
+    onToggle,
+    alwaysShow,
+    wrapperProps = {}
+  } = props;
+  const txt = getTexts(props, defaultTexts);
+  const openLabel = props.openBtnLabel || txt.openBtn;
+  const openLabelLong = !props.openBtnLabel ? txt.openBtnLong : void 0;
+  const useLocalState = props.open == null;
+  const [localOpen, setLocalOpen] = t(h(false), "localOpen");
+  const open = useLocalState ? localOpen : props.open;
+  const isBrowser = useIsBrowserSide(props.ssr);
+  const domid = useDomid();
+  const _wrapperRef = t(_(null), "_wrapperRef");
+  const wrapperRef = wrapperProps.ref || _wrapperRef;
+  const {
+    openBubble,
+    closeBubble
+  } = t(F(
+    () => ({
+      openBubble: () => {
+        useLocalState && setLocalOpen(true);
+        onToggle && onToggle(true);
+      },
+      closeBubble: (setFocus) => {
+        useLocalState && setLocalOpen(false);
+        onToggle && onToggle(false);
+        setFocus !== false && focusElm.focusElm(wrapperRef.current);
+      }
+    }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [useLocalState, onToggle]
+  ), "openBubble");
+  p(
+    () => {
+      const wrapperElm = wrapperRef.current;
+      if (!wrapperElm) {
+        return;
+      }
+      if (alwaysShow) {
+        wrapperElm.dataset.show = "true";
+        return;
+      }
+      let pending = 0;
+      const checkScroll = () => {
+        if (!pending) {
+          pending = requestAnimationFrame(() => {
+            const {
+              scrollTop,
+              scrollHeight,
+              clientHeight
+            } = document.documentElement;
+            const scrollLength = scrollHeight - clientHeight;
+            const f = 1;
+            const show = scrollTop > f * 130 && // minimum distance from the top
+            scrollLength - scrollTop > f * 200;
+            wrapperElm.dataset.show = String(show);
+            !show && closeBubble(false);
+            pending = 0;
+          });
+        }
+      };
+      checkScroll();
+      document.addEventListener("scroll", checkScroll);
+      document.documentElement.addEventListener("scroll", checkScroll);
+      return () => {
+        document.removeEventListener("scroll", checkScroll);
+        document.documentElement.removeEventListener("scroll", checkScroll);
+      };
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [
+      isBrowser,
+      alwaysShow,
+      closeBubble
+      /* , wrapperRef */
+    ]
+  );
+  p(
+    () => {
+      const escHandler = (e) => e.key === "Escape" && closeBubble();
+      const outsideClickHandler = (e) => {
+        var _a;
+        if (open && !((_a = wrapperRef.current) == null ? void 0 : _a.contains(e.target))) {
+          closeBubble(false);
+        }
+      };
+      document.addEventListener("keydown", escHandler);
+      document.addEventListener("click", outsideClickHandler, true);
+      const htmlDataset = document.documentElement.dataset;
+      if (open) {
+        htmlDataset.contactBubble = "true";
+      } else {
+        delete htmlDataset.contactBubble;
+      }
+      return () => {
+        delete htmlDataset.contactBubble;
+        document.removeEventListener("keydown", escHandler);
+        document.removeEventListener("click", outsideClickHandler, true);
+      };
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [
+      open,
+      closeBubble
+      /* , wrapperRef */
+    ]
+  );
+  if (links.length === 0) {
+    return null;
+  }
+  const menu = o("div", {
+    ...props.wrapperProps,
+    className: modifiedClass("ContactBubble", null, wrapperProps.className),
+    id: isBrowser && domid,
+    hidden: isBrowser && !open,
+    "data-label-openbtn": props.openBtnLabel,
+    "data-always-show": alwaysShow || void 0,
+    "data-sprinkled": isBrowser,
+    children: [o("h2", {
+      className: "ContactBubble__title",
+      children: title || openLabel
+    }, void 0, false, {
+      fileName: _jsxFileName$1,
+      lineNumber: 232,
+      columnNumber: 7
+    }, void 0), o("ul", {
+      className: "ContactBubble__list",
+      children: links.map((linkInfo, i) => {
+        const {
+          href,
+          label,
+          extraLabel,
+          target,
+          onClick
+        } = linkInfo;
+        const icon = ensureIcon(linkInfo.icon);
+        const itemClass = modifiedClass("ContactBubble__item", icon && `type--${icon}`);
+        const onClickHandler = (e) => {
+          if (onClick) {
+            const doPreventDefault = onClick() !== true;
+            if (doPreventDefault) {
+              e.preventDefault();
+            }
+          }
+          closeBubble(false);
+        };
+        const content = [" ", label, "\n", extraLabel && o("small", {
+          children: breakOnNL(extraLabel)
+        }, "🤡", false, {
+          fileName: _jsxFileName$1,
+          lineNumber: 252,
+          columnNumber: 27
+        }, void 0), "\n"];
+        return o("li", {
+          className: itemClass,
+          children: href && href !== "#" ? o(Link, {
+            className: "ContactBubble__link",
+            href,
+            onClick: onClickHandler,
+            target,
+            children: content
+          }, void 0, false, {
+            fileName: _jsxFileName$1,
+            lineNumber: 259,
+            columnNumber: 17
+          }, void 0) : o("button", {
+            className: "ContactBubble__link",
+            onClick: onClickHandler,
+            type: "button",
+            children: content
+          }, void 0, false, {
+            fileName: _jsxFileName$1,
+            lineNumber: 268,
+            columnNumber: 17
+          }, void 0)
+        }, i, false, {
+          fileName: _jsxFileName$1,
+          lineNumber: 257,
+          columnNumber: 13
+        }, void 0);
+      })
+    }, void 0, false, {
+      fileName: _jsxFileName$1,
+      lineNumber: 233,
+      columnNumber: 7
+    }, void 0), "\n\n", isBrowser && o("button", {
+      className: "ContactBubble__closebtn",
+      "aria-controls": domid,
+      "aria-label": txt.closeBtnLong,
+      onClick: () => closeBubble(),
+      type: "button",
+      children: txt.closeBtn
+    }, void 0, false, {
+      fileName: _jsxFileName$1,
+      lineNumber: 282,
+      columnNumber: 9
+    }, void 0)]
+  }, void 0, true, {
+    fileName: _jsxFileName$1,
+    lineNumber: 223,
+    columnNumber: 5
+  }, void 0);
+  return isBrowser ? o("div", {
+    className: "ContactBubble__wrapper",
+    ref: wrapperRef,
+    children: [o("button", {
+      className: "ContactBubble__openbtn",
+      "aria-controls": domid,
+      "aria-expanded": open,
+      "aria-label": openLabelLong,
+      onClick: open ? () => closeBubble() : openBubble,
+      type: "button",
+      children: openLabel
+    }, void 0, false, {
+      fileName: _jsxFileName$1,
+      lineNumber: 297,
+      columnNumber: 7
+    }, void 0), "\n\n", menu]
+  }, void 0, true, {
+    fileName: _jsxFileName$1,
+    lineNumber: 296,
+    columnNumber: 5
+  }, void 0) : menu;
+};
+var _jsxFileName = "/Users/maro5239/work/hanna/modules/hanna-sprinkles/src/ContactBubble.tsx";
+const itemTypeRe = /(?:^| )ContactBubble__item--type--(.+?)(?: |$)/;
+const getContactBubbleData = (elm) => {
+  var _a;
+  const alwaysShow = elm.dataset.alwaysShow === "true";
+  const openBtnLabel = elm.dataset.labelOpenbtn;
+  const lang = getLang(elm);
+  const title = ((_a = q(".ContactBubble__title", elm)) == null ? void 0 : _a.textContent) || void 0;
+  const links = qq(".ContactBubble__item", elm).map((itemElm, i) => {
+    const linkElm = q(".ContactBubble__link", itemElm);
+    if (!linkElm) {
+      return;
+    }
+    const smallElm = q("small", linkElm);
+    smallElm == null ? void 0 : smallElm.remove();
+    const label = linkElm.textContent || `Link ${i + 1}`;
+    const extraLabel = (smallElm == null ? void 0 : smallElm.textContent) || void 0;
+    const href = linkElm.getAttribute("href") || "";
+    const target = linkElm.target || void 0;
+    const maybeIcon = (itemElm.className.match(itemTypeRe) || [])[1];
+    return {
+      icon: ensureIcon(maybeIcon),
+      extraLabel,
+      href,
+      label,
+      target
+    };
+  }).filter(notNully);
+  return {
+    title,
+    links,
+    alwaysShow,
+    openBtnLabel,
+    lang
+  };
+};
+window.Hanna.makeSprinkle({
+  name: "ContactBubble",
+  init: (elm) => {
+    const props = getContactBubbleData(elm);
+    const root = elm;
+    elm.getAttributeNames().forEach((attrName) => {
+      elm.removeAttribute(attrName);
+    });
+    Cn.render(o(ContactBubble, {
+      ...props,
+      ssr: false
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 68,
+      columnNumber: 21
+    }, globalThis), root);
+    return root;
+  },
+  unmount: (elm, root) => {
+    Cn.unmountComponentAtNode(root);
+  }
+});

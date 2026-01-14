@@ -1,1 +1,634 @@
-import"../_chunks/initHannaNamespace-21359965.js";import{h as U,_ as F,T as X,p as V,F as Y,a as q,C as J}from"../_chunks/compat.module-6d0944a1.js";import{a as B,q as z}from"../_chunks/qj-0db0624e.js";import{o as r,u as ee,m as Z}from"../_chunks/jsxRuntime.module-9d76abce.js";import{f as ne}from"../_chunks/getSVGtext-03122a1f.js";import{g as te}from"../_chunks/i18n-45294c51.js";import{g as re}from"../_chunks/assets-7a061d68.js";import{L as ie}from"../_chunks/_Link-7f48f5da.js";import{B as j}from"../_chunks/_Button-aa4a4856.js";import{F as G}from"../_chunks/FocusTrap-166afe2e.js";import{u as ae}from"../_chunks/_useMobileMenuToggling-404bacd2.js";import{n as H}from"../_chunks/misc-29f84158.js";import"../_chunks/getLang-c224bf02.js";const le=(n,e)=>{n.preventDefault();const t=n.currentTarget.hash.slice(1),a=t&&document.getElementById(t);a&&ne(a,e)},K=n=>r(j,{bem:"ButtonPrimary",...n}),Q=n=>r(j,{bem:"ButtonSecondary",...n}),C=typeof document<"u"&&document.documentElement.classList,N={menuIsOpen:"menu-is-open",menuIsClosed:"menu-is-closed"},oe={is:{title:"A\xF0alvalmynd",homeLink:"Fors\xED\xF0a",openMenu:"Valmynd",openMenuLong:"Opna A\xF0alvalmynd",closeMenu:"Loka",closeMenuLong:"Loka A\xF0alvalmynd"},en:{title:"Main Menu",homeLink:"Home page",openMenu:"Menu",openMenuLong:"Open main menu",closeMenu:"Close",closeMenuLong:"Close main menu"},pl:{title:"Menu g\u0142\xF3wne",homeLink:"Strona g\u0142\xF3wna",openMenu:"Menu",openMenuLong:"Otw\xF3rz menu g\u0142\xF3wne",closeMenu:"Zamknij",closeMenuLong:"Zamknij menu g\u0142\xF3wne"}},se={alert:"info",globe:void 0,search:"search",user:"user"},ue=n=>{const{onItemClick:e,closeMenu:t,openMenu:a,isBrowser:M}=n,p=(s,i,u={})=>{const{key:l,Tag:c="li",button:g}=u;if(typeof i=="function"){const o=i;return r("li",{className:`${s}item`,children:r(o,{closeMenu:t,openMenu:a})},l)}const v=`${s}link`,{label:f,labelLong:T,href:b,target:L,lang:O,controlsId:h,onClick:k,descr:y,icon:$}=i,m=y&&r(q,{children:[" ",r("small",{className:`${v}__descr`,children:y})]}),P=g?Q:"button",I=g?Q:ie,S={className:v,"data-icon":$?se[$]:void 0,"arial-label":T,title:T,lang:O},w=g?{size:"small"}:void 0,x=M&&(k||e&&b==null);return r(c,{className:Z(`${s}item`,i.modifier),"aria-current":i.current||void 0,children:x?r(P,{...S,type:"button","aria-controls":h,onClick:()=>{const o=k&&k(i)===!1,d=e&&e(i)===!1;!(o||d)&&t()},...w,children:[f," ",m]}):b!=null?r(I,{...S,href:b,hrefLang:i.hrefLang,target:L,onClick:()=>{!(e&&e(i)===!1)&&t()},...w,children:[f," ",m]}):null},l)};return{renderList:(s,i,u={})=>!i||!i.length?null:r("ul",{className:`${s}items`,...u.listProps,children:i.map((l,c)=>p(s,l,{key:c,button:u.buttons}))}),renderItem:p}},me=n=>{const{homeLink:e="/",items:t,onItemClick:a,illustration:M,imageUrl:p,variant:s,wrapperProps:i={}}=n,u=ae(i.id),l=ee(n.ssr),[c,g]=U(!1),v=F(null),f=i.ref||v,T=X(o=>o.key==="Escape"&&L(),[]),b=()=>{C.add(N.menuIsOpen),C.remove(N.menuIsClosed),g(!0),document.addEventListener("keydown",T)},L=()=>{var o;C.remove(N.menuIsOpen),C.add(N.menuIsClosed),g(!1),y(h),(o=f.current)==null||o.scrollTo(0,0),document.removeEventListener("keydown",T)};V(()=>{if(l)return C.add(N.menuIsClosed),()=>{C.remove(N.menuIsClosed),L()}},[l]);const{mainItems:O,defaultActive:h}=Y(()=>{if(!t.main||!t.main.length)return{mainItems:void 0,defaultActive:-1};const o=t.main.map(_=>{var E;if(!("title"in _)||"current"in _)return _;const W=(E=_.subItems.find(D=>"current"in D&&!!D.current))==null?void 0:E.current;return{..._,current:W}});let d=o.findIndex(_=>"current"in _&&_.current);return d<0&&"subItems"in(o[0]||{})&&(d=0),{mainItems:o,defaultActive:d}},[t.main]),[k,y]=U(h),$=F(h);h!==$.current&&($.current=h,y(h));const m=te(n,oe),{renderItem:P,renderList:I}=ue({onItemClick:a,closeMenu:L,openMenu:b,isBrowser:l}),S={...typeof e=="string"?{href:e,label:m.homeLink}:e,modifier:"home"},w=p||M&&re(M),x=`${u}-menu`;return r("nav",{...n.wrapperProps,className:Z("MainMenu2",[l&&(c?"open":"closed"),s&&s!=="default"?`variant--${s}`:void 0],i.className),style:w?{...i.style,"--menu-image":`url(${w})`}:i.style,ref:f,"aria-label":m.title,"data-sprinkled":l,id:x,children:[c&&r(G,{atTop:!0}),r("div",{className:"MainMenu2__content",children:[r("h2",{className:"MainMenu2__title",children:m.title}),l?r(K,{className:"MainMenu2__toggler",size:"small",type:"button","aria-pressed":c,"aria-controls":x,...c?{onClick:L,"aria-label":m.closeMenuLong,title:m.closeMenuLong,children:m.closeMenu}:{onClick:b,"aria-label":m.openMenuLong,title:m.openMenuLong,children:m.openMenu}}):r(K,{className:"MainMenu2__toggler",size:"small",href:`#${x}`,onClick:le,"aria-hidden":"true",children:m.title}),O&&r("div",{className:Z("MainMenu2__main",k<0&&"noneActive"),children:[P("MainMenu2__main__",S,{Tag:"div"}),O.map((o,d)=>{if("title"in o){const _=`${u}-submenu-${d}`,E=d===k;return r(q,{children:[r("div",{className:"MainMenu2__main__item","aria-current":o.current||void 0,children:l?r("button",{className:"MainMenu2__main__link",type:"button",onClick:()=>y(d),"aria-controls":_,"aria-pressed":E,children:o.title}):r("strong",{className:"MainMenu2__main__link",children:o.title})}),I("MainMenu2__main__sub__",o.subItems,l&&{listProps:{id:_,hidden:!E}})]},d)}return P("MainMenu2__main__",o,{key:d,Tag:"div"})})]}),I("MainMenu2__hot__",t.hot,{buttons:!0}),I("MainMenu2__extra__",t.extra,{buttons:!0}),t.related&&t.related.length>0&&r("div",{className:"MainMenu2__related",children:[t.relatedTitle&&r("h3",{className:"MainMenu2__related__title",children:t.relatedTitle}),I("MainMenu2__related__",t.related)]})]}),c&&r(G,{})]})},ce={default:void 0,light:"light"},de=n=>{try{const e=JSON.parse(n.dataset.propsTexts||"{}");if(typeof e.title=="string"&&typeof e.openMenu=="string"&&typeof e.closeMenu=="string")return e.openMenuLong=e.openMenuLong||e.openMenu,e.closeMenuLong=e.closeMenuLong||e.closeMenu,e.homeLink=e.homeLink||"",e}catch{}},_e=({html:n})=>{const e=F(null);return V(()=>{e.current&&(e.current.outerHTML=e.current.innerHTML)},[]),r("span",{ref:e,dangerouslySetInnerHTML:{__html:n}})},R=n=>{const e=n.getAttribute("aria-current");return e==="true"||e==="page"},A=n=>{var e;if(!n)return;const t=z("a[href]",n);if(!t)return;const a=z(".MainMenu2__main__sub__link__descr",n);a?.remove();const M=a?.textContent.trim(),p=t.getElementsByTagName("*").length===0?t.textContent.trim():r(_e,{html:t.innerHTML}),s=t.getAttribute("href"),i=t.getAttribute("target")||void 0,u=t.getAttribute("lang")||void 0,l=t.getAttribute("hreflang")||void 0,c=t.getAttribute("aria-label")||t.title||void 0,g=t.dataset.icon,v=(e=n.className.match(/[a-zA-Z0-9]__item--(.+)(?: |$)/))==null?void 0:e[1],f=R(n);return{label:p,labelLong:c,href:s,target:i,lang:u,hrefLang:l,modifier:v,current:f,descr:M,icon:g}},Me=n=>{var e;const t={main:B(".MainMenu2__main__item:not(.MainMenu2__main__item--home)",n).map(u=>{const l=u.nextElementSibling;return l!=null&&l.classList.contains("MainMenu2__main__sub__items")?{title:u.textContent.trim(),current:R(u),subItems:B(".MainMenu2__main__sub__item",l).map(A).filter(H)}:A(u)}).filter(H),hot:B(".MainMenu2__hot__item",n).map(A).filter(H),extra:B(".MainMenu2__extra__item",n).map(A).filter(H),relatedTitle:(e=z(".MainMenu2__related__title",n))==null?void 0:e.textContent.trim(),related:B(".MainMenu2__related__item",n).map(A).filter(H)},a=A(z(".MainMenu2__main__item--home",n));a&&(delete a.modifier,delete a.controlsId,delete a.descr);const M=n.style.getPropertyValue("--menu-image").trim().replace(/^url\((.+)\)$/,"$1"),p=n.className.match(/(?:^|\s)MainMenu2--variant--([^\s]+)/)||[],s=ce[p[1]||""],i=de(n);return{items:t,homeLink:a,imageUrl:M,texts:i,variant:s}};window.Hanna.makeSprinkle({name:"MainMenu2",init:n=>{const e=Me(n),t=n;return n.getAttributeNames().forEach(a=>{n.removeAttribute(a)}),J.render(r(me,{...e,ssr:!1}),t),t},unmount:(n,e)=>{J.unmountComponentAtNode(e)}});
+import { t, h, _, T, p, F, a as _$1, C as Cn } from "../_chunks/compat.module-0843eda4.js";
+import "../_chunks/initHannaNamespace-f4f98843.js";
+import { a as qq, q } from "../_chunks/qj-1c8d4095.js";
+import { o, u as useIsBrowserSide, m as modifiedClass } from "../_chunks/jsxRuntime.module-b4e3cc20.js";
+import { f as focusElement } from "../_chunks/getSVGtext-b918ded2.js";
+import { g as getTexts } from "../_chunks/i18n-a7278b6d.js";
+import { g as getIllustrationUrl } from "../_chunks/assets-a74434cf.js";
+import { L as Link } from "../_chunks/_Link-980948f0.js";
+import { B as Button } from "../_chunks/_Button-bcc13c44.js";
+import { F as FocusTrap } from "../_chunks/FocusTrap-290cfe8d.js";
+import { u as useDomid } from "../_chunks/_useMobileMenuToggling-ec254f95.js";
+import { n as notNully } from "../_chunks/misc-d1570401.js";
+import { I as InjectHTML } from "../_chunks/InjectHTML-6c639fca.js";
+import "../_chunks/getLang-8d69057b.js";
+const handleAnchorLinkClick = (e, forwardToFirstFocusable) => {
+  e.preventDefault();
+  const targetId = e.currentTarget.hash.slice(1);
+  const targetElm = targetId && document.getElementById(targetId);
+  if (!targetElm) {
+    return;
+  }
+  focusElement(targetElm, forwardToFirstFocusable);
+};
+var _jsxFileName$3 = "/Users/maro5239/work/hanna/modules/hanna-react/src/ButtonPrimary.tsx";
+const ButtonPrimary = (props) => o(Button, {
+  bem: "ButtonPrimary",
+  ...props
+}, void 0, false, {
+  fileName: _jsxFileName$3,
+  lineNumber: 11,
+  columnNumber: 3
+}, void 0);
+var _jsxFileName$2 = "/Users/maro5239/work/hanna/modules/hanna-react/src/ButtonSecondary.tsx";
+const ButtonSecondary = (props) => o(Button, {
+  bem: "ButtonSecondary",
+  ...props
+}, void 0, false, {
+  fileName: _jsxFileName$2,
+  lineNumber: 12,
+  columnNumber: 6
+}, void 0);
+var _jsxFileName$1 = "/Users/maro5239/work/hanna/modules/hanna-react/src/MainMenu2.tsx";
+const htmlCl = (
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+  typeof document !== "undefined" && document.documentElement.classList
+);
+const globalClasses = {
+  // menuIsActive: '.menu-is-active',
+  menuIsOpen: "menu-is-open",
+  menuIsClosed: "menu-is-closed"
+};
+const defaultMainMenu2Texts = {
+  is: {
+    title: "Aðalvalmynd",
+    homeLink: "Forsíða",
+    openMenu: "Valmynd",
+    openMenuLong: "Opna Aðalvalmynd",
+    closeMenu: "Loka",
+    closeMenuLong: "Loka Aðalvalmynd"
+  },
+  en: {
+    title: "Main Menu",
+    homeLink: "Home page",
+    openMenu: "Menu",
+    openMenuLong: "Open main menu",
+    closeMenu: "Close",
+    closeMenuLong: "Close main menu"
+  },
+  pl: {
+    title: "Menu główne",
+    homeLink: "Strona główna",
+    openMenu: "Menu",
+    openMenuLong: "Otwórz menu główne",
+    closeMenu: "Zamknij",
+    closeMenuLong: "Zamknij menu główne"
+  }
+};
+const iconMap = {
+  alert: "info",
+  globe: void 0,
+  search: "search",
+  user: "user"
+  // NOTE: We're temporarily coerceing `IconName` to `ButtonIcon`
+  // TODO: Remove this once Hanna icons (and `ButtonIcons` sperifically)
+  // have been expanded better standardised.
+};
+const getRenderers = (props) => {
+  const {
+    onItemClick,
+    closeMenu,
+    openMenu,
+    isBrowser
+  } = props;
+  const renderItem = (classPrefix, item, opts = {}) => {
+    if (!item) {
+      return;
+    }
+    const {
+      key,
+      Tag = "li",
+      button
+    } = opts;
+    if (typeof item === "function") {
+      item = {
+        Content: item
+      };
+    }
+    const itemProps = {
+      key,
+      className: modifiedClass(`${classPrefix}item`, item.modifier),
+      "aria-current": item.current || void 0
+    };
+    if ("Content" in item && item.Content) {
+      return o(Tag, {
+        "data-customitem": "",
+        ...itemProps,
+        children: o(item.Content, {
+          closeMenu,
+          openMenu
+        }, void 0, false, {
+          fileName: _jsxFileName$1,
+          lineNumber: 228,
+          columnNumber: 11
+        }, void 0)
+      }, void 0, false, {
+        fileName: _jsxFileName$1,
+        lineNumber: 227,
+        columnNumber: 9
+      }, void 0);
+    }
+    const linkClassName = `${classPrefix}link`;
+    const {
+      label,
+      labelLong,
+      href,
+      target,
+      lang,
+      controlsId,
+      onClick,
+      descr,
+      icon
+    } = item;
+    const _item = item;
+    const itemDescr = descr && o(_$1, {
+      children: [" ", o("small", {
+        className: `${linkClassName}__descr`,
+        children: descr
+      }, void 0, false, {
+        fileName: _jsxFileName$1,
+        lineNumber: 243,
+        columnNumber: 9
+      }, void 0)]
+    }, void 0);
+    const ButtonTag = button ? ButtonSecondary : "button";
+    const LinkTag = button ? ButtonSecondary : Link;
+    const commonProps = {
+      className: linkClassName,
+      "data-icon": icon ? iconMap[icon] : void 0,
+      "arial-label": labelLong,
+      title: labelLong,
+      // For auto-tooltips on desktop
+      lang
+    };
+    const buttonCompProps = button ? {
+      size: "small"
+    } : void 0;
+    const doRenderButton = isBrowser && (onClick || onItemClick && href == null);
+    return o(Tag, {
+      className: modifiedClass(`${classPrefix}item`, item.modifier),
+      "aria-current": item.current || void 0,
+      children: doRenderButton ? o(ButtonTag, {
+        ...commonProps,
+        type: "button",
+        "aria-controls": controlsId,
+        onClick: () => {
+          const keepOpen1 = onClick && onClick(_item) === false;
+          const keepOpen2 = onItemClick && onItemClick(_item) === false;
+          !(keepOpen1 || keepOpen2) && closeMenu();
+        },
+        ...buttonCompProps,
+        children: [label, " ", itemDescr]
+      }, void 0, true, {
+        fileName: _jsxFileName$1,
+        lineNumber: 272,
+        columnNumber: 11
+      }, void 0) : href != null ? o(LinkTag, {
+        ...commonProps,
+        href,
+        hrefLang: item.hrefLang,
+        target,
+        onClick: () => {
+          const keepOpen = onItemClick && onItemClick(_item) === false;
+          !keepOpen && closeMenu();
+        },
+        ...buttonCompProps,
+        children: [label, " ", itemDescr]
+      }, void 0, true, {
+        fileName: _jsxFileName$1,
+        lineNumber: 286,
+        columnNumber: 11
+      }, void 0) : null
+    }, key, false, {
+      fileName: _jsxFileName$1,
+      lineNumber: 266,
+      columnNumber: 7
+    }, void 0);
+  };
+  const renderList = (classSuffix, items, opts = {}) => {
+    if (!items || !items.length) {
+      return null;
+    }
+    return o("ul", {
+      className: `${classSuffix}items`,
+      ...opts.listProps,
+      children: items.map((listItem, i) => listItem && renderItem(classSuffix, listItem, {
+        key: i,
+        button: opts.buttons
+      }))
+    }, void 0, false, {
+      fileName: _jsxFileName$1,
+      lineNumber: 313,
+      columnNumber: 7
+    }, void 0);
+  };
+  return {
+    renderList,
+    renderItem
+  };
+};
+const MainMenu2 = (props) => {
+  var _a;
+  const {
+    homeLink = "/",
+    items,
+    onItemClick,
+    illustration,
+    imageUrl,
+    variant,
+    wrapperProps = {}
+  } = props;
+  const domid = useDomid(wrapperProps.id);
+  const isBrowser = useIsBrowserSide(props.ssr);
+  const [isMenuOpen, setIsMenuOpen] = t(h(false), "isMenuOpen");
+  const _wrapperRef = t(_(null), "_wrapperRef");
+  const wrapperRef = wrapperProps.ref || _wrapperRef;
+  const escHandler = T(
+    // eslint-disable-next-line @typescript-eslint/no-use-before-define
+    (e) => e.key === "Escape" && closeMenu(),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
+  const openMenu = () => {
+    htmlCl.add(globalClasses.menuIsOpen);
+    htmlCl.remove(globalClasses.menuIsClosed);
+    setIsMenuOpen(true);
+    document.addEventListener("keydown", escHandler);
+  };
+  const closeMenu = () => {
+    var _a2;
+    htmlCl.remove(globalClasses.menuIsOpen);
+    htmlCl.add(globalClasses.menuIsClosed);
+    setIsMenuOpen(false);
+    setActiveSubmenu(defaultActive);
+    (_a2 = wrapperRef.current) == null ? void 0 : _a2.scrollTo(0, 0);
+    document.removeEventListener("keydown", escHandler);
+  };
+  p(() => {
+    if (!isBrowser) {
+      return;
+    }
+    htmlCl.add(globalClasses.menuIsClosed);
+    return () => {
+      htmlCl.remove(globalClasses.menuIsClosed);
+      closeMenu();
+    };
+  }, [isBrowser]);
+  const {
+    mainItems,
+    defaultActive
+  } = t(F(() => {
+    if (!items.main || !items.main.length) {
+      return {
+        mainItems: void 0,
+        defaultActive: -1
+      };
+    }
+    const mainItems2 = items.main.map((item) => {
+      var _a2;
+      if (!("title" in item) || "current" in item) {
+        return item;
+      }
+      const current = (_a2 = item.subItems.find((subItem) => !!(subItem && "current" in subItem && !!subItem.current))) == null ? void 0 : _a2.current;
+      return {
+        ...item,
+        current
+      };
+    });
+    let defaultActive2 = mainItems2.findIndex((item) => "current" in item && item.current);
+    if (defaultActive2 < 0 && "subItems" in (mainItems2[0] || {})) {
+      defaultActive2 = 0;
+    }
+    return {
+      mainItems: mainItems2,
+      defaultActive: defaultActive2
+    };
+  }, [items.main]), "mainItems");
+  const [activeSubmenu, setActiveSubmenu] = t(h(defaultActive), "activeSubmenu");
+  const lastDefaultActive = t(_(defaultActive), "lastDefaultActive");
+  if (defaultActive !== lastDefaultActive.current) {
+    lastDefaultActive.current = defaultActive;
+    setActiveSubmenu(defaultActive);
+  }
+  const txt = getTexts(props, defaultMainMenu2Texts);
+  const {
+    renderItem,
+    renderList
+  } = getRenderers({
+    onItemClick,
+    closeMenu,
+    openMenu,
+    isBrowser
+  });
+  const homeLinkItem = {
+    ...typeof homeLink === "string" ? {
+      href: homeLink,
+      label: txt.homeLink
+    } : homeLink,
+    modifier: "home"
+  };
+  const menuImageUrl = imageUrl || illustration && getIllustrationUrl(illustration);
+  const menuId = `${domid}-menu`;
+  return o("nav", {
+    ...props.wrapperProps,
+    className: modifiedClass("MainMenu2", [isBrowser && (isMenuOpen ? "open" : "closed"), variant && variant !== "default" ? `variant--${variant}` : void 0], wrapperProps.className),
+    style: menuImageUrl ? {
+      ...wrapperProps.style,
+      "--menu-image": `url(${menuImageUrl})`
+    } : wrapperProps.style,
+    ref: wrapperRef,
+    "aria-label": txt.title,
+    "data-sprinkled": isBrowser,
+    id: menuId,
+    children: [isMenuOpen && o(FocusTrap, {
+      atTop: true
+    }, void 0, false, {
+      fileName: _jsxFileName$1,
+      lineNumber: 512,
+      columnNumber: 22
+    }, void 0), o("div", {
+      className: "MainMenu2__content",
+      children: [o("h2", {
+        className: "MainMenu2__title",
+        children: txt.title
+      }, void 0, false, {
+        fileName: _jsxFileName$1,
+        lineNumber: 514,
+        columnNumber: 9
+      }, void 0), isBrowser ? o(ButtonPrimary, {
+        className: "MainMenu2__toggler",
+        size: "small",
+        type: "button",
+        "aria-pressed": isMenuOpen,
+        "aria-controls": menuId,
+        ...isMenuOpen ? {
+          onClick: closeMenu,
+          "aria-label": txt.closeMenuLong,
+          title: txt.closeMenuLong,
+          children: txt.closeMenu
+        } : {
+          onClick: openMenu,
+          "aria-label": txt.openMenuLong,
+          title: txt.openMenuLong,
+          children: txt.openMenu
+        }
+      }, void 0, false, {
+        fileName: _jsxFileName$1,
+        lineNumber: 516,
+        columnNumber: 11
+      }, void 0) : o(ButtonPrimary, {
+        className: "MainMenu2__toggler",
+        size: "small",
+        href: `#${menuId}`,
+        onClick: handleAnchorLinkClick,
+        "aria-hidden": "true",
+        children: txt.title
+      }, void 0, false, {
+        fileName: _jsxFileName$1,
+        lineNumber: 537,
+        columnNumber: 11
+      }, void 0), mainItems && o("div", {
+        className: modifiedClass("MainMenu2__main", activeSubmenu < 0 && "noneActive"),
+        children: [renderItem("MainMenu2__main__", homeLinkItem, {
+          Tag: "div"
+        }), mainItems.map((mainItem, i) => {
+          if ("title" in mainItem) {
+            const submenuId = `${domid}-submenu-${i}`;
+            const isActive = i === activeSubmenu;
+            return o(_$1, {
+              children: [o("div", {
+                className: "MainMenu2__main__item",
+                "aria-current": mainItem.current || void 0,
+                children: isBrowser ? o("button", {
+                  className: "MainMenu2__main__link",
+                  type: "button",
+                  onClick: () => setActiveSubmenu(i),
+                  "aria-controls": submenuId,
+                  "aria-pressed": isActive,
+                  children: mainItem.title
+                }, void 0, false, {
+                  fileName: _jsxFileName$1,
+                  lineNumber: 568,
+                  columnNumber: 25
+                }, void 0) : o("strong", {
+                  className: "MainMenu2__main__link",
+                  children: mainItem.title
+                }, void 0, false, {
+                  fileName: _jsxFileName$1,
+                  lineNumber: 578,
+                  columnNumber: 25
+                }, void 0)
+              }, void 0, false, {
+                fileName: _jsxFileName$1,
+                lineNumber: 563,
+                columnNumber: 21
+              }, void 0), renderList("MainMenu2__main__sub__", mainItem.subItems, isBrowser && {
+                listProps: {
+                  id: submenuId,
+                  hidden: !isActive
+                }
+              })]
+            }, i, true, {
+              fileName: _jsxFileName$1,
+              lineNumber: 562,
+              columnNumber: 19
+            }, void 0);
+          }
+          return renderItem("MainMenu2__main__", mainItem, {
+            key: i,
+            Tag: "div"
+          });
+        })]
+      }, void 0, true, {
+        fileName: _jsxFileName$1,
+        lineNumber: 549,
+        columnNumber: 11
+      }, void 0), renderList("MainMenu2__hot__", (_a = items.hot) == null ? void 0 : _a.map((i) => {
+        if (i && "redhot" in i) {
+          return {
+            ...i,
+            modifier: i.modifier ? [i.modifier, "redhot"] : "redhot"
+          };
+        }
+        return i;
+      }), {
+        buttons: true
+      }), renderList("MainMenu2__extra__", items.extra, {
+        buttons: true
+      }), items.related && items.related.length > 0 && o("div", {
+        className: "MainMenu2__related",
+        children: [items.relatedTitle && o("h3", {
+          className: "MainMenu2__related__title",
+          children: items.relatedTitle
+        }, void 0, false, {
+          fileName: _jsxFileName$1,
+          lineNumber: 619,
+          columnNumber: 15
+        }, void 0), renderList("MainMenu2__related__", items.related)]
+      }, void 0, true, {
+        fileName: _jsxFileName$1,
+        lineNumber: 617,
+        columnNumber: 11
+      }, void 0)]
+    }, void 0, true, {
+      fileName: _jsxFileName$1,
+      lineNumber: 513,
+      columnNumber: 7
+    }, void 0), isMenuOpen && o(FocusTrap, {}, void 0, false, {
+      fileName: _jsxFileName$1,
+      lineNumber: 625,
+      columnNumber: 22
+    }, void 0)]
+  }, void 0, true, {
+    fileName: _jsxFileName$1,
+    lineNumber: 489,
+    columnNumber: 5
+  }, void 0);
+};
+var _jsxFileName = "/Users/maro5239/work/hanna/modules/hanna-sprinkles/src/MainMenu2.tsx";
+const variants = {
+  default: void 0,
+  light: "light"
+};
+const parseTextDataAttr = (elm) => {
+  try {
+    const texts = JSON.parse(elm.dataset.propsTexts || "{}");
+    if (typeof texts.title === "string" && typeof texts.openMenu === "string" && typeof texts.closeMenu === "string") {
+      texts.openMenuLong = texts.openMenuLong || texts.openMenu;
+      texts.closeMenuLong = texts.closeMenuLong || texts.closeMenu;
+      texts.homeLink = texts.homeLink || "";
+      return texts;
+    }
+  } catch (error) {
+  }
+  return;
+};
+const parseItem = (itemElm) => {
+  var _a;
+  if (!itemElm) {
+    return;
+  }
+  const modifier = (_a = itemElm.className.match(/[a-zA-Z0-9]__item--(.+?)(?: |$)/g)) == null ? void 0 : _a.map((m) => m.slice(m.indexOf("--") + 2));
+  const current = itemElm.getAttribute("aria-current") === "true";
+  if (itemElm.hasAttribute("data-customitem")) {
+    const nodes = itemElm.childNodes;
+    nodes.forEach((node) => node.remove());
+    return {
+      modifier,
+      current: itemElm.getAttribute("aria-current") === "true",
+      Content: () => {
+        const ref = t(_(null), "ref");
+        p(() => {
+          const spanElm = ref.current;
+          if (!spanElm) {
+            return;
+          }
+          spanElm.parentNode.append(...nodes);
+          spanElm.remove();
+        }, []);
+        return o("span", {
+          ref
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 75,
+          columnNumber: 16
+        }, globalThis);
+      }
+    };
+  }
+  const linkElm = q("a[href]", itemElm);
+  if (!linkElm) {
+    return;
+  }
+  const descrElm = q(".MainMenu2__main__sub__link__descr", itemElm);
+  descrElm == null ? void 0 : descrElm.remove();
+  const descr = descrElm == null ? void 0 : descrElm.textContent.trim();
+  const isStringLabel = linkElm.getElementsByTagName("*").length === 0;
+  const label = isStringLabel ? linkElm.textContent.trim() : o(InjectHTML, {
+    html: linkElm.innerHTML
+  }, void 0, false, {
+    fileName: _jsxFileName,
+    lineNumber: 91,
+    columnNumber: 5
+  }, globalThis);
+  const href = linkElm.getAttribute("href");
+  const target = linkElm.getAttribute("target") || void 0;
+  const lang = linkElm.getAttribute("lang") || void 0;
+  const hrefLang = linkElm.getAttribute("hreflang") || void 0;
+  const labelLong = linkElm.getAttribute("aria-label") || linkElm.title || void 0;
+  const icon = linkElm.dataset.icon;
+  return {
+    label,
+    labelLong,
+    href,
+    target,
+    lang,
+    hrefLang,
+    modifier,
+    current,
+    descr,
+    icon
+  };
+};
+const getPropsFromSSRMainMenu2 = (elm) => {
+  var _a;
+  const items = {
+    main: qq(".MainMenu2__main__item:not(.MainMenu2__main__item--home)", elm).map((elm2) => {
+      const subItemsElm = elm2.nextElementSibling;
+      if (!(subItemsElm == null ? void 0 : subItemsElm.classList.contains("MainMenu2__main__sub__items"))) {
+        return parseItem(elm2);
+      }
+      return {
+        title: elm2.textContent.trim(),
+        current: elm2.getAttribute("aria-current") === "true",
+        subItems: qq(".MainMenu2__main__sub__item", subItemsElm).map(parseItem).filter(notNully)
+      };
+    }).filter(notNully),
+    hot: qq(".MainMenu2__hot__item", elm).map(parseItem).filter(notNully),
+    extra: qq(".MainMenu2__extra__item", elm).map(parseItem).filter(notNully),
+    relatedTitle: (_a = q(".MainMenu2__related__title", elm)) == null ? void 0 : _a.textContent.trim(),
+    related: qq(".MainMenu2__related__item", elm).map(parseItem).filter(notNully)
+  };
+  let homeLink = parseItem(q(".MainMenu2__main__item--home", elm));
+  if (typeof homeLink === "function" || homeLink && "Content" in homeLink) {
+    homeLink = void 0;
+  }
+  if (homeLink) {
+    delete homeLink.modifier;
+    delete homeLink.controlsId;
+    delete homeLink.descr;
+  }
+  const imageUrl = elm.style.getPropertyValue("--menu-image").trim().replace(/^url\((.+)\)$/, "$1");
+  const variantMatch = elm.className.match(/(?:^|\s)MainMenu2--variant--([^\s]+)/) || [];
+  const variant = variants[variantMatch[1] || ""];
+  const texts = parseTextDataAttr(elm);
+  return {
+    items,
+    homeLink,
+    imageUrl,
+    texts,
+    variant
+  };
+};
+window.Hanna.makeSprinkle({
+  name: "MainMenu2",
+  init: (elm) => {
+    const props = getPropsFromSSRMainMenu2(elm);
+    const root = elm;
+    elm.getAttributeNames().forEach((attrName) => {
+      elm.removeAttribute(attrName);
+    });
+    Cn.render(o(MainMenu2, {
+      ...props,
+      ssr: false
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 181,
+      columnNumber: 21
+    }, globalThis), root);
+    return root;
+  },
+  unmount: (elm, root) => {
+    Cn.unmountComponentAtNode(root);
+  }
+});

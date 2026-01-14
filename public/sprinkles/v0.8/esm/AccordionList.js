@@ -1,1 +1,43 @@
-import"../_chunks/initHannaNamespace-21359965.js";import{a as c,q as d,e as l,E as p}from"../_chunks/qj-0db0624e.js";import"../_chunks/i18n-45294c51.js";import"../_chunks/getLang-c224bf02.js";const r=t=>c(".AccordionList__item",t),s=t=>{const i=d(".AccordionList__title",t),a=d(".AccordionList__content",t);if(i&&a){let e=t.dataset.startOpen==="true";l(a),a.hidden=!e,t.dataset.sprinkled="true";const o=t.classList.contains("AccordionList__item--disabled"),n=p("button",{className:"AccordionList__button","aria-controls":a.id,"aria-expanded":e||void 0,disabled:o,onClick:()=>{e=!o&&!e,e?n.setAttribute("aria-expanded","true"):n.removeAttribute("aria-expanded"),a.hidden=!e}},i.childNodes);i.textContent="",i.append(n)}};window.Hanna.makeSprinkle({name:"AccordionList",init:t=>{r(t).forEach(s)},refresh:t=>{r(t).filter(i=>!i.dataset.sprinkled).forEach(s)}});
+import "../_chunks/initHannaNamespace-f4f98843.js";
+import { a as qq, q, e as aquireId, E } from "../_chunks/qj-1c8d4095.js";
+import "../_chunks/i18n-a7278b6d.js";
+import "../_chunks/getLang-8d69057b.js";
+const getItems = (elm) => qq(".AccordionList__item", elm);
+const initializeItem = (itemElm) => {
+  const titleElm = q(".AccordionList__title", itemElm);
+  const contentElm = q(".AccordionList__content", itemElm);
+  if (titleElm && contentElm) {
+    let open = itemElm.dataset.startOpen === "true";
+    aquireId(contentElm);
+    contentElm.hidden = !open;
+    itemElm.dataset.sprinkled = "true";
+    const disabled = itemElm.classList.contains("AccordionList__item--disabled");
+    const buttonElm = E("button", {
+      className: "AccordionList__button",
+      "aria-controls": contentElm.id,
+      "aria-expanded": open || void 0,
+      disabled,
+      onClick: () => {
+        open = !disabled && !open;
+        if (open) {
+          buttonElm.setAttribute("aria-expanded", "true");
+        } else {
+          buttonElm.removeAttribute("aria-expanded");
+        }
+        contentElm.hidden = !open;
+      }
+    }, titleElm.childNodes);
+    titleElm.textContent = "";
+    titleElm.append(buttonElm);
+  }
+};
+window.Hanna.makeSprinkle({
+  name: "AccordionList",
+  init: (elm) => {
+    getItems(elm).forEach(initializeItem);
+  },
+  refresh: (elm) => {
+    const newItems = getItems(elm).filter((elm2) => !elm2.dataset.sprinkled);
+    newItems.forEach(initializeItem);
+  }
+});

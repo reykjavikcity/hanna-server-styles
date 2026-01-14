@@ -1,1 +1,20 @@
-import"./Bling.js";import"../_chunks/initHannaNamespace-21359965.js";import"../_chunks/qj-0db0624e.js";import"../_chunks/i18n-45294c51.js";import"../_chunks/getLang-c224bf02.js";import"../_chunks/getSVGtext-03122a1f.js";import"../_chunks/assets-7a061d68.js";const{makeSprinkle:n,sprinkles:o}=window.Hanna,i=()=>{o.Bling()};n({name:"InfoHero",init:i,refresh:i,unmount:i});
+import "./Bling.js";
+import "../_chunks/initHannaNamespace-f4f98843.js";
+import "../_chunks/qj-1c8d4095.js";
+import "../_chunks/i18n-a7278b6d.js";
+import "../_chunks/getLang-8d69057b.js";
+import "../_chunks/getSVGtext-b918ded2.js";
+import "../_chunks/assets-a74434cf.js";
+const {
+  makeSprinkle,
+  sprinkles
+} = window.Hanna;
+const alias = () => {
+  sprinkles.Bling();
+};
+makeSprinkle({
+  name: "InfoHero",
+  init: alias,
+  refresh: alias,
+  unmount: alias
+});

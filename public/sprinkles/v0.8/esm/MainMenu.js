@@ -1,1 +1,309 @@
-import"../_chunks/initHannaNamespace-21359965.js";import{E as p,q as k,a as B,b as L}from"../_chunks/qj-0db0624e.js";import"../_chunks/compat.module-6d0944a1.js";import{f as T}from"../_chunks/getSVGtext-03122a1f.js";import{g as _}from"../_chunks/i18n-45294c51.js";import{g as C,d as y}from"../_chunks/_useMobileMenuToggling-404bacd2.js";import{g as A}from"../_chunks/getLang-c224bf02.js";const h={is:{togglerLabel:"Opna/loka A\xF0alvalmynd",closeMenuLabel:"Loka",closeMenuLabelLong:"Loka a\xF0alvalmynd"},en:{togglerLabel:"Toggle Main Menu",closeMenuLabel:"Close",closeMenuLabelLong:"Close main menu"},pl:{togglerLabel:"Otw\xF3rz/zamknij menu g\u0142\xF3wne",closeMenuLabel:"Zamknij",closeMenuLabelLong:"Zamknij menu g\u0142\xF3wne"}},H={is:{title:"A\xF0alvalmynd",homeLabel:"Fors\xED\xF0a",backToMenu:"Loka",backToMenuLong:"Til baka \xED valmynd"},en:{title:"Main Menu",homeLabel:"Home page",backToMenu:"Close",backToMenuLong:"Close and return to menu"},pl:{title:"Menu g\u0142\xF3wne",homeLabel:"Strona g\u0142\xF3wna",backToMenu:"Zamknij",backToMenuLong:"Zamknij i wr\xF3\u0107 do menu"}},g=C(),M={phone:1,phablet:1,tablet:1},u=document.documentElement.classList,j=(e,n)=>{e.tabIndex=-1;const l=e.id||y();e.id||(e.id=l);const a=_({lang:n},h),i=p("button",{className:"MobileMenuToggler",onClick:b=>{s&&(b.preventDefault(),t?r():d())},"aria-controls":l,"aria-pressed":"false",lang:n},a.togglerLabel),c=p("button",{className:"MobileMenuToggler__closebutton","aria-label":a.closeMenuLabelLong,onClick:()=>r(),lang:n},a.closeMenuLabel);let t=!1,s=!1;const o=()=>{s||(u.add("menu-is-active"),u.add("menu-is-closed"),e.before(i),e.append(c),s=!0)},m=()=>{s&&(t&&r(),u.remove("menu-is-closed"),u.remove("menu-is-active"),i.remove(),c.remove(),s=!1)},d=()=>{u.add("menu-is-open"),u.remove("menu-is-closed"),t=!0,i.setAttribute("aria-pressed",`${t}`),T(e)},r=()=>{u.add("menu-is-closed"),u.remove("menu-is-open"),t=!1,i.setAttribute("aria-pressed",`${t}`),T(i)},v=b=>{const w=M[b.is]&&!M[b.was||""],P=!M[b.is]&&M[b.was||""];w?o():P&&m()};return g.subscribe(v),()=>{g.unsubscribe(v),m()}};let f;const N=({panelElm:e,titleButton:n,menuButton:l},a)=>{const i=()=>{e.classList.remove("PrimaryPanel--active"),n&&n.removeAttribute("aria-pressed")};a?i():f=setTimeout(i,1e3),l&&l.removeAttribute("aria-pressed")},x=({panelElm:e,titleButton:n,menuButton:l})=>{clearTimeout(f),e.classList.add("PrimaryPanel--active"),n&&n.setAttribute("aria-pressed","true"),l&&l.setAttribute("aria-pressed","true")},W=({escHandler:e,clickHandler:n})=>{document.addEventListener("keydown",e),document.addEventListener("click",n,!0)},E=({escHandler:e,clickHandler:n})=>{document.removeEventListener("keydown",e),document.removeEventListener("click",n,!0)},Z=e=>function(n,l=!0){const{activePanel:a,backToMenuButton:i,container:c}=e;delete c.dataset.pristine,n===a&&(n=void 0);const t=document.documentElement,s=t.dataset;n?(e.container.classList.add("MainMenu__panelsWrap--active"),n.panelElm.append(i),a||(W(e),s.scrollTop=String(t.scrollTop),t.scrollTop=0,s.megaPanelActive="")):(i.remove(),e.container.classList.remove("MainMenu__panelsWrap--active"),E(e),t.scrollTop=parseInt(s.scrollTop||"")||0,delete s.scrollTop,delete s.megaPanelActive),a&&(N(a,!!n),e.activePanel=void 0),n&&(x(n),e.activePanel=n),l&&setTimeout(()=>{n?L.focusElm(n.panelElm):a&&L.focusElm(a.menuButton)},100)},$=(e,n)=>{const l=_({lang:n},H),a=k(".MainMenu__panelsWrap",e);if(!a)return;a.dataset.pristine="true",B(".PrimaryPanel",a).forEach(o=>{const m=k(".PrimaryPanel__title",o);if(!m)return;const d=o.id&&k(`a.MainMenu__link[href$="#${o.id}"]`,e)||void 0,r={panelElm:o,titleButton:o.id?p("button",{className:"MainMenu__mega__title-toggler",onClick:()=>c(r,!1),"aria-controls":o.id},m.textContent):void 0,menuButton:d&&p("button",{className:"MainMenu__link",onClick:()=>c(r),"aria-controls":o.id,"aria-label":d.getAttribute("aria-label")},d.textContent)};r.titleButton&&(m.textContent="",m.append(r.titleButton)),d&&r.menuButton&&d.replaceWith(r.menuButton)});const i={container:a,activePanel:void 0,backToMenuButton:p("button",{className:"MainMenu__megapanel__backtomenu",onClick:()=>t(),"aria-label":l.backToMenuLong},l.backToMenu),escHandler:o=>{o.key==="Escape"&&t()},clickHandler(o){e.contains(o.target)||t()}},c=Z(i),t=()=>c(void 0),s=o=>{!{netbook:1,wide:1}[o.is]&&{netbook:1,wide:1}[o.was||""]&&t()};return g.subscribe(s),()=>{g.unsubscribe(s),E(i)}};window.Hanna.makeSprinkle({name:"MainMenu",init:e=>{const n=A(e),l=j(e,n),a=$(e,n);return()=>{l(),a&&a()}},unmount:(e,n)=>{n()}});
+import "../_chunks/initHannaNamespace-f4f98843.js";
+import { E, q, a as qq, b as focusElm } from "../_chunks/qj-1c8d4095.js";
+import "../_chunks/compat.module-0843eda4.js";
+import { f as focusElement } from "../_chunks/getSVGtext-b918ded2.js";
+import { g as getTexts } from "../_chunks/i18n-a7278b6d.js";
+import { d as domid, g as getFormatMonitor } from "../_chunks/_useMobileMenuToggling-ec254f95.js";
+import { g as getLang } from "../_chunks/getLang-8d69057b.js";
+const defaultMobileMenuTogglerTexts = {
+  is: {
+    togglerLabel: "Opna/loka Aðalvalmynd",
+    closeMenuLabel: "Loka",
+    closeMenuLabelLong: "Loka aðalvalmynd"
+  },
+  en: {
+    togglerLabel: "Toggle Main Menu",
+    closeMenuLabel: "Close",
+    closeMenuLabelLong: "Close main menu"
+  },
+  pl: {
+    togglerLabel: "Otwórz/zamknij menu główne",
+    closeMenuLabel: "Zamknij",
+    closeMenuLabelLong: "Zamknij menu główne"
+  }
+};
+const defaultMainMenuTexts = {
+  is: {
+    title: "Aðalvalmynd",
+    homeLabel: "Forsíða",
+    backToMenu: "Loka",
+    backToMenuLong: "Til baka í valmynd"
+  },
+  en: {
+    title: "Main Menu",
+    homeLabel: "Home page",
+    backToMenu: "Close",
+    backToMenuLong: "Close and return to menu"
+  },
+  pl: {
+    title: "Menu główne",
+    homeLabel: "Strona główna",
+    backToMenu: "Zamknij",
+    backToMenuLong: "Zamknij i wróć do menu"
+  }
+};
+const formatMonitor = getFormatMonitor();
+const HamburgerMedias = {
+  phone: 1,
+  phablet: 1,
+  tablet: 1
+};
+const htmlClass = document.documentElement.classList;
+const addMenuToggler = (menuElm, lang) => {
+  menuElm.tabIndex = -1;
+  const menuId = menuElm.id || domid();
+  if (!menuElm.id) {
+    menuElm.id = menuId;
+  }
+  const txt = getTexts({
+    lang
+  }, defaultMobileMenuTogglerTexts);
+  const togglerButton = E("button", {
+    className: "MobileMenuToggler",
+    onClick: (e) => {
+      if (isActive) {
+        e.preventDefault();
+        isOpen ? closeMenu() : openMenu();
+      }
+    },
+    "aria-controls": menuId,
+    "aria-pressed": "false",
+    lang
+  }, txt.togglerLabel);
+  const closeButton = E("button", {
+    className: "MobileMenuToggler__closebutton",
+    "aria-label": txt.closeMenuLabelLong,
+    onClick: () => closeMenu(),
+    lang
+  }, txt.closeMenuLabel);
+  let isOpen = false;
+  let isActive = false;
+  const activateMenu = () => {
+    if (isActive) {
+      return;
+    }
+    htmlClass.add("menu-is-active");
+    htmlClass.add("menu-is-closed");
+    menuElm.before(togglerButton);
+    menuElm.append(closeButton);
+    isActive = true;
+  };
+  const dectivateMenu = () => {
+    if (!isActive) {
+      return;
+    }
+    isOpen && closeMenu();
+    htmlClass.remove("menu-is-closed");
+    htmlClass.remove("menu-is-active");
+    togglerButton.remove();
+    closeButton.remove();
+    isActive = false;
+  };
+  const openMenu = () => {
+    htmlClass.add("menu-is-open");
+    htmlClass.remove("menu-is-closed");
+    isOpen = true;
+    togglerButton.setAttribute("aria-pressed", `${isOpen}`);
+    focusElement(menuElm);
+  };
+  const closeMenu = () => {
+    htmlClass.add("menu-is-closed");
+    htmlClass.remove("menu-is-open");
+    isOpen = false;
+    togglerButton.setAttribute("aria-pressed", `${isOpen}`);
+    focusElement(togglerButton);
+  };
+  const onFormatChange = (media) => {
+    const becameHamburger = HamburgerMedias[media.is] && !HamburgerMedias[media.was || ""];
+    const leftHamburger = !HamburgerMedias[media.is] && HamburgerMedias[media.was || ""];
+    if (becameHamburger) {
+      activateMenu();
+    } else if (leftHamburger) {
+      dectivateMenu();
+    }
+  };
+  formatMonitor.subscribe(onFormatChange);
+  return () => {
+    formatMonitor.unsubscribe(onFormatChange);
+    dectivateMenu();
+  };
+};
+let laggyRemoval;
+const deactivatePanel = ({
+  panelElm,
+  titleButton,
+  menuButton
+}, instant) => {
+  const remove = () => {
+    panelElm.classList.remove("PrimaryPanel--active");
+    titleButton && titleButton.removeAttribute("aria-pressed");
+  };
+  if (instant) {
+    remove();
+  } else {
+    laggyRemoval = setTimeout(remove, 1e3);
+  }
+  menuButton && menuButton.removeAttribute("aria-pressed");
+};
+const activatePanel = ({
+  panelElm,
+  titleButton,
+  menuButton
+}) => {
+  clearTimeout(laggyRemoval);
+  panelElm.classList.add("PrimaryPanel--active");
+  titleButton && titleButton.setAttribute("aria-pressed", "true");
+  menuButton && menuButton.setAttribute("aria-pressed", "true");
+};
+const setDocumentEvents = ({
+  escHandler,
+  clickHandler
+}) => {
+  document.addEventListener("keydown", escHandler);
+  document.addEventListener("click", clickHandler, true);
+};
+const removeDocumentEvents = ({
+  escHandler,
+  clickHandler
+}) => {
+  document.removeEventListener("keydown", escHandler);
+  document.removeEventListener("click", clickHandler, true);
+};
+const getMenuUpdater = (data) => function updateMenu(newActive, setFocus = true) {
+  const {
+    activePanel,
+    backToMenuButton,
+    container
+  } = data;
+  delete container.dataset.pristine;
+  if (newActive === activePanel) {
+    newActive = void 0;
+  }
+  const htmlElm = document.documentElement;
+  const htmlElmDataset = htmlElm.dataset;
+  if (!newActive) {
+    backToMenuButton.remove();
+    data.container.classList.remove("MainMenu__panelsWrap--active");
+    removeDocumentEvents(data);
+    htmlElm.scrollTop = parseInt(htmlElmDataset.scrollTop || "") || 0;
+    delete htmlElmDataset.scrollTop;
+    delete htmlElmDataset.megaPanelActive;
+  } else {
+    data.container.classList.add("MainMenu__panelsWrap--active");
+    newActive.panelElm.append(backToMenuButton);
+    if (!activePanel) {
+      setDocumentEvents(data);
+      htmlElmDataset.scrollTop = String(htmlElm.scrollTop);
+      htmlElm.scrollTop = 0;
+      htmlElmDataset.megaPanelActive = "";
+    }
+  }
+  if (activePanel) {
+    deactivatePanel(activePanel, !!newActive);
+    data.activePanel = void 0;
+  }
+  if (newActive) {
+    activatePanel(newActive);
+    data.activePanel = newActive;
+  }
+  if (setFocus) {
+    setTimeout(() => {
+      if (newActive) {
+        focusElm.focusElm(newActive.panelElm);
+      } else if (activePanel) {
+        focusElm.focusElm(activePanel.menuButton);
+      }
+    }, 100);
+  }
+};
+const initMainMenu = (menuElm, lang) => {
+  const txt = getTexts({
+    lang
+  }, defaultMainMenuTexts);
+  const megaContainer = q(".MainMenu__panelsWrap", menuElm);
+  if (!megaContainer) {
+    return;
+  }
+  megaContainer.dataset.pristine = "true";
+  qq(".PrimaryPanel", megaContainer).forEach((panelElm) => {
+    const titleElm = q(".PrimaryPanel__title", panelElm);
+    if (!titleElm) {
+      return;
+    }
+    const menuLink = panelElm.id && q(`a.MainMenu__link[href$="#${panelElm.id}"]`, menuElm) || void 0;
+    const panelData = {
+      panelElm,
+      titleButton: panelElm.id ? E("button", {
+        className: "MainMenu__mega__title-toggler",
+        onClick: () => updateMenu(panelData, false),
+        "aria-controls": panelElm.id
+      }, titleElm.textContent) : void 0,
+      menuButton: menuLink && E("button", {
+        className: "MainMenu__link",
+        onClick: () => updateMenu(panelData),
+        "aria-controls": panelElm.id,
+        "aria-label": menuLink.getAttribute("aria-label")
+      }, menuLink.textContent)
+    };
+    if (panelData.titleButton) {
+      titleElm.textContent = "";
+      titleElm.append(panelData.titleButton);
+    }
+    if (menuLink && panelData.menuButton) {
+      menuLink.replaceWith(panelData.menuButton);
+    }
+  });
+  const megaData = {
+    container: megaContainer,
+    activePanel: void 0,
+    backToMenuButton: E("button", {
+      className: "MainMenu__megapanel__backtomenu",
+      onClick: () => closeMenu(),
+      "aria-label": txt.backToMenuLong
+    }, txt.backToMenu),
+    escHandler: (e) => {
+      if (e.key === "Escape") {
+        closeMenu();
+      }
+    },
+    clickHandler(e) {
+      if (!menuElm.contains(e.target)) {
+        closeMenu();
+      }
+    }
+  };
+  const updateMenu = getMenuUpdater(megaData);
+  const closeMenu = () => updateMenu(void 0);
+  const onFormatChange = (media) => {
+    const lefTopMenu = !{
+      netbook: 1,
+      wide: 1
+    }[media.is] && {
+      netbook: 1,
+      wide: 1
+    }[media.was || ""];
+    if (lefTopMenu) {
+      closeMenu();
+    }
+  };
+  formatMonitor.subscribe(onFormatChange);
+  return () => {
+    formatMonitor.unsubscribe(onFormatChange);
+    removeDocumentEvents(megaData);
+  };
+};
+window.Hanna.makeSprinkle({
+  name: "MainMenu",
+  init: (menuElm) => {
+    const lang = getLang(menuElm);
+    const menuTogglerTeardown = addMenuToggler(menuElm, lang);
+    const mainMenuTeardown = initMainMenu(menuElm, lang);
+    return () => {
+      menuTogglerTeardown();
+      mainMenuTeardown && mainMenuTeardown();
+    };
+  },
+  unmount: (menuElm, teardown) => {
+    teardown();
+  }
+});

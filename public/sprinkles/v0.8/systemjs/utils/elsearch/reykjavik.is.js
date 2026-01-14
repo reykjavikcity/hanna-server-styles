@@ -1,3 +1,220 @@
-System.register([],function(u,_){"use strict";return{execute:function(){const c=u("shouldQuery",(r,e,t)=>{const n=e.map(function(a,s){return`${a}${Array.isArray(t.fieldWeights)&&t.fieldWeights[s]?`^${t.fieldWeights[s]}`:""}`});return t.searchOperators?{query:r,fields:n,default_operator:t.queryFormat}:t.queryFormat==="and"?[{multi_match:{query:r,fields:n,type:"bool_prefix",operator:"and"}},{multi_match:{query:r,fields:n,type:"phrase",operator:"and"}}]:[{multi_match:{query:r,fields:n,type:"best_fields",operator:"or",fuzziness:t.fuzziness?t.fuzziness:0}},{multi_match:{query:r,fields:n,type:"phrase",operator:"or"}}]}),o=u("defaultQuery",(r,e)=>{let t=null,n=[];if(r&&r!=="")if(Array.isArray(e.dataField)?n=e.dataField:n=[e.dataField],e.searchOperators)t={simple_query_string:c(r,n,e)};else{const a=e.filter||void 0;t={bool:{should:c(r,n,e),minimum_should_match:"1",filter:a}},e.exceptBundles&&e.exceptBundles.length&&(t.bool.must_not={terms:{bundle:e.exceptBundles}})}return t&&e.nestedField&&(t={nested:{path:e.nestedField,query:t}}),t}),b=u("getBundleCount",(r,e)=>{var t;return e&&((t=e.find(n=>n.key===r))==null?void 0:t.doc_count)||0}),d=u("createElasticQuery",r=>{const{value:e,preference:t,aggs:n,size:a,from:s,_source:i,filter:l,exceptBundles:g}=r;return{preference:t,query:{...o(e,{fuzziness:"AUTO",fieldWeights:[10,2,1],dataField:["label","field_preview_text.value","content"],queryFormat:"and",filter:l,exceptBundles:g})},aggs:n,size:a,from:s,sort:[{_score:{order:"desc"}},{bundle_weight:{order:"desc"}}],_source:i}}),f=["label","field_summary","url_alias","url_internal","rendered_search_result"],y={bundle:{terms:{field:"bundle",order:{_count:"desc"}}}},Q=u("searchResultsPageQuery",r=>{const{value:e,preference:t="resultspage",size:n,aggs:a=y,from:s,_source:i=f,filter:l}=r;return[d({value:e,preference:t,aggs:a,_source:!1}),d({value:e,preference:t,size:n,from:s,_source:i,filter:l})]}),m=u("queryToString",r=>{const{preference:e,...t}=r;return`{ "preference": "${e}" }
-${JSON.stringify({...t})}
-`}),h=r=>{var t,n;const e=(n=(t=r.aggregations)==null?void 0:t.bundle)==null?void 0:n.buckets.reduce((a,{key:s,doc_count:i})=>(a[s]=i,a),{});return{totalHits:r.hits.total.value,items:r.hits.hits.map(({_source:a})=>a),aggregateData:e}},z=u("postQuery",(r,e,t)=>(e=Array.isArray(e)?e:[e],fetch(r,{headers:{Accept:"application/json","Content-Type":"application/x-ndjson"},signal:t,method:"POST",body:e.map(m).join("")}).then(async n=>(await n.json()).responses.map(s=>h(s)))))}}});
+System.register([], function(exports, module) {
+  "use strict";
+  return {
+    execute: function() {
+      const shouldQuery = exports("shouldQuery", (value, dataFields, props) => {
+        const fields = dataFields.map(function(field, index) {
+          return `${field}${Array.isArray(props.fieldWeights) && props.fieldWeights[index] ? `^${props.fieldWeights[index]}` : ""}`;
+        });
+        if (props.searchOperators) {
+          return {
+            query: value,
+            fields,
+            default_operator: props.queryFormat
+          };
+        }
+        if (props.queryFormat === "and") {
+          return [{
+            multi_match: {
+              query: value,
+              fields,
+              type: "bool_prefix",
+              operator: "and"
+            }
+          }, {
+            multi_match: {
+              query: value,
+              fields,
+              type: "phrase",
+              operator: "and"
+            }
+          }];
+        }
+        return [{
+          multi_match: {
+            query: value,
+            fields,
+            type: "best_fields",
+            operator: "or",
+            fuzziness: props.fuzziness ? props.fuzziness : 0
+          }
+        }, {
+          multi_match: {
+            query: value,
+            fields,
+            type: "phrase",
+            operator: "or"
+          }
+        }];
+      });
+      const defaultQuery = exports("defaultQuery", (value, props) => {
+        let finalQuery = null;
+        let fields = [];
+        if (value && value !== "") {
+          if (Array.isArray(props.dataField)) {
+            fields = props.dataField;
+          } else {
+            fields = [props.dataField];
+          }
+          if (props.searchOperators) {
+            finalQuery = {
+              simple_query_string: shouldQuery(value, fields, props)
+            };
+          } else {
+            const filter = props.filter || void 0;
+            finalQuery = {
+              bool: {
+                should: shouldQuery(value, fields, props),
+                minimum_should_match: "1",
+                filter
+              }
+            };
+            if (props.exceptBundles && props.exceptBundles.length) {
+              finalQuery.bool.must_not = {
+                terms: {
+                  bundle: props.exceptBundles
+                }
+              };
+            }
+          }
+        }
+        if (finalQuery && props.nestedField) {
+          finalQuery = {
+            nested: {
+              path: props.nestedField,
+              query: finalQuery
+            }
+          };
+        }
+        return finalQuery;
+      });
+      const getBundleCount = exports("getBundleCount", (key, buckets) => {
+        var _a;
+        return buckets && ((_a = buckets.find((bucket) => bucket.key === key)) == null ? void 0 : _a.doc_count) || 0;
+      });
+      const createElasticQuery = exports("createElasticQuery", (args) => {
+        const {
+          value,
+          preference,
+          aggs,
+          size,
+          from,
+          _source,
+          filter,
+          exceptBundles
+        } = args;
+        return {
+          preference,
+          query: {
+            ...defaultQuery(value, {
+              fuzziness: "AUTO",
+              fieldWeights: [10, 2, 1],
+              dataField: ["label", "field_preview_text.value", "content"],
+              queryFormat: "and",
+              filter,
+              exceptBundles
+            })
+          },
+          aggs,
+          size,
+          from,
+          sort: [{
+            _score: {
+              order: "desc"
+            }
+          }, {
+            bundle_weight: {
+              order: "desc"
+            }
+          }],
+          _source
+        };
+      });
+      const defaultSource = [
+        "label",
+        "field_summary",
+        "url_alias",
+        "url_internal",
+        "rendered_search_result"
+        // 'content',
+      ];
+      const defaultAggs = {
+        bundle: {
+          terms: {
+            field: "bundle",
+            order: {
+              _count: "desc"
+            }
+          }
+        }
+      };
+      const searchResultsPageQuery = exports("searchResultsPageQuery", (query) => {
+        const {
+          value,
+          preference = "resultspage",
+          size,
+          aggs = defaultAggs,
+          from,
+          _source = defaultSource,
+          filter
+        } = query;
+        return [createElasticQuery({
+          value,
+          preference,
+          aggs,
+          _source: false
+        }), createElasticQuery({
+          value,
+          preference,
+          size,
+          from,
+          _source,
+          filter
+        })];
+      });
+      const queryToString = exports("queryToString", (_query) => {
+        const {
+          preference,
+          ...rest
+        } = _query;
+        return `{ "preference": "${preference}" }
+${JSON.stringify({
+          ...rest
+        })}
+`;
+      });
+      const cleanResult = (result) => {
+        var _a, _b;
+        const aggregateData = (_b = (_a = result.aggregations) == null ? void 0 : _a.bundle) == null ? void 0 : _b.buckets.reduce((prevBucket, {
+          key,
+          doc_count
+        }) => {
+          prevBucket[key] = doc_count;
+          return prevBucket;
+        }, {});
+        return {
+          totalHits: result.hits.total.value,
+          items: result.hits.hits.map(({
+            _source
+          }) => _source),
+          aggregateData
+        };
+      };
+      const postQuery = exports("postQuery", (url, queries, signal) => {
+        queries = Array.isArray(queries) ? queries : [queries];
+        return fetch(url, {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/x-ndjson"
+          },
+          signal,
+          method: "POST",
+          body: queries.map(queryToString).join("")
+        }).then(async (data) => {
+          const jsonData = await data.json();
+          return jsonData.responses.map((result) => cleanResult(result));
+        });
+      });
+    }
+  };
+});

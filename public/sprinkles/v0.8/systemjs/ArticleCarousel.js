@@ -1,1 +1,226 @@
-System.register(["../_chunks/initHannaNamespace-722ec071.js","../_chunks/compat.module-f329784f.js","../_chunks/qj-f4bfbfcd.js","../_chunks/_AbstractCarousel-0416cc59.js","../_chunks/assets-cefd5009.js","../_chunks/_Image-cd3692c7.js","../_chunks/_Link-7fe03f09.js","../_chunks/getSVGtext-ef8676a9.js","../_chunks/i18n-6c3e4ded.js","../_chunks/jsxRuntime.module-2cafdad3.js","../_chunks/addSeenEffect-00c08965.js","../_chunks/getLang-45de5ff2.js","../_chunks/misc-c537bf75.js","../_chunks/_useMobileMenuToggling-5dfba98d.js"],function(R,D){"use strict";var p,h,s,A,j,g,f,a,b,x;return{setters:[null,e=>{p=e.C},e=>{h=e.a,s=e.q},e=>{A=e.A},e=>{j=e.g},e=>{g=e.I},e=>{f=e.L},null,null,e=>{a=e.o},e=>{b=e.a,x=e.b},null,null,null],execute:function(){const e={esja:"esja",faxafloi:"faxafloi",nautholsvik:"nautholsvik",heidmork:"heidmork",ellidaardalur:"ellidaardalur",blafjoll:"blafjoll",sund:"sund",rokkur:"rokkur",suld:"suld"},w={trustworthy:"trustworthy",dependable:"dependable",friendly:"friendly",lively:"lively",colorful:"colorful"},L=Object.assign(["esja","faxafloi","nautholsvik","heidmork","ellidaardalur","blafjoll","sund","rokkur","suld"],e,{ellidarardalur:"ellidaardalur"}),P=Object.assign(["trustworthy","dependable","friendly","lively","colorful"],w),S=t=>{const{date:o,title:i,summary:n,href:c,target:l,moreLabel:r,color:d,theme:_,illustration:m,image:C}=t,k=C==null?void 0:C.photo,u=m?{src:j(m)}:C;return a("div",{className:"ArticleCarouselCard","data-color":d&&L[d],"data-color-theme":d?void 0:_&&P[_],children:[a(f,{className:"ArticleCarouselCard__link",href:c,target:l,children:[" ",a(g,{bem:"ArticleCarouselCard__illustration",modifier:k&&"photo",placeholder:!0,...u}),a("h3",{className:"ArticleCarouselCard__title",children:i})," "]})," ",o&&a("span",{className:"ArticleCarouselCard__date",children:o}),a("div",{className:"ArticleCarouselCard__summary",children:n}),r&&a(f,{className:"ArticleCarouselCard__morelink",href:c,target:l,"aria-label":i,children:[" ",r," "]})]})},q=t=>{const{title:o,items:i,moreLabel:n,ssr:c}=t;return a(A,{bem:"ArticleCarousel",title:o,items:i,Component:S,ComponentProps:{moreLabel:n},ssr:c,wrapperProps:t.wrapperProps})},I=t=>{var c,l;const o=((c=s(".ArticleCarouselCard__morelink",t))==null?void 0:c.textContent)||"",i=((l=s(".ArticleCarousel__title",t))==null?void 0:l.textContent)||"",n=h(".ArticleCarouselCard",t).map(r=>{var y,v,N;const d=s(".ArticleCarouselCard__illustration img",r),_=!!s(".ArticleCarouselCard__illustration--photo",r),m=d&&{src:d.src,altText:d.alt,photo:_},C=r.dataset.color,k=C?void 0:r.dataset.colorTheme,u=s(".ArticleCarouselCard__link",r),T=(u==null?void 0:u.href)||"",O=(u==null?void 0:u.target)||void 0,F=((y=s(".ArticleCarouselCard__title",r))==null?void 0:y.textContent)||"",H=((v=s(".ArticleCarouselCard__date",r))==null?void 0:v.textContent)||void 0,M=((N=s(".ArticleCarouselCard__summary",r))==null?void 0:N.textContent)||"";return{href:T,target:O,title:F,date:H,summary:M,image:m,color:C,theme:k}});return{props:{title:i,items:n,moreLabel:o},itemContextuals:h(".ArticleCarouselCard",t).map(r=>s(".ArticleCarouselCard__contextual",r))}};window.Hanna.makeSprinkle({name:"ArticleCarousel",init:t=>{const{props:o,itemContextuals:i}=I(t),n=t;t.getAttributeNames().forEach(l=>{t.removeAttribute(l)}),p.render(a(q,{...o,ssr:!1,wrapperProps:b(t)}),n,()=>x());const c=h(".ArticleCarouselCard",n);return i.forEach((l,r)=>{l&&c[r].insertAdjacentElement("afterbegin",l)}),n},unmount:(t,o)=>{p.unmountComponentAtNode(o)}})}}});
+System.register(["../_chunks/initHannaNamespace-77b40001.js", "../_chunks/compat.module-919773fc.js", "../_chunks/qj-0ce4c6bc.js", "../_chunks/_AbstractCarousel-8a484a2f.js", "../_chunks/assets-7c5ecab5.js", "../_chunks/_Image-1382ad99.js", "../_chunks/_Link-8229a97c.js", "../_chunks/hannavars-0e03a23c.js", "../_chunks/getSVGtext-2c45db0c.js", "../_chunks/i18n-5b23de04.js", "../_chunks/jsxRuntime.module-791778ad.js", "../_chunks/addSeenEffect-212ed7c0.js", "../_chunks/getLang-61538edc.js", "../_chunks/misc-20452715.js", "../_chunks/_useMobileMenuToggling-b1fb85e8.js", "../_chunks/ObjectHelpers-a9c65074.js"], function(exports, module) {
+  "use strict";
+  var Cn, qq, q, AbstractCarousel, getIllustrationUrl, Image, Link, o, autoSeenEffectWrapperProps, autoSeenEffectsRefresh;
+  return {
+    setters: [null, (module2) => {
+      Cn = module2.C;
+    }, (module2) => {
+      qq = module2.a;
+      q = module2.q;
+    }, (module2) => {
+      AbstractCarousel = module2.A;
+    }, (module2) => {
+      getIllustrationUrl = module2.g;
+    }, (module2) => {
+      Image = module2.I;
+    }, (module2) => {
+      Link = module2.L;
+    }, null, null, null, (module2) => {
+      o = module2.o;
+    }, (module2) => {
+      autoSeenEffectWrapperProps = module2.a;
+      autoSeenEffectsRefresh = module2.b;
+    }, null, null, null, null],
+    execute: function() {
+      const colorFamilies$1 = {
+        esja: "esja",
+        faxafloi: "faxafloi",
+        nautholsvik: "nautholsvik",
+        heidmork: "heidmork",
+        ellidaardalur: "ellidaardalur",
+        blafjoll: "blafjoll",
+        sund: "sund",
+        rokkur: "rokkur",
+        suld: "suld"
+      };
+      const colorThemes = {
+        trustworthy: "trustworthy",
+        dependable: "dependable",
+        friendly: "friendly",
+        lively: "lively",
+        colorful: "colorful"
+      };
+      const colorFamilies = Object.assign(["esja", "faxafloi", "nautholsvik", "heidmork", "ellidaardalur", "blafjoll", "sund", "rokkur", "suld"], colorFamilies$1, {
+        /** @deprecated  This is a typo  (Will be removed in v0.11) */
+        ellidarardalur: "ellidaardalur"
+      });
+      const themeOptions = Object.assign(["trustworthy", "dependable", "friendly", "lively", "colorful"], colorThemes);
+      var _jsxFileName$2 = "/Users/maro5239/work/hanna/modules/hanna-react/src/ArticleCarousel/_ArticleCarouselCard.tsx";
+      const ArticleCarouselCard = (props) => {
+        const {
+          date,
+          title,
+          summary,
+          href,
+          target,
+          moreLabel,
+          color,
+          theme,
+          illustration,
+          image
+        } = props;
+        const photo = image == null ? void 0 : image.photo;
+        const imageProps = illustration ? {
+          src: getIllustrationUrl(illustration)
+        } : image;
+        return o("div", {
+          className: "ArticleCarouselCard",
+          "data-color": color && colorFamilies[color],
+          "data-color-theme": !color ? theme && themeOptions[theme] : void 0,
+          children: [o(Link, {
+            className: "ArticleCarouselCard__link",
+            href,
+            target,
+            children: [" ", o(Image, {
+              bem: "ArticleCarouselCard__illustration",
+              modifier: photo && "photo",
+              placeholder: true,
+              ...imageProps
+            }, void 0, false, {
+              fileName: _jsxFileName$2,
+              lineNumber: 60,
+              columnNumber: 9
+            }, void 0), o("h3", {
+              className: "ArticleCarouselCard__title",
+              children: title
+            }, void 0, false, {
+              fileName: _jsxFileName$2,
+              lineNumber: 66,
+              columnNumber: 9
+            }, void 0), " "]
+          }, void 0, true, {
+            fileName: _jsxFileName$2,
+            lineNumber: 58,
+            columnNumber: 7
+          }, void 0), " ", date && o("span", {
+            className: "ArticleCarouselCard__date",
+            children: date
+          }, void 0, false, {
+            fileName: _jsxFileName$2,
+            lineNumber: 68,
+            columnNumber: 16
+          }, void 0), o("div", {
+            className: "ArticleCarouselCard__summary",
+            children: summary
+          }, void 0, false, {
+            fileName: _jsxFileName$2,
+            lineNumber: 69,
+            columnNumber: 7
+          }, void 0), moreLabel && o(Link, {
+            className: "ArticleCarouselCard__morelink",
+            href,
+            target,
+            "aria-label": title,
+            children: [" ", moreLabel, " "]
+          }, void 0, true, {
+            fileName: _jsxFileName$2,
+            lineNumber: 71,
+            columnNumber: 9
+          }, void 0)]
+        }, void 0, true, {
+          fileName: _jsxFileName$2,
+          lineNumber: 53,
+          columnNumber: 5
+        }, void 0);
+      };
+      var _jsxFileName$1 = "/Users/maro5239/work/hanna/modules/hanna-react/src/ArticleCarousel.tsx";
+      const ArticleCarousel = (props) => {
+        const {
+          title,
+          items,
+          moreLabel,
+          ssr
+        } = props;
+        return o(AbstractCarousel, {
+          bem: "ArticleCarousel",
+          title,
+          items,
+          Component: ArticleCarouselCard,
+          ComponentProps: {
+            moreLabel
+          },
+          ssr,
+          wrapperProps: props.wrapperProps
+        }, void 0, false, {
+          fileName: _jsxFileName$1,
+          lineNumber: 25,
+          columnNumber: 5
+        }, void 0);
+      };
+      var _jsxFileName = "/Users/maro5239/work/hanna/modules/hanna-sprinkles/src/ArticleCarousel.tsx";
+      const getArticleCarouselData = (elm) => {
+        var _a, _b;
+        const moreLabel = ((_a = q(".ArticleCarouselCard__morelink", elm)) == null ? void 0 : _a.textContent) || "";
+        const title = ((_b = q(".ArticleCarousel__title", elm)) == null ? void 0 : _b.textContent) || "";
+        const items = qq(".ArticleCarouselCard", elm).map((itemElm) => {
+          var _a2, _b2, _c;
+          const img = q(".ArticleCarouselCard__illustration img", itemElm);
+          const photo = !!q(".ArticleCarouselCard__illustration--photo", itemElm);
+          const image = img && {
+            src: img.src,
+            altText: img.alt,
+            photo
+          };
+          const color = itemElm.dataset.color;
+          const theme = !color ? itemElm.dataset.colorTheme : void 0;
+          const linkElm = q(".ArticleCarouselCard__link", itemElm);
+          const href = (linkElm == null ? void 0 : linkElm.href) || "";
+          const target = (linkElm == null ? void 0 : linkElm.target) || void 0;
+          const title2 = ((_a2 = q(".ArticleCarouselCard__title", itemElm)) == null ? void 0 : _a2.textContent) || "";
+          const date = ((_b2 = q(".ArticleCarouselCard__date", itemElm)) == null ? void 0 : _b2.textContent) || void 0;
+          const summary = ((_c = q(".ArticleCarouselCard__summary", itemElm)) == null ? void 0 : _c.textContent) || "";
+          return {
+            href,
+            target,
+            title: title2,
+            date,
+            summary,
+            image,
+            color,
+            theme
+          };
+        });
+        return {
+          props: {
+            title,
+            items,
+            moreLabel
+          },
+          itemContextuals: qq(".ArticleCarouselCard", elm).map((itemElm) => q(".ArticleCarouselCard__contextual", itemElm))
+        };
+      };
+      window.Hanna.makeSprinkle({
+        name: "ArticleCarousel",
+        init: (elm) => {
+          const {
+            props,
+            itemContextuals
+          } = getArticleCarouselData(elm);
+          const root = elm;
+          elm.getAttributeNames().forEach((attrName) => {
+            elm.removeAttribute(attrName);
+          });
+          Cn.render(o(ArticleCarousel, {
+            ...props,
+            ssr: false,
+            wrapperProps: autoSeenEffectWrapperProps(elm)
+          }, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 61,
+            columnNumber: 7
+          }, globalThis), root, () => autoSeenEffectsRefresh());
+          const galleryItems = qq(".ArticleCarouselCard", root);
+          itemContextuals.forEach((contextual, idx) => {
+            if (contextual) {
+              galleryItems[idx].insertAdjacentElement("afterbegin", contextual);
+            }
+          });
+          return root;
+        },
+        unmount: (elm, root) => {
+          Cn.unmountComponentAtNode(root);
+        }
+      });
+    }
+  };
+});

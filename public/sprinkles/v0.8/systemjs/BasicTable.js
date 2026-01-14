@@ -1,1 +1,127 @@
-System.register(["../_chunks/initHannaNamespace-722ec071.js","../_chunks/addSeenEffect-00c08965.js","../_chunks/qj-f4bfbfcd.js","../_chunks/i18n-6c3e4ded.js","../_chunks/getLang-45de5ff2.js","../_chunks/compat.module-f329784f.js"],function(W,_){"use strict";var f,u,h;return{setters:[null,l=>{f=l.c,u=l.b},l=>{h=l.t},null,null,null],execute:function(){const k=n=>{const{axis:s,scrollerElm:e,classedElm:p,bem:E,onChange:o,setClasses:L=!0}=n;let c={start:!0,end:!0};const i=E?`${E}--at`:"at",b=!o||L,d=t=>{const a=(p||e).classList;a[t.start?"add":"remove"](`${i}--start`),a[t.end?"add":"remove"](`${i}--end`)},S=o?L?t=>{o(t),d(t)}:o:d,r=h(()=>{let t,a,m;s==="horizontal"?(t=e.scrollLeft,a=e.offsetWidth,m=e.scrollWidth):(t=e.scrollTop,a=e.offsetHeight,m=e.scrollHeight);const v=t<5,g=m-(a+t)<5;c.start===v&&c.end===g||(c={start:v,end:g},S(c))},100);return r(),b&&((p||e).classList.add(i),d(c)),e.addEventListener("scroll",r),window.addEventListener("resize",r),{checkScroll:r,unmount:()=>{b&&(d({start:!1,end:!1}),(p||e).classList.remove(i)),e.removeEventListener("scroll",r),window.removeEventListener("resize",r)}}},T=n=>{n.classList.add("BasicTable");const s=n.parentElement;if(s.classList.contains("TableWrapper__scroller")||s.classList.contains("TableWrapper--at"))return;let e=s;return e.classList.contains("TableWrapper")||(e=document.createElement("div"),e.className="TableWrapper",n.before(e),e.append(n)),e.classList.add("TableWrapper--BasicTable"),e};window.Hanna.makeSprinkle({name:"BasicTable",selector:"table",init:n=>{const s=T(n);if(!s)return;const{unmount:e}=k({axis:"horizontal",scrollerElm:s,classedElm:s,bem:"TableWrapper"});return f(s),u(),e},unmount:(n,s)=>{s&&s(),u()}})}}});
+System.register(["../_chunks/initHannaNamespace-77b40001.js", "../_chunks/addSeenEffect-212ed7c0.js", "../_chunks/qj-0ce4c6bc.js", "../_chunks/i18n-5b23de04.js", "../_chunks/getLang-61538edc.js", "../_chunks/compat.module-919773fc.js"], function(exports, module) {
+  "use strict";
+  var autoSeenEffectPrepare, autoSeenEffectsRefresh, throttle;
+  return {
+    setters: [null, (module2) => {
+      autoSeenEffectPrepare = module2.c;
+      autoSeenEffectsRefresh = module2.b;
+    }, (module2) => {
+      throttle = module2.t;
+    }, null, null, null],
+    execute: function() {
+      const tolerance = 5;
+      const throttleMs = 100;
+      const detectEdgeScroll = (opts) => {
+        const {
+          axis,
+          scrollerElm,
+          classedElm,
+          bem,
+          onChange,
+          setClasses = true
+          // eslint-disable-line deprecation/deprecation
+        } = opts;
+        let at = {
+          start: true,
+          end: true
+        };
+        const bemAt = bem ? `${bem}--at` : "at";
+        const doClasses = !onChange || setClasses;
+        const toggleClassNames = (at2) => {
+          const elmClasses = (classedElm || scrollerElm).classList;
+          elmClasses[at2.start ? "add" : "remove"](`${bemAt}--start`);
+          elmClasses[at2.end ? "add" : "remove"](`${bemAt}--end`);
+        };
+        const setAt = !onChange ? toggleClassNames : setClasses ? (at2) => {
+          onChange(at2);
+          toggleClassNames(at2);
+        } : onChange;
+        const checkScroll = throttle(() => {
+          let scroll, offsetSize, totalSize;
+          if (axis === "horizontal") {
+            scroll = scrollerElm.scrollLeft;
+            offsetSize = scrollerElm.offsetWidth;
+            totalSize = scrollerElm.scrollWidth;
+          } else {
+            scroll = scrollerElm.scrollTop;
+            offsetSize = scrollerElm.offsetHeight;
+            totalSize = scrollerElm.scrollHeight;
+          }
+          const start = scroll < tolerance;
+          const end = totalSize - (offsetSize + scroll) < tolerance;
+          if (at.start === start && at.end === end) {
+            return;
+          }
+          at = {
+            start,
+            end
+          };
+          setAt(at);
+        }, throttleMs);
+        checkScroll();
+        if (doClasses) {
+          (classedElm || scrollerElm).classList.add(bemAt);
+          toggleClassNames(at);
+        }
+        scrollerElm.addEventListener("scroll", checkScroll);
+        window.addEventListener("resize", checkScroll);
+        return {
+          checkScroll,
+          unmount: () => {
+            if (doClasses) {
+              toggleClassNames({
+                start: false,
+                end: false
+              });
+              (classedElm || scrollerElm).classList.remove(bemAt);
+            }
+            scrollerElm.removeEventListener("scroll", checkScroll);
+            window.removeEventListener("resize", checkScroll);
+          }
+        };
+      };
+      const normalizeWrappingMarkup = (tableElm) => {
+        tableElm.classList.add("BasicTable");
+        const parentElm = tableElm.parentElement;
+        if (parentElm.classList.contains("TableWrapper__scroller") || parentElm.classList.contains("TableWrapper--at")) {
+          return;
+        }
+        let wrapperElm = parentElm;
+        if (!wrapperElm.classList.contains("TableWrapper")) {
+          wrapperElm = document.createElement("div");
+          wrapperElm.className = "TableWrapper";
+          tableElm.before(wrapperElm);
+          wrapperElm.append(tableElm);
+        }
+        wrapperElm.classList.add("TableWrapper--BasicTable");
+        return wrapperElm;
+      };
+      window.Hanna.makeSprinkle({
+        name: "BasicTable",
+        selector: "table",
+        init: (tableElm) => {
+          const wrapperElm = normalizeWrappingMarkup(tableElm);
+          if (!wrapperElm) {
+            return;
+          }
+          const {
+            unmount
+            /* , checkScroll */
+          } = detectEdgeScroll({
+            axis: "horizontal",
+            scrollerElm: wrapperElm,
+            classedElm: wrapperElm,
+            bem: "TableWrapper"
+          });
+          autoSeenEffectPrepare(wrapperElm);
+          autoSeenEffectsRefresh();
+          return unmount;
+        },
+        unmount: (_, unmount) => {
+          unmount && unmount();
+          autoSeenEffectsRefresh();
+        }
+      });
+    }
+  };
+});

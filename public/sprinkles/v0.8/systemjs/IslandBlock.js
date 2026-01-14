@@ -1,1 +1,17 @@
-System.register(["../_chunks/initHannaNamespace-722ec071.js","../_chunks/inlineSVG-74be6dad.js","../_chunks/qj-f4bfbfcd.js","../_chunks/i18n-6c3e4ded.js","../_chunks/getLang-45de5ff2.js","../_chunks/getSVGtext-ef8676a9.js"],function(e,i){"use strict";var s;return{setters:[null,n=>{s=n.i},null,null,null,null],execute:function(){window.Hanna.makeSprinkle({name:"IslandBlock",init:n=>{s('.IslandBlock__image > img[src*=".svg"]',n)}})}}});
+System.register(["../_chunks/initHannaNamespace-77b40001.js", "../_chunks/inlineSVG-61e1ccf3.js", "../_chunks/qj-0ce4c6bc.js", "../_chunks/i18n-5b23de04.js", "../_chunks/getLang-61538edc.js", "../_chunks/getSVGtext-2c45db0c.js"], function(exports, module) {
+  "use strict";
+  var inlineSVG;
+  return {
+    setters: [null, (module2) => {
+      inlineSVG = module2.i;
+    }, null, null, null, null],
+    execute: function() {
+      window.Hanna.makeSprinkle({
+        name: "IslandBlock",
+        init: (elm) => {
+          inlineSVG('.IslandBlock__image > img[src*=".svg"]', elm);
+        }
+      });
+    }
+  };
+});

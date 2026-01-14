@@ -1,1 +1,63 @@
-System.register(["../../_chunks/compat.module-f329784f.js","../../_chunks/qj-f4bfbfcd.js","../../_chunks/ensureCSS-b2134b60.js","../../_chunks/getLang-45de5ff2.js","./sitewideAlerts.component.js","../../_chunks/jsxRuntime.module-2cafdad3.js","../../_chunks/getSVGtext-ef8676a9.js","../../_chunks/i18n-6c3e4ded.js","../../_chunks/assets-cefd5009.js","../../_chunks/Alert-f414d2c7.js","../../_chunks/_Button-4ce1d666.js","../../_chunks/_Link-7fe03f09.js","../../_chunks/env-60bbcb5a.js","../../_chunks/_useMobileMenuToggling-5dfba98d.js"],function(j,k){"use strict";var u,l,c,i,a,o,_;return{setters:[e=>{u=e.C},e=>{l=e.q,c=e.a},e=>{i=e.e},e=>{a=e.g},e=>{o=e.SiteWideAlerts},e=>{_=e.o},null,null,null,null,null,null,null,null],execute:function(){const e=n=>{const t=document.createElement("div");return n.append(t),t},h=(n,t)=>{if(typeof n=="string"){const d=l(n);if(d)return d}else if(n)return n;const s=l(`.${t}__alerts`);if(s)return e(s);const r=document.createElement("div");return r.className=`${t}__alerts`,c(`.${t}, body`).slice(-1)[0].prepend(r),e(r)},m=j("default",n=>{const t=n.layoutName||"Layout",s=h(n.rootElm,t);i("Alert").then(()=>{u.render(_(o,{alertsUri:n.alertsUri,baseUrl:n.baseUrl,refreshInterval:n.refreshInterval,lang:a()}),s)})})}}});
+System.register(["../../_chunks/compat.module-919773fc.js", "../../_chunks/qj-0ce4c6bc.js", "../../_chunks/ensureCSS-cc708e92.js", "../../_chunks/getLang-61538edc.js", "./sitewideAlerts.component.js", "../../_chunks/jsxRuntime.module-791778ad.js", "../../_chunks/hannavars-0e03a23c.js", "../../_chunks/getSVGtext-2c45db0c.js", "../../_chunks/ObjectHelpers-a9c65074.js", "../../_chunks/i18n-5b23de04.js", "../../_chunks/assets-7c5ecab5.js", "../../_chunks/Alert-349b2825.js", "../../_chunks/_Button-14554c59.js", "../../_chunks/_Link-8229a97c.js", "../../_chunks/env-c53cf972.js", "../../_chunks/_useMobileMenuToggling-b1fb85e8.js"], function(exports, module) {
+  "use strict";
+  var Cn, q, qq, ensureCSS, getLang, SiteWideAlerts, o;
+  return {
+    setters: [(module2) => {
+      Cn = module2.C;
+    }, (module2) => {
+      q = module2.q;
+      qq = module2.a;
+    }, (module2) => {
+      ensureCSS = module2.e;
+    }, (module2) => {
+      getLang = module2.g;
+    }, (module2) => {
+      SiteWideAlerts = module2.SiteWideAlerts;
+    }, (module2) => {
+      o = module2.o;
+    }, null, null, null, null, null, null, null, null, null, null],
+    execute: function() {
+      var _jsxFileName = "/Users/maro5239/work/hanna/modules/hanna-sprinkles/src/utils/sitewideAlerts.tsx";
+      const makeEmptyDivInside = (container) => {
+        const div = document.createElement("div");
+        container.append(div);
+        return div;
+      };
+      const resolveRoot = (rootElm, Layout) => {
+        if (typeof rootElm === "string") {
+          const selectedElm = q(rootElm);
+          if (selectedElm) {
+            return selectedElm;
+          }
+        } else if (rootElm) {
+          return rootElm;
+        }
+        const existingAlertsContainer = q(`.${Layout}__alerts`);
+        if (existingAlertsContainer) {
+          return makeEmptyDivInside(existingAlertsContainer);
+        }
+        const newAlertsContainer = document.createElement("div");
+        newAlertsContainer.className = `${Layout}__alerts`;
+        const layoutElm = qq(`.${Layout}, body`).slice(-1)[0];
+        layoutElm.prepend(newAlertsContainer);
+        return makeEmptyDivInside(newAlertsContainer);
+      };
+      const sitewideAlerts = exports("default", (props) => {
+        const Layout = props.layoutName || "Layout";
+        const rootElm = resolveRoot(props.rootElm, Layout);
+        ensureCSS("Alert").then(() => {
+          Cn.render(o(SiteWideAlerts, {
+            alertsUri: props.alertsUri,
+            baseUrl: props.baseUrl,
+            refreshInterval: props.refreshInterval,
+            lang: getLang()
+          }, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 61,
+            columnNumber: 7
+          }, void 0), rootElm);
+        });
+      });
+    }
+  };
+});

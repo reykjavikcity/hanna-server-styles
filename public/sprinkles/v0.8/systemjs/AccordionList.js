@@ -1,1 +1,53 @@
-System.register(["../_chunks/initHannaNamespace-722ec071.js","../_chunks/qj-f4bfbfcd.js","../_chunks/i18n-6c3e4ded.js","../_chunks/getLang-45de5ff2.js"],function(_,p){"use strict";var o,a,r,d;return{setters:[null,e=>{o=e.a,a=e.q,r=e.e,d=e.E},null,null],execute:function(){const e=t=>o(".AccordionList__item",t),l=t=>{const i=a(".AccordionList__title",t),n=a(".AccordionList__content",t);if(i&&n){let s=t.dataset.startOpen==="true";r(n),n.hidden=!s,t.dataset.sprinkled="true";const u=t.classList.contains("AccordionList__item--disabled"),c=d("button",{className:"AccordionList__button","aria-controls":n.id,"aria-expanded":s||void 0,disabled:u,onClick:()=>{s=!u&&!s,s?c.setAttribute("aria-expanded","true"):c.removeAttribute("aria-expanded"),n.hidden=!s}},i.childNodes);i.textContent="",i.append(c)}};window.Hanna.makeSprinkle({name:"AccordionList",init:t=>{e(t).forEach(l)},refresh:t=>{e(t).filter(n=>!n.dataset.sprinkled).forEach(l)}})}}});
+System.register(["../_chunks/initHannaNamespace-77b40001.js", "../_chunks/qj-0ce4c6bc.js", "../_chunks/i18n-5b23de04.js", "../_chunks/getLang-61538edc.js"], function(exports, module) {
+  "use strict";
+  var qq, q, aquireId, E;
+  return {
+    setters: [null, (module2) => {
+      qq = module2.a;
+      q = module2.q;
+      aquireId = module2.e;
+      E = module2.E;
+    }, null, null],
+    execute: function() {
+      const getItems = (elm) => qq(".AccordionList__item", elm);
+      const initializeItem = (itemElm) => {
+        const titleElm = q(".AccordionList__title", itemElm);
+        const contentElm = q(".AccordionList__content", itemElm);
+        if (titleElm && contentElm) {
+          let open = itemElm.dataset.startOpen === "true";
+          aquireId(contentElm);
+          contentElm.hidden = !open;
+          itemElm.dataset.sprinkled = "true";
+          const disabled = itemElm.classList.contains("AccordionList__item--disabled");
+          const buttonElm = E("button", {
+            className: "AccordionList__button",
+            "aria-controls": contentElm.id,
+            "aria-expanded": open || void 0,
+            disabled,
+            onClick: () => {
+              open = !disabled && !open;
+              if (open) {
+                buttonElm.setAttribute("aria-expanded", "true");
+              } else {
+                buttonElm.removeAttribute("aria-expanded");
+              }
+              contentElm.hidden = !open;
+            }
+          }, titleElm.childNodes);
+          titleElm.textContent = "";
+          titleElm.append(buttonElm);
+        }
+      };
+      window.Hanna.makeSprinkle({
+        name: "AccordionList",
+        init: (elm) => {
+          getItems(elm).forEach(initializeItem);
+        },
+        refresh: (elm) => {
+          const newItems = getItems(elm).filter((elm2) => !elm2.dataset.sprinkled);
+          newItems.forEach(initializeItem);
+        }
+      });
+    }
+  };
+});

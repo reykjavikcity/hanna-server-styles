@@ -1,1 +1,84 @@
-import{C as s,h as b,p as v,T as f}from"../../_chunks/compat.module-6d0944a1.js";import{T as x}from"../../_chunks/Tabs-b49d30de.js";import{e as h}from"../../_chunks/ensureCSS-556a418e.js";import{o as n}from"../../_chunks/jsxRuntime.module-9d76abce.js";import"../../_chunks/qj-0db0624e.js";import"../../_chunks/getSVGtext-03122a1f.js";import"../../_chunks/i18n-45294c51.js";import"../../_chunks/_useMobileMenuToggling-404bacd2.js";import"../../_chunks/assets-7a061d68.js";const d=e=>{const{activeIdx:t,onSetActive:o,role:r="tablist",...c}=e,[l,i]=b(t);v(()=>i(t),[t]);const u=f(a=>{const m=e.tabs[a];m&&(o&&o(a,m),i(a))},[e.tabs,o]);return n(x,{...c,activeIdx:l,onSetActive:u,role:r,ssr:!1})},p=(e,t)=>{t?(e.hidden=!1,e.tabIndex=0):(e.hidden=!0,e.removeAttribute("tabindex"))},A=e=>{const t=document.createElement("div"),o=h("Tabs").then(()=>{s.render(n(d,{...e}),t)});return{rootElm:t,unmount:()=>{s.unmountComponentAtNode(t),t.remove()},update:r=>{s.render(n(d,{...e,...r}),t)},ready:o,setPanelDisplay:p}};export{A as default,p as setPanelDisplay};
+import { C as Cn, t, h, p, T } from "../../_chunks/compat.module-0843eda4.js";
+import { T as Tabs } from "../../_chunks/Tabs-7769a5d5.js";
+import { e as ensureCSS } from "../../_chunks/ensureCSS-6552b186.js";
+import { o } from "../../_chunks/jsxRuntime.module-b4e3cc20.js";
+import "../../_chunks/qj-1c8d4095.js";
+import "../../_chunks/getSVGtext-b918ded2.js";
+import "../../_chunks/i18n-a7278b6d.js";
+import "../../_chunks/_useMobileMenuToggling-ec254f95.js";
+import "../../_chunks/hannavars-d2690bca.js";
+import "../../_chunks/ObjectHelpers-c82b0e19.js";
+import "../../_chunks/assets-a74434cf.js";
+var _jsxFileName = "/Users/maro5239/work/hanna/modules/hanna-sprinkles/src/utils/makeTabs.tsx";
+const UncontrolledTabs = (props) => {
+  const {
+    activeIdx,
+    onSetActive,
+    role = "tablist",
+    ...tabsProps
+  } = props;
+  const [_activeIdx, setActiveIdx] = t(h(activeIdx), "_activeIdx");
+  p(() => setActiveIdx(activeIdx), [activeIdx]);
+  const _onSetActive = T((newActiveIdx) => {
+    const tabData = props.tabs[newActiveIdx];
+    if (tabData) {
+      onSetActive && onSetActive(newActiveIdx, tabData);
+      setActiveIdx(newActiveIdx);
+    }
+  }, [props.tabs, onSetActive]);
+  return o(Tabs, {
+    ...tabsProps,
+    activeIdx: _activeIdx,
+    onSetActive: _onSetActive,
+    role,
+    ssr: false
+  }, void 0, false, {
+    fileName: _jsxFileName,
+    lineNumber: 27,
+    columnNumber: 5
+  }, void 0);
+};
+const setPanelDisplay = (panelElm, isActive) => {
+  if (isActive) {
+    panelElm.hidden = false;
+    panelElm.tabIndex = 0;
+  } else {
+    panelElm.hidden = true;
+    panelElm.removeAttribute("tabindex");
+  }
+};
+const makeTabs = (props) => {
+  const rootElm = document.createElement("div");
+  const ready = ensureCSS("Tabs").then(() => {
+    Cn.render(o(UncontrolledTabs, {
+      ...props
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 66,
+      columnNumber: 21
+    }, void 0), rootElm);
+  });
+  return {
+    rootElm,
+    unmount: () => {
+      Cn.unmountComponentAtNode(rootElm);
+      rootElm.remove();
+    },
+    update: (newProps) => {
+      Cn.render(o(UncontrolledTabs, {
+        ...props,
+        ...newProps
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 76,
+        columnNumber: 23
+      }, void 0), rootElm);
+    },
+    ready,
+    setPanelDisplay
+  };
+};
+export {
+  makeTabs as default,
+  setPanelDisplay
+};

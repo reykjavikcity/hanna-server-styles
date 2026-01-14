@@ -1,1 +1,60 @@
-import{C as a}from"../../_chunks/compat.module-6d0944a1.js";import{q as s,a as n}from"../../_chunks/qj-0db0624e.js";import{e as p}from"../../_chunks/ensureCSS-556a418e.js";import{g as l}from"../../_chunks/getLang-c224bf02.js";import{SiteWideAlerts as f}from"./sitewideAlerts.component.js";import{o as c}from"../../_chunks/jsxRuntime.module-9d76abce.js";import"../../_chunks/getSVGtext-03122a1f.js";import"../../_chunks/i18n-45294c51.js";import"../../_chunks/assets-7a061d68.js";import"../../_chunks/Alert-125dae8a.js";import"../../_chunks/_Button-aa4a4856.js";import"../../_chunks/_Link-7f48f5da.js";import"../../_chunks/env-dad6c8ea.js";import"../../_chunks/_useMobileMenuToggling-404bacd2.js";const i=r=>{const t=document.createElement("div");return r.append(t),t},d=(r,t)=>{if(typeof r=="string"){const m=s(r);if(m)return m}else if(r)return r;const e=s(`.${t}__alerts`);if(e)return i(e);const o=document.createElement("div");return o.className=`${t}__alerts`,n(`.${t}, body`).slice(-1)[0].prepend(o),i(o)},u=r=>{const t=r.layoutName||"Layout",e=d(r.rootElm,t);p("Alert").then(()=>{a.render(c(f,{alertsUri:r.alertsUri,baseUrl:r.baseUrl,refreshInterval:r.refreshInterval,lang:l()}),e)})};export{u as default};
+import { C as Cn } from "../../_chunks/compat.module-0843eda4.js";
+import { q, a as qq } from "../../_chunks/qj-1c8d4095.js";
+import { e as ensureCSS } from "../../_chunks/ensureCSS-6552b186.js";
+import { g as getLang } from "../../_chunks/getLang-8d69057b.js";
+import { SiteWideAlerts } from "./sitewideAlerts.component.js";
+import { o } from "../../_chunks/jsxRuntime.module-b4e3cc20.js";
+import "../../_chunks/hannavars-d2690bca.js";
+import "../../_chunks/getSVGtext-b918ded2.js";
+import "../../_chunks/ObjectHelpers-c82b0e19.js";
+import "../../_chunks/i18n-a7278b6d.js";
+import "../../_chunks/assets-a74434cf.js";
+import "../../_chunks/Alert-11447dea.js";
+import "../../_chunks/_Button-bcc13c44.js";
+import "../../_chunks/_Link-980948f0.js";
+import "../../_chunks/env-e5e0e8b6.js";
+import "../../_chunks/_useMobileMenuToggling-ec254f95.js";
+var _jsxFileName = "/Users/maro5239/work/hanna/modules/hanna-sprinkles/src/utils/sitewideAlerts.tsx";
+const makeEmptyDivInside = (container) => {
+  const div = document.createElement("div");
+  container.append(div);
+  return div;
+};
+const resolveRoot = (rootElm, Layout) => {
+  if (typeof rootElm === "string") {
+    const selectedElm = q(rootElm);
+    if (selectedElm) {
+      return selectedElm;
+    }
+  } else if (rootElm) {
+    return rootElm;
+  }
+  const existingAlertsContainer = q(`.${Layout}__alerts`);
+  if (existingAlertsContainer) {
+    return makeEmptyDivInside(existingAlertsContainer);
+  }
+  const newAlertsContainer = document.createElement("div");
+  newAlertsContainer.className = `${Layout}__alerts`;
+  const layoutElm = qq(`.${Layout}, body`).slice(-1)[0];
+  layoutElm.prepend(newAlertsContainer);
+  return makeEmptyDivInside(newAlertsContainer);
+};
+const sitewideAlerts = (props) => {
+  const Layout = props.layoutName || "Layout";
+  const rootElm = resolveRoot(props.rootElm, Layout);
+  ensureCSS("Alert").then(() => {
+    Cn.render(o(SiteWideAlerts, {
+      alertsUri: props.alertsUri,
+      baseUrl: props.baseUrl,
+      refreshInterval: props.refreshInterval,
+      lang: getLang()
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 61,
+      columnNumber: 7
+    }, void 0), rootElm);
+  });
+};
+export {
+  sitewideAlerts as default
+};

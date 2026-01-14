@@ -1,1 +1,271 @@
-import"../_chunks/initHannaNamespace-21359965.js";import{g as C}from"../_chunks/qj-0db0624e.js";import"../_chunks/i18n-45294c51.js";import"../_chunks/getLang-c224bf02.js";var b={exports:{}};/* Selectybox 1.0  -- (c) 2012-2015 Hugsmiðjan ehf. - MIT/GPL   @preserve */b.exports,function(n){(function(){var i=window,d=!!i.addEventListener,u,h=function(e,s){var t=s==="add",o=d?(t?"add":"remove")+"EventListener":(t?"at":"de")+"tachEvent",l=d?"":"on",r=e.select;r[o](l+"change",e._$refresh),r[o](l+"keyup",e._$refresh),r[o](l+"focus",e._$focus),r[o](l+"blur",e._$blur)},_=function(e,s,t){for(var o in s)e.style[o]=t?"":s[o]},F="templ getButton focusClass disabledClass emptyClass emptyVal text selectCSS".split(" "),x="_$refresh _$focus _$blur select container button".split(" "),a=function(e,s){var t=this,o=a.getWidget(e);if(o&&(o.destroy(),t=o),t instanceof a){if(s){for(var l=0,r;r=F[l++];)s[r]!=null&&(t[r]=s[r]);s=null}u=u||document.createElement("div"),u.innerHTML=t.templ.replace(/^[^<]+/,"");var c=t.container=u.firstChild;c.style.position="relative",t.button=t.getButton(),t.select=e,e.parentNode.insertBefore(c,e),c.insertBefore(e,t.button.nextSibling),e.style.opacity=1e-4,_(e,t.selectCSS),t._$refresh=function(){setTimeout(function(){t.refresh()},0)};var y=c.classList;t._$blur=function(){y.remove(t.focusClass)},t._$focus=function(){y.add(t.focusClass)};var v=!1;if(t._$able=function(){e.disabled!==v&&(v=e.disabled,y[v?"add":"remove"](t.disabledClass))},h(t,"add"),t._isEmpty=!1,t.refresh(),e.$selectybox=t,o)return t}else return new a(e,s)};a.prototype={templ:'<span class="selecty"><span class="selecty-button"/></span>',getButton:function(){return this.container.firstChild},focusClass:"focused",disabledClass:"disabled",emptyClass:"emptyvalue",emptyVal:"\xA0 \xA0 \xA0",text:function(e){return e},selectCSS:{position:"absolute",bottom:0,left:0,width:"100%",height:"100%",top:"auto",right:"auto",margin:0,padding:0,border:0},refresh:function(){this._$able(),this.val()},val:function(e){var s=this,t=s.select;if(e!=null){e+="";for(var o=0,l;l=t.options[o++];)if(l.value===e){l.selected=!0;break}}var r=t.options[t.selectedIndex],c=!r.value;c!==s._isEmpty&&(s._isEmpty=c,s.container.classList[c?"add":"remove"](s.emptyClass)),s.button.textContent=s.text(r.textContent)||s.emptyVal},disable:function(e){this.select.disabled=e!==!1,this._$able()},destroy:function(){var e=this,s=e.select,t=e.container,o=t.parentNode;o.insertBefore(s,t),o.removeChild(t),h(e,"remove"),s.style.opacity="",_(s,e.selectCSS,!0),s.$selectybox="";for(var l=F.concat(x),r=l.length;r--;)delete e[l[r]]}},a.jQueryPlugin=function(e){e.fn.selectybox=function(s,t){var o=this;if(o[0])if(typeof s=="string"){if(s==="widget")return a.getWidget(o[0]);/^(?:refresh|val|destroy|disable)$/.test(s)&&o.each(function(){var l=a.getWidget(this);l&&l[s](t)})}else return s=s||{},s.text=s.text||function(l){return e(this.container).toggleClass("selecty-empty",!e(this.select).val()),l},o.pushStack(o.filter("select").map(function(l,r){return a(r,s).container}));return o}},a.getWidget=function(e){return e.$selectybox},n.exports?n.exports=a:i.Selectybox=a;var m=i.jQuery;m&&!m.fn.selectybox&&a.jQueryPlugin(m)})()}(b);var S=b.exports;const $=C(S),g=(...n)=>console.info("FormField sprinkle: ",...n),E=n=>{const i=n.querySelector("select");if(!i){g("No <select/> found for",n);return}new $(i,{templ:'<span class="FormField__input"><span class="selecty-button"/></span>',focusClass:"FormField__input--focused",disabledClass:"FormField__input--disabled",emptyClass:"FormField__input--empty"})},p=(n,i,d)=>{n.classList[d?"add":"remove"](`FormField--${i}`)},f=n=>{const i=n.querySelector("select, input, textarea");if(!i||!i.closest(".FormField__input")){g("No input/select field found for",n);return}p(n,"disabled",i.disabled),p(n,"readonly","readOnly"in i&&i.readOnly);const d=!i.value,u=d&&!(i instanceof HTMLSelectElement?i.options[i.selectedIndex].text.trim():i.placeholder.trim());p(n,"filled",!d),p(n,"empty",u)},L=n=>{const i=n.querySelector(".FormField__input");if(!i)throw new Error("`FormField__input` not found");i.addEventListener("focusin",()=>{n.classList.add("FormField--focused")}),i.addEventListener("focusout",()=>{n.classList.remove("FormField--focused"),f(n)}),i.addEventListener("change",()=>{f(n)}),n.setStateClasses=()=>f(n)};window.Hanna.makeSprinkle({name:"FormField",selector:".FormField",init:n=>{n.querySelector("label.FormField__label")&&(n.classList.contains("Selectbox")&&E(n),L(n),f(n))},refresh:f});
+import "../_chunks/initHannaNamespace-f4f98843.js";
+import { g as getDefaultExportFromCjs } from "../_chunks/qj-1c8d4095.js";
+import "../_chunks/i18n-a7278b6d.js";
+import "../_chunks/getLang-8d69057b.js";
+var selectybox = { exports: {} };
+/* Selectybox 1.0  -- (c) 2012-2015 Hugsmiðjan ehf. - MIT/GPL   @preserve */
+selectybox.exports;
+(function(module) {
+  (function() {
+    var win = window;
+    var w3cEvents = !!win.addEventListener;
+    var emptyDiv;
+    var events = function(widget, action) {
+      var doAdd = action === "add";
+      var method = w3cEvents ? (doAdd ? "add" : "remove") + "EventListener" : (doAdd ? "at" : "de") + "tachEvent";
+      var on = w3cEvents ? "" : "on";
+      var select = widget.select;
+      select[method](on + "change", widget._$refresh);
+      select[method](on + "keyup", widget._$refresh);
+      select[method](on + "focus", widget._$focus);
+      select[method](on + "blur", widget._$blur);
+    };
+    var setStyles = function(element, styles, doClear) {
+      for (var cssProp in styles) {
+        element.style[cssProp] = doClear ? "" : styles[cssProp];
+      }
+    };
+    var optionPropNames = "templ getButton focusClass disabledClass emptyClass emptyVal text selectCSS".split(" ");
+    var widgetInstanceProps = "_$refresh _$focus _$blur select container button".split(" ");
+    var Selectybox2 = function(select, options) {
+      var widget = this;
+      var existingWidget = Selectybox2.getWidget(select);
+      if (existingWidget) {
+        existingWidget.destroy();
+        widget = existingWidget;
+      }
+      if (!(widget instanceof Selectybox2)) {
+        return new Selectybox2(select, options);
+      } else {
+        if (options) {
+          var i = 0;
+          var prop;
+          while (prop = optionPropNames[i++]) {
+            if (options[prop] != null) {
+              widget[prop] = options[prop];
+            }
+          }
+          options = null;
+        }
+        emptyDiv = emptyDiv || document.createElement("div");
+        emptyDiv.innerHTML = widget.templ.replace(/^[^<]+/, "");
+        var container = widget.container = emptyDiv.firstChild;
+        container.style.position = "relative";
+        widget.button = widget.getButton();
+        widget.select = select;
+        select.parentNode.insertBefore(container, select);
+        container.insertBefore(select, widget.button.nextSibling);
+        select.style.opacity = 1e-4;
+        setStyles(select, widget.selectCSS);
+        widget._$refresh = function() {
+          setTimeout(function() {
+            widget.refresh();
+          }, 0);
+        };
+        var containerClass = container.classList;
+        widget._$blur = function() {
+          containerClass.remove(widget.focusClass);
+        };
+        widget._$focus = function() {
+          containerClass.add(widget.focusClass);
+        };
+        var _disabled = false;
+        widget._$able = function() {
+          if (select.disabled !== _disabled) {
+            _disabled = select.disabled;
+            containerClass[_disabled ? "add" : "remove"](widget.disabledClass);
+          }
+        };
+        events(widget, "add");
+        widget._isEmpty = false;
+        widget.refresh();
+        select.$selectybox = widget;
+        if (existingWidget) {
+          return widget;
+        }
+      }
+    };
+    Selectybox2.prototype = {
+      // Default options/properties
+      templ: '<span class="selecty"><span class="selecty-button"/></span>',
+      getButton: function() {
+        return this.container.firstChild;
+      },
+      focusClass: "focused",
+      disabledClass: "disabled",
+      emptyClass: "emptyvalue",
+      emptyVal: "     ",
+      text: function(txt) {
+        return txt;
+      },
+      // <-- it's OK to add HTML markup
+      selectCSS: {
+        // set necessary styles
+        position: "absolute",
+        bottom: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        // unset existing styles
+        top: "auto",
+        right: "auto",
+        margin: 0,
+        padding: 0,
+        border: 0
+      },
+      // Methods
+      refresh: function() {
+        this._$able();
+        this.val();
+      },
+      val: function(val) {
+        var widget = this;
+        var select = widget.select;
+        if (val != null) {
+          val += "";
+          var i = 0;
+          var option;
+          while (option = select.options[i++]) {
+            if (option.value === val) {
+              option.selected = true;
+              break;
+            }
+          }
+        }
+        var selectedOption = select.options[select.selectedIndex];
+        var isEmpty = !selectedOption.value;
+        if (isEmpty !== widget._isEmpty) {
+          widget._isEmpty = isEmpty;
+          widget.container.classList[isEmpty ? "add" : "remove"](widget.emptyClass);
+        }
+        widget.button.textContent = widget.text(selectedOption.textContent) || widget.emptyVal;
+      },
+      disable: function(disabled) {
+        this.select.disabled = disabled !== false;
+        this._$able();
+      },
+      destroy: function() {
+        var widget = this;
+        var select = widget.select;
+        var container = widget.container;
+        var containerParent = container.parentNode;
+        containerParent.insertBefore(select, container);
+        containerParent.removeChild(container);
+        events(widget, "remove");
+        select.style.opacity = "";
+        setStyles(select, widget.selectCSS, true);
+        select.$selectybox = "";
+        var props = optionPropNames.concat(widgetInstanceProps);
+        var i = props.length;
+        while (i--) {
+          delete widget[props[i]];
+        }
+      }
+    };
+    Selectybox2.jQueryPlugin = function($) {
+      $.fn.selectybox = function(options, value) {
+        var selects = this;
+        if (selects[0]) {
+          if (typeof options === "string") {
+            if (options === "widget") {
+              return Selectybox2.getWidget(selects[0]);
+            } else if (/^(?:refresh|val|destroy|disable)$/.test(options)) {
+              selects.each(function() {
+                var widget = Selectybox2.getWidget(this);
+                if (widget) {
+                  widget[options](value);
+                }
+              });
+            }
+          } else {
+            options = options || {};
+            options.text = options.text || function(text) {
+              $(this.container).toggleClass("selecty-empty", !$(this.select).val());
+              return text;
+            };
+            return selects.pushStack(
+              selects.filter("select").map(function(i, select) {
+                return Selectybox2(select, options).container;
+              })
+            );
+          }
+        }
+        return selects;
+      };
+    };
+    Selectybox2.getWidget = function(select) {
+      return select.$selectybox;
+    };
+    if (module.exports) {
+      module.exports = Selectybox2;
+    } else {
+      win.Selectybox = Selectybox2;
+    }
+    var jQuery = win.jQuery;
+    jQuery && !jQuery.fn.selectybox && Selectybox2.jQueryPlugin(jQuery);
+  })();
+})(selectybox);
+var selectyboxExports = selectybox.exports;
+const Selectybox = /* @__PURE__ */ getDefaultExportFromCjs(selectyboxExports);
+const log = (...args) => console.info("FormField sprinkle: ", ...args);
+const initSelectybox = (elm) => {
+  const selectElm = elm.querySelector("select");
+  if (!selectElm) {
+    log("No <select/> found for", elm);
+    return;
+  }
+  new Selectybox(selectElm, {
+    templ: '<span class="FormField__input"><span class="selecty-button"/></span>',
+    focusClass: "FormField__input--focused",
+    disabledClass: "FormField__input--disabled",
+    emptyClass: "FormField__input--empty"
+  });
+};
+const flag = (elm, modifier, add) => {
+  elm.classList[add ? "add" : "remove"](`FormField--${modifier}`);
+};
+const setStateClasses = (elm) => {
+  const input = elm.querySelector("select, input, textarea");
+  if (!input || !input.closest(".FormField__input")) {
+    log("No input/select field found for", elm);
+    return;
+  }
+  flag(elm, "disabled", input.disabled);
+  flag(elm, "readonly", "readOnly" in input && input.readOnly);
+  const noValue = !input.value;
+  const noVisibleContent = noValue && !(input instanceof HTMLSelectElement ? input.options[input.selectedIndex].text.trim() : input.placeholder.trim());
+  flag(elm, "filled", !noValue);
+  flag(elm, "empty", noVisibleContent);
+};
+const bindFocusEvents = (elm) => {
+  const inputWrap = elm.querySelector(".FormField__input");
+  if (!inputWrap) {
+    throw new Error("`FormField__input` not found");
+  }
+  inputWrap.addEventListener("focusin", () => {
+    elm.classList.add("FormField--focused");
+  });
+  inputWrap.addEventListener("focusout", () => {
+    elm.classList.remove("FormField--focused");
+    setStateClasses(elm);
+  });
+  inputWrap.addEventListener("change", () => {
+    setStateClasses(elm);
+  });
+  elm.setStateClasses = () => setStateClasses(elm);
+};
+window.Hanna.makeSprinkle({
+  name: "FormField",
+  selector: ".FormField",
+  init: (elm) => {
+    if (!elm.querySelector("label.FormField__label")) {
+      return;
+    }
+    if (elm.classList.contains("Selectbox")) {
+      initSelectybox(elm);
+    }
+    bindFocusEvents(elm);
+    setStateClasses(elm);
+  },
+  refresh: setStateClasses
+});

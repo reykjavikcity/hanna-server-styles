@@ -1,1 +1,53 @@
-System.register(["../_chunks/initHannaNamespace-722ec071.js","../_chunks/addSeenEffect-00c08965.js","../_chunks/qj-f4bfbfcd.js","../_chunks/i18n-6c3e4ded.js","../_chunks/getLang-45de5ff2.js","../_chunks/compat.module-f329784f.js"],function(r,o){"use strict";var n,a,s;return{setters:[null,e=>{n=e.g,a=e.c,s=e.h},null,null,null,null],execute:function(){const e=()=>{},c=s?`, .${["AccordionList","ActionCards","ArticleCarousel","CityBlock","ExtraLinks","FeatureList","Gallery","GridBlocks","HeroBlock","ImageCards","InfoBlock","IslandBlock","IslandPageBlock","LabeledTextBlock","NewsHero","PageFilter","RowBlock","ContentArticle","TableWrapper--BasicTable","PageHeading","SubHeading","TextBlock","Tabs"].join(", .")}`:"";window.Hanna.makeSprinkle({name:"SeenEffects",selector:`[data-seen-effect]${c}`,dataAttr:n.DATA_ATTR_NAME,init:t=>(a(t),n(t)||e),unmount:(t,l)=>{l()}})}}});
+System.register(["../_chunks/initHannaNamespace-77b40001.js", "../_chunks/addSeenEffect-212ed7c0.js", "../_chunks/qj-0ce4c6bc.js", "../_chunks/i18n-5b23de04.js", "../_chunks/getLang-61538edc.js", "../_chunks/compat.module-919773fc.js"], function(exports, module) {
+  "use strict";
+  var getObserver, autoSeenEffectPrepare, hasLegacySeenEffectsCSS;
+  return {
+    setters: [null, (module2) => {
+      getObserver = module2.g;
+      autoSeenEffectPrepare = module2.c;
+      hasLegacySeenEffectsCSS = module2.h;
+    }, null, null, null, null],
+    execute: function() {
+      const noop = () => void 0;
+      const legacySelectors = !hasLegacySeenEffectsCSS ? "" : `, .${[
+        // block-level components
+        "AccordionList",
+        "ActionCards",
+        "ArticleCarousel",
+        "CityBlock",
+        "ExtraLinks",
+        "FeatureList",
+        "Gallery",
+        "GridBlocks",
+        "HeroBlock",
+        "ImageCards",
+        "InfoBlock",
+        "IslandBlock",
+        "IslandPageBlock",
+        "LabeledTextBlock",
+        "NewsHero",
+        "PageFilter",
+        "RowBlock",
+        "ContentArticle",
+        // low-level ??
+        "TableWrapper--BasicTable",
+        "PageHeading",
+        "SubHeading",
+        "TextBlock",
+        "Tabs"
+      ].join(", .")}`;
+      window.Hanna.makeSprinkle({
+        name: "SeenEffects",
+        selector: `[data-seen-effect]${legacySelectors}`,
+        dataAttr: getObserver.DATA_ATTR_NAME,
+        init: (component) => {
+          autoSeenEffectPrepare(component);
+          return getObserver(component) || noop;
+        },
+        unmount: (elm, unobserve) => {
+          unobserve();
+        }
+      });
+    }
+  };
+});

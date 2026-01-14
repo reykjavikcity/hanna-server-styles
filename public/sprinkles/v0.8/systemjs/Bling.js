@@ -1,1 +1,28 @@
-System.register(["../_chunks/initHannaNamespace-722ec071.js","../_chunks/getSVGtext-ef8676a9.js","../_chunks/i18n-6c3e4ded.js","../_chunks/assets-cefd5009.js","../_chunks/qj-f4bfbfcd.js","../_chunks/getLang-45de5ff2.js"],function(a,c){"use strict";var e,t;return{setters:[null,n=>{e=n.g},null,n=>{t=n.a},null,null],execute:function(){window.Hanna.makeSprinkle({name:"Bling",init:n=>{const{blingType:s,blingImage:l}=n.dataset,u=s?t(s):l;e(u).then(i=>{i&&(n.innerHTML=i)})}})}}});
+System.register(["../_chunks/initHannaNamespace-77b40001.js", "../_chunks/getSVGtext-2c45db0c.js", "../_chunks/i18n-5b23de04.js", "../_chunks/assets-7c5ecab5.js", "../_chunks/qj-0ce4c6bc.js", "../_chunks/getLang-61538edc.js"], function(exports, module) {
+  "use strict";
+  var getSVGtext, getBlingUrl;
+  return {
+    setters: [null, (module2) => {
+      getSVGtext = module2.g;
+    }, null, (module2) => {
+      getBlingUrl = module2.a;
+    }, null, null],
+    execute: function() {
+      window.Hanna.makeSprinkle({
+        name: "Bling",
+        init: (elm) => {
+          const {
+            blingType,
+            blingImage
+          } = elm.dataset;
+          const blingUrl = blingType ? getBlingUrl(blingType) : blingImage;
+          getSVGtext(blingUrl).then((svgText) => {
+            if (svgText) {
+              elm.innerHTML = svgText;
+            }
+          });
+        }
+      });
+    }
+  };
+});

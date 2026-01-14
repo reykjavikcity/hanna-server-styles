@@ -1,1 +1,21 @@
-import"../_chunks/initHannaNamespace-21359965.js";import{g as r}from"../_chunks/getSVGtext-03122a1f.js";import"../_chunks/i18n-45294c51.js";import{a as t}from"../_chunks/assets-7a061d68.js";import"../_chunks/qj-0db0624e.js";import"../_chunks/getLang-c224bf02.js";window.Hanna.makeSprinkle({name:"Bling",init:n=>{const{blingType:i,blingImage:a}=n.dataset,o=i?t(i):a;r(o).then(m=>{m&&(n.innerHTML=m)})}});
+import "../_chunks/initHannaNamespace-f4f98843.js";
+import { g as getSVGtext } from "../_chunks/getSVGtext-b918ded2.js";
+import "../_chunks/i18n-a7278b6d.js";
+import { a as getBlingUrl } from "../_chunks/assets-a74434cf.js";
+import "../_chunks/qj-1c8d4095.js";
+import "../_chunks/getLang-8d69057b.js";
+window.Hanna.makeSprinkle({
+  name: "Bling",
+  init: (elm) => {
+    const {
+      blingType,
+      blingImage
+    } = elm.dataset;
+    const blingUrl = blingType ? getBlingUrl(blingType) : blingImage;
+    getSVGtext(blingUrl).then((svgText) => {
+      if (svgText) {
+        elm.innerHTML = svgText;
+      }
+    });
+  }
+});

@@ -1,1 +1,150 @@
-import"../_chunks/initHannaNamespace-21359965.js";import{C as p,h as A,F as v}from"../_chunks/compat.module-6d0944a1.js";import{f as h}from"../_chunks/qj-0db0624e.js";import{T as x}from"../_chunks/Tabs-b49d30de.js";import{d as y}from"../_chunks/_useMobileMenuToggling-404bacd2.js";import"../_chunks/getSVGtext-03122a1f.js";import{n as E}from"../_chunks/misc-29f84158.js";import"../_chunks/i18n-45294c51.js";import{a as I,b as P}from"../_chunks/addSeenEffect-49807a07.js";import{o as u}from"../_chunks/jsxRuntime.module-9d76abce.js";import"../_chunks/getLang-c224bf02.js";const d=(e,a)=>{a?(e.hidden=!1,e.tabIndex=0):(e.hidden=!0,e.removeAttribute("tabindex"))},S=e=>e.hasAttribute("aria-label")||e.hasAttribute("aria-labelledby"),f=(...e)=>console.info("Tabs sprinkle: ",...e),T=e=>{const{tabPanelPairs:a,startingIdx:n,label:i,labelledBy:t,id:r}=e,[o,l]=A(n),{tabs:b,onSetActive:g}=v(()=>({tabs:a.map(s=>s.tab),onSetActive:s=>{const m=a[s];if(!m)return;const c=o!==void 0&&a[o];c&&d(c.panelElm,!1),d(m.panelElm,!0),l(s)}}),[o,a]);return u(x,{tabs:b,id:r,"aria-label":i,"aria-labelledby":t,role:"tablist",activeIdx:o,onSetActive:g,ssr:!1})},_=e=>{const a=Array.from(e.querySelectorAll(".Tabs__tab")),n=a.filter(t=>{t=t.cloneNode(!0);const r="href"in t;return r||f("Not an anchor element",t),r}).map(t=>{const r=t.getAttribute("aria-controls")||h.getFrag(t.href)||void 0,o=r&&document.getElementById(r);if(!o){f(r?"tab panel elm not found for":"ID pointer missing on",t);return}const l=t.querySelector(".Tabs__tab__badge")||void 0;l&&l.remove();const b=l&&l.textContent.trim().replace(/(?:^\(|\)$)/g,"");return{panelElm:o,isActive:t.dataset.active==="true",tab:{id:t.id||y(),"aria-controls":r,label:t.textContent,badge:b,longLabel:t.getAttribute("aria-label")||void 0}}}).filter(E);if(n.length!==a.length)return;const i=n.findIndex(t=>t.isActive);return{id:e.id||void 0,label:e.getAttribute("aria-label")||void 0,labelledBy:e.getAttribute("aria-labelledby")||void 0,tabPanelPairs:n.map(t=>({tab:t.tab,panelElm:t.panelElm})),startingIdx:i>=0?i:void 0}};window.Hanna.makeSprinkle({name:"Tabs",init:e=>{const a=_(e);if(a){a.tabPanelPairs.forEach(({tab:i,panelElm:t},r)=>{d(t,r===a.startingIdx),t.setAttribute("role","tabpanel"),t.classList.contains("TabPanel")&&(t.dataset.sprinkled="true"),S(t)||t.setAttribute("aria-label",i.longLabel||i.label)});const n=e;return e.getAttributeNames().forEach(i=>{e.removeAttribute(i)}),p.render(u(T,{...a,wrapperProps:I(e)}),n,()=>P()),n}},unmount:(e,a)=>{a&&p.unmountComponentAtNode(a)}});
+import { C as Cn, t, h, F } from "../_chunks/compat.module-0843eda4.js";
+import "../_chunks/initHannaNamespace-f4f98843.js";
+import { f as frag } from "../_chunks/qj-1c8d4095.js";
+import { T as Tabs } from "../_chunks/Tabs-7769a5d5.js";
+import { d as domid } from "../_chunks/_useMobileMenuToggling-ec254f95.js";
+import "../_chunks/getSVGtext-b918ded2.js";
+import { n as notNully } from "../_chunks/misc-d1570401.js";
+import "../_chunks/i18n-a7278b6d.js";
+import { a as autoSeenEffectWrapperProps, b as autoSeenEffectsRefresh } from "../_chunks/addSeenEffect-3eaf41e0.js";
+import { o } from "../_chunks/jsxRuntime.module-b4e3cc20.js";
+import "../_chunks/getLang-8d69057b.js";
+var _jsxFileName = "/Users/maro5239/work/hanna/modules/hanna-sprinkles/src/Tabs.tsx";
+const setPanelDisplay = (panelElm, isActive) => {
+  if (isActive) {
+    panelElm.hidden = false;
+    panelElm.tabIndex = 0;
+  } else {
+    panelElm.hidden = true;
+    panelElm.removeAttribute("tabindex");
+  }
+};
+const isAriaLabelled = (elm) => elm.hasAttribute("aria-label") || elm.hasAttribute("aria-labelledby");
+const log = (...args) => console.info("Tabs sprinkle: ", ...args);
+const SprinkledTabs = (props) => {
+  const {
+    tabPanelPairs,
+    startingIdx,
+    label,
+    labelledBy,
+    id
+  } = props;
+  const [activeIdx, setActiveIdx] = t(h(startingIdx), "activeIdx");
+  const {
+    tabs,
+    onSetActive
+  } = t(F(() => ({
+    tabs: tabPanelPairs.map((d) => d.tab),
+    onSetActive: (newActiveIdx) => {
+      const newTab = tabPanelPairs[newActiveIdx];
+      if (!newTab) {
+        return;
+      }
+      const currentTab = activeIdx !== void 0 && tabPanelPairs[activeIdx];
+      currentTab && setPanelDisplay(currentTab.panelElm, false);
+      setPanelDisplay(newTab.panelElm, true);
+      setActiveIdx(newActiveIdx);
+    }
+  }), [activeIdx, tabPanelPairs]), "tabs");
+  return o(Tabs, {
+    tabs,
+    id,
+    "aria-label": label,
+    "aria-labelledby": labelledBy,
+    role: "tablist",
+    activeIdx,
+    onSetActive,
+    ssr: false
+  }, void 0, false, {
+    fileName: _jsxFileName,
+    lineNumber: 59,
+    columnNumber: 5
+  }, globalThis);
+};
+const getTabsData = (elm) => {
+  const tabElms = Array.from(elm.querySelectorAll(".Tabs__tab"));
+  const data = tabElms.filter((tabElm) => {
+    tabElm = tabElm.cloneNode(true);
+    const isLink = "href" in tabElm;
+    if (!isLink) {
+      log("Not an anchor element", tabElm);
+    }
+    return isLink;
+  }).map((tabElm) => {
+    const controlsId = tabElm.getAttribute("aria-controls") || frag.getFrag(tabElm.href) || void 0;
+    const panelElm = controlsId && document.getElementById(controlsId);
+    if (!panelElm) {
+      if (!controlsId) {
+        log("ID pointer missing on", tabElm);
+      } else {
+        log("tab panel elm not found for", tabElm);
+      }
+      return;
+    }
+    const badgeElm = tabElm.querySelector(".Tabs__tab__badge") || void 0;
+    badgeElm && badgeElm.remove();
+    const badge = badgeElm && badgeElm.textContent.trim().replace(/(?:^\(|\)$)/g, "");
+    return {
+      panelElm,
+      isActive: tabElm.dataset.active === "true",
+      tab: {
+        id: tabElm.id || domid(),
+        "aria-controls": controlsId,
+        label: tabElm.textContent,
+        badge,
+        longLabel: tabElm.getAttribute("aria-label") || void 0
+      }
+    };
+  }).filter(notNully);
+  if (data.length !== tabElms.length) {
+    return;
+  }
+  const activeIdx = data.findIndex((item) => item.isActive);
+  return {
+    id: elm.id || void 0,
+    label: elm.getAttribute("aria-label") || void 0,
+    labelledBy: elm.getAttribute("aria-labelledby") || void 0,
+    tabPanelPairs: data.map((item) => ({
+      tab: item.tab,
+      panelElm: item.panelElm
+    })),
+    startingIdx: activeIdx >= 0 ? activeIdx : void 0
+  };
+};
+window.Hanna.makeSprinkle({
+  name: "Tabs",
+  init: (elm) => {
+    const props = getTabsData(elm);
+    if (props) {
+      props.tabPanelPairs.forEach(({
+        tab,
+        panelElm
+      }, i) => {
+        setPanelDisplay(panelElm, i === props.startingIdx);
+        panelElm.setAttribute("role", "tabpanel");
+        if (panelElm.classList.contains("TabPanel")) {
+          panelElm.dataset.sprinkled = "true";
+        }
+        if (!isAriaLabelled(panelElm)) {
+          panelElm.setAttribute("aria-label", tab.longLabel || tab.label);
+        }
+      });
+      const root = elm;
+      elm.getAttributeNames().forEach((attrName) => {
+        elm.removeAttribute(attrName);
+      });
+      Cn.render(o(SprinkledTabs, {
+        ...props,
+        wrapperProps: autoSeenEffectWrapperProps(elm)
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 166,
+        columnNumber: 9
+      }, globalThis), root, () => autoSeenEffectsRefresh());
+      return root;
+    }
+  },
+  unmount: (elm, root) => {
+    root && Cn.unmountComponentAtNode(root);
+  }
+});
