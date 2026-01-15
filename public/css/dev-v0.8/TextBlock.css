@@ -191,7 +191,7 @@
     transform: translateY(-50%);
     width: var(--dash-width, 1.125em);
     margin-right: var(--dash-margin, 0.625em);
-    margin-left: var(--dash-indent);
+    margin-left: var(--dash-indent, 0);
   }
 
   @media (min-width: 760px) {
