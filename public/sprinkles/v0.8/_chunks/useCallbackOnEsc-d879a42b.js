@@ -1,0 +1,1 @@
+import{_ as s,p as c}from"./compat.module-8108cd22.js";const u=e=>{const n=s(e),r=!!e;n.current=e,c(()=>{if(!r)return;const t=o=>{o.key==="Escape"&&n.current&&n.current()};return document.addEventListener("keydown",t),()=>{document.removeEventListener("keydown",t)}},[r])};export{u};

@@ -1,0 +1,1 @@
+System.register(["./compat.module-f633f329.js","./jsxRuntime.module-67585037.js"],function(s,o){"use strict";var r,n,u;return{setters:[e=>{r=e._,n=e.p},e=>{u=e.o}],execute:function(){const e=s("I",({html:c})=>{const t=r(null);return n(()=>{t.current&&(t.current.outerHTML=t.current.innerHTML)},[]),u("span",{ref:t,dangerouslySetInnerHTML:{__html:c}})})}}});

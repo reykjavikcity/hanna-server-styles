@@ -1,0 +1,1 @@
+System.register(["./i18n-e4535dde.js"],function(c,o){"use strict";var s;return{setters:[e=>{s=e.D}],execute:function(){const e={is:"is",en:"en",pl:"pl"},r=c("g",t=>{let n=((t==null?void 0:t.closest("[lang]"))||document.documentElement).lang;return n=n.slice(0,2).toLowerCase(),e[n]||s})}}});

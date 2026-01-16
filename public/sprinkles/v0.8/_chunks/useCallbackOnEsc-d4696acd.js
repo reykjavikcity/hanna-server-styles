@@ -1,0 +1,1 @@
+System.register(["./compat.module-f633f329.js"],function(o,d){"use strict";var r,c;return{setters:[e=>{r=e._,c=e.p}],execute:function(){const e=o("u",t=>{const n=r(t),s=!!t;n.current=t,c(()=>{if(!s)return;const u=i=>{i.key==="Escape"&&n.current&&n.current()};return document.addEventListener("keydown",u),()=>{document.removeEventListener("keydown",u)}},[s])})}}});

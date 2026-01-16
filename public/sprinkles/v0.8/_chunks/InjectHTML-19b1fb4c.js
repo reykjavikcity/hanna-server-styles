@@ -1,0 +1,1 @@
+import{_ as n,p as e}from"./compat.module-8108cd22.js";import{o}from"./jsxRuntime.module-c4fc14d9.js";const m=({html:t})=>{const r=n(null);return e(()=>{r.current&&(r.current.outerHTML=r.current.innerHTML)},[]),o("span",{ref:r,dangerouslySetInnerHTML:{__html:t}})};export{m as I};
