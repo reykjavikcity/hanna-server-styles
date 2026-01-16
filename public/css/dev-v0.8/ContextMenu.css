@@ -1,7 +1,6 @@
-/** @deprecated  Renamed to 'ContextMenu'  (Will be removed in v0.9) */
 /*!@deps ButtonPrimary, ButtonSecondary */
 
-@keyframes DropdownButton-open {
+@keyframes ContextMenu-open {
   0% {
     opacity: 0;
   }
@@ -10,7 +9,7 @@
   }
 }
 
-.DropdownButton {
+.ContextMenu {
   display: inline-block;
   position: relative;
   margin-right: var(--Button--gapH);
@@ -20,12 +19,12 @@
 /* ------------------------------------------------------------------------ */
 
 /* Doubles also as 'ButtonSecondary' or 'ButtonPrimary' by default */
-.DropdownButton__toggler {
+.ContextMenu__toggler {
   margin: 0;
   min-width: 0;
   width: auto; /* needed by Firefox (as of 2024-11) Some conflicts between .Button* styles applying a min-width and width:max-content  */
 }
-summary:where(.DropdownButton__toggler) {
+summary:where(.ContextMenu__toggler) {
   list-style: none; /* reset default disclosure triangle */
   cursor: pointer;
   display: inline-block;
@@ -33,14 +32,14 @@ summary:where(.DropdownButton__toggler) {
 }
 
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .DropdownButton__toggler
+  .ContextMenu__toggler
   a {
   --WARNING--message: "<a/> is not allowed inside <summary/>";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .DropdownButton__toggler
+  .ContextMenu__toggler
   a::before {
   all: initial !important;
   order: -999 !important;
@@ -57,14 +56,14 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 }
 
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .DropdownButton__toggler
+  .ContextMenu__toggler
   button {
   --WARNING--message: "<button/> is not allowed inside <summary/>";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .DropdownButton__toggler
+  .ContextMenu__toggler
   button::before {
   all: initial !important;
   order: -999 !important;
@@ -82,10 +81,10 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 
 /* ------------------------------------------------------------------------ */
 
-.DropdownButton__menu {
+.ContextMenu__menu {
   position: absolute;
-  top: var(--DropdownButton-pos-y);
-  left: var(--DropdownButton-pos-x);
+  top: var(--ContextMenu-pos-y);
+  left: var(--ContextMenu-pos-x);
   z-index: var(--zindex--overlay);
   margin: var(--space-0_5) 0;
 
@@ -100,26 +99,26 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 
   font: var(--font-button);
 }
-[open] > .DropdownButton__menu {
-  animation: DropdownButton-open 200ms ease-in;
+[open] > .ContextMenu__menu {
+  animation: ContextMenu-open 200ms ease-in;
 }
 
 /* ------------------------------------------------------------------------ */
 
-.DropdownButton__item {
+.ContextMenu__item {
   --link-focus-outlineColor: var(--color-faxafloi-100);
   --link-focus-outlineOffset: 0;
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .DropdownButton__item[aria-current="true"]:has(
-    > .DropdownButton__itembutton--destructive
+  .ContextMenu__item[aria-current="true"]:has(
+    > .ContextMenu__itembutton--destructive
   ) {
   --WARNING--message: "Destructive and current do not mix";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .DropdownButton__item[aria-current="true"]:has(
-    > .DropdownButton__itembutton--destructive
+  .ContextMenu__item[aria-current="true"]:has(
+    > .ContextMenu__itembutton--destructive
   )::before {
   all: initial !important;
   order: -999 !important;
@@ -137,39 +136,39 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 
 /* ------------------------------------------------------------------------ */
 
-.DropdownButton__itemDivider {
+.ContextMenu__itemDivider {
   /* border-top: 1px solid var(--color-suld-50); */
   border-top: var(--border-default);
   margin: 0 var(--space-2);
   height: 0;
 }
-.DropdownButton__itemDivider--labelled {
+.ContextMenu__itemDivider--labelled {
   height: auto;
   padding: var(--space-1) 0;
   color: var(--color-suld-100);
 }
-:has(.DropdownButton__itembutton[data-icon])
+:has(.ContextMenu__itembutton[data-icon])
   > *
-  > .DropdownButton__itemDivider--labelled {
+  > .ContextMenu__itemDivider--labelled {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 
   padding-left: var(--space-1);
 }
-.DropdownButton__itemDivider--labelled:first-child {
+.ContextMenu__itemDivider--labelled:first-child {
   border-top: none;
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .DropdownButton__itemDivider:first-child:not(
-    .DropdownButton__itemDivider--labelled
+  .ContextMenu__itemDivider:first-child:not(
+    .ContextMenu__itemDivider--labelled
   ) {
   --WARNING--message: "First item __itemDivider makes no sense";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .DropdownButton__itemDivider:first-child:not(
-    .DropdownButton__itemDivider--labelled
+  .ContextMenu__itemDivider:first-child:not(
+    .ContextMenu__itemDivider--labelled
   )::before {
   all: initial !important;
   order: -999 !important;
@@ -185,12 +184,12 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   content: var(--WARNING--message) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .DropdownButton__itemDivider:last-child {
+  .ContextMenu__itemDivider:last-child {
   --WARNING--message: "Last item __itemDivider makes no sense";
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
-  .DropdownButton__itemDivider:last-child::before {
+  .ContextMenu__itemDivider:last-child::before {
   all: initial !important;
   order: -999 !important;
   font-family: sans-serif !important;
@@ -207,7 +206,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 
 /* ------------------------------------------------------------------------ */
 
-.DropdownButton__itembutton {
+.ContextMenu__itembutton {
   --link-color: _inherit;
   --link-weight: _inherit;
   --link-underline: none;
@@ -224,46 +223,46 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 
   position: relative;
 }
-.DropdownButton__itembutton[class] {
+.ContextMenu__itembutton[class] {
   display: block;
   width: 100%;
   padding: var(--space-2);
   border: none;
 }
-:first-child > .DropdownButton__itembutton {
+:first-child > .ContextMenu__itembutton {
   border-radius: var(--space-0_5) var(--space-0_5) 0 0;
 }
 /** FIXME: .FocusTrap is the :last-child, must handle that... */
-:last-child > .DropdownButton__itembutton {
+:last-child > .ContextMenu__itembutton {
   border-radius: 0 0 var(--space-0_5) var(--space-0_5);
 }
 
-.DropdownButton__itembutton:hover,
-.DropdownButton__itembutton:focus {
+.ContextMenu__itembutton:hover,
+.ContextMenu__itembutton:focus {
   background-color: var(--color-esja-25);
   z-index: 1;
 }
 
-.DropdownButton__itembutton--destructive {
+.ContextMenu__itembutton--destructive {
   --link-color: var(--color-heidmork-100);
 }
-.DropdownButton__itembutton--destructive:hover,
-.DropdownButton__itembutton--destructive:focus {
+.ContextMenu__itembutton--destructive:hover,
+.ContextMenu__itembutton--destructive:focus {
   background-color: var(--color-heidmork-25);
 }
 
-[aria-current="true"] > .DropdownButton__itembutton {
+[aria-current="true"] > .ContextMenu__itembutton {
   --link-color: var(--color-faxafloi-150);
 
   padding-right: var(--space-6);
   background: var(--color-esja-50);
 }
-[aria-current="true"] > .DropdownButton__itembutton:hover,
-[aria-current="true"] > .DropdownButton__itembutton:focus {
+[aria-current="true"] > .ContextMenu__itembutton:hover,
+[aria-current="true"] > .ContextMenu__itembutton:focus {
   background-color: var(--color-esja-75);
 }
 
-[aria-current="true"] > .DropdownButton__itembutton::after {
+[aria-current="true"] > .ContextMenu__itembutton::after {
   content: "check";
   content: "check" / "";
 
@@ -289,10 +288,10 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 }
 
 /* Indent all buttons if at least one of them has an icon */
-:has(.DropdownButton__itembutton[data-icon]) > * > .DropdownButton__itembutton {
+:has(.ContextMenu__itembutton[data-icon]) > * > .ContextMenu__itembutton {
   padding-left: var(--space-7);
 }
-.DropdownButton__itembutton[data-icon]::before {
+.ContextMenu__itembutton[data-icon]::before {
   --Icon--enabled: initial;
 
   margin-left: var(--space-5--neg);
