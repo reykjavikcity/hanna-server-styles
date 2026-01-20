@@ -100,7 +100,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   font: var(--font-button);
 }
 [open] > .ContextMenu__menu {
-  animation: ContextMenu-open 200ms ease-in;
+  animation: ContextMenu-open 150ms ease-in;
 }
 
 /* ------------------------------------------------------------------------ */
