@@ -142,7 +142,7 @@
   .Icon {
     --Icon--enabled: initial;
   }
-  .Icon::before {
+  .Icon:where(:empty)::before {
     margin-right: 0;
   }
 
