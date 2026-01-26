@@ -23,14 +23,15 @@
 
     display: inline-block;
     font: var(--font-button);
+    font-weight: var(--font-weight--normal);
     padding: var(--space-1) 0;
     padding-left: 2.25rem;
     position: relative;
     color: var(--Toggler--label--color);
   }
 
-  .CheckboxButton__label::before,
-  .CheckboxButton__label::after {
+  .CheckboxButton__label::before, /**/
+    .CheckboxButton__label::after {
     content: "";
     position: absolute;
     top: var(--space-1);
@@ -432,14 +433,15 @@
 
     display: inline-block;
     font: var(--font-button);
+    font-weight: var(--font-weight--normal);
     padding: var(--space-1) 0;
     padding-left: 2.25rem;
     position: relative;
     color: var(--Toggler--label--color);
   }
 
-  .RadioButton__label::before,
-  .RadioButton__label::after {
+  .RadioButton__label::before, /**/
+    .RadioButton__label::after {
     content: "";
     position: absolute;
     top: var(--space-1);

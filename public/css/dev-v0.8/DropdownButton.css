@@ -99,6 +99,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   border-radius: var(--space-0_5);
 
   font: var(--font-button);
+  font-weight: var(--font-weight--normal);
 }
 [open] > .DropdownButton__menu {
   animation: DropdownButton-open 200ms ease-in;
@@ -215,8 +216,6 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   --link-color--hover: var(--link-color);
   --link-underline--hover: none;
   --link-underline-offset: 0;
-
-  font-weight: var(--font-weight--normal);
 
   text-overflow: ellipsis;
   white-space: nowrap;

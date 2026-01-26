@@ -98,6 +98,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   border-radius: var(--space-0_5);
 
   font: var(--font-button);
+  font-weight: var(--font-weight--normal);
 }
 [open] > .ContextMenu__menu {
   animation: ContextMenu-open 150ms ease-in;
@@ -138,14 +139,13 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 
 .ContextMenu__itemDivider {
   border-top: var(--border-default);
-  font-weight: var(--font-weight--normal);
   margin: 0 var(--space-2);
   height: 0;
 }
 .ContextMenu__itemDivider--labelled {
   height: auto;
   padding: var(--space-1) 0;
-  color: var(--color-suld-100);
+  color: var(--color-suld-150);
 }
 :has(.ContextMenu__itembutton[data-icon])
   > *
@@ -214,8 +214,6 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   --link-color--hover: var(--link-color);
   --link-underline--hover: none;
   --link-underline-offset: 0;
-
-  font-weight: var(--font-weight--normal);
 
   text-overflow: ellipsis;
   white-space: nowrap;

@@ -167,7 +167,7 @@
   padding-top: var(--space-1);
   font: var(--font-button);
   font-weight: var(--font-weight--normal);
-  color: var(--color-suld-100);
+  color: var(--color-suld-150);
 }
 
 .Multiselect__optionSeparator:not(.Multiselect__option + *) {
@@ -192,6 +192,11 @@
   padding-bottom: var(--space-2);
   border-left: var(--space-2) solid transparent;
   width: 100%;
+}
+
+[aria-expanded] > .Multiselect__option > .Checkbox__label::before,
+[aria-expanded] > .Multiselect__option > .Checkbox__label::after {
+  margin-top: var(--space-1);
 }
 
 .Multiselect__option--focused {

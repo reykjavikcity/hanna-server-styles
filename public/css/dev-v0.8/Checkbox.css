@@ -23,14 +23,15 @@
 
     display: inline-block;
     font: var(--font-button);
+    font-weight: var(--font-weight--normal);
     padding: var(--space-1) 0;
     padding-left: 2.25rem;
     position: relative;
     color: var(--Toggler--label--color);
   }
 
-  .Checkbox__label::before,
-  .Checkbox__label::after {
+  .Checkbox__label::before, /**/
+    .Checkbox__label::after {
     content: "";
     position: absolute;
     top: var(--space-1);
@@ -279,14 +280,15 @@
 
     display: inline-block;
     font: var(--font-button);
+    font-weight: var(--font-weight--normal);
     padding: var(--space-1) 0;
     padding-left: 2.25rem;
     position: relative;
     color: var(--Toggler--label--color);
   }
 
-  .Radio__label::before,
-  .Radio__label::after {
+  .Radio__label::before, /**/
+    .Radio__label::after {
     content: "";
     position: absolute;
     top: var(--space-1);
