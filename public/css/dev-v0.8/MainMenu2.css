@@ -491,6 +491,11 @@ j .MainMenu2__related__title {
     padding-bottom: var(--space-6);
   }
 
+  .MainMenu2--closed > * > .MainMenu2__hot__items {
+    padding: 0;
+    background: none;
+  }
+
   /* Move "--redhot" item out of flow and fix its position*/
   /* next to the toggler button*/
   .MainMenu2--closed
@@ -537,14 +542,14 @@ j .MainMenu2__related__title {
     content: var(--WARNING--message) !important;
   }
 
-  .MainMenu2__hot__item--redhot > .ButtonSecondary[data-icon] {
+  .MainMenu2__hot__item--redhot .ButtonSecondary[data-icon] {
     overflow: hidden;
     width: 0;
     padding-left: 0;
     padding-right: 0;
     min-width: var(--space-5);
   }
-  .MainMenu2__hot__item--redhot > .ButtonSecondary[data-icon]::before {
+  .MainMenu2__hot__item--redhot .ButtonSecondary[data-icon]::before {
     width: 100%;
     margin-left: 0;
     margin-right: 1px;
