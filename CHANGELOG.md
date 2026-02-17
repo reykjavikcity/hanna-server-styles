@@ -4,6 +4,14 @@
 
 - ... <!-- Add new lines here. -->
 
+## 0.8.97
+
+_2026-02-19_
+
+- `MainMenu2`:
+  - fix: Suppress visible bg on `hot__items` when menu is closed on mobile
+  - fix: Collapse `rethot` `.ContextMenu__toggler` to only show icon on mobile
+
 ## 0.8.96
 
 _2026-02-11_
