@@ -312,7 +312,7 @@ a.MainMenu2__toggler {
   grid-area: related;
   color: var(--color-suld-200);
 }
-j .MainMenu2__related__title {
+.MainMenu2__related__title {
   font: var(--font-heading-s);
   padding-top: var(--space-1);
   padding-bottom: calc(var(--MainMenu2--mainLink--paddingBottom) - 1px);
@@ -601,9 +601,7 @@ j .MainMenu2__related__title {
 
   .MainMenu2 {
     /* font: var(--font-body-l);*/
-    --MainMenu2--main--width: calc(
-      50% + clamp(40px, calc(16.49484536082474vw - 121.64948453608247px), 104px)
-    );
+    --MainMenu2--main--width: calc(50% + var(--grid-6) - 480px);
     --MainMenu2--bgLeft: var(--color-faxafloi-100);
     --MainMenu2--bgShadw: var(--MainMenu2--bgLeft);
     --MainMenu2--bgRight: var(--color-suld-0);
