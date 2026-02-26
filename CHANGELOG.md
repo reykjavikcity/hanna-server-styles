@@ -4,6 +4,18 @@
 
 - ... <!-- Add new lines here. -->
 
+## 0.8.98
+
+_2026-02-26_
+
+- `MainMenu2`:
+  - feat: Make "related" and "hot" areas fixed width on netbook + wide
+    viewports
+  - fix: Add back missing styling for `MainMenu2__related__title`
+- `Layout`:
+  - feat: Make `--Layout__header-homelink-width` scale on netbook + wide
+    viewports
+
 ## 0.8.97
 
 _2026-02-19_
