@@ -353,7 +353,7 @@ a.MainMenu2__toggler {
 :has(.MainMenu2__related__link[data-icon])
   > *
   > .MainMenu2__related__link:not([data-icon]) {
-  padding-left: calc(var(--icon-size--small) + var(--space-0_5));
+  margin-left: calc(var(--icon-size--small) + var(--space-0_5));
 }
 
 @media (max-width: 979px) {
