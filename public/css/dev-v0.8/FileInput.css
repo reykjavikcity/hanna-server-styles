@@ -25,7 +25,6 @@
     transition: all 200ms ease-in;
     transition-property: background-color, border-color;
     cursor: pointer;
-    margin-bottom: 1.25rem;
     text-align: center;
     color: var(--color-suld-200);
     position: relative;
@@ -109,12 +108,13 @@
     display: flex;
     flex-flow: row wrap;
     align-items: center;
+    margin-top: var(--space-2);
   }
 
   .FileInput__file {
     width: 100%;
     padding-left: 26px;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-1_5);
     position: relative;
   }
 
@@ -132,15 +132,18 @@
     flex-shrink: 1;
   }
   .FileInput__filesize {
-    padding-left: 0.1875rem;
+    padding-top: 2px;
+    padding-left: var(--space-0_5);
+    color: var(--color-suld-150);
     white-space: nowrap;
   }
 
   .FileInput__preview {
     width: 40px;
     height: 40px;
+    margin: var(--space-1--neg) 0;
+    margin-right: var(--space-1);
     display: inline-block;
-    margin-right: 0.9375rem;
     vertical-align: middle;
   }
   .FileInput__preview img {
@@ -183,7 +186,6 @@
 
     color: var(--color-faxafloi-100);
   }
-
   .FileInput__file-remove:hover::before,
   .FileInput__file-remove:focus::before {
     color: var(--color-faxafloi-150);

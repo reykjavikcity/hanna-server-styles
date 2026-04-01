@@ -54,6 +54,8 @@
   .PageFilter__filters {
     display: flex;
     flex-flow: row wrap;
+    -moz-column-gap: var(--grid-gutter);
+    column-gap: var(--grid-gutter);
     align-items: flex-start;
     margin-top: 1.25rem;
     margin-bottom: calc(2.586206896551724% - 7.241379310344826px);
@@ -62,13 +64,18 @@
   }
 
   .PageFilter__filters > .FormField {
-    margin-right: var(--grid-gutter);
     margin-bottom: 1.5rem;
-
-    min-width: 24.786324786324787%;
+    min-width: 29.059829059829063%;
+    width: -moz-min-content;
+    width: min-content;
   }
 
-  @media (max-width: 479px) {
+  @media (min-width: 760px) and (max-width: 979px) {
+    .PageFilter__filters > .FormField {
+      min-width: var(--grid-6);
+    }
+  }
+  @media (max-width: 759px) {
     .PageFilter__filters > .FormField {
       width: 100%;
     }

@@ -3,14 +3,12 @@
     max-width: 792px;
     margin-top: calc(2.586206896551724% + 24.758620689655174px);
 
-    --leftIndent: calc(3.6363636363636362vw + 20.363636363636363px);
-    --iconWidth: calc(2.727272727272727vw + 15.272727272727273px);
+    --leftIndent: calc(5.454545454545454vw + 14.545454545454547px);
   }
 
   @media (min-width: 760px) {
     .AccordionList {
       --leftIndent: var(--grid-1-1);
-      --iconWidth: var(--grid-1);
     }
   }
   .AccordionList--wide {
@@ -84,11 +82,17 @@
     -moz-osx-font-smoothing: grayscale;
 
     position: absolute;
-    left: 0;
-    width: var(--iconWidth);
+    left: var(--space-0_5--neg);
     color: var(--color-suld-200);
     transform: rotateZ(45deg);
     transition: transform 200ms ease-in;
+  }
+
+  @media (min-width: 760px) {
+    .AccordionList__button::before {
+      left: 0;
+      width: var(--grid-1);
+    }
   }
   .AccordionList__button[aria-pressed="true"]::before,
   .AccordionList__button[aria-expanded="true"]::before {

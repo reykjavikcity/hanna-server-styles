@@ -190,6 +190,7 @@
   }
   .Checkbox--nolabel > .Checkbox__label {
     height: 100%;
+    width: 1px;
     padding-top: 2px;
     padding-bottom: 2px;
   }
@@ -333,9 +334,9 @@
   }
 
   .Radio__input:checked + .Radio__label::after {
-    -webkit-mask: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M50%2C0C22.4%2C0%2C0%2C22.4%2C0%2C50s22.4%2C50%2C50%2C50s50-22.4%2C50-50S77.6%2C0%2C50%2C0z%20M50%2C80c-16.6%2C0-30-13.4-30-30%20s13.4-30%2C30-30s30%2C13.4%2C30%2C30S66.6%2C80%2C50%2C80z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+    -webkit-mask: url("data:image/svg+xml,%3Csvg%20viewBox%3D%22-8%20-8%20116%20116%22%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M50%2C0C22.4%2C0%2C0%2C22.4%2C0%2C50s22.4%2C50%2C50%2C50s50-22.4%2C50-50S77.6%2C0%2C50%2C0z%20M50%2C80c-16.6%2C0-30-13.4-30-30%20s13.4-30%2C30-30s30%2C13.4%2C30%2C30S66.6%2C80%2C50%2C80z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
       50% / 16px 16px no-repeat;
-    mask: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M50%2C0C22.4%2C0%2C0%2C22.4%2C0%2C50s22.4%2C50%2C50%2C50s50-22.4%2C50-50S77.6%2C0%2C50%2C0z%20M50%2C80c-16.6%2C0-30-13.4-30-30%20s13.4-30%2C30-30s30%2C13.4%2C30%2C30S66.6%2C80%2C50%2C80z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
+    mask: url("data:image/svg+xml,%3Csvg%20viewBox%3D%22-8%20-8%20116%20116%22%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M50%2C0C22.4%2C0%2C0%2C22.4%2C0%2C50s22.4%2C50%2C50%2C50s50-22.4%2C50-50S77.6%2C0%2C50%2C0z%20M50%2C80c-16.6%2C0-30-13.4-30-30%20s13.4-30%2C30-30s30%2C13.4%2C30%2C30S66.6%2C80%2C50%2C80z%22%2F%3E%0A%3C%2Fsvg%3E%0A")
       50% / 16px 16px no-repeat;
     background-color: var(--color-suld-0);
   }
@@ -444,6 +445,7 @@
   }
   .Radio--nolabel > .Radio__label {
     height: 100%;
+    width: 1px;
     padding-top: 2px;
     padding-bottom: 2px;
   }

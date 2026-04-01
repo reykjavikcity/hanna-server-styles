@@ -74,17 +74,14 @@
     white-space: nowrap;
 
     box-sizing: content-box;
-    width: 1em;
-    padding-left: var(--space-0_5);
-    padding-right: var(--space-1);
+    width: calc(1em + var(--space-1_5));
     margin-right: var(--space-1--neg);
     border-radius: var(--space-0_5);
     float: right;
     position: relative;
+    /* outline: 1px dotted red;*/
   }
   button.TagPill__remove:hover {
-    margin-left: var(--space-0_5--neg);
-    padding-left: var(--space-1);
     background-color: var(--TagPill--background--hover);
     color: var(--TagPill--color--hover);
   }
@@ -92,7 +89,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    margin: 0;
+    margin-right: 0;
   }
   .TagPill__button:hover + .TagPill__remove,
   .TagPill__button:active + .TagPill__remove {

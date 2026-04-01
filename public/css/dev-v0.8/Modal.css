@@ -162,10 +162,10 @@
     display: block;
     position: absolute;
     z-index: 5;
-    top: var(--grid-1);
-    right: var(--grid-1);
+    top: max(var(--grid-1), var(--space-1));
+    right: max(var(--grid-1), var(--space-1));
     color: var(--color-suld-200);
-    font-size: calc(2.6717557251908395vw + 27.450381679389317px);
+    font-size: 3.5rem;
     margin: -0.4em;
     width: 1em;
     height: 1em;

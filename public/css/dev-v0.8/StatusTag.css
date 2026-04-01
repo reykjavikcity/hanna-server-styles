@@ -1,0 +1,64 @@
+@media screen {
+  .StatusTag {
+    --StatusTag--borderColor: var(--color-suld-50);
+    --StatusTag--background: var(--color-suld-25);
+    --StatusTag--lightColor: var(--color-suld-100);
+    display: inline-flex;
+    font: var(--font-label);
+    font-weight: var(--font-weight--bold);
+    align-items: center;
+    padding: var(--space-0_5) var(--space-1);
+    border: 1px solid var(--StatusTag--borderColor);
+    border-radius: var(--space-0_5);
+    background: var(--StatusTag--background);
+    color: var(--color-suld-200);
+    vertical-align: middle;
+    white-space: nowrap;
+
+    margin-right: var(--space-2);
+    margin-bottom: var(--space-2);
+  }
+
+  .StatusTag--large {
+    padding: var(--space-1) var(--space-1_5);
+  }
+
+  .StatusTag::before {
+    content: "";
+    color: var(--StatusTag--lightColor);
+    background: currentColor;
+    border-radius: 50%;
+    flex: 0 0 auto;
+    width: var(--space-1);
+    height: var(--space-1);
+    margin-right: 6px; /* Figma design has 6px space */
+  }
+  .StatusTag--light--off::before {
+    content: none;
+  }
+
+  .StatusTag__label {
+    display: inline-block;
+  }
+
+  .StatusTag--color--blue {
+    --StatusTag--background: var(--color-faxafloi-25);
+    --StatusTag--borderColor: var(--color-faxafloi-50);
+    --StatusTag--lightColor: var(--color-faxafloi-100);
+  }
+  .StatusTag--color--green {
+    --StatusTag--borderColor: var(--color-ellidaardalur-100);
+    --StatusTag--background: var(--color-ellidaardalur-50);
+    --StatusTag--lightColor: var(--color-ellidaardalur-100);
+  }
+  .StatusTag--color--yellow {
+    --StatusTag--borderColor: var(--color-nautholsvik-100);
+    --StatusTag--background: var(--color-nautholsvik-50);
+    --StatusTag--lightColor: var(--color-nautholsvik-100);
+  }
+  .StatusTag--color--red {
+    --StatusTag--borderColor: var(--color-heidmork-100);
+    --StatusTag--background: var(--color-heidmork-50);
+    --StatusTag--lightColor: var(--color-heidmork-100);
+  }
+}

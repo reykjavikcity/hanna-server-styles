@@ -56,7 +56,7 @@
   /**/
 
 :root {
-  --cssVersion: "0.8.99";
+  --cssVersion: "0.8.100";
   --browser-scrollbar-width: 16px;
   --bp-w-phone: 320px;
   --bp-w-phablet: 480px;
@@ -156,6 +156,10 @@
     var(--font-body-s-leading) var(--font-family);
   --font-button: var(--font-weight--bold) var(--font-button-size) /
     var(--font-button-leading) var(--font-family);
+  --font-input: var(--font-weight--normal) var(--font-input-size) /
+    var(--font-input-leading) var(--font-family);
+  --font-input-s: var(--font-weight--normal) var(--font-input-s-size) /
+    var(--font-input-s-leading) var(--font-family);
   --font-label: var(--font-label-size) / var(--font-label-leading)
     var(--font-family);
   --font-base-size: 16px;
@@ -178,6 +182,10 @@
   --font-body-s-leading: 16px;
   --font-button-size: 16px;
   --font-button-leading: 20px;
+  --font-input-size: 20px;
+  --font-input-leading: 32px;
+  --font-input-s-size: 16px;
+  --font-input-s-leading: 24px;
   --font-label-size: 12px;
   --font-label-leading: 16px;
   --baseVerticalMargin: calc(0.7633587786259541vw + 13.557251908396948px);
@@ -356,34 +364,34 @@
   --grid-margin--right--neg: calc(
     -1 * var(--grid-margin) + var(--browser-scrollbar-width)
   );
-  --grid-0-1: calc(2.9321065669076387vw - 0.11121783529650031px);
-  --grid-1: calc(4.6913705070522225vw - 0.17794853647438913px);
-  --grid-1-1: calc(7.623477073959862vw - 0.28916637177088944px);
-  --grid-2: calc(12.314847581012083vw - 0.4671149082452928px);
-  --grid-2-2: calc(15.246954147919723vw - 0.5783327435417789px);
-  --grid-3: calc(19.938324654971943vw - 0.7562812800161964px);
-  --grid-3-3: calc(22.870431221879585vw - 0.8674991153126825px);
-  --grid-4: calc(27.5618017289318vw - 1.0454476517870148px);
-  --grid-4-4: calc(30.493908295839447vw - 1.1566654870835578px);
-  --grid-5: calc(35.185278802891666vw - 1.334614023557947px);
-  --grid-5-5: calc(38.11738536979931vw - 1.4458318588544898px);
-  --grid-6: calc(42.80875587685152vw - 1.6237803953288221px);
-  --grid-6-6: calc(45.74086244375917vw - 1.734998230625365px);
-  --grid-7: calc(50.43223295081138vw - 1.9129467670996974px);
-  --grid-7-7: calc(53.36433951771903vw - 2.024164602396354px);
-  --grid-8: calc(58.055710024771244vw - 2.2021131388706863px);
-  --grid-8-8: calc(60.98781659167889vw - 2.3133309741671155px);
-  --grid-9: calc(65.67918709873109vw - 2.491279510641448px);
-  --grid-9-9: calc(68.61129366563875vw - 2.6024973459381044px);
-  --grid-10: calc(73.30266417269097vw - 2.7804458824124367px);
-  --grid-10-10: calc(76.23477073959862vw - 2.8916637177089797px);
-  --grid-11: calc(80.92614124665083vw - 3.069612254183312px);
-  --grid-11-11: calc(83.85824781355848vw - 3.1808300894799686px);
-  --grid-12: calc(88.54961832061069vw - 3.358778625954301px);
+  --grid-0-1: calc(2.930675269197715vw - 0.10663768262474349px);
+  --grid-1: calc(4.689939209342299vw - 0.17336838380263941px);
+  --grid-1-1: calc(7.622045776249939vw - 0.28458621909915394px);
+  --grid-2: calc(12.31341628330216vw - 0.46253475557352886px);
+  --grid-2-2: calc(15.2455228502098vw - 0.573752590870015px);
+  --grid-3: calc(19.93689335726202vw - 0.7517011273444041px);
+  --grid-3-3: calc(22.86899992416966vw - 0.862918962640947px);
+  --grid-4: calc(27.56037043122188vw - 1.0408674991153362px);
+  --grid-4-4: calc(30.49247699812952vw - 1.1520853344117654px);
+  --grid-5: calc(35.183847505181745vw - 1.3300338708861545px);
+  --grid-5-5: calc(38.11595407208938vw - 1.4412517061826975px);
+  --grid-6: calc(42.8073245791416vw - 1.6192002426570298px);
+  --grid-6-6: calc(45.73943114604924vw - 1.7304180779535727px);
+  --grid-7: calc(50.43080165310146vw - 1.9083666144280187px);
+  --grid-7-7: calc(53.362908220009096vw - 2.019584449724448px);
+  --grid-8: calc(58.05427872706132vw - 2.197532986198894px);
+  --grid-8-8: calc(60.98638529396897vw - 2.308750821495437px);
+  --grid-9: calc(65.67775580102118vw - 2.486699357969769px);
+  --grid-9-9: calc(68.60986236792883vw - 2.5979171932661984px);
+  --grid-10: calc(73.30123287498105vw - 2.775865729740758px);
+  --grid-10-10: calc(76.23333944188867vw - 2.8870835650370736px);
+  --grid-11: calc(80.9247099489409vw - 3.0650321015116333px);
+  --grid-11-11: calc(83.85681651584854vw - 3.1762499368080626px);
+  --grid-12: calc(88.54818702290075vw - 3.354198473282395px);
   --grid-gutter: var(--grid-0-1);
   --grid-column: var(--grid-1);
-  --grid-0-1--neg: calc(-2.9321065669076387vw + 0.11121783529650031px);
-  --grid-1--neg: calc(-4.6913705070522225vw + 0.17794853647438913px);
+  --grid-0-1--neg: calc(-2.9335378646175627vw + 0.11579798796825713px);
+  --grid-1--neg: calc(-4.692801804762146vw + 0.18252868914615306px);
   --grid-gutter--neg: var(--grid-0-1--neg);
   --grid-column--neg: var(--grid-1--neg);
   --grid-edge: var(--grid-margin);

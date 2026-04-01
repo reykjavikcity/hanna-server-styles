@@ -305,13 +305,13 @@
     z-index: var(--zindex--header);
     top: 0;
     right: 0;
-    left: var(--Layout__header-homelink-space);
+    left: calc(15rem + var(--grid-0-1));
     height: var(--Layout__header-height);
     padding-bottom: calc(
       var(--link-underline--thickness) + var(--link-underline-offset)
     );
     margin-right: calc(-3.0927835051546393vw + 22.309278350515463px);
-    margin-left: calc(-1.5463917525773196vw - 158.84536082474227px);
+    margin-left: calc(-1.5463917525773196vw + 1.1546391752577314px);
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -537,7 +537,7 @@
 
     width: 100%;
     text-align: left;
-    margin-left: 8px;
+    margin-left: 4px;
   }
 
   .MainMenu__megapanel__backtomenu::after {

@@ -119,7 +119,8 @@
     position: absolute;
     top: 50%;
     left: 1rem;
-    width: 2.5rem;
+    font-size: 2.5rem;
+    width: 1em;
     margin-top: -1em;
     height: 2em;
     line-height: 2em;
@@ -250,19 +251,19 @@
   }
   @media (max-width: 759px) {
     .ContactBubble__title {
-      font: var(--font-heading-xl);
+      font: var(--font-heading-l);
       max-width: 9em; /* Makes for nice line-wrap in the text 'Hvað getum við 
  gert fyrir þig?' */
-      margin-bottom: calc(12.048192771084338vh - 33.831325301204814px);
-      margin-bottom: min(
-        var(--space-8),
-        calc(12.048192771084338vh - 33.831325301204814px)
+      margin-bottom: clamp(
+        var(--space-2),
+        calc(4.819277108433735vh - 7.132530120481931px),
+        var(--space-4)
       );
     }
   }
   @media (min-width: 760px) {
     .ContactBubble__title {
-      font: var(--font-body-l);
+      font: var(--font-heading-s);
       font-weight: var(--font-weight--bold);
       margin-bottom: 1.5rem;
     }
