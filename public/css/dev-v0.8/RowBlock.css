@@ -50,6 +50,7 @@
   *[data-seen-effect][data-is-seen="true"] > .RowBlockColumn,
   [data-seen-effect][data-is-seen="true"] * > .RowBlockColumn {
     transition: all 400ms ease-in-out;
+
     transition-property: opacity, transform;
   }
 
@@ -76,6 +77,7 @@
     .RowBlock
     > .RowBlockColumn:nth-child(n + 3) {
     --WARNING--message: "Only two `RowBlockColumn`s allowed here";
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -99,6 +101,7 @@
     .RowBlock
     > .RowBlockColumn:first-child:last-child {
     --WARNING--message: "Two `RowBlockColumn`s are required";
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -122,6 +125,7 @@
     .RowBlock
     > :not(.RowBlockColumn) {
     --WARNING--message: "Only `RowBlockColumn`s allowed here";
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -206,6 +210,7 @@
     :not(.RowBlock)
     > .RowBlockColumn {
     --WARNING--message: "Must be direct child of a `RowBlock`";
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])

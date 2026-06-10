@@ -2,6 +2,7 @@
 
 html:not([data-disable-css-warnings-with-abandon="true"]) .Layout {
   --WARNING--message: 'The CSS token "Layout--HomePage" is deprecated.';
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 

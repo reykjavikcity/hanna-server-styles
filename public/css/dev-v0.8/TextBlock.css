@@ -22,6 +22,7 @@
     html:not([data-disable-css-warnings-with-abandon="true"])
       .TextBlock--align--right.TextBlock--wide {
       --WARNING--message: "`--align--right` can't be `--wide`";
+
       box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
     }
     html:not([data-disable-css-warnings-with-abandon="true"])
@@ -222,6 +223,7 @@
   html:not([data-disable-css-warnings-with-abandon="true"])
     .TextBlock--small.TextBlock--labelled {
     --WARNING--message: "`--small` can't be `--labelled`";
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -243,6 +245,7 @@
   html:not([data-disable-css-warnings-with-abandon="true"])
     .TextBlock--wide.TextBlock--labelled {
     --WARNING--message: "`--wide` can't be `--labelled`";
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -266,6 +269,7 @@
   html:not([data-disable-css-warnings-with-abandon="true"])
     .TextBlock--largetext {
     --WARNING--message: '`--largetext` is Outdated. TextBlock is "large" by default';
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -286,6 +290,7 @@
 
   html:not([data-disable-css-warnings-with-abandon="true"]) .TextBlock__title {
     --WARNING--message: "`__title` is Outdated. Use PageHeading/SubHeading";
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -311,6 +316,7 @@
     .TextBlock
     .SubHeading {
     --WARNING--message: "Should NOT be used inside TextBlock";
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -380,6 +386,7 @@
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Heading--align--right.Heading--wide {
     --WARNING--message: "`--align--right` can't be `--wide`";
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -427,6 +434,7 @@
 html:not([data-disable-css-warnings-with-abandon="true"])
   h1.Heading:not([data-dev-forcedh1]) {
   --WARNING--message: "Only use <H2/> or lower for .Heading";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
@@ -467,6 +475,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   html:not([data-disable-css-warnings-with-abandon="true"])
     .SubHeading--align--right.SubHeading--wide {
     --WARNING--message: "`--align--right` can't be `--wide`";
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -510,6 +519,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 
 html:not([data-disable-css-warnings-with-abandon="true"]) h1.SubHeading {
   --WARNING--message: "Only use <H2/> or lower for .SubHeading";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
@@ -543,6 +553,7 @@ html:not([data-disable-css-warnings-with-abandon="true"]) ul.Sharpie,
 html:not([data-disable-css-warnings-with-abandon="true"]) li.Sharpie,
 html:not([data-disable-css-warnings-with-abandon="true"]) div.Sharpie {
   --WARNING--message: "Only use `Sharpie` on inline elements";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
@@ -638,6 +649,7 @@ br.VSpacer + [class], /* @deprecated (remove in v0.9)*/
 html:not([data-disable-css-warnings-with-abandon="true"])
   .VSpacer--top--none.VSpacer--bottom--none {
   --WARNING--message: "VSpacer can't be both `--top--none` and  `--bottom--none`";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
@@ -661,6 +673,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   [class*="VSpacer--top--"][class*="VSpacer--bottom--"]
   .VSpacer--small {
   --WARNING--message: "The class-name `.VSpacer--small` is redundant";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
@@ -683,6 +696,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   [class*="VSpacer--top--"][class*="VSpacer--bottom--"]
   .VSpacer--large {
   --WARNING--message: "The class-name `.VSpacer--large` is redundant";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
@@ -705,6 +719,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   [class*="VSpacer--top--"][class*="VSpacer--bottom--"]
   .VSpacer--xlarge {
   --WARNING--message: "The class-name `.VSpacer--xlarge` is redundant";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"])

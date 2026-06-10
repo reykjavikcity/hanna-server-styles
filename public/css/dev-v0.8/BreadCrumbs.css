@@ -103,6 +103,7 @@
   html:not([data-disable-css-warnings-with-abandon="true"])
     .BreadCrumbs__item:last-child:not([aria-current="true"]) {
     --WARNING--message: 'You forgot aria-current="true"';
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -124,6 +125,7 @@
   html:not([data-disable-css-warnings-with-abandon="true"])
     .BreadCrumbs:not(nav) {
     --WARNING--message: "Please use <nav/>";
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -145,6 +147,7 @@
   html:not([data-disable-css-warnings-with-abandon="true"])
     .BreadCrumbs:not([aria-label]):not([aria-labelledby]) {
     --WARNING--message: "Please add `aria-label` or `aria-labelledby`";
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -167,6 +170,7 @@
     .BreadCrumbs[aria-labelledby]
     > .BreadCrumbs__title:not([id]) {
     --WARNING--message: "Please add `id` attribute";
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])

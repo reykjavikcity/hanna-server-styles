@@ -45,6 +45,7 @@
 
     position: relative;
     display: block;
+    word-break: break-word; /* Because of long filenames with underscores in them.*/
     background-color: var(--color-suld-25);
     text-decoration: none;
     padding: 1rem 1.5rem;

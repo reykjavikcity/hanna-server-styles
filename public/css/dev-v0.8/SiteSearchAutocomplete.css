@@ -71,6 +71,7 @@
     letter-spacing: normal;
     font-size: var(--icon-size--medium);
     -moz-osx-font-smoothing: grayscale;
+
     color: var(--color-suld-100);
     float: right;
     width: var(--space-1_5);

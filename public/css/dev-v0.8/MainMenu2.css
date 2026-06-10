@@ -24,6 +24,7 @@
   z-index: 1;
   --MainMenu2--padding-bottom: var(--space-8);
   --MainMenu2--mainLink--paddingBottom: var(--space-2);
+
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw + var(--browser-scrollbar-width));
 }
@@ -140,6 +141,7 @@
   letter-spacing: normal;
   font-size: var(--icon-size--medium);
   -moz-osx-font-smoothing: grayscale;
+
   margin-left: var(--Button--iconOutdent);
   margin-right: var(--Button--iconSpace);
 }
@@ -370,6 +372,7 @@ a.MainMenu2__toggler {
 
   .MainMenu2 {
     --MainMenu2--mainLink--paddingBottom: var(--space-1);
+
     background: var(--color-faxafloi-100);
   }
   .MainMenu2--variant--light {
@@ -525,6 +528,7 @@ a.MainMenu2__toggler {
     .MainMenu2__hot__item--redhot
     ~ .MainMenu2__hot__item--redhot {
     --WARNING--message: "Only one `--redhot` item is allowed per menu";
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -737,6 +741,7 @@ a.MainMenu2__toggler {
 html:not([data-disable-css-warnings-with-abandon="true"])
   .MainMenu2:not([aria-label]) {
   --WARNING--message: 'aria-label="" is missing';
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
@@ -757,6 +762,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 }
 html:not([data-disable-css-warnings-with-abandon="true"]) .MainMenu {
   --WARNING--message: "`MainMenu` can not be used when `MainMenu2.css` is loaded";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"]) .MainMenu::before {

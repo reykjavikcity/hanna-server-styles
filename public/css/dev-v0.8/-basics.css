@@ -56,7 +56,7 @@
   /**/
 
 :root {
-  --cssVersion: "0.8.100";
+  --cssVersion: "0.8.101";
   --browser-scrollbar-width: 16px;
   --bp-w-phone: 320px;
   --bp-w-phablet: 480px;
@@ -1186,6 +1186,7 @@ html:not([data-disable-css-warnings-with-abandon="true"]) p p,
 html:not([data-disable-css-warnings-with-abandon="true"]) p dl,
 html:not([data-disable-css-warnings-with-abandon="true"]) p blockquote {
   --WARNING--message: "No block-level tags inside <p/>";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
@@ -1271,6 +1272,7 @@ a:active {
 html:not([data-disable-css-warnings-with-abandon="true"]) a[href="#"],
 html:not([data-disable-css-warnings-with-abandon="true"]) a:not([href]) {
   --WARNING--message: "Use <button/> instead";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"]) a[href="#"]::before,
@@ -1291,6 +1293,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 }
 html:not([data-disable-css-warnings-with-abandon="true"]) button[href] {
   --WARNING--message: 'Use <a href=""/>';
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"]) button[href]::before {
@@ -1383,6 +1386,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   :not(ul):not(ol)
   > li {
   --WARNING--message: "<li/> must be inside <ol/> or <ul/>";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
@@ -1405,6 +1409,7 @@ html:not([data-disable-css-warnings-with-abandon="true"]) ol > :not(li),
 html:not([data-disable-css-warnings-with-abandon="true"]) ul > :not(li),
 html:not([data-disable-css-warnings-with-abandon="true"]) menu > :not(li) {
   --WARNING--message: "Lists may only contain <li/>s";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"]) ol > :not(li)::before,
@@ -1447,6 +1452,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   :not(fieldset)
   > legend {
   --WARNING--message: "<legend/> must be first-child of <fieldset/>";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
@@ -1550,6 +1556,7 @@ tbody > * > td {
 [data-seen-effect=""][data-seen-effect][data-is-seen="true"],
 [data-seen-effect][data-is-seen="true"] [data-seen-effect=""] {
   transition: all 400ms ease-in-out;
+
   transition-property: opacity, transform;
 }
 .before-sprinkling [data-seen-effect="fadein"][data-seen-effect],
@@ -1567,6 +1574,7 @@ tbody > * > td {
 [data-seen-effect="fadein"][data-seen-effect][data-is-seen="true"],
 [data-seen-effect][data-is-seen="true"] [data-seen-effect="fadein"] {
   transition: all 400ms ease-in-out;
+
   transition-property: opacity, transform;
 }
 .before-sprinkling [data-seen-effect="fadeleft"][data-seen-effect],
@@ -1586,6 +1594,7 @@ tbody > * > td {
 [data-seen-effect="fadeleft"][data-seen-effect][data-is-seen="true"],
 [data-seen-effect][data-is-seen="true"] [data-seen-effect="fadeleft"] {
   transition: all 400ms ease-in-out;
+
   transition-property: opacity, transform;
 }
 [data-seen-effect="custom"] {

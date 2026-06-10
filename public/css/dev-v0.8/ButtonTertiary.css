@@ -94,6 +94,7 @@
 
 .ButtonTertiary--small {
   --ButtonTertiary--dashSpace: var(--space-1);
+
   /* font-weight: 400; */
 }
 
@@ -117,6 +118,7 @@
 html:not([data-disable-css-warnings-with-abandon="true"])
   .ButtonTertiary[data-icon] {
   --WARNING--message: "No icons on `ButtonTertiary`";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
@@ -139,6 +141,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 html:not([data-disable-css-warnings-with-abandon="true"])
   .ButtonTertiary--go--back.ButtonTertiary--destructive {
   --WARNING--message: "`--destructive` and `--go--back` do NOT mix";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
@@ -161,6 +164,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 html:not([data-disable-css-warnings-with-abandon="true"])
   .ButtonTertiary--go--forward {
   --WARNING--message: "`--go--forward` not supported on `ButtonTertiary`";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 

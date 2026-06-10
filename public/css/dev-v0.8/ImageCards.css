@@ -63,6 +63,7 @@
   *[data-seen-effect][data-is-seen="true"] .ImageCards__summary,
   [data-seen-effect][data-is-seen="true"] * .ImageCards__summary {
     transition: all 400ms ease-in-out;
+
     transition-property: opacity, transform;
   }
 
@@ -83,6 +84,7 @@
   *[data-seen-effect][data-is-seen="true"] .ImageCards__item,
   [data-seen-effect][data-is-seen="true"] * .ImageCards__item {
     transition: all 400ms ease-in-out;
+
     transition-property: opacity, transform;
   }
 

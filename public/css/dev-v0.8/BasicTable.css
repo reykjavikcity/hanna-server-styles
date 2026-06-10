@@ -20,6 +20,7 @@
       calc(0.7633587786259541vw + 13.557251908396948px),
       24px
     );
+
     width: calc(
       var(--BasicTable--width) + var(--BasicTable--pad-left) +
         var(--BasicTable--pad-right)
@@ -126,6 +127,7 @@
     .TableWrapper
     > :not(table):not(.TableWrapper__scroller) {
     --WARNING--message: "TableWrapper should only contain a single <table/>";
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -151,6 +153,7 @@
   html:not([data-disable-css-warnings-with-abandon="true"])
     .TableWrapper--BasicTable--align--right.TableWrapper--BasicTable--fullwidth {
     --WARNING--message: "--align-right and --fullwidth should not be used together";
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])

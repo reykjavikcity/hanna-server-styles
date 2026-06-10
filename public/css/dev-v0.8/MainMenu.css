@@ -434,8 +434,10 @@
 
     margin-left: calc(50% - 50vw);
     padding-left: calc(50vw - 50%);
+
     margin-right: calc(50% - 50vw);
     padding-right: calc(50vw - 50%);
+
     position: relative;
   }
   .MainMenu__panelsWrap:before {
@@ -562,6 +564,7 @@
 
 html:not([data-disable-css-warnings-with-abandon="true"]) .MainMenu:not(nav) {
   --WARNING--message: "Please use <nav/>";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
@@ -583,6 +586,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 html:not([data-disable-css-warnings-with-abandon="true"])
   .MainMenu:not([aria-label]):not([aria-labelledby]) {
   --WARNING--message: "Please add `aria-label` or `aria-labelledby`";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
@@ -604,6 +608,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   .MainMenu[aria-labelledby]
   > .MainMenu__title:not([id]) {
   --WARNING--message: "Please add `id` attribute";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
@@ -625,6 +630,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 html:not([data-disable-css-warnings-with-abandon="true"])
   .MainMenu__separator:not(.MainMenu__items > *) {
   --WARNING--message: "Separators must be child of ul.MainMenu__items";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
@@ -645,6 +651,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 html:not([data-disable-css-warnings-with-abandon="true"])
   .MainMenu__list:first-child {
   --WARNING--message: "`.MainMenu__title` missing";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
@@ -665,6 +672,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 html:not([data-disable-css-warnings-with-abandon="true"])
   .MainMenu__item:first-child:not(.MainMenu__item--home) {
   --WARNING--message: "Home link missing";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
@@ -684,6 +692,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 }
 html:not([data-disable-css-warnings-with-abandon="true"]) .MainMenu2 {
   --WARNING--message: "`MainMenu2` can not be used when `MainMenu.css` is loaded";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"]) .MainMenu2::before {

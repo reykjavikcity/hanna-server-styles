@@ -61,6 +61,7 @@
       .Alert--error
     ):not(.Alert--critical) {
     --WARNING--message: '"Type" modifier class-name is missing';
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -84,6 +85,7 @@
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Alert:not([role="alert"]) {
     --WARNING--message: 'Should be role="alert"';
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])

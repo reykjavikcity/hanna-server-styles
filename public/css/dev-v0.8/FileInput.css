@@ -129,6 +129,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+
     flex-shrink: 1;
   }
   .FileInput__filesize {

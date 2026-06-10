@@ -22,6 +22,7 @@
     --TagPill--height: var(--space-3);
     --TagPill--color: var(--color-suld-200);
     --TagPill--color--hover: var(--color-suld-0);
+
     background-color: var(--TagPill--background);
     color: var(--TagPill--color);
     border-radius: var(--space-0_5);
@@ -40,6 +41,7 @@
   }
   .TagPill--large {
     --TagPill--height: calc(var(--space-3) + var(--space-0_5));
+
     font-size: var(--font-button-size);
     font-weight: var(--font-weight--normal);
   }
@@ -149,6 +151,7 @@
   html:not([data-disable-css-warnings-with-abandon="true"])
     .TagPill__remove[aria-pressed] {
     --WARNING--message: ".TagPill buttons/links can not be disabled";
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])

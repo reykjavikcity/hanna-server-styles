@@ -23,6 +23,7 @@
 
   html:not([data-disable-css-warnings-with-abandon="true"]) .Attention--strong {
     --WARNING--message: "Deprecated: `.Attention--strong` is no longer supported";
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -61,6 +62,7 @@
   html:not([data-disable-css-warnings-with-abandon="true"]) .Attention ul,
   html:not([data-disable-css-warnings-with-abandon="true"]) .Attention ol {
     --WARNING--message: "Fancy rich text content is not supported";
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])

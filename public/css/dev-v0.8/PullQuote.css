@@ -59,6 +59,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   .PullQuote__quote
   > *:not(p) {
   --WARNING--message: "Only <p> is allowed inside `.PullQuote`";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
@@ -180,6 +181,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   .PullQuote__by
   > *:not(span):span(a) {
   --WARNING--message: 'Only <span> or <a href=""> is allowed inside `.PullQuote__by`';
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 

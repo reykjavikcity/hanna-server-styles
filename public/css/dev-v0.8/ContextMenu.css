@@ -35,6 +35,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   .ContextMenu__toggler
   a {
   --WARNING--message: "<a/> is not allowed inside <summary/>";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
@@ -59,6 +60,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   .ContextMenu__toggler
   button {
   --WARNING--message: "<button/> is not allowed inside <summary/>";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 
@@ -115,6 +117,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
     > .ContextMenu__itembutton--destructive
   ) {
   --WARNING--message: "Destructive and current do not mix";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
@@ -164,6 +167,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
     .ContextMenu__itemDivider--labelled
   ) {
   --WARNING--message: "First item __itemDivider makes no sense";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
@@ -186,6 +190,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 html:not([data-disable-css-warnings-with-abandon="true"])
   .ContextMenu__itemDivider:last-child {
   --WARNING--message: "Last item __itemDivider makes no sense";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 html:not([data-disable-css-warnings-with-abandon="true"])
@@ -279,6 +284,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   letter-spacing: normal;
   font-size: var(--icon-size--medium);
   -moz-osx-font-smoothing: grayscale;
+
   color: var(--color-suld-200);
   position: absolute;
   right: var(--space-2);

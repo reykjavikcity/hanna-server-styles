@@ -140,6 +140,7 @@
   html:not([data-disable-css-warnings-with-abandon="true"])
     .ArticleCarousel__items {
     --WARNING--message: "Unsupported: use `.ArticleCarousel__itemlist` instead";
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -170,6 +171,7 @@
   html:not([data-disable-css-warnings-with-abandon="true"])
     .ArticleCarousel__track {
     --WARNING--message: "Unsupported: use `.ArticleCarousel__itemlist` instead";
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -400,6 +402,7 @@
   html:not([data-disable-css-warnings-with-abandon="true"])
     .ArticleCarouselCard__morelink:not([aria-label]) {
     --WARNING--message: 'aria-label="" is missing';
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])

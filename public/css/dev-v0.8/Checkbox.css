@@ -156,6 +156,7 @@
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Checkbox__error:not([id]) {
     --WARNING--message: "should have id atribute to match input[aria-describedby]";
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -217,6 +218,7 @@
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Checkbox--nolabel:not(div) {
     --WARNING--message: "--nolabel should only be used on <div/>s";
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -411,6 +413,7 @@
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Radio__error:not([id]) {
     --WARNING--message: "should have id atribute to match input[aria-describedby]";
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])
@@ -472,6 +475,7 @@
   html:not([data-disable-css-warnings-with-abandon="true"])
     .Radio--nolabel:not(div) {
     --WARNING--message: "--nolabel should only be used on <div/>s";
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])

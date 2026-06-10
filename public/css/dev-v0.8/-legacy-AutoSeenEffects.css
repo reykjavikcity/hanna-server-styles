@@ -237,6 +237,7 @@
   .___[data-seen-effect][data-is-seen="true"],
   [data-seen-effect][data-is-seen="true"] .___ {
     transition: all 400ms ease-in-out;
+
     transition-property: opacity, transform;
   }
 
@@ -664,6 +665,7 @@
   .ExtraLinks[data-is-seen="true"] .ExtraLinks::after,
   [data-is-seen="true"] .ExtraLinks .ExtraLinks::after {
     transition: all 500ms ease-in-out;
+
     transition-property: transform;
   }
 
@@ -686,6 +688,7 @@
   .ExtraLinks[data-is-seen="true"] .ExtraLinks__title,
   [data-is-seen="true"] .ExtraLinks .ExtraLinks__title {
     transition: all 400ms ease-in-out;
+
     transition-property: opacity, transform;
   }
 
@@ -706,6 +709,7 @@
   .ExtraLinks[data-is-seen="true"] .ExtraLinks__item,
   [data-is-seen="true"] .ExtraLinks .ExtraLinks__item {
     transition: all 400ms ease-in-out;
+
     transition-property: opacity, transform;
   }
 
@@ -768,6 +772,7 @@
   [data-is-seen="true"] .ExtraLinks .ExtraLinks__item:nth-child(12) {
     transition-delay: 820ms;
   }
+
   /* Default delay, applied to for items where n > 12*/
 
   .ExtraLinks[data-is-seen="true"] .ExtraLinks__item,
@@ -794,6 +799,7 @@
   .GridBlocks[data-is-seen="true"] > .GridBlocks__item,
   [data-is-seen="true"] .GridBlocks > .GridBlocks__item {
     transition: all 400ms ease-in-out;
+
     transition-property: opacity, transform;
   }
 
@@ -883,6 +889,7 @@
   .ImageCards[data-is-seen="true"] .ImageCards__summary,
   [data-is-seen="true"] .ImageCards .ImageCards__summary {
     transition: all 400ms ease-in-out;
+
     transition-property: opacity, transform;
   }
 
@@ -903,6 +910,7 @@
   .ImageCards[data-is-seen="true"] .ImageCards__item,
   [data-is-seen="true"] .ImageCards .ImageCards__item {
     transition: all 400ms ease-in-out;
+
     transition-property: opacity, transform;
   }
 
@@ -992,6 +1000,7 @@
   .RowBlock[data-is-seen="true"] > .RowBlockColumn,
   [data-is-seen="true"] .RowBlock > .RowBlockColumn {
     transition: all 400ms ease-in-out;
+
     transition-property: opacity, transform;
   }
 

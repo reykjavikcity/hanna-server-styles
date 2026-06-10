@@ -127,6 +127,7 @@
     .InfoBlock__attention
     + .InfoBlock__extrainfo {
     --WARNING--message: "Choose *EITHER* `__extrainfo` *OR* `__attention`.";
+
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
   }
   html:not([data-disable-css-warnings-with-abandon="true"])

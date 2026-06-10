@@ -270,6 +270,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   .NameCard__aboutText
   ul {
   --WARNING--message: "Only use simple, inline HTML element inside this field.";
+
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
 }
 

@@ -51,6 +51,7 @@
     letter-spacing: normal;
     font-size: var(--icon-size--medium);
     -moz-osx-font-smoothing: grayscale;
+
     font-size: var(--Icon--size);
     margin-right: var(--space-1);
   }
@@ -129,6 +130,7 @@
     letter-spacing: normal;
     font-size: var(--icon-size--medium);
     -moz-osx-font-smoothing: grayscale;
+
     font-size: var(--Icon-after--size);
     margin-left: var(--space-1_5);
   }
@@ -142,6 +144,7 @@
   .Icon {
     --Icon--enabled: initial;
   }
+
   .Icon:where(:empty)::before {
     margin-right: 0;
   }

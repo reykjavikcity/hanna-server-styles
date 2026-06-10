@@ -49,6 +49,7 @@
   *[data-seen-effect][data-is-seen="true"] > .GridBlocks__item,
   [data-seen-effect][data-is-seen="true"] * > .GridBlocks__item {
     transition: all 400ms ease-in-out;
+
     transition-property: opacity, transform;
   }
 
