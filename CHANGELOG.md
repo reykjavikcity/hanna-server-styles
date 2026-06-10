@@ -4,6 +4,21 @@
 
 - ... <!-- Add new lines here. -->
 
+## 0.8.101
+
+_2026-06-11_
+
+- fix: Remove stray semi-colons between rule-blocks, breaking Chrome
+- `StatusTag`:
+  - fix: Lighten border- and background-colors, and reduce padding by `1px`
+- `Dateoicker`:
+  - feat: Add some spacing below calendar popper in top-aligned placements
+- `IslandBlock`:
+  - fix: Secondary `__content` block should render second on smaller viewports
+  - feat: Add dev warning for nth>=3 `.IslandBlock__content` blocks
+- `RelatedLinks`:
+  - fix: Long filenames with underscores overflowing `.RelatedLinks__link`
+
 ## 0.8.100
 
 _2026-04-08_
