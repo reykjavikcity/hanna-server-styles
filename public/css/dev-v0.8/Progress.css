@@ -1,0 +1,279 @@
+@keyframes Progress-indeterminate_125mipik7 {
+  /* Phase 1 – leading edge advances to the finish (bar grows, left edge pinned) */
+  0% {
+    background-size: 0% 100%;
+    background-position-x: 0%;
+  }
+  50% {
+    background-size: 100% 100%;
+    background-position-x: 0%;
+  }
+  /* Position flip happens while the bar fills the track, so it's invisible */
+  50.001% {
+    background-size: 100% 100%;
+    background-position-x: 100%;
+  }
+  /* Phase 2 – trailing edge advances to the finish (bar shrinks, right edge pinned) */
+  100% {
+    background-size: 0% 100%;
+    background-position-x: 100%;
+  }
+}
+
+@keyframes Progress-spin_etj6ltx8 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
++  /** Makes the spinner value work for smooth CSS `transition`s  */
+  @property --Process--value {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+.Progress {
+  display: block;
+  vertical-align: middle;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  margin: var(--space-1) 0;
+  color: var(--color-faxafloi-100);
+  transition: --Process--value 500ms ease-in-out;
+  --Process--value: 0%;
+  --Process--colorTransparent: color-mix(
+    in srgb,
+    currentColor 20%,
+    transparent
+  );
+}
+.Progress__value {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  opacity: 0.00001;
+  pointer-events: none;
+
+  margin: -1px;
+}
+
+.Progress[aria-valuenow="0"] {
+  --Process--value: 0%;
+}
+
+.Progress[aria-valuenow="1"] {
+  --Process--value: 10%;
+}
+
+.Progress[aria-valuenow="2"] {
+  --Process--value: 20%;
+}
+
+.Progress[aria-valuenow="3"] {
+  --Process--value: 30%;
+}
+
+.Progress[aria-valuenow="4"] {
+  --Process--value: 40%;
+}
+
+.Progress[aria-valuenow="5"] {
+  --Process--value: 50%;
+}
+
+.Progress[aria-valuenow="6"] {
+  --Process--value: 60%;
+}
+
+.Progress[aria-valuenow="7"] {
+  --Process--value: 70%;
+}
+
+.Progress[aria-valuenow="8"] {
+  --Process--value: 80%;
+}
+
+.Progress[aria-valuenow="9"] {
+  --Process--value: 90%;
+}
+
+.Progress[aria-valuenow="10"] {
+  --Process--value: 100%;
+}
+
+.Progress--done {
+  --Process--value: 100%;
+}
+
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .Progress--done:not([aria-valuenow="10"]) {
+  --WARNING--message: '`--done` state should always have aria-valuenow="10"';
+
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .Progress--done:not([aria-valuenow="10"])::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.Progress:not(.Progress--spinner) {
+  background: var(--Process--colorTransparent)
+    linear-gradient(currentColor, currentColor) no-repeat 0 0 /
+    var(--Process--value) 100%;
+}
+/** Indeterminate spinner state */
+.Progress:not(.Progress--spinner):not([aria-valuenow]) {
+  animation: Progress-indeterminate_125mipik7 1.8s linear infinite;
+}
+
+/* ======================================================================== */
+
+.Progress--spinner {
+  --Process--spinnerSize: var(--space-3);
+  --Process--spinnerHoleRadius: 8px;
+
+  display: inline-block;
+  vertical-align: middle;
+  font-size: var(--Process--spinnerSize);
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  margin: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    currentColor var(--Process--value),
+    var(--Process--colorTransparent) var(--Process--value)
+  );
+  -webkit-mask-image: radial-gradient(
+    circle,
+    transparent var(--Process--spinnerHoleRadius),
+    black var(--Process--spinnerHoleRadius)
+  );
+  mask-image: radial-gradient(
+    circle,
+    transparent var(--Process--spinnerHoleRadius),
+    black var(--Process--spinnerHoleRadius)
+  );
+}
+
+.Progress--spinner.Progress--size--xsmall {
+  --Process--spinnerSize: var(--space-1_5);
+  --Process--spinnerHoleRadius: 4px;
+}
+.Progress--spinner.Progress--size--small {
+  --Process--spinnerSize: var(--space-2);
+  --Process--spinnerHoleRadius: 5px;
+}
+.Progress--spinner.Progress--size--large {
+  --Process--spinnerSize: var(--space-4);
+  --Process--spinnerHoleRadius: 11px;
+}
+
+/** Indeterminate spinner state */
+.Progress--spinner:not([aria-valuenow]) {
+  background: conic-gradient(
+    currentColor 180deg,
+    var(--Process--colorTransparent) 180deg
+  );
+  animation: Progress-spin_etj6ltx8 1s linear infinite;
+}
+
+.Progress--spinner.Progress--done {
+  color: var(--color-ellidaardalur-150);
+  background: var(--color-ellidaardalur-100);
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+.Progress--spinner.Progress--done::before {
+  content: "check";
+  content: "check" / "";
+
+  display: inline-block;
+  text-indent: 0;
+  text-align: center;
+  width: 1em;
+  vertical-align: top;
+  font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -moz-font-feature-settings: "liga";
+  letter-spacing: normal;
+  font-size: var(--icon-size--medium);
+  -moz-osx-font-smoothing: grayscale;
+
+  font-size: 20px;
+  clip-path: none;
+  width: 100%;
+  height: 100%;
+  line-height: calc(var(--Process--spinnerSize) / 1em);
+}
+
+.Progress--spinner.Progress--size--xsmall.Progress--done::before {
+  font-size: 1em;
+}
+.Progress--spinner.Progress--size--small.Progress--done::before {
+  font-size: 1em;
+}
+.Progress--spinner.Progress--size--large.Progress--done::before {
+  font-size: 24px;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .Progress--size--xsmall:not(.Progress--spinner),
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .Progress--size--small:not(.Progress--spinner),
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .Progress--size--large:not(.Progress--spinner) {
+  --WARNING--message: "`--size--*` modifiers only apply to `--spinner` variant";
+
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .Progress--size--xsmall:not(.Progress--spinner)::before,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .Progress--size--small:not(.Progress--spinner)::before,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .Progress--size--large:not(.Progress--spinner)::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.ButtonPrimary .Progress--spinner,
+.ButtonSecondary .Progress--spinner {
+  color: currentColor;
+  margin-bottom: 2px;
+  margin-left: var(--space-1--neg);
+  margin-right: var(--space-0_5);
+}

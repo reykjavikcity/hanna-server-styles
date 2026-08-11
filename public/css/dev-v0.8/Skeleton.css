@@ -1,12 +1,60 @@
+@keyframes Skeleton-animation_32t5ium5 {
+  0% {
+    background-position-x: -100%;
+  }
+  47.368421052631575% {
+    background-position-x: 200%;
+  }
+  100% {
+    background-position-x: 200%;
+  }
+}
+
+@keyframes Skeleton-animation-circle_p0shw8g6 {
+  0% {
+    background-position-x: -400%;
+  }
+  47.368421052631575% {
+    background-position-x: 500%;
+  }
+  100% {
+    background-position-x: 500%;
+  }
+}
+
 .Skeleton {
   --Skeleton--gap: 3;
   --Skeleton--height: 1;
-  --Skeleton--lineHeight: 1.5em;
   position: relative;
   display: block;
-  height: calc(var(--Skeleton--height) * var(--Skeleton--lineHeight));
-  background-color: var(--color-suld-200);
-  opacity: 0.03;
+  height: calc(var(--Skeleton--height) * 1.5em);
+
+  background-color: rgba(42, 43, 44, 0.03);
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(42, 43, 44, 0.08) 45%,
+    rgba(42, 43, 44, 0.08) 55%,
+    transparent 100%
+  );
+  background-size: 50% 100%;
+  background-position-x: -100%;
+  background-repeat: no-repeat;
+  animation-name: Skeleton-animation_32t5ium5;
+  animation-delay: 2500ms;
+  animation-duration: 3800ms;
+
+  animation-timing-function: linear;
+  animation-iteration-count: 5; /* <float> | infinite*/
+}
+.Skeleton--circle {
+  --Skeleton--height: 2;
+  background-size: 80% 100%;
+  background-position-x: -400%;
+  animation-name: Skeleton-animation-circle_p0shw8g6;
+}
+.Skeleton--circle + .Skeleton:not([class*="Skeleton--gap--"]) {
+  --Skeleton--gap: 1;
 }
 
 .Skeleton--height--2 {
@@ -111,29 +159,96 @@
 
 .Skeleton--text {
   background: none;
+  animation: none;
 }
 
 .Skeleton--text::before,
 .Skeleton--text::after {
   content: "";
   display: block;
-  height: calc(calc(var(--Skeleton--height) - 1) * var(--Skeleton--lineHeight));
+  height: calc(calc(var(--Skeleton--height) - 1) * 1.5em);
 
+  background-color: rgba(42, 43, 44, 0.03);
   background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(42, 43, 44, 0.08) 45%,
+    rgba(42, 43, 44, 0.08) 55%,
+    transparent 100%
+  );
+  background-size: 50% 100%;
+  background-position-x: -100%;
+  background-repeat: no-repeat;
+  animation-name: Skeleton-animation_32t5ium5;
+  animation-delay: 2500ms;
+  animation-duration: 3800ms;
+
+  animation-timing-function: linear;
+  animation-iteration-count: 5; /* <float> | infinite*/
+
+  -webkit-mask-image: linear-gradient(
     180deg,
     transparent 15%,
-    var(--color-suld-200) 15%,
-    var(--color-suld-200) 85%,
+    black 15%,
+    black 85%,
     transparent 85%
   );
-  background-size: 100% var(--Skeleton--lineHeight);
-  background-repeat: repeat-y;
+
+  mask-image: linear-gradient(
+    180deg,
+    transparent 15%,
+    black 15%,
+    black 85%,
+    transparent 85%
+  );
+  -webkit-mask-size: 100% 1.5em;
+  mask-size: 100% 1.5em;
+  -webkit-mask-repeat: repeat-y;
+  mask-repeat: repeat-y;
 }
 
 .Skeleton--text::after {
-  height: var(--Skeleton--lineHeight);
+  height: 1.5em;
   width: 70%;
 }
 .Skeleton--text[class*="Skeleton--height--"]:not(.Skeleton--height--1)::after {
   width: 35%;
+  animation: none;
+}
+
+.Skeleton--circle {
+  width: calc(var(--Skeleton--height) * 1.5em);
+  border-radius: 50%;
+}
+
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .Skeleton--text.Skeleton--circle {
+  --WARNING--message: "Do not mix `--text` and `--circle`.";
+
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .Skeleton--text.Skeleton--circle::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
+}
+
+/* Must come last, to beat the `animation` shorthands set above. */
+@media (prefers-reduced-motion: reduce) {
+  .Skeleton,
+  .Skeleton--text::before,
+  .Skeleton--text::after {
+    animation: none;
+  }
 }

@@ -183,14 +183,6 @@
   }
   /* ---- */
 
-  [data-icon="close"] {
-    --Icon: "close";
-  }
-  [data-icon-after="close"] {
-    --Icon-after: "close";
-  }
-  /* ---- */
-
   [data-icon="data"] {
     --Icon: "pie_chart";
   }
@@ -204,14 +196,6 @@
   }
   [data-icon-after="document"] {
     --Icon-after: "docs";
-  }
-  /* ---- */
-
-  [data-icon="edit"] {
-    --Icon: "edit";
-  }
-  [data-icon-after="edit"] {
-    --Icon-after: "edit";
   }
   /* ---- */
 
@@ -231,38 +215,6 @@
   }
   /* ---- */
 
-  [data-icon="home"] {
-    --Icon: "home";
-  }
-  [data-icon-after="home"] {
-    --Icon-after: "home";
-  }
-  /* ---- */
-
-  [data-icon="info"] {
-    --Icon: "info_filled";
-  }
-
-  [data-icon="info"]::before {
-    font-variation-settings: "FILL" 1;
-  }
-  [data-icon-after="info"] {
-    --Icon-after: "info_filled";
-  }
-
-  [data-icon-after="info"]::after {
-    font-variation-settings: "FILL" 1;
-  }
-  /* ---- */
-
-  [data-icon="link"] {
-    --Icon: "link";
-  }
-  [data-icon-after="link"] {
-    --Icon-after: "link";
-  }
-  /* ---- */
-
   [data-icon="location"] {
     --Icon: "location_on";
   }
@@ -276,14 +228,6 @@
   }
   [data-icon-after="pen"] {
     --Icon-after: "edit";
-  }
-  /* ---- */
-
-  [data-icon="search"] {
-    --Icon: "search";
-  }
-  [data-icon-after="search"] {
-    --Icon-after: "search";
   }
   /* ---- */
 
