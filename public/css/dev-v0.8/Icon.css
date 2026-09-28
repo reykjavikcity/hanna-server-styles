@@ -12,24 +12,24 @@
     --Icon--enabled: none;
   }
 
+  [data-icon="favorite_filled"] {
+    --Icon: "favorite";
+  }
+
   [data-icon="check_box_filled"] {
     --Icon: "check_box";
+  }
+
+  [data-icon="warning_filled"] {
+    --Icon: "warning";
   }
 
   [data-icon="error_filled"] {
     --Icon: "error";
   }
 
-  [data-icon="favorite_filled"] {
-    --Icon: "favorite";
-  }
-
   [data-icon="info_filled"] {
     --Icon: "info";
-  }
-
-  [data-icon="warning_filled"] {
-    --Icon: "warning";
   }
 
   [data-icon]::before {
@@ -85,24 +85,24 @@
     --Icon-after--enabled: none;
   }
 
+  [data-icon-after="favorite_filled"] {
+    --Icon-after: "favorite";
+  }
+
   [data-icon-after="check_box_filled"] {
     --Icon-after: "check_box";
+  }
+
+  [data-icon-after="warning_filled"] {
+    --Icon-after: "warning";
   }
 
   [data-icon-after="error_filled"] {
     --Icon-after: "error";
   }
 
-  [data-icon-after="favorite_filled"] {
-    --Icon-after: "favorite";
-  }
-
   [data-icon-after="info_filled"] {
     --Icon-after: "info";
-  }
-
-  [data-icon-after="warning_filled"] {
-    --Icon-after: "warning";
   }
 
   [data-icon-after]::after {

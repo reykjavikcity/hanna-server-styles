@@ -1,4 +1,4 @@
-@keyframes Progress-indeterminate_125mipik7 {
+@keyframes Progress-indeterminate_umpzjl57 {
   /* Phase 1 – leading edge advances to the finish (bar grows, left edge pinned) */
   0% {
     background-size: 0% 100%;
@@ -20,14 +20,14 @@
   }
 }
 
-@keyframes Progress-spin_etj6ltx8 {
+@keyframes Progress-spin_cux5fb58 {
   to {
     transform: rotate(360deg);
   }
 }
 
-+  /** Makes the spinner value work for smooth CSS `transition`s  */
-  @property --Process--value {
+/** Makes the spinner value work for smooth CSS `transition`s  */
+@property --Process--value {
   syntax: "<percentage>";
   inherits: false;
   initial-value: 0%;
@@ -45,7 +45,7 @@
   --Process--value: 0%;
   --Process--colorTransparent: color-mix(
     in srgb,
-    currentColor 20%,
+    currentColor 25%,
     transparent
   );
 }
@@ -132,7 +132,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   content: var(--WARNING--message) !important;
 }
 
-/* ------------------------------------------------------------------------ */
+/* -------------------  ----------------------------------------------------- */
 
 .Progress:not(.Progress--spinner) {
   background: var(--Process--colorTransparent)
@@ -141,7 +141,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 }
 /** Indeterminate spinner state */
 .Progress:not(.Progress--spinner):not([aria-valuenow]) {
-  animation: Progress-indeterminate_125mipik7 1.8s linear infinite;
+  animation: Progress-indeterminate_umpzjl57 1.8s linear infinite;
 }
 
 /* ======================================================================== */
@@ -190,15 +190,16 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 /** Indeterminate spinner state */
 .Progress--spinner:not([aria-valuenow]) {
   background: conic-gradient(
-    currentColor 180deg,
-    var(--Process--colorTransparent) 180deg
+    currentColor 270deg,
+    var(--Process--colorTransparent) 270deg
   );
-  animation: Progress-spin_etj6ltx8 1s linear infinite;
+  animation: Progress-spin_cux5fb58 1s linear infinite;
 }
 
 .Progress--spinner.Progress--done {
   color: var(--color-ellidaardalur-150);
   background: var(--color-ellidaardalur-100);
+  transition: background-color 200ms ease-out;
   -webkit-mask-image: none;
   mask-image: none;
 }
@@ -227,6 +228,13 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   width: 100%;
   height: 100%;
   line-height: calc(var(--Process--spinnerSize) / 1em);
+  transition: opacity 200ms ease-in-out, transform 400ms ease-in-out;
+}
+@starting-style {
+  .Progress--spinner.Progress--done::before {
+    transform: translateY(0.33em);
+    opacity: 0;
+  }
 }
 
 .Progress--spinner.Progress--size--xsmall.Progress--done::before {

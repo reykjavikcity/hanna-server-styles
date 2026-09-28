@@ -1,60 +1,168 @@
-@keyframes Skeleton-animation_32t5ium5 {
+@property --Skeleton--shimmerPos {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+@keyframes Skeleton-animation_46fivhf5 {
   0% {
-    background-position-x: -100%;
+    --Skeleton--shimmerPos: -75%;
   }
-  47.368421052631575% {
-    background-position-x: 200%;
+  42.857142857142854% {
+    --Skeleton--shimmerPos: 100%;
   }
   100% {
-    background-position-x: 200%;
+    --Skeleton--shimmerPos: 100%;
   }
 }
 
-@keyframes Skeleton-animation-circle_p0shw8g6 {
+@keyframes Skeleton-animation-circle_7ss58ul6 {
   0% {
-    background-position-x: -400%;
+    --Skeleton--shimmerPos: -125%;
   }
-  47.368421052631575% {
-    background-position-x: 500%;
+  42.857142857142854% {
+    --Skeleton--shimmerPos: 100%;
   }
   100% {
-    background-position-x: 500%;
+    --Skeleton--shimmerPos: 100%;
   }
 }
 
 .Skeleton {
   --Skeleton--gap: 3;
   --Skeleton--height: 1;
+
   position: relative;
   display: block;
   height: calc(var(--Skeleton--height) * 1.5em);
 
-  background-color: rgba(42, 43, 44, 0.03);
+  --Skeleton--shimmerPos: -75%;
+
   background-image: linear-gradient(
     90deg,
-    transparent 0%,
-    rgba(42, 43, 44, 0.08) 45%,
-    rgba(42, 43, 44, 0.08) 55%,
-    transparent 100%
+    var(--Skeleton--bgColor) var(--Skeleton--shimmerPos),
+    color-mix(
+        in srgb,
+        var(--Skeleton--bgColor) 83%,
+        var(--Skeleton--shimmerColor)
+      )
+      calc(var(--Skeleton--shimmerPos) + 15%),
+    color-mix(
+        in srgb,
+        var(--Skeleton--bgColor) 25%,
+        var(--Skeleton--shimmerColor)
+      )
+      calc(var(--Skeleton--shimmerPos) + 27.75%),
+    var(--Skeleton--shimmerColor) calc(var(--Skeleton--shimmerPos) + 37.5%),
+    color-mix(
+        in srgb,
+        var(--Skeleton--bgColor) 25%,
+        var(--Skeleton--shimmerColor)
+      )
+      calc(var(--Skeleton--shimmerPos) + 47.25%),
+    color-mix(
+        in srgb,
+        var(--Skeleton--bgColor) 83%,
+        var(--Skeleton--shimmerColor)
+      )
+      calc(var(--Skeleton--shimmerPos) + 60%),
+    var(--Skeleton--bgColor) calc(var(--Skeleton--shimmerPos) + 75%)
   );
-  background-size: 50% 100%;
-  background-position-x: -100%;
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
-  animation-name: Skeleton-animation_32t5ium5;
   animation-delay: 2500ms;
-  animation-duration: 3800ms;
-
+  animation-duration: 3500ms;
   animation-timing-function: linear;
   animation-iteration-count: 5; /* <float> | infinite*/
+  animation-name: Skeleton-animation_46fivhf5;
+
+  --Skeleton--bgColor: rgba(42, 43, 44, 0.25);
+  --Skeleton--shimmerColor: rgb(255, 255, 255);
+
+  opacity: 0.25; /* #f2f2f2*/
+}
+.Skeleton--negative {
+  --Skeleton--bgColor: rgba(255, 255, 255, 0.67);
+  --Skeleton--shimmerColor: rgb(255, 255, 255);
+
+  opacity: 0.31; /* #3b87e3*/
 }
 .Skeleton--circle {
   --Skeleton--height: 2;
-  background-size: 80% 100%;
-  background-position-x: -400%;
-  animation-name: Skeleton-animation-circle_p0shw8g6;
+
+  --Skeleton--shimmerPos: -125%;
+
+  background-image: linear-gradient(
+    90deg,
+    var(--Skeleton--bgColor) var(--Skeleton--shimmerPos),
+    color-mix(
+        in srgb,
+        var(--Skeleton--bgColor) 83%,
+        var(--Skeleton--shimmerColor)
+      )
+      calc(var(--Skeleton--shimmerPos) + 25%),
+    color-mix(
+        in srgb,
+        var(--Skeleton--bgColor) 25%,
+        var(--Skeleton--shimmerColor)
+      )
+      calc(var(--Skeleton--shimmerPos) + 46.25%),
+    var(--Skeleton--shimmerColor) calc(var(--Skeleton--shimmerPos) + 62.5%),
+    color-mix(
+        in srgb,
+        var(--Skeleton--bgColor) 25%,
+        var(--Skeleton--shimmerColor)
+      )
+      calc(var(--Skeleton--shimmerPos) + 78.75%),
+    color-mix(
+        in srgb,
+        var(--Skeleton--bgColor) 83%,
+        var(--Skeleton--shimmerColor)
+      )
+      calc(var(--Skeleton--shimmerPos) + 100%),
+    var(--Skeleton--bgColor) calc(var(--Skeleton--shimmerPos) + 125%)
+  );
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  animation-delay: 2500ms;
+  animation-duration: 3500ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 5; /* <float> | infinite*/
+  animation-name: Skeleton-animation_46fivhf5;
 }
 .Skeleton--circle + .Skeleton:not([class*="Skeleton--gap--"]) {
   --Skeleton--gap: 1;
+}
+
+.Skeleton--rounded {
+  border-radius: 4px;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .Skeleton--rounded.Skeleton--circle,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .Skeleton--rounded.Skeleton--text {
+  --WARNING--message: "`--rounded` does not mix with `--circle` or `--text`";
+
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5) !important;
+}
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .Skeleton--rounded.Skeleton--circle::before,
+html:not([data-disable-css-warnings-with-abandon="true"])
+  .Skeleton--rounded.Skeleton--text::before {
+  all: initial !important;
+  order: -999 !important;
+  font-family: sans-serif !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  z-index: 2 !important;
+  font-size: 12px !important;
+  line-height: 1.5em !important;
+  color: red !important;
+  background-color: rgba(255, 26, 26, 0.5) !important;
+  padding: 0 0.5em !important;
+  content: var(--WARNING--message) !important;
 }
 
 .Skeleton--height--2 {
@@ -168,23 +276,46 @@
   display: block;
   height: calc(calc(var(--Skeleton--height) - 1) * 1.5em);
 
-  background-color: rgba(42, 43, 44, 0.03);
+  --Skeleton--shimmerPos: -75%;
+
   background-image: linear-gradient(
     90deg,
-    transparent 0%,
-    rgba(42, 43, 44, 0.08) 45%,
-    rgba(42, 43, 44, 0.08) 55%,
-    transparent 100%
+    var(--Skeleton--bgColor) var(--Skeleton--shimmerPos),
+    color-mix(
+        in srgb,
+        var(--Skeleton--bgColor) 83%,
+        var(--Skeleton--shimmerColor)
+      )
+      calc(var(--Skeleton--shimmerPos) + 15%),
+    color-mix(
+        in srgb,
+        var(--Skeleton--bgColor) 25%,
+        var(--Skeleton--shimmerColor)
+      )
+      calc(var(--Skeleton--shimmerPos) + 27.75%),
+    var(--Skeleton--shimmerColor) calc(var(--Skeleton--shimmerPos) + 37.5%),
+    color-mix(
+        in srgb,
+        var(--Skeleton--bgColor) 25%,
+        var(--Skeleton--shimmerColor)
+      )
+      calc(var(--Skeleton--shimmerPos) + 47.25%),
+    color-mix(
+        in srgb,
+        var(--Skeleton--bgColor) 83%,
+        var(--Skeleton--shimmerColor)
+      )
+      calc(var(--Skeleton--shimmerPos) + 60%),
+    var(--Skeleton--bgColor) calc(var(--Skeleton--shimmerPos) + 75%)
   );
-  background-size: 50% 100%;
-  background-position-x: -100%;
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
-  animation-name: Skeleton-animation_32t5ium5;
   animation-delay: 2500ms;
-  animation-duration: 3800ms;
-
+  animation-duration: 3500ms;
   animation-timing-function: linear;
   animation-iteration-count: 5; /* <float> | infinite*/
+  animation-name: Skeleton-animation_46fivhf5;
 
   -webkit-mask-image: linear-gradient(
     180deg,
