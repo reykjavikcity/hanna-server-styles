@@ -4,6 +4,23 @@
 
 - ... <!-- Add new lines here. -->
 
+## 0.8.102
+
+_2026-09-28_
+
+- feat: Add component `Progress`
+- feat: Update iconfont adding new icons:  
+  `accessible` `chart_data`, `circle`, `ev_station`, `fingerprint`, `history`,
+  `keyboard_return`, `mic`, `robot_2`,
+- `Icon`:
+  - fix: Correct displayed icon for `"info"`
+- `Skeleton`:
+  - feat: **UNSTABLE** Add styling for variants `--circle`, `--rounded`,
+    `--negative`
+  - feat: Add delayed "shimmer" animation for all skeleton instances.
+- `ReadSpeakerPlayer`:
+  - feat: Fix alignment of floating player button icons
+
 ## 0.8.101
 
 _2026-06-11_
