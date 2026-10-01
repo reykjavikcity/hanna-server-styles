@@ -4,7 +4,7 @@
   initial-value: 0%;
 }
 
-@keyframes Skeleton-animation_46fivhf5 {
+@keyframes Skeleton-animation_6tp6nxd5 {
   0% {
     --Skeleton--shimmerPos: -75%;
   }
@@ -16,7 +16,7 @@
   }
 }
 
-@keyframes Skeleton-animation-circle_7ss58ul6 {
+@keyframes Skeleton-animation-circle_q24n3ou6 {
   0% {
     --Skeleton--shimmerPos: -125%;
   }
@@ -75,7 +75,7 @@
   animation-duration: 3500ms;
   animation-timing-function: linear;
   animation-iteration-count: 5; /* <float> | infinite*/
-  animation-name: Skeleton-animation_46fivhf5;
+  animation-name: Skeleton-animation_6tp6nxd5;
 
   --Skeleton--bgColor: rgba(42, 43, 44, 0.25);
   --Skeleton--shimmerColor: rgb(255, 255, 255);
@@ -130,7 +130,7 @@
   animation-duration: 3500ms;
   animation-timing-function: linear;
   animation-iteration-count: 5; /* <float> | infinite*/
-  animation-name: Skeleton-animation_46fivhf5;
+  animation-name: Skeleton-animation_6tp6nxd5;
 }
 .Skeleton--circle + .Skeleton:not([class*="Skeleton--gap--"]) {
   --Skeleton--gap: 1;
@@ -315,7 +315,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   animation-duration: 3500ms;
   animation-timing-function: linear;
   animation-iteration-count: 5; /* <float> | infinite*/
-  animation-name: Skeleton-animation_46fivhf5;
+  animation-name: Skeleton-animation_6tp6nxd5;
 
   -webkit-mask-image: linear-gradient(
     180deg,
