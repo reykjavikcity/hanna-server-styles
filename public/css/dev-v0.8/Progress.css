@@ -1,4 +1,4 @@
-@keyframes Progress-indeterminate_wid3sq77 {
+@keyframes Progress-indeterminate {
   /* Phase 1 – leading edge advances to the finish (bar grows, left edge pinned) */
   0% {
     background-size: 0% 100%;
@@ -20,7 +20,7 @@
   }
 }
 
-@keyframes Progress-spin_xe0xck28 {
+@keyframes Progress-spin {
   to {
     transform: rotate(360deg);
   }
@@ -141,7 +141,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
 }
 /** Indeterminate spinner state */
 .Progress:not(.Progress--spinner):not([aria-valuenow]) {
-  animation: Progress-indeterminate_wid3sq77 1.8s linear infinite;
+  animation: Progress-indeterminate 1.8s linear infinite;
 }
 
 /* ======================================================================== */
@@ -193,7 +193,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
     currentColor 270deg,
     var(--Process--colorTransparent) 270deg
   );
-  animation: Progress-spin_xe0xck28 1s linear infinite;
+  animation: Progress-spin 1s linear infinite;
 }
 
 .Progress--spinner.Progress--done {
@@ -212,7 +212,7 @@ html:not([data-disable-css-warnings-with-abandon="true"])
   text-align: center;
   width: 1em;
   vertical-align: top;
-  font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
+  font-family: icons, iconfont, Esja, Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
   white-space: nowrap;

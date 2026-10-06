@@ -32,7 +32,7 @@
     text-align: center;
     width: 1em;
     vertical-align: top;
-    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
+    font-family: icons, iconfont, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
@@ -110,13 +110,13 @@
 
   .Alert--critical,
   .Alert--error {
-    --Alert--background: rgb(250, 228, 229);
+    --Alert--background: var(--color-heidmork-25);
     --Alert--icon-color: var(--color-heidmork-100);
     --Alert--icon: "error";
   }
   .Alert--warning {
     --Alert--background: var(--color-nautholsvik-50);
-    --Alert--icon-color: rgb(213, 179, 74);
+    --Alert--icon-color: var(--color-blafjoll-100);
     --Alert--icon: "warning";
   }
   .Alert--success {
@@ -210,7 +210,7 @@
     text-align: center;
     width: 1em;
     vertical-align: top;
-    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
+    font-family: icons, iconfont, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;

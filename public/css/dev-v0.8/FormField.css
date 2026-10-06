@@ -209,7 +209,7 @@
     text-align: center;
     width: 1em;
     vertical-align: top;
-    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
+    font-family: icons, iconfont, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;
@@ -249,7 +249,7 @@
     content: var(--WARNING--message) !important;
   }
   .FormField__assist {
-    color: var(--color-suld-150);
+    color: var(--color-faxafloi-100);
   }
   .FormField__assist::before {
     content: "warning";
@@ -300,7 +300,7 @@
     text-align: center;
     width: 1em;
     vertical-align: top;
-    font-family: iconfont, icons, Esja, Helvetica, Arial, sans-serif;
+    font-family: icons, iconfont, Esja, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     white-space: nowrap;

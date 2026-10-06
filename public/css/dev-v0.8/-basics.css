@@ -1,12 +1,11 @@
 /*! Reykjavík Design System basic CSS styles */
 
 @font-face {
-  /* eslint-disable-next-line deprecation/deprecation*/
   font-family: iconfont;
   font-weight: normal;
   font-style: normal;
   font-display: block;
-  src: url("i/iconfont.woff2?7ecfdb5302299a69e7b88ebbb015ab19") format("woff2");
+  src: url("i/iconfont.woff2?f45d1de41b1289334d3e73a6aa442807") format("woff2");
 }
 
 @font-face {
@@ -56,7 +55,7 @@
   /**/
 
 :root {
-  --cssVersion: "0.8.102";
+  --cssVersion: "0.8.103";
   --browser-scrollbar-width: 16px;
   --bp-w-phone: 320px;
   --bp-w-phablet: 480px;
