@@ -4,6 +4,15 @@
 
 - ... <!-- Add new lines here. -->
 
+## 0.8.103
+
+_2026-10-07_
+
+- feat: Update `i/icons.html` to list new "iconfont" icons up top
+- fix: Swap load order of new/old iconfonts for more correct fallback for
+  older icons using direct unicode-character values (new iconfont always uses
+  ligatures)
+
 ## 0.8.102
 
 _2026-10-02_
@@ -20,6 +29,10 @@ _2026-10-02_
   - feat: Add delayed "shimmer" animation for all skeleton instances.
 - `ReadSpeakerPlayer`:
   - feat: Fix alignment of floating player button icons
+- `Alert`:
+  - feat: Make `--warning` icon color darker, more orange
+- `FormField`:
+  - fix: Turn `__assist` texts to be blue
 
 ## 0.8.101
 
