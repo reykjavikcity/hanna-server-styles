@@ -9,7 +9,8 @@
 
   "cacheRefreshToken": null,
 
-  "proxied": true,
+  "ssl": false,
+  "compression": true,
 
   "sslKeyPath": null,
   "sslCert": null,

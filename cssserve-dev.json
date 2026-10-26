@@ -1,10 +1,12 @@
 {
   "staticFolder": "public/",
-  "proxied": true,
-  "sslKeyPath": null,
+
   "ttl_static": 0,
   "ttl_bundle": 0,
   "cache": false,
+
+  "ssl": false,
+  "compression": false,
 
   "redirectsFile": ["./redirects-sprinkles.json"]
 }
